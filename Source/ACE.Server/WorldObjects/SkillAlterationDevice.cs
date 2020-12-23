@@ -204,7 +204,7 @@ namespace ACE.Server.WorldObjects
                     // keep trained, but recover the xp spent
                     else if (skill.AdvancementClass == SkillAdvancementClass.Trained)
                     {
-                        var untrainable = Player.IsSkillUntrainable(skill.Skill);
+                        var untrainable = Player.IsSkillUntrainable(skill.Skill, player.HeritageGroup);
 
                         if (player.UntrainSkill(skill.Skill, skillBase.TrainedCost))
                         {

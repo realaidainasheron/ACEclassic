@@ -213,6 +213,21 @@ namespace ACE.Server.Factories
                 // Set innate augs
                 SetInnateAugmentations(player);
             }
+            else
+            {
+                // Quick check to confirm if the player has all their racial skills.
+                foreach (var skillGroup in heritageGroup.Skills)
+                {
+                    var skill = player.GetCreatureSkill((Skill)skillGroup.SkillNum);
+                    if (skillGroup.PrimaryCost == 0)
+                    {
+                        if (skill.AdvancementClass != SkillAdvancementClass.Specialized)
+                            return CreateResult.FailedToSpecializeSkill;
+                    }
+                    else if (skillGroup.NormalCost == 0 && skill.AdvancementClass != SkillAdvancementClass.Trained && skill.AdvancementClass != SkillAdvancementClass.Specialized)
+                        return CreateResult.FailedToTrainSkill;
+                }
+            }
 
             // grant starter items based on skills
             var starterGearConfig = StarterGearFactory.GetStarterGearConfiguration();
