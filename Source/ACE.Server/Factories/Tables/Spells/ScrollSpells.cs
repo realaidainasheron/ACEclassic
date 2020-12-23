@@ -378,7 +378,7 @@ namespace ACE.Server.Factories.Tables
             startIdx += AddSpells(lifeSpells, startIdx);
             startIdx += AddSpells(itemSpells, startIdx);
             startIdx += AddSpells(warSpells, startIdx);
-            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
                 startIdx += AddSpells(voidSpells, startIdx);
 
             if (startIdx != NumSpells)

@@ -6,14 +6,14 @@ namespace ACE.Common
     public enum Ruleset
     {
         Invalid,
-        Release,                // November 1999
-        DarkMajesty,            // October 2001
+        //Release,                // November 1999
+        //DarkMajesty,            // October 2001
         Infiltration,           // February 2005
-        ThroneOfDestiny,        // July 2005
-        FromDarknessLight,      // November 2010 - Void Magic
-        MasterOfDesign,         // November 2011 - Innate Augmentations
-        MasterOfArms,           // February 2012 - New weapon skills
-        BalanceOfPower,         // February 2013 - Summoning
+        //ThroneOfDestiny,        // July 2005
+        //FromDarknessLight,      // November 2010 - Void Magic
+        //MasterOfDesign,         // November 2011 - Innate Augmentations
+        //MasterOfArms,           // February 2012 - New weapon skills
+        //BalanceOfPower,         // February 2013 - Summoning
         EoR                     // May 2015
     }
 

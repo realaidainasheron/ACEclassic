@@ -105,7 +105,7 @@ namespace ACE.Entity.Enum
     {
         static SkillHelper()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset < Common.Ruleset.MasterOfArms)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
                 ValidSkills.Add(Skill.Axe);
                 ValidSkills.Add(Skill.Bow);
@@ -131,13 +131,10 @@ namespace ACE.Entity.Enum
                 ValidSkills.Add(Skill.Recklessness);
                 ValidSkills.Add(Skill.SneakAttack);
                 ValidSkills.Add(Skill.DirtyFighting);
-             }
-
-            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.FromDarknessLight)
                 ValidSkills.Add(Skill.VoidMagic);
-
-            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.BalanceOfPower)
                 ValidSkills.Add(Skill.Summoning);
+            }
+                
         }
 
         public static HashSet<Skill> ValidSkills = new HashSet<Skill>

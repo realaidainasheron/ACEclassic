@@ -70,7 +70,7 @@ namespace ACE.Server.Network.Handlers
             });
 
             // Only allow era appropriate heritages.
-            if (ConfigManager.Config.Server.WorldRuleset < Ruleset.ThroneOfDestiny && characterCreateInfo.Heritage != (int)HeritageGroup.Aluvian && characterCreateInfo.Heritage != (int)HeritageGroup.Gharundim && characterCreateInfo.Heritage != (int)HeritageGroup.Sho)
+            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration && characterCreateInfo.Heritage != (int)HeritageGroup.Aluvian && characterCreateInfo.Heritage != (int)HeritageGroup.Gharundim && characterCreateInfo.Heritage != (int)HeritageGroup.Sho)
             {
                 SendCharacterCreateResponse(session, CharacterGenerationVerificationResponse.Pending);
                 session.Network.EnqueueSend(new GameEvent.Events.GameEventPopupString(session, "Only Aluvian, Gharu'ndim and Sho heritages are allowed on this server."));

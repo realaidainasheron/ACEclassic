@@ -249,9 +249,9 @@ namespace ACE.Server.Managers
 
             if (character.TotalLogins <= 1)
             {
-                if (ConfigManager.Config.Server.WorldRuleset < Ruleset.ThroneOfDestiny)
+                if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
                 {
-                    // Automatically use the welcome letter so it's open for the new player to read.
+                    // Automatically use the welcome letter so it's already open for the new player to read.
                     WorldObject welcomeLetter = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == 1077);
                     if (welcomeLetter != null)
                         welcomeLetter.ActOnUse(player);

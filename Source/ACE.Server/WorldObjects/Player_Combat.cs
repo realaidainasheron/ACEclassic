@@ -96,7 +96,7 @@ namespace ACE.Server.WorldObjects
         public Skill GetHighestMeleeSkill()
         {
             Entity.CreatureSkill maxMelee;
-            if (ConfigManager.Config.Server.WorldRuleset >= Ruleset.MasterOfArms)
+            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.EoR)
             {
                 var light = GetCreatureSkill(Skill.LightWeapons);
                 var heavy = GetCreatureSkill(Skill.HeavyWeapons);

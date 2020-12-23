@@ -25,7 +25,7 @@ namespace ACE.Server.Factories
             var eleType = ThreadSafeRandom.Next(0, 4);
 
             if (weaponSkill == MeleeWeaponSkill.Undef)
-                if (Common.ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(5, 11);
                 else
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
@@ -289,7 +289,7 @@ namespace ACE.Server.Factories
 
         private static string GetDamageScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
                 return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance.PreMoA." + weaponType.GetScriptName() + ".txt";
             else
                 return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance." + weaponSkill.GetScriptName_Combined() + "_" + weaponType.GetScriptName() + ".txt";

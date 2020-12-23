@@ -200,7 +200,7 @@ namespace ACE.Server.Factories
             }
 
             bool isDualWieldTrainedOrSpecialized = false;
-            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.MasterOfArms)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
             {
                 isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
 
@@ -209,11 +209,10 @@ namespace ACE.Server.Factories
 
                 player.SetProperty(PropertyInt.MeleeMastery, (int)meleeMastery);
                 player.SetProperty(PropertyInt.RangedMastery, (int)rangedMastery);
-            }
 
-            // Set innate augs
-            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.MasterOfDesign)
+                // Set innate augs
                 SetInnateAugmentations(player);
+            }
 
             // grant starter items based on skills
             var starterGearConfig = StarterGearFactory.GetStarterGearConfiguration();
@@ -362,7 +361,7 @@ namespace ACE.Server.Factories
 
             var instantiation = new Position(0xA9B40019, 84, 7.1f, 94, 0, 0, -0.0784591f, 0.996917f); // ultimate fallback.
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.ThroneOfDestiny)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
             {
                 player.Location = new Position(starterArea.Locations[0].ObjCellID,
                     starterArea.Locations[0].Frame.Origin.X, starterArea.Locations[0].Frame.Origin.Y, starterArea.Locations[0].Frame.Origin.Z,

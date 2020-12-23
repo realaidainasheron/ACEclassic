@@ -546,7 +546,12 @@ namespace ACE.Server.WorldObjects
                     // does target have shield equipped?
                     var shield = target.GetEquippedShield();
                     if (shield != null && shield.AbsorbMagicDamage != null)
-                        return GetShieldMod(target, shield);
+                    {
+                        if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                            return GetShieldMod(target, shield);
+                        else
+                            return AbsorbMagic(target, shield);
+                    }
 
                     break;
 

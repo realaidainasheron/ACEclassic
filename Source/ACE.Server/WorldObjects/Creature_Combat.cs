@@ -439,7 +439,7 @@ namespace ACE.Server.WorldObjects
 
             var skill = weapon != null ? weapon.WeaponSkill : Skill.UnarmedCombat;
 
-            if (ConfigManager.Config.Server.WorldRuleset >= Ruleset.MasterOfArms)
+            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.EoR)
             {
                 var creatureSkill = GetCreatureSkill(skill);
 
@@ -701,16 +701,19 @@ namespace ACE.Server.WorldObjects
 
             var effectiveLevel = effectiveSL * effectiveRL;
 
-            // SL cap:
-            // Trained / untrained: 1/2 shield skill
-            // Spec: shield skill
-            // SL cap is applied *after* item enchantments
-            var shieldSkill = GetCreatureSkill(Skill.Shield);
-            var shieldCap = shieldSkill.Current;
-            if (shieldSkill.AdvancementClass != SkillAdvancementClass.Specialized)
-                shieldCap = (uint)Math.Round(shieldCap / 2.0f);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                // SL cap:
+                // Trained / untrained: 1/2 shield skill
+                // Spec: shield skill
+                // SL cap is applied *after* item enchantments
+                var shieldSkill = GetCreatureSkill(Skill.Shield);
+                var shieldCap = shieldSkill.Current;
+                if (shieldSkill.AdvancementClass != SkillAdvancementClass.Specialized)
+                    shieldCap = (uint)Math.Round(shieldCap / 2.0f);
 
-            effectiveLevel = Math.Min(effectiveLevel, shieldCap);
+                effectiveLevel = Math.Min(effectiveLevel, shieldCap);
+            }
 
             var ignoreShieldMod = attacker.GetIgnoreShieldMod(weapon);
             //Console.WriteLine($"IgnoreShieldMod: {ignoreShieldMod}");

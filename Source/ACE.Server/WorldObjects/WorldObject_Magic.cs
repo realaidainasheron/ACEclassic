@@ -2026,7 +2026,7 @@ namespace ACE.Server.WorldObjects
                     playerTargetResist.SetCurrentAttacker(creature);
             }
 
-            bool itemAuras = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+            bool itemAuras = (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR);
 
             if (spell.IsImpenBaneType || (!itemAuras && spell.IsWeaponTargetType))
             {

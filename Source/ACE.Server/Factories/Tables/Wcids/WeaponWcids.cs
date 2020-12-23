@@ -20,7 +20,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                 case TreasureWeaponType.Staff:
                 case TreasureWeaponType.Sword:
                 case TreasureWeaponType.Unarmed:
-                    if (ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+                    if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
                     {
                         switch (weaponType)
                         {
