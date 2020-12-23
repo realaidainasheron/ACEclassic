@@ -86,7 +86,7 @@ namespace ACE.Server.Factories
             wo.GemType = RollGemType(profile.Tier);
 
             // workmanship
-            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             // burden
             if (wo.HasMutateFilter(MutateFilter.EncumbranceVal))  // fixme: data
@@ -216,7 +216,7 @@ namespace ACE.Server.Factories
                     mutationFilter.Mutations.RemoveAt(0);
             }
 
-            return mutationFilter.TryMutate(wo, profile.Tier);
+            return mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
         }
 
         private static string GetMutationScript_ArmorLevel(WorldObject wo, TreasureRoll roll)
@@ -760,7 +760,7 @@ namespace ACE.Server.Factories
 
             wo.GemType = RollGemType(profile.Tier);
 
-            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             wo.Value = Roll_ItemValue(wo, profile.Tier);
 
@@ -852,7 +852,7 @@ namespace ACE.Server.Factories
             }
 
             // workmanship
-            wo.Workmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.Workmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             if (roll != null && profile.Tier == 8)
                 TryMutateGearRating(wo, profile, roll);

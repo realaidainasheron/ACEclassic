@@ -82,12 +82,12 @@ namespace ACE.Server.Factories
                 // mutate DamageMod / ElementalDamageBonus / WieldRequirements
                 var mutationFilter = MutationCache.GetMutation(scriptName);
 
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
 
                 // mutate WeaponDefense
                 mutationFilter = MutationCache.GetMutation("MissileWeapons.weapon_defense.txt");
 
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
             }
 
             // weapon speed
@@ -114,7 +114,7 @@ namespace ACE.Server.Factories
             wo.GemType = RollGemType(profile.Tier);
 
             // workmanship
-            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             // burden
             MutateBurden(wo, profile, true);

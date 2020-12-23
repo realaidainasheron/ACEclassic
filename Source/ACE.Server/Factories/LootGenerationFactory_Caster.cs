@@ -120,14 +120,14 @@ namespace ACE.Server.Factories
 
                 // mutate ManaConversionMod
                 var mutationFilter = MutationCache.GetMutation("Casters.caster.txt");
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
 
                 // mutate ElementalDamageMod / WieldRequirements
                 var isElemental = wo.W_DamageType != DamageType.Undef;
                 var scriptName = GetCasterScript(isElemental);
 
                 mutationFilter = MutationCache.GetMutation(scriptName);
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
 
                 // this part was not handled by mutation filter
                 if (wo.WieldRequirements == WieldRequirement.RawSkill)
@@ -140,7 +140,7 @@ namespace ACE.Server.Factories
 
                 // mutate WeaponDefense
                 mutationFilter = MutationCache.GetMutation("Casters.weapon_defense.txt");
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
             }
 
             // material type
@@ -160,7 +160,7 @@ namespace ACE.Server.Factories
             wo.GemType = RollGemType(profile.Tier);
 
             // workmanship
-            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             // burden?
 

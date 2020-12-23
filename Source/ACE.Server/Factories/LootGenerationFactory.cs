@@ -870,7 +870,6 @@ namespace ACE.Server.Factories
 
             var treasureRoll = new TreasureRoll(treasureItemType);
 
-            // TODO: quality mod
             switch (treasureItemType)
             {
                 case TreasureItemType_Orig.Pyreal:

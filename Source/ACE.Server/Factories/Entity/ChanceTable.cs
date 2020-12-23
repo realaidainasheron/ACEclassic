@@ -27,21 +27,24 @@ namespace ACE.Server.Factories.Entity
             verified = true;
         }
 
-        public T Roll(float qualityMod = 0.0f)
+        public T Roll(float qualityMod = 0.0f, bool invertedQualityMod = false)
         {
             if (!verified)
                 VerifyTable();
 
             var total = 0.0f;
 
-            //var rng = ThreadSafeRandom.NextIntervalMax(qualityMod);
-            var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
+            double rng;
+            if(invertedQualityMod)
+                rng = ThreadSafeRandom.Next(0.0f, 1.0f - qualityMod);
+            else
+                rng = ThreadSafeRandom.Next(qualityMod, 1.0f);
 
             foreach (var entry in this)
             {
                 total += entry.chance;
 
-                if (rng < total && total >= qualityMod)
+                if (rng < total)
                     return entry.result;
             }
 

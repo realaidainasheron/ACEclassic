@@ -143,14 +143,14 @@ namespace ACE.Server.Factories
                     mutationFilter.Mutations.RemoveAt(0);
                 }
 
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
 
                 // mutate WeaponOffense / WeaponDefense
                 scriptName = GetOffenseDefenseScript(weaponSkill, roll.WeaponType);
 
                 mutationFilter = MutationCache.GetMutation(scriptName);
 
-                mutationFilter.TryMutate(wo, profile.Tier);
+                mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
             }
 
             // weapon speed
@@ -177,7 +177,7 @@ namespace ACE.Server.Factories
             wo.GemType = RollGemType(profile.Tier);
 
             // workmanship
-            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier);
+            wo.ItemWorkmanship = WorkmanshipChance.Roll(profile.Tier, profile.LootQualityMod);
 
             // burden
             MutateBurden(wo, profile, true);
