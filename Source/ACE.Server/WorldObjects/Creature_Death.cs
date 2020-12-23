@@ -482,8 +482,11 @@ namespace ACE.Server.WorldObjects
 
             corpse.RemoveProperty(PropertyInt.Value);
 
-            if (CanGenerateRare && killer != null)
-                corpse.TryGenerateRare(killer);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                if (CanGenerateRare && killer != null)
+                    corpse.TryGenerateRare(killer);
+            }
 
             corpse.InitPhysicsObj();
 
