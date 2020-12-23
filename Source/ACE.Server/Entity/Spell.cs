@@ -232,6 +232,8 @@ namespace ACE.Server.Entity
         /// </summary>
         public bool IsImpenBaneType => Category >= SpellCategory.ArmorValueRaising && Category <= SpellCategory.AcidicResistanceLowering;
 
+        public bool IsWeaponTargetType => (Category >= SpellCategory.AttackModRaising && Category <= SpellCategory.WeaponTimeLowering) || (Category >= SpellCategory.ManaConversionModLowering && Category <= SpellCategory.ManaConversionModRaising) || Category == SpellCategory.SpellDamageRaising;
+
         public bool IsNegativeRedirectable => IsHarmful && (IsImpenBaneType || IsOtherNegativeRedirectable);
 
         public bool IsOtherNegativeRedirectable

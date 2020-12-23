@@ -579,10 +579,13 @@ namespace ACE.Server.Network.Structure
             ResistHighlight = ResistMaskHelper.GetHighlightMask(creature);
             ResistColor = ResistMaskHelper.GetColorMask(creature);
 
-            if (Success && (creature is Player || !creature.Attackable))
-                ArmorLevels = new ArmorLevel(creature);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                if (Success && (creature is Player || !creature.Attackable))
+                    ArmorLevels = new ArmorLevel(creature);
 
-            AddRatings(creature);
+                AddRatings(creature);
+            }
 
             if (PropertiesInt.ContainsKey(PropertyInt.EncumbranceVal))
                 PropertiesInt.Remove(PropertyInt.EncumbranceVal);

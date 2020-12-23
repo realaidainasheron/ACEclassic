@@ -411,9 +411,14 @@ namespace ACE.Server.WorldObjects
             var isBow = weapon != null && weapon.IsBow;
 
             //var attribute = isBow || GetCurrentWeaponSkill() == Skill.FinesseWeapons ? Coordination : Strength;
-            var attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons ? Coordination : Strength;
+            var attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons || weapon?.WeaponSkill == Skill.Dagger ? Coordination : Strength;
 
             return SkillFormula.GetAttributeMod((int)attribute.Current, isBow);
+        }
+        public virtual int GetUnarmedSkillDamageBonus()
+        {
+            // doesn't apply for non-player creatures.
+            return 0;
         }
 
         /// <summary>
@@ -434,19 +439,22 @@ namespace ACE.Server.WorldObjects
 
             var skill = weapon != null ? weapon.WeaponSkill : Skill.UnarmedCombat;
 
-            var creatureSkill = GetCreatureSkill(skill);
-
-            if (creatureSkill.InitLevel == 0)
+            if (ConfigManager.Config.Server.WorldRuleset >= Ruleset.MasterOfArms)
             {
-                // convert to post-MoA skill
-                if (weapon != null && weapon.IsRanged)
-                    skill = Skill.MissileWeapons;
-                else if (skill == Skill.Sword)
-                    skill = Skill.HeavyWeapons;
-                else if (skill == Skill.Dagger)
-                    skill = Skill.FinesseWeapons;
-                else
-                    skill = Skill.LightWeapons;
+                var creatureSkill = GetCreatureSkill(skill);
+
+                if (creatureSkill.InitLevel == 0)
+                {
+                    // convert to post-MoA skill
+                    if (weapon != null && weapon.IsRanged)
+                        skill = Skill.MissileWeapons;
+                    else if (skill == Skill.Sword)
+                        skill = Skill.HeavyWeapons;
+                    else if (skill == Skill.Dagger)
+                        skill = Skill.FinesseWeapons;
+                    else
+                        skill = Skill.LightWeapons;
+                }
             }
 
             //Console.WriteLine("Monster weapon skill: " + skill);

@@ -13,27 +13,6 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             switch (weaponType)
             {
-                /*case TreasureWeaponType.Sword:
-                    return RollSwordWcid(treasureDeath);
-
-                case TreasureWeaponType.Mace:
-                    return RollMaceWcid(treasureDeath);
-
-                case TreasureWeaponType.Axe:
-                    return RollAxeWcid(treasureDeath);
-
-                case TreasureWeaponType.Spear:
-                    return RollSpearWcid(treasureDeath);
-
-                case TreasureWeaponType.Unarmed:
-                    return RollUnarmedWcid(treasureDeath);
-
-                case TreasureWeaponType.Staff:
-                    return RollStaffWcid(treasureDeath);
-
-                case TreasureWeaponType.Dagger:
-                    return RollDaggerWcid(treasureDeath);*/
-
                 case TreasureWeaponType.Axe:
                 case TreasureWeaponType.Dagger:
                 case TreasureWeaponType.Mace:
@@ -41,6 +20,32 @@ namespace ACE.Server.Factories.Tables.Wcids
                 case TreasureWeaponType.Staff:
                 case TreasureWeaponType.Sword:
                 case TreasureWeaponType.Unarmed:
+                    if (ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+                    {
+                        switch (weaponType)
+                        {
+                            case TreasureWeaponType.Sword:
+                                return RollSwordWcid(treasureDeath);
+
+                            case TreasureWeaponType.Mace:
+                                return RollMaceWcid(treasureDeath);
+
+                            case TreasureWeaponType.Axe:
+                                return RollAxeWcid(treasureDeath);
+
+                            case TreasureWeaponType.Spear:
+                                return RollSpearWcid(treasureDeath);
+
+                            case TreasureWeaponType.Unarmed:
+                                return RollUnarmedWcid(treasureDeath);
+
+                            case TreasureWeaponType.Staff:
+                                return RollStaffWcid(treasureDeath);
+
+                            case TreasureWeaponType.Dagger:
+                                return RollDaggerWcid(treasureDeath);
+                        }
+                    }
                     return RollMeleeWeapon(ref weaponType);
 
                 case TreasureWeaponType.Bow:

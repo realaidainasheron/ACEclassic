@@ -985,6 +985,9 @@ namespace ACE.Server.WorldObjects
 
         public Skill ConvertToMoASkill(Skill skill)
         {
+            if (ConfigManager.Config.Server.WorldRuleset >= Ruleset.MasterOfArms)
+                return skill;
+
             if (this is Player player)
             {
                 if (SkillExtensions.RetiredMelee.Contains(skill))

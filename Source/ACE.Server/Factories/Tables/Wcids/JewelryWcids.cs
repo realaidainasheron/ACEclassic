@@ -95,6 +95,58 @@ namespace ACE.Server.Factories.Tables.Wcids
             T5_T6_Chances,
         };
 
+        static JewelryWcids()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T1_T2_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.amulet,        0.10f ),
+                    ( WeenieClassName.bracelet,      0.30f ),
+                    ( WeenieClassName.braceletheavy, 0.10f ),
+                    ( WeenieClassName.necklace,      0.20f ),
+                    ( WeenieClassName.ring,          0.25f ),
+                    ( WeenieClassName.ringjeweled,   0.05f )
+                };
+
+                T3_T4_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.amulet,        0.10f ),
+                    ( WeenieClassName.bracelet,      0.15f ),
+                    ( WeenieClassName.braceletheavy, 0.15f ),
+                    ( WeenieClassName.gorget,        0.10f ),
+                    ( WeenieClassName.necklace,      0.15f ),
+                    ( WeenieClassName.necklaceheavy, 0.05f ),
+                    ( WeenieClassName.ring,          0.15f ),
+                    ( WeenieClassName.ringjeweled,   0.15f )
+                };
+
+                T5_T6_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.amulet,        0.05f ),
+                    ( WeenieClassName.bracelet,      0.05f ),
+                    ( WeenieClassName.braceletheavy, 0.20f ),
+                    ( WeenieClassName.crown,         0.10f ),
+                    ( WeenieClassName.gorget,        0.10f ),
+                    ( WeenieClassName.necklace,      0.05f ),
+                    ( WeenieClassName.necklaceheavy, 0.15f ),
+                    ( WeenieClassName.ring,          0.10f ),
+                    ( WeenieClassName.ringjeweled,   0.20f ),
+                };
+                
+                // we have to refresh this list or it will still contain the previous values.
+                tierChances = new List<ChanceTable<WeenieClassName>>()
+		        {
+		            T1_T2_Chances,
+		            T1_T2_Chances,
+		            T3_T4_Chances,
+		            T3_T4_Chances,
+		            T5_T6_Chances,
+		            T5_T6_Chances,
+		        };
+            }
+        }
+
         public static WeenieClassName Roll(int tier)
         {
             // todo: add unique profiles for t7 / t8?

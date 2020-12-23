@@ -2026,7 +2026,9 @@ namespace ACE.Server.WorldObjects
                     playerTargetResist.SetCurrentAttacker(creature);
             }
 
-            if (spell.IsImpenBaneType)
+            bool itemAuras = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+
+            if (spell.IsImpenBaneType || (!itemAuras && spell.IsWeaponTargetType))
             {
                 // impen / bane / brittlemail / lure
 
@@ -2044,8 +2046,25 @@ namespace ACE.Server.WorldObjects
                 }
                 else
                 {
-                    // targeting a creature
-                    if (targetPlayer == this)
+                    if (!itemAuras && spell.IsWeaponTargetType)
+                    {
+                        if (targetCreature != null)
+                        {
+                            var weapon = targetCreature.GetEquippedMainHand();
+                            if (weapon != null)
+                                TryCastItemEnchantment_WithRedirects(spell, weapon, caster); //redirect target to main hand.
+                            else
+                            {
+                                // 'fails to affect'?
+                                if (player != null && targetCreature != null)
+                                    player.Session.Network.EnqueueSend(new GameMessageSystemChat($"You fail to affect {targetCreature.Name} with {spell.Name}", ChatMessageType.Magic));
+
+                                if (targetPlayer != null && !targetPlayer.SquelchManager.Squelches.Contains(this, ChatMessageType.Magic))
+                                    targetPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{Name} fails to affect you with {spell.Name}", ChatMessageType.Magic));
+                            }
+                        }
+                    }
+                    else if (targetPlayer == this) // targeting a creature 
                     {
                         // targeting self
                         if (creature != null)

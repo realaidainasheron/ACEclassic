@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Linq;
 
 using log4net;
 
@@ -248,7 +249,15 @@ namespace ACE.Server.Managers
 
             if (character.TotalLogins <= 1)
             {
-                session.Network.EnqueueSend(new GameEventPopupString(session, AppendLines(popup_header, popup_motd, popup_welcome)));
+                if (ConfigManager.Config.Server.WorldRuleset < Ruleset.ThroneOfDestiny)
+                {
+                    // Automatically use the welcome letter so it's open for the new player to read.
+                    WorldObject welcomeLetter = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == 1077);
+                    if (welcomeLetter != null)
+                        welcomeLetter.ActOnUse(player);
+                }
+                else
+                    session.Network.EnqueueSend(new GameEventPopupString(session, AppendLines(popup_header, popup_motd, popup_welcome)));
             }
             else if (!string.IsNullOrEmpty(popup_motd))
             {

@@ -25,7 +25,10 @@ namespace ACE.Server.Factories
             var eleType = ThreadSafeRandom.Next(0, 4);
 
             if (weaponSkill == MeleeWeaponSkill.Undef)
-                weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
+                if (Common.ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+                    weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(5, 11);
+                else
+                    weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
 
             switch (weaponSkill)                
             {
@@ -52,6 +55,48 @@ namespace ACE.Server.Factories
                     weaponType = ThreadSafeRandom.Next(0, LootTables.TwoHandedWeaponsMatrix.Length - 1);
                     wcid = LootTables.TwoHandedWeaponsMatrix[weaponType][eleType];
                     break;
+
+                case MeleeWeaponSkill.Axe:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.AxesMatrix.Length - 1);
+                    wcid = LootTables.AxesMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.Dagger:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.DaggersMatrix.Length - 1);
+                    wcid = LootTables.DaggersMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.Mace:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.MacesMatrix.Length - 1);
+                    wcid = LootTables.MacesMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.Spear:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.SpearsMatrix.Length - 1);
+                    wcid = LootTables.SpearsMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.Staff:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.StavesMatrix.Length - 1);
+                    wcid = LootTables.StavesMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.Sword:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.SwordsMatrix.Length - 1);
+                    wcid = LootTables.SwordsMatrix[weaponType][eleType];
+                    break;
+
+                case MeleeWeaponSkill.UnarmedCombat:
+
+                    weaponType = ThreadSafeRandom.Next(0, LootTables.UnarmedMatrix.Length - 1);
+                    wcid = LootTables.UnarmedMatrix[weaponType][eleType];
+                    break;
             }
 
             var wo = WorldObjectFactory.CreateNewWorldObject((uint)wcid);
@@ -74,6 +119,7 @@ namespace ACE.Server.Factories
 
             if (roll == null)
             {
+                log.Error($"MutateMeleeWeapon reverting to old method({wo.Name}, {profile.TreasureType}, {roll.ItemType}).");
                 // previous method
                 var wieldDifficulty = RollWieldDifficulty(profile.Tier, TreasureWeaponType.MeleeWeapon);
 
@@ -88,7 +134,7 @@ namespace ACE.Server.Factories
                 var weaponSkill = wo.WeaponSkill.ToMeleeWeaponSkill();
 
                 // mutate Damage / WieldDifficulty / Variance
-                var scriptName = GetDamageScript(weaponSkill, roll.WeaponType);
+                string scriptName = GetDamageScript(weaponSkill, roll.WeaponType);
 
                 var mutationFilter = MutationCache.GetMutation(scriptName);
 
@@ -183,6 +229,41 @@ namespace ACE.Server.Factories
 
                     success = MutateTwoHandedWeapon(wo, profile, wieldDifficulty);
                     break;
+
+                case Skill.Axe:
+
+                    success = MutateAxe(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.Dagger:
+
+                    success = MutateDagger(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.Mace:
+
+                    success = MutateMace(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.Spear:
+
+                    success = MutateSpear(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.Sword:
+
+                    success = MutateSword(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.Staff:
+
+                    success = MutateStaff(wo, profile, wieldDifficulty);
+                    break;
+
+                case Skill.UnarmedCombat:
+
+                    success = MutateUnarmed(wo, profile, wieldDifficulty);
+                    break;
             }
 
             if (!success)
@@ -208,7 +289,10 @@ namespace ACE.Server.Factories
 
         private static string GetDamageScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance." + weaponSkill.GetScriptName_Combined() + "_" + weaponType.GetScriptName() + ".txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset < Ruleset.MasterOfArms)
+                return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance.PreMoA." + weaponType.GetScriptName() + ".txt";
+            else
+                return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance." + weaponSkill.GetScriptName_Combined() + "_" + weaponType.GetScriptName() + ".txt";
         }
 
         private static string GetOffenseDefenseScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
@@ -557,6 +641,128 @@ namespace ACE.Server.Factories
             return true;
         }
 
+        //ClassicToDo: The following data has been copy pasted from heavy weapons, adjust to proper values. But do we even have to? This is what is referred to as the "Old Method" and is setup as a fallback, is it even used?
+        private static bool MutateAxe(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Axe)
+            {
+                wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Axe);
+                wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Axe);
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 18);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 22);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateDagger(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Dagger)
+            {
+                if (!wo.W_AttackType.IsMultiStrike())
+                {
+                    wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Dagger);
+                    wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Dagger);
+                }
+                else
+                {
+                    wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.DaggerMulti);
+                    wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.DaggerMulti);
+                }
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 20);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 20);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateMace(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Mace)
+            {
+                wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Mace);
+                wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Mace);
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 22);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 18);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateSpear(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Spear)
+            {
+                wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Spear);
+                wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Spear);
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 15);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 25);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateStaff(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Staff)
+            {
+                wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Staff);
+                wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Staff);
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 25);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 15);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateSword(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Sword)
+            {
+                if (!wo.W_AttackType.IsMultiStrike())
+                {
+                    wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Sword);
+                    wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Sword);
+                }
+                else
+                {
+                    wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.SwordMulti);
+                    wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.SwordMulti);
+                }
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 20);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 20);
+            }
+            else
+                return false;
+            return true;
+        }
+
+        private static bool MutateUnarmed(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
+        {
+            if (wo.W_WeaponType == WeaponType.Unarmed)
+            {
+                wo.Damage = GetMeleeMaxDamage(wo.WeaponSkill, wieldDifficulty, LootWeaponType.Unarmed);
+                wo.DamageVariance = GetVariance(wo.WeaponSkill, LootWeaponType.Unarmed);
+
+                wo.WeaponDefense = GetMaxDamageMod(profile.Tier, 20);
+                wo.WeaponOffense = GetMaxDamageMod(profile.Tier, 20);
+            }
+            else
+                return false;
+            return true;
+        }
+
         // The percentages for variances need to be fixed
         /// <summary>
         /// Gets Melee Weapon Variance
@@ -834,6 +1040,125 @@ namespace ACE.Server.Factories
                     else
                         variance = .55;
                     break;
+                //ClassicToDo: The following data has been copy pasted from heavy weapons, adjust to proper values. But do we even have to? This is what is referred to as the "Old Method" and is setup as a fallback, is it even used?
+                case Skill.Axe:
+                    if (chance < 10)
+                        variance = .90;
+                    else if (chance < 30)
+                        variance = .93;
+                    else if (chance < 70)
+                        variance = .95;
+                    else if (chance < 90)
+                        variance = .97;
+                    else
+                        variance = .99;
+                    break;
+                case Skill.Dagger:
+                    switch (type)
+                    {
+                        case LootWeaponType.Dagger:
+                            if (chance < 10)
+                                variance = .47;
+                            else if (chance < 30)
+                                variance = .50;
+                            else if (chance < 70)
+                                variance = .53;
+                            else if (chance < 90)
+                                variance = .57;
+                            else
+                                variance = .62;
+                            break;
+                        case LootWeaponType.DaggerMulti:
+                            if (chance < 10)
+                                variance = .40;
+                            else if (chance < 30)
+                                variance = .43;
+                            else if (chance < 70)
+                                variance = .48;
+                            else if (chance < 90)
+                                variance = .53;
+                            else
+                                variance = .58;
+                            break;
+                    }
+                    break;
+                case Skill.Mace:
+                    if (chance < 10)
+                        variance = .30;
+                    else if (chance < 30)
+                        variance = .33;
+                    else if (chance < 70)
+                        variance = .37;
+                    else if (chance < 90)
+                        variance = .42;
+                    else
+                        variance = .46;
+                    break;
+                case Skill.Spear:
+                    if (chance < 10)
+                        variance = .59;
+                    else if (chance < 30)
+                        variance = .63;
+                    else if (chance < 70)
+                        variance = .68;
+                    else if (chance < 90)
+                        variance = .72;
+                    else
+                        variance = .75;
+                    break;
+                case Skill.Staff:
+                    if (chance < 10)
+                        variance = .38;
+                    else if (chance < 30)
+                        variance = .42;
+                    else if (chance < 70)
+                        variance = .45;
+                    else if (chance < 90)
+                        variance = .50;
+                    else
+                        variance = .52;
+                    break;
+                case Skill.Sword:
+                    switch (type)
+                    {
+                        case LootWeaponType.Sword:
+                            if (chance < 10)
+                                variance = .47;
+                            else if (chance < 30)
+                                variance = .50;
+                            else if (chance < 70)
+                                variance = .53;
+                            else if (chance < 90)
+                                variance = .57;
+                            else
+                                variance = .62;
+                            break;
+                        case LootWeaponType.SwordMulti:
+                            if (chance < 10)
+                                variance = .40;
+                            else if (chance < 30)
+                                variance = .43;
+                            else if (chance < 70)
+                                variance = .48;
+                            else if (chance < 90)
+                                variance = .53;
+                            else
+                                variance = .60;
+                            break;
+                    }
+                    break;
+                case Skill.UnarmedCombat:
+                    if (chance < 10)
+                        variance = .44;
+                    else if (chance < 30)
+                        variance = .48;
+                    else if (chance < 70)
+                        variance = .53;
+                    else if (chance < 90)
+                        variance = .58;
+                    else
+                        variance = .60;
+                    break;
                 default:
                     return 0;
             }
@@ -902,6 +1227,33 @@ namespace ACE.Server.Factories
                     break;
                 case Skill.TwoHandedCombat:
                     damageTable = LootTables.TwoHandedWeaponDamageTable[(int)baseWeapon, GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Axe:
+                    damageTable = LootTables.AxeDamageTable[GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Dagger:
+                    if (baseWeapon == LootWeaponType.DaggerMulti)
+                        damageTable = LootTables.DaggerDamageTable[1, GetMeleeWieldToIndex(wieldDiff)];
+                    else
+                        damageTable = LootTables.DaggerDamageTable[0, GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Mace:
+                    damageTable = LootTables.MaceDamageTable[GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Staff:
+                    damageTable = LootTables.StaffDamageTable[GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Spear:
+                    damageTable = LootTables.SpearDamageTable[GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.Sword:
+                    if (baseWeapon == LootWeaponType.SwordMulti)
+                        damageTable = LootTables.SwordDamageTable[1, GetMeleeWieldToIndex(wieldDiff)];
+                    else
+                        damageTable = LootTables.SwordDamageTable[0, GetMeleeWieldToIndex(wieldDiff)];
+                    break;
+                case Skill.UnarmedCombat:
+                    damageTable = LootTables.UnarmedDamageTable[GetMeleeWieldToIndex(wieldDiff)];
                     break;
                 default:
                     return 0;

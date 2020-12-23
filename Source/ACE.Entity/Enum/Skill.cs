@@ -103,6 +103,43 @@ namespace ACE.Entity.Enum
 
     public static class SkillHelper
     {
+        static SkillHelper()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset < Common.Ruleset.MasterOfArms)
+            {
+                ValidSkills.Add(Skill.Axe);
+                ValidSkills.Add(Skill.Bow);
+                ValidSkills.Add(Skill.Crossbow);
+                ValidSkills.Add(Skill.Dagger);
+                ValidSkills.Add(Skill.Mace);
+                ValidSkills.Add(Skill.Spear);
+                ValidSkills.Add(Skill.Staff);
+                ValidSkills.Add(Skill.Sword);
+                ValidSkills.Add(Skill.ThrownWeapon);
+                ValidSkills.Add(Skill.UnarmedCombat);
+                ValidSkills.Add(Skill.Salvaging);
+            }
+            else
+            {
+                ValidSkills.Add(Skill.TwoHandedCombat);
+                ValidSkills.Add(Skill.HeavyWeapons);
+                ValidSkills.Add(Skill.LightWeapons);
+                ValidSkills.Add(Skill.FinesseWeapons);
+                ValidSkills.Add(Skill.MissileWeapons);
+                ValidSkills.Add(Skill.Shield);
+                ValidSkills.Add(Skill.DualWield);
+                ValidSkills.Add(Skill.Recklessness);
+                ValidSkills.Add(Skill.SneakAttack);
+                ValidSkills.Add(Skill.DirtyFighting);
+             }
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.FromDarknessLight)
+                ValidSkills.Add(Skill.VoidMagic);
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.BalanceOfPower)
+                ValidSkills.Add(Skill.Summoning);
+        }
+
         public static HashSet<Skill> ValidSkills = new HashSet<Skill>
         {
             Skill.MeleeDefense,
@@ -130,19 +167,6 @@ namespace ACE.Entity.Enum
             Skill.Fletching,
             Skill.Alchemy,
             Skill.Cooking,
-            Skill.Salvaging,
-            Skill.TwoHandedCombat,
-            Skill.VoidMagic,
-            Skill.HeavyWeapons,
-            Skill.LightWeapons,
-            Skill.FinesseWeapons,
-            Skill.MissileWeapons,
-            Skill.Shield,
-            Skill.DualWield,
-            Skill.Recklessness,
-            Skill.SneakAttack,
-            Skill.DirtyFighting,
-            Skill.Summoning
         };
 
         public static HashSet<Skill> AttackSkills = new HashSet<Skill>

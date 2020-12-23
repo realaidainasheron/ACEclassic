@@ -333,7 +333,7 @@ namespace ACE.Server.Factories
         private static int GetElementalMissileWeapon()
         {
             // Determine missile weapon type: 0 - Bow, 1 - Crossbows, 2 - Atlatl, 3 - Slingshot, 4 - Compound Bow, 5 - Compound Crossbow
-            int missileType = ThreadSafeRandom.Next(0, 5);
+            int missileType = ThreadSafeRandom.Next(0, ThreadSafeRandom.Next(0, LootTables.ElementalMissileWeaponsMatrix.Length - 1));
 
             // Determine element type: 0 - Slashing, 1 - Piercing, 2 - Blunt, 3 - Frost, 4 - Fire, 5 - Acid, 6 - Electric
             int element = ThreadSafeRandom.Next(0, 6);
@@ -348,14 +348,8 @@ namespace ACE.Server.Factories
         private static int GetNonElementalMissileWeapon()
         {
             // Determine missile weapon type: 0 - Bow, 1 - Crossbows, 2 - Atlatl
-            int missileType = ThreadSafeRandom.Next(0, 2);
-            var subType = missileType switch
-            {
-                0 => ThreadSafeRandom.Next(0, 6),
-                1 => ThreadSafeRandom.Next(0, 2),
-                2 => ThreadSafeRandom.Next(0, 1),
-                _ => 0, // Default/Else
-            };
+            int missileType = ThreadSafeRandom.Next(0, LootTables.NonElementalMissileWeaponsMatrix.Length - 1);
+            int subType = ThreadSafeRandom.Next(0, LootTables.NonElementalMissileWeaponsMatrix[missileType].Length - 1);
             return LootTables.NonElementalMissileWeaponsMatrix[missileType][subType];
         }
     }

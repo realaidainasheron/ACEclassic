@@ -163,6 +163,102 @@ namespace ACE.Server.Factories.Tables.Wcids
             T7_Chances,
             T8_Chances
         };
+        static CasterWcids()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T3_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.orb,                    0.18f ),
+                    ( WeenieClassName.sceptre,                0.18f ),
+                    ( WeenieClassName.staff,                  0.18f ),
+                    ( WeenieClassName.wand,                   0.18f ),
+                    ( WeenieClassName.wandslashing,           0.04f ),
+                    ( WeenieClassName.wandpiercing,           0.04f ),
+                    ( WeenieClassName.wandblunt,              0.04f ),
+                    ( WeenieClassName.wandacid,               0.04f ),
+                    ( WeenieClassName.wandfire,               0.04f ),
+                    ( WeenieClassName.wandfrost,              0.04f ),
+                    ( WeenieClassName.wandelectric,           0.04f ),
+                };
+
+                T4_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.orb,                    0.145f ),
+                    ( WeenieClassName.sceptre,                0.145f ),
+                    ( WeenieClassName.staff,                  0.145f ),
+                    ( WeenieClassName.wand,                   0.145f ),
+                    ( WeenieClassName.wandslashing,           0.06f ),
+                    ( WeenieClassName.wandpiercing,           0.06f ),
+                    ( WeenieClassName.wandblunt,              0.06f ),
+                    ( WeenieClassName.wandacid,               0.06f ),
+                    ( WeenieClassName.wandfire,               0.06f ),
+                    ( WeenieClassName.wandfrost,              0.06f ),
+                    ( WeenieClassName.wandelectric,           0.06f ),
+                };
+
+                T5_T6_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.orb,                    0.09f ),
+                    ( WeenieClassName.sceptre,                0.09f ),
+                    ( WeenieClassName.staff,                  0.09f ),
+                    ( WeenieClassName.wand,                   0.10f ),
+
+                    ( WeenieClassName.wandslashing,           0.09f ),
+                    ( WeenieClassName.wandpiercing,           0.09f ),
+                    ( WeenieClassName.wandblunt,              0.09f ),
+                    ( WeenieClassName.wandacid,               0.09f ),
+                    ( WeenieClassName.wandfire,               0.09f ),
+                    ( WeenieClassName.wandfrost,              0.09f ),
+                    ( WeenieClassName.wandelectric,           0.09f ),
+                };
+
+                T7_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.orb,                    0.07f ),
+                    ( WeenieClassName.sceptre,                0.07f ),
+                    ( WeenieClassName.staff,                  0.08f ),
+                    ( WeenieClassName.wand,                   0.08f ),
+
+                    ( WeenieClassName.wandslashing,           0.10f ),
+                    ( WeenieClassName.wandpiercing,           0.10f ),
+                    ( WeenieClassName.wandblunt,              0.10f ),
+                    ( WeenieClassName.wandacid,               0.10f ),
+                    ( WeenieClassName.wandfire,               0.10f ),
+                    ( WeenieClassName.wandfrost,              0.10f ),
+                    ( WeenieClassName.wandelectric,           0.10f ),
+                };
+
+                T8_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.orb,                    0.05f ),
+                    ( WeenieClassName.sceptre,                0.06f ),
+                    ( WeenieClassName.staff,                  0.06f ),
+                    ( WeenieClassName.wand,                   0.06f ),
+
+                    ( WeenieClassName.wandslashing,           0.11f ),
+                    ( WeenieClassName.wandpiercing,           0.11f ),
+                    ( WeenieClassName.wandblunt,              0.11f ),
+                    ( WeenieClassName.wandacid,               0.11f ),
+                    ( WeenieClassName.wandfire,               0.11f ),
+                    ( WeenieClassName.wandfrost,              0.11f ),
+                    ( WeenieClassName.wandelectric,           0.11f ),
+                };
+                
+                // we have to refresh this list or it will still contain the previous values.
+                casterTiers = new List<ChanceTable<WeenieClassName>>()
+		        {
+		            T1_T2_Chances,
+		            T1_T2_Chances,
+		            T3_Chances,
+		            T4_Chances,
+		            T5_T6_Chances,
+		            T5_T6_Chances,
+		            T7_Chances,
+		            T8_Chances
+		        };
+            }
+        }
 
         public static WeenieClassName Roll(int tier)
         {

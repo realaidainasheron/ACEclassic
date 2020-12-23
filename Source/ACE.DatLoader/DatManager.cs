@@ -35,8 +35,16 @@ namespace ACE.DatLoader
                     CellDat = new CellDatDatabase(datFile, keepOpen);
                     count = CellDat.AllFiles.Count;
                     log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {CellDat.Iteration}");
-                    if (CellDat.Iteration != ITERATION_CELL)
-                        log.Warn($"{datFile} iteration does not match expected end-of-retail version of {ITERATION_CELL}.");
+                    if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                    {
+                        if (CellDat.Iteration != ITERATION_CELL)
+                            log.Warn($"{datFile} iteration does not match expected end-of-retail version of {ITERATION_CELL}.");
+                    }
+                    else
+                    {
+                        if (CellDat.Iteration != 4)
+                            log.Warn($"{datFile} iteration does not match expected Infiltration version of 4.");
+                    }
                 }
                 catch (FileNotFoundException ex)
                 {
@@ -49,7 +57,8 @@ namespace ACE.DatLoader
             {
                 datFile = Path.Combine(datDir, "client_portal.dat");
                 PortalDat = new PortalDatDatabase(datFile, keepOpen);
-                PortalDat.SkillTable.AddRetiredSkills();
+                if(Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.MasterOfArms)
+                    PortalDat.SkillTable.AddRetiredSkills();
                 count = PortalDat.AllFiles.Count;
                 log.Info($"Successfully opened {datFile} file, containing {count} records, iteration {PortalDat.Iteration}");
                 if (PortalDat.Iteration != ITERATION_PORTAL)

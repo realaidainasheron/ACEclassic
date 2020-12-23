@@ -63,6 +63,48 @@ namespace ACE.Server.Factories.Tables.Wcids
             T6_T8_Chances,
             T6_T8_Chances,
         };
+        static AtlatlWcids()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T5_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.atlatl,                     0.25f ),
+                    ( WeenieClassName.atlatlroyal,                0.26f ),
+                    ( WeenieClassName.atlatlslashing,             0.07f ),
+                    ( WeenieClassName.atlatlpiercing,             0.07f ),
+                    ( WeenieClassName.atlatlblunt,                0.07f ),
+                    ( WeenieClassName.atlatlacid,                 0.07f ),
+                    ( WeenieClassName.atlatlfire,                 0.07f ),
+                    ( WeenieClassName.atlatlfrost,                0.07f ),
+                    ( WeenieClassName.atlatlelectric,             0.07f ),
+                };
+
+                T6_T8_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.atlatlslashing,             0.15f ),
+                    ( WeenieClassName.atlatlpiercing,             0.15f ),
+                    ( WeenieClassName.atlatlblunt,                0.14f ),
+                    ( WeenieClassName.atlatlacid,                 0.14f ),
+                    ( WeenieClassName.atlatlfire,                 0.14f ),
+                    ( WeenieClassName.atlatlfrost,                0.14f ),
+                    ( WeenieClassName.atlatlelectric,             0.14f ),
+                };
+                
+                // we have to refresh this list or it will still contain the previous values.
+                atlatlTiers = new List<ChanceTable<WeenieClassName>>()
+		        {
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T5_Chances,
+		            T6_T8_Chances,
+		            T6_T8_Chances,
+		            T6_T8_Chances,
+		        };
+            }
+        }
 
         public static WeenieClassName Roll(int tier)
         {

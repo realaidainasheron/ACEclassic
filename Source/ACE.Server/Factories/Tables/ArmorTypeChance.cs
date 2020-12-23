@@ -120,6 +120,102 @@ namespace ACE.Server.Factories.Tables
             T8_Chances
         };
 
+        static ArmorTypeChance()
+        {
+            T1_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.34f ),
+                ( TreasureArmorType.StuddedLeather, 0.33f ),
+                ( TreasureArmorType.Chainmail,      0.33f ),
+            };
+
+            T2_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.25f ),
+                ( TreasureArmorType.StuddedLeather, 0.25f ),
+                ( TreasureArmorType.Chainmail,      0.25f ),
+                ( TreasureArmorType.Platemail,      0.25f ),
+            };
+
+            T3_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.22f ),
+                ( TreasureArmorType.StuddedLeather, 0.22f ),
+                ( TreasureArmorType.Chainmail,      0.22f ),
+                ( TreasureArmorType.Platemail,      0.22f ),
+                ( TreasureArmorType.HeritageLow,    0.06f ),
+                ( TreasureArmorType.Covenant,       0.06f ),
+            };
+
+            T4_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.16f ),
+                ( TreasureArmorType.StuddedLeather, 0.16f ),
+                ( TreasureArmorType.Chainmail,      0.17f ),
+                ( TreasureArmorType.Platemail,      0.17f ),
+                ( TreasureArmorType.HeritageLow,    0.17f ),
+                ( TreasureArmorType.Covenant,       0.17f ),
+            };
+
+            T5_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.15f ),
+                ( TreasureArmorType.StuddedLeather, 0.16f ),
+                ( TreasureArmorType.Chainmail,      0.16f ),
+                ( TreasureArmorType.Platemail,      0.16f ),
+                ( TreasureArmorType.HeritageLow,    0.16f ),
+                ( TreasureArmorType.Covenant,       0.16f ),
+                ( TreasureArmorType.HeritageHigh,   0.05f ),
+            };
+
+            T6_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.15f ),
+                ( TreasureArmorType.StuddedLeather, 0.15f ),
+                ( TreasureArmorType.Chainmail,      0.15f ),
+                ( TreasureArmorType.Platemail,      0.15f ),
+                ( TreasureArmorType.HeritageLow,    0.15f ),
+                ( TreasureArmorType.Covenant,       0.15f ),
+                ( TreasureArmorType.HeritageHigh,   0.10f ),
+            };
+
+            // added, from mag-loot logs
+            T7_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.15f ),
+                ( TreasureArmorType.StuddedLeather, 0.15f ),
+                ( TreasureArmorType.Chainmail,      0.15f ),
+                ( TreasureArmorType.Platemail,      0.15f ),
+                ( TreasureArmorType.HeritageLow,    0.15f ),
+                ( TreasureArmorType.Covenant,       0.15f ),
+                ( TreasureArmorType.HeritageHigh,   0.10f ),
+            };
+
+            T8_Chances = new ChanceTable<TreasureArmorType>()
+            {
+                ( TreasureArmorType.Leather,        0.15f ),
+                ( TreasureArmorType.StuddedLeather, 0.15f ),
+                ( TreasureArmorType.Chainmail,      0.15f ),
+                ( TreasureArmorType.Platemail,      0.15f ),
+                ( TreasureArmorType.HeritageLow,    0.15f ),
+                ( TreasureArmorType.Covenant,       0.15f ),
+                ( TreasureArmorType.HeritageHigh,   0.10f ),
+            };
+            
+            // we have to refresh this list or it will still contain the previous values.
+            armorTiers = new List<ChanceTable<TreasureArmorType>>()
+	        {
+	            T1_Chances,
+	            T2_Chances,
+	            T3_Chances,
+	            T4_Chances,
+	            T5_Chances,
+	            T6_Chances,
+	            T7_Chances,
+	            T8_Chances
+	        };
+        }
+
         public static TreasureArmorType Roll(int tier)
         {
             return armorTiers[tier - 1].Roll();

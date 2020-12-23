@@ -65,6 +65,50 @@ namespace ACE.Server.Factories.Tables.Wcids
             T6_T8_Chances,
             T6_T8_Chances,
         };
+        static BowWcids_Gharundim()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T5_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.bowshort,                     0.3f ),
+                    ( WeenieClassName.yag,                          0.105f ),
+                    ( WeenieClassName.nayin,                        0.105f ),
+
+                    ( WeenieClassName.bowslashing,                  0.07f ),
+                    ( WeenieClassName.bowpiercing,                  0.07f ),
+                    ( WeenieClassName.bowblunt,                     0.07f ),
+                    ( WeenieClassName.bowacid,                      0.07f ),
+                    ( WeenieClassName.bowfire,                      0.07f ),
+                    ( WeenieClassName.bowfrost,                     0.07f ),
+                    ( WeenieClassName.bowelectric,                  0.07f ),
+                };
+
+                T6_T8_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.bowslashing,                  0.15f ),
+                    ( WeenieClassName.bowpiercing,                  0.15f ),
+                    ( WeenieClassName.bowblunt,                     0.14f ),
+                    ( WeenieClassName.bowacid,                      0.14f ),
+                    ( WeenieClassName.bowfire,                      0.14f ),
+                    ( WeenieClassName.bowfrost,                     0.14f ),
+                    ( WeenieClassName.bowelectric,                  0.14f ),
+                };
+                
+                // we have to refresh this list or it will still contain the previous values.
+                bowTiers = new List<ChanceTable<WeenieClassName>>()
+		        {
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T1_T4_Chances,
+		            T5_Chances,
+		            T6_T8_Chances,
+		            T6_T8_Chances,
+		            T6_T8_Chances,
+		        };
+            }
+        }
 
         public static WeenieClassName Roll(int tier)
         {

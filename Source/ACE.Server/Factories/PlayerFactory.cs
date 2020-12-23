@@ -199,21 +199,27 @@ namespace ACE.Server.Factories
                     player.UntrainSkill((Skill)i, 0);
             }
 
-            var isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
+            bool isDualWieldTrainedOrSpecialized = false;
+            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.MasterOfArms)
+            {
+                isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
 
-            // Set Heritage based Melee and Ranged Masteries
-            GetMasteries(player.HeritageGroup, out WeaponType meleeMastery, out WeaponType rangedMastery);
+                // Set Heritage based Melee and Ranged Masteries
+                GetMasteries(player.HeritageGroup, out WeaponType meleeMastery, out WeaponType rangedMastery);
 
-            player.SetProperty(PropertyInt.MeleeMastery, (int)meleeMastery);
-            player.SetProperty(PropertyInt.RangedMastery, (int)rangedMastery);
+                player.SetProperty(PropertyInt.MeleeMastery, (int)meleeMastery);
+                player.SetProperty(PropertyInt.RangedMastery, (int)rangedMastery);
+            }
 
             // Set innate augs
-            SetInnateAugmentations(player);
+            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.MasterOfDesign)
+                SetInnateAugmentations(player);
 
             // grant starter items based on skills
             var starterGearConfig = StarterGearFactory.GetStarterGearConfiguration();
             var grantedWeenies = new List<uint>();
 
+            Container container = null;
             foreach (var skillGear in starterGearConfig.Skills)
             {
                 var charSkill = player.Skills[(Skill)skillGear.SkillId];
@@ -234,6 +240,9 @@ namespace ACE.Server.Factories
                         var loot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
                         if (loot != null)
                         {
+                            if (container == null && loot.WeenieType == WeenieType.Container)
+                                container = (Container)loot;
+
                             if (loot.StackSize.HasValue && loot.MaxStackSize.HasValue)
                                 loot.SetStackSize((item.StackSize <= loot.MaxStackSize) ? item.StackSize : loot.MaxStackSize);
                         }
@@ -242,8 +251,20 @@ namespace ACE.Server.Factories
                             player.TryAddToInventory(CreateIOU(item.WeenieId));
                         }
 
-                        if (loot != null && player.TryAddToInventory(loot))
-                            grantedWeenies.Add(item.WeenieId);
+                        if (loot != null)
+                        {
+                            bool added = false;
+                            if (container != null && loot.WeenieType == WeenieType.SpellComponent) // try to stash spell components on a secondary pack
+                                if (container.TryAddToInventory(loot))
+                                    added = true;
+
+                            if(!added)
+                                if (player.TryAddToInventory(loot))
+                                    added = true;
+
+                            if (added)
+                                grantedWeenies.Add(item.WeenieId);
+                        }
 
                         if (isDualWieldTrainedOrSpecialized && loot != null)
                         {
@@ -267,6 +288,9 @@ namespace ACE.Server.Factories
                     {
                         foreach (var item in heritageLoot.Gear)
                         {
+                            if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && item.SpecializedOnly == true)
+                                continue;
+
                             if (grantedWeenies.Contains(item.WeenieId))
                             {
                                 var existingItem = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == item.WeenieId);
@@ -336,40 +360,62 @@ namespace ACE.Server.Factories
 
             var starterArea = DatManager.PortalDat.CharGen.StarterAreas[(int)startArea];
 
-            player.Location = new Position(starterArea.Locations[0].ObjCellID,
-                starterArea.Locations[0].Frame.Origin.X, starterArea.Locations[0].Frame.Origin.Y, starterArea.Locations[0].Frame.Origin.Z,
-                starterArea.Locations[0].Frame.Orientation.X, starterArea.Locations[0].Frame.Orientation.Y, starterArea.Locations[0].Frame.Orientation.Z, starterArea.Locations[0].Frame.Orientation.W);
-
             var instantiation = new Position(0xA9B40019, 84, 7.1f, 94, 0, 0, -0.0784591f, 0.996917f); // ultimate fallback.
-            var spellFreeRide = new ACE.Database.Models.World.Spell();
-            switch (starterArea.Name)
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset >= Common.Ruleset.ThroneOfDestiny)
             {
-                case "OlthoiLair": //todo: check this when olthoi play is allowed in ace
-                    spellFreeRide = null; // no training area for olthoi, so they start and fall back to same place.
-                    instantiation = new Position(player.Location);
-                    break;
-                case "Shoushi":
-                    spellFreeRide = DatabaseManager.World.GetCachedSpell(3813); // Free Ride to Shoushi
-                    break;
-                case "Yaraq":
-                    spellFreeRide = DatabaseManager.World.GetCachedSpell(3814); // Free Ride to Yaraq
-                    break;
-                case "Sanamar":
-                    spellFreeRide = DatabaseManager.World.GetCachedSpell(3535); // Free Ride to Sanamar
-                    break;
-                case "Holtburg":
-                default:
-                    spellFreeRide = DatabaseManager.World.GetCachedSpell(3815); // Free Ride to Holtburg
-                    break;
+                player.Location = new Position(starterArea.Locations[0].ObjCellID,
+                    starterArea.Locations[0].Frame.Origin.X, starterArea.Locations[0].Frame.Origin.Y, starterArea.Locations[0].Frame.Origin.Z,
+                    starterArea.Locations[0].Frame.Orientation.X, starterArea.Locations[0].Frame.Orientation.Y, starterArea.Locations[0].Frame.Orientation.Z, starterArea.Locations[0].Frame.Orientation.W);
+
+                var spellFreeRide = new ACE.Database.Models.World.Spell();
+                switch (starterArea.Name)
+                {
+                    case "OlthoiLair": //todo: check this when olthoi play is allowed in ace
+                        spellFreeRide = null; // no training area for olthoi, so they start and fall back to same place.
+                        instantiation = new Position(player.Location);
+                        break;
+                    case "Shoushi":
+                        spellFreeRide = DatabaseManager.World.GetCachedSpell(3813); // Free Ride to Shoushi
+                        break;
+                    case "Yaraq":
+                        spellFreeRide = DatabaseManager.World.GetCachedSpell(3814); // Free Ride to Yaraq
+                        break;
+                    case "Sanamar":
+                        spellFreeRide = DatabaseManager.World.GetCachedSpell(3535); // Free Ride to Sanamar
+                        break;
+                    case "Holtburg":
+                    default:
+                        spellFreeRide = DatabaseManager.World.GetCachedSpell(3815); // Free Ride to Holtburg
+                        break;
+                }
+                if (spellFreeRide != null && spellFreeRide.Name != "")
+                    instantiation = new Position(spellFreeRide.PositionObjCellId.Value, spellFreeRide.PositionOriginX.Value, spellFreeRide.PositionOriginY.Value, spellFreeRide.PositionOriginZ.Value, spellFreeRide.PositionAnglesX.Value, spellFreeRide.PositionAnglesY.Value, spellFreeRide.PositionAnglesZ.Value, spellFreeRide.PositionAnglesW.Value);
+
+                player.SetProperty(PropertyBool.RecallsDisabled, true);
             }
-            if (spellFreeRide != null && spellFreeRide.Name != "")
-                instantiation = new Position(spellFreeRide.PositionObjCellId.Value, spellFreeRide.PositionOriginX.Value, spellFreeRide.PositionOriginY.Value, spellFreeRide.PositionOriginZ.Value, spellFreeRide.PositionAnglesX.Value, spellFreeRide.PositionAnglesY.Value, spellFreeRide.PositionAnglesZ.Value, spellFreeRide.PositionAnglesW.Value);
+            else
+            {
+                switch (starterArea.Name)
+                {
+                    case "Shoushi":
+                        player.Location = new Position(0xDE51001D, 87.350517f, 114.857246f, 16.004999f, 0, 0, 0.537665f, 0.843159f);
+                        break;
+                    case "Yaraq":
+                        player.Location = new Position(0x7D680012, 56.949219f, 29.860384f, 14.981730f, 0, 0, -0.879578f, 0.475755f);
+                        break;
+                    case "Holtburg":
+                    default: //redirect Sanamar to Holtburg as Sanamar is post-ToD.
+                        player.Location = new Position(0xA9B00015, 53.780079f, 105.814995f, 64.005005f, 0, 0, -0.359575f, -0.933116f);
+                        break;
+                }
+
+                instantiation = new Position(player.Location);
+            }
 
             player.Instantiation = new Position(instantiation);
 
             player.Sanctuary = new Position(player.Location);
-
-            player.SetProperty(PropertyBool.RecallsDisabled, true);
 
             if (PropertyManager.GetBool("pk_server").Item)
                 player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.PK);

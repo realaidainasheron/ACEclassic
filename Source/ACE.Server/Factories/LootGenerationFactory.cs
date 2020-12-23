@@ -233,6 +233,9 @@ namespace ACE.Server.Factories
 
         private static WorldObject TryRollMundaneAddon(TreasureDeath profile)
         {
+            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                return null;
+
             // coalesced mana only dropped in tiers 1-4
             if (profile.Tier <= 4)
                 return TryRollCoalescedMana(profile);

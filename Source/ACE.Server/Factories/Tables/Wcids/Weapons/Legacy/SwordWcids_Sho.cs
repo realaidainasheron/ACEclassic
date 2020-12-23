@@ -8,6 +8,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class SwordWcids_Sho
     {
+        // ClassicToDo: should scimitars be only Gharundim?
         private static ChanceTable<WeenieClassName> T1_T2_Chances = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.swordrapier,      0.10f ),

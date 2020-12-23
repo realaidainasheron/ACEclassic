@@ -2806,26 +2806,30 @@ namespace ACE.Server.Command.Handlers
         [CommandHandler("fast", AccessLevel.Developer, CommandHandlerFlag.RequiresWorld)]
         public static void HandleFast(Session session, params string[] parameters)
         {
-            var spell = new Spell(SpellId.QuicknessSelf8);
+            var EoR = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+
+            var spell = new Spell(EoR ? SpellId.QuicknessSelf8 : SpellId.QuicknessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
 
-            spell = new Spell(SpellId.SprintSelf8);
+            spell = new Spell(EoR ? SpellId.SprintSelf8 : SpellId.SprintSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
 
-            spell = new Spell(SpellId.StrengthSelf8);
+            spell = new Spell(EoR ? SpellId.StrengthSelf8 : SpellId.StrengthSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
         }
 
         [CommandHandler("slow", AccessLevel.Developer, CommandHandlerFlag.RequiresWorld)]
         public static void HandleSlow(Session session, params string[] parameters)
         {
-            var spell = new Spell(SpellId.SlownessSelf8);
+            var EoR = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+
+            var spell = new Spell(EoR ? SpellId.SlownessSelf8 : SpellId.SlownessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
 
-            spell = new Spell(SpellId.LeadenFeetSelf8);
+            spell = new Spell(EoR ? SpellId.LeadenFeetSelf8 : SpellId.LeadenFeetSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
 
-            spell = new Spell(SpellId.WeaknessSelf8);
+            spell = new Spell(EoR ? SpellId.WeaknessSelf8 : SpellId.WeaknessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, spell);
         }
 

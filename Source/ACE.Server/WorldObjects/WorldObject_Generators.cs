@@ -124,6 +124,8 @@ namespace ACE.Server.WorldObjects
                 var totalProbability = rng_selected ? GetTotalProbability() : 1.0f;
                 var rng = ThreadSafeRandom.Next(0.0f, totalProbability);
 
+                bool hasRandomProfile = false;
+                int addedEntries = 0;
                 for (var i = 0; i < GeneratorProfiles.Count; i++)
                 {
                     var profile = GeneratorProfiles[i];
@@ -153,10 +155,14 @@ namespace ACE.Server.WorldObjects
 
                     var probability = rng_selected ? GetAdjustedProbability(i) : profile.Biota.Probability;
 
+                    if (probability != -1)
+                        hasRandomProfile = true;
+
                     if (rng < probability || probability == -1)
                     {
                         var numObjects = GetInitObjects(profile);
                         profile.Enqueue(numObjects);
+                        addedEntries++;
 
                         //var rng_str = probability == -1 ? "" : "RNG ";
                         //History.Add($"[{DateTime.UtcNow}] - SelectProfilesInit() - {rng_str}selected slot {i} to spawn, adding {numObjects} objects ({profile.CurrentCreate}/{profile.MaxCreate})");
@@ -175,6 +181,13 @@ namespace ACE.Server.WorldObjects
                             return;
                         }
                     }
+                }
+
+                if (!hasRandomProfile && addedEntries == 0)
+                {
+                    // If all we have are -1 entries and none of them can be selected there's no use looping here.
+                    CurrentlyPoweringUp = false;
+                    return;
                 }
 
                 loopcount++;

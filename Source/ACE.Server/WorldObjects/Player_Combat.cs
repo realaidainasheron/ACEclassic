@@ -66,7 +66,12 @@ namespace ACE.Server.WorldObjects
             var weapon = GetEquippedWeapon();
 
             if (weapon?.WeaponSkill == null)
-                return GetHighestMeleeSkill();
+            {
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                    return GetHighestMeleeSkill();
+                else
+                    return Skill.UnarmedCombat;
+            }
 
             var skill = ConvertToMoASkill(weapon.WeaponSkill);
 
@@ -90,15 +95,43 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public Skill GetHighestMeleeSkill()
         {
-            var light = GetCreatureSkill(Skill.LightWeapons);
-            var heavy = GetCreatureSkill(Skill.HeavyWeapons);
-            var finesse = GetCreatureSkill(Skill.FinesseWeapons);
+            Entity.CreatureSkill maxMelee;
+            if (ConfigManager.Config.Server.WorldRuleset >= Ruleset.MasterOfArms)
+            {
+                var light = GetCreatureSkill(Skill.LightWeapons);
+                var heavy = GetCreatureSkill(Skill.HeavyWeapons);
+                var finesse = GetCreatureSkill(Skill.FinesseWeapons);
 
-            var maxMelee = light;
-            if (heavy.Current > maxMelee.Current)
-                maxMelee = heavy;
-            if (finesse.Current > maxMelee.Current)
-                maxMelee = finesse;
+                maxMelee = light;
+                if (heavy.Current > maxMelee.Current)
+                    maxMelee = heavy;
+                if (finesse.Current > maxMelee.Current)
+                    maxMelee = finesse;
+            }
+            else
+            {
+                var axe = GetCreatureSkill(Skill.Axe);
+                var dagger = GetCreatureSkill(Skill.Dagger);
+                var mace = GetCreatureSkill(Skill.Mace);
+                var spear = GetCreatureSkill(Skill.Spear);
+                var staff = GetCreatureSkill(Skill.Staff);
+                var sword = GetCreatureSkill(Skill.Sword);
+                var unarmed = GetCreatureSkill(Skill.UnarmedCombat);
+
+                maxMelee = axe;
+                if (dagger.Current > maxMelee.Current)
+                    maxMelee = dagger;
+                if (mace.Current > maxMelee.Current)
+                    maxMelee = mace;
+                if (spear.Current > maxMelee.Current)
+                    maxMelee = spear;
+                if (staff.Current > maxMelee.Current)
+                    maxMelee = staff;
+                if (sword.Current > maxMelee.Current)
+                    maxMelee = sword;
+                if (unarmed.Current > maxMelee.Current)
+                    maxMelee = unarmed;
+            }
 
             return maxMelee.Skill;
         }
@@ -388,6 +421,12 @@ namespace ACE.Server.WorldObjects
                 return AccuracyLevel + 0.6f;
             else
                 return 1.0f;
+        }
+        public override int GetUnarmedSkillDamageBonus()
+        {
+            var skill = GetCreatureSkill(Skill.UnarmedCombat).Current;
+
+            return (int)skill / 20;
         }
 
         public float GetPowerAccuracyBar()

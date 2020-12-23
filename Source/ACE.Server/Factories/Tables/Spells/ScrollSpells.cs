@@ -357,6 +357,12 @@ namespace ACE.Server.Factories.Tables
 
         static ScrollSpells()
         {
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                NumSpells = creatureSpells.Count + lifeSpells.Count + itemSpells.Count + warSpells.Count;
+                Table = new SpellId[NumSpells][];
+            }
             // ~0.5ms
             BuildSpells();
         }
@@ -372,7 +378,8 @@ namespace ACE.Server.Factories.Tables
             startIdx += AddSpells(lifeSpells, startIdx);
             startIdx += AddSpells(itemSpells, startIdx);
             startIdx += AddSpells(warSpells, startIdx);
-            startIdx += AddSpells(voidSpells, startIdx);
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
+                startIdx += AddSpells(voidSpells, startIdx);
 
             if (startIdx != NumSpells)
             {
