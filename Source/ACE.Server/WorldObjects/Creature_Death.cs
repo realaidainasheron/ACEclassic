@@ -19,7 +19,7 @@ namespace ACE.Server.WorldObjects
 {
     partial class Creature
     {
-        public TreasureDeath DeathTreasure { get => DeathTreasureType.HasValue ? DatabaseManager.World.GetCachedDeathTreasure(DeathTreasureType.Value) : null; }
+        public TreasureDeath DeathTreasure { get => DeathTreasureType.HasValue ? LootGenerationFactory.GetTweakedDeathTreasureProfile(DeathTreasureType.Value, this) : null; }
 
         private bool onDeathEntered = false;
 

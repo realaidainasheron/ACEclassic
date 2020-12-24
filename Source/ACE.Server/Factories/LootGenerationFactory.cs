@@ -36,6 +36,93 @@ namespace ACE.Server.Factories
             InitClothingColors();
         }
 
+        public static Database.Models.World.TreasureDeath GetTweakedDeathTreasureProfile(uint deathTreasureId, object tweakedFor)
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                Creature creature = tweakedFor as Creature;
+                if (creature != null)
+                {
+                    var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+                    var tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
+
+                    // Let's make the creatures at the top of their tiers drop better loot than their lower leveled kin.
+                    switch (deathTreasure.Tier)
+                    {
+                        case 1:
+                            if(creature.Level >= 15 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                        case 2:
+                            if (creature.Level >= 60 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                        case 3:
+                            if (creature.Level >= 90 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                        case 4:
+                            if (creature.Level >= 110 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                        case 5:
+                            if (creature.Level >= 130 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                        case 6:
+                            if (creature.Level >= 160 && tweakedDeathTreasure.LootQualityMod < 0.2f)
+                                tweakedDeathTreasure.LootQualityMod = 0.2f;
+                            break;
+                    }
+                    return tweakedDeathTreasure;
+                }
+                else if (tweakedFor is Chest)
+                {
+                    // Temporary fix to mismatched high tier containers in low level places, todo: fix it in the data.
+                    switch (deathTreasureId)
+                    {
+                        case 4: deathTreasureId = 6; break;
+                        case 16: deathTreasureId = 18; break;
+                        case 313: deathTreasureId = 453; break;
+                        case 457: deathTreasureId = 459; break;
+                        case 463: deathTreasureId = 465; break;
+                        case 15: deathTreasureId = 18; break;
+                        case 462: deathTreasureId = 465; break;
+                        case 460: deathTreasureId = 462; break;
+
+                        case 3: deathTreasureId = 4; break;
+                        case 13: deathTreasureId = 16; break;
+                        case 454: deathTreasureId = 457; break;
+
+                        case 1: deathTreasureId = 3; break;
+                        case 338: deathTreasureId = 456; break;
+                        case 456: deathTreasureId = 457; break;
+                    }
+
+                    var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+
+                    //some overrides to make chests more interesting, ideally this should be done in the data but as a quick tweak this will do.
+                    var tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
+                    if (tweakedDeathTreasure.LootQualityMod < 0.2f)
+                        tweakedDeathTreasure.LootQualityMod = 0.2f;
+
+                    tweakedDeathTreasure.MundaneItemChance = 0;
+
+                    if (tweakedDeathTreasure.ItemMaxAmount == 1)
+                        tweakedDeathTreasure.ItemMaxAmount = 3;
+                    tweakedDeathTreasure.ItemMaxAmount *= 2;
+
+                    if (tweakedDeathTreasure.MagicItemMaxAmount == 1)
+                        tweakedDeathTreasure.MagicItemMaxAmount = 3;
+                    tweakedDeathTreasure.MagicItemMaxAmount *= 2;
+
+                    return tweakedDeathTreasure;
+                }
+            }
+
+            return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
+        }
+
         public static List<WorldObject> CreateRandomLootObjects(TreasureDeath profile)
         {
             if (!PropertyManager.GetBool("legacy_loot_system").Item)

@@ -3218,9 +3218,29 @@ namespace ACE.Server.Command.Handlers
 
             if (creature != null)
             {
-                var msg = creature.DeathTreasure != null ? $"DeathTreasure - Tier: {creature.DeathTreasure.Tier}" : "doesn't have PropertyDataId.DeathTreasureType";
+                var msg = creature.DeathTreasure != null ? $"DeathTreasure - Tier: {creature.DeathTreasure.Tier} QualityMod: {creature.DeathTreasure.LootQualityMod}" : "doesn't have PropertyDataId.DeathTreasureType";
 
                 CommandHandlerHelper.WriteOutputInfo(session, $"{creature.Name} ({creature.Guid}) {msg}");
+            }
+            else
+            {
+                var chest = CommandHandlerHelper.GetLastAppraisedObject(session) as Chest;
+
+                if (chest != null)
+                {
+                    int counter = 1;
+                    foreach (var generator in chest.GeneratorProfiles)
+                    {
+                        if (generator.RegenLocationType.HasFlag(RegenLocationType.Treasure))
+                        {
+                            var treasure = LootGenerationFactory.GetTweakedDeathTreasureProfile(generator.Biota.WeenieClassId, chest);
+
+                            var msg = treasure != null ? $"Generator {counter} - DeathTreasure - Tier: {treasure.Tier} QualityMod: {treasure.LootQualityMod}" : "doesn't have a valid DeathTreasureType";
+                            counter++;
+                            CommandHandlerHelper.WriteOutputInfo(session, $"{chest.Name} ({chest.Guid}) {msg}");
+                        }
+                    }
+                }
             }
         }
 

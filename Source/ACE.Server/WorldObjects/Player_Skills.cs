@@ -480,63 +480,66 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public void HandleDBUpdates()
         {
-            // dirty fighting
-            var dfSkill = GetCreatureSkill(Skill.DirtyFighting);
-            if (dfSkill.AdvancementClass >= SkillAdvancementClass.Trained)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
             {
-                foreach (var spellID in SpellExtensions.DirtyFightingSpells)
+                // dirty fighting
+                var dfSkill = GetCreatureSkill(Skill.DirtyFighting);
+                if (dfSkill.AdvancementClass >= SkillAdvancementClass.Trained)
                 {
-                    var spell = new Server.Entity.Spell(spellID);
-                    if (spell.NotFound)
+                    foreach (var spellID in SpellExtensions.DirtyFightingSpells)
+                    {
+                        var spell = new Server.Entity.Spell(spellID);
+                        if (spell.NotFound)
+                        {
+                            var actionChain = new ActionChain();
+                            actionChain.AddDelaySeconds(3.0f);
+                            actionChain.AddAction(this, () =>
+                            {
+                                Session.Network.EnqueueSend(new GameMessageSystemChat("To install Dirty Fighting, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
+                            });
+                            actionChain.EnqueueChain();
+                        }
+                        break;  // performance improvement: only check first spell
+                    }
+                }
+
+                // void magic
+                var voidSkill = GetCreatureSkill(Skill.VoidMagic);
+                if (voidSkill.AdvancementClass >= SkillAdvancementClass.Trained)
+                {
+                    foreach (var spellID in SpellExtensions.VoidMagicSpells)
+                    {
+                        var spell = new Server.Entity.Spell(spellID);
+                        if (spell.NotFound)
+                        {
+                            var actionChain = new ActionChain();
+                            actionChain.AddDelaySeconds(3.0f);
+                            actionChain.AddAction(this, () =>
+                            {
+                                Session.Network.EnqueueSend(new GameMessageSystemChat("To install Void Magic, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
+                            });
+                            actionChain.EnqueueChain();
+                        }
+                        break;  // performance improvement: only check first spell (measured 102ms to check 75 uncached void spells)
+                    }
+                }
+
+                // summoning
+                var summoning = GetCreatureSkill(Skill.Summoning);
+                if (summoning.AdvancementClass >= SkillAdvancementClass.Trained)
+                {
+                    uint essenceWCID = 48878;
+                    var weenie = DatabaseManager.World.GetCachedWeenie(essenceWCID);
+                    if (weenie == null)
                     {
                         var actionChain = new ActionChain();
                         actionChain.AddDelaySeconds(3.0f);
                         actionChain.AddAction(this, () =>
                         {
-                            Session.Network.EnqueueSend(new GameMessageSystemChat("To install Dirty Fighting, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
+                            Session.Network.EnqueueSend(new GameMessageSystemChat("To install Summoning, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
                         });
                         actionChain.EnqueueChain();
                     }
-                    break;  // performance improvement: only check first spell
-                }
-            }
-
-            // void magic
-            var voidSkill = GetCreatureSkill(Skill.VoidMagic);
-            if (voidSkill.AdvancementClass >= SkillAdvancementClass.Trained)
-            {
-                foreach (var spellID in SpellExtensions.VoidMagicSpells)
-                {
-                    var spell = new Server.Entity.Spell(spellID);
-                    if (spell.NotFound)
-                    {
-                        var actionChain = new ActionChain();
-                        actionChain.AddDelaySeconds(3.0f);
-                        actionChain.AddAction(this, () =>
-                        {
-                            Session.Network.EnqueueSend(new GameMessageSystemChat("To install Void Magic, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
-                        });
-                        actionChain.EnqueueChain();
-                    }
-                    break;  // performance improvement: only check first spell (measured 102ms to check 75 uncached void spells)
-                }
-            }
-
-            // summoning
-            var summoning = GetCreatureSkill(Skill.Summoning);
-            if (summoning.AdvancementClass >= SkillAdvancementClass.Trained)
-            {
-                uint essenceWCID = 48878;
-                var weenie = DatabaseManager.World.GetCachedWeenie(essenceWCID);
-                if (weenie == null)
-                {
-                    var actionChain = new ActionChain();
-                    actionChain.AddDelaySeconds(3.0f);
-                    actionChain.AddAction(this, () =>
-                    {
-                        Session.Network.EnqueueSend(new GameMessageSystemChat("To install Summoning, please apply the latest patches from https://github.com/ACEmulator/ACE-World-16PY-Patches", ChatMessageType.Broadcast));
-                    });
-                    actionChain.EnqueueChain();
                 }
             }
         }

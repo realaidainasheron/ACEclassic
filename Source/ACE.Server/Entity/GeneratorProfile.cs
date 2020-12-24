@@ -420,13 +420,14 @@ namespace ACE.Server.Entity
             // it's a DeathTreasure or WieldedTreasure table DID
             // there is no overlap of DIDs between these 2 tables,
             // so they can be searched in any order..
-            var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(Biota.WeenieClassId);
+            var deathTreasure = LootGenerationFactory.GetTweakedDeathTreasureProfile(Biota.WeenieClassId, Generator);
+
             if (deathTreasure != null)
             {
-                // TODO: get randomly generated death treasure from LootGenerationFactory
-                //log.Debug($"{_generator.Name}.TreasureGenerator(): found death treasure {Biota.WeenieClassId}");
-                return LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
-            }
+                    // TODO: get randomly generated death treasure from LootGenerationFactory
+                    //log.Debug($"{_generator.Name}.TreasureGenerator(): found death treasure {Biota.WeenieClassId}");
+                    return LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
+                }
             else
             {
                 var wieldedTreasure = DatabaseManager.World.GetCachedWieldedTreasure(Biota.WeenieClassId);
