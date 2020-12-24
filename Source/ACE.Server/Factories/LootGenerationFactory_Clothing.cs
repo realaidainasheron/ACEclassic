@@ -186,37 +186,7 @@ namespace ACE.Server.Factories
 
             var mutationFilter = MutationCache.GetMutation(scriptName);
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
-            {
-                // Instead of having a fixed base AL determined by the scripts we use the AL specified in the weenie itself as the base.
-                bool removeFirstEntry = false;
-
-                switch (roll.ArmorType)
-                {
-                    case TreasureArmorType.Covenant:
-                    case TreasureArmorType.Olthoi:
-                        removeFirstEntry = false;
-                        break;
-                }
-
-                if (!removeFirstEntry)
-                {
-                    if (wo.IsShield)
-                        removeFirstEntry = true;
-                    else
-                    {
-                        var coverage = wo.ClothingPriority ?? 0;
-
-                        if ((coverage & (CoverageMask)CoverageMaskHelper.Extremities) != 0 || (coverage & (CoverageMask)CoverageMaskHelper.Outerwear) != 0)
-                            removeFirstEntry = true;
-                    }
-                }
-
-                if(removeFirstEntry)
-                    mutationFilter.Mutations.RemoveAt(0);
-            }
-
-            return mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
+            return mutationFilter.TryMutate(wo, profile.Tier);
         }
 
         private static string GetMutationScript_ArmorLevel(WorldObject wo, TreasureRoll roll)

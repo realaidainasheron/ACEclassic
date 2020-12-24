@@ -134,14 +134,9 @@ namespace ACE.Server.Factories
                 var weaponSkill = wo.WeaponSkill.ToMeleeWeaponSkill();
 
                 // mutate Damage / WieldDifficulty / Variance
-                string scriptName = GetDamageScript(weaponSkill, roll.WeaponType);
+                var scriptName = GetDamageScript(weaponSkill, roll.WeaponType);
 
                 var mutationFilter = MutationCache.GetMutation(scriptName);
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
-                {
-                    // Instead of having a fixed base damage determined by the scripts we use the damage specified in the weenie itself as the base.
-                    mutationFilter.Mutations.RemoveAt(0);
-                }
 
                 mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
 

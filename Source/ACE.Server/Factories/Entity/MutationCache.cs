@@ -55,6 +55,11 @@ namespace ACE.Server.Factories.Entity
 
             var timer = Stopwatch.StartNew();
 
+            bool isMutation0 = false;
+            bool ignoreMutation0 = false;
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                ignoreMutation0 = true; // Instead of having a fixed base damage/armor per weapon/armor category determined by these scripts we use the damage/armor specified by the weenie itself as the base value.
+
             foreach (var _line in lines)
             {
                 var line = _line;
@@ -66,6 +71,10 @@ namespace ACE.Server.Factories.Entity
 
                 if (line.Contains("Mutation #", StringComparison.OrdinalIgnoreCase))
                 {
+                    if (line.Contains("#0"))
+                        isMutation0 = true;
+                    else
+                        isMutation0 = false;
                     prevMutationLine = mutationLine;
                     mutationLine = line;
                     continue;
@@ -77,7 +86,8 @@ namespace ACE.Server.Factories.Entity
                         log.Error($"MutationCache.BuildMutation({filename}) - {prevMutationLine} total {outcome.EffectLists.Last().Chance}, expected 1.0");
 
                     mutation = new Mutation();
-                    mutationFilter.Mutations.Add(mutation);
+                    if(!ignoreMutation0 || (ignoreMutation0 && !isMutation0))
+                        mutationFilter.Mutations.Add(mutation);
 
                     var tierPieces = line.Split(',');
 
