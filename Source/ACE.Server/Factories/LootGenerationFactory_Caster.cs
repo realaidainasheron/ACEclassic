@@ -228,7 +228,10 @@ namespace ACE.Server.Factories
         {
             var elementalStr = isElemental ? "elemental" : "non_elemental";
 
-            return $"Casters.caster_{elementalStr}.txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                return $"Casters.Infiltration.caster_{elementalStr}.txt";
+            else
+                return $"Casters.caster_{elementalStr}.txt";
         }
 
         private static bool GetMutateCasterData(uint wcid)

@@ -148,7 +148,10 @@ namespace ACE.Server.Factories
         {
             var elementalStr = isElemental ? "elemental" : "non_elemental";
 
-            return "MissileWeapons." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                return "MissileWeapons.Infiltration." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
+            else
+                return "MissileWeapons." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
         }
 
         private static bool GetMutateMissileWeaponData(uint wcid, int tier)

@@ -19,12 +19,43 @@ namespace ACE.Server.WorldObjects
         /// <param name="amount">The amount of XP being added</param>
         /// <param name="xpType">The source of XP being added</param>
         /// <param name="shareable">True if this XP can be shared with Fellowship</param>
-        public void EarnXP(long amount, XpType xpType, ShareType shareType = ShareType.All)
+        public void EarnXP(long amount, XpType xpType, int? xpSourceLevel, ShareType shareType = ShareType.All)
         {
             //Console.WriteLine($"{Name}.EarnXP({amount}, {sharable}, {fixedAmount})");
 
             // apply xp modifier
             var modifier = PropertyManager.GetDouble("xp_modifier").Item;
+
+            if (xpType == XpType.Kill && xpSourceLevel != null)
+            {
+                if (xpSourceLevel < 28)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier1").Item;
+                else if (xpSourceLevel < 65)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier2").Item;
+                else if (xpSourceLevel < 95)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier3").Item;
+                else if (xpSourceLevel < 110)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier4").Item;
+                else if (xpSourceLevel < 135)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier5").Item;
+                else
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier6").Item;
+            }
+            else if (xpType == XpType.Quest && xpSourceLevel != null)
+            {
+                if (xpSourceLevel < 16)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
+                else if (xpSourceLevel < 36)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
+                else if (xpSourceLevel < 56)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
+                else if (xpSourceLevel < 76)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
+                else if (xpSourceLevel < 96)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                else
+                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+            }
 
             // should this be passed upstream to fellowship / allegiance?
             var enchantment = GetXPAndLuminanceModifier(xpType);

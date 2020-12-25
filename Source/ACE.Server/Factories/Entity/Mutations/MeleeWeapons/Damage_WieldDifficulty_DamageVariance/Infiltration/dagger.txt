@@ -1,387 +1,362 @@
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #0:
+Dagger Mutation #1:
 
-Tier chances: 1, 1, 1, 1, 1, 1, 1, 1
+Tier Chances: 1, 0, 0, 0, 0, 0, 0, 0
 
-    - Chance: 100%:
-	    Damage = 1
+    - Chance: 11%:
+        Damage += 0
 
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #1 (331 samples):
-
-Tier chances: 1, 0, 0, 0, 0, 0, 0, 0
-
-    - Chance: 5%:
+    - Chance: 19%:
         Damage += 1
 
-    - Chance: 15%:
+    - Chance: 33%:
         Damage += 2
 
-    - Chance: 30%:
+    - Chance: 20%:
         Damage += 3
 
-    - Chance: 30%:
+    - Chance: 11%:
         Damage += 4
-
-    - Chance: 15%:
-        Damage += 5
-
-    - Chance: 5%:
-        Damage += 6
-
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #2 (629 samples):
-
-Tier chances: 0, 1, 0, 0, 0, 0, 0, 0
-
-    - Chance: 5%:
-        Damage += 1
-
-    - Chance: 8%:
-        Damage += 2
-
-    - Chance: 12%:
-        Damage += 3
-
-    - Chance: 12%:
-        Damage += 4
-
-    - Chance: 8%:
-        Damage += 5
-
-    - Chance: 5%:
-        Damage += 6
-
-    - Chance: 8%:
-        Damage += 5
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
-
-    - Chance: 12%:
-        Damage += 6
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
-
-    - Chance: 12%:
-        Damage += 7
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
-
-    - Chance: 8%:
-        Damage += 8
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
 
     - Chance: 6%:
-        Damage += 9
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        Damage += 5
 
-    - Chance: 4%:
-        Damage += 10
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+Dagger Mutation #2:
 
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #3 (594 samples):
+Tier Chances: 0, 1, 0, 0, 0, 0, 0, 0
 
-Tier chances: 0, 0, 1, 0, 0, 0, 0, 0
+    - Chance: 8%:
+        Damage += 0
+
+    - Chance: 9%:
+        Damage += 1
+
+    - Chance: 15%:
+        Damage += 2
+
+    - Chance: 9%:
+        Damage += 3
+
+    - Chance: 7%:
+        Damage += 4
 
     - Chance: 3%:
+        Damage += 5
+
+    - Chance: 11%:
         Damage += 5
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 250
 
-    - Chance: 7%:
+    - Chance: 27%:
         Damage += 6
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 250
 
-    - Chance: 15%:
+    - Chance: 11%:
         Damage += 7
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 250
 
-    - Chance: 15%:
-        Damage += 8
+Dagger Mutation #3:
+
+Tier Chances: 0, 0, 1, 0, 0, 0, 0, 0
+
+    - Chance: 5%:
+        Damage += 5
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 250
+
+    - Chance: 14%:
+        Damage += 6
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance: 30%:
+        Damage += 7
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance: 32%:
+        Damage += 7
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 300
+
+    - Chance: 14%:
+        Damage += 8
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 300
+
+    - Chance: 5%:
+        Damage += 9
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 300
+
+Dagger Mutation #4:
+
+Tier Chances: 0, 0, 0, 1, 0, 0, 0, 0
+
+    - Chance: 31%:
+        Damage += 7
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 300
+
+    - Chance: 13%:
+        Damage += 8
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 300
 
     - Chance: 7%:
         Damage += 9
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
-
-    - Chance: 3%:
-        Damage += 10
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
-
-    - Chance: 25%:
-        Damage += 10
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
         WieldDifficulty = 300
 
-    - Chance: 20%:
+    - Chance: 31%:
+        Damage += 9
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 325
+
+    - Chance: 13%:
+        Damage += 10
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 325
+
+    - Chance: 5%:
         Damage += 11
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 300
-
-    - Chance: 5%:
-        Damage += 12
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 300
-
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #4 (1,202 samples):
-
-Tier chances: 0, 0, 0, 1, 0, 0, 0, 0
-
-    - Chance: 20%:
-        Damage += 10
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 300
-
-    - Chance: 25%:
-        Damage += 11
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 300
-
-    - Chance: 5%:
-        Damage += 12
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 300
-
-    - Chance: 25%:
-        Damage += 13
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
         WieldDifficulty = 325
 
-    - Chance: 20%:
-        Damage += 14
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 325
+Dagger Mutation #5:
 
-    - Chance: 5%:
-        Damage += 15
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 325
-
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #5 (1,005 samples):
-
-Tier chances: 0, 0, 0, 0, 1, 0, 0, 0
-
-    - Chance: 20%:
-        Damage += 13
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 325
-
-    - Chance: 25%:
-        Damage += 14
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 325
-
-    - Chance: 10%:
-        Damage += 15
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 325
+Tier Chances: 0, 0, 0, 0, 1, 0, 0, 0
 
     - Chance: 30%:
-        Damage += 16
+        Damage += 9
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 325
+
+    - Chance: 14%:
+        Damage += 10
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 325
+
+    - Chance: 5%:
+        Damage += 11
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 325
+
+    - Chance: 31%:
+        Damage += 11
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 350
 
     - Chance: 15%:
-        Damage += 17
+        Damage += 12
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 350
 
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #6 (2,972 samples):
+    - Chance: 5%:
+        Damage += 13
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 350
 
-Tier chances: 0, 0, 0, 0, 0, 1, 0, 0
+Dagger Mutation #6:
 
-    - Chance: 15%:
+Tier Chances: 0, 0, 0, 0, 0, 1, 0, 0
+
+    - Chance: 21%:
+        Damage += 11
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 350
+
+    - Chance: 9.1%:
+        Damage += 12
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 350
+
+    - Chance: 4%:
+        Damage += 13
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 350
+
+    - Chance: 16%:
+        Damage += 13
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 370
+
+    - Chance: 8%:
+        Damage += 17
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 370
+
+    - Chance: 4%:
+        Damage += 15
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 370
+
+    - Chance: 3%:
         Damage += 16
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 350
+        WieldDifficulty = 370
 
-    - Chance: 35%:
+    - Chance: 1.9%:
         Damage += 17
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 350
+        WieldDifficulty = 370
 
-    - Chance: 10%:
+    - Chance: 20%:
+        Damage += 17
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
+
+    - Chance: 9%:
         Damage += 18
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 370
+        WieldDifficulty = 400
 
-    - Chance: 20%:
+    - Chance: 4%:
         Damage += 19
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 370
+        WieldDifficulty = 400
 
-    - Chance: 10%:
+Dagger Mutation #7:
+
+Tier Chances: 0, 0, 0, 0, 0, 0, 1, 0
+
+    - Chance: 12%:
+        Damage += 17
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
+
+    - Chance: 26%:
+        Damage += 18
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
+
+    - Chance: 12%:
+        Damage += 19
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
+
+    - Chance: 31%:
+        Damage += 19
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 420
+
+    - Chance: 13%:
         Damage += 20
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
+        WieldDifficulty = 420
 
-    - Chance: 10%:
+    - Chance: 6%:
         Damage += 21
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 420
+
+Dagger Mutation #8:
+
+Tier Chances: 0, 0, 0, 0, 0, 0, 0, 1
+
+    - Chance: 5%:
+        Damage += 17
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
         WieldDifficulty = 400
 
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #7 (762 samples):
+    - Chance: 13%:
+        Damage += 18
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
 
-Tier chances: 0, 0, 0, 0, 0, 0, 1, 0
+    - Chance: 31%:
+        Damage += 19
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
 
-    - Chance: 10%:
+    - Chance: 31%:
+        Damage += 19
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 420
+
+    - Chance: 14%:
         Damage += 20
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
+        WieldDifficulty = 420
 
-    - Chance: 25%:
+    - Chance: 6%:
         Damage += 21
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 30%:
-        Damage += 22
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 5%:
-        Damage += 23
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 25%:
-        Damage += 23
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
         WieldDifficulty = 420
 
-    - Chance: 5%:
-        Damage += 24
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 420
-
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #8 (1,048 samples):
-
-Tier chances: 0, 0, 0, 0, 0, 0, 0, 1
-
-    - Chance: 2%:
-        Damage += 20
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 2%:
-        Damage += 21
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 18%:
-        Damage += 22
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 18%:
-        Damage += 23
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 400
-
-    - Chance: 15%:
-        Damage += 22
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 420
-
-    - Chance: 20%:
-        Damage += 23
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 420
-
-    - Chance: 5%:
-        Damage += 24
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 420
-
-    - Chance: 10%:
-        Damage += 24
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 430
-
-    - Chance: 5%:
-        Damage += 25
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 430
-
-    - Chance: 3%:
-        Damage += 26
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 430
-
-    - Chance: 2%:
-        Damage += 27
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 430
-
-DaggerMS (LightWeapons, FinesseWeapons) Mutation #9:
+Dagger Mutation #9:
 
 Tier chances: 1, 1, 1, 1, 1, 1, 1, 1
 
-    - Chance: 10%:
-        DamageVariance = 0.45
+    - Chance: 5%:
+        DamageVariance = 0.88
 
-    - Chance: 20%:
-        DamageVariance = 0.4
+    - Chance: 7%:
+        DamageVariance = 0.86
 
-    - Chance: 40%:
-        DamageVariance = 0.35
+    - Chance: 11%:
+        DamageVariance = 0.84
 
-    - Chance: 20%:
-        DamageVariance = 0.28
+    - Chance: 15%:
+        DamageVariance = 0.81
 
-    - Chance: 10%:
-        DamageVariance = 0.24
+    - Chance: 24%:
+        DamageVariance = 0.79
+
+    - Chance: 15%:
+        DamageVariance = 0.77
+
+    - Chance: 11%:
+        DamageVariance = 0.74
+
+    - Chance: 7%:
+        DamageVariance = 0.72
+
+    - Chance: 5%:
+        DamageVariance = 0.7

@@ -7,6 +7,13 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class AxeWcids
     {
+        private static ChanceTable<WeenieClassName> AxeWcids_Aluvians_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.axehand,           0.33f ),
+            ( WeenieClassName.axebattle,         0.34f ),
+            ( WeenieClassName.warhammer,         0.33f ),
+        };
+
         private static ChanceTable<WeenieClassName> AxeWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.axehand,           0.16f ),
@@ -24,6 +31,13 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.warhammerelectric, 0.05f ),
             ( WeenieClassName.warhammerfire,     0.05f ),
             ( WeenieClassName.warhammerfrost,    0.05f ),
+        };
+
+        private static ChanceTable<WeenieClassName> AxeWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.tungi,             0.33f ),
+            ( WeenieClassName.silifi,            0.34f ),
+            ( WeenieClassName.warhammer,         0.33f ),
         };
 
         private static ChanceTable<WeenieClassName> AxeWcids_Gharundim = new ChanceTable<WeenieClassName>()
@@ -45,6 +59,13 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.warhammerfrost,    0.05f ),
         };
 
+        private static ChanceTable<WeenieClassName> AxeWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.shouono,           0.33f ),
+            ( WeenieClassName.ono,               0.34f ),
+            ( WeenieClassName.warhammer,         0.33f ),
+        };
+
         private static ChanceTable<WeenieClassName> AxeWcids_Sho = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.shouono,           0.16f ),
@@ -63,19 +84,110 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.warhammerfire,     0.05f ),
             ( WeenieClassName.warhammerfrost,    0.05f ),
         };
-
-        public static WeenieClassName Roll(TreasureHeritageGroup heritage)
+        static AxeWcids()
         {
-            switch (heritage)
+            if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
-                case TreasureHeritageGroup.Aluvian:
-                    return AxeWcids_Aluvian.Roll();
+                AxeWcids_Aluvian = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.axehand,           0.27f ),
+                    ( WeenieClassName.axehandacid,       0.016875f ),
+                    ( WeenieClassName.axehandelectric,   0.016875f ),
+                    ( WeenieClassName.axehandfire,       0.016875f ),
+                    ( WeenieClassName.axehandfrost,      0.016875f ),
 
-                case TreasureHeritageGroup.Gharundim:
-                    return AxeWcids_Gharundim.Roll();
+                    ( WeenieClassName.axebattle,         0.27f ),
+                    ( WeenieClassName.axebattleacid,     0.016875f ),
+                    ( WeenieClassName.axebattleelectric, 0.016875f ),
+                    ( WeenieClassName.axebattlefire,     0.016875f ),
+                    ( WeenieClassName.axebattlefrost,    0.016875f ),
 
-                case TreasureHeritageGroup.Sho:
-                    return AxeWcids_Sho.Roll();
+                    ( WeenieClassName.warhammer,         0.26f ),
+                    ( WeenieClassName.warhammeracid,     0.016875f ),
+                    ( WeenieClassName.warhammerelectric, 0.016875f ),
+                    ( WeenieClassName.warhammerfire,     0.016875f ),
+                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                };
+
+                AxeWcids_Gharundim = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.tungi,             0.27f ),
+                    ( WeenieClassName.tungiacid,         0.016875f ),
+                    ( WeenieClassName.tungielectric,     0.016875f ),
+                    ( WeenieClassName.tungifire,         0.016875f ),
+                    ( WeenieClassName.tungifrost,        0.016875f ),
+
+                    ( WeenieClassName.silifi,            0.27f ),
+                    ( WeenieClassName.silifiacid,        0.016875f ),
+                    ( WeenieClassName.silifielectric,    0.016875f ),
+                    ( WeenieClassName.silififire,        0.016875f ),
+                    ( WeenieClassName.silififrost,       0.016875f ),
+
+                    ( WeenieClassName.warhammer,         0.26f ),
+                    ( WeenieClassName.warhammeracid,     0.016875f ),
+                    ( WeenieClassName.warhammerelectric, 0.016875f ),
+                    ( WeenieClassName.warhammerfire,     0.016875f ),
+                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                };
+
+                AxeWcids_Sho = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.shouono,           0.27f ),
+                    ( WeenieClassName.shouonoacid,       0.016875f ),
+                    ( WeenieClassName.shouonoelectric,   0.016875f ),
+                    ( WeenieClassName.shouonofire,       0.016875f ),
+                    ( WeenieClassName.shouonofrost,      0.016875f ),
+
+                    ( WeenieClassName.ono,               0.27f ),
+                    ( WeenieClassName.onoacid,           0.016875f ),
+                    ( WeenieClassName.onoelectric,       0.016875f ),
+                    ( WeenieClassName.onofire,           0.016875f ),
+                    ( WeenieClassName.onofrost,          0.016875f ),
+
+                    ( WeenieClassName.warhammer,         0.26f ),
+                    ( WeenieClassName.warhammeracid,     0.016875f ),
+                    ( WeenieClassName.warhammerelectric, 0.016875f ),
+                    ( WeenieClassName.warhammerfire,     0.016875f ),
+                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                };
+            }
+        }
+
+        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier)
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return AxeWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return AxeWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return AxeWcids_Sho.Roll();
+                }
+            }
+            else
+            {
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        if(tier > 1)
+                            return AxeWcids_Aluvian.Roll();
+                        return AxeWcids_Aluvians_Non_Elemental.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        if (tier > 1)
+                            return AxeWcids_Gharundim.Roll();
+                        return AxeWcids_Gharundim_Non_Elemental.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        if (tier > 1)
+                            return AxeWcids_Sho.Roll();
+                        return AxeWcids_Sho_Non_Elemental.Roll();
+                }
             }
             return WeenieClassName.undef;
         }

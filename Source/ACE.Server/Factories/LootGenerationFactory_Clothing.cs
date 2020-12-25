@@ -191,34 +191,68 @@ namespace ACE.Server.Factories
 
         private static string GetMutationScript_ArmorLevel(WorldObject wo, TreasureRoll roll)
         {
-            switch (roll.ArmorType)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
             {
-                case TreasureArmorType.Covenant:
+                switch (roll.ArmorType)
+                {
+                    case TreasureArmorType.Covenant:
 
-                    if (wo.IsShield)
-                        return "ArmorLevel.covenant_shield.txt";
-                    else
-                        return "ArmorLevel.covenant_armor.txt";
+                        if (wo.IsShield)
+                            return "ArmorLevel.Infiltration.covenant_shield.txt";
+                        else
+                            return "ArmorLevel.Infiltration.covenant_armor.txt";
 
-                case TreasureArmorType.Olthoi:
+                    case TreasureArmorType.Olthoi:
 
-                    if (wo.IsShield)
-                        return "ArmorLevel.olthoi_shield.txt";
-                    else
-                        return "ArmorLevel.olthoi_armor.txt";
+                        if (wo.IsShield)
+                            return "ArmorLevel.Infiltration.olthoi_shield.txt";
+                        else
+                            return "ArmorLevel.Infiltration.olthoi_armor.txt";
+                }
+
+                if (wo.IsShield)
+                    return "ArmorLevel.Infiltration.shield_level.txt";
+
+                var coverage = wo.ClothingPriority ?? 0;
+
+                if ((coverage & (CoverageMask)CoverageMaskHelper.Extremities) != 0)
+                    return "ArmorLevel.Infiltration.armor_level_extremity.txt";
+                else if ((coverage & (CoverageMask)CoverageMaskHelper.Outerwear) != 0)
+                    return "ArmorLevel.Infiltration.armor_level_non_extremity.txt";
+                else
+                    return null;
             }
-
-            if (wo.IsShield)
-                return "ArmorLevel.shield_level.txt";
-
-            var coverage = wo.ClothingPriority ?? 0;
-
-            if ((coverage & (CoverageMask)CoverageMaskHelper.Extremities) != 0)
-                return "ArmorLevel.armor_level_extremity.txt";
-            else if ((coverage & (CoverageMask)CoverageMaskHelper.Outerwear) != 0)
-                return "ArmorLevel.armor_level_non_extremity.txt";
             else
-                return null;
+            {
+                switch (roll.ArmorType)
+                {
+                    case TreasureArmorType.Covenant:
+
+                        if (wo.IsShield)
+                            return "ArmorLevel.covenant_shield.txt";
+                        else
+                            return "ArmorLevel.covenant_armor.txt";
+
+                    case TreasureArmorType.Olthoi:
+
+                        if (wo.IsShield)
+                            return "ArmorLevel.olthoi_shield.txt";
+                        else
+                            return "ArmorLevel.olthoi_armor.txt";
+                }
+
+                if (wo.IsShield)
+                    return "ArmorLevel.shield_level.txt";
+
+                var coverage = wo.ClothingPriority ?? 0;
+
+                if ((coverage & (CoverageMask)CoverageMaskHelper.Extremities) != 0)
+                    return "ArmorLevel.armor_level_extremity.txt";
+                else if ((coverage & (CoverageMask)CoverageMaskHelper.Outerwear) != 0)
+                    return "ArmorLevel.armor_level_non_extremity.txt";
+                else
+                    return null;
+            }
         }
 
         /// <summary>

@@ -297,19 +297,22 @@ namespace ACE.Server.Factories
                         continue;
                     }
                 }
-                else if (cantripLevels.Count != 4)
+                else
                 {
-                    log.Error($"RollCantrips({wo.Name}, {profile.TreasureType}, {roll.ItemType}) - {cantrip} has {cantripLevels.Count} cantrip levels, expected 4");
-                    continue;
-                }
+                    if (cantripLevels.Count != 4)
+                    {
+                        log.Error($"RollCantrips({wo.Name}, {profile.TreasureType}, {roll.ItemType}) - {cantrip} has {cantripLevels.Count} cantrip levels, expected 4");
+                        continue;
+                    }
 
-                finalCantrips.Add(cantripLevels[cantripLevel - 1]);
+                    finalCantrips.Add(cantripLevels[cantripLevel - 1]);
 
-                if (!legendary && cantripLevel == 4)
-                {
-                    // items with legendary cantrips always got bumped up to wield level requirement 180 in retail
-                    SetWieldLevelReq(wo, 180);
-                    legendary = true;
+                    if (!legendary && cantripLevel == 4)
+                    {
+                        // items with legendary cantrips always got bumped up to wield level requirement 180 in retail
+                        SetWieldLevelReq(wo, 180);
+                        legendary = true;
+                    }
                 }
             }
             return finalCantrips;

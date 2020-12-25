@@ -8,6 +8,13 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class DaggerWcids_Aluvian_Sho
     {
+        private static ChanceTable<WeenieClassName> Non_Elemental_Chances = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.knife,          0.33f ),
+            ( WeenieClassName.dagger,         0.34f ),
+            ( WeenieClassName.dirk,           0.33f ),
+        };
+
         private static ChanceTable<WeenieClassName> T1_T3_Chances = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.knife,          0.16f ),
@@ -74,6 +81,84 @@ namespace ACE.Server.Factories.Tables.Wcids
             T5_T6_Chances,
             T5_T6_Chances,
         };
+        static DaggerWcids_Aluvian_Sho()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T1_T3_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.knife,          0.25f ),
+                    ( WeenieClassName.knifeacid,      0.02f ),
+                    ( WeenieClassName.knifeelectric,  0.02f ),
+                    ( WeenieClassName.knifefire,      0.02f ),
+                    ( WeenieClassName.knifefrost,     0.02f ),
+
+                    ( WeenieClassName.dagger,         0.26f ),
+                    ( WeenieClassName.daggeracid,     0.02f ),
+                    ( WeenieClassName.daggerelectric, 0.02f ),
+                    ( WeenieClassName.daggerfire,     0.02f ),
+                    ( WeenieClassName.daggerfrost,    0.02f ),
+
+                    ( WeenieClassName.dirk,           0.25f ),
+                    ( WeenieClassName.dirkacid,       0.02f ),
+                    ( WeenieClassName.dirkelectric,   0.02f ),
+                    ( WeenieClassName.dirkfire,       0.02f ),
+                    ( WeenieClassName.dirkfrost,      0.02f ),
+                };
+
+                T4_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.knife,          0.15f ),
+                    ( WeenieClassName.knifeacid,      0.009375f ),
+                    ( WeenieClassName.knifeelectric,  0.009375f ),
+                    ( WeenieClassName.knifefire,      0.009375f ),
+                    ( WeenieClassName.knifefrost,     0.009375f ),
+
+                    ( WeenieClassName.dagger,         0.15f ),
+                    ( WeenieClassName.daggeracid,     0.009375f ),
+                    ( WeenieClassName.daggerelectric, 0.009375f ),
+                    ( WeenieClassName.daggerfire,     0.009375f ),
+                    ( WeenieClassName.daggerfrost,    0.009375f ),
+
+                    ( WeenieClassName.dirk,           0.5f ),
+                    ( WeenieClassName.dirkacid,       0.03125f ),
+                    ( WeenieClassName.dirkelectric,   0.03125f ),
+                    ( WeenieClassName.dirkfire,       0.03125f ),
+                    ( WeenieClassName.dirkfrost,      0.03125f ),
+                };
+
+                T5_T6_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.knife,          0.1f ),
+                    ( WeenieClassName.knifeacid,      0.00625f ),
+                    ( WeenieClassName.knifeelectric,  0.00625f ),
+                    ( WeenieClassName.knifefire,      0.00625f ),
+                    ( WeenieClassName.knifefrost,     0.00625f ),
+
+                    ( WeenieClassName.dagger,         0.1f ),
+                    ( WeenieClassName.daggeracid,     0.00625f ),
+                    ( WeenieClassName.daggerelectric, 0.00625f ),
+                    ( WeenieClassName.daggerfire,     0.00625f ),
+                    ( WeenieClassName.daggerfrost,    0.00625f ),
+
+                    ( WeenieClassName.dirk,           0.6f ),
+                    ( WeenieClassName.dirkacid,       0.0375f ),
+                    ( WeenieClassName.dirkelectric,   0.0375f ),
+                    ( WeenieClassName.dirkfire,       0.0375f ),
+                    ( WeenieClassName.dirkfrost,      0.0375f ),
+                };
+
+                weaponTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    Non_Elemental_Chances,
+                    T1_T3_Chances,
+                    T1_T3_Chances,
+                    T4_Chances,
+                    T5_T6_Chances,
+                    T5_T6_Chances,
+                };
+            }
+        }
 
         public static WeenieClassName Roll(int tier)
         {

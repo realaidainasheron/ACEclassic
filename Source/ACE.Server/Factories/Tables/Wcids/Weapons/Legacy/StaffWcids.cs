@@ -7,6 +7,11 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class StaffWcids
     {
+        private static ChanceTable<WeenieClassName> StaffWcids_Aluvian_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.spear,               1.0f ),
+        };
+
         private static ChanceTable<WeenieClassName> StaffWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.quarterstaffnew,         0.40f ),
@@ -14,6 +19,11 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.quarterstaffelectricnew, 0.15f ),
             ( WeenieClassName.quarterstaffflamenew,    0.15f ),
             ( WeenieClassName.quarterstafffrostnew,    0.15f ),
+        };
+
+        private static ChanceTable<WeenieClassName> StaffWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.spear,               1.0f ),
         };
 
         private static ChanceTable<WeenieClassName> StaffWcids_Gharundim = new ChanceTable<WeenieClassName>()
@@ -25,6 +35,11 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.nabutfrostnew,    0.15f ),
         };
 
+        private static ChanceTable<WeenieClassName> StaffWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.spear,               1.0f ),
+        };
+
         private static ChanceTable<WeenieClassName> StaffWcids_Sho = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.jonew,         0.40f ),
@@ -34,18 +49,74 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.jofrostnew,    0.15f ),
         };
 
-        public static WeenieClassName Roll(TreasureHeritageGroup heritage)
+        static StaffWcids()
         {
-            switch (heritage)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
             {
-                case TreasureHeritageGroup.Aluvian:
-                    return StaffWcids_Aluvian.Roll();
+                StaffWcids_Aluvian = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.quarterstaffnew,         0.80f ),
+                    ( WeenieClassName.quarterstaffacidnew,     0.05f ),
+                    ( WeenieClassName.quarterstaffelectricnew, 0.05f ),
+                    ( WeenieClassName.quarterstaffflamenew,    0.05f ),
+                    ( WeenieClassName.quarterstafffrostnew,    0.05f ),
+                };
 
-                case TreasureHeritageGroup.Gharundim:
-                    return StaffWcids_Gharundim.Roll();
+                StaffWcids_Gharundim = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.nabutnew,         0.80f ),
+                    ( WeenieClassName.nabutacidnew,     0.05f ),
+                    ( WeenieClassName.nabutelectricnew, 0.05f ),
+                    ( WeenieClassName.nabutfirenew,     0.05f ),
+                    ( WeenieClassName.nabutfrostnew,    0.05f ),
+                };
 
-                case TreasureHeritageGroup.Sho:
-                    return StaffWcids_Sho.Roll();
+                StaffWcids_Sho = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.jonew,         0.80f ),
+                    ( WeenieClassName.joacidnew,     0.05f ),
+                    ( WeenieClassName.joelectricnew, 0.05f ),
+                    ( WeenieClassName.jofirenew,     0.05f ),
+                    ( WeenieClassName.jofrostnew,    0.05f ),
+                };
+            }
+        }
+
+        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier)
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return StaffWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return StaffWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return StaffWcids_Sho.Roll();
+                }
+            }
+            else
+            {
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        if (tier > 1)
+                            return StaffWcids_Aluvian.Roll();
+                        return StaffWcids_Aluvian_Non_Elemental.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        if (tier > 1)
+                            return StaffWcids_Gharundim.Roll();
+                        return StaffWcids_Gharundim_Non_Elemental.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        if (tier > 1)
+                            return StaffWcids_Sho.Roll();
+                        return StaffWcids_Sho_Non_Elemental.Roll();
+                }
             }
             return WeenieClassName.undef;
         }

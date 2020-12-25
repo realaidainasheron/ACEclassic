@@ -128,35 +128,35 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             var heritage = RollHeritage(treasureDeath);
 
-            return MaceWcids.Roll(heritage);
+            return MaceWcids.Roll(heritage, treasureDeath.Tier);
         }
 
         public static WeenieClassName RollAxeWcid(TreasureDeath treasureDeath)
         {
             var heritage = RollHeritage(treasureDeath);
 
-            return AxeWcids.Roll(heritage);
+            return AxeWcids.Roll(heritage, treasureDeath.Tier);
         }
 
         public static WeenieClassName RollSpearWcid(TreasureDeath treasureDeath)
         {
             var heritage = RollHeritage(treasureDeath);
 
-            return SpearWcids.Roll(heritage);
+            return SpearWcids.Roll(heritage, treasureDeath.Tier);
         }
 
         public static WeenieClassName RollUnarmedWcid(TreasureDeath treasureDeath)
         {
             var heritage = RollHeritage(treasureDeath);
 
-            return UnarmedWcids.Roll(heritage);
+            return UnarmedWcids.Roll(heritage, treasureDeath.Tier);
         }
 
         public static WeenieClassName RollStaffWcid(TreasureDeath treasureDeath)
         {
             var heritage = RollHeritage(treasureDeath);
 
-            return StaffWcids.Roll(heritage);
+            return StaffWcids.Roll(heritage, treasureDeath.Tier);
         }
 
         public static WeenieClassName RollDaggerWcid(TreasureDeath treasureDeath)

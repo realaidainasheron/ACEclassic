@@ -290,14 +290,17 @@ namespace ACE.Server.Factories
         private static string GetDamageScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
-                return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance.PreMoA." + weaponType.GetScriptName() + ".txt";
+                return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance.Infiltration." + weaponType.GetScriptName() + ".txt";
             else
                 return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance." + weaponSkill.GetScriptName_Combined() + "_" + weaponType.GetScriptName() + ".txt";
         }
 
         private static string GetOffenseDefenseScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            return "MeleeWeapons.WeaponOffense_WeaponDefense." + weaponType.GetScriptShortName() + "_offense_defense.txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                return "MeleeWeapons.WeaponOffense_WeaponDefense.Infiltration." + weaponType.GetScriptShortName() + "_offense_defense.txt";
+            else
+                return "MeleeWeapons.WeaponOffense_WeaponDefense." + weaponType.GetScriptShortName() + "_offense_defense.txt";
         }
 
         private enum LootWeaponType

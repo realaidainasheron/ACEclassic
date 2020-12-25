@@ -8,7 +8,15 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class SwordWcids_Aluvian
     {
-        // ClassicToDo: should scimitars be only Gharundim?
+        private static ChanceTable<WeenieClassName> Non_Elemental_Chances = new ChanceTable<WeenieClassName>()
+        {
+            ( WeenieClassName.swordrapier,          0.10f ),
+            ( WeenieClassName.swordshort,           0.225f ),
+            ( WeenieClassName.scimitar,             0.225f ),
+            ( WeenieClassName.swordlong,            0.225f ),
+            ( WeenieClassName.swordbroad,           0.225f ),
+        };
+
         private static ChanceTable<WeenieClassName> T1_T2_Chances = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.swordrapier,        0.10f ),
@@ -93,6 +101,108 @@ namespace ACE.Server.Factories.Tables.Wcids
             T5_T6_Chances,
             T5_T6_Chances,
         };
+        static SwordWcids_Aluvian()
+        {
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T1_T2_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.swordrapier,        0.125f ),
+
+                    ( WeenieClassName.swordshort,         0.34f ),
+                    ( WeenieClassName.swordshortacid,     0.02125f ),
+                    ( WeenieClassName.swordshortelectric, 0.02125f ),
+                    ( WeenieClassName.swordshortfire,     0.02125f ),
+                    ( WeenieClassName.swordshortfrost,    0.02125f ),
+
+                    ( WeenieClassName.scimitar,         0.12f ),
+                    ( WeenieClassName.scimitaracid,     0.0075f ),
+                    ( WeenieClassName.scimitarelectric, 0.0075f ),
+                    ( WeenieClassName.scimitarfire,     0.0075f ),
+                    ( WeenieClassName.scimitarfrost,    0.0075f ),
+
+                    ( WeenieClassName.swordlong,          0.12f ),
+                    ( WeenieClassName.swordlongacid,      0.0075f ),
+                    ( WeenieClassName.swordlongelectric,  0.0075f ),
+                    ( WeenieClassName.swordlongfire,      0.0075f ),
+                    ( WeenieClassName.swordlongfrost,     0.0075f ),
+
+                    ( WeenieClassName.swordbroad,         0.12f ),
+                    ( WeenieClassName.swordbroadacid,     0.0075f ),
+                    ( WeenieClassName.swordbroadelectric, 0.0075f ),
+                    ( WeenieClassName.swordbroadfire,     0.0075f ),
+                    ( WeenieClassName.swordbroadfrost,    0.0075f ),
+                };
+
+                T3_T4_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.swordrapier,        0.05f ),
+
+                    ( WeenieClassName.swordshort,         0.1f ),
+                    ( WeenieClassName.swordshortacid,     0.00625f ),
+                    ( WeenieClassName.swordshortelectric, 0.00625f ),
+                    ( WeenieClassName.swordshortfire,     0.00625f ),
+                    ( WeenieClassName.swordshortfrost,    0.00625f ),
+
+                    ( WeenieClassName.scimitar,         0.22f ),
+                    ( WeenieClassName.scimitaracid,     0.01375f ),
+                    ( WeenieClassName.scimitarelectric, 0.01375f ),
+                    ( WeenieClassName.scimitarfire,     0.01375f ),
+                    ( WeenieClassName.scimitarfrost,    0.01375f ),
+
+                    ( WeenieClassName.swordlong,          0.22f ),
+                    ( WeenieClassName.swordlongacid,      0.01375f ),
+                    ( WeenieClassName.swordlongelectric,  0.01375f ),
+                    ( WeenieClassName.swordlongfire,      0.01375f ),
+                    ( WeenieClassName.swordlongfrost,     0.01375f ),
+
+                    ( WeenieClassName.swordbroad,         0.22f ),
+                    ( WeenieClassName.swordbroadacid,     0.01375f ),
+                    ( WeenieClassName.swordbroadelectric, 0.01375f ),
+                    ( WeenieClassName.swordbroadfire,     0.01375f ),
+                    ( WeenieClassName.swordbroadfrost,    0.01375f ),
+                };
+
+                T5_T6_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.swordrapier,        0.03125f ),
+
+                    ( WeenieClassName.swordshort,         0.025f ),
+                    ( WeenieClassName.swordshortacid,     0.0015625f ),
+                    ( WeenieClassName.swordshortelectric, 0.0015625f ),
+                    ( WeenieClassName.swordshortfire,     0.0015625f ),
+                    ( WeenieClassName.swordshortfrost,    0.0015625f ),
+
+                    ( WeenieClassName.scimitar,         0.25f ),
+                    ( WeenieClassName.scimitaracid,     0.015625f ),
+                    ( WeenieClassName.scimitarelectric, 0.015625f ),
+                    ( WeenieClassName.scimitarfire,     0.015625f ),
+                    ( WeenieClassName.scimitarfrost,    0.015625f ),
+
+                    ( WeenieClassName.swordlong,          0.25f ),
+                    ( WeenieClassName.swordlongacid,      0.015625f ),
+                    ( WeenieClassName.swordlongelectric,  0.015625f ),
+                    ( WeenieClassName.swordlongfire,      0.015625f ),
+                    ( WeenieClassName.swordlongfrost,     0.015625f ),
+
+                    ( WeenieClassName.swordbroad,         0.25f ),
+                    ( WeenieClassName.swordbroadacid,     0.015625f ),
+                    ( WeenieClassName.swordbroadelectric, 0.015625f ),
+                    ( WeenieClassName.swordbroadfire,     0.015625f ),
+                    ( WeenieClassName.swordbroadfrost,    0.015625f ),
+                };
+
+                weaponTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    Non_Elemental_Chances,
+                    T1_T2_Chances,
+                    T3_T4_Chances,
+                    T3_T4_Chances,
+                    T5_T6_Chances,
+                    T5_T6_Chances,
+                };
+            }
+        }
 
         public static WeenieClassName Roll(int tier)
         {
