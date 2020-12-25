@@ -103,10 +103,10 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.axebattlefrost,    0.016875f ),
 
                     ( WeenieClassName.warhammer,         0.26f ),
-                    ( WeenieClassName.warhammeracid,     0.016875f ),
-                    ( WeenieClassName.warhammerelectric, 0.016875f ),
-                    ( WeenieClassName.warhammerfire,     0.016875f ),
-                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                    ( WeenieClassName.warhammeracid,     0.01687f ),
+                    ( WeenieClassName.warhammerelectric, 0.01687f ),
+                    ( WeenieClassName.warhammerfire,     0.01687f ),
+                    ( WeenieClassName.warhammerfrost,    0.01687f ),
                 };
 
                 AxeWcids_Gharundim = new ChanceTable<WeenieClassName>()
@@ -124,10 +124,10 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.silififrost,       0.016875f ),
 
                     ( WeenieClassName.warhammer,         0.26f ),
-                    ( WeenieClassName.warhammeracid,     0.016875f ),
-                    ( WeenieClassName.warhammerelectric, 0.016875f ),
-                    ( WeenieClassName.warhammerfire,     0.016875f ),
-                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                    ( WeenieClassName.warhammeracid,     0.01687f ),
+                    ( WeenieClassName.warhammerelectric, 0.01687f ),
+                    ( WeenieClassName.warhammerfire,     0.01687f ),
+                    ( WeenieClassName.warhammerfrost,    0.01687f ),
                 };
 
                 AxeWcids_Sho = new ChanceTable<WeenieClassName>()
@@ -145,10 +145,10 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.onofrost,          0.016875f ),
 
                     ( WeenieClassName.warhammer,         0.26f ),
-                    ( WeenieClassName.warhammeracid,     0.016875f ),
-                    ( WeenieClassName.warhammerelectric, 0.016875f ),
-                    ( WeenieClassName.warhammerfire,     0.016875f ),
-                    ( WeenieClassName.warhammerfrost,    0.016875f ),
+                    ( WeenieClassName.warhammeracid,     0.01687f ),
+                    ( WeenieClassName.warhammerelectric, 0.01687f ),
+                    ( WeenieClassName.warhammerfire,     0.01687f ),
+                    ( WeenieClassName.warhammerfrost,    0.01687f ),
                 };
             }
         }
