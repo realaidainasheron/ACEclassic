@@ -67,7 +67,7 @@ namespace ACE.Server.Factories
 
                 wo.ItemSpellcraft = RollSpellcraft(wo, roll);
 
-                AddActivationRequirements(wo, roll);
+                AddActivationRequirements(wo, profile, roll);
             }
         }
 
@@ -661,13 +661,68 @@ namespace ACE.Server.Factories
             return maxSpellPower;
         }
 
-        private static void AddActivationRequirements(WorldObject wo, TreasureRoll roll)
+        private static void AddActivationRequirements(WorldObject wo, TreasureDeath profile, TreasureRoll roll)
         {
-            // ItemSkill/LevelLimit
-            TryMutate_ItemSkillLimit(wo, roll);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                TryMutate_ItemSkillLimit(wo, roll); // ItemSkill/LevelLimit
+            else
+            {
+                TryMutate_HeritageRequirement(wo);
+                TryMutate_AllegianceRequirement(wo, profile, roll);
+            }
 
             // Arcane Lore / ItemDifficulty
             wo.ItemDifficulty = CalculateArcaneLore(wo, roll);
+        }
+
+        private static bool TryMutate_HeritageRequirement(WorldObject wo)
+        {
+            if (wo.Biota.PropertiesSpellBook == null)
+                return false;
+
+            if (wo.Biota.PropertiesSpellBook.Count >= 2) // We must have at least this amount of spells to have a heritage requirement.
+            {
+                var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
+                if (rng < 0.1) // Note that this chance is only for items that have the proper amount of spells, not a chance of all drops, so in reality it's much lower.
+                {
+                    HeritageGroup heritage = (HeritageGroup)ThreadSafeRandom.Next(1, 3);
+
+                    switch (heritage)
+                    {
+                        case HeritageGroup.Aluvian:
+                            wo.HeritageGroup = HeritageGroup.Aluvian;
+                            break;
+
+                        case HeritageGroup.Gharundim:
+                            wo.HeritageGroup = HeritageGroup.Gharundim;
+                            break;
+
+                        case HeritageGroup.Sho:
+                            wo.HeritageGroup = HeritageGroup.Sho;
+                            break;
+                    }
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private static bool TryMutate_AllegianceRequirement(WorldObject wo, TreasureDeath profile, TreasureRoll roll)
+        {
+            if (wo.Biota.PropertiesSpellBook == null)
+                return false;
+
+            if (roll.Wcid == Enum.WeenieClassName.crown || wo.Biota.PropertiesSpellBook.Count >= 3) // We must have at least this amount of spells to have an allegiance requirement.
+            {
+                // Crowns are special and have allegiance requirements more often and even with less spells than what is usually required.
+                var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
+                if (rng < (roll.Wcid == Enum.WeenieClassName.crown ? 0.25f : 0.1f)) // Note that this chance is only for items that have the proper amount of spells, not a chance of all drops, so in reality it's much lower.
+                {
+                    wo.ItemAllegianceRankLimit = AllegianceRankChance.Roll(profile.Tier);
+                    return true;
+                }
+            }
+            return false;
         }
 
         private static bool TryMutate_ItemSkillLimit(WorldObject wo, TreasureRoll roll)
@@ -767,6 +822,12 @@ namespace ACE.Server.Factories
 
             if (wo.ItemSkillLevelLimit > 0)
                 itemSkillLevelFactor = wo.ItemSkillLevelLimit.Value / 2.0f;
+
+            if (wo.ItemAllegianceRankLimit > 0)
+                itemSkillLevelFactor += (float)wo.ItemAllegianceRankLimit * 10;
+
+            if (wo.HeritageGroup != 0)
+                itemSkillLevelFactor += itemSkillLevelFactor * 0.2f;
 
             var fArcane = spellcraft - itemSkillLevelFactor;
 
