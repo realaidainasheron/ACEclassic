@@ -145,6 +145,9 @@ namespace ACE.Server.WorldObjects
 
         public void GenerateNewFace()
         {
+            if (IsNPC && Location == null)
+                return; //We shall finish this later when we have our location.
+
             var cg = DatManager.PortalDat.CharGen;
 
             if (!Heritage.HasValue)
@@ -193,36 +196,80 @@ namespace ACE.Server.WorldObjects
                 SkinHue = 1
             };
 
-            // Get the hair first, because we need to know if you're bald, and that's the name of that tune!
-            if (sex.HairStyleList.Count > 1)
+            DatLoader.Entity.HairStyleCG hairstyle;
+            if (!IsNPC)
             {
-                if (PropertyManager.GetBool("npc_hairstyle_fullrange").Item)
-                    appearance.HairStyle = (uint)ThreadSafeRandom.Next(0, sex.HairStyleList.Count - 1);
+                // Get the hair first, because we need to know if you're bald, and that's the name of that tune!
+                if (sex.HairStyleList.Count > 1)
+                {
+                    if (PropertyManager.GetBool("npc_hairstyle_fullrange").Item)
+                        appearance.HairStyle = (uint)ThreadSafeRandom.Next(0, sex.HairStyleList.Count - 1);
+                    else
+                        appearance.HairStyle = (uint)ThreadSafeRandom.Next(0, Math.Min(sex.HairStyleList.Count - 1, 8)); // retail range data compiled by OptimShi
+                }
                 else
-                    appearance.HairStyle = (uint)ThreadSafeRandom.Next(0, Math.Min(sex.HairStyleList.Count - 1, 8)); // retail range data compiled by OptimShi
+                    appearance.HairStyle = 0;
+
+                if (sex.HairStyleList.Count < appearance.HairStyle)
+                {
+                    log.Warn($"Creature.GenerateNewFace: {Name} (0x{Guid}) - wcid {WeenieClassId} - HairStyle = {appearance.HairStyle} | HairStyleList.Count = {sex.HairStyleList.Count} - Data invalid, Cannot randomize face.");
+                    return;
+                }
+
+                hairstyle = sex.HairStyleList[Convert.ToInt32(appearance.HairStyle)];
+
+                appearance.HairColor = (uint)ThreadSafeRandom.Next(0, sex.HairColorList.Count - 1);
+                appearance.HairHue = ThreadSafeRandom.Next(0.0f, 1.0f);
+
+                appearance.EyeColor = (uint)ThreadSafeRandom.Next(0, sex.EyeColorList.Count - 1);
+                appearance.Eyes = (uint)ThreadSafeRandom.Next(0, sex.EyeStripList.Count - 1);
+
+                appearance.Mouth = (uint)ThreadSafeRandom.Next(0, sex.MouthStripList.Count - 1);
+
+                appearance.Nose = (uint)ThreadSafeRandom.Next(0, sex.NoseStripList.Count - 1);
+
+                appearance.SkinHue = ThreadSafeRandom.Next(0.0f, 1.0f);
             }
             else
-                appearance.HairStyle = 0;
-
-            if (sex.HairStyleList.Count < appearance.HairStyle)
             {
-                log.Warn($"Creature.GenerateNewFace: {Name} (0x{Guid}) - wcid {WeenieClassId} - HairStyle = {appearance.HairStyle} | HairStyleList.Count = {sex.HairStyleList.Count} - Data invalid, Cannot randomize face.");
-                return;
+                //let's use a pseudo random seed based on our WCID so we mantain the same appearance between sessions. Retail did not persist NPC appearances at all but I feel this is one detail we can diverge on.
+
+                //By adding the location to our seed we avoid having all instances of the same WCID having the same appearance, this would affect NPCs such as town criers and collectors.
+                int seed = (int)WeenieClassId + (int)(1000.0f * (Location.PositionX + Location.PositionY + Location.PositionZ));
+
+                Random pseudoRandom = new Random(seed); // Note that this class uses EXCLUSIVE max values instead of inclusive for our regular ThreadSafeRandom.
+
+                // Get the hair first, because we need to know if you're bald, and that's the name of that tune!
+                if (sex.HairStyleList.Count > 1)
+                {
+                    if (PropertyManager.GetBool("npc_hairstyle_fullrange").Item)
+                        appearance.HairStyle = (uint)pseudoRandom.Next(0, sex.HairStyleList.Count);
+                    else
+                        appearance.HairStyle = (uint)pseudoRandom.Next(0, Math.Min(sex.HairStyleList.Count, 9)); // retail range data compiled by OptimShi
+                }
+                else
+                    appearance.HairStyle = 0;
+
+                if (sex.HairStyleList.Count < appearance.HairStyle)
+                {
+                    log.Warn($"Creature.GenerateNewFace: {Name} (0x{Guid}) - wcid {WeenieClassId} - HairStyle = {appearance.HairStyle} | HairStyleList.Count = {sex.HairStyleList.Count} - Data invalid, Cannot randomize face.");
+                    return;
+                }
+
+                hairstyle = sex.HairStyleList[Convert.ToInt32(appearance.HairStyle)];
+
+                appearance.HairColor = (uint)pseudoRandom.Next(0, sex.HairColorList.Count);
+                appearance.HairHue = pseudoRandom.NextDouble();
+
+                appearance.EyeColor = (uint)pseudoRandom.Next(0, sex.EyeColorList.Count);
+                appearance.Eyes = (uint)pseudoRandom.Next(0, sex.EyeStripList.Count);
+
+                appearance.Mouth = (uint)pseudoRandom.Next(0, sex.MouthStripList.Count);
+
+                appearance.Nose = (uint)pseudoRandom.Next(0, sex.NoseStripList.Count);
+
+                appearance.SkinHue = pseudoRandom.NextDouble();
             }
-
-            var hairstyle = sex.HairStyleList[Convert.ToInt32(appearance.HairStyle)];
-
-            appearance.HairColor = (uint)ThreadSafeRandom.Next(0, sex.HairColorList.Count - 1);
-            appearance.HairHue = ThreadSafeRandom.Next(0.0f, 1.0f);
-
-            appearance.EyeColor = (uint)ThreadSafeRandom.Next(0, sex.EyeColorList.Count - 1);
-            appearance.Eyes = (uint)ThreadSafeRandom.Next(0, sex.EyeStripList.Count - 1);
-
-            appearance.Mouth = (uint)ThreadSafeRandom.Next(0, sex.MouthStripList.Count - 1);
-
-            appearance.Nose = (uint)ThreadSafeRandom.Next(0, sex.NoseStripList.Count - 1);
-
-            appearance.SkinHue = ThreadSafeRandom.Next(0.0f, 1.0f);
 
             //// Certain races (Undead, Tumeroks, Others?) have multiple body styles available. This is controlled via the "hair style".
             ////if (hairstyle.AlternateSetup > 0)
