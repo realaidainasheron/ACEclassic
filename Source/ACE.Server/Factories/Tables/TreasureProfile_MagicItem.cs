@@ -219,24 +219,24 @@ namespace ACE.Server.Factories.Tables
             {
                 magicItemProfile8 = new ChanceTable<TreasureItemType_Orig>()
                 {
-                    ( TreasureItemType_Orig.Weapon,             0.15f ),
-                    ( TreasureItemType_Orig.Armor,              0.15f ),
-                    ( TreasureItemType_Orig.Scroll,             0.14f ),
-                    ( TreasureItemType_Orig.Clothing,           0.14f ),
-                    ( TreasureItemType_Orig.Jewelry,            0.14f ),
-                    ( TreasureItemType_Orig.Gem,                0.14f ),
-                    ( TreasureItemType_Orig.ArtObject,          0.14f ),
+                    ( TreasureItemType_Orig.Weapon,             0.20f ),
+                    ( TreasureItemType_Orig.Armor,              0.20f ),
+                    ( TreasureItemType_Orig.Scroll,             0.12f ),
+                    ( TreasureItemType_Orig.Clothing,           0.12f ),
+                    ( TreasureItemType_Orig.Jewelry,            0.12f ),
+                    ( TreasureItemType_Orig.Gem,                0.12f ),
+                    ( TreasureItemType_Orig.ArtObject,          0.12f ),
                 };
 
                 magicItemProfile9 = new ChanceTable<TreasureItemType_Orig>()
                 {
-                    ( TreasureItemType_Orig.Weapon,             0.30f ),
-                    ( TreasureItemType_Orig.Armor,              0.30f ),
+                    ( TreasureItemType_Orig.Weapon,             0.40f ),
+                    ( TreasureItemType_Orig.Armor,              0.36f ),
                     ( TreasureItemType_Orig.Scroll,             0.10f ),
-                    ( TreasureItemType_Orig.Clothing,           0.10f ),
-                    ( TreasureItemType_Orig.Jewelry,            0.10f ),
-                    ( TreasureItemType_Orig.Gem,                0.05f ),
-                    ( TreasureItemType_Orig.ArtObject,          0.05f ),
+                    ( TreasureItemType_Orig.Clothing,           0.04f ),
+                    ( TreasureItemType_Orig.Jewelry,            0.02f ),
+                    ( TreasureItemType_Orig.Gem,                0.04f ),
+                    ( TreasureItemType_Orig.ArtObject,          0.04f ),
                 };
 
                 magicItemProfile10 = new ChanceTable<TreasureItemType_Orig>()

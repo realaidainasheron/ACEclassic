@@ -114,31 +114,28 @@ namespace ACE.Server.Factories.Tables
             {
                itemProfile8 = new ChanceTable<TreasureItemType_Orig>()
                 {
-                    ( TreasureItemType_Orig.Weapon,    0.15f ),
-                    ( TreasureItemType_Orig.Armor,     0.15f ),
-                    ( TreasureItemType_Orig.Scroll,    0.14f ),
-                    ( TreasureItemType_Orig.Clothing,  0.14f ),
-                    ( TreasureItemType_Orig.Jewelry,   0.14f ),
-                    ( TreasureItemType_Orig.Gem,       0.14f ),
-                    ( TreasureItemType_Orig.ArtObject, 0.14f ),
+                    ( TreasureItemType_Orig.Weapon,    0.20f ),
+                    ( TreasureItemType_Orig.Armor,     0.20f ),
+                    ( TreasureItemType_Orig.Clothing,  0.15f ),
+                    ( TreasureItemType_Orig.Jewelry,   0.15f ),
+                    ( TreasureItemType_Orig.Gem,       0.15f ),
+                    ( TreasureItemType_Orig.ArtObject, 0.15f ),
                 };
 
                 itemProfile9 = new ChanceTable<TreasureItemType_Orig>()
                 {
-                    ( TreasureItemType_Orig.Weapon,    0.25f ),
-                    ( TreasureItemType_Orig.Armor,     0.25f ),
-                    ( TreasureItemType_Orig.Scroll,    0.25f ),
-                    ( TreasureItemType_Orig.Clothing,  0.07f ),
-                    ( TreasureItemType_Orig.Jewelry,   0.06f ),
-                    ( TreasureItemType_Orig.Gem,       0.06f ),
-                    ( TreasureItemType_Orig.ArtObject, 0.06f ),
+                    ( TreasureItemType_Orig.Weapon,    0.46f ),
+                    ( TreasureItemType_Orig.Armor,     0.40f ),
+                    ( TreasureItemType_Orig.Clothing,  0.04f ),
+                    ( TreasureItemType_Orig.Jewelry,   0.02f ),
+                    ( TreasureItemType_Orig.Gem,       0.04f ),
+                    ( TreasureItemType_Orig.ArtObject, 0.04f ),
                 };
 
                 itemProfile10 = new ChanceTable<TreasureItemType_Orig>()
                 {
-                    ( TreasureItemType_Orig.Weapon,    0.40f ),
-                    ( TreasureItemType_Orig.Armor,     0.40f ),
-                    ( TreasureItemType_Orig.Scroll,    0.20f ),
+                    ( TreasureItemType_Orig.Weapon,    0.50f ),
+                    ( TreasureItemType_Orig.Armor,     0.50f ),
                 };
 
                 // we have to refresh this list or it will still contain the previous values.

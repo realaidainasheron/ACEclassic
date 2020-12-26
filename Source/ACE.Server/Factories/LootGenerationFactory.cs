@@ -260,56 +260,145 @@ namespace ACE.Server.Factories
 
                 var loot = new List<WorldObject>();
 
-                var itemChance = ThreadSafeRandom.Next(1, 100);
-                if (itemChance <= profile.ItemChance)
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.EoR)
                 {
-                    numItems = ThreadSafeRandom.Next(profile.ItemMinAmount, profile.ItemMaxAmount);
-
-                    for (var i = 0; i < numItems; i++)
+                    var itemChance = ThreadSafeRandom.Next(1, 100);
+                    if (itemChance <= profile.ItemChance)
                     {
-                        lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+                        numItems = ThreadSafeRandom.Next(profile.ItemMinAmount, profile.ItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+                    }
+
+                    itemChance = ThreadSafeRandom.Next(1, 100);
+                    if (itemChance <= profile.MagicItemChance)
+                    {
+                        numItems = ThreadSafeRandom.Next(profile.MagicItemMinAmount, profile.MagicItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+                    }
+
+                    itemChance = ThreadSafeRandom.Next(1, 100);
+                    if (itemChance <= profile.MundaneItemChance)
+                    {
+                        numItems = ThreadSafeRandom.Next(profile.MundaneItemMinAmount, profile.MundaneItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+
+                        // extra roll for mundane:
+                        // https://asheron.fandom.com/wiki/Announcements_-_2010/04_-_Shedding_Skin :: May 5th, 2010 entry
+                        // aetheria and coalesced mana were handled in here
+                        lootWorldObject = TryRollMundaneAddon(profile);
 
                         if (lootWorldObject != null)
                             loot.Add(lootWorldObject);
                     }
                 }
-
-                itemChance = ThreadSafeRandom.Next(1, 100);
-                if (itemChance <= profile.MagicItemChance)
+                else
                 {
-                    numItems = ThreadSafeRandom.Next(profile.MagicItemMinAmount, profile.MagicItemMaxAmount);
+                    var itemLootChance = PropertyManager.GetDouble($"loot_chance_item_tier{profile.Tier}").Item;
+                    var magicItemLootChance = PropertyManager.GetDouble($"loot_chance_magic_item_tier{profile.Tier}").Item;
+                    var mundaneItemLootChance = PropertyManager.GetDouble($"loot_chance_mundane_item_tier{profile.Tier}").Item;
 
-                    for (var i = 0; i < numItems; i++)
+                    var itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                    if (itemChance < profile.ItemChance / 100 * itemLootChance)
                     {
-                        lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
+                        // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
+                        for (var i = 0; i < profile.ItemMinAmount; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+
+                        for (var i = 0; i < profile.ItemMaxAmount - profile.ItemMinAmount; i++)
+                        {
+                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                            if (itemChance < profile.ItemChance / 100 * itemLootChance)
+                            {
+                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+
+                                if (lootWorldObject != null)
+                                    loot.Add(lootWorldObject);
+                            }
+                        }
+                    }
+
+                    itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                    if (itemChance < profile.MagicItemChance / 100 * magicItemLootChance)
+                    {
+                        for (var i = 0; i < profile.MagicItemMinAmount; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+
+                        for (var i = 0; i < profile.MagicItemMaxAmount - profile.MagicItemMinAmount; i++)
+                        {
+                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                            if (itemChance < profile.MagicItemChance / 100 * magicItemLootChance)
+                            {
+                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
+
+                                if (lootWorldObject != null)
+                                    loot.Add(lootWorldObject);
+                            }
+                        }
+                    }
+
+                    itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                    if (itemChance < profile.MundaneItemChance / 100 * mundaneItemLootChance)
+                    {
+                        for (var i = 0; i < profile.MundaneItemMinAmount; i++)
+                        {
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
+
+                        for (var i = 0; i < profile.MundaneItemMaxAmount - profile.MundaneItemMinAmount; i++)
+                        {
+                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                            if (itemChance < profile.MundaneItemChance / 100 * mundaneItemLootChance)
+                            {
+                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
+
+                                if (lootWorldObject != null)
+                                    loot.Add(lootWorldObject);
+                            }
+                        }
+
+                        // extra roll for mundane:
+                        // https://asheron.fandom.com/wiki/Announcements_-_2010/04_-_Shedding_Skin :: May 5th, 2010 entry
+                        // aetheria and coalesced mana were handled in here
+                        lootWorldObject = TryRollMundaneAddon(profile);
 
                         if (lootWorldObject != null)
                             loot.Add(lootWorldObject);
                     }
                 }
-
-                itemChance = ThreadSafeRandom.Next(1, 100);
-                if (itemChance <= profile.MundaneItemChance)
-                {
-                    numItems = ThreadSafeRandom.Next(profile.MundaneItemMinAmount, profile.MundaneItemMaxAmount);
-
-                    for (var i = 0; i < numItems; i++)
-                    {
-                        lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
-
-                        if (lootWorldObject != null)
-                            loot.Add(lootWorldObject);
-                    }
-
-                    // extra roll for mundane:
-                    // https://asheron.fandom.com/wiki/Announcements_-_2010/04_-_Shedding_Skin :: May 5th, 2010 entry
-                    // aetheria and coalesced mana were handled in here
-                    lootWorldObject = TryRollMundaneAddon(profile);
-
-                    if (lootWorldObject != null)
-                        loot.Add(lootWorldObject);
-                }
-
                 return loot;
             }
             finally

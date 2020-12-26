@@ -179,7 +179,6 @@ namespace ACE.Server.Factories.Tables
                 ( TreasureArmorType.HeritageHigh,   0.10f ),
             };
 
-            // added, from mag-loot logs
             T7_Chances = new ChanceTable<TreasureArmorType>()
             {
                 ( TreasureArmorType.Leather,        0.15f ),
