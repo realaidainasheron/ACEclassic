@@ -69,11 +69,14 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                T1_T4_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.yumi,     1.0f )
+                };
+
                 T5_Chances = new ChanceTable<WeenieClassName>()
                 {
-                    ( WeenieClassName.bowshort,                     0.3f ),
-                    ( WeenieClassName.shouyumi,                   0.105f ),
-                    ( WeenieClassName.yumi,                       0.105f ),
+                    ( WeenieClassName.yumi,                         0.51f ),
 
                     ( WeenieClassName.bowslashing,                  0.07f ),
                     ( WeenieClassName.bowpiercing,                  0.07f ),

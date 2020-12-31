@@ -48,6 +48,9 @@ namespace ACE.Server.Factories.Tables.Wcids
                     }
                     return RollMeleeWeapon(ref weaponType);
 
+                case TreasureWeaponType.ShortBow:
+                    return RollShortBowWcid(treasureDeath);
+
                 case TreasureWeaponType.Bow:
                     return RollBowWcid(treasureDeath);
 
@@ -171,6 +174,24 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 case TreasureHeritageGroup.Gharundim:
                     return DaggerWcids_Gharundim.Roll(treasureDeath.Tier);
+            }
+            return WeenieClassName.undef;
+        }
+
+        public static WeenieClassName RollShortBowWcid(TreasureDeath treasureDeath)
+        {
+            var heritage = RollHeritage(treasureDeath);
+
+            switch (heritage)
+            {
+                case TreasureHeritageGroup.Aluvian:
+                    return ShortBowWcids_Aluvian.Roll(treasureDeath.Tier);
+
+                case TreasureHeritageGroup.Gharundim:
+                    return ShortBowWcids_Gharundim.Roll(treasureDeath.Tier);
+
+                case TreasureHeritageGroup.Sho:
+                    return ShortBowWcids_Sho.Roll(treasureDeath.Tier);
             }
             return WeenieClassName.undef;
         }

@@ -1250,6 +1250,7 @@ namespace ACE.Server.Factories
                             MutateCaster(wo, treasureDeath, isMagical, null, treasureRoll);
                             break;
 
+                        case TreasureWeaponType.ShortBow:
                         case TreasureWeaponType.Bow:
                         case TreasureWeaponType.Crossbow:
                         case TreasureWeaponType.Atlatl:

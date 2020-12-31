@@ -71,14 +71,12 @@ namespace ACE.Server.Factories.Tables.Wcids
             {
                 T1_T4_Chances = new ChanceTable<WeenieClassName>()
                 {
-                    ( WeenieClassName.bowshort, 0.60f ),
-                    ( WeenieClassName.bowlong,  0.40f ),
+                    ( WeenieClassName.bowlong,  1.00f ),
                 };
 
                 T5_Chances = new ChanceTable<WeenieClassName>()
                 {
-                    ( WeenieClassName.bowshort,                     0.3f ),
-                    ( WeenieClassName.bowlong,                      0.21f ),
+                    ( WeenieClassName.bowlong,                      0.61f ),
 
                     ( WeenieClassName.bowslashing,                  0.07f ),
                     ( WeenieClassName.bowpiercing,                  0.07f ),

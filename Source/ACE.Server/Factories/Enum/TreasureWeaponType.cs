@@ -18,6 +18,7 @@ namespace ACE.Server.Factories.Enum
         Unarmed,
 
         MissileWeapon,
+        ShortBow,
         Bow,
         Crossbow,
         Atlatl,
@@ -72,6 +73,7 @@ namespace ACE.Server.Factories.Enum
             switch (weaponType)
             {
                 case TreasureWeaponType.MissileWeapon:
+                case TreasureWeaponType.ShortBow:
                 case TreasureWeaponType.Bow:
                 case TreasureWeaponType.Crossbow:
                 case TreasureWeaponType.Atlatl:
@@ -115,6 +117,8 @@ namespace ACE.Server.Factories.Enum
                 case TreasureWeaponType.TwoHandedSword:
                     return "cleaver";
 
+                case TreasureWeaponType.ShortBow:
+                    return "short_bow";
                 case TreasureWeaponType.Bow:
                     return "bow";
                 case TreasureWeaponType.Crossbow:

@@ -42,8 +42,8 @@ namespace ACE.DatLoader
                     }
                     else
                     {
-                        if (CellDat.Iteration != 4)
-                            log.Warn($"{datFile} iteration does not match expected version of 4.");
+                        if (CellDat.Iteration != 10000)
+                            log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of 10000).");
                     }
                 }
                 catch (FileNotFoundException ex)
@@ -69,7 +69,7 @@ namespace ACE.DatLoader
                 else
                 {
                     if (PortalDat.Iteration != 10000)
-                        log.Warn($"{datFile} iteration does not match expected version of 10000.");
+                        log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of 10000.");
                 }
             }
             catch (FileNotFoundException ex)

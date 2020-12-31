@@ -1,8 +1,8 @@
 DaggerMS Mutation #1:
 
-Tier Chances: 1, 0, 0, 0, 0, 0, 0, 0
+Tier Chances: 1, 1, 0, 0, 0, 0
 
-    - Chance: 11%:
+    - Chance: 12%:
         Damage += 0
 
     - Chance: 22%:
@@ -11,148 +11,40 @@ Tier Chances: 1, 0, 0, 0, 0, 0, 0, 0
     - Chance: 44%:
         Damage += 2
 
-    - Chance: 23%:
-        Damage += 3
-
-DaggerMS Mutation #2:
-
-Tier Chances: 0, 1, 0, 0, 0, 0, 0, 0
-
-    - Chance: 11%:
-        Damage += 0
-
     - Chance: 22%:
-        Damage += 1
-
-    - Chance: 44%:
-        Damage += 2
-
-    - Chance: 23%:
         Damage += 3
 
 DaggerMS Mutation #3:
 
-Tier Chances: 0, 0, 1, 0, 0, 0, 0, 0
+Tier Chances: 0, 0, 1, 1, 1, 1
 
-    - Chance: 7%:
+    - Chance: 6.7%:
         Damage += 0
 
     - Chance: 14%:
         Damage += 1
 
-    - Chance: 26%:
+    - Chance: 26.2%:
         Damage += 2
 
-    - Chance: 53%:
-        Damage += 3
-
-DaggerMS Mutation #4:
-
-Tier Chances: 0, 0, 0, 1, 0, 0, 0, 0
-
-    - Chance: 6%:
-        Damage += 0
-
-    - Chance: 13%:
-        Damage += 1
-
-    - Chance: 28%:
-        Damage += 2
-
-    - Chance: 53%:
-        Damage += 3
-
-DaggerMS Mutation #5:
-
-Tier Chances: 0, 0, 0, 0, 1, 0, 0, 0
-
-    - Chance: 6%:
-        Damage += 0
-
-    - Chance: 14%:
-        Damage += 1
-
-    - Chance: 26%:
-        Damage += 2
-
-    - Chance: 54%:
-        Damage += 3
-
-DaggerMS Mutation #6:
-
-Tier Chances: 0, 0, 0, 0, 0, 1, 0, 0
-
-    - Chance: 6%:
-        Damage += 0
-
-    - Chance: 13%:
-        Damage += 1
-
-    - Chance: 27%:
-        Damage += 2
-
-    - Chance: 54%:
+    - Chance: 53.1%:
         Damage += 3
 
 DaggerMS Mutation #7:
 
-Tier Chances: 0, 0, 0, 0, 0, 0, 1, 0
-
-    - Chance: 6%:
-        Damage += 0
-
-    - Chance: 13%:
-        Damage += 1
-
-    - Chance: 26%:
-        Damage += 2
-
-    - Chance: 55%:
-        Damage += 3
-
-DaggerMS Mutation #8:
-
-Tier Chances: 0, 0, 0, 0, 0, 0, 0, 1
-
-    - Chance: 6%:
-        Damage += 0
-
-    - Chance: 13%:
-        Damage += 1
-
-    - Chance: 27%:
-        Damage += 2
-
-    - Chance: 54%:
-        Damage += 3
-
-DaggerMS Mutation #9:
-
-Tier chances: 1, 1, 1, 1, 1, 1, 1, 1
-
-    - Chance: 5%:
-        DamageVariance = 0.89
-
-    - Chance: 7%:
-        DamageVariance = 0.87
+Tier Chances: 1, 1, 1, 1, 1, 1
 
     - Chance: 11%:
-        DamageVariance = 0.84
+        DamageVariance = 0.75
 
-    - Chance: 18%:
-        DamageVariance = 0.82
+    - Chance: 21%:
+        DamageVariance = 0.74
 
-    - Chance: 22%:
-        DamageVariance = 0.8
-
-    - Chance: 15%:
-        DamageVariance = 0.78
-
-    - Chance: 10%:
-        DamageVariance = 0.76
-
-    - Chance: 7%:
+    - Chance: 36%:
         DamageVariance = 0.73
 
-    - Chance: 5%:
+    - Chance: 20%:
+        DamageVariance = 0.72
+
+    - Chance: 12%:
         DamageVariance = 0.71

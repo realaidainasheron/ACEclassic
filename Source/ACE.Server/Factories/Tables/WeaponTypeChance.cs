@@ -8,6 +8,10 @@ namespace ACE.Server.Factories.Tables
 {
     public static class WeaponTypeChance
     {
+        private static ChanceTable<TreasureWeaponType> T1_Chances;
+        private static ChanceTable<TreasureWeaponType> T2_Chances;
+        private static ChanceTable<TreasureWeaponType> T3_T4_Chances;
+
         private static ChanceTable<TreasureWeaponType> T1_T4_Chances = new ChanceTable<TreasureWeaponType>()
         {
             // melee: 84%
@@ -79,7 +83,66 @@ namespace ACE.Server.Factories.Tables
 
         static WeaponTypeChance()
         {
-            RetailChances = new ChanceTable<TreasureWeaponType>()
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T1_Chances = new ChanceTable<TreasureWeaponType>()
+                {
+                    // melee: 63%
+                    // missile: 27%
+                    // caster: 10%
+                    ( TreasureWeaponType.Sword,    0.09f ),
+                    ( TreasureWeaponType.Mace,     0.09f ),
+                    ( TreasureWeaponType.Axe,      0.09f ),
+                    ( TreasureWeaponType.Spear,    0.09f ),
+                    ( TreasureWeaponType.Unarmed,  0.09f ),
+                    ( TreasureWeaponType.Staff,    0.09f ),
+                    ( TreasureWeaponType.Dagger,   0.09f ),
+                    ( TreasureWeaponType.ShortBow, 0.07f ),
+                    ( TreasureWeaponType.Bow,      0.02f ),
+                    ( TreasureWeaponType.Crossbow, 0.09f ),
+                    ( TreasureWeaponType.Atlatl,   0.09f ),
+                    ( TreasureWeaponType.Caster,   0.10f ),
+                };
+
+                T2_Chances = new ChanceTable<TreasureWeaponType>()
+                {
+                    // melee: 63%
+                    // missile: 27%
+                    // caster: 10%
+                    ( TreasureWeaponType.Sword,    0.09f ),
+                    ( TreasureWeaponType.Mace,     0.09f ),
+                    ( TreasureWeaponType.Axe,      0.09f ),
+                    ( TreasureWeaponType.Spear,    0.09f ),
+                    ( TreasureWeaponType.Unarmed,  0.09f ),
+                    ( TreasureWeaponType.Staff,    0.09f ),
+                    ( TreasureWeaponType.Dagger,   0.09f ),
+                    ( TreasureWeaponType.ShortBow, 0.05f ),
+                    ( TreasureWeaponType.Bow,      0.04f ),
+                    ( TreasureWeaponType.Crossbow, 0.09f ),
+                    ( TreasureWeaponType.Atlatl,   0.09f ),
+                    ( TreasureWeaponType.Caster,   0.10f ),
+                };
+
+                T3_T4_Chances = new ChanceTable<TreasureWeaponType>()
+                {
+                    // melee: 63%
+                    // missile: 27%
+                    // caster: 10%
+                    ( TreasureWeaponType.Sword,    0.09f ),
+                    ( TreasureWeaponType.Mace,     0.09f ),
+                    ( TreasureWeaponType.Axe,      0.09f ),
+                    ( TreasureWeaponType.Spear,    0.09f ),
+                    ( TreasureWeaponType.Unarmed,  0.09f ),
+                    ( TreasureWeaponType.Staff,    0.09f ),
+                    ( TreasureWeaponType.Dagger,   0.09f ),
+                    ( TreasureWeaponType.ShortBow, 0.02f ),
+                    ( TreasureWeaponType.Bow,      0.07f ),
+                    ( TreasureWeaponType.Crossbow, 0.09f ),
+                    ( TreasureWeaponType.Atlatl,   0.09f ),
+                    ( TreasureWeaponType.Caster,   0.10f ),
+                };
+
+                T5_T6_Chances = new ChanceTable<TreasureWeaponType>()
                 {
                     // melee: 63%
                     // missile: 27%
@@ -96,16 +159,36 @@ namespace ACE.Server.Factories.Tables
                     ( TreasureWeaponType.Atlatl,   0.09f ),
                     ( TreasureWeaponType.Caster,   0.10f ),
                 };
-    }
+
+                weaponTiers = new List<ChanceTable<TreasureWeaponType>>()
+                {
+                    T1_Chances,
+                    T2_Chances,
+                    T3_T4_Chances,
+                    T3_T4_Chances,
+                    T5_T6_Chances,
+                    T5_T6_Chances,
+                };
+            }
+        }
 
         public static TreasureWeaponType Roll(int tier)
         {
-            // todo: add unique profiles for t7 / t8?
-            //tier = Math.Clamp(tier, 1, 6);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                // todo: add unique profiles for t7 / t8?
+                //tier = Math.Clamp(tier, 1, 6);
 
-            //return weaponTiers[tier - 1].Roll();
+                //return weaponTiers[tier - 1].Roll();
 
-            return RetailChances.Roll();
+                return RetailChances.Roll();
+            }
+            else
+            {
+                tier = Math.Clamp(tier, 1, 6);
+
+                return weaponTiers[tier - 1].Roll();
+            }
         }
     }
 }

@@ -193,34 +193,18 @@ namespace ACE.Server.Factories
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
             {
-                switch (roll.ArmorType)
+                if (roll.ArmorType == TreasureArmorType.Covenant)
                 {
-                    case TreasureArmorType.Covenant:
-
-                        if (wo.IsShield)
-                            return "ArmorLevel.Infiltration.covenant_shield.txt";
-                        else
-                            return "ArmorLevel.Infiltration.covenant_armor.txt";
-
-                    case TreasureArmorType.Olthoi:
-
-                        if (wo.IsShield)
-                            return "ArmorLevel.Infiltration.olthoi_shield.txt";
-                        else
-                            return "ArmorLevel.Infiltration.olthoi_armor.txt";
+                    if (wo.IsShield)
+                        return "ArmorLevel.Infiltration.covenant_shield_level.txt";
+                    return "ArmorLevel.Infiltration.covenant_armor_level.txt";
                 }
-
-                if (wo.IsShield)
-                    return "ArmorLevel.Infiltration.shield_level.txt";
-
-                var coverage = wo.ClothingPriority ?? 0;
-
-                if ((coverage & (CoverageMask)CoverageMaskHelper.Extremities) != 0)
-                    return "ArmorLevel.Infiltration.armor_level_extremity.txt";
-                else if ((coverage & (CoverageMask)CoverageMaskHelper.Outerwear) != 0)
-                    return "ArmorLevel.Infiltration.armor_level_non_extremity.txt";
                 else
-                    return null;
+                {
+                    if (wo.IsShield)
+                        return "ArmorLevel.Infiltration.shield_level.txt";
+                    return "ArmorLevel.Infiltration.armor_level.txt";
+                }
             }
             else
             {

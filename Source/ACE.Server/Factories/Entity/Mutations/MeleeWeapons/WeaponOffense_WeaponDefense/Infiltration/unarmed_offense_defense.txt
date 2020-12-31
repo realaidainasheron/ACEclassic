@@ -1,424 +1,366 @@
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #1:
+Unarmed Mutation #8:
 
-Tier chances: 1, 0, 0, 0, 0, 0, 0, 0
+Tier chances: 1, 0, 0, 0, 0, 0
 
-    - Chance: 5%:
-        WeaponOffense = 1.00
+    - Chance 5%:
 
-    - Chance: 15%:
-        WeaponOffense = 1.01
+    - Chance 15%:
+        WeaponOffense += 0.01
 
-    - Chance: 30%:
-        WeaponOffense = 1.02
+    - Chance 30%:
+        WeaponOffense += 0.02
 
-    - Chance: 30%:
-        WeaponOffense = 1.03
+    - Chance 30%:
+        WeaponOffense += 0.03
 
-    - Chance: 15%:
-        WeaponOffense = 1.04
+    - Chance 15%:
+        WeaponOffense += 0.04
 
-    - Chance: 5%:
-        WeaponOffense = 1.05
+    - Chance 5%:
+        WeaponOffense += 0.05
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #2:
+Unarmed Mutation #9:
 
-Tier chances: 0, 1, 0, 0, 0, 0, 0, 0
+Tier chances: 0, 1, 0, 0, 0, 0
 
-    - Chance: 5%:
-        WeaponOffense = 1.01
+    - Chance 5%:
+        WeaponOffense += 0.02
 
-    - Chance: 15%:
-        WeaponOffense = 1.02
+    - Chance 15%:
+        WeaponOffense += 0.03
 
-    - Chance: 30%:
-        WeaponOffense = 1.03
+    - Chance 30%:
+        WeaponOffense += 0.04
 
-    - Chance: 30%:
-        WeaponOffense = 1.04
+    - Chance 30%:
+        WeaponOffense += 0.05
 
-    - Chance: 15%:
-        WeaponOffense = 1.05
+    - Chance 15%:
+        WeaponOffense += 0.06
 
-    - Chance: 5%:
-        WeaponOffense = 1.06
+    - Chance 5%:
+        WeaponOffense += 0.07
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #3:
+Unarmed Mutation #10:
 
-Tier chances: 0, 0, 1, 0, 0, 0, 0, 0
+Tier chances: 0, 0, 1, 0, 0, 0
 
-    - Chance: 2%:
-        WeaponOffense = 1.03
+    - Chance 2%:
+        WeaponOffense += 0.03
 
-    - Chance: 5%:
-        WeaponOffense = 1.04
+    - Chance 5%:
+        WeaponOffense += 0.04
 
-    - Chance: 15%:
-        WeaponOffense = 1.05
+    - Chance 15%:
+        WeaponOffense += 0.05
 
-    - Chance: 25%:
-        WeaponOffense = 1.06
+    - Chance 25%:
+        WeaponOffense += 0.06
 
-    - Chance: 30%:
-        WeaponOffense = 1.07
+    - Chance 30%:
+        WeaponOffense += 0.07
 
-    - Chance: 15%:
-        WeaponOffense = 1.08
+    - Chance 15%:
+        WeaponOffense += 0.08
 
-    - Chance: 5%:
-        WeaponOffense = 1.09
+    - Chance 5%:
+        WeaponOffense += 0.09
 
-    - Chance: 3%:
-        WeaponOffense = 1.10
+    - Chance 3%:
+        WeaponOffense += 0.1
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #4:
+Unarmed Mutation #11:
 
-Tier chances: 0, 0, 0, 1, 0, 0, 0, 0
+Tier chances: 0, 0, 0, 1, 0, 0
 
-    - Chance: 5%:
-        WeaponOffense = 1.05
+    - Chance 5%:
+        WeaponOffense += 0.05
 
-    - Chance: 15%:
-        WeaponOffense = 1.06
+    - Chance 15%:
+        WeaponOffense += 0.06
 
-    - Chance: 25%:
-        WeaponOffense = 1.07
+    - Chance 25%:
+        WeaponOffense += 0.07
 
-    - Chance: 30%:
-        WeaponOffense = 1.08
+    - Chance 30%:
+        WeaponOffense += 0.08
 
-    - Chance: 15%:
-        WeaponOffense = 1.09
+    - Chance 15%:
+        WeaponOffense += 0.09
 
-    - Chance: 5%:
-        WeaponOffense = 1.10
+    - Chance 5%:
+        WeaponOffense += 0.1
 
-    - Chance: 3%:
-        WeaponOffense = 1.11
+    - Chance 3%:
+        WeaponOffense += 0.11
 
-    - Chance: 2%:
-        WeaponOffense = 1.12
+    - Chance 2%:
+        WeaponOffense += 0.12
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #5:
+Unarmed Mutation #12:
 
-Tier chances: 0, 0, 0, 0, 1, 0, 0, 0
+Tier chances: 0, 0, 0, 0, 1, 0
 
-    - Chance: 10%:
-        WeaponOffense = 1.07
+    - Chance 3%:
+        WeaponOffense += 0.06
 
-    - Chance: 15%:
-        WeaponOffense = 1.08
+    - Chance 5%:
+        WeaponOffense += 0.07
 
-    - Chance: 25%:
-        WeaponOffense = 1.09
+    - Chance 15%:
+        WeaponOffense += 0.08
 
-    - Chance: 25%:
-        WeaponOffense = 1.10
+    - Chance 25%:
+        WeaponOffense += 0.09
 
-    - Chance: 15%:
-        WeaponOffense = 1.11
+    - Chance 25%:
+        WeaponOffense += 0.1
 
-    - Chance: 5%:
-        WeaponOffense = 1.12
+    - Chance 15%:
+        WeaponOffense += 0.11
 
-    - Chance: 3%:
-        WeaponOffense = 1.13
+    - Chance 5%:
+        WeaponOffense += 0.12
 
-    - Chance: 2%:
-        WeaponOffense = 1.14
+    - Chance 3%:
+        WeaponOffense += 0.13
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #6:
+    - Chance 2%:
+        WeaponOffense += 0.14
 
-Tier chances: 0, 0, 0, 0, 0, 1, 0, 0
+    - Chance 2%:
+        WeaponOffense += 0.15
 
-    - Chance: 10%:
-        WeaponOffense = 1.08
+Unarmed Mutation #13:
 
-    - Chance: 10%:
-        WeaponOffense = 1.09
+Tier chances: 0, 0, 0, 0, 0, 1
 
-    - Chance: 15%:
-        WeaponOffense = 1.10
+    - Chance 5%:
+        WeaponOffense += 0.07
 
-    - Chance: 20%:
-        WeaponOffense = 1.11
+    - Chance 5%:
+        WeaponOffense += 0.08
 
-    - Chance: 20%:
-        WeaponOffense = 1.12
+    - Chance 10%:
+        WeaponOffense += 0.09
 
-    - Chance: 15%:
-        WeaponOffense = 1.13
+    - Chance 15%:
+        WeaponOffense += 0.1
 
-    - Chance: 5%:
-        WeaponOffense = 1.14
+    - Chance 20%:
+        WeaponOffense += 0.11
 
-    - Chance: 5%:
-        WeaponOffense = 1.15
+    - Chance 20%:
+        WeaponOffense += 0.12
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #7:
+    - Chance 15%:
+        WeaponOffense += 0.13
 
-Tier chances: 0, 0, 0, 0, 0, 0, 1, 0
+    - Chance 5%:
+        WeaponOffense += 0.14
 
-    - Chance: 25%:
-        WeaponOffense = 1.13
+    - Chance 5%:
+        WeaponOffense += 0.15
 
-    - Chance: 15%:
-        WeaponOffense = 1.14
+Unarmed Mutation #14:
 
-    - Chance: 20%:
-        WeaponOffense = 1.15
+Tier chances: 1, 0, 0, 0, 0, 0
 
-    - Chance: 12.5%:
-        WeaponOffense = 1.16
+    - Chance 5%:
 
-    - Chance: 12.5%:
-        WeaponOffense = 1.17
+    - Chance 15%:
+        WeaponDefense += 0.01
 
-    - Chance: 7.5%:
-        WeaponOffense = 1.18
+    - Chance 30%:
+        WeaponDefense += 0.02
 
-    - Chance: 5%:
-        WeaponOffense = 1.19
+    - Chance 30%:
+        WeaponDefense += 0.03
 
-    - Chance: 2.5%:
-        WeaponOffense = 1.20
+    - Chance 15%:
+        WeaponDefense += 0.04
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #8:
+    - Chance 5%:
+        WeaponDefense += 0.05
 
-Tier chances: 0, 0, 0, 0, 0, 0, 0, 1
+Unarmed Mutation #15:
 
-    - Chance: 25%:
-        WeaponOffense = 1.13
+Tier chances: 0, 1, 0, 0, 0, 0
 
-    - Chance: 15%:
-        WeaponOffense = 1.14
+    - Chance 5%:
+        WeaponDefense += 0.02
 
-    - Chance: 20%:
-        WeaponOffense = 1.15
+    - Chance 15%:
+        WeaponDefense += 0.03
 
-    - Chance: 12.5%:
-        WeaponOffense = 1.16
+    - Chance 30%:
+        WeaponDefense += 0.04
 
-    - Chance: 12.5%:
-        WeaponOffense = 1.17
+    - Chance 30%:
+        WeaponDefense += 0.05
 
-    - Chance: 7.5%:
-        WeaponOffense = 1.18
+    - Chance 15%:
+        WeaponDefense += 0.06
 
-    - Chance: 5%:
-        WeaponOffense = 1.19
+    - Chance 5%:
+        WeaponDefense += 0.07
 
-    - Chance: 2.5%:
-        WeaponOffense = 1.20
+Unarmed Mutation #16:
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #9:
+Tier chances: 0, 0, 1, 0, 0, 0
 
-Tier chances: 1, 0, 0, 0, 0, 0, 0, 0
+    - Chance 2%:
+        WeaponDefense += 0.03
 
-    - Chance: 5%:
-        WeaponDefense = 1.00
+    - Chance 5%:
+        WeaponDefense += 0.04
 
-    - Chance: 15%:
-        WeaponDefense = 1.01
+    - Chance 15%:
+        WeaponDefense += 0.05
 
-    - Chance: 30%:
-        WeaponDefense = 1.02
+    - Chance 25%:
+        WeaponDefense += 0.06
 
-    - Chance: 30%:
-        WeaponDefense = 1.03
+    - Chance 30%:
+        WeaponDefense += 0.07
 
-    - Chance: 15%:
-        WeaponDefense = 1.04
+    - Chance 15%:
+        WeaponDefense += 0.08
 
-    - Chance: 5%:
-        WeaponDefense = 1.05
+    - Chance 5%:
+        WeaponDefense += 0.09
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #10:
+    - Chance 3%:
+        WeaponDefense += 0.1
 
-Tier chances: 0, 1, 0, 0, 0, 0, 0, 0
+Unarmed Mutation #17:
 
-    - Chance: 5%:
-        WeaponDefense = 1.01
+Tier chances: 0, 0, 0, 1, 0, 0
 
-    - Chance: 15%:
-        WeaponDefense = 1.02
+    - Chance 5%:
+        WeaponDefense += 0.05
 
-    - Chance: 30%:
-        WeaponDefense = 1.03
+    - Chance 15%:
+        WeaponDefense += 0.06
 
-    - Chance: 30%:
-        WeaponDefense = 1.04
+    - Chance 25%:
+        WeaponDefense += 0.07
 
-    - Chance: 15%:
-        WeaponDefense = 1.05
+    - Chance 30%:
+        WeaponDefense += 0.08
 
-    - Chance: 5%:
-        WeaponDefense = 1.06
+    - Chance 15%:
+        WeaponDefense += 0.09
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #11:
+    - Chance 5%:
+        WeaponDefense += 0.1
 
-Tier chances: 0, 0, 1, 0, 0, 0, 0, 0
+    - Chance 3%:
+        WeaponDefense += 0.11
 
-    - Chance: 2%:
-        WeaponDefense = 1.03
+    - Chance 2%:
+        WeaponDefense += 0.12
 
-    - Chance: 5%:
-        WeaponDefense = 1.04
+Unarmed Mutation #18:
 
-    - Chance: 15%:
-        WeaponDefense = 1.05
+Tier chances: 0, 0, 0, 0, 1, 0
 
-    - Chance: 25%:
-        WeaponDefense = 1.06
+    - Chance 3%:
+        WeaponDefense += 0.06
 
-    - Chance: 30%:
-        WeaponDefense = 1.07
+    - Chance 5%:
+        WeaponDefense += 0.07
 
-    - Chance: 15%:
-        WeaponDefense = 1.08
+    - Chance 15%:
+        WeaponDefense += 0.08
 
-    - Chance: 5%:
-        WeaponDefense = 1.09
+    - Chance 25%:
+        WeaponDefense += 0.09
 
-    - Chance: 3%:
-        WeaponDefense = 1.10
+    - Chance 25%:
+        WeaponDefense += 0.1
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #12:
+    - Chance 15%:
+        WeaponDefense += 0.11
 
-Tier chances: 0, 0, 0, 1, 0, 0, 0, 0
+    - Chance 5%:
+        WeaponDefense += 0.12
 
-    - Chance: 5%:
-        WeaponDefense = 1.05
+    - Chance 3%:
+        WeaponDefense += 0.13
 
-    - Chance: 15%:
-        WeaponDefense = 1.06
+    - Chance 2%:
+        WeaponDefense += 0.14
 
-    - Chance: 25%:
-        WeaponDefense = 1.07
+    - Chance 2%:
+        WeaponDefense += 0.15
 
-    - Chance: 30%:
-        WeaponDefense = 1.08
+Unarmed Mutation #19:
 
-    - Chance: 15%:
-        WeaponDefense = 1.09
+Tier chances: 0, 0, 0, 0, 0, 1
 
-    - Chance: 5%:
-        WeaponDefense = 1.10
+    - Chance 5%:
+        WeaponDefense += 0.07
 
-    - Chance: 3%:
-        WeaponDefense = 1.11
+    - Chance 5%:
+        WeaponDefense += 0.08
 
-    - Chance: 2%:
-        WeaponDefense = 1.12
+    - Chance 10%:
+        WeaponDefense += 0.09
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #13:
+    - Chance 15%:
+        WeaponDefense += 0.1
 
-Tier chances: 0, 0, 0, 0, 1, 0, 0, 0
+    - Chance 20%:
+        WeaponDefense += 0.11
 
-    - Chance: 10%:
-        WeaponDefense = 1.07
+    - Chance 20%:
+        WeaponDefense += 0.12
 
-    - Chance: 15%:
-        WeaponDefense = 1.08
+    - Chance 15%:
+        WeaponDefense += 0.13
 
-    - Chance: 25%:
-        WeaponDefense = 1.09
+    - Chance 5%:
+        WeaponDefense += 0.14
 
-    - Chance: 25%:
-        WeaponDefense = 1.10
+    - Chance 5%:
+        WeaponDefense += 0.15
 
-    - Chance: 15%:
-        WeaponDefense = 1.11
+Unarmed Mutation #20:
 
-    - Chance: 5%:
-        WeaponDefense = 1.12
+Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 
-    - Chance: 3%:
-        WeaponDefense = 1.13
+    - Chance 10%:
+        WeaponMissileDefense = 1.005
 
-    - Chance: 2%:
-        WeaponDefense = 1.14
+    - Chance 20%:
+        WeaponMissileDefense = 1.01
 
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #14:
+    - Chance 40%:
+        WeaponMissileDefense = 1.015
 
-Tier chances: 0, 0, 0, 0, 0, 1, 0, 0
+    - Chance 20%:
+        WeaponMissileDefense = 1.02
 
-    - Chance: 10%:
-        WeaponDefense = 1.08
+    - Chance 10%:
+        WeaponMissileDefense = 1.025
 
-    - Chance: 10%:
-        WeaponDefense = 1.09
+Unarmed Mutation #21:
 
-    - Chance: 15%:
-        WeaponDefense = 1.10
+Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 
-    - Chance: 20%:
-        WeaponDefense = 1.11
+    - Chance 10%:
+        WeaponMagicDefense = 1.005
 
-    - Chance: 20%:
-        WeaponDefense = 1.12
+    - Chance 20%:
+        WeaponMagicDefense = 1.01
 
-    - Chance: 15%:
-        WeaponDefense = 1.13
+    - Chance 40%:
+        WeaponMagicDefense = 1.015
 
-    - Chance: 5%:
-        WeaponDefense = 1.14
+    - Chance 20%:
+        WeaponMagicDefense = 1.02
 
-    - Chance: 5%:
-        WeaponDefense = 1.15
-
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #15:
-
-Tier chances: 0, 0, 0, 0, 0, 0, 1, 0
-
-    - Chance: 25%:
-        WeaponDefense = 1.13
-
-    - Chance: 15%:
-        WeaponDefense = 1.14
-
-    - Chance: 20%:
-        WeaponDefense = 1.15
-
-    - Chance: 12.5%:
-        WeaponDefense = 1.16
-
-    - Chance: 12.5%:
-        WeaponDefense = 1.17
-
-    - Chance: 7.5%:
-        WeaponDefense = 1.18
-
-    - Chance: 5%:
-        WeaponDefense = 1.19
-
-    - Chance: 2.5%:
-        WeaponDefense = 1.20
-
-Unarmed (HeavyWeapons, LightWeapons, FinesseWeapons) Mutation #16:
-
-Tier chances: 0, 0, 0, 0, 0, 0, 0, 1
-
-    - Chance: 25%:
-        WeaponDefense = 1.13
-
-    - Chance: 15%:
-        WeaponDefense = 1.14
-
-    - Chance: 20%:
-        WeaponDefense = 1.15
-
-    - Chance: 12.5%:
-        WeaponDefense = 1.16
-
-    - Chance: 12.5%:
-        WeaponDefense = 1.17
-
-    - Chance: 7.5%:
-        WeaponDefense = 1.18
-
-    - Chance: 5%:
-        WeaponDefense = 1.19
-
-    - Chance: 2.5%:
-        WeaponDefense = 1.20
+    - Chance 10%:
+        WeaponMagicDefense = 1.025
 

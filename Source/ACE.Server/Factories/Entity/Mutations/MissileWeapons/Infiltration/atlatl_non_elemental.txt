@@ -1,203 +1,402 @@
-Atlatl (MissileWeapons) Mutation #1 (383 samples):
+Atlatl Mutation #1:
 
-Tier chances: 1, 0, 0, 0, 0, 0, 0, 0
+Tier chances: 1, 0, 0, 0, 0, 0
 
-    - Chance: 8%:
+    - Chance 10%:
         DamageMod = 1.7
 
-    - Chance: 10%:
+    - Chance 15%:
         DamageMod = 1.8
 
-    - Chance: 25%:
+    - Chance 25%:
         DamageMod = 1.9
 
-    - Chance: 20%:
+    - Chance 25%:
         DamageMod = 2
 
-    - Chance: 15%:
+    - Chance 15%:
         DamageMod = 2.1
 
-    - Chance: 12%:
+    - Chance 10%:
         DamageMod = 2.2
 
-    - Chance: 10%:
-        DamageMod = 2.3
+Atlatl Mutation #2:
 
-Atlatl (MissileWeapons) Mutation #2 (671 samples):
+Tier chances: 0, 1, 0, 0, 0, 0
 
-Tier chances: 0, 1, 0, 0, 0, 0, 0, 0
+    - Chance 5%:
+        DamageMod = 1.7
 
-    - Chance: 5%:
+    - Chance 7%:
         DamageMod = 1.8
 
-    - Chance: 7%:
+    - Chance 12%:
         DamageMod = 1.9
 
-    - Chance: 12%:
+    - Chance 13%:
         DamageMod = 2
 
-    - Chance: 13%:
+    - Chance 8%:
         DamageMod = 2.1
 
-    - Chance: 8%:
+    - Chance 5%:
         DamageMod = 2.2
 
-    - Chance: 5%:
-        DamageMod = 2.3
+    - Chance 10%:
+        DamageMod = 2.23
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
 
-    - Chance: 10%:
+    - Chance 20%:
+        DamageMod = 2.25
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 15%:
+        DamageMod = 2.27
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 5%:
+        DamageMod = 2.3
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+Atlatl Mutation #3:
+
+Tier chances: 0, 0, 1, 0, 0, 0
+
+    - Chance 10%:
+        DamageMod = 2.23
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 20%:
+        DamageMod = 2.25
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 15%:
+        DamageMod = 2.27
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 5%:
+        DamageMod = 2.3
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 250
+
+    - Chance 10%:
         DamageMod = 2.33
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 20%:
+    - Chance 20%:
         DamageMod = 2.35
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 15%:
+    - Chance 15%:
         DamageMod = 2.37
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 5%:
+    - Chance 5%:
         DamageMod = 2.4
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-Atlatl (MissileWeapons) Mutation #3 (608 samples):
+Atlatl Mutation #4:
 
-Tier chances: 0, 0, 1, 0, 0, 0, 0, 0
+Tier chances: 0, 0, 0, 1, 0, 0
 
-    - Chance: 10%:
+    - Chance 10%:
         DamageMod = 2.33
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 20%:
+    - Chance 20%:
         DamageMod = 2.35
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 15%:
+    - Chance 15%:
         DamageMod = 2.37
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 5%:
+    - Chance 5%:
         DamageMod = 2.4
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 250
+        WieldDifficulty = 270
 
-    - Chance: 10%:
+    - Chance 10%:
         DamageMod = 2.43
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 20%:
+    - Chance 20%:
         DamageMod = 2.45
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 15%:
+    - Chance 15%:
         DamageMod = 2.47
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 5%:
+    - Chance 5%:
         DamageMod = 2.5
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-Atlatl (MissileWeapons) Mutation #4 (1,370 samples):
+Atlatl Mutation #5:
 
-Tier chances: 0, 0, 0, 1, 0, 0, 0, 0
+Tier chances: 0, 0, 0, 0, 1, 1
 
-    - Chance: 10%:
+    - Chance 15%:
         DamageMod = 2.43
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 20%:
+    - Chance 35%:
         DamageMod = 2.45
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 15%:
+    - Chance 35%:
         DamageMod = 2.47
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
+        WieldDifficulty = 290
 
-    - Chance: 5%:
+    - Chance 15%:
         DamageMod = 2.5
         WieldRequirements = RawSkill
         WieldSkillType = WeaponSkill
-        WieldDifficulty = 270
-
-    - Chance: 10%:
-        DamageMod = 2.53
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
         WieldDifficulty = 290
 
-    - Chance: 20%:
-        DamageMod = 2.55
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+Atlatl Mutation #6:
 
-    - Chance: 15%:
-        DamageMod = 2.57
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+Tier chances: 1, 0, 0, 0, 0, 0
 
-    - Chance: 5%:
-        DamageMod = 2.6
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+    - Chance 5%:
 
-Atlatl (MissileWeapons) Mutation #5 (1,267 samples):
+    - Chance 15%:
+        WeaponDefense += 0.01
 
-Tier chances: 0, 0, 0, 0, 1, 1, 1, 1
+    - Chance 30%:
+        WeaponDefense += 0.02
 
-    - Chance: 15%:
-        DamageMod = 2.53
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+    - Chance 30%:
+        WeaponDefense += 0.03
 
-    - Chance: 35%:
-        DamageMod = 2.55
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+    - Chance 15%:
+        WeaponDefense += 0.04
 
-    - Chance: 35%:
-        DamageMod = 2.57
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+    - Chance 5%:
+        WeaponDefense += 0.05
 
-    - Chance: 15%:
-        DamageMod = 2.6
-        WieldRequirements = RawSkill
-        WieldSkillType = WeaponSkill
-        WieldDifficulty = 290
+Atlatl Mutation #7:
+
+Tier chances: 0, 1, 0, 0, 0, 0
+
+    - Chance 5%:
+        WeaponDefense += 0.02
+
+    - Chance 15%:
+        WeaponDefense += 0.03
+
+    - Chance 30%:
+        WeaponDefense += 0.04
+
+    - Chance 30%:
+        WeaponDefense += 0.05
+
+    - Chance 15%:
+        WeaponDefense += 0.06
+
+    - Chance 5%:
+        WeaponDefense += 0.07
+
+Atlatl Mutation #8:
+
+Tier chances: 0, 0, 1, 0, 0, 0
+
+    - Chance 2%:
+        WeaponDefense += 0.03
+
+    - Chance 5%:
+        WeaponDefense += 0.04
+
+    - Chance 15%:
+        WeaponDefense += 0.05
+
+    - Chance 25%:
+        WeaponDefense += 0.06
+
+    - Chance 30%:
+        WeaponDefense += 0.07
+
+    - Chance 15%:
+        WeaponDefense += 0.08
+
+    - Chance 5%:
+        WeaponDefense += 0.09
+
+    - Chance 3%:
+        WeaponDefense += 0.1
+
+Atlatl Mutation #9:
+
+Tier chances: 0, 0, 0, 1, 0, 0
+
+    - Chance 5%:
+        WeaponDefense += 0.05
+
+    - Chance 15%:
+        WeaponDefense += 0.06
+
+    - Chance 25%:
+        WeaponDefense += 0.07
+
+    - Chance 30%:
+        WeaponDefense += 0.08
+
+    - Chance 15%:
+        WeaponDefense += 0.09
+
+    - Chance 5%:
+        WeaponDefense += 0.1
+
+    - Chance 3%:
+        WeaponDefense += 0.11
+
+    - Chance 2%:
+        WeaponDefense += 0.12
+
+Atlatl Mutation #10:
+
+Tier chances: 0, 0, 0, 0, 1, 0
+
+    - Chance 3%:
+        WeaponDefense += 0.06
+
+    - Chance 5%:
+        WeaponDefense += 0.07
+
+    - Chance 15%:
+        WeaponDefense += 0.08
+
+    - Chance 25%:
+        WeaponDefense += 0.09
+
+    - Chance 25%:
+        WeaponDefense += 0.1
+
+    - Chance 15%:
+        WeaponDefense += 0.11
+
+    - Chance 5%:
+        WeaponDefense += 0.12
+
+    - Chance 3%:
+        WeaponDefense += 0.13
+
+    - Chance 2%:
+        WeaponDefense += 0.14
+
+    - Chance 2%:
+        WeaponDefense += 0.15
+
+Atlatl Mutation #11:
+
+Tier chances: 0, 0, 0, 0, 0, 1
+
+    - Chance 5%:
+        WeaponDefense += 0.07
+
+    - Chance 5%:
+        WeaponDefense += 0.08
+
+    - Chance 10%:
+        WeaponDefense += 0.09
+
+    - Chance 15%:
+        WeaponDefense += 0.1
+
+    - Chance 20%:
+        WeaponDefense += 0.11
+
+    - Chance 20%:
+        WeaponDefense += 0.12
+
+    - Chance 15%:
+        WeaponDefense += 0.13
+
+    - Chance 5%:
+        WeaponDefense += 0.14
+
+    - Chance 5%:
+        WeaponDefense += 0.15
+
+Atlatl Mutation #12:
+
+Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
+
+    - Chance 10%:
+        WeaponMissileDefense = 1.005
+
+    - Chance 20%:
+        WeaponMissileDefense = 1.01
+
+    - Chance 40%:
+        WeaponMissileDefense = 1.015
+
+    - Chance 20%:
+        WeaponMissileDefense = 1.02
+
+    - Chance 10%:
+        WeaponMissileDefense = 1.025
+
+Atlatl Mutation #13:
+
+Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
+
+    - Chance 10%:
+        WeaponMagicDefense = 1.005
+
+    - Chance 20%:
+        WeaponMagicDefense = 1.01
+
+    - Chance 40%:
+        WeaponMagicDefense = 1.015
+
+    - Chance 20%:
+        WeaponMagicDefense = 1.02
+
+    - Chance 10%:
+        WeaponMagicDefense = 1.025
 

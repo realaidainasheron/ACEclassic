@@ -1,84 +1,168 @@
-Elemental Bow Mutation #1:
+Thrown Weapon Mutation #4:
 
-Tier chances: 1, 1, 1, 1, 1, 1
+Tier chances: 1, 0, 0, 0, 0, 0
 
-    - Chance 15%:
-        DamageMod = 2.23
-
-    - Chance 35%:
-        DamageMod = 2.25
-
-    - Chance 35%:
-        DamageMod = 2.27
+    - Chance 5%:
 
     - Chance 15%:
-        DamageMod = 2.3
+        WeaponOffense += 0.01
 
-Elemental Bow Mutation #2:
+    - Chance 30%:
+        WeaponOffense += 0.02
 
-Tier chances: 1, 1, 1, 1, 1, 0
-
-    - Chance 15%:
-        ElementalDamageBonus = 1
-
-    - Chance 35%:
-        ElementalDamageBonus = 2
-
-    - Chance 35%:
-        ElementalDamageBonus = 3
+    - Chance 30%:
+        WeaponOffense += 0.03
 
     - Chance 15%:
-        ElementalDamageBonus = 4
+        WeaponOffense += 0.04
 
-Elemental Bow Mutation #3:
+    - Chance 5%:
+        WeaponOffense += 0.05
+
+Thrown Weapon Mutation #5:
+
+Tier chances: 0, 1, 0, 0, 0, 0
+
+    - Chance 5%:
+        WeaponOffense += 0.02
+
+    - Chance 15%:
+        WeaponOffense += 0.03
+
+    - Chance 30%:
+        WeaponOffense += 0.04
+
+    - Chance 30%:
+        WeaponOffense += 0.05
+
+    - Chance 15%:
+        WeaponOffense += 0.06
+
+    - Chance 5%:
+        WeaponOffense += 0.07
+
+Thrown Weapon Mutation #6:
+
+Tier chances: 0, 0, 1, 0, 0, 0
+
+    - Chance 2%:
+        WeaponOffense += 0.03
+
+    - Chance 5%:
+        WeaponOffense += 0.04
+
+    - Chance 15%:
+        WeaponOffense += 0.05
+
+    - Chance 25%:
+        WeaponOffense += 0.06
+
+    - Chance 30%:
+        WeaponOffense += 0.07
+
+    - Chance 15%:
+        WeaponOffense += 0.08
+
+    - Chance 5%:
+        WeaponOffense += 0.09
+
+    - Chance 3%:
+        WeaponOffense += 0.1
+
+Thrown Weapon Mutation #7:
+
+Tier chances: 0, 0, 0, 1, 0, 0
+
+    - Chance 5%:
+        WeaponOffense += 0.05
+
+    - Chance 15%:
+        WeaponOffense += 0.06
+
+    - Chance 25%:
+        WeaponOffense += 0.07
+
+    - Chance 30%:
+        WeaponOffense += 0.08
+
+    - Chance 15%:
+        WeaponOffense += 0.09
+
+    - Chance 5%:
+        WeaponOffense += 0.1
+
+    - Chance 3%:
+        WeaponOffense += 0.11
+
+    - Chance 2%:
+        WeaponOffense += 0.12
+
+Thrown Weapon Mutation #8:
+
+Tier chances: 0, 0, 0, 0, 1, 0
+
+    - Chance 3%:
+        WeaponOffense += 0.06
+
+    - Chance 5%:
+        WeaponOffense += 0.07
+
+    - Chance 15%:
+        WeaponOffense += 0.08
+
+    - Chance 25%:
+        WeaponOffense += 0.09
+
+    - Chance 25%:
+        WeaponOffense += 0.1
+
+    - Chance 15%:
+        WeaponOffense += 0.11
+
+    - Chance 5%:
+        WeaponOffense += 0.12
+
+    - Chance 3%:
+        WeaponOffense += 0.13
+
+    - Chance 2%:
+        WeaponOffense += 0.14
+
+    - Chance 2%:
+        WeaponOffense += 0.15
+
+Thrown Weapon Mutation #9:
 
 Tier chances: 0, 0, 0, 0, 0, 1
 
-    - Chance 10%:
-        ElementalDamageBonus = 1
-
-    - Chance 20%:
-        ElementalDamageBonus = 2
-
-    - Chance 15%:
-        ElementalDamageBonus = 3
+    - Chance 5%:
+        WeaponOffense += 0.07
 
     - Chance 5%:
-        ElementalDamageBonus = 4
-
-    - Chance 8%:
-        ElementalDamageBonus = 5
-        WieldDifficulty = 335
+        WeaponOffense += 0.08
 
     - Chance 10%:
-        ElementalDamageBonus = 6
-        WieldDifficulty = 335
+        WeaponOffense += 0.09
 
-    - Chance 10%:
-        ElementalDamageBonus = 7
-        WieldDifficulty = 335
+    - Chance 15%:
+        WeaponOffense += 0.1
 
-    - Chance 7%:
-        ElementalDamageBonus = 8
-        WieldDifficulty = 335
+    - Chance 20%:
+        WeaponOffense += 0.11
 
-    - Chance 6%:
-        ElementalDamageBonus = 9
-        WieldDifficulty = 360
+    - Chance 20%:
+        WeaponOffense += 0.12
 
-    - Chance 4%:
-        ElementalDamageBonus = 10
-        WieldDifficulty = 360
+    - Chance 15%:
+        WeaponOffense += 0.13
 
-    - Chance 3%:
-        ElementalDamageBonus = 11
-        WieldDifficulty = 360
+    - Chance 5%:
+        WeaponOffense += 0.14
 
-    - Chance 2%:
-        ElementalDamageBonus = 12
-        WieldDifficulty = 360
+    - Chance 5%:
+        WeaponOffense += 0.15
 
-Elemental Bow Mutation #4:
+Thrown Weapon Mutation #10:
 
 Tier chances: 1, 0, 0, 0, 0, 0
 
@@ -99,7 +183,7 @@ Tier chances: 1, 0, 0, 0, 0, 0
     - Chance 5%:
         WeaponDefense += 0.05
 
-Elemental Bow Mutation #5:
+Thrown Weapon Mutation #11:
 
 Tier chances: 0, 1, 0, 0, 0, 0
 
@@ -121,7 +205,7 @@ Tier chances: 0, 1, 0, 0, 0, 0
     - Chance 5%:
         WeaponDefense += 0.07
 
-Elemental Bow Mutation #6:
+Thrown Weapon Mutation #12:
 
 Tier chances: 0, 0, 1, 0, 0, 0
 
@@ -149,7 +233,7 @@ Tier chances: 0, 0, 1, 0, 0, 0
     - Chance 3%:
         WeaponDefense += 0.1
 
-Elemental Bow Mutation #7:
+Thrown Weapon Mutation #13:
 
 Tier chances: 0, 0, 0, 1, 0, 0
 
@@ -177,7 +261,7 @@ Tier chances: 0, 0, 0, 1, 0, 0
     - Chance 2%:
         WeaponDefense += 0.12
 
-Elemental Bow Mutation #8:
+Thrown Weapon Mutation #14:
 
 Tier chances: 0, 0, 0, 0, 1, 0
 
@@ -211,7 +295,7 @@ Tier chances: 0, 0, 0, 0, 1, 0
     - Chance 2%:
         WeaponDefense += 0.15
 
-Elemental Bow Mutation #9:
+Thrown Weapon Mutation #15:
 
 Tier chances: 0, 0, 0, 0, 0, 1
 
@@ -242,7 +326,7 @@ Tier chances: 0, 0, 0, 0, 0, 1
     - Chance 5%:
         WeaponDefense += 0.15
 
-Elemental Bow Mutation #10:
+Thrown Weapon Mutation #16:
 
 Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 
@@ -261,7 +345,7 @@ Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
     - Chance 10%:
         WeaponMissileDefense = 1.025
 
-Elemental Bow Mutation #11:
+Thrown Weapon Mutation #17:
 
 Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 
