@@ -8,12 +8,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class DaggerWcids_Aluvian_Sho
     {
-        private static ChanceTable<WeenieClassName> Non_Elemental_Chances = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.knife,          0.33f ),
-            ( WeenieClassName.dagger,         0.34f ),
-            ( WeenieClassName.dirk,           0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> T1_Chances;
 
         private static ChanceTable<WeenieClassName> T1_T3_Chances = new ChanceTable<WeenieClassName>()
         {
@@ -85,6 +80,13 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                T1_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.knife,          0.45f ),
+                    ( WeenieClassName.dagger,         0.45f ),
+                    ( WeenieClassName.dirk,           0.10f ),
+                };
+
                 T1_T3_Chances = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.knife,          0.25f ),
@@ -150,7 +152,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()
                 {
-                    Non_Elemental_Chances,
+                    T1_Chances,
                     T1_T3_Chances,
                     T1_T3_Chances,
                     T4_Chances,

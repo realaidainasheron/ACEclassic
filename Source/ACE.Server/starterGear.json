@@ -1063,6 +1063,16 @@
                             "weenieId": "522",
                             "name": "Starter Darts",
                             "stacksize": "15"
+                        },
+                        {
+                            "weenieId": "23109",
+                            "name": "Starter Atlatl",
+                            "stacksize": "1"
+                        },
+                        {
+                            "weenieId": "12464",
+                            "name": "Atlatl Darts",
+                            "stacksize": "30"
                         }
                     ]
                 },
@@ -1071,9 +1081,19 @@
                     "name": "Gharu'ndim",
                     "gear": [
                         {
-                            "weenieId": "536",
-                            "name": "Starter Tungi",
+                            "weenieId": "522",
+                            "name": "Starter Darts",
                             "stacksize": "15"
+                        },
+                        {
+                            "weenieId": "23109",
+                            "name": "Starter Atlatl",
+                            "stacksize": "1"
+                        },
+                        {
+                            "weenieId": "12464",
+                            "name": "Atlatl Darts",
+                            "stacksize": "30"
                         }
                     ]
                 },
@@ -1083,8 +1103,18 @@
                     "gear": [
                         {
                             "weenieId": "532",
-                            "name": "Starter Shuriken",
+                            "name": "Starter Shouken",
                             "stacksize": "15"
+                        },
+                        {
+                            "weenieId": "23109",
+                            "name": "Starter Atlatl",
+                            "stacksize": "1"
+                        },
+                        {
+                            "weenieId": "12464",
+                            "name": "Atlatl Darts",
+                            "stacksize": "30"
                         }
                     ]
                 }

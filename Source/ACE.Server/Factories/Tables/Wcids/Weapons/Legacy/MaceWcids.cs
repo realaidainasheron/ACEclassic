@@ -7,13 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class MaceWcids
     {
-        private static ChanceTable<WeenieClassName> MaceWcids_Aluvian_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.club,             0.25f ),
-            ( WeenieClassName.mace,             0.25f ),
-            ( WeenieClassName.morningstar,      0.25f ),
-            ( WeenieClassName.clubspiked,       0.25f ),
-        };
+        private static ChanceTable<WeenieClassName> MaceWcids_Aluvian_T1;
 
         private static ChanceTable<WeenieClassName> MaceWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
@@ -39,13 +33,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.clubspikedfrost,     0.03f ),
         };
 
-        private static ChanceTable<WeenieClassName> MaceWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.kasrullah,        0.25f ),
-            ( WeenieClassName.dabus,            0.25f ),
-            ( WeenieClassName.morningstar,      0.25f ),
-            ( WeenieClassName.clubspiked,       0.25f ),
-        };
+        private static ChanceTable<WeenieClassName> MaceWcids_Gharundim_T1;
 
         private static ChanceTable<WeenieClassName> MaceWcids_Gharundim = new ChanceTable<WeenieClassName>()
         {
@@ -71,13 +59,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.clubspikedfrost,     0.03f ),
         };
 
-        private static ChanceTable<WeenieClassName> MaceWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.jitte,            0.25f ),
-            ( WeenieClassName.tofun,            0.25f ),
-            ( WeenieClassName.morningstar,      0.25f ),
-            ( WeenieClassName.clubspiked,       0.25f ),
-        };
+        private static ChanceTable<WeenieClassName> MaceWcids_Sho_T1;
 
         private static ChanceTable<WeenieClassName> MaceWcids_Sho = new ChanceTable<WeenieClassName>()
         {
@@ -107,6 +89,15 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.club,             1.0f ),
+                    ( WeenieClassName.clubspiked,       1.0f ),
+
+                    ( WeenieClassName.mace,             0.25f ),
+                    ( WeenieClassName.morningstar,      0.25f ),
+                };
+
                 MaceWcids_Aluvian = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.club,                0.20f ),
@@ -134,6 +125,15 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.clubspikedfrost,     0.0125f ),
                 };
 
+                MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+            {
+                ( WeenieClassName.kasrullah,        1.0f ),
+                ( WeenieClassName.clubspiked,       1.0f ),
+
+                ( WeenieClassName.dabus,            0.25f ),
+                ( WeenieClassName.morningstar,      0.25f ),
+            };
+
                 MaceWcids_Gharundim = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.kasrullah,           0.20f ),
@@ -159,6 +159,15 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.clubspikedelectric,  0.0125f ),
                     ( WeenieClassName.clubspikedfire,      0.0125f ),
                     ( WeenieClassName.clubspikedfrost,     0.0125f ),
+                };
+
+                MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.jitte,            1.0f ),
+                    ( WeenieClassName.clubspiked,       1.0f ),
+
+                    ( WeenieClassName.tofun,            0.25f ),
+                    ( WeenieClassName.morningstar,      0.25f ),
                 };
 
                 MaceWcids_Sho = new ChanceTable<WeenieClassName>()
@@ -213,17 +222,17 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case TreasureHeritageGroup.Aluvian:
                         if (tier > 1)
                             return MaceWcids_Aluvian.Roll();
-                        return MaceWcids_Aluvian_Non_Elemental.Roll();
+                        return MaceWcids_Aluvian_T1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
                             return MaceWcids_Gharundim.Roll();
-                        return MaceWcids_Aluvian_Non_Elemental.Roll();
+                        return MaceWcids_Gharundim_T1.Roll();
 
                     case TreasureHeritageGroup.Sho:
                         if (tier > 1)
                             return MaceWcids_Sho.Roll();
-                        return MaceWcids_Sho_Non_Elemental.Roll();
+                        return MaceWcids_Sho_T1.Roll();
                 }
             }
             return WeenieClassName.undef;

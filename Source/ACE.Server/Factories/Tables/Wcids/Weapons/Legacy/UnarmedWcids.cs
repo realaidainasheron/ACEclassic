@@ -7,7 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class UnarmedWcids
     {
-        private static ChanceTable<WeenieClassName> UnarmedWcids_Aluvian_Non_Elemental = new ChanceTable<WeenieClassName>()
+        private static ChanceTable<WeenieClassName> UnarmedWcids_Aluvian_Tier1 = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.cestus,         1.00f ),
         };
@@ -21,7 +21,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.cestusfrost,    0.15f ),
         };
 
-        private static ChanceTable<WeenieClassName> UnarmedWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
+        private static ChanceTable<WeenieClassName> UnarmedWcids_Gharundim_Tier1 = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.katar,         1.00f ),
         };
@@ -35,7 +35,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.katarfrost,    0.15f ),
         };
 
-        private static ChanceTable<WeenieClassName> UnarmedWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
+        private static ChanceTable<WeenieClassName> UnarmedWcids_Sho_Tier1 = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.nekode,         1.00f ),
         };
@@ -72,17 +72,17 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case TreasureHeritageGroup.Aluvian:
                         if (tier > 1)
                             return UnarmedWcids_Aluvian.Roll();
-                        return UnarmedWcids_Aluvian_Non_Elemental.Roll();
+                        return UnarmedWcids_Aluvian_Tier1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
                             return UnarmedWcids_Gharundim.Roll();
-                        return UnarmedWcids_Gharundim_Non_Elemental.Roll();
+                        return UnarmedWcids_Gharundim_Tier1.Roll();
 
                     case TreasureHeritageGroup.Sho:
                         if (tier > 1)
                             return UnarmedWcids_Sho.Roll();
-                        return UnarmedWcids_Sho_Non_Elemental.Roll();
+                        return UnarmedWcids_Sho_Tier1.Roll();
                 }
             }
             return WeenieClassName.undef;

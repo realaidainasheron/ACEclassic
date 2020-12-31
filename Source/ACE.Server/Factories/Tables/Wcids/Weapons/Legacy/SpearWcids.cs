@@ -7,12 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class SpearWcids
     {
-        private static ChanceTable<WeenieClassName> SpearWcids_Aluvian_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.spear,               0.34f ),
-            ( WeenieClassName.trident,             0.33f ),
-            ( WeenieClassName.swordstaff,          0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> SpearWcids_Aluvian_T1;
 
         private static ChanceTable<WeenieClassName> SpearWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
@@ -33,12 +28,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.swordstafffrost,    0.05f ),
         };
 
-        private static ChanceTable<WeenieClassName> SpearWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.budiaq,              0.34f ),
-            ( WeenieClassName.trident,             0.33f ),
-            ( WeenieClassName.swordstaff,          0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> SpearWcids_Gharundim_T1;
 
         private static ChanceTable<WeenieClassName> SpearWcids_Gharundim = new ChanceTable<WeenieClassName>()
         {
@@ -59,7 +49,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.swordstafffrost,    0.05f ),
         };
 
-        private static ChanceTable<WeenieClassName> SpearWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
+        private static ChanceTable<WeenieClassName> SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.yari,                0.34f ),
             ( WeenieClassName.trident,             0.33f ),
@@ -88,6 +78,14 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.spear,               1.0f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
+                };
+
                 SpearWcids_Aluvian = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.spear,              0.27f ),
@@ -109,6 +107,14 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordstafffrost,    0.01625f ),
                 };
 
+                SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.budiaq,              1.00f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
+                };
+
                 SpearWcids_Gharundim = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.budiaq,             0.27f ),
@@ -128,6 +134,14 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordstaffelectric, 0.01625f ),
                     ( WeenieClassName.swordstafffire,     0.01625f ),
                     ( WeenieClassName.swordstafffrost,    0.01625f ),
+                };
+
+                SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.yari,                1.00f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
                 };
 
                 SpearWcids_Sho = new ChanceTable<WeenieClassName>()
@@ -176,17 +190,17 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case TreasureHeritageGroup.Aluvian:
                         if (tier > 1)
                             return SpearWcids_Aluvian.Roll();
-                        return SpearWcids_Aluvian_Non_Elemental.Roll();
+                        return SpearWcids_Aluvian_T1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
                             return SpearWcids_Gharundim.Roll();
-                        return SpearWcids_Gharundim_Non_Elemental.Roll();
+                        return SpearWcids_Gharundim_T1.Roll();
 
                     case TreasureHeritageGroup.Sho:
                         if (tier > 1)
                             return SpearWcids_Sho.Roll();
-                        return SpearWcids_Sho_Non_Elemental.Roll();
+                        return SpearWcids_Sho_T1.Roll();
                 }
             }
             return WeenieClassName.undef;

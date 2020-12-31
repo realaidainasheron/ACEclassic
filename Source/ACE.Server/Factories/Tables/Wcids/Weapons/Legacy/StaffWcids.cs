@@ -7,10 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class StaffWcids
     {
-        private static ChanceTable<WeenieClassName> StaffWcids_Aluvian_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.spear,               1.0f ),
-        };
+        private static ChanceTable<WeenieClassName> StaffWcids_Aluvian_T1;
 
         private static ChanceTable<WeenieClassName> StaffWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
@@ -21,10 +18,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.quarterstafffrostnew,    0.15f ),
         };
 
-        private static ChanceTable<WeenieClassName> StaffWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.spear,               1.0f ),
-        };
+        private static ChanceTable<WeenieClassName> StaffWcids_Gharundim_T1;
 
         private static ChanceTable<WeenieClassName> StaffWcids_Gharundim = new ChanceTable<WeenieClassName>()
         {
@@ -35,10 +29,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.nabutfrostnew,    0.15f ),
         };
 
-        private static ChanceTable<WeenieClassName> StaffWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.spear,               1.0f ),
-        };
+        private static ChanceTable<WeenieClassName> StaffWcids_Sho_T1;
 
         private static ChanceTable<WeenieClassName> StaffWcids_Sho = new ChanceTable<WeenieClassName>()
         {
@@ -51,8 +42,13 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static StaffWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                StaffWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.quarterstaffnew,          1.0f ),
+                };
+
                 StaffWcids_Aluvian = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.quarterstaffnew,         0.80f ),
@@ -62,6 +58,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.quarterstafffrostnew,    0.05f ),
                 };
 
+                StaffWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.nabutnew,               1.0f ),
+                };
+
                 StaffWcids_Gharundim = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.nabutnew,         0.80f ),
@@ -69,6 +70,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.nabutelectricnew, 0.05f ),
                     ( WeenieClassName.nabutfirenew,     0.05f ),
                     ( WeenieClassName.nabutfrostnew,    0.05f ),
+                };
+
+                StaffWcids_Sho_T1 = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.jonew,               1.0f ),
                 };
 
                 StaffWcids_Sho = new ChanceTable<WeenieClassName>()
@@ -105,17 +111,17 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case TreasureHeritageGroup.Aluvian:
                         if (tier > 1)
                             return StaffWcids_Aluvian.Roll();
-                        return StaffWcids_Aluvian_Non_Elemental.Roll();
+                        return StaffWcids_Aluvian_T1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
                             return StaffWcids_Gharundim.Roll();
-                        return StaffWcids_Gharundim_Non_Elemental.Roll();
+                        return StaffWcids_Gharundim_T1.Roll();
 
                     case TreasureHeritageGroup.Sho:
                         if (tier > 1)
                             return StaffWcids_Sho.Roll();
-                        return StaffWcids_Sho_Non_Elemental.Roll();
+                        return StaffWcids_Sho_T1.Roll();
                 }
             }
             return WeenieClassName.undef;

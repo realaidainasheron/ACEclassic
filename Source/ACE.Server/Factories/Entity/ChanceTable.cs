@@ -6,20 +6,35 @@ using log4net;
 using ACE.Common;
 
 namespace ACE.Server.Factories.Entity
-{
+{     
     public class ChanceTable<T> : List<(T result, float chance)>
     {
         private bool verified;
+        private bool IsWeight;
+        private float TotalWeight = 1.0f;
         private static readonly decimal threshold = 0.0000001M;
 
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        public ChanceTable(bool isWeight = false)
+        {
+            IsWeight = isWeight;
+        }
         private void VerifyTable()
         {
+            if (IsWeight)
+            {
+                TotalWeight = 0.0f;
+                foreach (var entry in this)
+                {
+                    TotalWeight += entry.chance;
+                }
+            }
+
             var total = 0.0M;
 
             foreach (var entry in this)
-                total += (decimal)entry.chance;
+                total += (decimal)(entry.chance / TotalWeight);
 
             if (Math.Abs(1.0M - total) > threshold)
                 log.Error($"Chance table adds up to {total}, expected 1.0: {string.Join(", ", this)}");
@@ -42,7 +57,7 @@ namespace ACE.Server.Factories.Entity
 
             foreach (var entry in this)
             {
-                total += entry.chance;
+                total += entry.chance / TotalWeight;
 
                 if (rng < total)
                     return entry.result;

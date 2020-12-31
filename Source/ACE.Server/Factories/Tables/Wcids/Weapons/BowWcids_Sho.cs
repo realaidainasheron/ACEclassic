@@ -8,6 +8,8 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class BowWcids_Sho
     {
+        private static ChanceTable<WeenieClassName> T1_Chances = new ChanceTable<WeenieClassName>();
+
         private static ChanceTable<WeenieClassName> T1_T4_Chances = new ChanceTable<WeenieClassName>()
         {
             ( WeenieClassName.bowshort, 0.50f ),
@@ -69,9 +71,16 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                T1_Chances = new ChanceTable<WeenieClassName>()
+                {
+                    ( WeenieClassName.shouyumi,   0.75f ),
+                    ( WeenieClassName.yumi,       0.25f )
+                };
+
                 T1_T4_Chances = new ChanceTable<WeenieClassName>()
                 {
-                    ( WeenieClassName.yumi,     1.0f )
+                    ( WeenieClassName.shouyumi, 0.6f ),
+                    ( WeenieClassName.yumi,     0.4f )
                 };
 
                 T5_Chances = new ChanceTable<WeenieClassName>()
@@ -101,7 +110,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                 // we have to refresh this list or it will still contain the previous values.
                 bowTiers = new List<ChanceTable<WeenieClassName>>()
 		        {
-		            T1_T4_Chances,
+                    T1_Chances,
 		            T1_T4_Chances,
 		            T1_T4_Chances,
 		            T1_T4_Chances,
@@ -113,9 +122,16 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(int tier)
+        public static WeenieClassName Roll(int tier, out TreasureWeaponType weaponType)
         {
-            return bowTiers[tier - 1].Roll();
+            var roll = bowTiers[tier - 1].Roll();
+
+            if (roll == WeenieClassName.shouyumi && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                weaponType = TreasureWeaponType.BowShort; // Modify weapon type so we get correct mutations.
+            else
+                weaponType = TreasureWeaponType.Bow;
+
+            return roll;
         }
     }
 }

@@ -202,7 +202,7 @@ namespace ACE.Server.WorldObjects
                 return new ActivationResult(true);
 
             // heritage requirement
-            if (HeritageGroup != 0)
+            if (!IsCreature && HeritageGroup != 0)
             {
                 if (player.HeritageGroup != HeritageGroup)
                     return new ActivationResult(new GameEventWeenieErrorWithString(player.Session, WeenieErrorWithString.YouMustBe_ToUseItemMagic, HeritageGroup.ToString()));

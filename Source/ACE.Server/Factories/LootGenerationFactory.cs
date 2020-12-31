@@ -46,6 +46,14 @@ namespace ACE.Server.Factories
                     var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
                     var tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
 
+                    var itemLootChance = PropertyManager.GetDouble($"loot_chance_item_tier{deathTreasure.Tier}").Item;
+                    var magicItemLootChance = PropertyManager.GetDouble($"loot_chance_magic_item_tier{deathTreasure.Tier}").Item;
+                    var mundaneItemLootChance = PropertyManager.GetDouble($"loot_chance_mundane_item_tier{deathTreasure.Tier}").Item;
+
+                    tweakedDeathTreasure.ItemChance = (int)(tweakedDeathTreasure.MagicItemChance * itemLootChance);
+                    tweakedDeathTreasure.MagicItemChance = (int)(tweakedDeathTreasure.MagicItemChance * magicItemLootChance);
+                    tweakedDeathTreasure.MundaneItemChance = (int)(tweakedDeathTreasure.MagicItemChance * mundaneItemLootChance);
+
                     // Let's make the creatures at the top of their tiers drop better loot than their lower leveled kin.
                     switch (deathTreasure.Tier)
                     {
@@ -314,12 +322,8 @@ namespace ACE.Server.Factories
                 }
                 else
                 {
-                    var itemLootChance = PropertyManager.GetDouble($"loot_chance_item_tier{profile.Tier}").Item;
-                    var magicItemLootChance = PropertyManager.GetDouble($"loot_chance_magic_item_tier{profile.Tier}").Item;
-                    var mundaneItemLootChance = PropertyManager.GetDouble($"loot_chance_mundane_item_tier{profile.Tier}").Item;
-
                     var itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.ItemChance / 100 * itemLootChance)
+                    if (itemChance < profile.ItemChance / 100)
                     {
                         // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
                         for (var i = 0; i < profile.ItemMinAmount; i++)
@@ -333,7 +337,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.ItemMaxAmount - profile.ItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.ItemChance / 100 * itemLootChance)
+                            if (itemChance < profile.ItemChance / 100)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
@@ -344,7 +348,7 @@ namespace ACE.Server.Factories
                     }
 
                     itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MagicItemChance / 100 * magicItemLootChance)
+                    if (itemChance < profile.MagicItemChance / 100)
                     {
                         for (var i = 0; i < profile.MagicItemMinAmount; i++)
                         {
@@ -357,7 +361,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.MagicItemMaxAmount - profile.MagicItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MagicItemChance / 100 * magicItemLootChance)
+                            if (itemChance < profile.MagicItemChance / 100)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
 
@@ -368,7 +372,7 @@ namespace ACE.Server.Factories
                     }
 
                     itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MundaneItemChance / 100 * mundaneItemLootChance)
+                    if (itemChance < profile.MundaneItemChance / 100)
                     {
                         for (var i = 0; i < profile.MundaneItemMinAmount; i++)
                         {
@@ -381,7 +385,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.MundaneItemMaxAmount - profile.MundaneItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MundaneItemChance / 100 * mundaneItemLootChance)
+                            if (itemChance < profile.MundaneItemChance / 100)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
 
@@ -1250,10 +1254,12 @@ namespace ACE.Server.Factories
                             MutateCaster(wo, treasureDeath, isMagical, null, treasureRoll);
                             break;
 
-                        case TreasureWeaponType.ShortBow:
                         case TreasureWeaponType.Bow:
+                        case TreasureWeaponType.BowShort:
                         case TreasureWeaponType.Crossbow:
+                        case TreasureWeaponType.CrossbowLight:
                         case TreasureWeaponType.Atlatl:
+                        case TreasureWeaponType.AtlatlRegular:
 
                             MutateMissileWeapon(wo, treasureDeath, isMagical, null, treasureRoll);
                             break;

@@ -7,12 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class AxeWcids
     {
-        private static ChanceTable<WeenieClassName> AxeWcids_Aluvians_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.axehand,           0.33f ),
-            ( WeenieClassName.axebattle,         0.34f ),
-            ( WeenieClassName.warhammer,         0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> AxeWcids_Aluvians_T1;
 
         private static ChanceTable<WeenieClassName> AxeWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
@@ -33,12 +28,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.warhammerfrost,    0.05f ),
         };
 
-        private static ChanceTable<WeenieClassName> AxeWcids_Gharundim_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.tungi,             0.33f ),
-            ( WeenieClassName.silifi,            0.34f ),
-            ( WeenieClassName.warhammer,         0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> AxeWcids_Gharundim_T1;
 
         private static ChanceTable<WeenieClassName> AxeWcids_Gharundim = new ChanceTable<WeenieClassName>()
         {
@@ -59,12 +49,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.warhammerfrost,    0.05f ),
         };
 
-        private static ChanceTable<WeenieClassName> AxeWcids_Sho_Non_Elemental = new ChanceTable<WeenieClassName>()
-        {
-            ( WeenieClassName.shouono,           0.33f ),
-            ( WeenieClassName.ono,               0.34f ),
-            ( WeenieClassName.warhammer,         0.33f ),
-        };
+        private static ChanceTable<WeenieClassName> AxeWcids_Sho_T1;
 
         private static ChanceTable<WeenieClassName> AxeWcids_Sho = new ChanceTable<WeenieClassName>()
         {
@@ -88,6 +73,13 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.axehand,           3.0f ),
+                    ( WeenieClassName.axebattle,         0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
+                };
+
                 AxeWcids_Aluvian = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.axehand,           0.27f ),
@@ -109,6 +101,13 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerfrost,    0.01625f ),
                 };
 
+                AxeWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.tungi,             3.0f ),
+                    ( WeenieClassName.silifi,            0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
+                };
+
                 AxeWcids_Gharundim = new ChanceTable<WeenieClassName>()
                 {
                     ( WeenieClassName.tungi,             0.27f ),
@@ -128,6 +127,14 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerelectric, 0.01625f ),
                     ( WeenieClassName.warhammerfire,     0.01625f ),
                     ( WeenieClassName.warhammerfrost,    0.01625f ),
+                };
+
+
+                AxeWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                {
+                    ( WeenieClassName.shouono,           3.0f ),
+                    ( WeenieClassName.ono,               0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
                 };
 
                 AxeWcids_Sho = new ChanceTable<WeenieClassName>()
@@ -176,17 +183,17 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case TreasureHeritageGroup.Aluvian:
                         if(tier > 1)
                             return AxeWcids_Aluvian.Roll();
-                        return AxeWcids_Aluvians_Non_Elemental.Roll();
+                        return AxeWcids_Aluvians_T1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
                             return AxeWcids_Gharundim.Roll();
-                        return AxeWcids_Gharundim_Non_Elemental.Roll();
+                        return AxeWcids_Gharundim_T1.Roll();
 
                     case TreasureHeritageGroup.Sho:
                         if (tier > 1)
                             return AxeWcids_Sho.Roll();
-                        return AxeWcids_Sho_Non_Elemental.Roll();
+                        return AxeWcids_Sho_T1.Roll();
                 }
             }
             return WeenieClassName.undef;

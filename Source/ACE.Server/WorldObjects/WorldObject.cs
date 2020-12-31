@@ -84,6 +84,17 @@ namespace ACE.Server.WorldObjects
         public bool IsThrownWeapon { get => DefaultCombatStyle != null && DefaultCombatStyle == CombatStyle.ThrownWeapon; }
         public bool IsRanged { get => IsAmmoLauncher || IsThrownWeapon; }
 
+        public bool IsCreature
+        {
+            get
+            {
+                return WeenieType == WeenieType.Creature || WeenieType == WeenieType.Cow ||
+                       WeenieType == WeenieType.Sentinel || WeenieType == WeenieType.Admin ||
+                       WeenieType == WeenieType.Vendor ||
+                       WeenieType == WeenieType.CombatPet || WeenieType == WeenieType.Pet;
+            }
+        }
+
         public EmoteManager EmoteManager;
         public EnchantmentManagerWithCaching EnchantmentManager;
 

@@ -1,4 +1,4 @@
-Elemental Atlatl Mutation #4:
+Missile Defenses Mutation #4:
 
 Tier chances: 1, 0, 0, 0, 0, 0
 
@@ -19,7 +19,7 @@ Tier chances: 1, 0, 0, 0, 0, 0
     - Chance 5%:
         WeaponDefense += 0.05
 
-Elemental Atlatl Mutation #5:
+Missile Defenses Mutation #5:
 
 Tier chances: 0, 1, 0, 0, 0, 0
 
@@ -41,7 +41,7 @@ Tier chances: 0, 1, 0, 0, 0, 0
     - Chance 5%:
         WeaponDefense += 0.07
 
-Elemental Atlatl Mutation #6:
+Missile Defenses Mutation #6:
 
 Tier chances: 0, 0, 1, 0, 0, 0
 
@@ -69,7 +69,7 @@ Tier chances: 0, 0, 1, 0, 0, 0
     - Chance 3%:
         WeaponDefense += 0.1
 
-Elemental Atlatl Mutation #7:
+Missile Defenses Mutation #7:
 
 Tier chances: 0, 0, 0, 1, 0, 0
 
@@ -97,7 +97,7 @@ Tier chances: 0, 0, 0, 1, 0, 0
     - Chance 2%:
         WeaponDefense += 0.12
 
-Elemental Atlatl Mutation #8:
+Missile Defenses Mutation #8:
 
 Tier chances: 0, 0, 0, 0, 1, 0
 
@@ -131,7 +131,7 @@ Tier chances: 0, 0, 0, 0, 1, 0
     - Chance 2%:
         WeaponDefense += 0.15
 
-Elemental Atlatl Mutation #9:
+Missile Defenses Mutation #9:
 
 Tier chances: 0, 0, 0, 0, 0, 1
 
@@ -162,7 +162,7 @@ Tier chances: 0, 0, 0, 0, 0, 1
     - Chance 5%:
         WeaponDefense += 0.15
 
-Elemental Atlatl Mutation #10:
+Missile Defenses Mutation #10:
 
 Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 
@@ -181,7 +181,7 @@ Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
     - Chance 10%:
         WeaponMissileDefense = 1.025
 
-Elemental Atlatl Mutation #11:
+Missile Defenses Mutation #11:
 
 Tier chances: 0.1, 0.1, 0.1, 0.1, 0.1, 0.1
 

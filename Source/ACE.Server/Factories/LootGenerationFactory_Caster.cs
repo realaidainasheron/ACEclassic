@@ -164,9 +164,12 @@ namespace ACE.Server.Factories
 
             // burden?
 
-            // missile defense / magic defense
-            wo.WeaponMissileDefense = MissileMagicDefense.Roll(profile.Tier);
-            wo.WeaponMagicDefense = MissileMagicDefense.Roll(profile.Tier);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.EoR) // Infiltration data has these in the weapon_defense.txt files
+            {
+                // missile defense / magic defense
+                wo.WeaponMissileDefense = MissileMagicDefense.Roll(profile.Tier);
+                wo.WeaponMagicDefense = MissileMagicDefense.Roll(profile.Tier);
+            }
 
             // spells
             if (!isMagical)
