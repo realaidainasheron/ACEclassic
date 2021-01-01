@@ -36,14 +36,16 @@ namespace ACE.Server.Factories.Entity
                     TotalWeight += entry.chance;
                 }
             }
+            else
+            {
+                var total = 0.0M;
 
-            var total = 0.0M;
+                foreach (var entry in this)
+                    total += (decimal)(entry.chance);
 
-            foreach (var entry in this)
-                total += (decimal)(entry.chance / TotalWeight);
-
-            if (Math.Abs(1.0M - total) > threshold)
-                log.Error($"Chance table adds up to {total}, expected 1.0: {string.Join(", ", this)}");
+                if (Math.Abs(1.0M - total) > threshold)
+                    log.Error($"Chance table adds up to {total}, expected 1.0: {string.Join(", ", this)}");
+            }
 
             verified = true;
         }

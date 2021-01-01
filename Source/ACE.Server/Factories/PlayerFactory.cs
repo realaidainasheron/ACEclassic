@@ -156,8 +156,16 @@ namespace ACE.Server.Factories
             // set initial skill credit amount. 52 for all but "Olthoi", which have 68
             player.SetProperty(PropertyInt.AvailableSkillCredits, (int)heritageGroup.SkillCredits);
 
-            if (characterCreateInfo.SkillAdvancementClasses.Count != 55)
-                return CreateResult.ClientServerSkillsMismatch;
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                if (characterCreateInfo.SkillAdvancementClasses.Count != 55)
+                    return CreateResult.ClientServerSkillsMismatch;
+            }
+            else
+            {
+                if (characterCreateInfo.SkillAdvancementClasses.Count != 41)
+                    return CreateResult.ClientServerSkillsMismatch;
+            }
 
             for (int i = 0; i < characterCreateInfo.SkillAdvancementClasses.Count; i++)
             {
