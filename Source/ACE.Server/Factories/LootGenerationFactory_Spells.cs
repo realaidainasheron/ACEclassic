@@ -454,6 +454,9 @@ namespace ACE.Server.Factories
 
         private static SpellId AdjustForDamageType(WorldObject wo, SpellId spell)
         {
+            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                return SpellId.CANTRIPWARMAGICAPTITUDE1;
+
             if (wo.W_DamageType == DamageType.Nether)
                 return SpellId.CantripVoidMagicAptitude1;
 

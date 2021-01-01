@@ -89,7 +89,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
-                MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(true)
+                MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.club,             1.0f ),
                     ( WeenieClassName.clubspiked,       1.0f ),
@@ -125,7 +125,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.clubspikedfrost,     0.0125f ),
                 };
 
-                MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+                MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
             {
                 ( WeenieClassName.kasrullah,        1.0f ),
                 ( WeenieClassName.clubspiked,       1.0f ),
@@ -161,7 +161,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.clubspikedfrost,     0.0125f ),
                 };
 
-                MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.jitte,            1.0f ),
                     ( WeenieClassName.clubspiked,       1.0f ),

@@ -658,6 +658,9 @@ namespace ACE.Server.Factories
                         maxSpellPower = (int)spell.Power;
                 }
             }
+
+            maxSpellPower = Math.Max(maxSpellPower, 20); // Balance to make level I spell items have non-trivial arcane lore requirements.
+
             return maxSpellPower;
         }
 

@@ -78,7 +78,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
-                SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(true)
+                SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.spear,               1.0f ),
 
@@ -107,7 +107,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordstafffrost,    0.01625f ),
                 };
 
-                SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+                SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.budiaq,              1.00f ),
 
@@ -136,7 +136,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordstafffrost,    0.01625f ),
                 };
 
-                SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.yari,                1.00f ),
 

@@ -73,7 +73,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
-                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(true)
+                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.axehand,           3.0f ),
                     ( WeenieClassName.axebattle,         0.5f ),
@@ -101,7 +101,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerfrost,    0.01625f ),
                 };
 
-                AxeWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(true)
+                AxeWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.tungi,             3.0f ),
                     ( WeenieClassName.silifi,            0.5f ),
@@ -130,7 +130,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                 };
 
 
-                AxeWcids_Sho_T1 = new ChanceTable<WeenieClassName>(true)
+                AxeWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.shouono,           3.0f ),
                     ( WeenieClassName.ono,               0.5f ),

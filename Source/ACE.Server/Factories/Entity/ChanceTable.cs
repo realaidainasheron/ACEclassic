@@ -6,23 +6,29 @@ using log4net;
 using ACE.Common;
 
 namespace ACE.Server.Factories.Entity
-{     
+{
+    public enum ChanceTableType
+    {
+        Chance,
+        Weight
+    }
+
     public class ChanceTable<T> : List<(T result, float chance)>
     {
         private bool verified;
-        private bool IsWeight;
+        private ChanceTableType TableType;
         private float TotalWeight = 1.0f;
         private static readonly decimal threshold = 0.0000001M;
 
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public ChanceTable(bool isWeight = false)
+        public ChanceTable(ChanceTableType tableType = ChanceTableType.Chance)
         {
-            IsWeight = isWeight;
+            TableType = tableType;
         }
         private void VerifyTable()
         {
-            if (IsWeight)
+            if (TableType == ChanceTableType.Weight)
             {
                 TotalWeight = 0.0f;
                 foreach (var entry in this)

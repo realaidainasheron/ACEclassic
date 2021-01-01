@@ -136,6 +136,11 @@
             "name": "Creature Enchantment",
             "gear": [
                 {
+                    "weenieId": "12748",
+                    "name": "Training Wand",
+                    "stacksize": "1"
+                },
+                {
                     "weenieId": "691",
                     "name": "Lead Scarab",
                     "stacksize": "3"
@@ -241,6 +246,11 @@
             "name": "Item Enchantment",
             "gear": [
                 {
+                    "weenieId": "12748",
+                    "name": "Training Wand",
+                    "stacksize": "1"
+                },
+                {
                     "weenieId": "691",
                     "name": "Lead Scarab",
                     "stacksize": "3"
@@ -339,6 +349,11 @@
             "id": "33",
             "name": "Life Magic",
             "gear": [
+                {
+                    "weenieId": "12748",
+                    "name": "Training Wand",
+                    "stacksize": "1"
+                },
                 {
                     "weenieId": "691",
                     "name": "Lead Scarab",
@@ -460,6 +475,11 @@
             "id": "34",
             "name": "War Magic",
             "gear": [
+                {
+                    "weenieId": "12748",
+                    "name": "Training Wand",
+                    "stacksize": "1"
+                },
                 {
                     "weenieId": "691",
                     "name": "Lead Scarab",
