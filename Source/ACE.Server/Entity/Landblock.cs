@@ -800,7 +800,7 @@ namespace ACE.Server.Entity
                 return false;
             }
 
-            wo.OnAddedToWorld();
+            wo.BeforeEnterWorld();
 
             return AddWorldObjectInternal(wo);
         }

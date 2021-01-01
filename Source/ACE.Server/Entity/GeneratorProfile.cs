@@ -11,6 +11,7 @@ using ACE.Entity.Models;
 using ACE.Server.Factories;
 using ACE.Server.Physics.Common;
 using ACE.Server.WorldObjects;
+using ACE.Common;
 
 namespace ACE.Server.Entity
 {
@@ -426,7 +427,19 @@ namespace ACE.Server.Entity
             {
                 // TODO: get randomly generated death treasure from LootGenerationFactory
                 //log.Debug($"{_generator.Name}.TreasureGenerator(): found death treasure {Biota.WeenieClassId}");
-                return LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
+                var generatedLoot = LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
+
+                if ((RegenLocationType & RegenLocationType.Contain) == 0) // If we're not a container make sure we respect our generate limit.
+                {
+                    while (generatedLoot.Count > MaxCreate)
+                    {
+                        int index = ThreadSafeRandom.Next(0, generatedLoot.Count - 1);
+                        generatedLoot[index].DeleteObject();
+                        generatedLoot.RemoveAt(index);
+                    }
+                }
+
+                return generatedLoot;
             }
             else
             {

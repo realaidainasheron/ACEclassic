@@ -140,7 +140,7 @@ namespace ACE.Server.WorldObjects
             selectedTargets = new Dictionary<uint, WorldObjectInfo>();
         }
 
-        public override void OnAddedToWorld()
+        public override void BeforeEnterWorld()
         {
             if (IsNPC)
                 GenerateNewFace(); // Now that we have our location we can generate our pseudo-random appearance.

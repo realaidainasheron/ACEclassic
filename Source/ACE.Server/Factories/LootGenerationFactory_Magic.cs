@@ -683,29 +683,26 @@ namespace ACE.Server.Factories
             if (wo.Biota.PropertiesSpellBook == null)
                 return false;
 
-            if (wo.Biota.PropertiesSpellBook.Count >= 2) // We must have at least this amount of spells to have a heritage requirement.
+            var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
+            if (rng < 0.01)
             {
-                var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
-                if (rng < 0.1) // Note that this chance is only for items that have the proper amount of spells, not a chance of all drops, so in reality it's much lower.
+                HeritageGroup heritage = (HeritageGroup)ThreadSafeRandom.Next(1, 3);
+
+                switch (heritage)
                 {
-                    HeritageGroup heritage = (HeritageGroup)ThreadSafeRandom.Next(1, 3);
+                    case HeritageGroup.Aluvian:
+                        wo.HeritageGroup = HeritageGroup.Aluvian;
+                        break;
 
-                    switch (heritage)
-                    {
-                        case HeritageGroup.Aluvian:
-                            wo.HeritageGroup = HeritageGroup.Aluvian;
-                            break;
+                    case HeritageGroup.Gharundim:
+                        wo.HeritageGroup = HeritageGroup.Gharundim;
+                        break;
 
-                        case HeritageGroup.Gharundim:
-                            wo.HeritageGroup = HeritageGroup.Gharundim;
-                            break;
-
-                        case HeritageGroup.Sho:
-                            wo.HeritageGroup = HeritageGroup.Sho;
-                            break;
-                    }
-                    return true;
+                    case HeritageGroup.Sho:
+                        wo.HeritageGroup = HeritageGroup.Sho;
+                        break;
                 }
+                return true;
             }
             return false;
         }
@@ -715,15 +712,11 @@ namespace ACE.Server.Factories
             if (wo.Biota.PropertiesSpellBook == null)
                 return false;
 
-            if (roll.Wcid == Enum.WeenieClassName.crown || wo.Biota.PropertiesSpellBook.Count >= 3) // We must have at least this amount of spells to have an allegiance requirement.
+            var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
+            if (rng < (roll.Wcid == Enum.WeenieClassName.crown ? 0.25f : 0.01f)) // Crowns are special and have allegiance requirements more often.
             {
-                // Crowns are special and have allegiance requirements more often and even with less spells than what is usually required.
-                var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
-                if (rng < (roll.Wcid == Enum.WeenieClassName.crown ? 0.25f : 0.1f)) // Note that this chance is only for items that have the proper amount of spells, not a chance of all drops, so in reality it's much lower.
-                {
-                    wo.ItemAllegianceRankLimit = AllegianceRankChance.Roll(profile.Tier);
-                    return true;
-                }
+                wo.ItemAllegianceRankLimit = AllegianceRankChance.Roll(profile.Tier);
+                return true;
             }
             return false;
         }
@@ -826,13 +819,13 @@ namespace ACE.Server.Factories
             if (wo.ItemSkillLevelLimit > 0)
                 itemSkillLevelFactor = wo.ItemSkillLevelLimit.Value / 2.0f;
 
+            var fArcane = spellcraft - itemSkillLevelFactor;
+
             if (wo.ItemAllegianceRankLimit > 0)
-                itemSkillLevelFactor += (float)wo.ItemAllegianceRankLimit * 10;
+                fArcane -= (float)wo.ItemAllegianceRankLimit * 10.0f;
 
             if (wo.HeritageGroup != 0)
-                itemSkillLevelFactor += itemSkillLevelFactor * 0.2f;
-
-            var fArcane = spellcraft - itemSkillLevelFactor;
+                fArcane -= fArcane * 0.2f;
 
             if (fArcane < 0)
                 fArcane = 0;

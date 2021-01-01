@@ -290,18 +290,16 @@ namespace ACE.Server.Factories.Tables
                 T1_NumCantrips = new ChanceTable<int>()
                 {
                     ( 0, 1.0f ),
-                    ( 1, 0.05f ),
                 };
 
                 T2_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.90f ),
-                    ( 1, 0.10f ),
+                    ( 0, 1.0f ),
                 };
 
                 T3_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 1.0f ),
+                    ( 0, 0.95f ),
                     ( 1, 0.05f ),
                 };
 

@@ -40,11 +40,14 @@ namespace ACE.Server.Factories
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
+                TreasureDeath deathTreasure;
+                TreasureDeath tweakedDeathTreasure;
+
                 Creature creature = tweakedFor as Creature;
                 if (creature != null)
                 {
-                    var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
-                    var tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
+                    deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+                    tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
 
                     var itemLootChance = PropertyManager.GetDouble($"loot_chance_item_tier{deathTreasure.Tier}").Item;
                     var magicItemLootChance = PropertyManager.GetDouble($"loot_chance_magic_item_tier{deathTreasure.Tier}").Item;
@@ -84,33 +87,33 @@ namespace ACE.Server.Factories
                     }
                     return tweakedDeathTreasure;
                 }
-                else if (tweakedFor is Chest)
+
+                // Temporary fix to mismatched high tier containers and generators in low level places, todo: fix it in the data.
+                switch (deathTreasureId)
                 {
-                    // Temporary fix to mismatched high tier containers in low level places, todo: fix it in the data.
-                    switch (deathTreasureId)
-                    {
-                        case 4: deathTreasureId = 6; break;
-                        case 16: deathTreasureId = 18; break;
-                        case 313: deathTreasureId = 453; break;
-                        case 457: deathTreasureId = 459; break;
-                        case 463: deathTreasureId = 465; break;
-                        case 15: deathTreasureId = 18; break;
-                        case 462: deathTreasureId = 465; break;
-                        case 460: deathTreasureId = 462; break;
+                    case 4: deathTreasureId = 6; break;
+                    case 16: deathTreasureId = 18; break;
+                    case 313: deathTreasureId = 453; break;
+                    case 457: deathTreasureId = 459; break;
+                    case 463: deathTreasureId = 465; break;
+                    case 15: deathTreasureId = 18; break;
+                    case 462: deathTreasureId = 465; break;
+                    case 460: deathTreasureId = 462; break;
 
-                        case 3: deathTreasureId = 4; break;
-                        case 13: deathTreasureId = 16; break;
-                        case 454: deathTreasureId = 457; break;
+                    case 3: deathTreasureId = 4; break;
+                    case 13: deathTreasureId = 16; break;
+                    case 454: deathTreasureId = 457; break;
 
-                        case 1: deathTreasureId = 3; break;
-                        case 338: deathTreasureId = 456; break;
-                        case 456: deathTreasureId = 457; break;
-                    }
+                    case 1: deathTreasureId = 3; break;
+                    case 338: deathTreasureId = 456; break;
+                    case 456: deathTreasureId = 457; break;
+                }
+                deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
 
-                    var deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
-
+                if (tweakedFor is Chest)
+                {
                     //some overrides to make chests more interesting, ideally this should be done in the data but as a quick tweak this will do.
-                    var tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
+                    tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
                     if (tweakedDeathTreasure.LootQualityMod < 0.2f)
                         tweakedDeathTreasure.LootQualityMod = 0.2f;
 
@@ -118,14 +121,16 @@ namespace ACE.Server.Factories
 
                     if (tweakedDeathTreasure.ItemMaxAmount == 1)
                         tweakedDeathTreasure.ItemMaxAmount = 3;
-                    tweakedDeathTreasure.ItemMaxAmount *= 2;
+                    tweakedDeathTreasure.ItemMaxAmount = (int)Math.Ceiling(tweakedDeathTreasure.ItemMaxAmount * 1.5f);
 
                     if (tweakedDeathTreasure.MagicItemMaxAmount == 1)
                         tweakedDeathTreasure.MagicItemMaxAmount = 3;
-                    tweakedDeathTreasure.MagicItemMaxAmount *= 2;
+                    tweakedDeathTreasure.MagicItemMaxAmount = (int)Math.Ceiling(tweakedDeathTreasure.MagicItemMaxAmount * 1.5);
 
                     return tweakedDeathTreasure;
                 }
+                else
+                    return deathTreasure;
             }
 
             return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
@@ -323,7 +328,7 @@ namespace ACE.Server.Factories
                 else
                 {
                     var itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.ItemChance / 100)
+                    if (itemChance < profile.ItemChance / 100.0)
                     {
                         // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
                         for (var i = 0; i < profile.ItemMinAmount; i++)
@@ -337,7 +342,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.ItemMaxAmount - profile.ItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.ItemChance / 100)
+                            if (itemChance < profile.ItemChance / 100.0)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
@@ -348,7 +353,7 @@ namespace ACE.Server.Factories
                     }
 
                     itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MagicItemChance / 100)
+                    if (itemChance < profile.MagicItemChance / 100.0)
                     {
                         for (var i = 0; i < profile.MagicItemMinAmount; i++)
                         {
@@ -361,7 +366,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.MagicItemMaxAmount - profile.MagicItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MagicItemChance / 100)
+                            if (itemChance < profile.MagicItemChance / 100.0)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
 
@@ -372,7 +377,7 @@ namespace ACE.Server.Factories
                     }
 
                     itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MundaneItemChance / 100)
+                    if (itemChance < profile.MundaneItemChance / 100.0)
                     {
                         for (var i = 0; i < profile.MundaneItemMinAmount; i++)
                         {
@@ -385,7 +390,7 @@ namespace ACE.Server.Factories
                         for (var i = 0; i < profile.MundaneItemMaxAmount - profile.MundaneItemMinAmount; i++)
                         {
                             itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MundaneItemChance / 100)
+                            if (itemChance < profile.MundaneItemChance / 100.0)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
 

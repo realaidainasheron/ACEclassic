@@ -720,6 +720,11 @@ namespace ACE.Server.WorldObjects
             EmoteManager.OnGeneration();
         }
 
+        public virtual void BeforeEnterWorld()
+        {
+            // empty base
+        }
+
         public virtual bool EnterWorld()
         {
             if (Location == null)
@@ -1030,10 +1035,6 @@ namespace ACE.Server.WorldObjects
         }
 
         public virtual void OnMoveComplete(WeenieError status)
-        {
-            // empty base
-        }
-        public virtual void OnAddedToWorld()
         {
             // empty base
         }
