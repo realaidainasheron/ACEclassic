@@ -291,9 +291,9 @@ namespace ACE.Server.Factories
 
                 if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
                 {
-                    if (cantripLevels.Count != 3 && cantripLevels.Count != 4)
+                    if (cantripLevels.Count < 2)
                     {
-                        log.Error($"RollCantrips({wo.Name}, {profile.TreasureType}, {roll.ItemType}) - {cantrip} has {cantripLevels.Count} cantrip levels, expected 3 or 4");
+                        log.Error($"RollCantrips({wo.Name}, {profile.TreasureType}, {roll.ItemType}) - {cantrip} has {cantripLevels.Count} cantrip levels, expected 2.");
                         continue;
                     }
                 }
