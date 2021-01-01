@@ -543,7 +543,7 @@ namespace ACE.Server.WorldObjects
             var destroyCoins = PropertyManager.GetBool("corpse_destroy_pyreals").Item;
 
             if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
-                destroyCoins = false; // Let's override the setting.
+                destroyCoins = false; // Let's override the setting for now.
 
             // add items to corpse
             foreach (var dropItem in dropItems)

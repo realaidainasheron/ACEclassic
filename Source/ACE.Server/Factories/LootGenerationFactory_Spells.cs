@@ -281,7 +281,7 @@ namespace ACE.Server.Factories
 
             var finalCantrips = new List<SpellId>();
 
-            var legendary = false;
+            var hasLegendary = false;
 
             foreach (var cantrip in cantrips)
             {
@@ -307,11 +307,11 @@ namespace ACE.Server.Factories
 
                     finalCantrips.Add(cantripLevels[cantripLevel - 1]);
 
-                    if (!legendary && cantripLevel == 4)
+                    if (!hasLegendary && cantripLevel == 4)
                     {
                         // items with legendary cantrips always got bumped up to wield level requirement 180 in retail
                         SetWieldLevelReq(wo, 180);
-                        legendary = true;
+                        hasLegendary = true;
                     }
                 }
             }

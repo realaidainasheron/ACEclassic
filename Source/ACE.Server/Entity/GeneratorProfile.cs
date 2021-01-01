@@ -424,10 +424,10 @@ namespace ACE.Server.Entity
 
             if (deathTreasure != null)
             {
-                    // TODO: get randomly generated death treasure from LootGenerationFactory
-                    //log.Debug($"{_generator.Name}.TreasureGenerator(): found death treasure {Biota.WeenieClassId}");
-                    return LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
-                }
+                // TODO: get randomly generated death treasure from LootGenerationFactory
+                //log.Debug($"{_generator.Name}.TreasureGenerator(): found death treasure {Biota.WeenieClassId}");
+                return LootGenerationFactory.CreateRandomLootObjects(deathTreasure);
+            }
             else
             {
                 var wieldedTreasure = DatabaseManager.World.GetCachedWieldedTreasure(Biota.WeenieClassId);

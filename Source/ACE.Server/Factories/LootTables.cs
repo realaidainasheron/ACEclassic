@@ -287,7 +287,7 @@ namespace ACE.Server.Factories
         };
 
         public static readonly int[][] AxesMatrix =
-        {
+                {
             new int[] { 301, 3750, 3751, 3752, 3753 },       // 0 - Battle Axe
             new int[] { 303, 3754, 3755, 3756, 3757 },       // 1 - Hand Axe
             new int[] { 336, 3842, 3843, 3844, 3845 },       // 2 - Ono
