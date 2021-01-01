@@ -800,9 +800,7 @@ namespace ACE.Server.Entity
                 return false;
             }
 
-            Creature creature = wo as Creature;
-            if (creature != null && creature.IsNPC)
-                creature.GenerateNewFace(); // now that we have our position we can generate our pseudo-random appearance seeded with our WCID and location.
+            wo.OnAddedToWorld();
 
             return AddWorldObjectInternal(wo);
         }

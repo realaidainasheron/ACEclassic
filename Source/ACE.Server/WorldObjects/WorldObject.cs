@@ -1033,6 +1033,10 @@ namespace ACE.Server.WorldObjects
         {
             // empty base
         }
+        public virtual void OnAddedToWorld()
+        {
+            // empty base
+        }
 
         public bool IsTradeNote => ItemType == ItemType.PromissoryNote;
 

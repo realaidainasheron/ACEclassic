@@ -140,13 +140,19 @@ namespace ACE.Server.WorldObjects
             selectedTargets = new Dictionary<uint, WorldObjectInfo>();
         }
 
+        public override void OnAddedToWorld()
+        {
+            if (IsNPC)
+                GenerateNewFace(); // Now that we have our location we can generate our pseudo-random appearance.
+        }
+
         // verify logic
         public bool IsNPC => !(this is Player) && !Attackable && TargetingTactic == TargetingTactic.None;
 
         public void GenerateNewFace()
         {
             if (IsNPC && Location == null)
-                return; //We shall finish this later when we have our location.
+                return; // We shall finish this later when we have our location.
 
             var cg = DatManager.PortalDat.CharGen;
 
@@ -219,7 +225,7 @@ namespace ACE.Server.WorldObjects
                 hairstyle = sex.HairStyleList[Convert.ToInt32(appearance.HairStyle)];
 
                 appearance.HairColor = (uint)ThreadSafeRandom.Next(0, sex.HairColorList.Count - 1);
-                appearance.HairHue = ThreadSafeRandom.Next(0.0f, 1.0f);
+                appearance.HairHue = ThreadSafeRandom.Next(0.0f, 0.7f); // Leave the overly bright hair colors to players.
 
                 appearance.EyeColor = (uint)ThreadSafeRandom.Next(0, sex.EyeColorList.Count - 1);
                 appearance.Eyes = (uint)ThreadSafeRandom.Next(0, sex.EyeStripList.Count - 1);
@@ -232,9 +238,9 @@ namespace ACE.Server.WorldObjects
             }
             else
             {
-                //let's use a pseudo random seed based on our WCID so we mantain the same appearance between sessions. Retail did not persist NPC appearances at all but I feel this is one detail we can diverge on.
+                // Let's use a pseudo random seed based on our WCID so we mantain the same appearance between sessions. Retail did not persist NPC appearances at all but I feel this is one detail we can diverge on.
 
-                //By adding the location to our seed we avoid having all instances of the same WCID having the same appearance, this would affect NPCs such as town criers and collectors.
+                // By adding the location to our seed we avoid having all instances of the same WCID having the same appearance, this would affect NPCs such as town criers and collectors.
                 int seed = (int)WeenieClassId + (int)(1000.0f * (Location.PositionX + Location.PositionY + Location.PositionZ));
 
                 Random pseudoRandom = new Random(seed); // Note that this class uses EXCLUSIVE max values instead of inclusive for our regular ThreadSafeRandom.
@@ -259,7 +265,7 @@ namespace ACE.Server.WorldObjects
                 hairstyle = sex.HairStyleList[Convert.ToInt32(appearance.HairStyle)];
 
                 appearance.HairColor = (uint)pseudoRandom.Next(0, sex.HairColorList.Count);
-                appearance.HairHue = pseudoRandom.NextDouble();
+                appearance.HairHue = pseudoRandom.Next(0, 61) / 100.0; // Leave the overly bright hair colors to players.
 
                 appearance.EyeColor = (uint)pseudoRandom.Next(0, sex.EyeColorList.Count);
                 appearance.Eyes = (uint)pseudoRandom.Next(0, sex.EyeStripList.Count);
