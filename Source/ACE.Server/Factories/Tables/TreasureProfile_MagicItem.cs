@@ -215,7 +215,7 @@ namespace ACE.Server.Factories.Tables
 
         static TreasureProfile_MagicItem()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 magicItemProfile8 = new ChanceTable<TreasureItemType_Orig>()
                 {

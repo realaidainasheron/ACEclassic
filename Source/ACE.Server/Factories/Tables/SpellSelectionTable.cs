@@ -429,7 +429,7 @@ namespace ACE.Server.Factories.Tables
 
         static SpellSelectionTable()
         {
-            if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if(Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 // orbs
                 spellSelectionGroup4 = new ChanceTable<SpellId>()

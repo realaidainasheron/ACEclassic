@@ -732,6 +732,9 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public static float GetRecklessnessMod(Creature attacker, Creature defender)
         {
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                return 1.0f;
+
             var playerAttacker = attacker as Player;
             var playerDefender = defender as Player;
 
@@ -752,6 +755,9 @@ namespace ACE.Server.WorldObjects
 
         public float GetSneakAttackMod(WorldObject target)
         {
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                return 1.0f;
+
             // ensure trained
             var sneakAttack = GetCreatureSkill(Skill.SneakAttack);
             if (sneakAttack.AdvancementClass < SkillAdvancementClass.Trained)

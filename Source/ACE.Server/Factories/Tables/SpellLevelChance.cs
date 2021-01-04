@@ -86,13 +86,13 @@ namespace ACE.Server.Factories.Tables
 
         static SpellLevelChance()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_SpellLevelChances = new ChanceTable<int>()
                 {
-                    ( 1, 0.52f ),
+                    ( 1, 0.60f ),
                     ( 2, 0.30f ),
-                    ( 3, 0.18f ),
+                    ( 3, 0.10f ),
                 };
 
                 T2_SpellLevelChances = new ChanceTable<int>()

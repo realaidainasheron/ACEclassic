@@ -42,7 +42,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static StaffWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 StaffWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>()
                 {

@@ -69,7 +69,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static BowWcids_Gharundim()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>()
                 {
@@ -126,7 +126,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             var roll = bowTiers[tier - 1].Roll();
 
-            if (roll == WeenieClassName.nayin && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (roll == WeenieClassName.nayin && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 weaponType = TreasureWeaponType.BowShort; // Modify weapon type so we get correct mutations.
             else
                 weaponType = TreasureWeaponType.Bow;

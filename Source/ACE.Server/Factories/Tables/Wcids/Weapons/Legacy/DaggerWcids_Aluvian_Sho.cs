@@ -78,7 +78,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static DaggerWcids_Aluvian_Sho()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>()
                 {

@@ -97,7 +97,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static JewelryWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_T2_Chances = new ChanceTable<WeenieClassName>()
                 {

@@ -151,8 +151,11 @@ namespace ACE.Server.Factories
         {
             var elementalStr = isElemental ? "elemental" : "non_elemental";
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
-                return "MissileWeapons.Infiltration." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                return $"MissileWeapons.{ruleset}." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
+            }
             else
                 return "MissileWeapons." + weaponType.GetScriptName() + "_" + elementalStr + ".txt";
         }

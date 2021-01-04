@@ -71,7 +71,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static AxeWcids()
         {
-            if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if(Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {

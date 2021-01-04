@@ -1787,7 +1787,7 @@ namespace ACE.Server.Command.Handlers
                 }
 
                 int correctLength = 240;
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                     correctLength = 230;
 
                 // Check string is correctly formatted before altering stats
@@ -1884,7 +1884,7 @@ namespace ACE.Server.Command.Handlers
                     string[] returnStringArr = returnString.Split("=");
 
                     int correctLength = 240;
-                    if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                    if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                         correctLength = 230;
 
                     // correctly formatted return string should have 240 entries

@@ -110,7 +110,7 @@ namespace ACE.Server.Factories.Tables
 
         static TreasureProfile_Item()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                itemProfile8 = new ChanceTable<TreasureItemType_Orig>()
                 {

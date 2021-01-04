@@ -103,7 +103,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static ConsumeWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>()
                 {

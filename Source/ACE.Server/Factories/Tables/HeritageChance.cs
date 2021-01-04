@@ -192,7 +192,7 @@ namespace ACE.Server.Factories.Tables
         };
         static HeritageChance()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 heritageProfiles = new List<ChanceTable<TreasureHeritageGroup>>()
                 {
@@ -222,7 +222,7 @@ namespace ACE.Server.Factories.Tables
 
         public static TreasureHeritageGroup Roll(int heritageProfile, bool addViamontian = false)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 addViamontian = false;
 
             if (heritageProfile < 1 || heritageProfile > heritageProfiles.Count)

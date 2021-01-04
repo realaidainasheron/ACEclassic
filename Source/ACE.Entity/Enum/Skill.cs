@@ -105,7 +105,7 @@ namespace ACE.Entity.Enum
     {
         static SkillHelper()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 ValidSkills.Add(Skill.Axe);
                 ValidSkills.Add(Skill.Bow);

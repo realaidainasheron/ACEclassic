@@ -289,7 +289,7 @@ namespace ACE.Server.Factories
 
                 var cantripLevels = SpellLevelProgression.GetSpellLevels(cantrip);
 
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 {
                     if (cantripLevels.Count < 2)
                     {
@@ -454,7 +454,7 @@ namespace ACE.Server.Factories
 
         private static SpellId AdjustForDamageType(WorldObject wo, SpellId spell)
         {
-            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 return SpellId.CANTRIPWARMAGICAPTITUDE1;
 
             if (wo.W_DamageType == DamageType.Nether)

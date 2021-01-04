@@ -620,31 +620,7 @@ namespace ACE.Server.Managers
                 ("xp_modifier_reward_tier3", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 36 and 56")),
                 ("xp_modifier_reward_tier4", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 56 and 76")),
                 ("xp_modifier_reward_tier5", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 76 and 96")),
-                ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being over level 96")),
-                ("loot_chance_item_tier1", new Property<double>(0.3, "Scales the drop chance for random generated non-magic loot from tier 1 sources.)")),
-                ("loot_chance_item_tier2", new Property<double>(0.6, "Scales the drop chance for random generated non-magic loot from tier 2 sources.)")),
-                ("loot_chance_item_tier3", new Property<double>(0.6, "Scales the drop chance for random generated non-magic loot from tier 3 sources.)")),
-                ("loot_chance_item_tier4", new Property<double>(0.8, "Scales the drop chance for random generated non-magic loot from tier 4 sources.)")),
-                ("loot_chance_item_tier5", new Property<double>(0.8, "Scales the drop chance for random generated non-magic loot from tier 5 sources.)")),
-                ("loot_chance_item_tier6", new Property<double>(0.9, "Scales the drop chance for random generated non-magic loot from tier 6 sources.)")),
-                ("loot_chance_item_tier7", new Property<double>(0.9, "Scales the drop chance for random generated non-magic loot from tier 7 sources.)")),
-                ("loot_chance_item_tier8", new Property<double>(0.9, "Scales the drop chance for random generated non-magic loot from tier 8 sources.)")),
-                ("loot_chance_magic_item_tier1", new Property<double>(0.2, "Scales the drop chance for random generated magic loot from tier 1 sources.)")),
-                ("loot_chance_magic_item_tier2", new Property<double>(0.6, "Scales the drop chance for random generated magic loot from tier 2 sources.)")),
-                ("loot_chance_magic_item_tier3", new Property<double>(0.6, "Scales the drop chance for random generated magic loot from tier 3 sources.)")),
-                ("loot_chance_magic_item_tier4", new Property<double>(0.8, "Scales the drop chance for random generated magic loot from tier 4 sources.)")),
-                ("loot_chance_magic_item_tier5", new Property<double>(0.8, "Scales the drop chance for random generated magic loot from tier 5 sources.)")),
-                ("loot_chance_magic_item_tier6", new Property<double>(0.9, "Scales the drop chance for random generated magic loot from tier 6 sources.)")),
-                ("loot_chance_magic_item_tier7", new Property<double>(0.9, "Scales the drop chance for random generated magic loot from tier 7 sources.)")),
-                ("loot_chance_magic_item_tier8", new Property<double>(0.9, "Scales the drop chance for random generated magic loot from tier 8 sources.)")),
-                ("loot_chance_mundane_item_tier1", new Property<double>(0.9, "Scales the drop chance for random generated mundane loot from tier 1 sources.)")),
-                ("loot_chance_mundane_item_tier2", new Property<double>(0.8, "Scales the drop chance for random generated mundane loot from tier 2 sources.)")),
-                ("loot_chance_mundane_item_tier3", new Property<double>(0.8, "Scales the drop chance for random generated mundane loot from tier 3 sources.)")),
-                ("loot_chance_mundane_item_tier4", new Property<double>(0.8, "Scales the drop chance for random generated mundane loot from tier 4 sources.)")),
-                ("loot_chance_mundane_item_tier5", new Property<double>(0.4, "Scales the drop chance for random generated mundane loot from tier 5 sources.)")),
-                ("loot_chance_mundane_item_tier6", new Property<double>(0.4, "Scales the drop chance for random generated mundane loot from tier 6 sources.)")),
-                ("loot_chance_mundane_item_tier7", new Property<double>(0.4, "Scales the drop chance for random generated mundane loot from tier 7 sources.)")),
-                ("loot_chance_mundane_item_tier8", new Property<double>(0.4, "Scales the drop chance for random generated mundane loot from tier 8 sources.)"))
+                ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being over level 96"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =

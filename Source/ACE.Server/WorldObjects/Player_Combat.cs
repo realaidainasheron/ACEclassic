@@ -749,6 +749,9 @@ namespace ACE.Server.WorldObjects
         /// <param name="powerAccuracyBar">The 0.0 - 1.0 power/accurary bar</param>
         public float GetRecklessnessMod(/*float powerAccuracyBar*/)
         {
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                return 1.0f;
+
             // ensure melee or missile combat mode
             if (CombatMode != CombatMode.Melee && CombatMode != CombatMode.Missile)
                 return 1.0f;

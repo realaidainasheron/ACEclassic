@@ -1001,7 +1001,7 @@ namespace ACE.Server.WorldObjects
 
         public Skill ConvertToMoASkill(Skill skill)
         {
-            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 return skill;
 
             if (this is Player player)

@@ -378,7 +378,7 @@ namespace ACE.Server.Entity
             // TODO: combat maneuvers for player?
             BaseDamageMod = attacker.GetBaseDamageMod(DamageSource);
 
-            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration && attacker.GetCurrentWeaponSkill() == Skill.UnarmedCombat)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && attacker.GetCurrentWeaponSkill() == Skill.UnarmedCombat)
                 BaseDamageMod.BaseDamage.MaxDamage += attacker.GetUnarmedSkillDamageBonus();
 
             // some quest bows can have built-in damage bonus

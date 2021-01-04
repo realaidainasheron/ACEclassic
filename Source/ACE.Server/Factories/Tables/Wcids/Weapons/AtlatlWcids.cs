@@ -67,7 +67,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static AtlatlWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>()
                 {
@@ -118,7 +118,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             var roll = atlatlTiers[tier - 1].Roll();
 
-            if (roll == WeenieClassName.atlatl && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (roll == WeenieClassName.atlatl && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 weaponType = TreasureWeaponType.AtlatlRegular; // Modify weapon type so we get correct mutations.
             else
                 weaponType = TreasureWeaponType.Atlatl;

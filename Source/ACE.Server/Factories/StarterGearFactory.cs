@@ -14,6 +14,10 @@ namespace ACE.Server.Factories
             StarterGearConfiguration config;
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "ACE.Server.starterGear.json";
+            if(Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                resourceName = "ACE.Server.starterGear.infiltration.json";
+            else if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                resourceName = "ACE.Server.starterGear.customDM.json";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))

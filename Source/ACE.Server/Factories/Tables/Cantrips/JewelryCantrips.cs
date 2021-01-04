@@ -83,7 +83,7 @@ namespace ACE.Server.Factories.Tables
             // takes ~0.3ms
             BuildSpells();
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 jewelryCantrips = new ChanceTable<SpellId>(ChanceTableType.Weight)
                 {

@@ -38,7 +38,9 @@ namespace ACE.Server.Factories
 
         public static Database.Models.World.TreasureDeath GetTweakedDeathTreasureProfile(uint deathTreasureId, object tweakedFor)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if(Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.CustomDM)
+                return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
+            else
             {
                 TreasureDeath deathTreasure;
                 TreasureDeath tweakedDeathTreasure;
@@ -49,9 +51,53 @@ namespace ACE.Server.Factories
                     deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
                     tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
 
-                    var itemLootChance = PropertyManager.GetDouble($"loot_chance_item_tier{deathTreasure.Tier}").Item;
-                    var magicItemLootChance = PropertyManager.GetDouble($"loot_chance_magic_item_tier{deathTreasure.Tier}").Item;
-                    var mundaneItemLootChance = PropertyManager.GetDouble($"loot_chance_mundane_item_tier{deathTreasure.Tier}").Item;
+                    float itemLootChance = 1.0f;
+                    float magicItemLootChance = 1.0f;
+                    float mundaneItemLootChance = 1.0f;
+
+                    switch (deathTreasure.Tier)
+                    {
+                        case 1:
+                            itemLootChance = 0.3f;
+                            magicItemLootChance = 0.2f;
+                            mundaneItemLootChance = 0.9f;
+                            break;
+                        case 2:
+                            itemLootChance = 0.6f;
+                            magicItemLootChance = 0.6f;
+                            mundaneItemLootChance = 0.8f;
+                            break;
+                        case 3:
+                            itemLootChance = 0.6f;
+                            magicItemLootChance = 0.6f;
+                            mundaneItemLootChance = 0.8f;
+                            break;
+                        case 4:
+                            itemLootChance = 0.8f;
+                            magicItemLootChance = 0.8f;
+                            mundaneItemLootChance = 0.8f;
+                            break;
+                        case 5:
+                            itemLootChance = 0.8f;
+                            magicItemLootChance = 0.8f;
+                            mundaneItemLootChance = 0.4f;
+                            break;
+                        case 6:
+                            itemLootChance = 0.9f;
+                            magicItemLootChance = 0.9f;
+                            mundaneItemLootChance = 0.4f;
+                            break;
+                        case 7:
+                            itemLootChance = 0.9f;
+                            magicItemLootChance = 0.9f;
+                            mundaneItemLootChance = 0.4f;
+                            break;
+                        case 8:
+                            itemLootChance = 0.9f;
+                            magicItemLootChance = 0.9f;
+                            mundaneItemLootChance = 0.4f;
+                            break;
+                    }
 
                     tweakedDeathTreasure.ItemChance = (int)(tweakedDeathTreasure.MagicItemChance * itemLootChance);
                     tweakedDeathTreasure.MagicItemChance = (int)(tweakedDeathTreasure.MagicItemChance * magicItemLootChance);
@@ -132,8 +178,6 @@ namespace ACE.Server.Factories
                 else
                     return deathTreasure;
             }
-
-            return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
         }
 
         public static List<WorldObject> CreateRandomLootObjects(TreasureDeath profile)
@@ -327,76 +371,96 @@ namespace ACE.Server.Factories
                 }
                 else
                 {
-                    var itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.ItemChance / 100.0)
+                    double itemChance;
+                    if (profile.ItemChance == 100)
                     {
-                        // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
-                        for (var i = 0; i < profile.ItemMinAmount; i++)
+                        numItems = ThreadSafeRandom.Next(profile.ItemMinAmount, profile.ItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
                         {
                             lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
                             if (lootWorldObject != null)
                                 loot.Add(lootWorldObject);
                         }
-
-                        for (var i = 0; i < profile.ItemMaxAmount - profile.ItemMinAmount; i++)
+                    }
+                    else
+                    {
+                        itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                        if (itemChance < profile.ItemChance / 100.0)
                         {
-                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.ItemChance / 100.0)
+                            // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
+                            for (var i = 0; i < profile.ItemMinAmount; i++)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
                                 if (lootWorldObject != null)
                                     loot.Add(lootWorldObject);
                             }
+
+                            for (var i = 0; i < profile.ItemMaxAmount - profile.ItemMinAmount; i++)
+                            {
+                                itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                                if (itemChance < profile.ItemChance / 100.0)
+                                {
+                                    lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+
+                                    if (lootWorldObject != null)
+                                        loot.Add(lootWorldObject);
+                                }
+                            }
                         }
                     }
 
-                    itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MagicItemChance / 100.0)
+                    if (profile.MagicItemChance == 100)
                     {
-                        for (var i = 0; i < profile.MagicItemMinAmount; i++)
+                        numItems = ThreadSafeRandom.Next(profile.MagicItemMinAmount, profile.MagicItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
                         {
                             lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
 
                             if (lootWorldObject != null)
                                 loot.Add(lootWorldObject);
                         }
-
-                        for (var i = 0; i < profile.MagicItemMaxAmount - profile.MagicItemMinAmount; i++)
+                    }
+                    else
+                    {
+                        itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                        if (itemChance < profile.MagicItemChance / 100.0)
                         {
-                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MagicItemChance / 100.0)
+                            for (var i = 0; i < profile.MagicItemMinAmount; i++)
                             {
                                 lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
 
                                 if (lootWorldObject != null)
                                     loot.Add(lootWorldObject);
                             }
+
+                            for (var i = 0; i < profile.MagicItemMaxAmount - profile.MagicItemMinAmount; i++)
+                            {
+                                itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                                if (itemChance < profile.MagicItemChance / 100.0)
+                                {
+                                    lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MagicItem);
+
+                                    if (lootWorldObject != null)
+                                        loot.Add(lootWorldObject);
+                                }
+                            }
                         }
                     }
 
-                    itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                    if (itemChance < profile.MundaneItemChance / 100.0)
+                    if (profile.MundaneItemChance == 100)
                     {
-                        for (var i = 0; i < profile.MundaneItemMinAmount; i++)
+                        numItems = ThreadSafeRandom.Next(profile.MundaneItemMinAmount, profile.MundaneItemMaxAmount);
+
+                        for (var i = 0; i < numItems; i++)
                         {
                             lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
 
                             if (lootWorldObject != null)
                                 loot.Add(lootWorldObject);
-                        }
-
-                        for (var i = 0; i < profile.MundaneItemMaxAmount - profile.MundaneItemMinAmount; i++)
-                        {
-                            itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
-                            if (itemChance < profile.MundaneItemChance / 100.0)
-                            {
-                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
-
-                                if (lootWorldObject != null)
-                                    loot.Add(lootWorldObject);
-                            }
                         }
 
                         // extra roll for mundane:
@@ -406,6 +470,40 @@ namespace ACE.Server.Factories
 
                         if (lootWorldObject != null)
                             loot.Add(lootWorldObject);
+                    }
+                    else
+                    {
+                        itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                        if (itemChance < profile.MundaneItemChance / 100.0)
+                        {
+                            for (var i = 0; i < profile.MundaneItemMinAmount; i++)
+                            {
+                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
+
+                                if (lootWorldObject != null)
+                                    loot.Add(lootWorldObject);
+                            }
+
+                            for (var i = 0; i < profile.MundaneItemMaxAmount - profile.MundaneItemMinAmount; i++)
+                            {
+                                itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
+                                if (itemChance < profile.MundaneItemChance / 100.0)
+                                {
+                                    lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.MundaneItem);
+
+                                    if (lootWorldObject != null)
+                                        loot.Add(lootWorldObject);
+                                }
+                            }
+
+                            // extra roll for mundane:
+                            // https://asheron.fandom.com/wiki/Announcements_-_2010/04_-_Shedding_Skin :: May 5th, 2010 entry
+                            // aetheria and coalesced mana were handled in here
+                            lootWorldObject = TryRollMundaneAddon(profile);
+
+                            if (lootWorldObject != null)
+                                loot.Add(lootWorldObject);
+                        }
                     }
                 }
                 return loot;
@@ -418,7 +516,7 @@ namespace ACE.Server.Factories
 
         private static WorldObject TryRollMundaneAddon(TreasureDeath profile)
         {
-            if (ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 return null;
 
             // coalesced mana only dropped in tiers 1-4

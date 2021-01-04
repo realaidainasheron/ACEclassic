@@ -69,7 +69,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static CrossbowWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>()
                 {
@@ -126,7 +126,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             var roll = crossbowTiers[tier - 1].Roll();
 
-            if (roll == WeenieClassName.crossbowlight && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            if (roll == WeenieClassName.crossbowlight && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 weaponType = TreasureWeaponType.CrossbowLight; // Modify weapon type so we get correct mutations.
             else
                 weaponType = TreasureWeaponType.Crossbow;

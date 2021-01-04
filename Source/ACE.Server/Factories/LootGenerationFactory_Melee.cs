@@ -25,7 +25,7 @@ namespace ACE.Server.Factories
             var eleType = ThreadSafeRandom.Next(0, 4);
 
             if (weaponSkill == MeleeWeaponSkill.Undef)
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(5, 11);
                 else
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
@@ -119,7 +119,7 @@ namespace ACE.Server.Factories
 
             if (roll == null)
             {
-                log.Error($"MutateMeleeWeapon reverting to old method({wo.Name}, {profile.TreasureType}, {roll.ItemType}).");
+                log.Error($"MutateMeleeWeapon reverting to old method({wo.Name}, {profile.TreasureType}).");
                 // previous method
                 var wieldDifficulty = RollWieldDifficulty(profile.Tier, TreasureWeaponType.MeleeWeapon);
 
@@ -292,16 +292,22 @@ namespace ACE.Server.Factories
 
         private static string GetDamageScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
-                return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance.Infiltration." + weaponType.GetScriptName() + ".txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                return $"MeleeWeapons.Damage_WieldDifficulty_DamageVariance.{ruleset}." + weaponType.GetScriptName() + ".txt";
+            }
             else
                 return "MeleeWeapons.Damage_WieldDifficulty_DamageVariance." + weaponSkill.GetScriptName_Combined() + "_" + weaponType.GetScriptName() + ".txt";
         }
 
         private static string GetOffenseDefenseScript(MeleeWeaponSkill weaponSkill, TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.Infiltration)
-                return "MeleeWeapons.WeaponOffense_WeaponDefense.Infiltration." + weaponType.GetScriptShortName() + "_offense_defense.txt";
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                string ruleset = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration ? "Infiltration" : "CustomDM";
+                return $"MeleeWeapons.WeaponOffense_WeaponDefense.{ruleset}." + weaponType.GetScriptShortName() + "_offense_defense.txt";
+            }
             else
                 return "MeleeWeapons.WeaponOffense_WeaponDefense." + weaponType.GetScriptShortName() + "_offense_defense.txt";
         }
