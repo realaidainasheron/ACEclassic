@@ -160,11 +160,6 @@ namespace ACE.Server.Entity
             Attacker = attacker;
             Defender = defender;
 
-            if (playerDefender != null && playerDefender.AddTrackedObject(attacker))
-            {
-                log.Error($"Fixed invisible attacker on player {playerDefender.Name}. ({attacker.Name} ({attacker.Guid})");
-            }
-
             CombatType = damageSource.ProjectileSource == null ? CombatType.Melee : CombatType.Missile;
 
             DamageSource = damageSource;
