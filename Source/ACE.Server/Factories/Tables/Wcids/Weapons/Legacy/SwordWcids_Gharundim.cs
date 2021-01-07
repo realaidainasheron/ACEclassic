@@ -97,112 +97,113 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static SwordWcids_Gharundim()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
-                T1_Chances = new ChanceTable<WeenieClassName>()
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.swordrapier,          0.05f ),
-                    ( WeenieClassName.simi,                 0.50f ),
-                    ( WeenieClassName.kaskara,              0.15f ),
-                    ( WeenieClassName.shamshir,             0.15f ),
-                    ( WeenieClassName.takuba,               0.15f ),
+                    ( WeenieClassName.simi,                 3.00f ),
+                    ( WeenieClassName.kaskara,              0.5f ),
+                    ( WeenieClassName.shamshir,             0.5f ),
+                    ( WeenieClassName.takuba,               0.5f ),
+
+                    ( WeenieClassName.swordrapier,          0.25f ),
+                    ( WeenieClassName.ace41067_shashqa,     0.25f ),
                 };
 
-                T1_T2_Chances = new ChanceTable<WeenieClassName>()
+                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.swordrapier,      0.125f ),
+                    ( WeenieClassName.simi,             4.0f ),
+                    ( WeenieClassName.simiacid,         0.25f ),
+                    ( WeenieClassName.simielectric,     0.25f ),
+                    ( WeenieClassName.simifire,         0.25f ),
+                    ( WeenieClassName.simifrost,        0.25f ),
 
-                    ( WeenieClassName.simi,             0.34f ),
-                    ( WeenieClassName.simiacid,         0.02125f ),
-                    ( WeenieClassName.simielectric,     0.02125f ),
-                    ( WeenieClassName.simifire,         0.02125f ),
-                    ( WeenieClassName.simifrost,        0.02125f ),
+                    ( WeenieClassName.kaskara,          4.0f ),
+                    ( WeenieClassName.kaskaraacid,      0.25f ),
+                    ( WeenieClassName.kaskaraelectric,  0.25f ),
+                    ( WeenieClassName.kaskarafire,      0.25f ),
+                    ( WeenieClassName.kaskarafrost,     0.25f ),
 
-                    ( WeenieClassName.kaskara,          0.12f ),
-                    ( WeenieClassName.kaskaraacid,      0.0075f ),
-                    ( WeenieClassName.kaskaraelectric,  0.0075f ),
-                    ( WeenieClassName.kaskarafire,      0.0075f ),
-                    ( WeenieClassName.kaskarafrost,     0.0075f ),
+                    ( WeenieClassName.shamshir,         4.0f ),
+                    ( WeenieClassName.shamshiracid,     0.25f ),
+                    ( WeenieClassName.shamshirelectric, 0.25f ),
+                    ( WeenieClassName.shamshirfire,     0.25f ),
+                    ( WeenieClassName.shamshirfrost,    0.25f ),
 
-                    ( WeenieClassName.shamshir,         0.12f ),
-                    ( WeenieClassName.shamshiracid,     0.0075f ),
-                    ( WeenieClassName.shamshirelectric, 0.0075f ),
-                    ( WeenieClassName.shamshirfire,     0.0075f ),
-                    ( WeenieClassName.shamshirfrost,    0.0075f ),
+                    ( WeenieClassName.takuba,           4.0f ),
+                    ( WeenieClassName.takubaacid,       0.25f ),
+                    ( WeenieClassName.takubaelectric,   0.25f ),
+                    ( WeenieClassName.takubafire,       0.25f ),
+                    ( WeenieClassName.takubafrost,      0.25f ),
 
-                    ( WeenieClassName.takuba,           0.12f ),
-                    ( WeenieClassName.takubaacid,       0.0075f ),
-                    ( WeenieClassName.takubaelectric,   0.0075f ),
-                    ( WeenieClassName.takubafire,       0.0075f ),
-                    ( WeenieClassName.takubafrost,      0.0075f ),
-                };
+                    ( WeenieClassName.swordrapier,      2.0f ),
 
-                T3_T4_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.swordrapier,      0.05f ),
-
-                    ( WeenieClassName.simi,             0.1f ),
-                    ( WeenieClassName.simiacid,         0.00625f ),
-                    ( WeenieClassName.simielectric,     0.00625f ),
-                    ( WeenieClassName.simifire,         0.00625f ),
-                    ( WeenieClassName.simifrost,        0.00625f ),
-
-                    ( WeenieClassName.kaskara,          0.22f ),
-                    ( WeenieClassName.kaskaraacid,      0.01375f ),
-                    ( WeenieClassName.kaskaraelectric,  0.01375f ),
-                    ( WeenieClassName.kaskarafire,      0.01375f ),
-                    ( WeenieClassName.kaskarafrost,     0.01375f ),
-
-                    ( WeenieClassName.shamshir,         0.22f ),
-                    ( WeenieClassName.shamshiracid,     0.01375f ),
-                    ( WeenieClassName.shamshirelectric, 0.01375f ),
-                    ( WeenieClassName.shamshirfire,     0.01375f ),
-                    ( WeenieClassName.shamshirfrost,    0.01375f ),
-
-                    ( WeenieClassName.takuba,           0.22f ),
-                    ( WeenieClassName.takubaacid,       0.01375f ),
-                    ( WeenieClassName.takubaelectric,   0.01375f ),
-                    ( WeenieClassName.takubafire,       0.01375f ),
-                    ( WeenieClassName.takubafrost,      0.01375f ),
-                };
-
-                T5_T6_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.swordrapier,      0.03125f ),
-
-                    ( WeenieClassName.simi,             0.025f ),
-                    ( WeenieClassName.simiacid,         0.0015625f ),
-                    ( WeenieClassName.simielectric,     0.0015625f ),
-                    ( WeenieClassName.simifire,         0.0015625f ),
-                    ( WeenieClassName.simifrost,        0.0015625f ),
-
-                    ( WeenieClassName.kaskara,          0.25f ),
-                    ( WeenieClassName.kaskaraacid,      0.015625f ),
-                    ( WeenieClassName.kaskaraelectric,  0.015625f ),
-                    ( WeenieClassName.kaskarafire,      0.015625f ),
-                    ( WeenieClassName.kaskarafrost,     0.015625f ),
-
-                    ( WeenieClassName.shamshir,         0.25f ),
-                    ( WeenieClassName.shamshiracid,     0.015625f ),
-                    ( WeenieClassName.shamshirelectric, 0.015625f ),
-                    ( WeenieClassName.shamshirfire,     0.015625f ),
-                    ( WeenieClassName.shamshirfrost,    0.015625f ),
-
-                    ( WeenieClassName.takuba,           0.25f ),
-                    ( WeenieClassName.takubaacid,       0.015625f ),
-                    ( WeenieClassName.takubaelectric,   0.015625f ),
-                    ( WeenieClassName.takubafire,       0.015625f ),
-                    ( WeenieClassName.takubafrost,      0.015625f ),
+                    ( WeenieClassName.ace41067_shashqa,          2.0f ),
+                    ( WeenieClassName.ace41068_acidshashqa,      0.125f ),
+                    ( WeenieClassName.ace41069_lightningshashqa, 0.125f ),
+                    ( WeenieClassName.ace41070_flamingshashqa,   0.125f ),
+                    ( WeenieClassName.ace41071_frostshashqa,     0.125f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()
                 {
                     T1_Chances,
                     T1_T2_Chances,
-                    T3_T4_Chances,
-                    T3_T4_Chances,
-                    T5_T6_Chances,
-                    T5_T6_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.simi,                 3.0f ),
+                    ( WeenieClassName.kaskara,              0.5f ),
+                    ( WeenieClassName.shamshir,             0.5f ),
+                    ( WeenieClassName.takuba,               0.5f ),
+
+                    ( WeenieClassName.swordrapier,          0.25f ),
+                };
+
+                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.simi,             4.0f ),
+                    ( WeenieClassName.simiacid,         0.25f ),
+                    ( WeenieClassName.simielectric,     0.25f ),
+                    ( WeenieClassName.simifire,         0.25f ),
+                    ( WeenieClassName.simifrost,        0.25f ),
+
+                    ( WeenieClassName.kaskara,          4.0f ),
+                    ( WeenieClassName.kaskaraacid,      0.25f ),
+                    ( WeenieClassName.kaskaraelectric,  0.25f ),
+                    ( WeenieClassName.kaskarafire,      0.25f ),
+                    ( WeenieClassName.kaskarafrost,     0.25f ),
+
+                    ( WeenieClassName.shamshir,         4.0f ),
+                    ( WeenieClassName.shamshiracid,     0.25f ),
+                    ( WeenieClassName.shamshirelectric, 0.25f ),
+                    ( WeenieClassName.shamshirfire,     0.25f ),
+                    ( WeenieClassName.shamshirfrost,    0.25f ),
+
+                    ( WeenieClassName.takuba,           4.0f ),
+                    ( WeenieClassName.takubaacid,       0.25f ),
+                    ( WeenieClassName.takubaelectric,   0.25f ),
+                    ( WeenieClassName.takubafire,       0.25f ),
+                    ( WeenieClassName.takubafrost,      0.25f ),
+
+                    ( WeenieClassName.swordrapier,      2.0f ),
+                };
+
+                weaponTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    T1_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
                 };
             }
         }

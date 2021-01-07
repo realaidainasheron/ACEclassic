@@ -75,15 +75,18 @@ namespace ACE.Server.WorldObjects
 
             var skill = ConvertToMoASkill(weapon.WeaponSkill);
 
-            // DualWieldAlternate will be TRUE if *next* attack is offhand
-            if (IsDualWieldAttack && !DualWieldAlternate)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.EoR)
             {
-                var weaponSkill = GetCreatureSkill(skill);
-                var dualWield = GetCreatureSkill(Skill.DualWield);
+                // DualWieldAlternate will be TRUE if *next* attack is offhand
+                if (IsDualWieldAttack && !DualWieldAlternate)
+                {
+                    var weaponSkill = GetCreatureSkill(skill);
+                    var dualWield = GetCreatureSkill(Skill.DualWield);
 
-                // offhand attacks use the lower skill level between dual wield and weapon skill
-                if (dualWield.Current < weaponSkill.Current)
-                    skill = Skill.DualWield;
+                    // offhand attacks use the lower skill level between dual wield and weapon skill
+                    if (dualWield.Current < weaponSkill.Current)
+                        skill = Skill.DualWield;
+                }
             }
             //Console.WriteLine($"{Name}.GetCurrentWeaponSkill - {skill}");
             return skill;

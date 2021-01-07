@@ -1353,6 +1353,12 @@ namespace ACE.Server.WorldObjects
             // Unwield wand/missile launcher/two-handed if dual wielding
             if (wieldedLocation == EquipMask.Shield && !item.IsShield)
             {
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+                {
+                    Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, item.Guid.Full, wieldError));
+                    return false; // No dual wielding allowed in this ruleset.
+                }
+
                 var mainWeapon = GetEquippedMeleeWeapon(true);
 
                 if (mainWeapon != null && !mainWeapon.IsTwoHanded)
@@ -1456,7 +1462,7 @@ namespace ACE.Server.WorldObjects
 
             // verify item slot is valid
             // restricting this to two-handed for now, as without that clamp, it bugs out dual wielding and possibly other things
-            if (item.WeaponSkill == Skill.TwoHandedCombat && (wieldedLocation & item.ValidLocations) == 0)
+            if (item.IsTwoHanded && (wieldedLocation & item.ValidLocations) == 0)
             {
                 Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, item.Guid.Full));
                 return false;

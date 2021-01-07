@@ -211,7 +211,7 @@ namespace ACE.Server.WorldObjects
             // allegiance rank requirement
             if (ItemAllegianceRankLimit != null)
             {
-                if(player.AllegianceRank == null || player.AllegianceRank < ItemAllegianceRankLimit)
+                if((player.AllegianceRank ?? 0) < ItemAllegianceRankLimit)
                     return new ActivationResult(new GameEventWeenieError(player.Session, WeenieError.YourAllegianceRankIsTooLowToUseMagic));
             }
 

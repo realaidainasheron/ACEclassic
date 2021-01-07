@@ -96,112 +96,113 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static SwordWcids_Aluvian()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
-                T1_Chances = new ChanceTable<WeenieClassName>()
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.swordrapier,          0.05f ),
-                    ( WeenieClassName.swordshort,           0.50f ),
-                    ( WeenieClassName.scimitar,             0.15f ),
-                    ( WeenieClassName.swordlong,            0.15f ),
-                    ( WeenieClassName.swordbroad,           0.15f ),
+                    ( WeenieClassName.swordshort,           3.0f ),
+                    ( WeenieClassName.scimitar,             0.5f ),
+                    ( WeenieClassName.swordlong,            0.5f ),
+                    ( WeenieClassName.swordbroad,           0.5f ),
+
+                    ( WeenieClassName.swordrapier,          0.25f ),
+                    ( WeenieClassName.ace40618_spadone,     0.25f ),
                 };
 
-                T1_T2_Chances = new ChanceTable<WeenieClassName>()
+                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.swordrapier,        0.125f ),
+                    ( WeenieClassName.swordshort,         4.0f ),
+                    ( WeenieClassName.swordshortacid,     0.25f ),
+                    ( WeenieClassName.swordshortelectric, 0.25f ),
+                    ( WeenieClassName.swordshortfire,     0.25f ),
+                    ( WeenieClassName.swordshortfrost,    0.25f ),
 
-                    ( WeenieClassName.swordshort,         0.34f ),
-                    ( WeenieClassName.swordshortacid,     0.02125f ),
-                    ( WeenieClassName.swordshortelectric, 0.02125f ),
-                    ( WeenieClassName.swordshortfire,     0.02125f ),
-                    ( WeenieClassName.swordshortfrost,    0.02125f ),
+                    ( WeenieClassName.scimitar,         4.0f ),
+                    ( WeenieClassName.scimitaracid,     0.25f ),
+                    ( WeenieClassName.scimitarelectric, 0.25f ),
+                    ( WeenieClassName.scimitarfire,     0.25f ),
+                    ( WeenieClassName.scimitarfrost,    0.25f ),
 
-                    ( WeenieClassName.scimitar,         0.12f ),
-                    ( WeenieClassName.scimitaracid,     0.0075f ),
-                    ( WeenieClassName.scimitarelectric, 0.0075f ),
-                    ( WeenieClassName.scimitarfire,     0.0075f ),
-                    ( WeenieClassName.scimitarfrost,    0.0075f ),
+                    ( WeenieClassName.swordlong,          4.0f ),
+                    ( WeenieClassName.swordlongacid,      0.25f ),
+                    ( WeenieClassName.swordlongelectric,  0.25f ),
+                    ( WeenieClassName.swordlongfire,      0.25f ),
+                    ( WeenieClassName.swordlongfrost,     0.25f ),
 
-                    ( WeenieClassName.swordlong,          0.12f ),
-                    ( WeenieClassName.swordlongacid,      0.0075f ),
-                    ( WeenieClassName.swordlongelectric,  0.0075f ),
-                    ( WeenieClassName.swordlongfire,      0.0075f ),
-                    ( WeenieClassName.swordlongfrost,     0.0075f ),
+                    ( WeenieClassName.swordbroad,         4.0f ),
+                    ( WeenieClassName.swordbroadacid,     0.25f ),
+                    ( WeenieClassName.swordbroadelectric, 0.25f ),
+                    ( WeenieClassName.swordbroadfire,     0.25f ),
+                    ( WeenieClassName.swordbroadfrost,    0.25f ),
 
-                    ( WeenieClassName.swordbroad,         0.12f ),
-                    ( WeenieClassName.swordbroadacid,     0.0075f ),
-                    ( WeenieClassName.swordbroadelectric, 0.0075f ),
-                    ( WeenieClassName.swordbroadfire,     0.0075f ),
-                    ( WeenieClassName.swordbroadfrost,    0.0075f ),
-                };
+                    ( WeenieClassName.swordrapier,        2.0f ),
 
-                T3_T4_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.swordrapier,        0.05f ),
-
-                    ( WeenieClassName.swordshort,         0.1f ),
-                    ( WeenieClassName.swordshortacid,     0.00625f ),
-                    ( WeenieClassName.swordshortelectric, 0.00625f ),
-                    ( WeenieClassName.swordshortfire,     0.00625f ),
-                    ( WeenieClassName.swordshortfrost,    0.00625f ),
-
-                    ( WeenieClassName.scimitar,         0.22f ),
-                    ( WeenieClassName.scimitaracid,     0.01375f ),
-                    ( WeenieClassName.scimitarelectric, 0.01375f ),
-                    ( WeenieClassName.scimitarfire,     0.01375f ),
-                    ( WeenieClassName.scimitarfrost,    0.01375f ),
-
-                    ( WeenieClassName.swordlong,          0.22f ),
-                    ( WeenieClassName.swordlongacid,      0.01375f ),
-                    ( WeenieClassName.swordlongelectric,  0.01375f ),
-                    ( WeenieClassName.swordlongfire,      0.01375f ),
-                    ( WeenieClassName.swordlongfrost,     0.01375f ),
-
-                    ( WeenieClassName.swordbroad,         0.22f ),
-                    ( WeenieClassName.swordbroadacid,     0.01375f ),
-                    ( WeenieClassName.swordbroadelectric, 0.01375f ),
-                    ( WeenieClassName.swordbroadfire,     0.01375f ),
-                    ( WeenieClassName.swordbroadfrost,    0.01375f ),
-                };
-
-                T5_T6_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.swordrapier,        0.03125f ),
-
-                    ( WeenieClassName.swordshort,         0.025f ),
-                    ( WeenieClassName.swordshortacid,     0.0015625f ),
-                    ( WeenieClassName.swordshortelectric, 0.0015625f ),
-                    ( WeenieClassName.swordshortfire,     0.0015625f ),
-                    ( WeenieClassName.swordshortfrost,    0.0015625f ),
-
-                    ( WeenieClassName.scimitar,         0.25f ),
-                    ( WeenieClassName.scimitaracid,     0.015625f ),
-                    ( WeenieClassName.scimitarelectric, 0.015625f ),
-                    ( WeenieClassName.scimitarfire,     0.015625f ),
-                    ( WeenieClassName.scimitarfrost,    0.015625f ),
-
-                    ( WeenieClassName.swordlong,          0.25f ),
-                    ( WeenieClassName.swordlongacid,      0.015625f ),
-                    ( WeenieClassName.swordlongelectric,  0.015625f ),
-                    ( WeenieClassName.swordlongfire,      0.015625f ),
-                    ( WeenieClassName.swordlongfrost,     0.015625f ),
-
-                    ( WeenieClassName.swordbroad,         0.25f ),
-                    ( WeenieClassName.swordbroadacid,     0.015625f ),
-                    ( WeenieClassName.swordbroadelectric, 0.015625f ),
-                    ( WeenieClassName.swordbroadfire,     0.015625f ),
-                    ( WeenieClassName.swordbroadfrost,    0.015625f ),
+                    ( WeenieClassName.ace40618_spadone,          2.0f ), // Renamed to Greatsword to keep with the Aluvian theme
+                    ( WeenieClassName.ace40619_acidspadone,      0.125f ),
+                    ( WeenieClassName.ace40620_lightningspadone, 0.125f ),
+                    ( WeenieClassName.ace40621_flamingspadone,   0.125f ),
+                    ( WeenieClassName.ace40622_frostspadone,     0.125f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()
                 {
                     T1_Chances,
                     T1_T2_Chances,
-                    T3_T4_Chances,
-                    T3_T4_Chances,
-                    T5_T6_Chances,
-                    T5_T6_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.swordshort,           3.0f ),
+                    ( WeenieClassName.scimitar,             0.5f ),
+                    ( WeenieClassName.swordlong,            0.5f ),
+                    ( WeenieClassName.swordbroad,           0.5f ),
+
+                    ( WeenieClassName.swordrapier,          0.25f ),
+                };
+
+                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.swordshort,         4.0f ),
+                    ( WeenieClassName.swordshortacid,     0.25f ),
+                    ( WeenieClassName.swordshortelectric, 0.25f ),
+                    ( WeenieClassName.swordshortfire,     0.25f ),
+                    ( WeenieClassName.swordshortfrost,    0.25f ),
+
+                    ( WeenieClassName.scimitar,           4.0f ),
+                    ( WeenieClassName.scimitaracid,       0.25f ),
+                    ( WeenieClassName.scimitarelectric,   0.25f ),
+                    ( WeenieClassName.scimitarfire,       0.25f ),
+                    ( WeenieClassName.scimitarfrost,      0.25f ),
+
+                    ( WeenieClassName.swordlong,          4.0f ),
+                    ( WeenieClassName.swordlongacid,      0.25f ),
+                    ( WeenieClassName.swordlongelectric,  0.25f ),
+                    ( WeenieClassName.swordlongfire,      0.25f ),
+                    ( WeenieClassName.swordlongfrost,     0.25f ),
+
+                    ( WeenieClassName.swordbroad,         4.0f ),
+                    ( WeenieClassName.swordbroadacid,     0.25f ),
+                    ( WeenieClassName.swordbroadelectric, 0.25f ),
+                    ( WeenieClassName.swordbroadfire,     0.25f ),
+                    ( WeenieClassName.swordbroadfrost,    0.25f ),
+
+                    ( WeenieClassName.swordrapier,        2.0f ),
+                };
+
+                weaponTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    T1_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
                 };
             }
         }

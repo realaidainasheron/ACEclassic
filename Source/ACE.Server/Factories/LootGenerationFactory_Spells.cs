@@ -515,7 +515,7 @@ namespace ACE.Server.Factories
                 else
                     return 16;
             }
-            else if (roll.IsMissileWeapon || wo.WeaponSkill == Skill.TwoHandedCombat)
+            else if (roll.IsMissileWeapon || wo.IsTwoHanded)
             {
                 return 17;
             }

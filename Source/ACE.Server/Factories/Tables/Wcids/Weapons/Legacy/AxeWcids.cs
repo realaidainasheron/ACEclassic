@@ -71,7 +71,115 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static AxeWcids()
         {
-            if(Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.axehand,           3.0f ),
+                    ( WeenieClassName.axebattle,         0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
+                    ( WeenieClassName.ace41052_greataxe, 0.25f ),
+                };
+
+                AxeWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.axehand,           4.0f ),
+                    ( WeenieClassName.axehandacid,       0.25f ),
+                    ( WeenieClassName.axehandelectric,   0.25f ),
+                    ( WeenieClassName.axehandfire,       0.25f ),
+                    ( WeenieClassName.axehandfrost,      0.25f ),
+
+                    ( WeenieClassName.axebattle,         4.0f ),
+                    ( WeenieClassName.axebattleacid,     0.25f ),
+                    ( WeenieClassName.axebattleelectric, 0.25f ),
+                    ( WeenieClassName.axebattlefire,     0.25f ),
+                    ( WeenieClassName.axebattlefrost,    0.25f ),
+
+                    ( WeenieClassName.warhammer,         4.0f ),
+                    ( WeenieClassName.warhammeracid,     0.25f ),
+                    ( WeenieClassName.warhammerelectric, 0.25f ),
+                    ( WeenieClassName.warhammerfire,     0.25f ),
+                    ( WeenieClassName.warhammerfrost,    0.25f ),
+
+                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                };
+
+                AxeWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.tungi,             3.0f ),
+                    ( WeenieClassName.silifi,            0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
+                    ( WeenieClassName.ace41052_greataxe, 0.25f ),
+                };
+
+                AxeWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.tungi,             4.0f ),
+                    ( WeenieClassName.tungiacid,         0.25f ),
+                    ( WeenieClassName.tungielectric,     0.25f ),
+                    ( WeenieClassName.tungifire,         0.25f ),
+                    ( WeenieClassName.tungifrost,        0.25f ),
+
+                    ( WeenieClassName.silifi,            4.0f ),
+                    ( WeenieClassName.silifiacid,        0.25f ),
+                    ( WeenieClassName.silifielectric,    0.25f ),
+                    ( WeenieClassName.silififire,        0.25f ),
+                    ( WeenieClassName.silififrost,       0.25f ),
+
+                    ( WeenieClassName.warhammer,         4.0f ),
+                    ( WeenieClassName.warhammeracid,     0.25f ),
+                    ( WeenieClassName.warhammerelectric, 0.25f ),
+                    ( WeenieClassName.warhammerfire,     0.25f ),
+                    ( WeenieClassName.warhammerfrost,    0.25f ),
+
+                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                };
+
+
+                AxeWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.shouono,           3.0f ),
+                    ( WeenieClassName.ono,               0.5f ),
+                    ( WeenieClassName.warhammer,         0.5f ),
+                    ( WeenieClassName.ace41052_greataxe, 0.25f ),
+                };
+
+                AxeWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.shouono,           4.0f ),
+                    ( WeenieClassName.shouonoacid,       0.25f ),
+                    ( WeenieClassName.shouonoelectric,   0.25f ),
+                    ( WeenieClassName.shouonofire,       0.25f ),
+                    ( WeenieClassName.shouonofrost,      0.25f ),
+
+                    ( WeenieClassName.ono,               4.0f ),
+                    ( WeenieClassName.onoacid,           0.25f ),
+                    ( WeenieClassName.onoelectric,       0.25f ),
+                    ( WeenieClassName.onofire,           0.25f ),
+                    ( WeenieClassName.onofrost,          0.25f ),
+
+                    ( WeenieClassName.warhammer,         4.0f ),
+                    ( WeenieClassName.warhammeracid,     0.25f ),
+                    ( WeenieClassName.warhammerelectric, 0.25f ),
+                    ( WeenieClassName.warhammerfire,     0.25f ),
+                    ( WeenieClassName.warhammerfrost,    0.25f ),
+
+                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {

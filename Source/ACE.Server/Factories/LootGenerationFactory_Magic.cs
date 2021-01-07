@@ -684,7 +684,7 @@ namespace ACE.Server.Factories
                 return false;
 
             var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
-            if (rng < 0.01)
+            if (rng < 0.05)
             {
                 HeritageGroup heritage = (HeritageGroup)ThreadSafeRandom.Next(1, 3);
 
@@ -713,7 +713,7 @@ namespace ACE.Server.Factories
                 return false;
 
             var rng = ThreadSafeRandom.Next(0.0f, 1.0f);
-            if (rng < (roll.Wcid == Enum.WeenieClassName.crown ? 0.25f : 0.01f)) // Crowns are special and have allegiance requirements more often.
+            if (rng < (roll.Wcid == Enum.WeenieClassName.crown ? 0.25 : 0.05)) // Crowns are special and have allegiance requirements more often.
             {
                 wo.ItemAllegianceRankLimit = AllegianceRankChance.Roll(profile.Tier);
                 return true;
