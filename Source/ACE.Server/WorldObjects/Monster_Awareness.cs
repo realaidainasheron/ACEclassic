@@ -223,7 +223,7 @@ namespace ACE.Server.WorldObjects
 
                 Player player = AttackTarget as Player;
                 if (player != null && player.AddTrackedObject(this))
-                    log.Error($"Fixed invisible attacker on player {player.Name}. ({Name} ({Guid})");
+                    log.Error($"Fixed invisible attacker on player {player.Name}. (Landblock:{CurrentLandblock.Id} - {Name} ({Guid})");
 
                 if (AttackTarget != null && AttackTarget != prevAttackTarget)
                     EmoteManager.OnNewEnemy(AttackTarget);
