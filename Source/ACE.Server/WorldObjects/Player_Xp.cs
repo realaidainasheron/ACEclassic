@@ -110,14 +110,16 @@ namespace ACE.Server.WorldObjects
             var xpTable = DatManager.PortalDat.XpTable;
 
             var maxLevel = GetMaxLevel();
-            var maxLevelXp = xpTable.CharacterLevelXPList.Last();
+            var maxLevelXp = xpTable.CharacterLevelXPList[(int)maxLevel];
 
-            if (Level != maxLevel)
+            bool allowXpAtMaxLevel = PropertyManager.GetBool("allow_xp_at_max_level").Item;
+
+            if (Level != maxLevel || allowXpAtMaxLevel)
             {
                 var addAmount = amount;
 
                 var amountLeftToEnd = (long)maxLevelXp - TotalExperience ?? 0;
-                if (amount > amountLeftToEnd)
+                if (!allowXpAtMaxLevel && amount > amountLeftToEnd)
                     addAmount = amountLeftToEnd;
 
                 AvailableExperience += addAmount;
@@ -208,7 +210,9 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public static uint GetMaxLevel()
         {
-            return (uint)DatManager.PortalDat.XpTable.CharacterLevelXPList.Count - 1;
+            uint maxPossibleLevel = (uint)DatManager.PortalDat.XpTable.CharacterLevelXPList.Count - 1;
+            uint maxSettingLevel = (uint)PropertyManager.GetLong("max_level").Item;
+            return (Math.Min(maxPossibleLevel, maxSettingLevel));
         }
 
         /// <summary>

@@ -114,7 +114,7 @@ namespace ACE.Server.Factories
 
         private static bool MutateMeleeWeapon(WorldObject wo, TreasureDeath profile, bool isMagical, TreasureRoll roll = null)
         {
-            if (!(wo is MeleeWeapon))
+            if (!(wo is MeleeWeapon || wo.IsThrownWeapon))
                 return false;
 
             if (roll == null)

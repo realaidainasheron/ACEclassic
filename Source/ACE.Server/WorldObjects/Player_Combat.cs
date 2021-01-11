@@ -896,6 +896,27 @@ namespace ACE.Server.WorldObjects
 
                         switch (currentCombatStance)
                         {
+                            case MotionStance.ThrownWeaponCombat:
+                            case MotionStance.ThrownShieldCombat:
+                                {
+                                    if (missileWeapon.MaterialType != null && missileWeapon.StackSize <= 1)
+                                    {
+                                        animTime = SetCombatMode(newCombatMode, out queueTime);
+
+                                        var actionChain = new ActionChain();
+                                        actionChain.AddDelaySeconds(animTime);
+                                        actionChain.AddAction(this, () =>
+                                        {
+                                            Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"You refrain from throwing your last {missileWeapon.NameWithMaterial}!"));
+                                            SetCombatMode(CombatMode.NonCombat);
+                                        });
+                                        actionChain.EnqueueChain();
+
+                                        NextUseTime = DateTime.UtcNow.AddSeconds(animTime);
+                                        return;
+                                    }
+                                    break;
+                                }
                             case MotionStance.BowCombat:
                             case MotionStance.CrossbowCombat:
                             case MotionStance.AtlatlCombat:

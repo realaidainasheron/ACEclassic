@@ -109,7 +109,6 @@
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\spear_offense_defense.txt" />
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\staff_offense_defense.txt" />
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\sword_offense_defense.txt" />
-    <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\thrown_offense_defense.txt" />
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\unarmed_offense_defense.txt" />
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\CustomDM\axe_offense_defense.txt" />
     <None Remove="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\CustomDM\dagger_offense_defense.txt" />
@@ -213,7 +212,6 @@
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\Infiltration\staff.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\Infiltration\sword.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\Infiltration\sword_ms.txt" />
-    <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\Infiltration\thrown.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\Infiltration\unarmed.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\axe.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\dagger.txt" />
@@ -224,7 +222,7 @@
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\sword.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\sword_ms.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\thrown.txt" />
-      <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\unarmed.txt" />
+    <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\Damage_WieldDifficulty_DamageVariance\CustomDM\unarmed.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\axe_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\dagger_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\mace_jitte_offense_defense.txt" />
@@ -243,7 +241,6 @@
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\spear_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\staff_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\sword_offense_defense.txt" />
-    <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\thrown_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\Infiltration\unarmed_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\CustomDM\axe_offense_defense.txt" />
     <EmbeddedResource Include="Factories\Entity\Mutations\MeleeWeapons\WeaponOffense_WeaponDefense\CustomDM\dagger_offense_defense.txt" />

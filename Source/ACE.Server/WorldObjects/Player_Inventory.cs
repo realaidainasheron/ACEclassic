@@ -2137,6 +2137,20 @@ namespace ACE.Server.WorldObjects
                 return;
             }
 
+            if (sourceStack.IsThrownWeapon && sourceStack.MaterialType != null)
+            {
+                if (sourceStack.StackSize == amount)
+                {
+                    amount -= 1;
+                    if (amount <= 0)
+                    {
+                        Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"You refrain from merging your last {sourceStack.NameWithMaterial}!")); // Custom error message
+                        Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, mergeFromGuid));
+                        return;
+                    }
+                }
+            }
+
             if (targetStackRootOwner == this && !CanMergeToInventory(sourceStack, targetStack, amount))
             {
                 Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, sourceStack.Guid.Full, WeenieError.None));

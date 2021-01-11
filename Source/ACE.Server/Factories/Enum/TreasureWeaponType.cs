@@ -24,6 +24,7 @@ namespace ACE.Server.Factories.Enum
         CrossbowLight,
         Atlatl,
         AtlatlRegular,
+        Thrown,
 
         Caster,
 
@@ -65,6 +66,7 @@ namespace ACE.Server.Factories.Enum
                 case TreasureWeaponType.TwoHandedMace:
                 case TreasureWeaponType.TwoHandedSpear:
                 case TreasureWeaponType.TwoHandedSword:
+                case TreasureWeaponType.Thrown:
                     return true;
             }
             return false;
@@ -133,6 +135,8 @@ namespace ACE.Server.Factories.Enum
                     return "atlatl";
                 case TreasureWeaponType.AtlatlRegular:
                     return "atlatl_regular";
+                case TreasureWeaponType.Thrown:
+                    return "thrown";
                 case TreasureWeaponType.Caster:
                     return "caster";
             }
@@ -161,6 +165,8 @@ namespace ACE.Server.Factories.Enum
                     return "sword";
                 case TreasureWeaponType.Unarmed:
                     return "unarmed";
+                case TreasureWeaponType.Thrown:
+                    return "thrown";
 
                 case TreasureWeaponType.TwoHandedAxe:
                     return "two_handed_axe";

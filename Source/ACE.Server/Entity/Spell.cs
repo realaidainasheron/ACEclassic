@@ -277,15 +277,20 @@ namespace ACE.Server.Entity
         {
             get
             {
-                switch (Category)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                    return false;
+                else
                 {
-                    case SpellCategory.AttackModRaising:
-                    case SpellCategory.DamageRaising:
-                    case SpellCategory.DefenseModRaising:
-                    case SpellCategory.WeaponTimeRaising:        // verified
-                    case SpellCategory.ManaConversionModRaising:
-                    case SpellCategory.SpellDamageRaising:
-                        return true;
+                    switch (Category)
+                    {
+                        case SpellCategory.AttackModRaising:
+                        case SpellCategory.DamageRaising:
+                        case SpellCategory.DefenseModRaising:
+                        case SpellCategory.WeaponTimeRaising:        // verified
+                        case SpellCategory.ManaConversionModRaising:
+                        case SpellCategory.SpellDamageRaising:
+                            return true;
+                    }
                 }
                 return false;
             }

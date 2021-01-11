@@ -103,21 +103,40 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         public static WeenieClassName Roll(TreasureDeath treasureDeath)
         {
-            var heritage = HeritageChance.Roll(treasureDeath.UnknownChances, true);
-
-            switch (heritage)
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
-                case TreasureHeritageGroup.Aluvian:
-                    return ClothingWcids_Aluvian.Roll();
+                var heritage = HeritageChance.Roll(treasureDeath.UnknownChances);
 
-                case TreasureHeritageGroup.Gharundim:
-                    return ClothingWcids_Gharundim.Roll();
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return ClothingWcids_Aluvian.Roll();
 
-                case TreasureHeritageGroup.Sho:
-                    return ClothingWcids_Sho.Roll();
+                    case TreasureHeritageGroup.Gharundim:
+                        return ClothingWcids_Gharundim.Roll();
 
-                case TreasureHeritageGroup.Viamontian:
-                    return ClothingWcids_Viamontian.Roll();
+                    case TreasureHeritageGroup.Sho:
+                        return ClothingWcids_Sho.Roll();
+                }
+            }
+            else
+            {
+                var heritage = HeritageChance.Roll(treasureDeath.UnknownChances, true);
+
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return ClothingWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return ClothingWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return ClothingWcids_Sho.Roll();
+
+                    case TreasureHeritageGroup.Viamontian:
+                        return ClothingWcids_Viamontian.Roll();
+                }
             }
             return WeenieClassName.undef;
         }

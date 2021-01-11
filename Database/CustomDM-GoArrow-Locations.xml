@@ -698,26 +698,10 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>45</id>
-    <latitude>-31.6</latitude>
-    <longitude>16.7</longitude>
-    <name>Banderling Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Near Glenden Woods.  &lt;B&gt;Lots of treasure and XP.&lt;/B&gt;&lt;BR&gt;Takes foreverfor the banderlings to respawn   and treasure  is standard  for the most part not much good  loot anymore &lt;I&gt;	-- Vanyels Blade 9/24/99 &lt;/i&gt;&lt;BR&gt;Very hot camping spot. Always ~8 people competing for the banderlings... &lt;I&gt;	-- Nether 10/15/99 &lt;/i&gt;&lt;BR&gt;Also a Tumerok Warrior and a multi-trapped stairway leading up to top where Bander Capt. and a few Ravers reside guarding 2 trapped chests. If you attack the Captain approximately 7 - 10 additional Banderlings rush from off radar to assist. If you take the inside track up the stair you can avoid all traps. NOTE: This place is plagued with lag (at least on DT server it is anyway) if you have a lousy connection I suggest to find another place to lvl as the exp. is avg. and the loot sucks  :7D. &lt;I&gt;	-- --Lia Fujishima 7/1/2000 &lt;/i&gt;</description>
-    <date_added>1999-05-21T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>46</id>
     <latitude>-36.7</latitude>
     <longitude>29.1</longitude>
-    <name>Holtburg (sort of) to Glenden Wood</name>
+    <name>Holtburg to Glenden Wood</name>
     <type>Portal</type>
     <arrival_latitude>-28.5</arrival_latitude>
     <arrival_longitude>26.1</arrival_longitude>
@@ -785,22 +769,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>A Rat Nest. White Rats, Grey Rats, Tan Rats, Russet Rats, Black Rats, Red Rats, Desert Rats, Swamp Rats, a one Mountain Rat. Ruined Chest here. &lt;I&gt; -- Charles t Great 7/20/2003 &lt;/i&gt;</description>
-    <date_added>1999-05-25T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>51</id>
-    <latitude>-32.7</latitude>
-    <longitude>34.7</longitude>
-    <name>Abandoned Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>No monsters, but it could make for a cool staging point.&lt;BR&gt;There are monsters here.  Reedsharks are the best killings here. &lt;I&gt; 10/10/99 &lt;/I&gt;&lt;BR&gt;This is the ""Hilltop"" the portal in Crater Village drops off at.  About 15-20 Drudge Prowlers around here on a fast respawn, great place for level 5-10 to hunt, also great spot for getting drudge head.  Beware the higher-level spawn point real close by that sometimes produces shadows and laigus lugians. &lt;I&gt; -- Confucius of FF 3/5/2002 &lt;/I&gt;&lt;BR&gt;Has around 10 Drudge Raveners now. If you take Hilltop portal from Fort Teth you drop right in the middle of them... &lt;I&gt; -- Jaz of SC 7/8/2003 &lt;/I&gt;</description>
     <date_added>1999-05-25T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -2046,11 +2014,11 @@
     <id>129</id>
     <latitude>-17.9</latitude>
     <longitude>65.2</longitude>
-    <name>Arwic Beach House</name>
+    <name>Eastham Beach House</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Empty and a good log out point&lt;BR&gt;Should be changed to Eastham Beach house since its near eastham, not arwic &lt;I&gt;	-- Yakana 5/12/2000 &lt;/i&gt;&lt;BR&gt;Houses like that one are dotted along the beach, and provide places to rest, log off, or escape. Theres a lot more than one. &lt;I&gt;	-- Liao Allard 6/2/2000 &lt;/i&gt;</description>
+    <description>Empty and a good log out point&lt;BR&gt;&lt;I&gt;	-- Yakana 5/12/2000 &lt;/i&gt;&lt;BR&gt;Houses like that one are dotted along the beach, and provide places to rest, log off, or escape. Theres a lot more than one. &lt;I&gt;	-- Liao Allard 6/2/2000 &lt;/i&gt;</description>
     <date_added>1999-08-06T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -5530,22 +5498,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>347</id>
-    <latitude>-32.7</latitude>
-    <longitude>34.7</longitude>
-    <name>GW tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Near Gw and fort witshire. Lots of veteran reed sharks. good for low lvl mages and archers. about every 10 min about 15 reed sharks come bursting out of no where so dont hang around on the low part of the stairs or on the ground. &lt;I&gt; -- Matt&lt;/I&gt;&lt;BR&gt;It's known as Hilltop.  A few portals around Dereth lead to this place. &lt;I&gt;	-- Stu 1/1/00 &lt;/I&gt;</description>
-    <date_added>1999-10-01T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>348</id>
     <latitude>61.8</latitude>
     <longitude>39.9</longitude>
@@ -6437,22 +6389,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>404</id>
-    <latitude>-54.5</latitude>
-    <longitude>22.6</longitude>
-    <name>An abandon</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>These arent the exact cords but it is around here...Near where the river starts flow down south. A few wasps outside and some tuskers a little more North, maybe a good log off place. &lt;I&gt; -- XxRiSkxX&lt;/i&gt;&lt;BR&gt;A small temple with a  calendar inside.  &lt;I&gt;	-- Balo 3/19/2000 &lt;/i&gt;&lt;BR&gt;Also, two parts of a broken lifestone cradle growing out of the calendar.  Are these new or just not mentioned before?  -- Ivory Rose &lt;I&gt;	-- Red and Gold 9/28/2000 &lt;/i&gt;&lt;BR&gt;Were there from the begining, or atleast Febuary. &lt;I&gt;	-- Chyeld 10/5/2000 &lt;/i&gt;</description>
-    <date_added>1999-10-25T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>405</id>
     <latitude>2.3</latitude>
     <longitude>63.2</longitude>
@@ -6921,11 +6857,11 @@
     <id>434</id>
     <latitude>-59.79</latitude>
     <longitude>-4.05</longitude>
-    <name>Mtn Retreat</name>
+    <name>Mountain Retreat</name>
     <type>Town</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Mtn Castle with an Archmage, General Shopkeeper, and Weapon/Armorer.  Lifestone and portal to a Hilltop near  is here as well.  Lots of Banders, Monougas and Mites nearby for good Mid lvl (8~14) hunting. &lt;I&gt; -- Yoshimura&lt;/i&gt;&lt;BR&gt;Tuskers can be found here as well... &lt;I&gt;	-- Polecat 11/25/99 &lt;/i&gt;&lt;BR&gt;addition: the merchant buys and sells lots of kinds of stuff, but the archmage offers a *very* limited variety of components -- dont expect to find what youve run out of... unless youve checked first.  Only mana stones with tiny charge are sold. &lt;I&gt; -- Doc Feelgood 2/3/00 &lt;/i&gt;&lt;BR&gt;As of the August patch there is now also a collector here for rat tails, wings, scalps, etc. &lt;I&gt;	-- Virginia Plain 8/10/2000 &lt;/i&gt;&lt;BR&gt;This is an excellent setup with one exception- not enough wildlife to hunt,  A good place to overnight on the way to Stonehold or the Mountain Castle, but if you made it this far you will probably find youtself wanting to move on.   &lt;I&gt;	-- Jann 9/29/2000 &lt;/i&gt;&lt;BR&gt;The good Doc is, ah, not entirely correct. The archmage offers all components including tapers, up to silver scarabs.  His markup is 40%.  He buys the usual mage stuff at 80%. The bowyer sells arrows, quarrels, and AP arrows/quarrels at a 30% markup.  He doesnt sell AP heads, but he does sell arrow and quarrel shafts and normal heads. The merchant buys at 80% for most things&lt;br&gt; hes like a town provisioner.  He will not buy gems or jewelry. So not a bad little minitown, except theres no place to sell gems or jewelry. &lt;I&gt;	-- Red and Gold 2/3/2001 &lt;/i&gt;&lt;BR&gt;Doc was correct until the Jan. or Feb. 2001 patch.  Now all towns sell tapers and most comps. &lt;I&gt;	-- Servant-san 3/2/2001 &lt;/i&gt;&lt;BR&gt;Agree, the hunting is terrible! No Ravs, Stalkers or Lurkers, nope!  None at all. No Copper, Iron or Limestone golems either.  Not a one. No Great Matties. Nope, youll just want to move right along to somewhere else, especially since its soooo crowded with other people hunting the Young Banderlings and Red Phyntos wasps.  The hunting is soooo terrible that Im only making 15K exp. per buff cycle (at level 16), mostly hunting within sight of the town. &lt;I&gt; -- Dhambala al-T 8/31/2001 &lt;/i&gt;</description>
+    <description>Mountain Castle with an Archmage, General Shopkeeper, and Weapon/Armorer.  Lifestone and portal to a Hilltop near  is here as well.  Lots of Banders, Monougas and Mites nearby for good Mid lvl (8~14) hunting. &lt;I&gt; -- Yoshimura&lt;/i&gt;&lt;BR&gt;Tuskers can be found here as well... &lt;I&gt;	-- Polecat 11/25/99 &lt;/i&gt;&lt;BR&gt;addition: the merchant buys and sells lots of kinds of stuff, but the archmage offers a *very* limited variety of components -- dont expect to find what youve run out of... unless youve checked first.  Only mana stones with tiny charge are sold. &lt;I&gt; -- Doc Feelgood 2/3/00 &lt;/i&gt;&lt;BR&gt;As of the August patch there is now also a collector here for rat tails, wings, scalps, etc. &lt;I&gt;	-- Virginia Plain 8/10/2000 &lt;/i&gt;&lt;BR&gt;This is an excellent setup with one exception- not enough wildlife to hunt,  A good place to overnight on the way to Stonehold or the Mountain Castle, but if you made it this far you will probably find youtself wanting to move on.   &lt;I&gt;	-- Jann 9/29/2000 &lt;/i&gt;&lt;BR&gt;The good Doc is, ah, not entirely correct. The archmage offers all components including tapers, up to silver scarabs.  His markup is 40%.  He buys the usual mage stuff at 80%. The bowyer sells arrows, quarrels, and AP arrows/quarrels at a 30% markup.  He doesnt sell AP heads, but he does sell arrow and quarrel shafts and normal heads. The merchant buys at 80% for most things&lt;br&gt; hes like a town provisioner.  He will not buy gems or jewelry. So not a bad little minitown, except theres no place to sell gems or jewelry. &lt;I&gt;	-- Red and Gold 2/3/2001 &lt;/i&gt;&lt;BR&gt;Doc was correct until the Jan. or Feb. 2001 patch.  Now all towns sell tapers and most comps. &lt;I&gt;	-- Servant-san 3/2/2001 &lt;/i&gt;&lt;BR&gt;Agree, the hunting is terrible! No Ravs, Stalkers or Lurkers, nope!  None at all. No Copper, Iron or Limestone golems either.  Not a one. No Great Matties. Nope, youll just want to move right along to somewhere else, especially since its soooo crowded with other people hunting the Young Banderlings and Red Phyntos wasps.  The hunting is soooo terrible that Im only making 15K exp. per buff cycle (at level 16), mostly hunting within sight of the town. &lt;I&gt; -- Dhambala al-T 8/31/2001 &lt;/i&gt;</description>
     <date_added>1999-11-25T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -6937,11 +6873,11 @@
     <id>435</id>
     <latitude>-59.8</latitude>
     <longitude>-4.2</longitude>
-    <name>Mtn Retreat Lifestone</name>
+    <name>Mountain Retreat Lifestone</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Lifestone inside the Mtn Retreat Castle. &lt;I&gt; -- Yoshimura&lt;/i&gt;</description>
+    <description>Lifestone inside the Mountain Retreat Castle. &lt;I&gt; -- Yoshimura&lt;/i&gt;</description>
     <date_added>1999-11-25T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -6953,7 +6889,7 @@
     <id>436</id>
     <latitude>-59.7</latitude>
     <longitude>-4</longitude>
-    <name>Mtn Retreat to HillTop</name>
+    <name>Mountain Retreat to Hilltop</name>
     <type>Portal</type>
     <arrival_latitude>-32.5</arrival_latitude>
     <arrival_longitude>34.2</arrival_longitude>
@@ -8834,7 +8770,7 @@
     <id>554</id>
     <latitude>-66.1</latitude>
     <longitude>51.4</longitude>
-    <name>Standing Stones (Bandit Castle)</name>
+    <name>Standing Stone (Bandit Castle)</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -8850,7 +8786,7 @@
     <id>555</id>
     <latitude>-69.2</latitude>
     <longitude>15.3</longitude>
-    <name>Standing Stones (Neydisa)</name>
+    <name>Standing Stone (Neydisa)</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -8866,7 +8802,7 @@
     <id>556</id>
     <latitude>-72.02</latitude>
     <longitude>-22</longitude>
-    <name>Standing Stones (Stonehold)</name>
+    <name>Standing Stone (Stonehold)</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -10209,7 +10145,7 @@
     <id>640</id>
     <latitude>-21.4</latitude>
     <longitude>-5</longitude>
-    <name>Black Rat Rock</name>
+    <name>Black Rat Cave</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -10329,22 +10265,6 @@
     <date_added>2000-02-24T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>0137</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>648</id>
-    <latitude>89.2</latitude>
-    <longitude>-43.8</longitude>
-    <name>Dawnsong Festival Stone</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>On the End of a long Stretch of Flat Rock. Great View. &lt;I&gt; -- ToeKiller&lt;/I&gt;</description>
-    <date_added>2000-02-24T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -10709,22 +10629,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>Two rows of ancient pillars marking a ford across to a small island. Some of the pillars still glow at their tops. &lt;I&gt; -- Xian Liu&lt;/i&gt;</description>
-    <date_added>2000-03-04T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>672</id>
-    <latitude>59.7</latitude>
-    <longitude>-90</longitude>
-    <name>Darktide Festival Stone</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>An unlabeled festival stone. All others I have seen are named for a month. This one is not. &lt;I&gt; -- Xian Liu&lt;/i&gt;</description>
     <date_added>2000-03-04T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -11844,22 +11748,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Three Stone Monoliths in a line that is east-west on top of a snow covered hill.  There are no markings on the monoliths. &lt;I&gt; -- Chiun Zen&lt;/i&gt;</description>
     <date_added>2000-04-13T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>743</id>
-    <latitude>-51</latitude>
-    <longitude>21.3</longitude>
-    <name>Lifestone and a House</name>
-    <type>Lifestone</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Nice little place to hunt around. Tuskers and mites galor! &lt;I&gt; -- Arcilite&lt;/i&gt;</description>
-    <date_added>2000-04-14T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -17422,22 +17310,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1092</id>
-    <latitude>-26.9</latitude>
-    <longitude>7.7</longitude>
-    <name>Body with note</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Theres a body here with a note that gives you directions to a fort that a bunch of crude monogues took over. About 16 of them at fort and about 8-10 on way in. Didnt clear the fort since I was alone so Im not sure if theres any thing worth while there. &lt;I&gt; -- Neosithlord&lt;/i&gt;&lt;BR&gt;Not Really a fort more of a town on the ridge coupla chests there but the thing I found interesting was apparently if you had a empty container you could fill it with stamina If I understood right &lt;I&gt;	-- Bert Badas 9/16/2000 &lt;/i&gt;&lt;BR&gt;This note leads you to the monouga overrun village.  Didnt find anything good there except a acid axe. Rendar 9/16/00 &lt;I&gt;	-- Rendar 9/16/2000 &lt;/i&gt;&lt;BR&gt;The letter has a funny trait, it is a Always Drop on Death item. At first I thought Cool, new Death Item. But alas it is just an additional item you drop next to your usual quota. So dont bother. And here I was carrying around 3 letters for over a year. Bah, humbug. &lt;I&gt; -- Immacolata 7/20/2003 &lt;/i&gt;</description>
-    <date_added>2000-09-15T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1093</id>
     <latitude>-82.7</latitude>
     <longitude>21</longitude>
@@ -21625,38 +21497,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1356</id>
-    <latitude>-21.1</latitude>
-    <longitude>-5.3</longitude>
-    <name>Zaikhal Reinforcements Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>&lt;I&gt; -- Synthahol&lt;/i&gt;</description>
-    <date_added>2001-08-23T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1357</id>
-    <latitude>-22.1</latitude>
-    <longitude>-1</longitude>
-    <name>Zaikhal Middle-Guard Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>&lt;I&gt; -- synthahol&lt;/i&gt;</description>
-    <date_added>2001-08-23T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1358</id>
     <latitude>98.5</latitude>
     <longitude>-92.2</longitude>
@@ -21905,22 +21745,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>Eight cotages nestled next to a hillside near Uziz. &lt;I&gt; -- Brute Force&lt;/i&gt;</description>
-    <date_added>2001-10-10T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1374</id>
-    <latitude>-21.7</latitude>
-    <longitude>-1.8</longitude>
-    <name>Greenspire Portal (Yaraq)</name>
-    <type>Portal</type>
-    <arrival_latitude>-43.2</arrival_latitude>
-    <arrival_longitude>-66.8</arrival_longitude>
-    <description>New exit coords: 43.2N, 66.8W (was 42.9N, 68.1W) &lt;I&gt;-- Dutton 7/11/2004&lt;/i&gt;This portal has been moved to 21.7N 1.8W from 21.3S, 1.5E &lt;I&gt;-- CapFan 12/9/2004&lt;/i&gt;</description>
     <date_added>2001-10-10T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -23723,7 +23547,7 @@
     <id>1488</id>
     <latitude>-15.3</latitude>
     <longitude>65.7</longitude>
-    <name>Brontynn Marshad Cottage</name>
+    <name>Brontynn Marshad's Cottage</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -27679,22 +27503,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>One way trip to the Incunubula Vault dungeon where you get the Major Acid Stone to put into an Atlan  &lt;I&gt; -- AR&lt;/i&gt;</description>
     <date_added>2003-06-20T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1739</id>
-    <latitude>-37.7</latitude>
-    <longitude>29</longitude>
-    <name>Empyrean platform</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>3 Scrawed Grievvers guarding a Runed Chest. &lt;I&gt; -- Zen Tek Ken&lt;/i&gt;</description>
-    <date_added>2003-06-21T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -32144,22 +31952,6 @@
     <arrival_longitude>-43.4</arrival_longitude>
     <description>West from Drop&lt;I&gt;-- Astalon Decurth of Wintersebb 10/14/2004&lt;/i&gt;</description>
     <date_added>2004-10-14T11:04:17.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2016</id>
-    <latitude>-35</latitude>
-    <longitude>20</longitude>
-    <name>Amperehelion Vault Exit</name>
-    <type>Portal</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Exit point from Amperehelion Vault.  This drops you outside the Direlands Amperehelion Vault. &lt;I&gt;-- Taarna Blood SC 10/17/2004&lt;/i&gt;</description>
-    <date_added>2004-10-17T04:18:42.0900000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -48542,22 +48334,6 @@ The Naquib of Suntik hereby requests all available mercenaries to assist in the 
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2917</id>
-    <latitude>-21.4</latitude>
-    <longitude>-5</longitude>
-    <name>Rat Cave</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This cave's location high on the ridge would make it an ideal watchpost. If not for the black rats that infest it.</description>
-    <date_added>2000-09-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2918</id>
     <latitude>26.4</latitude>
     <longitude>98</longitude>
@@ -49602,163 +49378,6 @@ BOOM.
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2975</id>
-    <latitude>-18.6</latitude>
-    <longitude>-1.2</longitude>
-    <name>Zaikhal Advanced Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.
-
-Thank you, Pepin of Blackmire!</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2976</id>
-    <latitude>-25</latitude>
-    <longitude>43.5</longitude>
-    <name>Cragstone Advanced Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.
-
-
-Thank you, Pepin of Blackmire!
-
-Note: No Longer Exists. Guinevere Du Avalon TD 11-11-2009</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>Y</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2977</id>
-    <latitude>42.6</latitude>
-    <longitude>77.9</longitude>
-    <name>Hebian-To Advanced Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.
-
-Thank you, Pepin of Blackmire!</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2978</id>
-    <latitude>43</latitude>
-    <longitude>74.7</longitude>
-    <name>Hebian-To Middle Guard Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2979</id>
-    <latitude>-26.6</latitude>
-    <longitude>37.8</longitude>
-    <name>Cragstone Reinforcements Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.
-
-Note: No Longer Exists. Guinevere Du Avalon TD 11-11-2009</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>Y</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2980</id>
-    <latitude>44.9</latitude>
-    <longitude>71.5</longitude>
-    <name>Hebian-To ReinforcementsTower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2981</id>
-    <latitude>-25.5</latitude>
-    <longitude>39.9</longitude>
-    <name>Cragstone Middle Guard Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.
-
-Note: No Longer Exists. Guinevere Du Avalon TD 11-12-2009</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>Y</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2982</id>
-    <latitude>-22.1</latitude>
-    <longitude>-1</longitude>
-    <name>Zaikhal Middle Guard Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2983</id>
-    <latitude>-27.1</latitude>
-    <longitude>-5.3</longitude>
-    <name>Zaikhal ReinforcementsTower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A Virindi Tower guarded by Tumerok forces.  The death of the leader of those nearby forces will create access to a portal leading inside a camp and then to the tower itself.</description>
-    <date_added>2001-08-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2984</id>
     <latitude>0.4</latitude>
     <longitude>-80.1</longitude>
@@ -49982,72 +49601,6 @@ Strange voices can be heard while in the presence of these trees.</description>
     <description>
     </description>
     <date_added>2002-03-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2997</id>
-    <latitude>-66.1</latitude>
-    <longitude>51.4</longitude>
-    <name>Standing Stone</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This standing stone was left by Sir Tremblant party.
-
-A Lich Seal is required to unlock the secrets within...</description>
-    <date_added>2002-04-11 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2998</id>
-    <latitude>-69.2</latitude>
-    <longitude>15.3</longitude>
-    <name>Standing Stone</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This standing stone was left by Sir Tremblant party.</description>
-    <date_added>2002-04-11 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2999</id>
-    <latitude>-72</latitude>
-    <longitude>-22</longitude>
-    <name>Standing Stone</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This standing stone was left by Sir Tremblant party.</description>
-    <date_added>2002-04-11 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3000</id>
-    <latitude>-15.5</latitude>
-    <longitude>65.6</longitude>
-    <name>Brontynn Marshad's Cottage</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Brontynn Marshad's cottage is here, along with a locked chest. The man himself is nowhere to be found, however.</description>
-    <date_added>2002-04-11 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -50772,22 +50325,6 @@ Found by Circeus.</description>
     <arrival_longitude>0.000</arrival_longitude>
     <description>A small beachside farmstead with a Roaming Bowyer, near a LS.</description>
     <date_added>2003-09-09 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3040</id>
-    <latitude>-17.1</latitude>
-    <longitude>-4.8</longitude>
-    <name>Renegade Camp</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Renegade Mace.</description>
-    <date_added>2003-11-19 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>

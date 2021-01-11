@@ -1299,6 +1299,9 @@ namespace ACE.Server.Factories
         {
             var wo = WorldObjectFactory.CreateNewWorldObject((uint)treasureRoll.Wcid);
 
+            if (treasureRoll.WeaponType == TreasureWeaponType.Thrown)
+                wo.SetStackSize(30);
+
             if (wo == null)
             {
                 log.Error($"CreateAndMutateWcid({treasureDeath.TreasureType}, {(int)treasureRoll.Wcid} - {treasureRoll.Wcid}, {treasureRoll.GetItemType()}, {isMagical}) - failed to create item");
@@ -1343,6 +1346,7 @@ namespace ACE.Server.Factories
                         case TreasureWeaponType.Sword:
                         case TreasureWeaponType.SwordMS:
                         case TreasureWeaponType.Unarmed:
+                        case TreasureWeaponType.Thrown:
 
                         case TreasureWeaponType.TwoHandedAxe:
                         case TreasureWeaponType.TwoHandedMace:
