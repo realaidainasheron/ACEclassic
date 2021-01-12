@@ -1671,22 +1671,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>108</id>
-    <latitude>-20</latitude>
-    <longitude>17.1</longitude>
-    <name>Mt. Alphus</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>The mountain of great interest&lt;I&gt; -- Polecat 8/1/99 &lt;/i&gt;&lt;BR&gt; &lt;I&gt;	-- Mt. Alphus 2/20/2001 &lt;/i&gt;</description>
-    <date_added>1999-08-01T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-17T15:28:21.3100000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>109</id>
     <latitude>-19.7</latitude>
     <longitude>17.8</longitude>
@@ -3123,22 +3107,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>198</id>
-    <latitude>-17.8</latitude>
-    <longitude>39.2</longitude>
-    <name>Walled Fort</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Cool little fort&lt;BR&gt;I ran through this after the October update to find it still empty. Breathtaking view of lake from center tower. Great place for a gathering or party. &lt;I&gt;	-- Sixfingers 10/12/2000 &lt;/i&gt;</description>
-    <date_added>1999-08-18T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>199</id>
     <latitude>-38.2</latitude>
     <longitude>7.1</longitude>
@@ -3394,7 +3362,7 @@
     <id>215</id>
     <latitude>-9</latitude>
     <longitude>43.4</longitude>
-    <name>Lifestone in the middle of nowhere</name>
+    <name>Lifestone and Merchant</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -3447,22 +3415,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>A complete starter town, with every merchant possible, and some good hunting up the western mountains (Level 15+). &lt;I&gt;	-- Saffron Dusk 10/7/99 &lt;/i&gt;&lt;BR&gt;Newbie central and also a place to find scammers. I have found several people here looking for patrons. They take what they can and drop the gear onto their main character. Patrons beware! Also some very stupid thieves who will try to get you to hit the V key on the keyboard by promising that it will increase the value, armor level, etc of the item. Newbies beware! &lt;I&gt;	-- Morheru 4/20/2000 &lt;/i&gt;&lt;BR&gt;Newbie central, for sure. If the Yanshi left-side smith is the place to sell all your stuff, the smith in this town is the place to buy all your stuff. He sells weapons, armor, and the other junk people sell to him _below_ list price. Towns like Holtburg and Rithwic sell at list, but here is the only place that sells below list. A consideration when starting out alone without a patron. Like other starter towns, his basic stock stuff doesnt go beyond chainmail and low-end weapons (no Tachis or Yoroi, for instance), but occasionally you will find good stuff that folks sell. &lt;I&gt;	-- Zimbalt 5/31/2000 &lt;/i&gt;&lt;BR&gt;An excellent place to find vassals.  Expect about a third of them to rip you off and you wont be disappointed. &lt;I&gt;	-- Jann 9/29/2000 &lt;/i&gt;&lt;BR&gt;Shoushi is the coolest, that aside like most (if not all) newbie towns, the mage now sells tapers! &lt;I&gt;	-- Jan01Patch 1/11/2001 &lt;/i&gt;</description>
     <date_added>1999-08-29T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>219</id>
-    <latitude>24.3</latitude>
-    <longitude>76.6</longitude>
-    <name>Castle</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Sewer rats, Skeleton Bone Lords, Skeleton Lord, Skeleton Wraith, Fleshless Warriors, and Baron Nuvillus who drops Crown of Bone. Inside the castle is the Spinning Wheel on which you use Grievver Silk. This is part of the Flag house item quest. There also a Ruined chest where Baron is at.</description>
-    <date_added>1999-08-30T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -3526,22 +3478,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>In the direlands.  Pray at it to become PVP Status!  -Ninjachen</description>
-    <date_added>1999-08-31T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>224</id>
-    <latitude>-2.3</latitude>
-    <longitude>27.8</longitude>
-    <name>Skeleton Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A tower with Skeleton Warriors and a Skeleton Captain.</description>
     <date_added>1999-08-31T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -3925,7 +3861,7 @@
     <id>248</id>
     <latitude>33.7</latitude>
     <longitude>79.9</longitude>
-    <name>Monster Castle</name>
+    <name>Fort Aimaru Lifestone</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -4313,11 +4249,11 @@
     <id>272</id>
     <latitude>20.8</latitude>
     <longitude>23.6</longitude>
-    <name>Oasis near NW of Uziz</name>
+    <name>Oasis</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Oasis near NW of Uziz. Good hunting, but not much treasure on the monsters. Skeletons, Shreths, Druges, Armadillos, Wasps. Found/Entered by Dunc.</description>
+    <description>Oasis NW of Uziz. Good hunting, but not much treasure on the monsters. Skeletons, Shreths, Druges, Armadillos, Wasps. Found/Entered by Dunc.</description>
     <date_added>1999-09-06T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -4345,7 +4281,7 @@
     <id>274</id>
     <latitude>5.5</latitude>
     <longitude>40</longitude>
-    <name>Tower</name>
+    <name>Desert Ridge Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -4677,7 +4613,7 @@
     <id>295</id>
     <latitude>32.7</latitude>
     <longitude>91.4</longitude>
-    <name>Liche Tower</name>
+    <name>Lich Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -5091,7 +5027,7 @@
     <id>321</id>
     <latitude>47.3</latitude>
     <longitude>26.5</longitude>
-    <name>Khayyaban Lifeston</name>
+    <name>Khayyaban Lifestone</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -5407,7 +5343,7 @@
     <id>341</id>
     <latitude>71.2</latitude>
     <longitude>52.3</longitude>
-    <name>Lich Lord</name>
+    <name>Lich Lord Crypt</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -5538,22 +5474,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>Near the Yanshi training dungeon &lt;I&gt; -- Polecat&lt;/i&gt;</description>
-    <date_added>1999-10-02T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>351</id>
-    <latitude>8.7</latitude>
-    <longitude>46.5</longitude>
-    <name>Yanshi Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Tower outside of Yanshi with Lich and undead... &lt;I&gt; -- Polecat&lt;/i&gt;&lt;BR&gt;There are no Undead here, only Drudges. &lt;I&gt;	-- Kueghan 11/17/99 &lt;/i&gt;&lt;BR&gt;This entry has been mis-named.  There are a total of five drudges here.  One outside and four inside.  This place should be named the Yanshi Drudge Tower. &lt;I&gt;	-- Minas Tirith 2/26/2000 &lt;/i&gt;&lt;BR&gt;I didnt see any drudges outside. One of them is on the outside on the second level, usually facing the outpost nearby. The rest are inside. &lt;I&gt;	-- Rimgar 3/7/2000 &lt;/i&gt;&lt;BR&gt;Tower was not mis-named.  During beta, it was full of Undead.  They have since changed the spawn to drudges. &lt;I&gt;	-- Vold 7/1/2000 &lt;/i&gt;&lt;BR&gt;As above but when the drudges respawn and you are attacted large numbers of reinforcements arrive from nowhere out side.  Looks a good place to level up as part of a fellowship &lt;I&gt;	-- Vidus Maximus 3/4/2001 &lt;/i&gt;</description>
     <date_added>1999-10-02T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -5854,7 +5774,7 @@
     <id>370</id>
     <latitude>27.1</latitude>
     <longitude>57.7</longitude>
-    <name>Mosswart Tower in the Swamp</name>
+    <name>Mosswart Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -5996,11 +5916,11 @@
     <id>379</id>
     <latitude>49.3</latitude>
     <longitude>19.4</longitude>
-    <name>Desert Guard Tower</name>
+    <name>Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Empty desert guard tower. &lt;I&gt; -- Dunc&lt;/i&gt;</description>
+    <description>Empty tower. &lt;I&gt; -- Dunc&lt;/i&gt;</description>
     <date_added>1999-10-10T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -6012,11 +5932,11 @@
     <id>380</id>
     <latitude>50.7</latitude>
     <longitude>21</longitude>
-    <name>Desert Guard Tower</name>
+    <name>Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Empty desert guard tower. &lt;I&gt; -- Dunc&lt;/i&gt;</description>
+    <description>Empty tower. &lt;I&gt; -- Dunc&lt;/i&gt;</description>
     <date_added>1999-10-10T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -6044,7 +5964,7 @@
     <id>382</id>
     <latitude>47.7</latitude>
     <longitude>25</longitude>
-    <name>Khayabban to Lin Portal</name>
+    <name>Khayyaban to Lin Portal</name>
     <type>Portal</type>
     <arrival_latitude>53.9</arrival_latitude>
     <arrival_longitude>74.1</arrival_longitude>
@@ -7573,7 +7493,7 @@
     <id>479</id>
     <latitude>18.5</latitude>
     <longitude>21.3</longitude>
-    <name>Skel Outpost</name>
+    <name>Skeleton Outpost</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -8016,7 +7936,7 @@
     <id>507</id>
     <latitude>71</latitude>
     <longitude>52.4</longitude>
-    <name>SouthEast mountains</name>
+    <name>Southeast Mountains Lifestone</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -8479,54 +8399,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>536</id>
-    <latitude>-11</latitude>
-    <longitude>21.1</longitude>
-    <name>Sandy Armoreadillo Lair</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A below ground lair with Sandy Armoreadillos inside as well as above ground surrounding it.  Too many (6+) for me to get a chance to look around carefully. &lt;I&gt; -- J&lt;/i&gt;&lt;BR&gt;This is a great place to come if you are a level 20-ish archer looking for XP.  Chest inside spawns magic items, mostly jewelry. &lt;I&gt;	-- Jann 9/29/2000 &lt;/i&gt;&lt;BR&gt; There is also couple clickable A small pile of rocks around the cave.&lt;/i&gt;</description>
-    <date_added>2000-01-29T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>537</id>
-    <latitude>-13</latitude>
-    <longitude>4</longitude>
-    <name>Serenghetti Plain</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Follow the road from Zaikhal to Al-Jalima.  Over the rise just beyond the Crypt of Ashen Tears Portal begins the Serenghetti Plain.  Its a rich assortment of shreth, skeleton, gromnie, monogua.  Great harvesting for a group of mid-levels.  Base out of Zaikhal, Crypt of Ashen Tears or the merchant tent in the valley below the road. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2000-01-30T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>538</id>
-    <latitude>5</latitude>
-    <longitude>1.7</longitude>
-    <name>Fortress</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Very nice design, in the middle of nowhere.  All types of mummies, skeleton warriors and captins near by.  Really cool place. &lt;I&gt; -- Charlemagne&lt;/i&gt;&lt;BR&gt;This is the Empyrean power plant type structure. Populated with many lesser and greater mu-miyahs, and a couple horrible mu-miyahs. Chest which spawns low value gems is behind a fake wall in the underground area. Worth a look if youve never seen the Empyrean Power Plant construction, but probably not worth going back to. &lt;I&gt;	-- Sao Yin 4/21/2000 &lt;/i&gt;</description>
-    <date_added>2000-01-30T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>539</id>
     <latitude>3.6</latitude>
     <longitude>-70</longitude>
@@ -8535,22 +8407,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>Empyrean Festival Stone south of Fort Tethana.  This Stone is very close to a small peak that has a floating power generator and lifestone on top of it. &lt;I&gt; -- Chiun Zen&lt;/i&gt;</description>
-    <date_added>2000-01-31T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>540</id>
-    <latitude>18.4</latitude>
-    <longitude>9.3</longitude>
-    <name>House of the Dead</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Small stone structure, with Undead within.  I walked up to the doorway, and they took no action.  I feared to enter the building, lest they take offense.  There was something below, what it was I could not see.  I anticipated a dungeon, but there was no portal to be seen. &lt;I&gt; -- Ibn Schachabo&lt;/i&gt;&lt;BR&gt;undead and one lich, one chest with lousy loot &lt;I&gt;	-- Charlemagne 1/31/00 &lt;/i&gt;&lt;BR&gt;Make that two liches.  8-10 undead or so.  After all that, the chest only had two crude healing kits, definitely not worth trekking all the way out here for. &lt;I&gt;	-- Magwitch 4/5/2000 &lt;/i&gt;</description>
     <date_added>2000-01-31T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -10002,7 +9858,7 @@
     <id>631</id>
     <latitude>86.8</latitude>
     <longitude>-10.7</longitude>
-    <name>Broken Lifestone</name>
+    <name>Portal Holder</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -10525,22 +10381,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>665</id>
-    <latitude>11.6</latitude>
-    <longitude>57.7</longitude>
-    <name>Mosswart Towers</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Between Yanshi &amp; Dryreach.  3 structures with tons of mosswarts.  Didnt see a shaman, but it was probably hiding. &lt;I&gt; -- Kael&lt;/i&gt;</description>
-    <date_added>2000-03-02T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>666</id>
     <latitude>-5.6</latitude>
     <longitude>-56.2</longitude>
@@ -10925,22 +10765,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>691</id>
-    <latitude>41</latitude>
-    <longitude>61</longitude>
-    <name>The Chockablocks</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A NE-SW running, medium high mountain range.  The land is quite tortured here, producing steep cliffs and stunning views. Get to the top, and over, by climbing up the fingers, not the valleys.   &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2000-03-09T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>692</id>
     <latitude>72.6</latitude>
     <longitude>13.8</longitude>
@@ -10965,22 +10789,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>A group of stones that sort of look like a gateway on the road between Samsur and Tufa. Also there are two chests here guard by some Spiny Arms. Pretty weal loot, but if your on this road, you may as well stop... &lt;I&gt; -- Dunc&lt;/i&gt;&lt;BR&gt;I wonder if this is the Amoredillo Lair that the scribe in Samsur sells directions to? The note mentions you need to go Southwest towards Yaraq, and that the lair has nice treasure (I found a dagger).  &lt;I&gt;	-- Immacolata 3/21/2001 &lt;/i&gt;</description>
-    <date_added>2000-03-11T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>694</id>
-    <latitude>-1.8</latitude>
-    <longitude>11.8</longitude>
-    <name>Sean Huxter Signature</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>If you look at this spot from above, it looks just like the US dollar symbol, $. Maybe a raised mound monument to the all mighty dollar, or just coincident? &lt;I&gt; -- Dunc&lt;/i&gt;&lt;BR&gt;Stumbled across this one back in december. Id say its the Micro$oft influence showing.  Theres more of course: what seems to be the number 20 at 19.6S 29.3E - what seems to be a river forming a word at 8N 76W - a few signatures covering a large area in the Dires centered around 39S 65W - . --Arg the Enlightened, Frostfell-- &lt;I&gt;	-- Arg 3/17/2000 &lt;/i&gt;&lt;BR&gt;Actually, this is the signature of celebrated Lead Artist for AC, Sean Huxter. (He said so himself.) &lt;I&gt;	-- Wylie 12/22/2000 &lt;/i&gt;</description>
     <date_added>2000-03-11T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -11342,29 +11150,13 @@
   <location>
     <id>717</id>
     <latitude>63.7</latitude>
-    <longitude>26.2</longitude>
-    <name>Tower near Lugian camp</name>
-    <type>Landmark</type>
+    <longitude>26.15</longitude>
+    <name>Lifestone, Peddler and Tower</name>
+    <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Abandoned tower is a nice log out or mule place but old lifestone which was near tower was destroyed in March patch, so nearest lifestone is in valley with 2 merchants. Tower can be used for lower lv archers and mages to pull lugians from a nearby lugian camp or to hit 3 spawn spots in range, spawning all from lugians, hunter shereths, mosswarts and banderling riders. &lt;I&gt; -- Silverion DD&lt;/i&gt;</description>
+    <description>Tower is a nice log out or mule place but old lifestone which was near tower was destroyed in March patch, so nearest lifestone is in valley with 2 merchants. Tower can be used for lower lv archers and mages to pull lugians from a nearby lugian camp or to hit 3 spawn spots in range, spawning all from lugians, hunter shereths, mosswarts and banderling riders. &lt;I&gt; -- Silverion DD&lt;/i&gt;</description>
     <date_added>2000-03-25T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>718</id>
-    <latitude>78.1</latitude>
-    <longitude>48.7</longitude>
-    <name>A Tower with Sho Furniture</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>An Aluvian style tower with Sho furnishings on the inside, including a couch, fountain, storage crates, paintings, and a couple ornamental tachis above the entryway.  The outside has some shrubery around the base. The structure overall is in good shape and does not appear to be abandoned but quite lived in, just no one at home presently.  This tower is right on the edge of a very high, and very steep cliff overlooking a lifestone on the sandy beach below. &lt;I&gt; -- Chiun Zen&lt;/i&gt;&lt;BR&gt;Just checked it out today, still nobody at home. Judging by the time gap, it appears that nobody has ever been home. &lt;I&gt;	-- Ulious 11/3/2000 &lt;/i&gt;&lt;BR&gt;The furniture sure seems to be holding up well, though. &lt;I&gt; -- Confucius of FF 10/13/2001 &lt;/i&gt;</description>
-    <date_added>2000-03-27T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -11375,7 +11167,7 @@
     <id>719</id>
     <latitude>50.2</latitude>
     <longitude>22.5</longitude>
-    <name>Guard Tower</name>
+    <name>Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -11740,7 +11532,7 @@
   </location>
   <location>
     <id>742</id>
-    <latitude>77.4</latitude>
+    <latitude>77.35</latitude>
     <longitude>38.8</longitude>
     <name>Three Stone Monoliths</name>
     <type>Landmark</type>
@@ -12949,7 +12741,7 @@
     <id>819</id>
     <latitude>23.8</latitude>
     <longitude>49.6</longitude>
-    <name>Swamp Temple Key Bunker</name>
+    <name>Mosswart Bunker</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -13283,38 +13075,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>840</id>
-    <latitude>-17</latitude>
-    <longitude>-7.4</longitude>
-    <name>Zaikhal West Pass</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Run this way to get out of Zaikhal headed west. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;&lt;BR&gt;Do you write in to describe anything of value? Put your work to better use! &lt;I&gt;	-- Morphos (FF) 6/24/2000 &lt;/i&gt;&lt;BR&gt;Nullify Morphos comment. Yes at times Doc seems... text-happy, and some of his stuff is pretty absurd (ie. Signatures from the sky-cam from a while back.) However, personally I think this entry fits well. It took at least 10 minutes for a good friend and I to get around these cursed plateaus. If youve ever tried this area, Zaikhal is situated inside a plateau range, truly is hard to find a pass unless you follow a road out of town. These coordinates are helpful, keep them here. &lt;I&gt;	-- Garfield3d 6/24/2000 &lt;/i&gt;&lt;BR&gt;Agreed.  Keep up the good work, Doc.  I used these coords too.  Glad they were here. &lt;I&gt;-- Minas Tirith 7/1/2000 &lt;/i&gt;</description>
-    <date_added>2000-06-21T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>841</id>
-    <latitude>-14.1</latitude>
-    <longitude>-9.6</longitude>
-    <name>Zaikhal West False Pass</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Also called Frustration Pass. Dont run this way to get out of Zaikhal going west.  It will take you into a huge U of unclimbable cliffs. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2000-06-21T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>842</id>
     <latitude>-13.6</latitude>
     <longitude>-79.8</longitude>
@@ -13547,22 +13307,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;&lt;BR&gt;2 Bandy Scouts and a Drudge Robber spawn here about every 5 mins good place for a mid teen to burn vit or a buffed low lvl to make some quick exp &lt;I&gt; -- Vistas 9/30/2001 &lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>857</id>
-    <latitude>27.8</latitude>
-    <longitude>12.1</longitude>
-    <name>Drudge Cave</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
     <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -14241,22 +13985,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>900</id>
-    <latitude>44.9</latitude>
-    <longitude>40.7</longitude>
-    <name>Odd Hill</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;&lt;BR&gt;ahhhh again with the Entry is courtesy of The House of the Curious Dead crap!WHAT ABOUT THE HILL IS ODD!?WHAT SPAWNS THERE!The atlas is for information not advertising! &lt;I&gt;	-- Sega Slayer 12/1/2000 &lt;/i&gt;&lt;BR&gt;Sorry, but I have to agree with that comment. &lt;I&gt; -- Leonon 7/7/2001 &lt;/i&gt;&lt;BR&gt;The answer is that nothing about this hill is odd, except the color of the top (sort of sandy colored). The spawns are the same as surrounding area (obeloths, low evel tuskers, etc.) &lt;I&gt; -- Ognam 2/17/2002 &lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>901</id>
     <latitude>-9.2</latitude>
     <longitude>3.4</longitude>
@@ -14529,38 +14257,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>918</id>
-    <latitude>48.5</latitude>
-    <longitude>20.7</longitude>
-    <name>Paved Road Ends</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>919</id>
-    <latitude>48.5</latitude>
-    <longitude>20.7</longitude>
-    <name>Paved Road Ends</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>920</id>
     <latitude>43.6</latitude>
     <longitude>-83.1</longitude>
@@ -14708,7 +14404,7 @@
     <id>929</id>
     <latitude>31</latitude>
     <longitude>24.7</longitude>
-    <name>Revitalizing Fountain</name>
+    <name>Peddler and Revitalizing Fountain</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -14821,22 +14517,6 @@
     <latitude>18.6</latitude>
     <longitude>-84.5</longitude>
     <name>Revitalizing Well</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>937</id>
-    <latitude>17.8</latitude>
-    <longitude>50.6</longitude>
-    <name>Mosswart Shrine</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -15153,22 +14833,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>957</id>
-    <latitude>-8.2</latitude>
-    <longitude>5.4</longitude>
-    <name>Three Stones</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>958</id>
     <latitude>-9.9</latitude>
     <longitude>57.6</longitude>
@@ -15269,22 +14933,6 @@
     <latitude>-16.4</latitude>
     <longitude>0.9</longitude>
     <name>Windmill</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>965</id>
-    <latitude>-17.3</latitude>
-    <longitude>3.7</longitude>
-    <name>Empty Tent</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -16973,22 +16621,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1071</id>
-    <latitude>42.5</latitude>
-    <longitude>52.6</longitude>
-    <name>Hill of Pines</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>THis is the site of the great battle mentioned in Aerlinths letter. She claims the battle held back the enemy forces while BaelZharon was imprisoned. The hilltop is occupied by dozens of Skeleton Warriors (level 11) and a Skeleton Captain (level 18). The whole hilltop is covered with bones. &lt;I&gt; -- Elphin&lt;/i&gt;&lt;BR&gt;Now includes at least two Skeleton Captains, a Skeleton Lord, and while we were there, a level 5 dillo.  Still trying to figure out the dillo part... &lt;I&gt;	-- Siergen 9/2/2000 &lt;/i&gt;</description>
-    <date_added>2000-08-29T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1072</id>
     <latitude>-63</latitude>
     <longitude>-8.1</longitude>
@@ -17062,22 +16694,6 @@
     <arrival_longitude>-44.3</arrival_longitude>
     <description>Portal off the mountain.  Exits at 45.3N, 44.3W. &lt;I&gt; -- Polecat&lt;/i&gt;</description>
     <date_added>2000-09-02T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1077</id>
-    <latitude>78.2</latitude>
-    <longitude>25.7</longitude>
-    <name>Qalaba'r Archers/Mages Perch</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>This is the best perch near Qalabar (maybe the only perch near Qalabar).  Shown by my patron, Nevir of Frostfell, this perch allows you to shoot or target at monsters overhead.  Because of the steepness of the slope in front or on the side of you, the monsters can not climb to attack you.  It is my recommendation that you come from the direction of 77.8S, 25.5S so you can climb on to the perch.  Basically, its a ledge of a mountain.  Very neat spot!   It oversees a valley filled with Lugians, Matties, and other monsters. - Julian the Bashir of Frostfell 9/5/2000&lt;BR&gt;I decided to give this place a try. The perch spot itself didnt yield much xp, but in the surrounding area I met: Golems (copper,ice) Armadillos (bronze) and white, snowy and a single great mattekar. This must be one of the least camped places in the eastern parts of Dereth. Spent a couple of hours there and didnt meet anyone. &lt;I&gt;	-- Chucara(MT) 11/22/2000 &lt;/i&gt;</description>
-    <date_added>2000-09-05T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -17215,8 +16831,8 @@
   </location>
   <location>
     <id>1086</id>
-    <latitude>25</latitude>
-    <longitude>49.3</longitude>
+    <latitude>24.9</latitude>
+    <longitude>49.35</longitude>
     <name>Lich Camp</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -17247,8 +16863,8 @@
   </location>
   <location>
     <id>1088</id>
-    <latitude>83.7</latitude>
-    <longitude>-10.8</longitude>
+    <latitude>83.1</latitude>
+    <longitude>-10.6</longitude>
     <name>Tower and House</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -17263,8 +16879,8 @@
   </location>
   <location>
     <id>1089</id>
-    <latitude>86.5</latitude>
-    <longitude>-12.5</longitude>
+    <latitude>86.7</latitude>
+    <longitude>-12.4</longitude>
     <name>Portal Holder</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -17692,38 +17308,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1117</id>
-    <latitude>-8</latitude>
-    <longitude>-8</longitude>
-    <name>Forest - Desert Boundary</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>North and west of here are Banderlings and Shreth, south of here are Armadillos and skeletons. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2000-10-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1118</id>
-    <latitude>-8.8</latitude>
-    <longitude>-3.4</longitude>
-    <name>North edge of Recovered Temple Escarpment</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>South and east of here is an unclimbable cliff that cuts between Recovered Temple and the coast. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2000-10-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1119</id>
     <latitude>20.2</latitude>
     <longitude>47.8</longitude>
@@ -17996,7 +17580,7 @@
   <location>
     <id>1136</id>
     <latitude>78.1</latitude>
-    <longitude>48.6</longitude>
+    <longitude>48.7</longitude>
     <name>Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -18992,22 +18576,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1199</id>
-    <latitude>-3.4</latitude>
-    <longitude>10.8</longitude>
-    <name>North End of "Brick Wall"</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>The Brick Wall is an unclimbable escarpment running south from here to the Desert Gateway (7.6S, 13.2E) and well beyond... at least to 5.5S, 12.5E. So named because it rises steeply out of the desert floor. The top of the Brick Wall is a large mesa. &lt;I&gt; -- Doc Feelgood&lt;/I&gt;</description>
-    <date_added>2000-11-17T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1200</id>
     <latitude>-64.9</latitude>
     <longitude>13.7</longitude>
@@ -19821,22 +19389,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1251</id>
-    <latitude>-19.8</latitude>
-    <longitude>-7.7</longitude>
-    <name>Safe Hill</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Being chased around by a few dozen rough monougas, tuskers, and high level drudges from the valley to the north? The cliffs are all unclimbable, so head to this hilltop to shake them off and have a bit of a rest. &lt;I&gt; -- Sturgeon&lt;/i&gt;</description>
-    <date_added>2001-02-10T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1252</id>
     <latitude>-19</latitude>
     <longitude>-6.6</longitude>
@@ -19909,22 +19461,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>A new Npc. A Virindi Translator located outside the Zakhail Library.2/15/01 &lt;I&gt; -- Catdancer&lt;/i&gt;&lt;BR&gt;This translator cannot translate the February Unreadable Text &lt;I&gt;	-- Sixfingers 2/15/2001 &lt;/i&gt;&lt;BR&gt;Translater will take a shard found on directers..from the hollow dungeon... did say much...said virindi are taken hollows as there new body gaurd...boy do they hurt &lt;I&gt;	-- The dead 2/19/2001 &lt;/i&gt;</description>
-    <date_added>2001-02-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1257</id>
-    <latitude>86.7</latitude>
-    <longitude>10.4</longitude>
-    <name>Essence of Artifice</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Essence of Artifice is here. Give him level VI item scrolls and he teaches you a new Level VII item spell. &lt;I&gt; -- Zenogias of MT&lt;/i&gt;&lt;BR&gt;So everyone knows not to waste their time I gave this guy Portal Recall, Life Stone Recall, Summon Portal One, and Portal Tie and he gave me nothing back...:) Cheep Bastid...:P Just wanted to confirm that only lvl 6 scrolls will do. &lt;I&gt;	-- Dark Man - Sol 2/16/2001 &lt;/i&gt;&lt;BR&gt;Since Oct 2002 patch (Festivus) this location is the start of the Gaerlan Citadel quest. The location has about 6 assorted Frost and Electrical  Elementals (Avalanches, Chills, Blizzards,  Scintillas, Statics) &lt;I&gt; -- Jaz of SC 11/11/2002 &lt;/i&gt;&lt;BR&gt;Start for the Gaerlan Quest, level 80+ &lt;I&gt; -- Kermit of LC 12/18/2002 &lt;/i&gt;</description>
     <date_added>2001-02-15T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -20535,22 +20071,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Ive seen a note lying on the ground here numerous times. I think its a new rumor from time to time.  &lt;I&gt; -- Immacolata&lt;/i&gt;</description>
     <date_added>2001-04-01T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1296</id>
-    <latitude>0</latitude>
-    <longitude>0</longitude>
-    <name>Hunting Grounds</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Good hunting area from here to 2K in any direction for Higher lvl Mu-miyahs, Dolls, Marrionettes, Monougas, Dune Reavers, Silt Lurkers, and some Frags.  &lt;I&gt; -- Ching The Quick&lt;/i&gt;</description>
-    <date_added>2001-04-03T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -21199,7 +20719,7 @@
     <id>1337</id>
     <latitude>86</latitude>
     <longitude>-2.5</longitude>
-    <name>land bridge staging complex</name>
+    <name>Land Bridge Staging Complex</name>
     <type>Dungeon</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -21481,22 +21001,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1355</id>
-    <latitude>70.4</latitude>
-    <longitude>33.9</longitude>
-    <name>Mattekar Training Grounds</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Tons of Mattekars here in the valley.  Had some packs of Shadows up to Lt when I was there so watch yourself. Great Mattekar, Dires Mattekar and a few White and Snowy Mattekars.  Didnt see any Dread Mattekars here but I assume they probably spawn too. Individual spawn rates arent great but there are enough of them to keep the action going.  Approximately 20+ mattys in and around this valley, most of them Great Mattekars. &lt;I&gt; -- Silverwolf VAC&lt;/i&gt;</description>
-    <date_added>2001-08-22T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1358</id>
     <latitude>98.5</latitude>
     <longitude>-92.2</longitude>
@@ -21601,38 +21105,6 @@
     <arrival_longitude>47.2</arrival_longitude>
     <description>Portal is from the Lyceum to Mainland  Drops out at the Allegiance Hall like building.</description>
     <date_added>2001-09-24T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1365</id>
-    <latitude>-50.1</latitude>
-    <longitude>-11.5</longitude>
-    <name>Angiel's Face</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>This is an unclimbable E-W running cliff, north of nearby OHN, that extends from 48.6N, 15W to 53.2N 7.5W. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2001-09-30T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1366</id>
-    <latitude>-4.2</latitude>
-    <longitude>-0.9</longitude>
-    <name>Father's Rest Spot</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>An inpiring view, and a path down the escarpment between Zaikhal and the Hall of Metos in the north desert.  Monsters north of here are gentle compared to the monsters south of here. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2001-09-30T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -22018,22 +21490,6 @@
     <date_added>2001-10-25T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>0284</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1392</id>
-    <latitude>75.2</latitude>
-    <longitude>49.9</longitude>
-    <name>Mehnir Sho Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A Sho type tower sitting on top of a small mountain.  Mehnir stones surround the tower in a circular formation.  There also stones on the inside of the building.  As of 10/26/01, no clue as to the place's importance. &lt;I&gt; -- Kyriil - HG&lt;/I&gt;</description>
-    <date_added>2001-10-26T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -23054,22 +22510,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1457</id>
-    <latitude>51.32</latitude>
-    <longitude>14.27</longitude>
-    <name>Nick's Signature Area</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Just on the verge of the desert, not far from Khayyaban. This place definately spells the name Nick when viewed from above. Nick with underline .. sort of funny :) &lt;I&gt; -- Seces Tharkun&lt;/i&gt;</description>
-    <date_added>2002-01-27T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1458</id>
     <latitude>61.92</latitude>
     <longitude>40.18</longitude>
@@ -23095,22 +22535,6 @@
     <arrival_longitude>19.6</arrival_longitude>
     <description>Exits at 75S, 19.6E &lt;I&gt; -- Belltheo-of-MT&lt;/i&gt;</description>
     <date_added>2002-01-29T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1460</id>
-    <latitude>-10.9</latitude>
-    <longitude>-4.8</longitude>
-    <name>Franky's Valley</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A way to get through the cliffs separating Zaikhal from Desert March dungeon. &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2002-02-02T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -23561,8 +22985,8 @@
   </location>
   <location>
     <id>1489</id>
-    <latitude>10</latitude>
-    <longitude>57.5</longitude>
+    <latitude>10.3</latitude>
+    <longitude>57.6</longitude>
     <name>Brontynn Marshad's Tower</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -23863,7 +23287,7 @@
   <location>
     <id>1508</id>
     <latitude>24.3</latitude>
-    <longitude>76.6</longitude>
+    <longitude>76.8</longitude>
     <name>Skeleton Castle</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
@@ -27048,22 +26472,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1710</id>
-    <latitude>84.6</latitude>
-    <longitude>2.4</longitude>
-    <name>Slinky Slope</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Take a running jump north here, and you can autojump six to fifteen times. Its a blast! &lt;I&gt; -- Doc Feelgood&lt;/i&gt;</description>
-    <date_added>2003-05-09T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1711</id>
     <latitude>94.9</latitude>
     <longitude>-9.6</longitude>
@@ -27411,21 +26819,6 @@
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1733</id>
-    <latitude>60</latitude>
-    <longitude>75.5</longitude>
-    <name>Cave</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Cave of Sufut Zefirs guarding a minor sparkling stone, textbook, and a Hastily Scrawled Note &lt;I&gt; -- AR&lt;/i&gt;</description>
-    <date_added>2003-06-19T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>01BD</dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -29682,7 +29075,7 @@
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Part of the Font of Jojii quest introduced in Mirror, Mirror event, Jan 2004 &lt;I&gt;-- Jaz of SC 1/31/2004&lt;/i&gt;Nestled in a gully in the Chockablocks. Entrance, exit and foyer are quiet. Dungeon is modest in size. Spawn is mid-level Banderlings, including the now-rare Berserkers (which drop the Ruined Amulet for Bow).  BDT (Big Dungeon Treasure) is Crystals of Grace, at the back. &lt;I&gt;-- Doc Feelgood 2/3/2004&lt;/i&gt;Portal is summonable and tieable. &lt;I&gt;-- Doc Feelgood 2/3/2004&lt;/i&gt;</description>
+    <description>Part of the Font of Jojii quest introduced in Mirror, Mirror event, Jan 2004 &lt;I&gt;-- Jaz of SC 1/31/2004&lt;/i&gt;Entrance, exit and foyer are quiet. Dungeon is modest in size. Spawn is mid-level Banderlings, including the now-rare Berserkers (which drop the Ruined Amulet for Bow).  BDT (Big Dungeon Treasure) is Crystals of Grace, at the back. &lt;I&gt;-- Doc Feelgood 2/3/2004&lt;/i&gt;Portal is summonable and tieable. &lt;I&gt;-- Doc Feelgood 2/3/2004&lt;/i&gt;</description>
     <date_added>2004-01-31T02:30:18.5900000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -29734,22 +29127,6 @@
     <date_added>2004-02-11T18:11:14.1670000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>6449</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1879</id>
-    <latitude>49.3</latitude>
-    <longitude>17.9</longitude>
-    <name>Crystal Mines</name>
-    <type>Dungeon</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Near Khayyaban. Part of the Ancient Olthoi Queen &amp; Olthoi Shield quest &lt;I&gt;-- Geomancer 2/22/2004&lt;/i&gt;</description>
-    <date_added>2004-02-22T13:18:19.0630000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -31975,22 +31352,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2018</id>
-    <latitude>23</latitude>
-    <longitude>60</longitude>
-    <name>Incunabula Vault Exit Portal</name>
-    <type>Portal</type>
-    <arrival_latitude>35.9</arrival_latitude>
-    <arrival_longitude>-47.2</arrival_longitude>
-    <description>Portal exits outside the Direlands Incunabula Vault Portal. &lt;I&gt;-- Taarna Blood SC 10/17/2004&lt;/i&gt;</description>
-    <date_added>2004-10-17T10:02:52.9470000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2019</id>
     <latitude>61.9</latitude>
     <longitude>-51.5</longitude>
@@ -32000,38 +31361,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Contains Weaponsmith, Armorsmith, Healer and a Jojii Shrine.  Spawns are nearby outside, be careful here.  This tower has a 3rd floor and is rather unique in that respect. &lt;I&gt;-- Taarna Blood SC 10/21/2004&lt;/i&gt;</description>
     <date_added>2004-10-21T23:31:40.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2020</id>
-    <latitude>59.9</latitude>
-    <longitude>55</longitude>
-    <name>Serac Vault Exit</name>
-    <type>Portal</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Exits 75.9S, 29.0E  Inside the 2nd Serac Vault.  This exit portal is a lot of trouble to get to.  It drops you outside of the origional Serac Vault, near Linvak Tukal, which is pretty far from where you entered. &lt;I&gt;-- Taarna Blood SC 10/22/2004&lt;/i&gt;</description>
-    <date_added>2004-10-22T00:32:33.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2021</id>
-    <latitude>49.8</latitude>
-    <longitude>15</longitude>
-    <name>Jahannan Vault Exit</name>
-    <type>Portal</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Exits at 66.9N, 15.0E   Jahannan Vault Exit takes you to the top rim of the Mount Esper crater.  This is outside the original Jahannan Vault, but far from the 2nd one. &lt;I&gt;-- Taarna Blood SC 10/22/2004&lt;/i&gt;In your free time, check out some relevant pages in the field of- Tons of interesdting stuff!!! &lt;I&gt;--  2/13/2005&lt;/i&gt;</description>
-    <date_added>2004-10-22T00:57:13.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -32668,21 +31997,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2061</id>
-    <latitude>82.3</latitude>
-    <longitude>-3.9</longitude>
-    <name>Southern Power Forge</name>
-    <type>Landmark</type>
-    <arrival_latitude>82.2</arrival_latitude>
-    <arrival_longitude>-3.8</arrival_longitude>
-    <description>&lt;I&gt;-- CapFan 12/8/2004&lt;/i&gt;&lt;font color = red&gt;Wrong type&lt;/font&gt; &lt;I&gt;-- CapFan 12/8/2004&lt;/i&gt; Um... okay but what type is it? Set this back to Suspect and Ill update it.&lt;/i&gt;</description>
-    <date_added>2004-12-08T20:59:28.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>0005</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2062</id>
     <latitude>82.3</latitude>
     <longitude>-3.9</longitude>
@@ -33051,23 +32365,6 @@
 &lt;br&gt;
 &lt;br&gt; &lt;I&gt;-- CapFan 12/10/2004&lt;/i&gt;</description>
     <date_added>2004-12-10T19:42:21.2070000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2085</id>
-    <latitude>65.7</latitude>
-    <longitude>77.2</longitude>
-    <name>Zairente Ra-Yao</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a lonely peddler, Zairente Ra-Yao, way out in the mountains here.  He buys and sells weapons and armor and has high-value trade notes.  Among the more interesting items he sells is a peculiar old dagger - unenchantable, 0.5 - 1 bludgeoning(!) damage.
-&lt;br&gt; &lt;I&gt;-- Gronk 12/11/2004&lt;/i&gt;Zairente Ra-Yao is a random spawn, hes not at these coords anymore.&lt;br&gt;peculiar old dagger is part of the mage armor quest.  &lt;I&gt;-- Seeker 12/12/2004&lt;/i&gt;</description>
-    <date_added>2004-12-11T14:56:18.3870000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -35703,22 +35000,6 @@ Aun Tumerok NPC, part of the &lt;a href=http://ac.warcry.com/compendium/quests/i
 Balthazar, Royal Guardian spits at your feet.
 
 Balthazar, Royal Guardian tells you, "How dare you speak to me? You who think yourself above a woman who was willing to sacrifice all, her sanity, her body, her life for all of us. You make me sick. Leave my presence for I will have nothing more to do with you."</description>
-    <date_added>2002-04-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2228</id>
-    <latitude>10.3</latitude>
-    <longitude>57.6</longitude>
-    <name>Brontynn Marshid</name>
-    <type>NPC</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This NPC is being held captive in a tower by a group of tumeroks.</description>
     <date_added>2002-04-10 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -47849,7 +47130,7 @@ This mute archmage carries all the regular supplies but also sells something a b
     <id>2889</id>
     <latitude>-17.3</latitude>
     <longitude>3.7</longitude>
-    <name>Abandoned Tent</name>
+    <name>Monouga Tent</name>
     <type>Landmark</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
@@ -47891,22 +47172,6 @@ This mute archmage carries all the regular supplies but also sells something a b
 
 Its rumored that Devana is the daughter of an Isparian assasin. Fact is that she won`t talk to anyone without an introduction.</description>
     <date_added>2000-05-28 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2892</id>
-    <latitude>75.2</latitude>
-    <longitude>50</longitude>
-    <name>Lifestone Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>An abandoned tower near Kara surrounded by what appear to be  lifestones in various states of growth.  There are even three of these crystal formations growing up through the floor of the tower.  Magical equipment is all the evidence of the tower's former occupant.</description>
-    <date_added>2000-06-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -48015,22 +47280,6 @@ A group of mosswarts guards a runed chest here.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2899</id>
-    <latitude>78.1</latitude>
-    <longitude>48.7</longitude>
-    <name>Abandoned Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This abandoned tower has a magnificent view of the fjord entering this part of the Linvak Mountain range.</description>
-    <date_added>2000-07-11 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2900</id>
     <latitude>-2.3</latitude>
     <longitude>27.8</longitude>
@@ -48052,9 +47301,9 @@ Thanks to Breeanna and crew on Thistledown for reporting this location.</descrip
   </location>
   <location>
     <id>2901</id>
-    <latitude>41</latitude>
-    <longitude>52.2</longitude>
-    <name>Ayn Tayan (Hill of Pines)</name>
+    <latitude>41.2</latitude>
+    <longitude>52.1</longitude>
+    <name>Battlefield of Ayn Tayan</name>
     <type>Landmark</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
@@ -48199,22 +47448,6 @@ The best source of lore about the battle at Ayn Tayan is from Aerfalle's Letter.
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2909</id>
-    <latitude>5.5</latitude>
-    <longitude>40</longitude>
-    <name>Empyrean Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Another empty tower.</description>
-    <date_added>2000-09-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2910</id>
     <latitude>-26.9</latitude>
     <longitude>7.7</longitude>
@@ -48244,56 +47477,6 @@ The Naquib of Suntik hereby requests all available mercenaries to assist in the 
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
     <description>This cave is now home to a tribe of Mosswarts, led by their chief. Be careful when attacking this location as every mosswart in the surrounding area will come to aid their fellows.</description>
-    <date_added>2000-09-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2912</id>
-    <latitude>27.1</latitude>
-    <longitude>57.7</longitude>
-    <name>Mosswart Tower</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>
-    </description>
-    <date_added>2000-09-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2913</id>
-    <latitude>25.9</latitude>
-    <longitude>49.9</longitude>
-    <name>Empyrean Pillar</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This empyrean ruin is guarded by several water golems.</description>
-    <date_added>2000-09-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2914</id>
-    <latitude>23.8</latitude>
-    <longitude>49.6</longitude>
-    <name>Mosswart Bunker</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>
-    </description>
     <date_added>2000-09-02 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -48375,22 +47558,6 @@ The Naquib of Suntik hereby requests all available mercenaries to assist in the 
     <arrival_longitude>0.000</arrival_longitude>
     <description>Paul the Monouga and his pal Babe the Blue Auroch stand TALL in the Northern mountains of Dereth.  They can not be attacked.</description>
     <date_added>2000-09-12 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2921</id>
-    <latitude>71.2</latitude>
-    <longitude>52.3</longitude>
-    <name>Cellar</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>An empty cellar</description>
-    <date_added>2000-09-13 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -48562,22 +47729,6 @@ Only a menhir ring now remains of the former dungeon.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2932</id>
-    <latitude>84</latitude>
-    <longitude>66.2</longitude>
-    <name>Strange Landfill</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Two parallel strips of golem-crusted bedrock open to any interpretation of their purpose. Was it a drydock for some giant shipyard? An ancient seaside resort? You tell me...</description>
-    <date_added>2000-11-19 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2933</id>
     <latitude>83</latitude>
     <longitude>93.1</longitude>
@@ -48657,26 +47808,6 @@ In the 6th year of our freedom from the Olthoi, the people of Holtburg were besi
 
 Find out more in the Holtburg Starter quests and the quest for Brogord's Axe.</description>
     <date_added>2000-11-24 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2938</id>
-    <latitude>-17.8</latitude>
-    <longitude>39.2</longitude>
-    <name>Fort Nighthawke</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Very little is known of this lakeside Abandoned Fort.
-
-Mine! Mine!
-
-- Soulitaire, Lady of Nighthawke</description>
-    <date_added>2000-12-04 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -48782,24 +47913,6 @@ This strange creature is willing to trade mages for more powerful magical scroll
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2945</id>
-    <latitude>86.7</latitude>
-    <longitude>10.4</longitude>
-    <name>Essence of Artifice</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Harbinger.
-
-This strange creature seems to distort reality itself.  Mages focusing on the enchantment of weapons, armor, and other artificial items report receiving new powers when paying tribute to the Essence.</description>
-    <date_added>2001-02-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2946</id>
     <latitude>2.8</latitude>
     <longitude>-82.8</longitude>
@@ -48840,24 +47953,6 @@ This Crypt is heavily guarded by Horrible and Nomad Mu-miyah, at the bottom lies
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2948</id>
-    <latitude>77.3</latitude>
-    <longitude>38.8</longitude>
-    <name>Three Stones</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Three stones... aligned from West to East...
-
-Location and image submitted by Merkan. Thanks!</description>
-    <date_added>2001-03-23 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2949</id>
     <latitude>-29</latitude>
     <longitude>58.8</longitude>
@@ -48883,22 +47978,6 @@ Location and image submitted by Merkan. Thanks!</description>
     <arrival_longitude>0.000</arrival_longitude>
     <description>A memorial to those who served as Advocates and Sentinels from PY 1-PY 11.</description>
     <date_added>2001-04-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2951</id>
-    <latitude>64</latitude>
-    <longitude>25.6</longitude>
-    <name>Lugian Camp</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A camp to hunt laigus, amploth, and obeloth lugians.</description>
-    <date_added>2001-04-20 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -49215,24 +48294,6 @@ Those wishing to reach the Caul will need to kill the Guardian of the Singularit
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2968</id>
-    <latitude>69.2</latitude>
-    <longitude>48.6</longitude>
-    <name>Flaming Pillars</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Two flaming pillars with two Lithos Lugians (now deceased) next to them.
-
-Location and image submitted by Dwynna Wildshot. Thanks!</description>
-    <date_added>2001-07-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2969</id>
     <latitude>77.9</latitude>
     <longitude>85</longitude>
@@ -49338,22 +48399,6 @@ BOOM.
     <arrival_longitude>0.000</arrival_longitude>
     <description>A shelter from rain and misfortune, this camp is totally deserted.</description>
     <date_added>2001-08-03 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2973</id>
-    <latitude>69.7</latitude>
-    <longitude>40.1</longitude>
-    <name>Double Ring Ruin</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Location and image submitted by Ms. Dwynna Wildshot. Thanks!</description>
-    <date_added>2001-08-08 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -49608,22 +48653,6 @@ Strange voices can be heard while in the presence of these trees.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>3001</id>
-    <latitude>24.9</latitude>
-    <longitude>49.4</longitude>
-    <name>Zombie Camp</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>A small camp in the swamp guarded by Zombies and a Lich.</description>
-    <date_added>2002-04-11 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>3002</id>
     <latitude>18.6</latitude>
     <longitude>12</longitude>
@@ -49746,30 +48775,6 @@ Give the Loom a spool of thread to fashion cloth.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>3009</id>
-    <latitude>24.3</latitude>
-    <longitude>76.8</longitude>
-    <name>Spinning Wheel</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Flags.
-
-This spinning wheel would be the thing to use if only you had some sort of material to spin upon it...
-
-Give Silk to Spinning Wheel to obtain Spool of Silk.
-
-You give Spinning Wheel Silk.
-The wheel spins the silk into a fine thread, which winds onto a spool.
-Spinning Wheel gives you Spool of Silk.</description>
-    <date_added>2002-06-14 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>3010</id>
     <latitude>59.7</latitude>
     <longitude>-90</longitude>
@@ -49814,24 +48819,6 @@ Spinning Wheel gives you Spool of Silk.</description>
     <description>
     </description>
     <date_added>2002-06-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3013</id>
-    <latitude>-6.5</latitude>
-    <longitude>44</longitude>
-    <name>Frest Greevling's Mansion</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Frest Greelving's Haunted Mansion.
-
-Frest Greevling's Mansion sits atop an odd area of land. The inhabitants of this home are very odd, and very spooky, indeed.</description>
-    <date_added>2002-10-15 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -50197,7 +49184,7 @@ Ulgrim's Island can be reached by giving the Drunken Madman in Baishi a Mug of W
   </location>
   <location>
     <id>3033</id>
-    <latitude>59.9</latitude>
+    <latitude>60.0</latitude>
     <longitude>75.5</longitude>
     <name>Zefir Cave</name>
     <type>Landmark</type>
@@ -50325,23 +49312,6 @@ Found by Circeus.</description>
     <arrival_longitude>0.000</arrival_longitude>
     <description>A small beachside farmstead with a Roaming Bowyer, near a LS.</description>
     <date_added>2003-09-09 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3041</id>
-    <latitude>47.2</latitude>
-    <longitude>83.3</longitude>
-    <name>Portal Trees</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>You think, I was rattled. I found myself unable to find the forest for the trees. I ran my hands along the bark, searching for any type of clue that might help me understand what the Dame wanted. I should have been listening. Now I was out here playing patty-cake with a tree...
-You think, ...I felt pretty foolish.</description>
-    <date_added>2003-12-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -50891,26 +49861,6 @@ A small statue that looks just a little too life-like for comfort.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>3073</id>
-    <latitude>21.7</latitude>
-    <longitude>47.7</longitude>
-    <name>Mosswart Bunker</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Ancient Armor, The Temple of Ixir Zi.
-
-A bunker full of corpses of massacred Mosswarts.  Inside, behind a hidden wall you will find an Odd Looking Vine that will lead take you to the beginning of the Fellowship Quest introduced during Across the Vast Divide.
-
-Thanks to Ra Rai for pic and info.</description>
-    <date_added>2004-03-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>3074</id>
     <latitude>21.9</latitude>
     <longitude>0.1</longitude>
@@ -51113,28 +50063,6 @@ There is a Runed Chest here.</description>
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>3086</id>
-    <latitude>20.8</latitude>
-    <longitude>22.6</longitude>
-    <name>Numuhdira's Hidden Cottage</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Soul Stone.
-
-Reading this journal flags for use of the portal to Xi Ru's Island near Ithaenc Cathedral at 83.4S 89.8E on the beach. This also flags you to enter Xi Ru's Chapel on the island. 
-
-Nuhmudira's Journal lies open to a page that holds some interesting information. She has found the location of an island that has been hidden for a great many years. She divined the location from scripts that she found in one of the Falatacot temples that has been found in the past few months. She means to build a device that will transport her to this hidden island. She plans to build the device on the beach, in the shadow of Ithaenc Cathedral.
-
-As you finish reading the passage you feel a new awareness enter you.</description>
-    <date_added>2004-11-12 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>3087</id>
     <latitude>91.4</latitude>
     <longitude>89.5</longitude>
@@ -51236,23 +50164,6 @@ This tree grows atop the large cataracts overlooking the Chapel on Xi Ru's Islan
     <description>
     </description>
     <date_added>2004-12-04 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3093</id>
-    <latitude>20.9</latitude>
-    <longitude>14</longitude>
-    <name>Sleepless Sentinels</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>
-    </description>
-    <date_added>2004-12-11 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
