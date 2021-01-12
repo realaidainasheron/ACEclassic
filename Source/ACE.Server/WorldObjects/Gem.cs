@@ -7,6 +7,7 @@ using ACE.Entity.Enum.Properties;
 using ACE.Entity.Models;
 using ACE.Server.Entity;
 using ACE.Server.Factories;
+using ACE.Server.Managers;
 using ACE.Server.Network.GameEvent.Events;
 using ACE.Server.Network.GameMessages.Messages;
 using ACE.Server.Physics;
@@ -49,7 +50,7 @@ namespace ACE.Server.WorldObjects
             ActOnUse(activator, false);
         }
 
-        public void ActOnUse(WorldObject activator, bool confirmed)
+        public void ActOnUse(WorldObject activator, bool confirmed, WorldObject target = null)
         {
             if (!(activator is Player player))
                 return;
@@ -76,7 +77,7 @@ namespace ACE.Server.WorldObjects
             if (RareId != null && player.GetCharacterOption(CharacterOption.ConfirmUseOfRareGems) && !confirmed)
             {
                 var msg = $"Are you sure you want to use {Name}?";
-                var confirm = new Confirmation_Custom(player.Guid, () => ActOnUse(activator, true));
+                var confirm = new Confirmation_Custom(player.Guid, () => ActOnUse(activator, true, target));
                 player.ConfirmationManager.EnqueueSend(confirm, msg);
                 return;
             }
@@ -106,13 +107,13 @@ namespace ACE.Server.WorldObjects
 
                 var animMod = (UseUserAnimation == MotionCommand.MimeDrink || UseUserAnimation == MotionCommand.MimeEat) ? 0.5f : 1.0f;
 
-                player.ApplyConsumable(UseUserAnimation, () => UseGem(player), animMod);
+                player.ApplyConsumable(UseUserAnimation, () => UseGem(player, target), animMod);
             }
             else
-                UseGem(player);
+                UseGem(player, target);
         }
 
-        public void UseGem(Player player)
+        public void UseGem(Player player, WorldObject target)
         {
             if (player.IsDead) return;
 
@@ -135,8 +136,10 @@ namespace ACE.Server.WorldObjects
                 // which could prevent some scenarios with spamming enchantments from multiple gem sources to protect against dispels
 
                 // TODO: figure this out better
-                if (spell.MetaSpellType == SpellType.PortalSummon)
+                if (spell.MetaSpellType == SpellType.PortalSummon && (LinkedPortalOne != null || LinkedPortalTwo != null)) // if we're a summon portal gem and we have a linked portal use that, otherwise use the player's.
                     TryCastSpell(spell, player, this, false);
+                else if(target != null)
+                    player.TryCastSpell(spell, target, this);
                 else
                     player.TryCastSpell(spell, player, this, false);
             }
@@ -261,8 +264,13 @@ namespace ACE.Server.WorldObjects
                 return;
             }
 
-            // fallback on recipe manager?
-            base.HandleActionUseOnTarget(player, target);
+            if (RecipeManager.GetRecipe(player, this, target) != null) // if we have a recipe do that, otherwise redirect to ActOnUse with a target.
+                base.HandleActionUseOnTarget(player, target);
+            else
+            {
+                ActOnUse(player, false, target);
+                player.SendUseDoneEvent();
+            }
         }
 
         /// <summary>

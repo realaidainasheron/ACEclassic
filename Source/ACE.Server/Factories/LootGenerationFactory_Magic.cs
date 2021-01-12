@@ -666,9 +666,10 @@ namespace ACE.Server.Factories
 
         private static void AddActivationRequirements(WorldObject wo, TreasureDeath profile, TreasureRoll roll)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
                 TryMutate_ItemSkillLimit(wo, roll); // ItemSkill/LevelLimit
-            else
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
                 TryMutate_HeritageRequirement(wo);
                 TryMutate_AllegianceRequirement(wo, profile, roll);
