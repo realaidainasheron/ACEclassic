@@ -71,47 +71,47 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
-                T1_Chances = new ChanceTable<WeenieClassName>()
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.crossbowlight,    0.75f ),
-                    ( WeenieClassName.crossbowheavy,    0.25f ),
+                    ( WeenieClassName.crossbowlight,    3.0f ),
+                    ( WeenieClassName.crossbowheavy,    1.0f ),
                 };
 
-                T1_T4_Chances = new ChanceTable<WeenieClassName>()
+                T1_T4_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.crossbowlight,    0.60f ),
-                    ( WeenieClassName.crossbowheavy,    0.40f ),
+                    ( WeenieClassName.crossbowlight,    1.00f ),
+                    ( WeenieClassName.crossbowheavy,    1.00f ),
                 };
 
-                T5_Chances = new ChanceTable<WeenieClassName>()
+                T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.crossbowlight,                    0.3f ),
-                    ( WeenieClassName.crossbowheavy,                    0.21f ),
+                    ( WeenieClassName.crossbowlight,                     7.0f ),
+                    ( WeenieClassName.crossbowheavy,                     7.0f ),
 
-                    ( WeenieClassName.crossbowslashing,                  0.07f ),
-                    ( WeenieClassName.crossbowpiercing,                  0.07f ),
-                    ( WeenieClassName.crossbowblunt,                     0.07f ),
-                    ( WeenieClassName.crossbowacid,                      0.07f ),
-                    ( WeenieClassName.crossbowfire,                      0.07f ),
-                    ( WeenieClassName.crossbowfrost,                     0.07f ),
-                    ( WeenieClassName.crossbowelectric,                  0.07f ),
+                    ( WeenieClassName.crossbowslashing,                  1.0f ),
+                    ( WeenieClassName.crossbowpiercing,                  1.0f ),
+                    ( WeenieClassName.crossbowblunt,                     1.0f ),
+                    ( WeenieClassName.crossbowacid,                      1.0f ),
+                    ( WeenieClassName.crossbowfire,                      1.0f ),
+                    ( WeenieClassName.crossbowfrost,                     1.0f ),
+                    ( WeenieClassName.crossbowelectric,                  1.0f ),
                 };
 
-                T6_T8_Chances = new ChanceTable<WeenieClassName>()
+                T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.crossbowslashing,                  0.15f ),
-                    ( WeenieClassName.crossbowpiercing,                  0.15f ),
-                    ( WeenieClassName.crossbowblunt,                     0.14f ),
-                    ( WeenieClassName.crossbowacid,                      0.14f ),
-                    ( WeenieClassName.crossbowfire,                      0.14f ),
-                    ( WeenieClassName.crossbowfrost,                     0.14f ),
-                    ( WeenieClassName.crossbowelectric,                  0.14f ),
+                    ( WeenieClassName.crossbowslashing,                  1.0f ),
+                    ( WeenieClassName.crossbowpiercing,                  1.0f ),
+                    ( WeenieClassName.crossbowblunt,                     1.0f ),
+                    ( WeenieClassName.crossbowacid,                      1.0f ),
+                    ( WeenieClassName.crossbowfire,                      1.0f ),
+                    ( WeenieClassName.crossbowfrost,                     1.0f ),
+                    ( WeenieClassName.crossbowelectric,                  1.0f ),
                 };
                 
                 // we have to refresh this list or it will still contain the previous values.
                 crossbowTiers = new List<ChanceTable<WeenieClassName>>()
 		        {
-		            T1_T4_Chances,
+                    T1_Chances,
 		            T1_T4_Chances,
 		            T1_T4_Chances,
 		            T1_T4_Chances,

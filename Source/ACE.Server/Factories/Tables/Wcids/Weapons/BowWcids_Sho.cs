@@ -71,40 +71,40 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
-                T1_Chances = new ChanceTable<WeenieClassName>()
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.shouyumi,   0.75f ),
-                    ( WeenieClassName.yumi,       0.25f )
+                    ( WeenieClassName.shouyumi,   3.0f ),
+                    ( WeenieClassName.yumi,       1.0f )
                 };
 
-                T1_T4_Chances = new ChanceTable<WeenieClassName>()
+                T1_T4_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.shouyumi, 0.6f ),
-                    ( WeenieClassName.yumi,     0.4f )
+                    ( WeenieClassName.shouyumi, 1.0f ),
+                    ( WeenieClassName.yumi,     1.0f )
                 };
 
-                T5_Chances = new ChanceTable<WeenieClassName>()
+                T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.yumi,                         0.51f ),
+                    ( WeenieClassName.yumi,                         7.0f ),
 
-                    ( WeenieClassName.bowslashing,                  0.07f ),
-                    ( WeenieClassName.bowpiercing,                  0.07f ),
-                    ( WeenieClassName.bowblunt,                     0.07f ),
-                    ( WeenieClassName.bowacid,                      0.07f ),
-                    ( WeenieClassName.bowfire,                      0.07f ),
-                    ( WeenieClassName.bowfrost,                     0.07f ),
-                    ( WeenieClassName.bowelectric,                  0.07f ),
+                    ( WeenieClassName.bowslashing,                  1.0f ),
+                    ( WeenieClassName.bowpiercing,                  1.0f ),
+                    ( WeenieClassName.bowblunt,                     1.0f ),
+                    ( WeenieClassName.bowacid,                      1.0f ),
+                    ( WeenieClassName.bowfire,                      1.0f ),
+                    ( WeenieClassName.bowfrost,                     1.0f ),
+                    ( WeenieClassName.bowelectric,                  1.0f ),
                 };
 
-                T6_T8_Chances = new ChanceTable<WeenieClassName>()
+                T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.bowslashing,                  0.15f ),
-                    ( WeenieClassName.bowpiercing,                  0.15f ),
-                    ( WeenieClassName.bowblunt,                     0.14f ),
-                    ( WeenieClassName.bowacid,                      0.14f ),
-                    ( WeenieClassName.bowfire,                      0.14f ),
-                    ( WeenieClassName.bowfrost,                     0.14f ),
-                    ( WeenieClassName.bowelectric,                  0.14f ),
+                    ( WeenieClassName.bowslashing,                  1.0f ),
+                    ( WeenieClassName.bowpiercing,                  1.0f ),
+                    ( WeenieClassName.bowblunt,                     1.0f ),
+                    ( WeenieClassName.bowacid,                      1.0f ),
+                    ( WeenieClassName.bowfire,                      1.0f ),
+                    ( WeenieClassName.bowfrost,                     1.0f ),
+                    ( WeenieClassName.bowelectric,                  1.0f ),
                 };
                 
                 // we have to refresh this list or it will still contain the previous values.

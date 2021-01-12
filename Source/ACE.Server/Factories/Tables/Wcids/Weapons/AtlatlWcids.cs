@@ -71,10 +71,10 @@ namespace ACE.Server.Factories.Tables.Wcids
             {
                 T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.atlatl,      4.0f ),
+                    ( WeenieClassName.atlatl,      3.0f ),
                     ( WeenieClassName.atlatlroyal, 1.0f ),
 
-                    ( WeenieClassName.dart, 4.0f ),
+                    ( WeenieClassName.dart, 3.0f ),
                     ( WeenieClassName.axethrowing, 1.0f ),
                     ( WeenieClassName.clubthrowing, 1.0f ),
                     ( WeenieClassName.daggerthrowing, 1.0f ),

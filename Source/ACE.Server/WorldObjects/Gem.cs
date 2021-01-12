@@ -136,7 +136,7 @@ namespace ACE.Server.WorldObjects
                 // which could prevent some scenarios with spamming enchantments from multiple gem sources to protect against dispels
 
                 // TODO: figure this out better
-                if (spell.MetaSpellType == SpellType.PortalSummon && (LinkedPortalOne != null || LinkedPortalTwo != null)) // if we're a summon portal gem and we have a linked portal use that, otherwise use the player's.
+                if (spell.MetaSpellType == SpellType.PortalSummon && (LinkedPortalOneDID != null || LinkedPortalTwoDID != null)) // if we're a summon portal gem and we have a linked portal use that, otherwise use the player's.
                     TryCastSpell(spell, player, this, false);
                 else if(target != null)
                     player.TryCastSpell(spell, target, this);
