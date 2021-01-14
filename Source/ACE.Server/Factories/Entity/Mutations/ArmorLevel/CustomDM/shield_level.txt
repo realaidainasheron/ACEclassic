@@ -2,22 +2,13 @@ Shield Mutation #1:
 
 Tier Chances: 1, 0, 0, 0, 0, 0
 
-    - Chance: 12%:
+    - Chance: 25%:
         ArmorLevel += 0
 
-    - Chance: 20%:
-        ArmorLevel += 4
+    - Chance: 50%:
+        ArmorLevel += 10
 
-    - Chance: 31%:
-        ArmorLevel += 8
-
-    - Chance: 19%:
-        ArmorLevel += 12
-
-    - Chance: 11%:
-        ArmorLevel += 16
-
-    - Chance: 7%:
+    - Chance: 25%:
         ArmorLevel += 20
 
     - Chance 100%:
@@ -35,12 +26,21 @@ Tier chances: 0, 1, 0, 0, 0, 0
 
     - Chance 40%:
         ArmorLevel += 30
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 20%:
         ArmorLevel += 40
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 10%:
         ArmorLevel += 50
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 100%:
         ArmorLevel += Random(-5, 5)
@@ -54,21 +54,39 @@ Tier chances: 0, 0, 1, 0, 0, 0
 
     - Chance 10%:
         ArmorLevel += 30
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 20%:
         ArmorLevel += 40
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 30%:
         ArmorLevel += 50
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 20%:
         ArmorLevel += 60
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 10%:
         ArmorLevel += 70
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 5%:
         ArmorLevel += 80
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 100%:
         ArmorLevel += Random(-5, 5)
@@ -79,24 +97,45 @@ Tier chances: 0, 0, 0, 1, 0, 0
 
     - Chance 5%:
         ArmorLevel += 40
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 10%:
         ArmorLevel += 50
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 20%:
         ArmorLevel += 60
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 30%:
         ArmorLevel += 70
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 20%:
         ArmorLevel += 80
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 10%:
         ArmorLevel += 90
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 5%:
         ArmorLevel += 100
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 100%:
         ArmorLevel += Random(-5, 5)
@@ -107,24 +146,45 @@ Tier chances: 0, 0, 0, 0, 1, 0
 
     - Chance 5%:
         ArmorLevel += 50
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 15
 
     - Chance 10%:
         ArmorLevel += 60
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 20%:
         ArmorLevel += 70
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 30%:
         ArmorLevel += 80
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 20%:
         ArmorLevel += 90
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 10%:
         ArmorLevel += 100
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 5%:
         ArmorLevel += 110
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 75
 
     - Chance 100%:
         ArmorLevel += Random(-5, 5)
@@ -135,24 +195,45 @@ Tier chances: 0, 0, 0, 0, 0, 1
 
     - Chance 5%:
         ArmorLevel += 60
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 10%:
         ArmorLevel += 70
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 20%:
         ArmorLevel += 80
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 35
 
     - Chance 30%:
         ArmorLevel += 90
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 20%:
         ArmorLevel += 100
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 55
 
     - Chance 10%:
         ArmorLevel += 110
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 75
 
     - Chance 5%:
         ArmorLevel += 120
+        WieldRequirements = Level
+        WieldSkillType = 1
+        WieldDifficulty = 95
 
     - Chance 100%:
         ArmorLevel += Random(-5, 5)

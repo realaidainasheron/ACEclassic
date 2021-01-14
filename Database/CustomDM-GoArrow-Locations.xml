@@ -988,21 +988,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>65</id>
-    <latitude>-33.8</latitude>
-    <longitude>56.8</longitude>
-    <name>Arwic Mines</name>
-    <type>Dungeon</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Like many of the old newbie haunts, the critters here have been upgraded.  Silver and Sewer Rats, Drudge Lurkers and Stalkers, Malus Shreths, etc. have replaced their previous newbie counterparts. &lt;I&gt;-- Shemp 6/8/2004&lt;/i&gt; Contains Elthina the Shady, a provisioner type shopkeeper.  Buys at 90%&lt;I&gt;-- Taarna Blood SC &lt;/i&gt; &lt;/i&gt;</description>
-    <date_added>1999-07-18T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>01EF</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>66</id>
     <latitude>-38.7</latitude>
     <longitude>61.4</longitude>
@@ -13538,22 +13523,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>872</id>
-    <latitude>-29</latitude>
-    <longitude>58.7</longitude>
-    <name>Drudge Stones</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Entry is courtesy of   -- &lt;I&gt;Polecat&lt;/i&gt;</description>
-    <date_added>2000-07-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>873</id>
     <latitude>-43.2</latitude>
     <longitude>68.2</longitude>
@@ -16108,8 +16077,24 @@
   </location>
   <location>
     <id>1039</id>
-    <latitude>-33.8</latitude>
-    <longitude>56.8</longitude>
+    <latitude>-33.5</latitude>
+    <longitude>57.0</longitude>
+    <name>Arwic Mines to Moss Chamber</name>
+    <type>Portal</type>
+    <arrival_latitude>-14.2</arrival_latitude>
+    <arrival_longitude>-0.6</arrival_longitude>
+    <description>Portal at the bottom of Arwic Mines.  Takes you to the Moss Chamber near Zaikhal. &lt;I&gt;-- Taarna Blood SC 10/29/2004&lt;/i&gt;</description>
+    <date_added>2004-10-29T00:18:25.0000000-07:00</date_added>
+    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
+    <dungeon_id>
+    </dungeon_id>
+    <retired>N</retired>
+    <tod_req>0</tod_req>
+  </location>
+  <location>
+    <id>65</id>
+    <latitude>-33.5</latitude>
+    <longitude>57.0</longitude>
     <name>Arwic Mines to Old Mine</name>
     <type>Portal</type>
     <arrival_latitude>79.1</arrival_latitude>
@@ -16119,6 +16104,21 @@
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
+    <retired>N</retired>
+    <tod_req>0</tod_req>
+  </location>
+  <location>
+    <id>2022</id>
+    <latitude>-33.5</latitude>
+    <longitude>57.0</longitude>
+    <name>Arwic Mines</name>
+    <type>Dungeon</type>
+    <arrival_latitude>0</arrival_latitude>
+    <arrival_longitude>0</arrival_longitude>
+    <description>Like many of the old newbie haunts, the critters here have been upgraded.  Silver and Sewer Rats, Drudge Lurkers and Stalkers, Malus Shreths, etc. have replaced their previous newbie counterparts. &lt;I&gt;-- Shemp 6/8/2004&lt;/i&gt; Contains Elthina the Shady, a provisioner type shopkeeper.  Buys at 90%&lt;I&gt;-- Taarna Blood SC &lt;/i&gt; &lt;/i&gt;</description>
+    <date_added>1999-07-18T00:00:00.0000000-07:00</date_added>
+    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
+    <dungeon_id>01EF</dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -17937,22 +17937,6 @@
     <date_added>2000-11-14T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>02C3</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1159</id>
-    <latitude>-30.9</latitude>
-    <longitude>56.3</longitude>
-    <name>New'ic</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Little area that appeared after Arwic disaster.  Now since Arwic been rebuilt not much is here just olthoi hunter and couple buildings.</description>
-    <date_added>2000-11-14T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -21226,8 +21210,8 @@
   </location>
   <location>
     <id>1375</id>
-    <latitude>-33.8</latitude>
-    <longitude>56.4</longitude>
+    <latitude>-33.3</latitude>
+    <longitude>56.9</longitude>
     <name>Arwic to Tou Tou Portal</name>
     <type>Portal</type>
     <arrival_latitude>28.1</arrival_latitude>
@@ -23352,7 +23336,7 @@
     <id>1512</id>
     <latitude>-32.5</latitude>
     <longitude>55.1</longitude>
-    <name>New'ic Lifestone</name>
+    <name>West Arwic Lifestone</name>
     <type>Lifestone</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -28253,22 +28237,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1825</id>
-    <latitude>-30.9</latitude>
-    <longitude>56.4</longitude>
-    <name>Mammet Foundry - Arwic</name>
-    <type>Dungeon</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>This portal takes to you the ""Mammet Foundry"" dungeon. The surface portal from this dungeon exits in Baishi. Cannot be summoned, tied, or recalled. &lt;I&gt;-- Marcus Cole of SC 11/26/2003&lt;/I&gt;</description>
-    <date_added>2003-11-26T18:23:27.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1826</id>
     <latitude>49.4</latitude>
     <longitude>62.5</longitude>
@@ -28607,23 +28575,6 @@
     <description>
     </description>
     <date_added>2003-11-26T19:05:21.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1847</id>
-    <latitude>-30.9</latitude>
-    <longitude>56.4</longitude>
-    <name>Mammet Foundry (Arwic) to Baishi</name>
-    <type>Portal</type>
-    <arrival_latitude>49.3</arrival_latitude>
-    <arrival_longitude>62.9</arrival_longitude>
-    <description>
-    </description>
-    <date_added>2003-11-26T19:08:53.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -30225,8 +30176,8 @@
   </location>
   <location>
     <id>1948</id>
-    <latitude>-33.6</latitude>
-    <longitude>57.2</longitude>
+    <latitude>-33.9</latitude>
+    <longitude>56.5</longitude>
     <name>Arwic to Al-Jalima</name>
     <type>Portal</type>
     <arrival_latitude>-7.2</arrival_latitude>
@@ -31361,22 +31312,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Contains Weaponsmith, Armorsmith, Healer and a Jojii Shrine.  Spawns are nearby outside, be careful here.  This tower has a 3rd floor and is rather unique in that respect. &lt;I&gt;-- Taarna Blood SC 10/21/2004&lt;/i&gt;</description>
     <date_added>2004-10-21T23:31:40.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2022</id>
-    <latitude>-33.8</latitude>
-    <longitude>56.8</longitude>
-    <name>Arwic Mines to Moss Chamber</name>
-    <type>Portal</type>
-    <arrival_latitude>-14.2</arrival_latitude>
-    <arrival_longitude>-0.6</arrival_longitude>
-    <description>Portal at the bottom of Arwic Mines.  Takes you to the Moss Chamber near Zaikhal. &lt;I&gt;-- Taarna Blood SC 10/29/2004&lt;/i&gt;</description>
-    <date_added>2004-10-29T00:18:25.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -32958,8 +32893,8 @@ Aino Lunnan-Shin is a gem crafter.  She is only interested in the geodes that li
   </location>
   <location>
     <id>2122</id>
-    <latitude>-30.9</latitude>
-    <longitude>56.3</longitude>
+    <latitude>-33.6</latitude>
+    <longitude>56.6</longitude>
     <name>Olthoi Hunter</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
@@ -33196,8 +33131,8 @@ See our &lt;a href=../compendium/trophies/&gt;trophies and treasures section&lt;
   </location>
   <location>
     <id>2134</id>
-    <latitude>60.1</latitude>
-    <longitude>-87.8</longitude>
+    <latitude>-33.4</latitude>
+    <longitude>56.9</longitude>
     <name>Yuan Hanzu</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
@@ -33524,35 +33459,13 @@ Ercel tells you, "Oh, once in the ruins, try to find the trail of rocks."</descr
   </location>
   <location>
     <id>2151</id>
-    <latitude>-32.9</latitude>
-    <longitude>55.7</longitude>
+    <latitude>-33.8</latitude>
+    <longitude>56.7</longitude>
     <name>Leather Crafter (Arwic)</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
     <description>If you give me the hide of an armoredillo, gromnie, reedshark, or mattekar, I can make something with it that you may find useful.</description>
-    <date_added>2001-04-01 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2152</id>
-    <latitude>-33.4</latitude>
-    <longitude>56.4</longitude>
-    <name>Ketnan</name>
-    <type>NPC</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Ketnan is a less then reputable fellow. He's been know to trade folks for a bludgeon sword, hoary robe, and other near useless items.
-
-While I believe that my loyal customers have been pleased with the fine Hoary Mattekar Robe (don't forget the free Bludgeoning Sword!), there has been a rather rude sort who proclaim that I have been cheating them somehow. It is unfortunate that dueling is beneath me, otherwise I would give these curs a well deserved beating.
-
-Since a man in my line of work cannot afford to have all these aspersions cast upon his character, I have decided to temporarily cease production of the Hoory Robe. And anything you hear about my Hoory supplier cutting me off due to lack of payment is just another nasty rumor, I assure you.
-
-I look forward to being able to supply the fine people of Dereth with more quality items in the future. In the meantime, any free pyreals you might have to spare will bring me closer to my ultimate goal of ruling all of Dereth. Ha ha. A joke. What I meant was, bring me closer to opening up my own humble clothing store.</description>
     <date_added>2001-04-01 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -35759,8 +35672,8 @@ Kleeoh tells you, Read da signs. Dey tell secrets dey do.</description>
   </location>
   <location>
     <id>2263</id>
-    <latitude>-33.4</latitude>
-    <longitude>56.6</longitude>
+    <latitude>-33.7</latitude>
+    <longitude>56.63</longitude>
     <name>Anasha</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
@@ -36235,8 +36148,8 @@ There Is A Reason The Quest Is Called Walking Boots.</description>
   </location>
   <location>
     <id>2284</id>
-    <latitude>-33.4</latitude>
-    <longitude>56.7</longitude>
+    <latitude>-33.35</latitude>
+    <longitude>56.6</longitude>
     <name>Hiyp the Toad</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
@@ -37730,25 +37643,6 @@ This Sho Healer prefers to stay away from the bustle of town life, but still sel
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2356</id>
-    <latitude>-32.8</latitude>
-    <longitude>55.8</longitude>
-    <name>Healer Dragando the Leech</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 135%, buys at 90%.
-
-Healer Dragando the Leech tells you, "Do your wounds need tending?"
-Healer Dragando the Leech tells you, "Now even the land has healed a sight I had longed to behold."</description>
-    <date_added>2001-01-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2357</id>
     <latitude>24.4</latitude>
     <longitude>28.7</longitude>
@@ -38599,272 +38493,6 @@ Ai Konaji the Jeweler tells you, "Welcome! What's your pleasure today?"</descrip
     <arrival_longitude>0.000</arrival_longitude>
     <description>Sells at 170%, buys at 80%.</description>
     <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2404</id>
-    <latitude>21.5</latitude>
-    <longitude>-1.3</longitude>
-    <name>Apprentice Scrivener of Creature Magic (Yaraq)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2405</id>
-    <latitude>33.6</latitude>
-    <longitude>73.4</longitude>
-    <name>Apprentice Scrivener of Creature Magic(Shoushi)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I (1st Floor), Level II (2nd Floor).
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2406</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Apprentice Scrivener of Creature Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II.
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2407</id>
-    <latitude>-25.7</latitude>
-    <longitude>49.4</longitude>
-    <name>Apprentice Scrivener of Creature Magic (Cragstone)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2408</id>
-    <latitude>-41.6</latitude>
-    <longitude>34</longitude>
-    <name>Apprentice Scrivener of Creature Magic (Holtburg)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2409</id>
-    <latitude>21.5</latitude>
-    <longitude>-1.3</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Yaraq)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-16 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2410</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II.
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2411</id>
-    <latitude>-25.7</latitude>
-    <longitude>49.4</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Cragstone)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2412</id>
-    <latitude>-41.6</latitude>
-    <longitude>34</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Holtburg)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2413</id>
-    <latitude>21.5</latitude>
-    <longitude>-1.3</longitude>
-    <name>Apprentice Scrivener of Life Magic (Yaraq)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Life Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2414</id>
-    <latitude>33.6</latitude>
-    <longitude>73.4</longitude>
-    <name>Apprentice Scrivener of Life Magic (Shoushi)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I (1st Floor), Level II (2nd Floor).
-
-Apprentice Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Life Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2415</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Apprentice Scrivener of Life Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II.
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2416</id>
-    <latitude>-25.7</latitude>
-    <longitude>49.4</longitude>
-    <name>Apprentice Scrivener of Life Magic (Cragstone)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Life Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2417</id>
-    <latitude>-41.6</latitude>
-    <longitude>35</longitude>
-    <name>Apprentice Scrivener of Life Magic (Holtburg)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and Level II.
-
-Apprentice Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Life Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -40579,8 +40207,8 @@ Eldrista the Adventurer tells you, "But ... if you find one of her old bows, bri
   </location>
   <location>
     <id>2514</id>
-    <latitude>-33.7</latitude>
-    <longitude>56.7</longitude>
+    <latitude>-33.5</latitude>
+    <longitude>57.0</longitude>
     <name>Elthina the Shady</name>
     <type>Vendor</type>
     <arrival_latitude>0.000</arrival_latitude>
@@ -41000,222 +40628,6 @@ Fyrdina Ellic the Weaponsmith tells you, "I'm selling armor and weapons while Lo
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
     <description>Sells at 145%, buys at 90%.</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2539</id>
-    <latitude>59.9</latitude>
-    <longitude>-88.2</longitude>
-    <name>Grand Master Scrivener of Creature Magic (Ayan Baqur)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Creature Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2540</id>
-    <latitude>83.4</latitude>
-    <longitude>47</longitude>
-    <name>Grand Master Scrivener of Creature Magic (Kara)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Creature Magic, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2541</id>
-    <latitude>-1.6</latitude>
-    <longitude>-71.9</longitude>
-    <name>Grand Master Scrivener of Creature Magic (Fort Tethana)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI Spells.</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2542</id>
-    <latitude>59.9</latitude>
-    <longitude>-88.2</longitude>
-    <name>Grand Master Scrivener of Item Magic (Ayan Baqur)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2543</id>
-    <latitude>83.4</latitude>
-    <longitude>47</longitude>
-    <name>Grand Master Scrivener of Item Magic (Kara)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Item  Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Item Magic, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2544</id>
-    <latitude>-1.6</latitude>
-    <longitude>-71.9</longitude>
-    <name>Grand Master Scrivener of Item Magic (Fort Tethana)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI Spells.</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2545</id>
-    <latitude>59.9</latitude>
-    <longitude>-88.2</longitude>
-    <name>Grand Master Scrivener of Life Magic (Ayan Baqur)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Life Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2546</id>
-    <latitude>83.4</latitude>
-    <longitude>47</longitude>
-    <name>Grand Master Scrivener of Life Magic (Kara)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of Life Magic, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2547</id>
-    <latitude>-1.6</latitude>
-    <longitude>-71.9</longitude>
-    <name>Grand Master Scrivener of Life Magic (Fort Tethana)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI Spells.</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2548</id>
-    <latitude>59.9</latitude>
-    <longitude>-88.2</longitude>
-    <name>Grand Master Scrivener of War Magic (Ayan Baqur)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of War Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2549</id>
-    <latitude>83.4</latitude>
-    <longitude>47</longitude>
-    <name>Grand Master Scrivener of War Magic (Kara)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI.
-
-Grand Master Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Grand Master Scrivener of War Magic, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2550</id>
-    <latitude>-1.6</latitude>
-    <longitude>-71.9</longitude>
-    <name>Grand Master Scrivener of War Magic (Fort Tethana)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level VI Spells.</description>
     <date_added>2005-09-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -46161,25 +45573,6 @@ Zisaha bint Jaidka the Mage tells you, "Fare well. Travel at your own risk</desc
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2834</id>
-    <latitude>33.6</latitude>
-    <longitude>73.4</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Shoushi)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I (1st Floor), Level II (2nd Floor).
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-Apprentice Scrivener of Item and War Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2835</id>
     <latitude>34.2</latitude>
     <longitude>73.7</longitude>
@@ -46206,226 +45599,6 @@ Haya Su Ka tells you, "Welcome to Gan-Zo's Den of Iniquity. Would you care for a
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
     <description>Pawn Shopkeep tells you, "You have something that'll interest me?"</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2837</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Apprentice Scrivener of Item and War Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II (1st Floor).
-
-Apprentice Scrivener of Item and War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Apprentice Scrivener of Item and War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2838</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Apprentice Scrivener of Life Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II (1st Floor).
-
-Apprentice Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Apprentice Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2839</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Apprentice Scrivener of Creature Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level I and II (1st Floor).
-
-Apprentice Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Apprentice Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2840</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Journeyman Scrivener of Item Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III (3rd Floor).
-
-Journeyman Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2841</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Journeyman Scrivener of Life Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III (2nd Floor).
-
-Journeyman Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2842</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Journeyman Scrivener of Creature Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III (3rd Floor).
-
-Journeyman Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2843</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Journeyman Scrivener of War Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III (2nd Floor).
-
-Journeyman Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2844</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Scrivener of Item Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV (3rd Floor).
-
-Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2845</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Scrivener of Life Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV (3rd Floor).
-
-Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2846</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Scrivener of Creature Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV (3rd Floor).
-
-Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2847</id>
-    <latitude>39.4</latitude>
-    <longitude>83</longitude>
-    <name>Scrivener of War Magic (Hebian-To)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV (2nd Floor).
-
-Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of War tells you, "Good luck in your travels, friend."</description>
     <date_added>2005-09-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -50198,486 +49371,6 @@ This tree grows atop the large cataracts overlooking the Chapel on Xi Ru's Islan
     <description>
     </description>
     <date_added>2005-01-13 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3096</id>
-    <latitude>-10.4</latitude>
-    <longitude>58.4</longitude>
-    <name>Journeyman Scrivener of Creature Magic (Rithwic)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3097</id>
-    <latitude>-10.4</latitude>
-    <longitude>58.4</longitude>
-    <name>Journeyman Scrivener of Item Magic (Rithwic)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3098</id>
-    <latitude>-10.4</latitude>
-    <longitude>58.4</longitude>
-    <name>Journeyman Scrivener of Life Magic (Rithwic)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3099</id>
-    <latitude>-10.4</latitude>
-    <longitude>58.4</longitude>
-    <name>Journeyman Scrivener of War Magic (Rithwic)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3100</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Journeyman Scrivener of Creature Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3101</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Journeyman Scrivener of Item Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3102</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Journeyman Scrivener of Life Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3103</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Journeyman Scrivener of War Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level III.
-
-Journeyman Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Journeyman Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3104</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Scrivener of Creature Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3105</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Scrivener of Item Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3106</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Scrivener of Life Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3107</id>
-    <latitude>-13.6</latitude>
-    <longitude>0.7</longitude>
-    <name>Scrivener of War Magic (Zaikhal)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3108</id>
-    <latitude>74</latitude>
-    <longitude>19</longitude>
-    <name>Master Scrivener of Creature Magic (Qalaba'r)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3109</id>
-    <latitude>74</latitude>
-    <longitude>19</longitude>
-    <name>Master Scrivener of Item Magic (Qalaba'r)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3110</id>
-    <latitude>74</latitude>
-    <longitude>19</longitude>
-    <name>Master Scrivener of Life Magic (Qalaba'r)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3111</id>
-    <latitude>74</latitude>
-    <longitude>18.9</longitude>
-    <name>Master Scrivener of War Magic (Qalaba'r)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3112</id>
-    <latitude>-44.2</latitude>
-    <longitude>-43.5</longitude>
-    <name>Master Scrivener of Creature Magic (Plateau Village)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3113</id>
-    <latitude>-44.2</latitude>
-    <longitude>-43.5</longitude>
-    <name>Master Scrivener of Item Magic (Plateau Village)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3114</id>
-    <latitude>-44.2</latitude>
-    <longitude>-43.5</longitude>
-    <name>Master Scrivener of Life Magic (Plateau Village)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3115</id>
-    <latitude>-44.2</latitude>
-    <longitude>-43.5</longitude>
-    <name>Master Scrivener of War Magic (Plateau Village)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3116</id>
-    <latitude>8</latitude>
-    <longitude>73.1</longitude>
-    <name>Master Scrivener of Creature Magic (Dryreach)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Creature Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Creature tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3117</id>
-    <latitude>8</latitude>
-    <longitude>73.1</longitude>
-    <name>Master Scrivener of Item Magic (Dryreach)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Item Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of Item Magic tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3118</id>
-    <latitude>8</latitude>
-    <longitude>73.1</longitude>
-    <name>Master Scrivener of Life Magic (Dryreach)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of Life Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of  Life tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3119</id>
-    <latitude>8</latitude>
-    <longitude>73.1</longitude>
-    <name>Master Scrivener of War Magic (Dryreach)</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Sells at 4900%, buys at 50%. Level IV.
-
-Scrivener of War Magic tells you, "Isn't it wonderful what Asheron and the Arcanum were able to accomplish for us?"
-
-Scrivener of War tells you, "Good luck in your travels, friend."</description>
-    <date_added>2020-12-25 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>

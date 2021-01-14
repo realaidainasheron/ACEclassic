@@ -290,6 +290,15 @@ namespace ACE.Server.Entity
                     if (sortCell != null && sortCell.has_building())
                         return;
 
+                    //temp test
+                    //if (wo.Biota.PropertiesInt[PropertyInt.MaxGeneratedObjects] < 2)
+                    //{
+                    //    wo.Biota.PropertiesInt[PropertyInt.MaxGeneratedObjects] = 2;
+                    //    wo.Biota.PropertiesInt[PropertyInt.InitGeneratedObjects] = 2;
+
+                    //    wo.Biota.PropertiesFloat[PropertyFloat.GeneratorRadius] = 50;
+                    //}
+
                     if (PropertyManager.GetBool("override_encounter_spawn_rates").Item)
                     {
                         wo.RegenerationInterval = PropertyManager.GetDouble("encounter_regen_interval").Item;

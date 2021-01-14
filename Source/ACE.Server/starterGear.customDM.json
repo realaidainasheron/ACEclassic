@@ -186,9 +186,7 @@
                     "name": "Powdered Agate",
                     "stacksize": "10",
                     "specializedOnly": "true"
-                }
-            ],
-            "heritage": [
+                },
                 {
                     "id": "1",
                     "name": "Aluvian",
@@ -225,8 +223,13 @@
             ],
             "spells": [
                 {
-                    "spellId": "1",
-                    "name": "Strength Other I",
+                    "spellId": "1421",
+                    "name": "Focus Self I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "17",
+                    "name": "Invulnerability Other I",
                     "specializedOnly": "false"
                 },
                 {
@@ -235,8 +238,13 @@
                     "specializedOnly": "false"
                 },
                 {
-                    "spellId": "678",
-                    "name": "Arcane Enlightment Self I",
+                    "spellId": "653",
+                    "name": "Mana Conversion Mastery Self I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "1445",
+                    "name": "Willpower Self I",
                     "specializedOnly": "true"
                 }
             ]
@@ -334,13 +342,28 @@
                     "specializedOnly": "false"
                 },
                 {
-                    "spellId": "51",
-                    "name": "Impenetrability I",
+                    "spellId": "1511",
+                    "name": "Bludgeon Bane I",
                     "specializedOnly": "false"
                 },
                 {
                     "spellId": "49",
                     "name": "Swift Killer I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "51",
+                    "name": "Impenetrability I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1599",
+                    "name": "Defender I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "37",
+                    "name": "Blade Bane I",
                     "specializedOnly": "true"
                 }
             ]
@@ -417,9 +440,6 @@
                     "stacksize": "3",
                     "specializedOnly": "true"
                 }
-            ],
-            "heritage": [
-                {
                     "id": "1",
                     "name": "Aluvian",
                     "gear": [
@@ -455,8 +475,8 @@
             ],
             "spells": [
                 {
-                    "spellId": "23",
-                    "name": "Armor Other I",
+                    "spellId": "5",
+                    "name": "Heal Other I",
                     "specializedOnly": "false"
                 },
                 {
@@ -465,8 +485,13 @@
                     "specializedOnly": "false"
                 },
                 {
-                    "spellId": "53",
-                    "name": "Rejuvenation Other I",
+                    "spellId": "1237",
+                    "name": "Drain Health Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "7",
+                    "name": "Harm Other I",
                     "specializedOnly": "true"
                 }
             ]
@@ -564,8 +589,28 @@
                     "specializedOnly": "false"
                 },
                 {
+                    "spellId": "28",
+                    "name": "Frost Bolt I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "64",
+                    "name": "Shock Wave I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "58",
+                    "name": "Acid Stream I",
+                    "specializedOnly": "true"
+                },
+                {
                     "spellId": "75",
                     "name": "Lightning Bolt I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "92",
+                    "name": "Whirling Blade I",
                     "specializedOnly": "true"
                 }
             ]

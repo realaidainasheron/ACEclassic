@@ -476,7 +476,8 @@ namespace ACE.Server.WorldObjects
 
             var shareType = shareable ? ShareType.All : ShareType.None;
 
-            GrantXP(scaledXP, XpType.Quest, shareType);
+            // apply xp modifiers?
+            EarnXP(scaledXP, XpType.Quest, Level, shareType);
         }
 
         /// <summary>

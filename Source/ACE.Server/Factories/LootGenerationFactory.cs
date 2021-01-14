@@ -506,6 +506,7 @@ namespace ACE.Server.Factories
                         }
                     }
                 }
+
                 return loot;
             }
             finally
