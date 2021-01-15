@@ -39,7 +39,10 @@ namespace ACE.Server.WorldObjects
 
                 AddItemToEquippedItemsRatingCache(worldObject);
 
-                EncumbranceVal += (worldObject.EncumbranceVal ?? 0);
+                if ((worldObject.WeenieType == WeenieType.Ammunition || worldObject.WeenieType == WeenieType.Missile) && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                    EncumbranceVal += (int)Math.Ceiling((worldObject.EncumbranceVal ?? 0) / 2.0f);
+                else
+                    EncumbranceVal += (worldObject.EncumbranceVal ?? 0);
             }
 
             EquippedObjectsLoaded = true;
@@ -305,7 +308,10 @@ namespace ACE.Server.WorldObjects
 
             AddItemToEquippedItemsRatingCache(worldObject);
 
-            EncumbranceVal += (worldObject.EncumbranceVal ?? 0);
+            if ((worldObject.WeenieType == WeenieType.Ammunition || worldObject.WeenieType == WeenieType.Missile) && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                EncumbranceVal += (int)Math.Ceiling((worldObject.EncumbranceVal ?? 0) / 2.0f);
+            else
+                EncumbranceVal += (worldObject.EncumbranceVal ?? 0);
             Value += (worldObject.Value ?? 0);
 
             TrySetChild(worldObject);
@@ -372,7 +378,10 @@ namespace ACE.Server.WorldObjects
 
             worldObject.IsAffecting = false;
 
-            EncumbranceVal -= (worldObject.EncumbranceVal ?? 0);
+            if ((worldObject.WeenieType == WeenieType.Ammunition || worldObject.WeenieType == WeenieType.Missile) && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                EncumbranceVal -= (int)Math.Ceiling((worldObject.EncumbranceVal ?? 0) / 2.0f);
+            else
+                EncumbranceVal -= (worldObject.EncumbranceVal ?? 0);
             Value -= (worldObject.Value ?? 0);
 
             ClearChild(worldObject);

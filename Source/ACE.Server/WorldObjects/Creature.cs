@@ -48,6 +48,11 @@ namespace ACE.Server.WorldObjects
         private Dictionary<uint, WorldObjectInfo> selectedTargets;
 
         /// <summary>
+        /// A list of ammo types and amount that we've been hit with. Used so we can drop some of that on our corpse.
+        /// </summary>
+        public Dictionary<uint, int> ammoHitWith;
+
+        /// <summary>
         /// Currently used to handle some edge cases for faction mobs
         /// DamageHistory.HasDamager() has the following issues:
         /// - if a player attacks a same-factioned mob but is evaded, the mob would quickly de-aggro
@@ -138,6 +143,8 @@ namespace ACE.Server.WorldObjects
             CurrentMotionState = new Motion(MotionStance.NonCombat, MotionCommand.Ready);
 
             selectedTargets = new Dictionary<uint, WorldObjectInfo>();
+
+            ammoHitWith = new Dictionary<uint, int>();
         }
 
         public override void BeforeEnterWorld()

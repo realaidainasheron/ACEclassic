@@ -584,6 +584,56 @@ namespace ACE.Server.WorldObjects
                     droppedItems.Add(item);
             }
 
+            // Drop the ammo we've been hit with.
+            if (ammoHitWith.Count > 0)
+            {
+                List<WorldObject> items = new List<WorldObject>();
+                foreach (var entry in ammoHitWith)
+                {
+                    uint wcid = entry.Key;
+                    int amount = entry.Value;
+                    while (amount > 0)
+                    {
+                        WorldObject wo = WorldObjectFactory.CreateNewWorldObject(wcid);
+
+                        if (wo.MaxStackSize.HasValue)
+                        {
+                            if ((wo.MaxStackSize.Value != 0) & (amount > wo.MaxStackSize.Value))
+                            {
+                                // fit what we can in this stack and move on to a new stack
+                                wo.SetStackSize(wo.MaxStackSize.Value);
+                                items.Add(wo);
+                                amount = amount - wo.MaxStackSize.Value;
+                            }
+                            else
+                            {
+                                // we can fit all the remaining amount in this stack
+                                wo.SetStackSize(amount);
+                                items.Add(wo);
+                                amount = 0;
+                            }
+                        }
+                        else
+                        {
+                            if (amount > 0)
+                            {
+                                amount--;
+                                items.Add(wo);
+                            }
+                        }
+                    }
+                }
+                ammoHitWith.Clear();
+
+                foreach (WorldObject wo in items)
+                {
+                    if (corpse != null)
+                        corpse.TryAddToInventory(wo);
+                    else
+                        droppedItems.Add(wo);
+                }
+            }
+
             return droppedItems;
         }
 
