@@ -169,6 +169,9 @@ namespace ACE.Server.WorldObjects
 
             var damageEvent = DamageEvent.CalculateDamage(this, target, damageSource);
 
+            if (!damageEvent.Evaded)
+                TryCastAssessCreatureAndPersonDebuffs(target, damageSource.ProjectileSource == null ? CombatType.Melee : CombatType.Missile);
+
             if (damageEvent.HasDamage)
             {
                 OnDamageTarget(target, damageEvent.CombatType, damageEvent.IsCritical);
@@ -479,12 +482,6 @@ namespace ACE.Server.WorldObjects
                 return AccuracyLevel + 0.6f;
             else
                 return 1.0f;
-        }
-        public override int GetUnarmedSkillDamageBonus()
-        {
-            var skill = GetCreatureSkill(Skill.UnarmedCombat).Current;
-
-            return (int)skill / 20;
         }
 
         public float GetPowerAccuracyBar()

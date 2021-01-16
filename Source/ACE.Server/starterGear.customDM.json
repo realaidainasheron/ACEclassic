@@ -132,243 +132,6 @@
             "name": "Magic Item Tinkering"
         },
         {
-            "id": "31",
-            "name": "Creature Enchantment",
-            "gear": [
-                {
-                    "weenieId": "12748",
-                    "name": "Training Wand",
-                    "stacksize": "1"
-                },
-                {
-                    "weenieId": "691",
-                    "name": "Lead Scarab",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "774",
-                    "name": "Hyssop",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "760",
-                    "name": "Realgar",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "789",
-                    "name": "Powdered Moonstone",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "749",
-                    "name": "Poplar Talisman",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "626",
-                    "name": "Powdered Hematite",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "750",
-                    "name": "Rowan Talisman",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "754",
-                    "name": "Cadmia",
-                    "stacksize": "10",
-                    "specializedOnly": "true"
-                },
-                {
-                    "weenieId": "782",
-                    "name": "Powdered Agate",
-                    "stacksize": "10",
-                    "specializedOnly": "true"
-                },
-                {
-                    "id": "1",
-                    "name": "Aluvian",
-                    "gear": [
-                        {
-                            "weenieId": "4914",
-                            "name": "Aluvian Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "2",
-                    "name": "Gharu'ndim",
-                    "gear": [
-                        {
-                            "weenieId": "4916",
-                            "name": "Gharu'ndim Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "3",
-                    "name": "Sho",
-                    "gear": [
-                        {
-                            "weenieId": "4915",
-                            "name": "Sho Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                }
-            ],
-            "spells": [
-                {
-                    "spellId": "1421",
-                    "name": "Focus Self I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "17",
-                    "name": "Invulnerability Other I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "18",
-                    "name": "Invulnerability Self I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "653",
-                    "name": "Mana Conversion Mastery Self I",
-                    "specializedOnly": "true"
-                },
-                {
-                    "spellId": "1445",
-                    "name": "Willpower Self I",
-                    "specializedOnly": "true"
-                }
-            ]
-        },
-        {
-            "id": "32",
-            "name": "Item Enchantment",
-            "gear": [
-                {
-                    "weenieId": "12748",
-                    "name": "Training Wand",
-                    "stacksize": "1"
-                },
-                {
-                    "weenieId": "691",
-                    "name": "Lead Scarab",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "774",
-                    "name": "Hyssop",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "740",
-                    "name": "Ashwood Talisman",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "759",
-                    "name": "Quicksilver",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "792",
-                    "name": "Powdered Turquoise",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "756",
-                    "name": "Cobalt",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "790",
-                    "name": "Powdered Onyx",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "761",
-                    "name": "Stibnite",
-                    "stacksize": "10",
-                    "specializedOnly": "true"
-                }
-            ],
-            "heritage": [
-                {
-                    "id": "1",
-                    "name": "Aluvian",
-                    "gear": [
-                        {
-                            "weenieId": "4914",
-                            "name": "Aluvian Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "2",
-                    "name": "Gharu'ndim",
-                    "gear": [
-                        {
-                            "weenieId": "4916",
-                            "name": "Gharu'ndim Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "3",
-                    "name": "Sho",
-                    "gear": [
-                        {
-                            "weenieId": "4915",
-                            "name": "Sho Wand",
-                            "stacksize": "1"
-                        }
-                    ]
-                }
-            ],
-            "spells": [
-                {
-                    "spellId": "35",
-                    "name": "Blood Drinker I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "1511",
-                    "name": "Bludgeon Bane I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "49",
-                    "name": "Swift Killer I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "51",
-                    "name": "Impenetrability I",
-                    "specializedOnly": "false"
-                },
-                {
-                    "spellId": "1599",
-                    "name": "Defender I",
-                    "specializedOnly": "true"
-                },
-                {
-                    "spellId": "37",
-                    "name": "Blade Bane I",
-                    "specializedOnly": "true"
-                }
-            ]
-        },
-        {
             "id": "33",
             "name": "Life Magic",
             "gear": [
@@ -440,6 +203,9 @@
                     "stacksize": "3",
                     "specializedOnly": "true"
                 }
+            ],
+            "heritage": [
+                {
                     "id": "1",
                     "name": "Aluvian",
                     "gear": [
@@ -1114,6 +880,17 @@
                             "stacksize": "50"
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "id": "48",
+            "name": "Shield",
+            "gear": [
+                {
+                    "weenieId": "93",
+                    "name": "Round Shield",
+                    "stacksize": "1"
                 }
             ]
         }

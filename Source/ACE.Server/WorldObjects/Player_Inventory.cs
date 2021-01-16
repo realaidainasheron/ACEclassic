@@ -1029,6 +1029,14 @@ namespace ACE.Server.WorldObjects
         {
             //Console.WriteLine($"DoHandleActionPutItemInContainer({item.Name}, {container.Name}, {itemWasEquipped}, {placement})");
 
+            ItemType containerValidTypes = (ItemType)(container.MerchandiseItemTypes ?? 0);
+            if (containerValidTypes != 0 && (item.ItemType & containerValidTypes) == 0)
+            {
+                Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"The {container.Name} can't hold that type of item!")); // Custom error message
+                Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, item.Guid.Full));
+                return false;
+            }
+
             Position prevLocation = null;
             Landblock prevLandblock = null;
 
@@ -1772,6 +1780,14 @@ namespace ACE.Server.WorldObjects
             if (IsTrading && ItemsInTradeWindow.Contains(stack.Guid))
             {
                 Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, stackId, WeenieError.TradeItemBeingTraded));
+                return;
+            }
+
+            ItemType containerValidTypes = (ItemType)(container.MerchandiseItemTypes ?? 0);
+            if (containerValidTypes != 0 && (stack.ItemType & containerValidTypes) == 0)
+            {
+                Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"The {container.Name} can't hold that type of item!")); // Custom error message
+                Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, stackId));
                 return;
             }
 

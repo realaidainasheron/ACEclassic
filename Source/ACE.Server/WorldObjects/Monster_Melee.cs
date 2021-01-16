@@ -94,6 +94,9 @@ namespace ACE.Server.WorldObjects
                     var weapon = GetEquippedWeapon();
                     var damageEvent = DamageEvent.CalculateDamage(this, target, weapon, motionCommand);
 
+                    if (!damageEvent.Evaded)
+                        TryCastAssessCreatureAndPersonDebuffs(target, CombatType.Melee);
+
                     //var damage = CalculateDamage(ref damageType, maneuver, bodyPart, ref critical, ref shieldMod);
 
                     if (damageEvent.HasDamage)

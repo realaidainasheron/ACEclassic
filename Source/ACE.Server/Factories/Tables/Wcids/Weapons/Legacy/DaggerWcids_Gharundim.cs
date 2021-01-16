@@ -80,53 +80,53 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
-                T1_Chances = new ChanceTable<WeenieClassName>()
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.jambiya,        0.45f ),
-                    ( WeenieClassName.khanjar,        0.45f ),
-                    ( WeenieClassName.dirk,           0.10f ),
-                };
-
-                T1_T3_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.jambiya,          0.25f ),
-                    ( WeenieClassName.jambiyaacid,      0.02f ),
-                    ( WeenieClassName.jambiyaelectric,  0.02f ),
-                    ( WeenieClassName.jambiyafire,      0.02f ),
-                    ( WeenieClassName.jambiyafrost,     0.02f ),
-
-                    ( WeenieClassName.khanjar,         0.26f ),
-                    ( WeenieClassName.khanjaracid,     0.02f ),
-                    ( WeenieClassName.khanjarelectric, 0.02f ),
-                    ( WeenieClassName.khanjarfire,     0.02f ),
-                    ( WeenieClassName.khanjarfrost,    0.02f ),
-
-                    ( WeenieClassName.dirk,           0.25f ),
-                    ( WeenieClassName.dirkacid,       0.02f ),
-                    ( WeenieClassName.dirkelectric,   0.02f ),
-                    ( WeenieClassName.dirkfire,       0.02f ),
-                    ( WeenieClassName.dirkfrost,      0.02f ),
-                };
-
-                T4_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.jambiya,          0.15f ),
-                    ( WeenieClassName.jambiyaacid,      0.009375f ),
-                    ( WeenieClassName.jambiyaelectric,  0.009375f ),
-                    ( WeenieClassName.jambiyafire,      0.009375f ),
-                    ( WeenieClassName.jambiyafrost,     0.009375f ),
-
-                    ( WeenieClassName.khanjar,         0.15f ),
-                    ( WeenieClassName.khanjaracid,     0.009375f ),
-                    ( WeenieClassName.khanjarelectric, 0.009375f ),
-                    ( WeenieClassName.khanjarfire,     0.009375f ),
-                    ( WeenieClassName.khanjarfrost,    0.009375f ),
-
+                    ( WeenieClassName.jambiya,        3.0f ),
+                    ( WeenieClassName.khanjar,        3.0f ),
                     ( WeenieClassName.dirk,           0.5f ),
-                    ( WeenieClassName.dirkacid,       0.03125f ),
-                    ( WeenieClassName.dirkelectric,   0.03125f ),
-                    ( WeenieClassName.dirkfire,       0.03125f ),
-                    ( WeenieClassName.dirkfrost,      0.03125f ),
+                };
+
+                T1_T3_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.jambiya,          4.0f ),
+                    ( WeenieClassName.jambiyaacid,      1.0f ),
+                    ( WeenieClassName.jambiyaelectric,  1.0f ),
+                    ( WeenieClassName.jambiyafire,      1.0f ),
+                    ( WeenieClassName.jambiyafrost,     1.0f ),
+
+                    ( WeenieClassName.khanjar,         4.0f ),
+                    ( WeenieClassName.khanjaracid,     1.0f ),
+                    ( WeenieClassName.khanjarelectric, 1.0f ),
+                    ( WeenieClassName.khanjarfire,     1.0f ),
+                    ( WeenieClassName.khanjarfrost,    1.0f ),
+
+                    ( WeenieClassName.dirk,           4.0f ),
+                    ( WeenieClassName.dirkacid,       1.0f ),
+                    ( WeenieClassName.dirkelectric,   1.0f ),
+                    ( WeenieClassName.dirkfire,       1.0f ),
+                    ( WeenieClassName.dirkfrost,      1.0f ),
+                };
+
+                T5_T6_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.knife,          1.0f ),
+                    ( WeenieClassName.knifeacid,      0.25f ),
+                    ( WeenieClassName.knifeelectric,  0.25f ),
+                    ( WeenieClassName.knifefire,      0.25f ),
+                    ( WeenieClassName.knifefrost,     0.25f ),
+
+                    ( WeenieClassName.dagger,         1.0f ),
+                    ( WeenieClassName.daggeracid,     0.25f ),
+                    ( WeenieClassName.daggerelectric, 0.25f ),
+                    ( WeenieClassName.daggerfire,     0.25f ),
+                    ( WeenieClassName.daggerfrost,    0.25f ),
+
+                    ( WeenieClassName.dirk,           4.0f ),
+                    ( WeenieClassName.dirkacid,       1.0f ),
+                    ( WeenieClassName.dirkelectric,   1.0f ),
+                    ( WeenieClassName.dirkfire,       1.0f ),
+                    ( WeenieClassName.dirkfrost,      1.0f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()
@@ -134,9 +134,9 @@ namespace ACE.Server.Factories.Tables.Wcids
                     T1_Chances,
                     T1_T3_Chances,
                     T1_T3_Chances,
-                    T4_Chances,
-                    T4_Chances,
-                    T4_Chances,
+                    T1_T3_Chances,
+                    T5_T6_Chances,
+                    T5_T6_Chances,
                 };
             }
         }

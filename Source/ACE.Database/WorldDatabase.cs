@@ -111,9 +111,52 @@ namespace ACE.Database
 
             weenie.WeeniePropertiesTextureMap = context.WeeniePropertiesTextureMap.Where(r => r.ObjectId == weenie.ClassId).ToList();
 
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                List<WeeniePropertiesSpellBook> newSpellBook = new List<WeeniePropertiesSpellBook>();
+                foreach (var entry in weenie.WeeniePropertiesSpellBook)
+                {
+                    if (!spellsToRemove.Contains((SpellId)entry.Spell))
+                        newSpellBook.Add(entry);
+                    else
+                        log.Warn($"Removed invalid spell {(SpellId)entry.Spell} from {weenie.GetProperty(PropertyString.Name)}.");
+                }
+                if (newSpellBook.Count != weenie.WeeniePropertiesSpellBook.Count)
+                    weenie.WeeniePropertiesSpellBook = newSpellBook;
+            }
+
             return weenie;
         }
 
+        List<SpellId> spellsToRemove = new List<SpellId>()
+        {
+            SpellId.BloodDrinkerSelf1,
+            SpellId.BloodDrinkerSelf2,
+            SpellId.BloodDrinkerSelf3,
+            SpellId.BloodDrinkerSelf4,
+            SpellId.BloodDrinkerSelf5,
+            SpellId.BloodDrinkerSelf6,
+            SpellId.BloodDrinkerSelf7,
+            SpellId.BloodDrinkerSelf8,
+
+            SpellId.SpiritDrinkerSelf1,
+            SpellId.SpiritDrinkerSelf2,
+            SpellId.SpiritDrinkerSelf3,
+            SpellId.SpiritDrinkerSelf4,
+            SpellId.SpiritDrinkerSelf5,
+            SpellId.SpiritDrinkerSelf6,
+            SpellId.SpiritDrinkerSelf7,
+            SpellId.SpiritDrinkerSelf8,
+
+            SpellId.Impenetrability1,
+            SpellId.Impenetrability2,
+            SpellId.Impenetrability3,
+            SpellId.Impenetrability4,
+            SpellId.Impenetrability5,
+            SpellId.Impenetrability6,
+            SpellId.Impenetrability7,
+            SpellId.Impenetrability8,
+        };
         /// <summary>
         /// This will populate all sub collections except the following: LandblockInstances, PointsOfInterest
         /// </summary>

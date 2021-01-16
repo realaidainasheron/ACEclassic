@@ -303,6 +303,8 @@ namespace ACE.Server.WorldObjects
 
             if (damage != null)
             {
+                sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetPlayer, CombatType.Magic);
+
                 // handle void magic DoTs:
                 // instead of instant damage, add DoT to target's enchantment registry
                 if (Spell.School == MagicSchool.VoidMagic && Spell.Duration > 0)
@@ -553,7 +555,7 @@ namespace ACE.Server.WorldObjects
                     var shield = target.GetEquippedShield();
                     if (shield != null && shield.AbsorbMagicDamage != null)
                     {
-                        if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                        if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
                             return GetShieldMod(target, shield);
                         else
                             return AbsorbMagic(target, shield);

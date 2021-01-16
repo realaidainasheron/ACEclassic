@@ -91,13 +91,13 @@ namespace ACE.Server.Factories.Tables.Wcids
             {
                 MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.club,             1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
+                    ( WeenieClassName.club,             3.0f ),
+                    ( WeenieClassName.clubspiked,       3.0f ),
 
-                    ( WeenieClassName.mace,             0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
+                    ( WeenieClassName.mace,             0.50f ),
+                    ( WeenieClassName.morningstar,      0.50f ),
 
-                    ( WeenieClassName.ace41057_greatstarmace,     0.125f ),
+                    ( WeenieClassName.ace41057_greatstarmace,     0.25f ),
                 };
 
                 MaceWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -135,13 +135,13 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.kasrullah,        1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
+                    ( WeenieClassName.kasrullah,        3.0f ),
+                    ( WeenieClassName.clubspiked,       3.0f ),
 
-                    ( WeenieClassName.dabus,            0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
+                    ( WeenieClassName.dabus,            0.50f ),
+                    ( WeenieClassName.morningstar,      0.50f ),
 
-                    ( WeenieClassName.ace41062_khandahandledmace, 0.125f ),
+                    ( WeenieClassName.ace41062_khandahandledmace, 0.25f ),
                 };
 
                 MaceWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -179,13 +179,13 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.jitte,            1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
+                    ( WeenieClassName.jitte,            3.0f ),
+                    ( WeenieClassName.clubspiked,       3.0f ),
 
-                    ( WeenieClassName.tofun,            0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
+                    ( WeenieClassName.tofun,            0.50f ),
+                    ( WeenieClassName.morningstar,      0.50f ),
 
-                    ( WeenieClassName.ace40635_tetsubo,           0.125f ),
+                    ( WeenieClassName.ace40635_tetsubo,           0.25f ),
                 };
 
                 MaceWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)

@@ -34,40 +34,52 @@ namespace ACE.Server.Factories
                     return;
             }
 
-            wo.UiEffects = UiEffects.Magical;
-
-            var maxBaseMana = GetMaxBaseMana(wo);
-
-            wo.ManaRate = CalculateManaRate(maxBaseMana);
-
-            if (roll == null)
+            if (numSpells == 0)
             {
-                wo.ItemMaxMana = RollItemMaxMana(profile.Tier, numSpells);
-                wo.ItemCurMana = wo.ItemMaxMana;
-
-                wo.ItemSpellcraft = RollSpellcraft(wo);
-                wo.ItemDifficulty = RollItemDifficulty(wo, numEpics, numLegendaries);
+                // we ended up without any spells, revert to non-magic item.
+                wo.ItemManaCost = null;
+                wo.ItemMaxMana = null;
+                wo.ItemCurMana = null;
+                wo.ItemSpellcraft = null;
+                wo.ItemDifficulty = null;
             }
             else
             {
-                var maxSpellMana = maxBaseMana;
+                wo.UiEffects = UiEffects.Magical;
 
-                if (wo.SpellDID != null)
+                var maxBaseMana = GetMaxBaseMana(wo);
+
+                wo.ManaRate = CalculateManaRate(maxBaseMana);
+
+                if (roll == null)
                 {
-                    var spell = new Server.Entity.Spell(wo.SpellDID.Value);
+                    wo.ItemMaxMana = RollItemMaxMana(profile.Tier, numSpells);
+                    wo.ItemCurMana = wo.ItemMaxMana;
 
-                    var castableMana = (int)spell.BaseMana * 5;
-
-                    if (castableMana > maxSpellMana)
-                        maxSpellMana = castableMana;
+                    wo.ItemSpellcraft = RollSpellcraft(wo);
+                    wo.ItemDifficulty = RollItemDifficulty(wo, numEpics, numLegendaries);
                 }
+                else
+                {
+                    var maxSpellMana = maxBaseMana;
 
-                wo.ItemMaxMana = RollItemMaxMana_New(wo, roll, maxSpellMana);
-                wo.ItemCurMana = wo.ItemMaxMana;
+                    if (wo.SpellDID != null)
+                    {
+                        var spell = new Server.Entity.Spell(wo.SpellDID.Value);
 
-                wo.ItemSpellcraft = RollSpellcraft(wo, roll);
+                        var castableMana = (int)spell.BaseMana * 5;
 
-                AddActivationRequirements(wo, profile, roll);
+                        if (castableMana > maxSpellMana)
+                            maxSpellMana = castableMana;
+                    }
+
+                    wo.ItemMaxMana = RollItemMaxMana_New(wo, roll, maxSpellMana);
+                    wo.ItemCurMana = wo.ItemMaxMana;
+
+                    wo.ItemSpellcraft = RollSpellcraft(wo, roll);
+
+                    AddActivationRequirements(wo, profile, roll);
+                }
             }
         }
 

@@ -217,7 +217,10 @@ namespace ACE.Server.WorldObjects
             if (includeSidePacks)
             {
                 foreach (var sidePack in Inventory.Values.OfType<Container>())
-                    freeSlots += (sidePack.ItemCapacity ?? 0) - sidePack.CountPackItems();
+                {
+                    if(sidePack.MerchandiseItemTypes == 0) // Do not take into account specialized containers when counting free slots as chances are the items won't match the container's limitations.
+                        freeSlots += (sidePack.ItemCapacity ?? 0) - sidePack.CountPackItems();
+                }
             }
 
             return freeSlots;

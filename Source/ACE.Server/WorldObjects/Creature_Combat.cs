@@ -7,6 +7,7 @@ using ACE.Entity.Enum;
 using ACE.Entity.Enum.Properties;
 using ACE.Server.Entity;
 using ACE.Server.Entity.Actions;
+using ACE.Server.Factories.Tables;
 using ACE.Server.Network.GameMessages.Messages;
 using ACE.Server.Physics.Animation;
 
@@ -408,17 +409,28 @@ namespace ACE.Server.WorldObjects
         /// <param name="attackType">Uses strength for melee, coordination for missile</param>
         public float GetAttributeMod(WorldObject weapon)
         {
+            // The damage done by melee weapons—such as swords, maces, daggers, spears, and so on—is now affected more by the strength of the combatant. Strong warriors will find that they do more damage per hit than before.
+            // This does not affect missile or unarmed combat. Note that this applies to monsters as well, so be careful when facing monsters that wield weapons!
+            // Asheron's Call Release Notes - 2000/02 - Shadows of the Past
+            if (GetCurrentWeaponSkill() == Skill.UnarmedCombat)
+                return 1.0f;
+
             var isBow = weapon != null && weapon.IsBow;
 
-            //var attribute = isBow || GetCurrentWeaponSkill() == Skill.FinesseWeapons ? Coordination : Strength;
             var attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons || weapon?.WeaponSkill == Skill.Dagger ? Coordination : Strength;
 
             return SkillFormula.GetAttributeMod((int)attribute.Current, isBow);
         }
         public virtual int GetUnarmedSkillDamageBonus()
         {
-            // doesn't apply for non-player creatures.
-            return 0;
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && GetCurrentWeaponSkill() == Skill.UnarmedCombat)
+            {
+                var skill = GetCreatureSkill(Skill.UnarmedCombat).Current;
+
+                return (int)skill / 20;
+            }
+            else
+                return 0;
         }
 
         /// <summary>
@@ -701,7 +713,7 @@ namespace ACE.Server.WorldObjects
 
             var effectiveLevel = effectiveSL * effectiveRL;
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
             {
                 // SL cap:
                 // Trained / untrained: 1/2 shield skill
@@ -994,6 +1006,118 @@ namespace ACE.Server.WorldObjects
                 playerSource.SendMessage(msg, ChatMessageType.Combat, this);
             if (playerTarget != null)
                 playerTarget.SendMessage(msg, ChatMessageType.Combat, this);
+        }
+
+        public void TryCastAssessCreatureAndPersonDebuffs(Creature target, CombatType combatType)
+        {
+            Player sourceAsPlayer = this as Player;
+            Player targetAsPlayer = target as Player;
+
+            Entity.CreatureSkill skill;
+            if (target.CreatureType == ACE.Entity.Enum.CreatureType.Human)
+                skill = GetCreatureSkill(Skill.AssessPerson);
+            else
+                skill = GetCreatureSkill(Skill.AssessCreature);
+
+            var activationChance = ThreadSafeRandom.Next(0.0f, 1.0f);
+            if (skill.AdvancementClass == SkillAdvancementClass.Specialized && activationChance > 0.25)
+                return;
+            else if (skill.AdvancementClass == SkillAdvancementClass.Trained && activationChance > 0.10)
+                return;
+            else if (skill.AdvancementClass == SkillAdvancementClass.Untrained || skill.AdvancementClass == SkillAdvancementClass.Inactive)
+                return;
+
+            Entity.CreatureSkill defenseSkill = GetCreatureSkill(Skill.Deception);
+
+            var avoidChance = 1.0f - SkillCheck.GetSkillChance(skill.Current, defenseSkill.Current);
+
+            if (avoidChance > ThreadSafeRandom.Next(0.0f, 1.0f))
+            {
+                if (sourceAsPlayer != null)
+                    sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{target.Name}'s deception stops you from finding a vulnerability!", ChatMessageType.Combat));
+                if (targetAsPlayer != null)
+                    targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your deception stops {Name} from finding a vulnerability!", ChatMessageType.Combat));
+
+                return;
+            }
+
+            string spellType;
+            // 1/3 chance of the vulnerability being explicity of the type of attack that was used, otherwise random 1/3 for each type, note that this rolls again for all 3 so that makes it a total of chance of 2/3 of it being of the same type as the attack.
+            SpellId spellId;
+            if (ThreadSafeRandom.Next(1, 3) == 1)
+            {
+                switch (combatType)
+                {
+                    default:
+                    case CombatType.Melee:
+                        spellId = SpellId.VulnerabilityOther1;
+                        spellType = "melee";
+                        break;
+                    case CombatType.Missile:
+                        spellId = SpellId.DefenselessnessOther1;
+                        spellType = "missile";
+                        break;
+                    case CombatType.Magic:
+                        spellId = SpellId.MagicYieldOther1;
+                        spellType = "magic";
+                        break;
+                }
+            }
+            else
+            {
+                var spellRNG = ThreadSafeRandom.Next(1, 3);
+                switch (spellRNG)
+                {
+                    default:
+                    case 1:
+                        spellId = SpellId.VulnerabilityOther1;
+                        spellType = "melee";
+                        break;
+                    case 2:
+                        spellId = SpellId.DefenselessnessOther1;
+                        spellType = "missile";
+                        break;
+                    case 3:
+                        spellId = SpellId.MagicYieldOther1;
+                        spellType = "magic";
+                        break;
+                }
+            }
+
+            var spellLevels = SpellLevelProgression.GetSpellLevels(spellId);
+            int maxUsableSpellLevel = Math.Min(spellLevels.Count, 5);
+
+            if (spellLevels.Count == 0)
+                return;
+
+            int minSpellLevel = Math.Max(0, (int)Math.Floor((skill.Current - 150) / 50.0));
+            int maxSpellLevel = Math.Max(0, Math.Min((int)Math.Floor((skill.Current - 50) / 50.0), maxUsableSpellLevel));
+
+            int spellLevel = ThreadSafeRandom.Next(minSpellLevel, maxSpellLevel);
+            var spell = new Spell(spellLevels[spellLevel]);
+
+            if (spell.NonComponentTargetType == ItemType.None)
+                TryCastSpell(spell, null, this, false, false);
+            else
+                TryCastSpell(spell, target, this, false, false);
+
+            string spellTypePrefix;
+            switch(spellLevel)
+            {
+                case 1: spellTypePrefix = "a minor"; break;
+                default:
+                case 2: spellTypePrefix = "a"; break;
+                case 3: spellTypePrefix = "a moderate"; break;
+                case 4: spellTypePrefix = "a severe"; break;
+                case 5: spellTypePrefix = "a major"; break;
+                case 6: spellTypePrefix = "a crippling"; break;
+            }
+
+            string skillMessage = skill.Skill == Skill.AssessCreature ? "creature" : "person";
+            if (sourceAsPlayer != null)
+                sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your assess {skillMessage} knowledge allows you to expose {spellTypePrefix} {spellType} vulnerability on {target.Name}!", ChatMessageType.Combat));
+            if (targetAsPlayer != null)
+                targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{Name}'s assess {skillMessage} knowledge exposes {spellTypePrefix} {spellType} vulnerability on you!", ChatMessageType.Combat));
         }
 
         /// <summary>

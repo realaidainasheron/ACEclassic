@@ -66,6 +66,9 @@ namespace ACE.Server.WorldObjects
 
                     damageEvent = DamageEvent.CalculateDamage(sourceCreature, targetCreature, worldObject);
 
+                    if (!damageEvent.Evaded)
+                        sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetPlayer, CombatType.Missile);
+
                     if (targetPlayer != null)
                     {
                         // monster damage player

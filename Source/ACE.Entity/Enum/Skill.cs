@@ -107,6 +107,19 @@ namespace ACE.Entity.Enum
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
+                ValidSkills.Remove(Skill.TwoHandedCombat);
+                ValidSkills.Remove(Skill.HeavyWeapons);
+                ValidSkills.Remove(Skill.LightWeapons);
+                ValidSkills.Remove(Skill.FinesseWeapons);
+                ValidSkills.Remove(Skill.MissileWeapons);
+                ValidSkills.Remove(Skill.Shield);
+                ValidSkills.Remove(Skill.DualWield);
+                ValidSkills.Remove(Skill.Recklessness);
+                ValidSkills.Remove(Skill.SneakAttack);
+                ValidSkills.Remove(Skill.DirtyFighting);
+                ValidSkills.Remove(Skill.VoidMagic);
+                ValidSkills.Remove(Skill.Summoning);
+
                 ValidSkills.Add(Skill.Axe);
                 ValidSkills.Add(Skill.Bow);
                 ValidSkills.Add(Skill.Crossbow);
@@ -119,22 +132,14 @@ namespace ACE.Entity.Enum
                 ValidSkills.Add(Skill.UnarmedCombat);
                 ValidSkills.Add(Skill.Salvaging);
             }
-            else
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
-                ValidSkills.Add(Skill.TwoHandedCombat);
-                ValidSkills.Add(Skill.HeavyWeapons);
-                ValidSkills.Add(Skill.LightWeapons);
-                ValidSkills.Add(Skill.FinesseWeapons);
-                ValidSkills.Add(Skill.MissileWeapons);
+                ValidSkills.Remove(Skill.ItemEnchantment);
+                ValidSkills.Remove(Skill.CreatureEnchantment);
+
                 ValidSkills.Add(Skill.Shield);
-                ValidSkills.Add(Skill.DualWield);
-                ValidSkills.Add(Skill.Recklessness);
-                ValidSkills.Add(Skill.SneakAttack);
-                ValidSkills.Add(Skill.DirtyFighting);
-                ValidSkills.Add(Skill.VoidMagic);
-                ValidSkills.Add(Skill.Summoning);
             }
-                
         }
 
         public static HashSet<Skill> ValidSkills = new HashSet<Skill>
@@ -164,6 +169,19 @@ namespace ACE.Entity.Enum
             Skill.Fletching,
             Skill.Alchemy,
             Skill.Cooking,
+            Skill.Salvaging,
+            Skill.TwoHandedCombat,
+            Skill.VoidMagic,
+            Skill.HeavyWeapons,
+            Skill.LightWeapons,
+            Skill.FinesseWeapons,
+            Skill.MissileWeapons,
+            Skill.Shield,
+            Skill.DualWield,
+            Skill.Recklessness,
+            Skill.SneakAttack,
+            Skill.DirtyFighting,
+            Skill.Summoning
         };
 
         public static HashSet<Skill> AttackSkills = new HashSet<Skill>

@@ -161,6 +161,11 @@ namespace ACE.Server.Factories
                 if (characterCreateInfo.SkillAdvancementClasses.Count != 55)
                     return CreateResult.ClientServerSkillsMismatch;
             }
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                if (characterCreateInfo.SkillAdvancementClasses.Count != 49) // Not really 49 but shield skill is id 48 so we get a few empty slots. The client doesn't seem to mind at all.
+                    return CreateResult.ClientServerSkillsMismatch;
+            }
             else
             {
                 if (characterCreateInfo.SkillAdvancementClasses.Count != 41)
