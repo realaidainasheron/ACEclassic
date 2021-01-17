@@ -136,43 +136,50 @@
             "name": "Life Magic",
             "gear": [
                 {
-                    "weenieId": "12748",
-                    "name": "Training Wand",
-                    "stacksize": "1"
-                },
-                {
-                    "weenieId": "691",
-                    "name": "Lead Scarab",
+                    "weenieId": "752",
+                    "name": "Yew Talisman",
                     "stacksize": "3"
                 },
                 {
-                    "weenieId": "780",
-                    "name": "Wormwood",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "790",
-                    "name": "Powdered Onyx",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "756",
-                    "name": "Cobalt",
-                    "stacksize": "10"
-                },
-                {
-                    "weenieId": "744",
-                    "name": "Ebony Talisman",
+                    "weenieId": "751",
+                    "name": "Willow Talisman",
                     "stacksize": "3"
                 },
                 {
-                    "weenieId": "744",
-                    "name": "Hyssop",
+                    "weenieId": "747",
+                    "name": "Hemlock Talisman",
+                    "stacksize": "3",
+                    "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "741",
+                    "name": "Birch Talisman",
+                    "stacksize": "3",
+                    "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "627",
+                    "name": "Alder Talisman",
+                    "stacksize": "3"
+                },                
+                {
+                    "weenieId": "763",
+                    "name": "Verdigris",
                     "stacksize": "10"
                 },
                 {
-                    "weenieId": "783",
-                    "name": "Powdered Amber",
+                    "weenieId": "760",
+                    "name": "Realgar",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "759",
+                    "name": "Quicksilver",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "758",
+                    "name": "Gypsum",
                     "stacksize": "10"
                 },
                 {
@@ -181,27 +188,67 @@
                     "stacksize": "10"
                 },
                 {
-                    "weenieId": "751",
-                    "name": "Willow Talisman",
-                    "stacksize": "3"
-                },
-                {
-                    "weenieId": "776",
-                    "name": "Mugwort",
-                    "stacksize": "10",
-                    "specializedOnly": "true"
+                    "weenieId": "756",
+                    "name": "Cobalt",
+                    "stacksize": "10"
                 },
                 {
                     "weenieId": "755",
                     "name": "Cinnabar",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "754",
+                    "name": "Cadmia",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "753",
+                    "name": "Brimstone",
+                    "stacksize": "10"
+                },                
+                {
+                    "weenieId": "783",
+                    "name": "Powdered Amber",
+                    "stacksize": "10"
+                },                
+                {
+                    "weenieId": "778",
+                    "name": "Saffron",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "776",
+                    "name": "Mugwort",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "775",
+                    "name": "Mandrake",
                     "stacksize": "10",
                     "specializedOnly": "true"
                 },
                 {
-                    "weenieId": "752",
-                    "name": "Yew Talisman",
-                    "stacksize": "3",
+                    "weenieId": "774",
+                    "name": "Hyssop",
+                    "stacksize": "10"
+                },
+                {
+                    "weenieId": "768",
+                    "name": "Damiana",
+                    "stacksize": "10",
                     "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "766",
+                    "name": "Bistort",
+                    "stacksize": "10",
+                    "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "691",
+                    "name": "Lead Scarab",
+                    "stacksize": "3"
                 }
             ],
             "heritage": [
@@ -251,13 +298,148 @@
                     "specializedOnly": "false"
                 },
                 {
-                    "spellId": "1237",
-                    "name": "Drain Health Other I",
+                    "spellId": "1183",
+                    "name": "Revitalize Other I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1177",
+                    "name": "Revitalize Self I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "206",
+                    "name": "Mana Renewal Other I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "212",
+                    "name": "Mana Renewal Self I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "159",
+                    "name": "Regenerate Other I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "165",
+                    "name": "Regenerate Self I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "53",
+                    "name": "Rejuvenate Other I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "54",
+                    "name": "Rejuvenate Self I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1278",
+                    "name": "Health to Mana I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1272",
+                    "name": "Health to Stamina I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1290",
+                    "name": "Mana to Health I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1296",
+                    "name": "Mana to Stamina I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1664",
+                    "name": "Stamina to Health I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1676",
+                    "name": "Stamina to Mana I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1225",
+                    "name": "Infuse Health I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "9",
+                    "name": "Infuse Mana I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1243",
+                    "name": "Infuse Stamina I",
+                    "specializedOnly": "false"
+                },
+                {
+                    "spellId": "1195",
+                    "name": "Enfeeble Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "1219",
+                    "name": "Mana Drain Other I",
                     "specializedOnly": "true"
                 },
                 {
                     "spellId": "7",
                     "name": "Harm Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "194",
+                    "name": "Exhaustion Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "171",
+                    "name": "Fester Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "218",
+                    "name": "Mana Depletion Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "1237",
+                    "name": "Drain Health Other I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "1260",
+                    "name": "Drain Mana I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "1249",
+                    "name": "Drain Stamina I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "2774",
+                    "name": "Martyr's Blight I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "2767",
+                    "name": "Martyr's Tenacity I",
+                    "specializedOnly": "true"
+                },
+                {
+                    "spellId": "2760",
+                    "name": "Martyr's Hecatomb I",
                     "specializedOnly": "true"
                 }
             ]
@@ -265,31 +447,27 @@
         {
             "id": "34",
             "name": "War Magic",
-            "gear": [
+            "gear": [                
                 {
-                    "weenieId": "12748",
-                    "name": "Training Wand",
-                    "stacksize": "1"
-                },
-                {
-                    "weenieId": "691",
-                    "name": "Lead Scarab",
+                    "weenieId": "741",
+                    "name": "Birch Talisman",
                     "stacksize": "3"
-                },
-                {
-                    "weenieId": "772",
-                    "name": "Hawthorn",
-                    "stacksize": "10"
                 },
                 {
                     "weenieId": "790",
                     "name": "Powdered Onyx",
                     "stacksize": "10"
+                },                
+                {
+                    "weenieId": "764",
+                    "name": "Vitriol",
+                    "stacksize": "10"
                 },
                 {
-                    "weenieId": "741",
-                    "name": "Birch Talisman",
-                    "stacksize": "3"
+                    "weenieId": "763",
+                    "name": "Verdigris",
+                    "stacksize": "10",
+                    "specializedOnly": "true"
                 },
                 {
                     "weenieId": "762",
@@ -302,10 +480,31 @@
                     "stacksize": "10"
                 },
                 {
+                    "weenieId": "757",
+                    "name": "Colcothar",
+                    "stacksize": "10"
+                },
+                {
                     "weenieId": "756",
                     "name": "Cobalt",
                     "stacksize": "10",
                     "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "753",
+                    "name": "Brimstone",
+                    "stacksize": "10",
+                    "specializedOnly": "true"
+                },
+                {
+                    "weenieId": "772",
+                    "name": "Hawthorn",
+                    "stacksize": "10"
+                },                
+                {
+                    "weenieId": "691",
+                    "name": "Lead Scarab",
+                    "stacksize": "3"
                 }
             ],
             "heritage": [
@@ -471,13 +670,6 @@
         {
             "id": "1",
             "name": "Axe",
-            "gear": [
-                {
-                    "weenieId": "12740",
-                    "name": "Training Hand Axe",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -517,13 +709,6 @@
         {
             "id": "4",
             "name": "Dagger",
-            "gear": [
-                {
-                    "weenieId": "12739",
-                    "name": "Training Dagger",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -563,13 +748,6 @@
         {
             "id": "5",
             "name": "Mace",
-            "gear": [
-                {
-                    "weenieId": "12744",
-                    "name": "Training Mace",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -609,13 +787,6 @@
         {
             "id": "9",
             "name": "Spear",
-            "gear": [
-                {
-                    "weenieId": "12745",
-                    "name": "Training Spear",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -655,13 +826,6 @@
         {
             "id": "10",
             "name": "Staff",
-            "gear": [
-                {
-                    "weenieId": "12743",
-                    "name": "Training Staff",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -701,13 +865,6 @@
         {
             "id": "11",
             "name": "Sword",
-            "gear": [
-                {
-                    "weenieId": "12747",
-                    "name": "Training Short Sword",
-                    "stacksize": "1"
-                }
-            ],
             "heritage": [
                 {
                     "id": "1",
@@ -746,24 +903,12 @@
         },
         {
             "id": "13",
-            "name": "Unarmed Combat",
-            "gear": [
-                {
-                    "weenieId": "12742",
-                    "name": "Training Cestus",
-                    "stacksize": "1"
-                }
-            ]
+            "name": "Unarmed Combat"
         },
         {
             "id": "2",
             "name": "Bow",
             "gear": [
-                {
-                    "weenieId": "12741",
-                    "name": "Training Shortbow",
-                    "stacksize": "1"
-                },
                 {
                     "weenieId": "300",
                     "name": "Arrows",
@@ -811,11 +956,6 @@
             "name": "Crossbow",
             "gear": [
                 {
-                    "weenieId": "12749",
-                    "name": "Light Training Crossbow",
-                    "stacksize": "1"
-                },
-                {
                     "weenieId": "305",
                     "name": "Bolts",
                     "stacksize": "250"
@@ -832,19 +972,14 @@
             "name": "Thrown Weapons",
             "gear": [
                 {
-                    "weenieId": "12746",
-                    "name": "Training Atlatl",
+                    "weenieId": "23109",
+                    "name": "Starter Atlatl",
                     "stacksize": "1"
                 },
                 {
                     "weenieId": "12464",
                     "name": "Atlatl Darts",
                     "stacksize": "200"
-                },
-                {
-                    "weenieId": "23109",
-                    "name": "Starter Atlatl",
-                    "stacksize": "1"
                 }
             ],
             "heritage": [

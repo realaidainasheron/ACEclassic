@@ -492,6 +492,36 @@ namespace ACE.Server.WorldObjects
             return newStackSize <= maxStackSize;
         }
 
+        List<SpellId> spellsToRemove = new List<SpellId>()
+        {
+            SpellId.BloodDrinkerSelf1,
+            SpellId.BloodDrinkerSelf2,
+            SpellId.BloodDrinkerSelf3,
+            SpellId.BloodDrinkerSelf4,
+            SpellId.BloodDrinkerSelf5,
+            SpellId.BloodDrinkerSelf6,
+            SpellId.BloodDrinkerSelf7,
+            SpellId.BloodDrinkerSelf8,
+
+            SpellId.SpiritDrinkerSelf1,
+            SpellId.SpiritDrinkerSelf2,
+            SpellId.SpiritDrinkerSelf3,
+            SpellId.SpiritDrinkerSelf4,
+            SpellId.SpiritDrinkerSelf5,
+            SpellId.SpiritDrinkerSelf6,
+            SpellId.SpiritDrinkerSelf7,
+            SpellId.SpiritDrinkerSelf8,
+
+            SpellId.Impenetrability1,
+            SpellId.Impenetrability2,
+            SpellId.Impenetrability3,
+            SpellId.Impenetrability4,
+            SpellId.Impenetrability5,
+            SpellId.Impenetrability6,
+            SpellId.Impenetrability7,
+            SpellId.Impenetrability8,
+        };
+
         /// <summary>
         /// If enough burden is available, this will try to add an item to the main pack. If the main pack is full, it will try to add it to the first side pack with room.<para />
         /// It will also increase the EncumbranceVal and Value.
@@ -508,7 +538,24 @@ namespace ACE.Server.WorldObjects
                 }
             }
 
-            IList<WorldObject> containerItems;
+            // Temp test code
+            if (this is Player)
+            {
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    var list = worldObject.Biota.GetKnownSpellsIds(BiotaDatabaseLock);
+                    foreach (var entry in list)
+                    {
+                        if (spellsToRemove.Contains((SpellId)entry))
+                        {
+                            worldObject.Biota.TryRemoveKnownSpell(entry, BiotaDatabaseLock);
+                            log.Warn($"Removed invalid spell {(SpellId)entry} from {worldObject.GetProperty(PropertyString.Name)}.");
+                        }
+                    }
+                }
+            }
+
+            IList <WorldObject> containerItems;
 
             if (worldObject.UseBackpackSlot)
             {

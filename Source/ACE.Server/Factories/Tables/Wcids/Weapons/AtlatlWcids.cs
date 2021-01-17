@@ -78,6 +78,9 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.axethrowing, 1.0f ),
                     ( WeenieClassName.clubthrowing, 1.0f ),
                     ( WeenieClassName.daggerthrowing, 1.0f ),
+                    ( WeenieClassName.javelin, 1.0f ),
+                    ( WeenieClassName.shuriken, 1.0f ),
+                    ( WeenieClassName.djarid, 1.0f ),
                 };
 
                 T1_T4_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -108,6 +111,24 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.daggerthrowingfire,        1.0f ),
                     ( WeenieClassName.daggerthrowingfrost,       1.0f ),
                     ( WeenieClassName.daggerthrowingelectric,    1.0f ),
+
+                    ( WeenieClassName.javelin,                   4.0f ),
+                    ( WeenieClassName.javelinacid,               1.0f ),
+                    ( WeenieClassName.javelinfire,               1.0f ),
+                    ( WeenieClassName.javelinfrost,              1.0f ),
+                    ( WeenieClassName.javelinelectric,           1.0f ),
+
+                    ( WeenieClassName.shuriken,                  4.0f ),
+                    ( WeenieClassName.shurikenacid,              1.0f ),
+                    ( WeenieClassName.shurikenfire,              1.0f ),
+                    ( WeenieClassName.shurikenfrost,             1.0f ),
+                    ( WeenieClassName.shurikenelectric,          1.0f ),
+
+                    ( WeenieClassName.djarid,                    4.0f ),
+                    ( WeenieClassName.djaridacid,                1.0f ),
+                    ( WeenieClassName.djaridfire,                1.0f ),
+                    ( WeenieClassName.djaridfrost,               1.0f ),
+                    ( WeenieClassName.djaridelectric,            1.0f ),
                 };
 
                 T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -145,6 +166,24 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.daggerthrowingfire,         1.75f ),
                     ( WeenieClassName.daggerthrowingfrost,        1.75f ),
                     ( WeenieClassName.daggerthrowingelectric,     1.75f ),
+
+                    ( WeenieClassName.javelin,                    7.0f ),
+                    ( WeenieClassName.javelinacid,                1.75f ),
+                    ( WeenieClassName.javelinfire,                1.75f ),
+                    ( WeenieClassName.javelinfrost,               1.75f ),
+                    ( WeenieClassName.javelinelectric,            1.75f ),
+
+                    ( WeenieClassName.shuriken,                   7.0f ),
+                    ( WeenieClassName.shurikenacid,               1.75f ),
+                    ( WeenieClassName.shurikenfire,               1.75f ),
+                    ( WeenieClassName.shurikenfrost,              1.75f ),
+                    ( WeenieClassName.shurikenelectric,           1.75f ),
+
+                    ( WeenieClassName.djarid,                     7.0f ),
+                    ( WeenieClassName.djaridacid,                 1.75f ),
+                    ( WeenieClassName.djaridfire,                 1.75f ),
+                    ( WeenieClassName.djaridfrost,                1.75f ),
+                    ( WeenieClassName.djaridelectric,             1.75f ),
                 };
 
                 T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -180,6 +219,24 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.daggerthrowingfire,         1.0f ),
                     ( WeenieClassName.daggerthrowingfrost,        1.0f ),
                     ( WeenieClassName.daggerthrowingelectric,     1.0f ),
+
+                    ( WeenieClassName.javelin,                    1.0f ),
+                    ( WeenieClassName.javelinacid,                1.0f ),
+                    ( WeenieClassName.javelinfire,                1.0f ),
+                    ( WeenieClassName.javelinfrost,               1.0f ),
+                    ( WeenieClassName.javelinelectric,            1.0f ),
+
+                    ( WeenieClassName.shuriken,                   1.0f ),
+                    ( WeenieClassName.shurikenacid,               1.0f ),
+                    ( WeenieClassName.shurikenfire,               1.0f ),
+                    ( WeenieClassName.shurikenfrost,              1.0f ),
+                    ( WeenieClassName.shurikenelectric,           1.0f ),
+
+                    ( WeenieClassName.djarid,                     1.0f ),
+                    ( WeenieClassName.djaridacid,                 1.0f ),
+                    ( WeenieClassName.djaridfire,                 1.0f ),
+                    ( WeenieClassName.djaridfrost,                1.0f ),
+                    ( WeenieClassName.djaridelectric,             1.0f ),
                 };
 
                 // we have to refresh this list or it will still contain the previous values.

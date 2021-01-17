@@ -27,6 +27,7 @@ using ACE.Server.Network.GameMessages;
 using ACE.Server.WorldObjects;
 
 using Position = ACE.Entity.Position;
+using ACE.Common;
 
 namespace ACE.Server.Entity
 {
@@ -290,14 +291,14 @@ namespace ACE.Server.Entity
                     if (sortCell != null && sortCell.has_building())
                         return;
 
-                    //temp test
-                    //if (wo.Biota.PropertiesInt[PropertyInt.MaxGeneratedObjects] < 2)
-                    //{
-                    //    wo.Biota.PropertiesInt[PropertyInt.MaxGeneratedObjects] = 2;
-                    //    wo.Biota.PropertiesInt[PropertyInt.InitGeneratedObjects] = 2;
-
-                    //    wo.Biota.PropertiesFloat[PropertyFloat.GeneratorRadius] = 50;
-                    //}
+                    //temp landscape spawn multiplier test
+                    if (wo.MaxGeneratedObjects < 3)
+                    {
+                        int value = ThreadSafeRandom.Next(1, 3);
+                        wo.MaxGeneratedObjects = value;
+                        wo.InitGeneratedObjects = value;
+                        wo.SetProperty(PropertyFloat.GeneratorRadius, 50);
+                    }
 
                     if (PropertyManager.GetBool("override_encounter_spawn_rates").Item)
                     {

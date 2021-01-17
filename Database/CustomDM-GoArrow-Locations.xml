@@ -21209,9 +21209,25 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1375</id>
+    <id>1948</id>
     <latitude>-33.3</latitude>
     <longitude>56.9</longitude>
+    <name>Arwic to Al-Jalima</name>
+    <type>Portal</type>
+    <arrival_latitude>-7.2</arrival_latitude>
+    <arrival_longitude>5</arrival_longitude>
+    <description>Now exits at 7.2N, 5.0E &lt;I&gt;-- November Raine 7/17/2004&lt;/i&gt;</description>
+    <date_added>2004-07-17T11:43:38.0000000-07:00</date_added>
+    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
+    <dungeon_id>
+    </dungeon_id>
+    <retired>N</retired>
+    <tod_req>0</tod_req>
+  </location>
+  <location>
+    <id>1375</id>
+    <latitude>-33.9</latitude>
+    <longitude>56.5</longitude>
     <name>Arwic to Tou Tou Portal</name>
     <type>Portal</type>
     <arrival_latitude>28.1</arrival_latitude>
@@ -30171,22 +30187,6 @@
     <date_added>2004-07-16T00:18:00.4700000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>02C1</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1948</id>
-    <latitude>-33.9</latitude>
-    <longitude>56.5</longitude>
-    <name>Arwic to Al-Jalima</name>
-    <type>Portal</type>
-    <arrival_latitude>-7.2</arrival_latitude>
-    <arrival_longitude>5</arrival_longitude>
-    <description>Now exits at 7.2N, 5.0E &lt;I&gt;-- November Raine 7/17/2004&lt;/i&gt;</description>
-    <date_added>2004-07-17T11:43:38.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>

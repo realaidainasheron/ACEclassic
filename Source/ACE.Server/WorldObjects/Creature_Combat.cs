@@ -1090,8 +1090,8 @@ namespace ACE.Server.WorldObjects
             if (spellLevels.Count == 0)
                 return;
 
-            int minSpellLevel = Math.Max(0, (int)Math.Floor((skill.Current - 150) / 50.0));
-            int maxSpellLevel = Math.Max(0, Math.Min((int)Math.Floor((skill.Current - 50) / 50.0), maxUsableSpellLevel));
+            int minSpellLevel = Math.Max(0, (int)Math.Floor(((float)skill.Current - 150) / 50.0));
+            int maxSpellLevel = Math.Max(0, Math.Min((int)Math.Floor(((float)skill.Current - 50) / 50.0), maxUsableSpellLevel));
 
             int spellLevel = ThreadSafeRandom.Next(minSpellLevel, maxSpellLevel);
             var spell = new Spell(spellLevels[spellLevel]);
@@ -1102,7 +1102,7 @@ namespace ACE.Server.WorldObjects
                 TryCastSpell(spell, target, this, false, false);
 
             string spellTypePrefix;
-            switch(spellLevel)
+            switch(spellLevel + 1)
             {
                 case 1: spellTypePrefix = "a minor"; break;
                 default:

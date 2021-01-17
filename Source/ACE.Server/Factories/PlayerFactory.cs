@@ -13,6 +13,8 @@ using ACE.Entity.Enum.Properties;
 using ACE.Entity.Models;
 using ACE.Server.WorldObjects;
 using ACE.Server.Managers;
+using ACE.Server.Entity;
+using ACE.Database.Models.Shard;
 
 namespace ACE.Server.Factories
 {
@@ -258,6 +260,9 @@ namespace ACE.Server.Factories
                 {
                     foreach (var item in skillGear.Gear)
                     {
+                        if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && item.SpecializedOnly == true)
+                            continue;
+
                         if (grantedWeenies.Contains(item.WeenieId))
                         {
                             var existingItem = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == item.WeenieId);
@@ -374,10 +379,28 @@ namespace ACE.Server.Factories
                             continue;
                         }
 
+                        bool spellAdded = false;
                         if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && spell.SpecializedOnly == false)
-                            player.AddKnownSpell(spell.SpellId);
+                            spellAdded = player.AddKnownSpell(spell.SpellId);
                         else if (charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
-                            player.AddKnownSpell(spell.SpellId);
+                            spellAdded = player.AddKnownSpell(spell.SpellId);
+
+                        if (spellAdded && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                        {
+                            // Quality of life: set the entries for the player's /fillcomps
+                            Spell spellEntity = new Spell(spell.SpellId);
+                            foreach (var componentId in spellEntity.Formula.Components)
+                            {
+                                uint amount = 10;
+                                if (SpellFormula.SpellComponentsTable.SpellComponents.TryGetValue(componentId, out var spellComponent))
+                                {
+                                    if (spellComponent.Type == (int)SpellComponentsTable.Type.Scarab || spellComponent.Type == (int)SpellComponentsTable.Type.Talisman)
+                                        amount = 3;
+
+                                    player.Character.AddFillComponent(Spell.GetComponentWCID(componentId), amount, player.CharacterDatabaseLock, out _);
+                                }
+                            }
+                        }
                     }
                 }
             }
