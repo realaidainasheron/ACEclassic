@@ -327,6 +327,21 @@ namespace ACE.Server.Factories.Tables.Wcids
                     case WeenieClassName.daggerthrowingfire:
                     case WeenieClassName.daggerthrowingfrost:
                     case WeenieClassName.daggerthrowingelectric:
+                    case WeenieClassName.javelin:
+                    case WeenieClassName.javelinacid:
+                    case WeenieClassName.javelinfire:
+                    case WeenieClassName.javelinfrost:
+                    case WeenieClassName.javelinelectric:
+                    case WeenieClassName.shuriken:
+                    case WeenieClassName.shurikenacid:
+                    case WeenieClassName.shurikenfire:
+                    case WeenieClassName.shurikenfrost:
+                    case WeenieClassName.shurikenelectric:
+                    case WeenieClassName.djarid:
+                    case WeenieClassName.djaridacid:
+                    case WeenieClassName.djaridfire:
+                    case WeenieClassName.djaridfrost:
+                    case WeenieClassName.djaridelectric:
                         weaponType = TreasureWeaponType.Thrown;
                         break;
                     case WeenieClassName.atlatl:
