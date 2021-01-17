@@ -686,7 +686,11 @@ namespace ACE.Server.WorldObjects
             var mainhand = GetEquippedMainHand();
             var offhand = GetEquippedOffHand();
 
-            var mainhandBurden = mainhand?.EncumbranceVal ?? 0;
+            int mainhandBurden;
+            if (mainhand?.StackSize > 1) // Thrown weapons should only use the burden of a single unit and not the entire stack.
+                mainhandBurden = mainhand?.StackUnitEncumbrance ?? 0;
+            else
+                mainhandBurden = mainhand?.EncumbranceVal ?? 0;
             var offhandBurden = offhand?.EncumbranceVal ?? 0;
 
             return mainhandBurden + offhandBurden;
