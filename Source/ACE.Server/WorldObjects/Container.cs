@@ -538,23 +538,6 @@ namespace ACE.Server.WorldObjects
                 }
             }
 
-            // Temp test code
-            if (this is Player)
-            {
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
-                {
-                    var list = worldObject.Biota.GetKnownSpellsIds(BiotaDatabaseLock);
-                    foreach (var entry in list)
-                    {
-                        if (spellsToRemove.Contains((SpellId)entry))
-                        {
-                            worldObject.Biota.TryRemoveKnownSpell(entry, BiotaDatabaseLock);
-                            log.Warn($"Removed invalid spell {(SpellId)entry} from {worldObject.GetProperty(PropertyString.Name)}.");
-                        }
-                    }
-                }
-            }
-
             IList <WorldObject> containerItems;
 
             if (worldObject.UseBackpackSlot)
@@ -622,6 +605,29 @@ namespace ACE.Server.WorldObjects
             Value += (worldObject.Value ?? 0);
 
             container = this;
+
+            // Temp test code
+            WorldObject owner = null;
+            if (container is Player || container is Corpse)
+                owner = container;
+            else if (container.OwnerId.HasValue)
+                owner = PlayerManager.GetOnlinePlayer(container.OwnerId.Value);
+
+            if (owner != null)
+            {
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    var list = worldObject.Biota.GetKnownSpellsIds(BiotaDatabaseLock);
+                    foreach (var entry in list)
+                    {
+                        if (spellsToRemove.Contains((SpellId)entry))
+                        {
+                            worldObject.Biota.TryRemoveKnownSpell(entry, BiotaDatabaseLock);
+                            log.Warn($"Removed invalid spell {(SpellId)entry} from {worldObject.GetProperty(PropertyString.Name)}.");
+                        }
+                    }
+                }
+            }
 
             OnAddItem();
 

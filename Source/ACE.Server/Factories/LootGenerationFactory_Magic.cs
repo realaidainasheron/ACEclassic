@@ -829,8 +829,16 @@ namespace ACE.Server.Factories
             // - mutates 0% of the time for all other item types
             var itemSkillLevelFactor = 0.0f;
 
-            if (wo.ItemSkillLevelLimit > 0)
-                itemSkillLevelFactor = wo.ItemSkillLevelLimit.Value / 2.0f;
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                if (wo.ItemSkillLevelLimit > 0)
+                    itemSkillLevelFactor = wo.ItemSkillLevelLimit.Value / 4.0f;
+            }
+            else
+            {
+                if (wo.ItemSkillLevelLimit > 0)
+                    itemSkillLevelFactor = wo.ItemSkillLevelLimit.Value / 2.0f;
+            }
 
             var fArcane = spellcraft - itemSkillLevelFactor;
 
