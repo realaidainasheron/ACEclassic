@@ -170,7 +170,7 @@ namespace ACE.Server.WorldObjects.Managers
                     if (player != null)
                     {
                         var amt = emote.Amount64 ?? emote.Amount ?? 0;
-                        if (amt > 0)
+                        if (amt > 0 || Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                         {
                             player.EarnXP(amt, XpType.Quest, player.Level, ShareType.All);
                         }

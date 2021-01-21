@@ -23,6 +23,58 @@ namespace ACE.Server.WorldObjects
         {
             //Console.WriteLine($"{Name}.EarnXP({amount}, {sharable}, {fixedAmount})");
 
+            bool usesRewardByLevelSystem = false;
+            int formulaVersion = 0;
+            if (xpType == XpType.Quest && amount < 0 && amount > -6000) // this range is used to specify the reward by level system.
+            {
+                if (amount <= -5000)
+                {
+                    xpSourceLevel = -((int)amount + 5000);
+                    formulaVersion = 5;
+                }
+                else if (amount <= -4000)
+                {
+                    xpSourceLevel = -((int)amount + 4000);
+                    formulaVersion = 4;
+                }
+                else if (amount <= -3000)
+                {
+                    xpSourceLevel = -((int)amount + 3000);
+                    formulaVersion = 3;
+                }
+                else if (amount <= -2000)
+                {
+                    xpSourceLevel = -((int)amount + 2000);
+                    formulaVersion = 2;
+                }
+                else if (amount <= -1000)
+                {
+                    xpSourceLevel = -((int)amount + 1000);
+                    formulaVersion = 1;
+                }
+                else
+                {
+                    xpSourceLevel = -(int)amount;
+                    formulaVersion = 0;
+                }
+                usesRewardByLevelSystem = true;
+
+                int modifiedLevel = Math.Max((int)Level, 5);
+
+                if (Level < 100 && modifiedLevel <= xpSourceLevel / 3)
+                {
+                    xpSourceLevel = modifiedLevel * 3;
+                    Session.Network.EnqueueSend(new GameMessageSystemChat("Your experience reward has been reduced because your level is not high enough!", ChatMessageType.System));
+                }
+
+                amount = Creature.GetCreatureDeathXP(xpSourceLevel.Value, 0, 0, formulaVersion);
+            }
+            else if (amount < 0)
+            {
+                SpendXP(-amount);
+                return;
+            }
+
             // apply xp modifier
             var modifier = PropertyManager.GetDouble("xp_modifier").Item;
 
@@ -43,18 +95,36 @@ namespace ACE.Server.WorldObjects
             }
             else if (xpType == XpType.Quest && xpSourceLevel != null)
             {
-                if (xpSourceLevel < 16)
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
-                else if (xpSourceLevel < 36)
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
-                else if (xpSourceLevel < 56)
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
-                else if (xpSourceLevel < 76)
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
-                else if (xpSourceLevel < 96)
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                if (usesRewardByLevelSystem)
+                {
+                    if (xpSourceLevel < 28)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
+                    else if (xpSourceLevel < 65)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
+                    else if (xpSourceLevel < 95)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
+                    else if (xpSourceLevel < 110)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
+                    else if (xpSourceLevel < 135)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                    else
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+                }
                 else
-                    modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+                {
+                    if (xpSourceLevel < 16)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
+                    else if (xpSourceLevel < 36)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
+                    else if (xpSourceLevel < 56)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
+                    else if (xpSourceLevel < 76)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
+                    else if (xpSourceLevel < 96)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                    else
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+                }
             }
 
             // should this be passed upstream to fellowship / allegiance?

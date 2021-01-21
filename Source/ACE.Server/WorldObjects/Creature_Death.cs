@@ -190,9 +190,14 @@ namespace ACE.Server.WorldObjects
 
                 var damagePercent = totalDamage / totalHealth;
 
-                var totalXP = (XpOverride ?? 0) * damagePercent;
+                float totalXP;
 
-                playerDamager.EarnXP((long)Math.Round(totalXP), XpType.Kill, Level );
+                if(Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.CustomDM)
+                    totalXP = (XpOverride ?? 0) * damagePercent;
+                else
+                    totalXP = GetCreatureDeathXP(Level ?? 0, (int)Health.MaxValue, Biota.PropertiesSpellBook?.Count ?? 0) * damagePercent;
+
+                playerDamager.EarnXP((long)Math.Round(totalXP), XpType.Kill, Level);
 
                 // handle luminance
                 if (LuminanceAward != null)
@@ -201,6 +206,37 @@ namespace ACE.Server.WorldObjects
                     playerDamager.EarnLuminance(totalLuminance, XpType.Kill);
                 }
             }
+        }
+        public static int GetCreatureDeathXP(int level, int hitpoints = 0, int numSpellInSpellbook = 0, int formulaVersion = 0)
+        {
+            double baseXp = Math.Min((1.75 * Math.Pow(level, 2)) + (20 * level), 30000);
+
+            switch (formulaVersion)
+            {
+                case 1:
+                    baseXp *= 10;
+                    break;
+                case 2:
+                    baseXp *= 15;
+                    break;
+                case 3:
+                    baseXp *= (level / 2) + 5000;
+                    break;
+                case 4:
+                    baseXp *= level + 10000;
+                    break;
+                case 5:
+                    baseXp *= (level * 3) + 15000;
+                    break;
+                default:
+                    break;
+            }
+
+            double hitpointsXp = hitpoints / 10 * baseXp / 35;
+
+            double casterXp = baseXp * (numSpellInSpellbook / 20);
+
+            return (int)Math.Round(baseXp + hitpointsXp + casterXp);
         }
 
         /// <summary>

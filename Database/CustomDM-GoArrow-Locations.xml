@@ -4453,22 +4453,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>286</id>
-    <latitude>-41.4</latitude>
-    <longitude>26.3</longitude>
-    <name>Lich House</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>A small house in the middle of nowhere with a Lich inside&lt;BR&gt;Decent treasure on the Lich.  Got Blood Drinker II Battle Axe.  Shreths (blood and hunter), Bandies, and Reed Sharks in the area.  &lt;I&gt;	-- Thirmon Kashkan 6/12/2000 &lt;/i&gt;</description>
-    <date_added>1999-09-09T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>287</id>
     <latitude>73</latitude>
     <longitude>17.1</longitude>
@@ -5717,22 +5701,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Castle with Banderlings (Guards, +) and Mosswarts (Feeders, +). Also an Interest point (Lower one between Khayyaban and Baishi). &lt;I&gt; -- Dunc&lt;/i&gt;&lt;BR&gt;Roughly two dozen monsters in and around the walls, and a rich mix of local fauna surrounding -- zefirs, drudges, golems, lugians. When I scanned I found no objects in the fort. &lt;I&gt;	-- Doc Feelgood 3/9/2000 &lt;/i&gt;</description>
     <date_added>1999-10-09T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>368</id>
-    <latitude>-0.2</latitude>
-    <longitude>16.3</longitude>
-    <name>Samsur NW lifestone</name>
-    <type>Lifestone</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>&lt;I&gt; -- Nether&lt;/i&gt;&lt;BR&gt;Just west of the main town of Samsur on top of the advocate building is a portal to NW Samsur right by this lifestone. Theres also a return portal, so this lifestone pretty much server as the main one for the town. &lt;I&gt;	-- Nether 11/6/99 &lt;/i&gt;</description>
-    <date_added>1999-10-10T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -11716,22 +11684,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>Nice place, great view!  Lifestone nearby, banderlings in easy reach.  Even has Revitalizing Vat in the lower level. You can get to the top od the plateau from &lt;I&gt; -- Willow&lt;/i&gt;</description>
     <date_added>2000-04-29T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>756</id>
-    <latitude>-30.7</latitude>
-    <longitude>26.4</longitude>
-    <name>Stone Formation</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Stone formation at top of hill.  A mud golem appears from time to time.  Nothing more.  Dont use this place as a rest area. &lt;I&gt; -- Asharad Hett&lt;/i&gt;</description>
-    <date_added>2000-04-30T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -21370,11 +21322,11 @@
     <id>1384</id>
     <latitude>-38.8</latitude>
     <longitude>-75.2</longitude>
-    <name>BlueSpire</name>
+    <name>Bluespire</name>
     <type>Town</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Precise coords of BlueSpire.  &lt;I&gt; -- Oint&lt;/i&gt;&lt;BR&gt;This is a town for lowest levels. Collector Merlonna Farel seeks Carenzi pouchling, Marsh Siraluun, Drudge Charms, and Mud Golem hearts. &lt;I&gt; -- Doc Feelgood 11/24/2001 &lt;/i&gt;</description>
+    <description>Precise coords of Bluespire.  &lt;I&gt; -- Oint&lt;/i&gt;&lt;BR&gt;This is a town for lowest levels. Collector Merlonna Farel seeks Carenzi pouchling, Marsh Siraluun, Drudge Charms, and Mud Golem hearts. &lt;I&gt; -- Doc Feelgood 11/24/2001 &lt;/i&gt;</description>
     <date_added>2001-10-12T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -21386,7 +21338,7 @@
     <id>1385</id>
     <latitude>-40.7</latitude>
     <longitude>-83.3</longitude>
-    <name>RedSpire</name>
+    <name>Redspire</name>
     <type>Town</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -21402,11 +21354,11 @@
     <id>1386</id>
     <latitude>-43.2</latitude>
     <longitude>-66.7</longitude>
-    <name>GreenSpire</name>
+    <name>Greenspire</name>
     <type>Town</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Precise coords of GreenSpire.  &lt;I&gt; -- Oint&lt;/i&gt;&lt;BR&gt;Most of the town merchants live in a condoized version of the Tou Tou lighthouse. Collector Shalon ibn Mayar seeks Carenzi Burrower, Littoral Siraluun, Drudge Charms, Sand Golem hearts. Britana deals with Mattekar hides (Nov 01 patch) &lt;I&gt; -- Doc Feelgood 11/24/2001 &lt;/i&gt;</description>
+    <description>Precise coords of Greenspire.  &lt;I&gt; -- Oint&lt;/i&gt;&lt;BR&gt;Most of the town merchants live in a condoized version of the Tou Tou lighthouse. Collector Shalon ibn Mayar seeks Carenzi Burrower, Littoral Siraluun, Drudge Charms, Sand Golem hearts. Britana deals with Mattekar hides (Nov 01 patch) &lt;I&gt; -- Doc Feelgood 11/24/2001 &lt;/i&gt;</description>
     <date_added>2001-10-12T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -21510,22 +21462,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1394</id>
-    <latitude>-42.1</latitude>
-    <longitude>-83.5</longitude>
-    <name>Aun Mariona - May be missing!</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>This is where you find Aun Mariona and deliver the Note from Hea Toneawa to Aun Mariona &lt;I&gt; -- Skam Jim-One&lt;/i&gt;&lt;font color = red&gt;She is not here.  Shes not in game, as far as I can see.  The note from Hea Toneawa (as of Pillars Made of Sand) claims she is at 41.1N, 74.4W.  She is not there, either.&lt;/font&gt; &lt;I&gt;-- Solan Thommad 6/13/2004&lt;/i&gt; Geomancer here: This could be some kind of mid-month thing that will become enabled due to a quest, so Im not going to delete this record. Instead I changed the name to include May be missing!. Ill post a note about it on the main page.&lt;/i&gt;</description>
-    <date_added>2001-10-26T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1395</id>
     <latitude>-53</latitude>
     <longitude>-73.3</longitude>
@@ -21549,7 +21485,7 @@
     <type>Dungeon</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Habitat for dozens of Olthoi Legionaries&lt;I&gt; -- Fewglee&lt;/i&gt;&lt;BR&gt;Pincers are dropped in the Red Haze Room -- a flood room near the bottom exit. &lt;I&gt; -- Doc Feelgood 1/26/2003 &lt;/i&gt;&lt;BR&gt;Return the pincher to Behdon Yii in RedSpire for your reward.&lt;/i&gt;</description>
+    <description>Habitat for dozens of Olthoi Legionaries&lt;I&gt; -- Fewglee&lt;/i&gt;&lt;BR&gt;Pincers are dropped in the Red Haze Room -- a flood room near the bottom exit. &lt;I&gt; -- Doc Feelgood 1/26/2003 &lt;/i&gt;&lt;BR&gt;Return the pincher to Behdon Yii in Redspire for your reward.&lt;/i&gt;</description>
     <date_added>2001-10-26T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>027C</dungeon_id>
@@ -21564,7 +21500,7 @@
     <type>Dungeon</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
-    <description>Lots of soldiers, one near the bottom has a soldier pincer which you turn in to Behdo Yii at RedSpire.</description>
+    <description>Lots of soldiers, one near the bottom has a soldier pincer which you turn in to Behdo Yii at Redspire.</description>
     <date_added>2001-10-26T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>0282</dungeon_id>
@@ -21606,7 +21542,7 @@
     <id>1400</id>
     <latitude>-43.2</latitude>
     <longitude>-68.2</longitude>
-    <name>GreenSpire to RedSpire Portal</name>
+    <name>Greenspire to Redspire Portal</name>
     <type>Portal</type>
     <arrival_latitude>-40.6</arrival_latitude>
     <arrival_longitude>-83</arrival_longitude>
@@ -21910,7 +21846,7 @@
     <type>Portal</type>
     <arrival_latitude>21.8</arrival_latitude>
     <arrival_longitude>-1.8</arrival_longitude>
-    <description>South of GreenSpire&lt;I&gt; -- Khellian&lt;/i&gt; New exit coords: 21.8S, 1.8W (was 22.2S, 2.1W) &lt;I&gt;-- Dutton 7/11/2004&lt;/i&gt;</description>
+    <description>South of Greenspire&lt;I&gt; -- Khellian&lt;/i&gt; New exit coords: 21.8S, 1.8W (was 22.2S, 2.1W) &lt;I&gt;-- Dutton 7/11/2004&lt;/i&gt;</description>
     <date_added>2001-10-28T00:00:00.0000000-07:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -21954,7 +21890,7 @@
     <id>1422</id>
     <latitude>-43.4</latitude>
     <longitude>-82.5</longitude>
-    <name>Hea Raider's Cache</name>
+    <name>Hea Raiders' Cache</name>
     <type>Landmark</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -22344,54 +22280,6 @@
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
     <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers ends (or begins, depending on your perspective). -VolShebnik, HG 1/15/2002</description>
-    <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1447</id>
-    <latitude>13.3</latitude>
-    <longitude>0.3</longitude>
-    <name>Markers New Direction 1</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers turns to the SE (or W, depending on your perspective). -VolShebnik, HG 1/15/2002</description>
-    <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1448</id>
-    <latitude>19.7</latitude>
-    <longitude>5.8</longitude>
-    <name>Markers New Direction 2</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers turns to the S (or NW, depending on your perspective). -VolShebnik, HG 1/15/2002</description>
-    <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1449</id>
-    <latitude>24.5</latitude>
-    <longitude>5.8</longitude>
-    <name>Markers New Direction 3</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers turns to the SW (or N, depending on your perspective). -VolShebnik, HG 1/15/2002</description>
     <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
@@ -29952,7 +29840,7 @@
     <id>1933</id>
     <latitude>-52.8</latitude>
     <longitude>-78.1</longitude>
-    <name>Mutilator Tunnel_s</name>
+    <name>Mutilator Tunnels</name>
     <type>Dungeon</type>
     <arrival_latitude>0</arrival_latitude>
     <arrival_longitude>0</arrival_longitude>
@@ -34300,13 +34188,11 @@ You will find her at the base of the Marescent Cliffs, almost directly north fro
     <id>2197</id>
     <latitude>-42.2</latitude>
     <longitude>-82.8</longitude>
-    <name>Aun Bernawa</name>
+    <name>Note from Aun Mariona to Hea Toneawa</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): An Aun Hea Romance.
-
-Aun Bernawa tells you, I am waiting here for Hea Toneawa. I don't suppose he gave anything to you for my sister, Mariona?</description>
+    <description>Quest(s): An Aun Hea Romance.</description>
     <date_added>2001-10-28 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
@@ -47634,96 +47520,6 @@ Note: The coordinates are those of the portal arrival spot. - Soulitaire, CoD ca
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2986</id>
-    <latitude>-46.5</latitude>
-    <longitude>-75.8</longitude>
-    <name>Menhir Ring (1)</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Olthoi Queen.
-
-Hand Aun Kahmaula a Pyreal Bell to break the Menhir Ring and spawn the Drummer at Menhir Ring #2.</description>
-    <date_added>2001-12-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2987</id>
-    <latitude>-49.2</latitude>
-    <longitude>-74.6</longitude>
-    <name>Menhir Ring (2)</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Olthoi Queen, Menhir Mana Fields #20.
-
-Hand Aun Gehaua a Pyreal Bell to break the Menhir Ring and spawn the Drummer at Menhir Ring #3.</description>
-    <date_added>2001-12-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2988</id>
-    <latitude>-46.5</latitude>
-    <longitude>-75.8</longitude>
-    <name>Menhir Ring (3)</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Olthoi Queen.
-
-Hand Aun Tanaua a Pyreal Bell to break the Menhir Ring and spawn the Drummer at Menhir Ring #4.</description>
-    <date_added>2001-12-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2989</id>
-    <latitude>-44.7</latitude>
-    <longitude>-80.9</longitude>
-    <name>Menhir Ring (4)</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Olthoi Queen.
-
-Hand Aun Laiaua a Pyreal Bell to break the Menhir Ring and spawn the Drummer at Menhir Ring #5.</description>
-    <date_added>2001-12-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2990</id>
-    <latitude>-50.1</latitude>
-    <longitude>-80.4</longitude>
-    <name>Menhir Ring (5)</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Olthoi Queen.
-
-Hand Aun Aanaua a Pyreal Bell to break the Menhir Ring and spawn the Young Olthoi Queen in the Royal Hive.</description>
-    <date_added>2001-12-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2991</id>
     <latitude>-11</latitude>
     <longitude>21.1</longitude>
@@ -47733,40 +47529,6 @@ Hand Aun Aanaua a Pyreal Bell to break the Menhir Ring and spawn the Young Oltho
     <arrival_longitude>0.000</arrival_longitude>
     <description>A bunker with a handful of Sandy Armoredillos above and below ground.</description>
     <date_added>2002-01-09 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2992</id>
-    <latitude>22.3</latitude>
-    <longitude>-4.7</longitude>
-    <name>Corpse of Admim ibn Ibsar</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Search for Abmim ibn Ibsar and Mad Star Investigation.
-
-The corpse of Admim ibn Ibsar, bobbing gently near the surface of the water.</description>
-    <date_added>2002-01-15 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2993</id>
-    <latitude>-43.3</latitude>
-    <longitude>-82.5</longitude>
-    <name>Hea Raiders' Cache</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>This cache is guarded by the Hea Tumeroks. It is rumored that Hea Karenua can be found wandering the plateau, carrying keys to this precious trove.</description>
-    <date_added>2002-01-25 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>
     </dungeon_id>
@@ -49098,24 +48860,6 @@ Thanks to Dindas Fury TD.</description>
     <description>A corpse holding a rumor in its hand.  
 
 Killed by a Red Rat.</description>
-    <date_added>2004-04-10 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>3078</id>
-    <latitude>25.5</latitude>
-    <longitude>3.4</longitude>
-    <name>Undead Encampment</name>
-    <type>Landmark</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>I heard that a band of Undead with their Sand Golems in tow ambushed a caravan to the southeast of town and took its treasure for their own.
-
-There is a Runed Chest here.</description>
     <date_added>2004-04-10 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>

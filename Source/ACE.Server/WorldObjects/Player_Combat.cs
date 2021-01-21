@@ -170,7 +170,7 @@ namespace ACE.Server.WorldObjects
             var damageEvent = DamageEvent.CalculateDamage(this, target, damageSource);
 
             if (!damageEvent.Evaded)
-                TryCastAssessCreatureAndPersonDebuffs(target, damageSource.ProjectileSource == null ? CombatType.Melee : CombatType.Missile);
+                TryCastAssessCreatureAndPersonDebuffs(target, (damageSource == null || damageSource.ProjectileSource == null) ? CombatType.Melee : CombatType.Missile);
 
             if (damageEvent.HasDamage)
             {
