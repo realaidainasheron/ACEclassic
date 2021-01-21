@@ -306,6 +306,8 @@ namespace ACE.Server.WorldObjects
 
             var skill = salvageAmount > tinkeringAmount ? Skill.Salvaging : GetMaxSkill(TinkeringSkills).Skill;
 
+            addStructure = (int)(Math.Round(addStructure * PropertyManager.GetDouble("salvage_amount_multiplier").Item));
+
             message = salvageResults.GetMessage(salvageItem.MaterialType ?? ACE.Entity.Enum.MaterialType.Unknown, skill);
             message.Amount += (uint)addStructure;
 

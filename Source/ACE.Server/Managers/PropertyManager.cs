@@ -622,7 +622,8 @@ namespace ACE.Server.Managers
                 ("xp_modifier_reward_tier3", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 36 and 56")),
                 ("xp_modifier_reward_tier4", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 56 and 76")),
                 ("xp_modifier_reward_tier5", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being between level 76 and 96")),
-                ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being over level 96"))
+                ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests while being over level 96")),
+                ("salvage_amount_multiplier", new Property<double>(1.0, "Scales the amount of salvage a player gets from items"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =
