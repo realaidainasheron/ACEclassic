@@ -297,7 +297,7 @@ namespace ACE.Server.Entity
                         int value = ThreadSafeRandom.Next(1, 3);
                         wo.MaxGeneratedObjects = value;
                         wo.InitGeneratedObjects = value;
-                        wo.SetProperty(PropertyFloat.GeneratorRadius, 50);
+                        wo.SetProperty(PropertyFloat.GeneratorRadius, 40);
                     }
 
                     if (PropertyManager.GetBool("override_encounter_spawn_rates").Item)

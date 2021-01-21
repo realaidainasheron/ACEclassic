@@ -298,6 +298,10 @@ namespace ACE.Server.WorldObjects
             var salvageAmount = CalcNumUnits((int)salvageSkill, workmanship, AugmentationBonusSalvage) * stackSize;
             var tinkeringAmount = CalcNumUnits((int)highestTrainedTinkeringSkill, workmanship, 0);
 
+            var salvageMultiplier = PropertyManager.GetDouble("salvage_amount_multiplier").Item;
+            salvageAmount = (int)(salvageAmount * salvageMultiplier);
+            tinkeringAmount = (int)(tinkeringAmount * salvageMultiplier);
+
             // cap tinkeringAmount to item workmanship
             tinkeringAmount = Math.Min(tinkeringAmount, (int)Math.Round(salvageItem.Workmanship ?? 1.0f)) * stackSize;
 
@@ -305,8 +309,6 @@ namespace ACE.Server.WorldObjects
             var addStructure = Math.Max(salvageAmount, tinkeringAmount);
 
             var skill = salvageAmount > tinkeringAmount ? Skill.Salvaging : GetMaxSkill(TinkeringSkills).Skill;
-
-            addStructure = (int)(Math.Round(addStructure * PropertyManager.GetDouble("salvage_amount_multiplier").Item));
 
             message = salvageResults.GetMessage(salvageItem.MaterialType ?? ACE.Entity.Enum.MaterialType.Unknown, skill);
             message.Amount += (uint)addStructure;
