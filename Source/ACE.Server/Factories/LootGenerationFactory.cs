@@ -49,6 +49,9 @@ namespace ACE.Server.Factories
                 if (creature != null)
                 {
                     deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+                    if (deathTreasure == null)
+                        return deathTreasure;
+
                     tweakedDeathTreasure = new Database.Models.World.TreasureDeath(deathTreasure);
 
                     float itemLootChance = 1.0f;
@@ -154,7 +157,10 @@ namespace ACE.Server.Factories
                     case 338: deathTreasureId = 456; break;
                     case 456: deathTreasureId = 457; break;
                 }
+
                 deathTreasure = DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+                if (deathTreasure == null)
+                    return deathTreasure;
 
                 if (tweakedFor is Chest)
                 {

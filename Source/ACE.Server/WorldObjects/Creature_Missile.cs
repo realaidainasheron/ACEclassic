@@ -204,7 +204,11 @@ namespace ACE.Server.WorldObjects
         {
             var missileLauncher = GetEquippedMissileWeapon();
 
-            var maxVelocity = missileLauncher?.MaximumVelocity ?? DefaultProjectileSpeed;
+            double maxVelocity;
+            if (missileLauncher?.WeenieType == WeenieType.Missile)
+                maxVelocity = GetThrownWeaponMaxVelocity(this, missileLauncher);
+            else
+                maxVelocity = missileLauncher?.MaximumVelocity ?? DefaultProjectileSpeed;
 
             if (maxVelocity == 0.0f)
             {
@@ -376,7 +380,13 @@ namespace ACE.Server.WorldObjects
         public float GetMaxMissileRange()
         {
             var weapon = GetEquippedMissileWeapon();
-            var maxVelocity = weapon?.MaximumVelocity ?? DefaultMaxVelocity;
+            double maxVelocity = weapon?.MaximumVelocity ?? DefaultMaxVelocity;
+
+            //if (WeenieType == WeenieType.Missile && (weapon?.MaximumVelocity ?? 0) == 0)
+            if (weapon?.WeenieType == WeenieType.Missile)
+                maxVelocity = GetThrownWeaponMaxVelocity(this, weapon);
+            else
+                maxVelocity = weapon?.MaximumVelocity ?? DefaultMaxVelocity;
 
             var missileRange = (float)Math.Pow(maxVelocity, 2.0f) * 0.1020408163265306f;
             //var missileRange = (float)Math.Pow(maxVelocity, 2.0f) * 0.0682547266398198f;

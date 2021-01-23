@@ -737,6 +737,26 @@ namespace ACE.Server.WorldObjects
             //Console.WriteLine("ShieldMod: " + shieldMod);
             return shieldMod;
         }
+        public static double GetThrownWeaponMaxVelocity(Creature thrower, WorldObject throwed)
+        {
+            if (thrower == null || throwed == null)
+                return 0;
+
+            return GetThrownWeaponMaxVelocity((int)thrower.Strength.Current, ((throwed.StackUnitEncumbrance ?? throwed.EncumbranceVal) ?? 1));
+        }
+
+        public static double GetEstimatedThrownWeaponMaxVelocity(WorldObject throwed)
+        {
+            if (throwed == null)
+                return 0;
+
+            return GetThrownWeaponMaxVelocity(100, ((throwed.StackUnitEncumbrance ?? throwed.EncumbranceVal) ?? 1));
+        }
+
+        public static double GetThrownWeaponMaxVelocity(int throwerStrength, int throwedEncumbrance)
+        {
+            return Math.Clamp(16 - 0.06 * throwerStrength + 0.0009 * Math.Pow(throwerStrength, 2) - (Math.Sqrt(throwedEncumbrance) - Math.Sqrt(5)), 5.45, 27.3); // Custom formula - Asheron's Call Strategies and Secrets has some info on the original formula on pages 150 and 151.
+        }
 
         /// <summary>
         /// Returns the total applicable Recklessness modifier,

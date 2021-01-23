@@ -4343,22 +4343,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>279</id>
-    <latitude>15.7</latitude>
-    <longitude>1.1</longitude>
-    <name>Skeleton Temple</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Skeletons (L5) and Skeleton Warriors (L12) - Wa Zing</description>
-    <date_added>1999-09-07T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>280</id>
     <latitude>-41.8</latitude>
     <longitude>32.1</longitude>
@@ -22240,38 +22224,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1445</id>
-    <latitude>13.3</latitude>
-    <longitude>-3</longitude>
-    <name>Markers Beginning Point</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers begins (or ends, depending on your perspective). -VolShebnik, HG 1/15/2002These barriers were enacted by Elyssa Strathelar and Asheron after some of the other starter halls were destroyed by Martine. These barriers surround all the lower level towns and mark basically the low level areas from the rest of surrounding area. &lt;I&gt;-- Gelior Drake of Solclaim 9/17/2003&lt;/i&gt;</description>
-    <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1446</id>
-    <latitude>27.8</latitude>
-    <longitude>2.6</longitude>
-    <name>Markers End Point</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>There is a line of floating, spinning markers that seem to have scorched the earth below where they float. This line encircles Yaraq. I have no idea as to what it portends. This is where this line of markers ends (or begins, depending on your perspective). -VolShebnik, HG 1/15/2002</description>
-    <date_added>2002-01-15T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1450</id>
     <latitude>-49.3</latitude>
     <longitude>-74.6</longitude>
@@ -28094,25 +28046,6 @@
     <arrival_longitude>0</arrival_longitude>
     <description>&lt;I&gt;-- Astalon Decurth - WE 2/27/2004&lt;/i&gt;</description>
     <date_added>2004-02-27T08:37:12.9330000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1883</id>
-    <latitude>17.8</latitude>
-    <longitude>-3.7</longitude>
-    <name>New Tumerok starter camp</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>This was added in the March 2004 Patch
-&lt;br&gt;It features a Runed Chest and sometimes a plain chest too surrounded by low level tumeroks  and drudge slaves
-&lt;br&gt;
-&lt;br&gt;good for a new char I suppose &lt;I&gt;-- Astral Dominae of TD 3/10/2004&lt;/i&gt;</description>
-    <date_added>2004-03-10T11:29:59.4900000-08:00</date_added>
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>

@@ -54,9 +54,20 @@ namespace ACE.Server.Network.Structure
             DamageVariance = GetDamageVariance(weapon, wielder);
             DamageMod = GetDamageMultiplier(weapon, wielder);
             WeaponLength = weapon.GetProperty(PropertyFloat.WeaponLength) ?? 1.0f;
-            MaxVelocity = weapon.MaximumVelocity ?? 1.0f;
+            if(weapon.WeenieType == WeenieType.Missile)
+            {
+                if (wielder == null)
+                {
+                    // we're not wielded so estimate the thrown distance.
+                    MaxVelocity = Creature.GetEstimatedThrownWeaponMaxVelocity(weapon);
+                    MaxVelocityEstimated = 1; // Enables the "(based on STRENGTH 100)" text.
+                }
+                else
+                    MaxVelocity = Creature.GetThrownWeaponMaxVelocity(wielder as Creature, weapon);
+            }
+            else
+                MaxVelocity = weapon.MaximumVelocity ?? 1.0f;
             WeaponOffense = GetWeaponOffense(weapon, wielder);
-            //MaxVelocityEstimated = (uint)Math.Round(MaxVelocity);   // not found in pcaps?
         }
 
         /// <summary>
