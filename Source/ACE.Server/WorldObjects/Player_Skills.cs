@@ -607,23 +607,44 @@ namespace ACE.Server.WorldObjects
                 return !AlwaysTrained.Contains(skill);
             else
             {
-                if (skill != Skill.ArcaneLore && !AlwaysTrained.Contains(skill))
+                if (!AlwaysTrained.Contains(skill))
                     return true; // this gets the easy ones out of the way.
 
-                switch (heritageGroup)
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                 {
-                    case HeritageGroup.Aluvian:
-                        if (skill == Skill.Dagger || skill == Skill.AssessPerson)
-                            return false;
-                        break;
-                    case HeritageGroup.Gharundim:
-                        if (skill == Skill.Staff || skill == Skill.ItemTinkering)
-                            return false;
-                        break;
-                    case HeritageGroup.Sho:
-                        if (skill == Skill.UnarmedCombat)
-                            return false;
-                        break;
+                    switch (heritageGroup)
+                    {
+                        case HeritageGroup.Aluvian:
+                            if (skill == Skill.Shield)
+                                return false;
+                            break;
+                        case HeritageGroup.Gharundim:
+                            if (skill == Skill.Salvaging)
+                                return false;
+                            break;
+                        case HeritageGroup.Sho:
+                            if (skill == Skill.AssessPerson)
+                                return false;
+                            break;
+                    }
+                }
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                {
+                    switch (heritageGroup)
+                    {
+                        case HeritageGroup.Aluvian:
+                            if (skill == Skill.Dagger || skill == Skill.AssessPerson)
+                                return false;
+                            break;
+                        case HeritageGroup.Gharundim:
+                            if (skill == Skill.Staff || skill == Skill.ItemTinkering)
+                                return false;
+                            break;
+                        case HeritageGroup.Sho:
+                            if (skill == Skill.UnarmedCombat)
+                                return false;
+                            break;
+                    }
                 }
                 return true;
             }
@@ -923,6 +944,8 @@ namespace ACE.Server.WorldObjects
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
+                AlwaysTrained.Remove(Skill.ArcaneLore);
+
                 PlayerSkills.Remove(Skill.TwoHandedCombat);
                 PlayerSkills.Remove(Skill.HeavyWeapons);
                 PlayerSkills.Remove(Skill.LightWeapons);
@@ -951,8 +974,13 @@ namespace ACE.Server.WorldObjects
 
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
+                AlwaysTrained.Remove(Skill.Salvaging);
+
                 PlayerSkills.Remove(Skill.ItemEnchantment);
                 PlayerSkills.Remove(Skill.CreatureEnchantment);
+                PlayerSkills.Remove(Skill.Crossbow);
+                PlayerSkills.Remove(Skill.Mace);
+                PlayerSkills.Remove(Skill.Staff);
 
                 PlayerSkills.Add(Skill.Shield);
             }

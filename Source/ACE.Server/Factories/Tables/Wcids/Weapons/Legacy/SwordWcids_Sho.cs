@@ -208,12 +208,36 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(int tier)
+        public static WeenieClassName Roll(int tier, out TreasureWeaponType weaponType)
         {
             // todo: add unique profiles for t7 / t8?
             tier = Math.Clamp(tier, 1, 6);
 
-            return weaponTiers[tier - 1].Roll();
+            var weapon = weaponTiers[tier - 1].Roll();
+
+            switch (weapon)
+            {
+                case WeenieClassName.swordrapier:
+                case WeenieClassName.yaoji:
+                case WeenieClassName.yaojiacid:
+                case WeenieClassName.yaojielectric:
+                case WeenieClassName.yaojifire:
+                case WeenieClassName.yaojifrost:
+                    weaponType = TreasureWeaponType.SwordMS;
+                    break;
+                case WeenieClassName.ace40760_nodachi:
+                case WeenieClassName.ace40761_acidnodachi:
+                case WeenieClassName.ace40762_lightningnodachi:
+                case WeenieClassName.ace40763_flamingnodachi:
+                case WeenieClassName.ace40764_frostnodachi:
+                    weaponType = TreasureWeaponType.TwoHandedSword;
+                    break;
+                default:
+                    weaponType = TreasureWeaponType.Sword;
+                    break;
+            }
+
+            return weapon;
         }
     }
 }

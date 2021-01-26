@@ -137,6 +137,9 @@ namespace ACE.Entity.Enum
             {
                 ValidSkills.Remove(Skill.ItemEnchantment);
                 ValidSkills.Remove(Skill.CreatureEnchantment);
+                ValidSkills.Remove(Skill.Crossbow);
+                ValidSkills.Remove(Skill.Mace);
+                ValidSkills.Remove(Skill.Staff);
 
                 ValidSkills.Add(Skill.Shield);
             }

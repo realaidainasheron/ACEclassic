@@ -18656,22 +18656,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1211</id>
-    <latitude>-7.1</latitude>
-    <longitude>3</longitude>
-    <name>Crafter for Amuli Shadow Armor</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Give Jibril ibn Rashid Gems that have been made from shadow specks and fragment shards and hell craft you Amuli shadow armor. Glimmering Gem = Low Quality Sparkling Gem = Medium Quality Scintillating Gem = High Quality &lt;I&gt; -- AR&lt;/i&gt;</description>
-    <date_added>2000-12-05T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1212</id>
     <latitude>74.1</latitude>
     <longitude>-52.4</longitude>
@@ -22396,22 +22380,6 @@
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>1463</id>
-    <latitude>-18.5</latitude>
-    <longitude>62.8</longitude>
-    <name>Alean the Steel Forger</name>
-    <type>Landmark</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>Eastham's GSC-NPC, many have been asking of his coordinates, HE'S AT THE LS JUST NORTH OF EASTHAM!!!!! &lt;I&gt; -- Belltheo-of-MT&lt;/I&gt;</description>
-    <date_added>2002-02-14T00:00:00.0000000-08:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>1464</id>
     <latitude>87.1</latitude>
     <longitude>9.6</longitude>
@@ -23342,21 +23310,6 @@
     <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
     <dungeon_id>
     </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>1524</id>
-    <latitude>-22.9</latitude>
-    <longitude>-28.8</longitude>
-    <name>Desert March</name>
-    <type>Dungeon</type>
-    <arrival_latitude>0</arrival_latitude>
-    <arrival_longitude>0</arrival_longitude>
-    <description>a Second Desert March Dungeon. Layout same, exits the same.  &lt;I&gt; -- Cutter Slash&lt;/i&gt;</description>
-    <date_added>2002-10-06T00:00:00.0000000-07:00</date_added>
-    <last_update>2005-02-16T17:14:19.0970000-08:00</last_update>
-    <dungeon_id>02AA</dungeon_id>
     <retired>N</retired>
     <tod_req>0</tod_req>
   </location>
@@ -31617,7 +31570,7 @@ Very near Candeth Keep.  Give her a D note and she will summon a 40+ portal to A
     <id>2115</id>
     <latitude>82.9</latitude>
     <longitude>46</longitude>
-    <name>Koga Hideki, Gemstone Armorer</name>
+    <name>Koga Hideki</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
@@ -31635,7 +31588,7 @@ I have improved my armor skills, but my craft is not yet perfect. Fortunately, s
     <id>2116</id>
     <latitude>-7.1</latitude>
     <longitude>3</longitude>
-    <name>Jibril ibn Rashid, Gemstone Armorer</name>
+    <name>Jibril ibn Rashid</name>
     <type>NPC</type>
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
@@ -40694,24 +40647,6 @@ Ji Tenxien the Tailor tells you, "When they ask where you got such well-tailored
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2621</id>
-    <latitude>82.9</latitude>
-    <longitude>46</longitude>
-    <name>Jo Ten-Ma</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Shadow Armor.
-
-Jo Ten-Ma tells you, "How did I get saddled with this job, anyway? When I signed on to become Koga's apprentice I thought I would actually be making armor, not peddling pots and paints!"</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2622</id>
     <latitude>74.4</latitude>
     <longitude>19.4</longitude>
@@ -43206,23 +43141,6 @@ Sordan Edelson the Smithy tells you, "Thank you for your business. Please return
     <arrival_latitude>0.000</arrival_latitude>
     <arrival_longitude>0.000</arrival_longitude>
     <description>Sells at 155%, buys at 90%.</description>
-    <date_added>2005-09-18 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>
-    </dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
-    <id>2766</id>
-    <latitude>-7.1</latitude>
-    <longitude>3</longitude>
-    <name>Tamar Ibn Rashid</name>
-    <type>Vendor</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>
-    </description>
     <date_added>2005-09-18 00:00:00</date_added>
     <last_update>0000-00-00 00:00:00</last_update>
     <dungeon_id>

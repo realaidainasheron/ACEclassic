@@ -7,7 +7,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 {
     public static class AxeWcids
     {
-        private static ChanceTable<WeenieClassName> AxeWcids_Aluvians_T1;
+        private static ChanceTable<WeenieClassName> AxeWcids_Aluvian_T1;
 
         private static ChanceTable<WeenieClassName> AxeWcids_Aluvian = new ChanceTable<WeenieClassName>()
         {
@@ -73,7 +73,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         {
             if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
-                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                AxeWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.axehand,           3.0f ),
                     ( WeenieClassName.axebattle,         0.5f ),
@@ -181,7 +181,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
             else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
-                AxeWcids_Aluvians_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                AxeWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.axehand,           3.0f ),
                     ( WeenieClassName.axebattle,         0.5f ),
@@ -268,30 +268,58 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier)
+        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier, out TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
+                WeenieClassName weapon = WeenieClassName.undef;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
-                        return AxeWcids_Aluvian.Roll();
-
+                        if (tier > 1)
+                            weapon = AxeWcids_Aluvian.Roll();
+                        else
+                            weapon = AxeWcids_Aluvian_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Gharundim:
-                        return AxeWcids_Gharundim.Roll();
-
+                        if (tier > 1)
+                            weapon = AxeWcids_Gharundim.Roll();
+                        else
+                            weapon = AxeWcids_Gharundim_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Sho:
-                        return AxeWcids_Sho.Roll();
+                        if (tier > 1)
+                            weapon = AxeWcids_Sho.Roll();
+                        else
+                            weapon = AxeWcids_Sho_T1.Roll();
+                        break;
                 }
+
+                switch(weapon)
+                {
+                    case WeenieClassName.ace41052_greataxe:
+                    case WeenieClassName.ace41053_acidgreataxe:
+                    case WeenieClassName.ace41054_lightninggreataxe:
+                    case WeenieClassName.ace41055_flaminggreataxe:
+                    case WeenieClassName.ace41056_frostgreataxe:
+                        weaponType = TreasureWeaponType.TwoHandedAxe;
+                        break;
+                    default:
+                        weaponType = TreasureWeaponType.Axe;
+                        break;
+                }
+
+                return weapon;
             }
-            else
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
+                weaponType = TreasureWeaponType.Axe;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
                         if(tier > 1)
                             return AxeWcids_Aluvian.Roll();
-                        return AxeWcids_Aluvians_T1.Roll();
+                        return AxeWcids_Aluvian_T1.Roll();
 
                     case TreasureHeritageGroup.Gharundim:
                         if (tier > 1)
@@ -304,6 +332,22 @@ namespace ACE.Server.Factories.Tables.Wcids
                         return AxeWcids_Sho_T1.Roll();
                 }
             }
+            else
+            {
+                weaponType = TreasureWeaponType.Axe;
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return AxeWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return AxeWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return AxeWcids_Sho.Roll();
+                }
+            }
+            weaponType = TreasureWeaponType.Undef;
             return WeenieClassName.undef;
         }
     }

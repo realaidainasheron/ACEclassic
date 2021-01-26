@@ -16,7 +16,7 @@ Tier Chances: 1, 1, 0, 0, 0, 0
 
 DaggerMS Mutation #3:
 
-Tier Chances: 0, 0, 1, 1, 1, 1
+Tier Chances: 0, 0, 1, 1, 1, 0
 
     - Chance: 6.7%:
         Damage += 0
@@ -29,6 +29,25 @@ Tier Chances: 0, 0, 1, 1, 1, 1
 
     - Chance: 53.1%:
         Damage += 3
+
+DaggerMS Mutation #4:
+
+Tier Chances: 0, 0, 0, 0, 0, 1
+
+    - Chance: 6.7%:
+        Damage += 1
+
+    - Chance: 14%:
+        Damage += 2
+
+    - Chance: 53.1%:
+        Damage += 3
+
+    - Chance: 26.2%:
+        Damage += 4
+        WieldRequirements = RawSkill
+        WieldSkillType = WeaponSkill
+        WieldDifficulty = 400
 
 DaggerMS Mutation #7:
 

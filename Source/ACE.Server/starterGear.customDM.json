@@ -669,7 +669,7 @@
         },
         {
             "id": "1",
-            "name": "Axe",
+            "name": "Axe and Mace",
             "heritage": [
                 {
                     "id": "1",
@@ -746,47 +746,8 @@
             ]
         },
         {
-            "id": "5",
-            "name": "Mace",
-            "heritage": [
-                {
-                    "id": "1",
-                    "name": "Aluvian",
-                    "gear": [
-                        {
-                            "weenieId": "520",
-                            "name": "Starter Club",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "2",
-                    "name": "Gharu'ndim",
-                    "gear": [
-                        {
-                            "weenieId": "526",
-                            "name": "Starter Kasrullah",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "3",
-                    "name": "Sho",
-                    "gear": [
-                        {
-                            "weenieId": "524",
-                            "name": "Starter Jitte",
-                            "stacksize": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "id": "9",
-            "name": "Spear",
+            "name": "Spear and Staff",
             "heritage": [
                 {
                     "id": "1",
@@ -817,45 +778,6 @@
                         {
                             "weenieId": "539",
                             "name": "Starter Yari",
-                            "stacksize": "1"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "10",
-            "name": "Staff",
-            "heritage": [
-                {
-                    "id": "1",
-                    "name": "Aluvian",
-                    "gear": [
-                        {
-                            "weenieId": "529",
-                            "name": "Starter Quarter Staff",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "2",
-                    "name": "Gharu'ndim",
-                    "gear": [
-                        {
-                            "weenieId": "528",
-                            "name": "Starter Nabut",
-                            "stacksize": "1"
-                        }
-                    ]
-                },
-                {
-                    "id": "3",
-                    "name": "Sho",
-                    "gear": [
-                        {
-                            "weenieId": "525",
-                            "name": "Starter Jo",
                             "stacksize": "1"
                         }
                     ]
@@ -907,7 +829,7 @@
         },
         {
             "id": "2",
-            "name": "Bow",
+            "name": "Bow and Crossbow",
             "gear": [
                 {
                     "weenieId": "300",
@@ -948,22 +870,6 @@
                             "stacksize": "1"
                         }
                     ]
-                }
-            ]
-        },
-        {
-            "id": "3",
-            "name": "Crossbow",
-            "gear": [
-                {
-                    "weenieId": "305",
-                    "name": "Bolts",
-                    "stacksize": "250"
-                },
-                {
-                    "weenieId": "521",
-                    "name": "Starter Crossbow",
-                    "stacksize": "1"
                 }
             ]
         },

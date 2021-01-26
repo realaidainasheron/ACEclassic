@@ -148,6 +148,18 @@ namespace ACE.Server.Factories
                 mutationFilter.TryMutate(wo, profile.Tier, profile.LootQualityMod);
             }
 
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM)
+            {
+                // 0 skill light swords are single strike, higher skill ones are double strike
+                if (roll.WeaponType == TreasureWeaponType.SwordMS && wo.WieldDifficulty > 0)
+                {
+                    if (wo.W_AttackType == AttackType.Thrust)
+                        wo.W_AttackType = AttackType.DoubleThrust;
+                    else if (wo.W_AttackType == (AttackType.Thrust | AttackType.Slash))
+                        wo.W_AttackType = AttackType.DoubleThrust | AttackType.DoubleSlash;
+                }
+            }
+
             // weapon speed
             if (wo.WeaponTime != null)
             {

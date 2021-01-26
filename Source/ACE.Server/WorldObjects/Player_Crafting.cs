@@ -299,7 +299,7 @@ namespace ACE.Server.WorldObjects
 
             // take augs into account for salvaging only
             var salvageAmount = CalcNumUnits((int)salvageSkill, workmanship, AugmentationBonusSalvage) * stackSize;
-            var tinkeringAmount = CalcNumUnits((int)highestTrainedTinkeringSkill, workmanship, 0);
+            var tinkeringAmount = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? 0 : CalcNumUnits((int)highestTrainedTinkeringSkill, workmanship, 0); // CustomDM always uses the salvageAmount
 
             // cap tinkeringAmount to item workmanship
             tinkeringAmount = Math.Min(tinkeringAmount, (int)Math.Round(salvageItem.Workmanship ?? 1.0f)) * stackSize;

@@ -333,24 +333,62 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier)
+        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier, out TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
+                WeenieClassName weapon = WeenieClassName.undef;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
-                        return MaceWcids_Aluvian.Roll();
-
+                        if (tier > 1)
+                            weapon = MaceWcids_Aluvian.Roll();
+                        else
+                            weapon = MaceWcids_Aluvian_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Gharundim:
-                        return MaceWcids_Gharundim.Roll();
-
+                        if (tier > 1)
+                            weapon = MaceWcids_Gharundim.Roll();
+                        else
+                            weapon = MaceWcids_Gharundim_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Sho:
-                        return MaceWcids_Sho.Roll();
+                        if (tier > 1)
+                            weapon = MaceWcids_Sho.Roll();
+                        else
+                            weapon = MaceWcids_Sho_T1.Roll();
+                        break;
                 }
+
+                switch (weapon)
+                {
+                    case WeenieClassName.ace41057_greatstarmace:
+                    case WeenieClassName.ace41058_acidgreatstarmace:
+                    case WeenieClassName.ace41059_lightninggreatstarmace:
+                    case WeenieClassName.ace41060_flaminggreatstarmace:
+                    case WeenieClassName.ace41061_frostgreatstarmace:
+                    case WeenieClassName.ace41062_khandahandledmace:
+                    case WeenieClassName.ace41063_acidkhandahandledmace:
+                    case WeenieClassName.ace41064_lightningkhandahandledmace:
+                    case WeenieClassName.ace41065_flamingkhandahandledmace:
+                    case WeenieClassName.ace41066_frostkhandahandledmace:
+                    case WeenieClassName.ace40635_tetsubo:
+                    case WeenieClassName.ace40636_acidtetsubo:
+                    case WeenieClassName.ace40637_lightningtetsubo:
+                    case WeenieClassName.ace40638_flamingtetsubo:
+                    case WeenieClassName.ace40639_frosttetsubo:
+                        weaponType = TreasureWeaponType.TwoHandedMace;
+                        break;
+                    default:
+                        weaponType = TreasureWeaponType.Mace;
+                        break;
+                }
+
+                return weapon;
             }
-            else
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
+                weaponType = TreasureWeaponType.Axe;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
@@ -369,6 +407,22 @@ namespace ACE.Server.Factories.Tables.Wcids
                         return MaceWcids_Sho_T1.Roll();
                 }
             }
+            else
+            {
+                weaponType = TreasureWeaponType.Axe;
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return MaceWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return MaceWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return MaceWcids_Sho.Roll();
+                }
+            }
+            weaponType = TreasureWeaponType.Undef;
             return WeenieClassName.undef;
         }
     }

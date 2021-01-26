@@ -417,7 +417,13 @@ namespace ACE.Server.WorldObjects
 
             var isBow = weapon != null && weapon.IsBow;
 
-            var attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons || weapon?.WeaponSkill == Skill.Dagger ? Coordination : Strength;
+            Entity.CreatureAttribute attribute;
+            if (ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                attribute = isBow || weapon?.WeaponSkill == Skill.Dagger || weapon?.WeaponSkill == Skill.Spear || weapon?.WeaponSkill == Skill.Staff ? Coordination : Strength;
+            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                attribute = isBow || weapon?.WeaponSkill == Skill.Dagger ? Coordination : Strength;
+            else
+                attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons ? Coordination : Strength;
 
             return SkillFormula.GetAttributeMod((int)attribute.Current, isBow);
         }

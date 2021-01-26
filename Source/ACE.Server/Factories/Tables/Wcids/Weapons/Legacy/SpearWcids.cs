@@ -280,24 +280,62 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier)
+        public static WeenieClassName Roll(TreasureHeritageGroup heritage, int tier, out TreasureWeaponType weaponType)
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
+                WeenieClassName weapon = WeenieClassName.undef;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
-                        return SpearWcids_Aluvian.Roll();
-
+                        if (tier > 1)
+                            weapon = SpearWcids_Aluvian.Roll();
+                        else
+                            weapon = SpearWcids_Aluvian_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Gharundim:
-                        return SpearWcids_Gharundim.Roll();
-
+                        if (tier > 1)
+                            weapon = SpearWcids_Gharundim.Roll();
+                        else
+                            weapon = SpearWcids_Gharundim_T1.Roll();
+                        break;
                     case TreasureHeritageGroup.Sho:
-                        return SpearWcids_Sho.Roll();
+                        if (tier > 1)
+                            weapon = SpearWcids_Sho.Roll();
+                        else
+                            weapon = SpearWcids_Sho_T1.Roll();
+                        break;
                 }
+
+                switch (weapon)
+                {
+                    case WeenieClassName.ace41046_pike:
+                    case WeenieClassName.ace41047_acidpike:
+                    case WeenieClassName.ace41048_lightningpike:
+                    case WeenieClassName.ace41049_flamingpike:
+                    case WeenieClassName.ace41050_frostpike:
+                    case WeenieClassName.ace41036_assagai:
+                    case WeenieClassName.ace41037_acidassagai:
+                    case WeenieClassName.ace41038_lightningassagai:
+                    case WeenieClassName.ace41039_flamingassagai:
+                    case WeenieClassName.ace41040_frostassagai:
+                    case WeenieClassName.ace41041_magariyari:
+                    case WeenieClassName.ace41042_acidmagariyari:
+                    case WeenieClassName.ace41043_lightningmagariyari:
+                    case WeenieClassName.ace41044_flamingmagariyari:
+                    case WeenieClassName.ace41045_frostmagariyari:
+                        weaponType = TreasureWeaponType.TwoHandedMace;
+                        break;
+                    default:
+                        weaponType = TreasureWeaponType.Mace;
+                        break;
+                }
+
+                return weapon;
             }
-            else
+            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
             {
+                weaponType = TreasureWeaponType.Axe;
                 switch (heritage)
                 {
                     case TreasureHeritageGroup.Aluvian:
@@ -316,6 +354,22 @@ namespace ACE.Server.Factories.Tables.Wcids
                         return SpearWcids_Sho_T1.Roll();
                 }
             }
+            else
+            {
+                weaponType = TreasureWeaponType.Axe;
+                switch (heritage)
+                {
+                    case TreasureHeritageGroup.Aluvian:
+                        return SpearWcids_Aluvian.Roll();
+
+                    case TreasureHeritageGroup.Gharundim:
+                        return SpearWcids_Gharundim.Roll();
+
+                    case TreasureHeritageGroup.Sho:
+                        return SpearWcids_Sho.Roll();
+                }
+            }
+            weaponType = TreasureWeaponType.Undef;
             return WeenieClassName.undef;
         }
     }

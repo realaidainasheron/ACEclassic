@@ -1001,7 +1001,17 @@ namespace ACE.Server.WorldObjects
 
         public Skill ConvertToMoASkill(Skill skill)
         {
-            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                switch(skill)
+                {
+                    case Skill.Mace: return Skill.Axe;
+                    case Skill.Staff: return Skill.Spear;
+                    case Skill.Crossbow: return Skill.Bow;
+                    default: return skill;
+                }
+            }
+            else if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
                 return skill;
 
             if (this is Player player)

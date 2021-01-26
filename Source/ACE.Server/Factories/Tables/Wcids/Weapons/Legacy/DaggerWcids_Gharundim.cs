@@ -141,12 +141,28 @@ namespace ACE.Server.Factories.Tables.Wcids
             }
         }
 
-        public static WeenieClassName Roll(int tier)
+        public static WeenieClassName Roll(int tier, out TreasureWeaponType weaponType)
         {
             // todo: add unique profiles for t7 / t8?
             tier = Math.Clamp(tier, 1, 6);
 
-            return weaponTiers[tier - 1].Roll();
+            var weapon = weaponTiers[tier - 1].Roll();
+
+            switch (weapon)
+            {
+                case WeenieClassName.dirk:
+                case WeenieClassName.dirkacid:
+                case WeenieClassName.dirkelectric:
+                case WeenieClassName.dirkfire:
+                case WeenieClassName.dirkfrost:
+                    weaponType = TreasureWeaponType.Dagger;
+                    break;
+                default:
+                    weaponType = TreasureWeaponType.DaggerMS;
+                    break;
+            }
+
+            return weapon;
         }
     }
 }

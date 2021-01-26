@@ -408,7 +408,7 @@ namespace ACE.Server.WorldObjects
         }
 
         public static readonly float KickThreshold = 0.75f;
-        public static readonly float MultiStrikeThreshold = 0.75f;
+        public static readonly float MultiStrikeThreshold = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? 0.0f : 0.75f;
 
         public MotionCommand PrevMotionCommand;
 
