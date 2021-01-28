@@ -2171,14 +2171,54 @@ namespace ACE.Server.WorldObjects
 
             if (sourceStack.IsThrownWeapon && sourceStack.MaterialType != null)
             {
+                if (IgnoringMergeRequests)
+                    return;
+
                 if (sourceStack.StackSize == amount)
                 {
-                    amount -= 1;
-                    if (amount <= 0)
+                    if (sourceStackRootOwner == this && sourceStack.CurrentWieldedLocation != null)
                     {
-                        Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"You refrain from merging your last {sourceStack.NameWithMaterial}!")); // Custom error message
-                        Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, mergeFromGuid));
+                        // The client requests a stack merge when dequiping thrown weapons automatically to equip another weapon,
+                        // problem is we can't fully merge our mutated thrown weapon with the non-mutated thrown weapons as the client request and there would be 1 unit of our thrown weapon left equipped, preventing the new weapon from being equipped.
+                        // So here we instead move the equiped thrown weapon stack to the player's inventory, this isn't really expected by the client so it's all a little hacky, but it works!
+
+                        if (!TryDequipObjectWithNetworking(sourceStack.Guid, out var dequippedItem, DequipObjectAction.DequipToPack))
+                        {
+                            Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, sourceStack.Guid.Full));
+                            return;
+                        }
+                        if (!TryCreateInInventoryWithNetworking(dequippedItem))
+                        {
+                            Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, sourceStack.Guid.Full));
+
+                            // todo: if this happens, we should just put back the dequipped item to where it was
+
+                            return;
+                        }
+
+                        // If we don't ignore the extra merge request we will end up with a single item stack of our mutated thrown weapons and the rest of the stack will be moved to another existing stack in the main pack. Could we avoid this without this bool?
+                        IgnoringMergeRequests = true;
+
+                        var actionChain = new ActionChain();
+                        actionChain.AddDelaySeconds(0.5f);
+                        actionChain.AddAction(this, () =>
+                        {
+                            Session.Network.EnqueueSend(new GameMessageUpdateObject(sourceStack)); // Sometimes the client will fail to clear the equipped slot icon and thus will have duplicated icons for this item, this fixes the issue transparently.
+                            IgnoringMergeRequests = false;
+                        });
+
+                        actionChain.EnqueueChain();
                         return;
+                    }
+                    else
+                    {
+                        amount -= 1;
+                        if (amount <= 0)
+                        {
+                            Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"You refrain from merging your last {sourceStack.NameWithMaterial}!")); // Custom error message
+                            Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, mergeFromGuid));
+                            return;
+                        }
                     }
                 }
             }

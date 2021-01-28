@@ -22,6 +22,7 @@ namespace ACE.Server.WorldObjects
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
+        public bool IsHumanoid { get => (this is Player || AiAllowedCombatStyle != CombatStyle.Undef); } // Our definition of humanoid in this case is a creature that can wield weapons.
         public bool IsExhausted { get => Stamina.Current == 0; }
 
         protected QuestManager _questManager;
