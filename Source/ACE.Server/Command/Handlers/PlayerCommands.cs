@@ -515,5 +515,118 @@ namespace ACE.Server.Command.Handlers
 
             session.Network.EnqueueSend(new GameMessageSystemChat(msg, ChatMessageType.AdminTell));
         }
+
+        static List<ActivityRecommendation> Recommendations = new List<ActivityRecommendation>()
+        {
+            new ActivityRecommendation(1, 10, new HashSet<string>{ "HoltburgAfrinCorn1204", "HoltburgAfrinRye1204", "HoltburgAfrinWheat1204"}, "XP: Visit the tavern in Holtburg and help Alfrin."),
+            new ActivityRecommendation(1, 10, new HashSet<string>{ "AxeBrogordQuest", "HoltburgNoteBrogord1204"}, "XP: Visit the tavern in Holtburg and help Flinrala Ryndmad."),
+            new ActivityRecommendation(1, 10, new HashSet<string>{ "HoltburgRedoubtCandlestick1204", "HoltburgRedoubtBowl1204", "AntiquePlatterQuest", "HoltburgRedoubtLamp1204","HoltburgRedoubtHandbell1204","HardunnaBandQuest","HoltburgRedoubtMug1204","HoltburgRedoubtGoblet1204"}, "XP: Visit the tavern in Holtburg and help Worcer."),
+            new ActivityRecommendation(14, 25, "OlthoiHunting1", "XP: Kill Olthois in the Abandoned Tumerok Site near Redspire at 42.0N, 82.2W and bring a Harvester Pincer to Behdo Yii in Redspire."),
+            new ActivityRecommendation(12, 126,"XP: Hunt Olthois in the Olthoi Arcade near Redspire at 39.1N 81.2W."),
+            new ActivityRecommendation(1, 20, "Equipment: Collect Red and Gold Letters, gather stamps and trade them in for Exploration Society Equipment. For more information talk to Exploration Society Agents, usually located in taverns wearing green clothes."),
+            new ActivityRecommendation(10, 60, "Equipment: Hunt Golems for Motes to craft Atlan and Isparian Weapons at the Crater Lake Village."),
+            new ActivityRecommendation(15, 126,"Equipment: Hunt Shadows and Crystals for shards to craft Shadow Armor near Eastham at 18.5N, 62.8E, near Al-Jalima at 7.1N, 3.0E or near Kara at 82.9S, 46.0E."),
+            new ActivityRecommendation(15, 126, Skill.Lockpick, "XP: Hunt Undead for Mnemosynes. Unlock them with keys made using Lockpicking from Golem Hearts, and turn them in at the Mnemosyne Collection Site near Samsur at 2.5S, 16.4E."),
+            new ActivityRecommendation(15, 126, Skill.Lockpick, "Equipment: Hunt Undead for Mnemosynes. Unlock them with keys made using Lockpicking from Golem Hearts, and turn them in at the Undead Hunter's tent near Tufa at 13.3S, 5.1E."),
+            new ActivityRecommendation(15, 25,"Equipment: Explore the Glenden Wood Dungeon near Glenden Wood at 29.9N, 26.4E for the Platemail Hauberk of the Ogre and the Alloy Tool."),
+        };
+
+        [CommandHandler("rec", AccessLevel.Player, CommandHandlerFlag.RequiresWorld, "Recommend activities appropriate to the character.")]
+        public static void HandleRecommend(Session session, params string[] parameters)
+        {
+            List<ActivityRecommendation> validRecommendations = new List<ActivityRecommendation>();
+            foreach(var recommendation in Recommendations)
+            {
+                if(recommendation.IsApplicable(session.Player))
+                {
+                    validRecommendations.Add(recommendation);
+                }
+            }
+
+            if (validRecommendations.Count == 0)
+                session.Network.EnqueueSend(new GameMessageSystemChat("No recommendations at the moment.", ChatMessageType.WorldBroadcast));
+            else
+            {
+                session.Network.EnqueueSend(new GameMessageSystemChat("Activity Recommendations:", ChatMessageType.WorldBroadcast));
+                // Should we send them all or pick some random ones?
+                foreach (var recommendation in validRecommendations)
+                {
+                    session.Network.EnqueueSend(new GameMessageSystemChat(recommendation.RecommendationText, ChatMessageType.WorldBroadcast));
+                }
+            }
+        }
+    }
+
+    public class ActivityRecommendation
+    {
+        public HashSet<Skill> Skills = new HashSet<Skill>();
+        public int MinLevel = 0;
+        public int MaxLevel = int.MaxValue;
+        public int MinSkill = 0;
+        public int MaxSkill = int.MaxValue;
+        public HashSet<string> QuestFlags = new HashSet<string>();
+        public string RecommendationText;
+
+        public ActivityRecommendation(int minLevel, int maxLevel, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill>(), 0, int.MaxValue, new HashSet<string>(), recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill> { skill }, 0, int.MaxValue, new HashSet<string>(), recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, string questFlag, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill>(), 0, int.MaxValue, new HashSet<string> { questFlag }, recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, HashSet<string> questFlags, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill>(), 0, int.MaxValue, questFlags, recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, int minSkill, int maxSkill, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill> { skill }, minSkill, maxSkill, new HashSet<string>(), recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, string questFlag, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill> { skill }, 0, int.MaxValue, new HashSet<string> { questFlag }, recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, HashSet<string> questFlags, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill> { skill }, 0, int.MaxValue, questFlags, recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, int minSkill, int maxSkill, string questFlag, string recommendation)
+            : this(minLevel, maxLevel, new HashSet<Skill> { skill }, minSkill, maxSkill, new HashSet<string> { questFlag }, recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, HashSet<Skill> skills, int minSkill, int maxSkill, HashSet<string> questFlags, string recommendation)
+        {
+            MinLevel = minLevel;
+            MaxLevel = maxLevel;
+            Skills = skills;
+            MinSkill = minSkill;
+            MaxSkill = maxSkill;
+            QuestFlags = questFlags;
+            RecommendationText = recommendation;
+        }
+
+        public bool IsApplicable(Player player)
+        {
+            if (player.Level < MinLevel || player.Level > MaxLevel)
+                return false;
+
+            foreach (var questFlag in QuestFlags)
+            {
+                if (!player.QuestManager.CanSolve(questFlag))
+                    return false;
+            }
+
+            if (Skills.Count == 0)
+                return true;
+
+            foreach (var skill in Skills)
+            {
+                var playerSkill = player.GetCreatureSkill(skill);
+                if (playerSkill.AdvancementClass == SkillAdvancementClass.Trained || playerSkill.AdvancementClass == SkillAdvancementClass.Specialized)
+                {
+                    if (playerSkill.Current >= MinSkill && playerSkill.Current <= MaxSkill)
+                        return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
