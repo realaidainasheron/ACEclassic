@@ -267,6 +267,45 @@ namespace ACE.Server.Entity
             // get the encounter spawns for this landblock
             var encounters = DatabaseManager.World.GetCachedEncountersByLandblock(Id.Landblock);
 
+            //temp landscape spawn density multiplier test
+            List<int> encounterCoords = new List<int>();
+            foreach (var encounter in encounters)
+            {
+                encounterCoords.Add(encounter.CellX << 16 | encounter.CellY);
+            }
+            if (encounters.Count > 0)
+            {
+                int newCount;
+                if(encounters.Count <= 5)
+                    newCount = encounters.Count * 4;
+                else if (encounters.Count <= 10)
+                    newCount = encounters.Count * 2;
+                else
+                    newCount = encounters.Count;
+
+                int failedAttempts = 0;
+                while (encounters.Count < newCount && failedAttempts < 10)
+                {
+                    var encounter = encounters[ThreadSafeRandom.Next(0, encounters.Count - 1)];
+
+                    Encounter newEncounter = new Encounter();
+                    newEncounter.WeenieClassId = encounter.WeenieClassId;
+                    newEncounter.Landblock = encounter.Landblock;
+                    newEncounter.CellX = Math.Clamp(encounter.CellX + ThreadSafeRandom.Next(-2, 2), 0, 7);
+                    newEncounter.CellY = Math.Clamp(encounter.CellY + ThreadSafeRandom.Next(-2, 2), 0, 7);
+
+                    int newEncounterCoords = newEncounter.CellX << 16 | newEncounter.CellY;
+                    if (!encounterCoords.Contains(newEncounterCoords))
+                    {
+                        encounters.Add(newEncounter);
+                        encounterCoords.Add(newEncounterCoords);
+                        failedAttempts = 0;
+                    }
+                    else
+                        failedAttempts++;
+                }
+            }
+
             foreach (var encounter in encounters)
             {
                 var wo = WorldObjectFactory.CreateNewWorldObject(encounter.WeenieClassId);
@@ -291,14 +330,8 @@ namespace ACE.Server.Entity
                     if (sortCell != null && sortCell.has_building())
                         return;
 
-                    //temp landscape spawn multiplier test
-                    if (wo.MaxGeneratedObjects < 3)
-                    {
-                        int value = ThreadSafeRandom.Next(1, 3);
-                        wo.MaxGeneratedObjects = value;
-                        wo.InitGeneratedObjects = value;
-                        wo.SetProperty(PropertyFloat.GeneratorRadius, 30);
-                    }
+                    if (!wo.Location.IsWalkable())
+                        return;
 
                     if (PropertyManager.GetBool("override_encounter_spawn_rates").Item)
                     {
