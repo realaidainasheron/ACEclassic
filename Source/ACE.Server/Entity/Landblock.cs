@@ -333,6 +333,9 @@ namespace ACE.Server.Entity
                     if (!wo.Location.IsWalkable())
                         return;
 
+                    if (PhysicsLandblock.OnRoad(new Vector3(xPos, yPos, pos.Frame.Origin.Z)))
+                        return;
+
                     if (PropertyManager.GetBool("override_encounter_spawn_rates").Item)
                     {
                         wo.RegenerationInterval = PropertyManager.GetDouble("encounter_regen_interval").Item;
