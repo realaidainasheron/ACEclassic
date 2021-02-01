@@ -524,13 +524,23 @@ namespace ACE.Server.Command.Handlers
             new ActivityRecommendation(1, 10, new HashSet<string>{ "RITHWICMINDORLALETTER"}, "XP: Visit Rithwic East and help Mindorla with an errand."),
             new ActivityRecommendation(1, 10, new HashSet<string>{ "RITHWICCELCYNDRING"}, "XP: Recover a letter from the Old Warehouse near Rithwic at 7.6N, 58.4E and deliver it to Celcynd the Dour in Rithwic."),
             new ActivityRecommendation(14, 25, "OlthoiHunting1", "XP: Kill Olthois in the Abandoned Tumerok Site near Redspire at 42.0N, 82.2W and bring a Harvester Pincer to Behdo Yii in Redspire."),
-            new ActivityRecommendation(12, 126,"XP: Hunt Olthois in the Olthoi Arcade near Redspire at 39.1N 81.2W."),
+            new ActivityRecommendation(18, 30, "OlthoiHunting2", "XP: Kill Olthois in the Dark Lair near Greenspire at 43.8N, 68.4W and bring a Gardener Pincer to Behdo Yii in Redspire."),
             new ActivityRecommendation(1, 20, "Equipment: Collect Red and Gold Letters, gather stamps and trade them in for Exploration Society Equipment. For more information talk to Exploration Society Agents, usually located in taverns wearing green clothes."),
-            new ActivityRecommendation(10, 60, "Equipment: Hunt Golems for Motes to craft Atlan and Isparian Weapons at the Crater Lake Village."),
+            new ActivityRecommendation(10, 80, new HashSet<Skill>{Skill.Axe, Skill.Dagger, Skill.Mace, Skill.Spear, Skill.Staff, Skill.Sword, Skill.UnarmedCombat}, "Equipment: Hunt Golems for Motes to craft Atlan and Isparian Weapons at the Crater Lake Village."),
+            new ActivityRecommendation(10, 80, new HashSet<Skill>{Skill.Bow, Skill.Crossbow, Skill.ThrownWeapon, Skill.WarMagic, Skill.LifeMagic}, "Equipment: Hunt Golems for Motes to craft Isparian Weapons at the Crater Lake Village."),
             new ActivityRecommendation(15, 126,"Equipment: Hunt Shadows and Crystals for shards to craft Shadow Armor near Eastham at 18.5N, 62.8E, near Al-Jalima at 7.1N, 3.0E or near Kara at 82.9S, 46.0E."),
             new ActivityRecommendation(15, 126, Skill.Lockpick, "XP: Hunt Undead for Mnemosynes. Unlock them with keys made using Lockpicking from Golem Hearts, and turn them in at the Mnemosyne Collection Site near Samsur at 2.5S, 16.4E."),
             new ActivityRecommendation(15, 126, Skill.Lockpick, "Equipment: Hunt Undead for Mnemosynes. Unlock them with keys made using Lockpicking from Golem Hearts, and turn them in at the Undead Hunter's tent near Tufa at 13.3S, 5.1E."),
-            new ActivityRecommendation(15, 25,"Equipment: Explore the Glenden Wood Dungeon near Glenden Wood at 29.9N, 26.4E for the Platemail Hauberk of the Ogre and the Alloy Tool."),
+            new ActivityRecommendation(15, 25,"Equipment: Explore the Glenden Wood Dungeon near Glenden Wood at 29.9N, 26.4E for the Platemail Hauberk of the Ogre."),
+            new ActivityRecommendation(18, 25,"Equipment: Explore the Halls of the Helm near Zaikhal at 15.8N, 2.1E for the Fiery Shield and Superior Helmet."),
+            new ActivityRecommendation(15, 25,"GivenTibriSpear", "XP/Equipment: Explore a Cave near Cragstone at 23.2N, 44.0E for Tibri's Fire Spear and deliver it to Tibri also in the cave or keep it."),
+            new ActivityRecommendation(15, 25,"Equipment: Explore Trothyr's Rest near Rithwic at 10.3N, 54.9E for Trothyr's War Hammer and Trothyr's Shield. Talk to Ringoshu the Apple Seller at 13.6N, 50.7E for more information."),
+            new ActivityRecommendation(10, 20,"Equipment: Explore the Green Mire Grave near Shoushi at 27.8S, 71.6E for the Green Mire Warrior's Yoroi Cuirass and the Green Mire Yari."),
+            new ActivityRecommendation(5, 20, Skill.Lockpick, "Equipment: Explore Eastham Sewer near Eastham at 18.7N, 63.4E for the Metal Round Shield. Bring lockpicks!"),
+            new ActivityRecommendation(10, 20, Skill.Dagger, "Equipment: Explore the Folthid Estate near Yanshi at 8.6S, 52.9EE for the Dagger of Tikola and Dull Dagger. Speak with Raxanza Folthid at 8.8S, 53.7E for more information."),
+            new ActivityRecommendation(12, 126,"Hunting Grounds: Hunt Olthois in the Olthoi Arcade near Redspire at 39.1N 81.2W."),
+            new ActivityRecommendation(10, 20,"Hunting Grounds: Eastham Beach - Hunt following the coastline out of Eastham."),
+            new ActivityRecommendation(20, 30,"Hunting Grounds: Lost Wish Range - Go through the Mountain Shortcut portal near Arwic at 34.9N, 56.0E and hunt along the mountains."),
         };
 
         [CommandHandler("rec", AccessLevel.Player, CommandHandlerFlag.RequiresWorld, "Recommend activities appropriate to the character.")]
@@ -550,7 +560,6 @@ namespace ACE.Server.Command.Handlers
             else
             {
                 session.Network.EnqueueSend(new GameMessageSystemChat("Activity Recommendations:", ChatMessageType.WorldBroadcast));
-                // Should we send them all or pick some random ones?
                 foreach (var recommendation in validRecommendations)
                 {
                     session.Network.EnqueueSend(new GameMessageSystemChat(recommendation.RecommendationText, ChatMessageType.WorldBroadcast));
@@ -574,6 +583,9 @@ namespace ACE.Server.Command.Handlers
 
         public ActivityRecommendation(int minLevel, int maxLevel, Skill skill, string recommendation)
             : this(minLevel, maxLevel, new HashSet<Skill> { skill }, 0, int.MaxValue, new HashSet<string>(), recommendation) { }
+
+        public ActivityRecommendation(int minLevel, int maxLevel, HashSet<Skill> skills, string recommendation)
+            : this(minLevel, maxLevel, skills, 0, int.MaxValue, new HashSet<string>(), recommendation) { }
 
         public ActivityRecommendation(int minLevel, int maxLevel, string questFlag, string recommendation)
             : this(minLevel, maxLevel, new HashSet<Skill>(), 0, int.MaxValue, new HashSet<string> { questFlag }, recommendation) { }
