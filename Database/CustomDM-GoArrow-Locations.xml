@@ -33720,51 +33720,6 @@ Delton Hardor tells you, "Do not bother me about Tamian any more, go talk to som
     <tod_req>0</tod_req>
   </location>
   <location>
-    <id>2077</id>
-    <latitude>-41.4</latitude>
-    <longitude>57.3</longitude>
-    <name>Harlune the Misanthrope</name>
-    <type>NPC</type>
-    <arrival_latitude>0.000</arrival_latitude>
-    <arrival_longitude>0.000</arrival_longitude>
-    <description>Quest(s): Mount Lethe Recall, Impious Staff, Collegium Occultus Ring, The Temple of Xik Minru.
-
-Harlune the Misanthrope tells you, "Off with you, I'm a busy mage!"
-
-Harlune the Misanthrope tells you, "It was so much better when you people thought I was one of you. That's impossible now though, thanks to that cretin Gaerlan."
-
-Harlune the Misanthrope tells you, "Never seen an Empyrean before? Shoo! Shoo! I have work to do."
-
-Harlune the Misanthrope tells you, "Did you know that Empyreans have 14 schools of magic? Would you like me to demonstrate them all on you?"
-
-Harlune the Misanthrope tells you, "Go away! And don't tell Asheron I'm down here! Never could stand the man..."
-
-Harlune the Misanthrope tells you, "You best not have done anything to Alfrega, if you know what's good for you..."
-
-Harlune the Misanthrope tells you, "I liberate some of your people from a despotic ruler...think you could show a little bit of respect!"
-
-Harlune the Misanthrope tells you, "Alfrega, Alfrega girl! Fresh meat!"
-
-Harlune the Misanthrope tells you, "What, looking for some great quest, some grand purpose from the Empyrean? Go away!"
-
-Harlune the Misanthrope tells you, "Well if you are going to continue to bother me, you can at least do something for me. Take this note to Celcynd in Rithwic."
-
-Harlune the Misanthrope gives you A Crabbed Note.
-
-Harlune the Misanthrope tells you, "He borrowed one of my history books sometime ago and didn't return it because he became a drunken waste. Probably spilled alcohol all over it."
-
-Harlune the Misanthrope tells you, "Go get it and I'll give you some scroll I've got lying around here...or not. Will you leave me alone then?"
-
-Found inside the Mite Maze.
-
-During the Dispatch event, Harlune left Mite Maze and is currently located at ???. Roderick is nearby in Mite Maze and claims to be acting on behalf of Harlune (he performs interactions needed to complete Harlune's associated quests). However, the veracity of his claims have not been verified (we need to find and speak to Harlune).</description>
-    <date_added>2003-03-02 00:00:00</date_added>
-    <last_update>0000-00-00 00:00:00</last_update>
-    <dungeon_id>01F8</dungeon_id>
-    <retired>N</retired>
-    <tod_req>0</tod_req>
-  </location>
-  <location>
     <id>2078</id>
     <latitude>-29.8</latitude>
     <longitude>27.2</longitude>
