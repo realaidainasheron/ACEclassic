@@ -67,7 +67,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static AtlatlWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.CustomDM)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {

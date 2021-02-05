@@ -61,42 +61,42 @@ namespace ACE.Server.Factories
                     switch (deathTreasure.Tier)
                     {
                         case 1:
-                            itemLootChance = 0.3f;
-                            magicItemLootChance = 0.2f;
+                            itemLootChance = 0.2f;
+                            magicItemLootChance = 0.3f;
                             mundaneItemLootChance = 0.9f;
                             break;
                         case 2:
-                            itemLootChance = 0.6f;
+                            itemLootChance = 0.5f;
                             magicItemLootChance = 0.6f;
                             mundaneItemLootChance = 0.8f;
                             break;
                         case 3:
-                            itemLootChance = 0.6f;
+                            itemLootChance = 0.5f;
                             magicItemLootChance = 0.6f;
                             mundaneItemLootChance = 0.8f;
                             break;
                         case 4:
-                            itemLootChance = 0.8f;
+                            itemLootChance = 0.7f;
                             magicItemLootChance = 0.8f;
                             mundaneItemLootChance = 0.8f;
                             break;
                         case 5:
-                            itemLootChance = 0.8f;
+                            itemLootChance = 0.7f;
                             magicItemLootChance = 0.8f;
                             mundaneItemLootChance = 0.4f;
                             break;
                         case 6:
-                            itemLootChance = 0.9f;
+                            itemLootChance = 0.8f;
                             magicItemLootChance = 0.9f;
                             mundaneItemLootChance = 0.4f;
                             break;
                         case 7:
-                            itemLootChance = 0.9f;
+                            itemLootChance = 0.8f;
                             magicItemLootChance = 0.9f;
                             mundaneItemLootChance = 0.4f;
                             break;
                         case 8:
-                            itemLootChance = 0.9f;
+                            itemLootChance = 0.8f;
                             magicItemLootChance = 0.9f;
                             mundaneItemLootChance = 0.4f;
                             break;
@@ -384,7 +384,7 @@ namespace ACE.Server.Factories
 
                         for (var i = 0; i < numItems; i++)
                         {
-                            lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
+                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
                             if (lootWorldObject != null)
                                 loot.Add(lootWorldObject);
@@ -398,7 +398,7 @@ namespace ACE.Server.Factories
                             // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
                             for (var i = 0; i < profile.ItemMinAmount; i++)
                             {
-                                lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
+                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
                                 if (lootWorldObject != null)
                                     loot.Add(lootWorldObject);
@@ -409,7 +409,7 @@ namespace ACE.Server.Factories
                                 itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
                                 if (itemChance < profile.ItemChance / 100.0)
                                 {
-                                    lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
+                                    lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
 
                                     if (lootWorldObject != null)
                                         loot.Add(lootWorldObject);

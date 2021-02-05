@@ -18,25 +18,19 @@ Shield Mutation #2:
 
 Tier chances: 0, 1, 0, 0, 0, 0
 
-    - Chance 10%:
-        ArmorLevel += 10
-
-    - Chance 20%:
-        ArmorLevel += 20
-
-    - Chance 40%:
+    - Chance 50%:
         ArmorLevel += 30
         WieldRequirements = Level
         WieldSkillType = 1
         WieldDifficulty = 15
 
-    - Chance 20%:
+    - Chance 30%:
         ArmorLevel += 40
         WieldRequirements = Level
         WieldSkillType = 1
         WieldDifficulty = 15
 
-    - Chance 10%:
+    - Chance 20%:
         ArmorLevel += 50
         WieldRequirements = Level
         WieldSkillType = 1
@@ -49,10 +43,7 @@ Shield Mutation #3:
 
 Tier chances: 0, 0, 1, 0, 0, 0
 
-    - Chance 5%:
-        ArmorLevel += 20
-
-    - Chance 10%:
+    - Chance 15%:
         ArmorLevel += 30
         WieldRequirements = Level
         WieldSkillType = 1

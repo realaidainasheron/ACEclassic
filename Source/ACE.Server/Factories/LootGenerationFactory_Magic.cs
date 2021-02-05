@@ -45,7 +45,8 @@ namespace ACE.Server.Factories
             }
             else
             {
-                wo.UiEffects = UiEffects.Magical;
+                if(!wo.UiEffects.HasValue) // Elemental effects take precendence over magical as it is more important to know the element of a weapon than if it has spells.
+                    wo.UiEffects = UiEffects.Magical;
 
                 var maxBaseMana = GetMaxBaseMana(wo);
 
