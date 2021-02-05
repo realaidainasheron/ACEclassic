@@ -561,6 +561,10 @@ namespace ACE.Server.Command.Handlers
             new ActivityRecommendation(12, 126,"Hunting Grounds: Hunt Olthois in the Olthoi Arcade near Redspire at 39.1N 81.2W."),
             new ActivityRecommendation(10, 20,"Hunting Grounds: Eastham Beach - Hunt following the coastline out of Eastham."),
             new ActivityRecommendation(20, 30,"Hunting Grounds: Lost Wish Range - Go through the Mountain Shortcut portal near Arwic at 34.9N, 56.0E and hunt along the mountains."),
+            new ActivityRecommendation(20, 30,"Hunting Grounds: Northern Tiofor Woods - Hunt Shadows for Dark Slivers around 60.0N 19.0E."),
+            new ActivityRecommendation(25, 35,"Hunting Grounds: The very bottom of the Fenmalain Chamber is a great place to hunt Fragments for Tiny Shards. To get there you need to use Fenmalain Keys at the bottom of the Fenmalain Vestibule near Baishi at 46.9S, 55.2E."),
+            new ActivityRecommendation(25, 30, Skill.Axe,"Equipment: Explore Suntik Village near Zaikhal at 16.2N 4.3E for the Acid Axe."),
+            new ActivityRecommendation(25, 30, Skill.Axe,"Equipment: Explore the Bellig Tower near Zaikhal at 17.8N, 16.0E for the Hammer of Lightning."),
         };
 
         [CommandHandler("rec", AccessLevel.Player, CommandHandlerFlag.RequiresWorld, "Recommend activities appropriate to the character.")]

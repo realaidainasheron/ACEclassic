@@ -276,14 +276,16 @@ namespace ACE.Server.Entity
             if (encounters.Count > 0)
             {
                 int newCount;
-                if (encounters.Count == 1)
-                    newCount = encounters.Count * 8;
-                else if (encounters.Count == 2)
-                    newCount = encounters.Count * 6;
-                else if (encounters.Count <= 5)
-                    newCount = (int)(encounters.Count * 2.5f);
-                else if (encounters.Count <= 8)
-                    newCount = (int)(encounters.Count * 1.5f);
+                //if (encounters.Count == 1)
+                //    newCount = encounters.Count * 8;
+                //else if (encounters.Count == 2)
+                //    newCount = encounters.Count * 6;
+                //else if (encounters.Count <= 5)
+                //    newCount = (int)(encounters.Count * 2.5f);
+                //else if (encounters.Count <= 8)
+                //    newCount = (int)(encounters.Count * 1.5f);
+                if (encounters.Count < 8)
+                    newCount = 8;
                 else
                     newCount = encounters.Count;
 

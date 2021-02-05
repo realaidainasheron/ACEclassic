@@ -1060,17 +1060,23 @@ namespace ACE.Server.WorldObjects
             if (avoidChance > ThreadSafeRandom.Next(0.0f, 1.0f))
             {
                 if (sourceAsPlayer != null)
-                    sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{target.Name}'s deception stops you from finding a vulnerability!", ChatMessageType.Combat));
+                    sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{target.Name}'s deception stops you from finding a vulnerability!", ChatMessageType.Magic));
+
                 if (targetAsPlayer != null)
-                    targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your deception stops {Name} from finding a vulnerability!", ChatMessageType.Combat));
+                {
+                    Proficiency.OnSuccessUse(targetAsPlayer, defenseSkill, skill.Current);
+                    targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your deception stops {Name} from finding a vulnerability!", ChatMessageType.Magic));
+                }
 
                 return;
             }
+            else if(sourceAsPlayer != null)
+                Proficiency.OnSuccessUse(sourceAsPlayer, skill, defenseSkill.Current);
 
             string spellType;
-            // 1/3 chance of the vulnerability being explicity of the type of attack that was used, otherwise random 1/3 for each type, note that this rolls again for all 3 so that makes it a total of chance of 2/3 of it being of the same type as the attack.
+            // 2/3 chance of the vulnerability being explicity of the type of attack that was used, otherwise random 1/3 for each type
             SpellId spellId;
-            if (ThreadSafeRandom.Next(1, 3) == 1)
+            if (ThreadSafeRandom.Next(1, 3) != 3)
             {
                 switch (combatType)
                 {
@@ -1141,9 +1147,9 @@ namespace ACE.Server.WorldObjects
 
             string skillMessage = skill.Skill == Skill.AssessCreature ? "creature" : "person";
             if (sourceAsPlayer != null)
-                sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your assess {skillMessage} knowledge allows you to expose {spellTypePrefix} {spellType} vulnerability on {target.Name}!", ChatMessageType.Combat));
+                sourceAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"Your assess {skillMessage} knowledge allows you to expose {spellTypePrefix} {spellType} vulnerability on {target.Name}!", ChatMessageType.Magic));
             if (targetAsPlayer != null)
-                targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{Name}'s assess {skillMessage} knowledge exposes {spellTypePrefix} {spellType} vulnerability on you!", ChatMessageType.Combat));
+                targetAsPlayer.Session.Network.EnqueueSend(new GameMessageSystemChat($"{Name}'s assess {skillMessage} knowledge exposes {spellTypePrefix} {spellType} vulnerability on you!", ChatMessageType.Magic));
         }
 
         /// <summary>

@@ -467,9 +467,12 @@ namespace ACE.Server.Factories.Tables
                 {
                     ( SpellId.StrengthSelf1,         0.30f ),
                     ( SpellId.EnduranceSelf1,        0.30f ),
+
                     ( SpellId.MagicResistanceSelf1,  0.15f ),
+
                     ( SpellId.RejuvenationSelf1,     0.10f ),
                     ( SpellId.RegenerationSelf1,     0.10f ),
+
                     ( SpellId.FealtySelf1,           0.05f ),
                 };
 
@@ -478,10 +481,13 @@ namespace ACE.Server.Factories.Tables
                 {
                     ( SpellId.ImpregnabilitySelf1,  0.17f ),
                     ( SpellId.InvulnerabilitySelf1, 0.17f ),
-                    ( SpellId.FealtySelf1,          0.17f ),
-                    ( SpellId.RejuvenationSelf1,    0.16f ),
+
                     ( SpellId.StrengthSelf1,        0.11f ),
                     ( SpellId.EnduranceSelf1,       0.11f ),
+
+                    ( SpellId.RejuvenationSelf1,    0.16f ),
+
+                    ( SpellId.FealtySelf1,          0.17f ),
                     ( SpellId.MagicResistanceSelf1, 0.11f ),
                 };
 
@@ -489,7 +495,9 @@ namespace ACE.Server.Factories.Tables
                 spellSelectionGroup9 = new ChanceTable<SpellId>()
                 {
                     ( SpellId.CoordinationSelf1,          0.20f ),
+
                     ( SpellId.HealingMasterySelf1,        0.10f ),
+
                     ( SpellId.LightWeaponsMasterySelf1,   0.07f ), // AxeMasterySelf1
                     ( SpellId.FinesseWeaponsMasterySelf1, 0.07f ), // DaggerMasterySelf1
                     ( SpellId.MaceMasterySelf1,           0.07f ),
@@ -524,10 +532,13 @@ namespace ACE.Server.Factories.Tables
                 spellSelectionGroup11 = new ChanceTable<SpellId>()
                 {
                     ( SpellId.QuicknessSelf1,             0.20f ),
-                    ( SpellId.HealingMasterySelf1,        0.10f ),
                     ( SpellId.CoordinationSelf1,          0.10f ),
+
+                    ( SpellId.HealingMasterySelf1,        0.10f ),
+
                     ( SpellId.JumpingMasterySelf1,        0.05f ),
                     ( SpellId.SprintSelf1,                0.05f ),
+
                     ( SpellId.LightWeaponsMasterySelf1,   0.05f ), // AxeMasterySelf1
                     ( SpellId.FinesseWeaponsMasterySelf1, 0.05f ), // DaggerMasterySelf1
                     ( SpellId.MaceMasterySelf1,           0.05f ),
@@ -593,16 +604,6 @@ namespace ACE.Server.Factories.Tables
                     ( SpellId.ItemExpertiseSelf1,              0.8f ),
                     ( SpellId.MagicItemExpertiseSelf1,         0.8f ),
                     ( SpellId.WeaponExpertiseSelf1,            0.8f ),
-                    ( SpellId.LightWeaponsMasterySelf1,        0.8f ), // AxeMasterySelf1
-                    ( SpellId.FinesseWeaponsMasterySelf1,      0.8f ), // DaggerMasterySelf1
-                    ( SpellId.MaceMasterySelf1,                0.8f ),
-                    ( SpellId.SpearMasterySelf1,               0.8f ),
-                    ( SpellId.StaffMasterySelf1,               0.8f ),
-                    ( SpellId.HeavyWeaponsMasterySelf1,        0.8f ), // SwordMasterySelf1
-                    ( SpellId.UnarmedCombatMasterySelf1,       0.8f ),
-                    ( SpellId.MissileWeaponsMasterySelf1,      0.8f ), // BowMasterySelf1
-                    ( SpellId.CrossbowMasterySelf1,            0.8f ),
-                    ( SpellId.ThrownWeaponMasterySelf1,        0.8f ),
                 };
 
                 // greaves, leggings, tassets, leather pants
@@ -625,30 +626,23 @@ namespace ACE.Server.Factories.Tables
                 };
 
                 // shoes, loafers, slippers, sandals
-                spellSelectionGroup18 = new ChanceTable<SpellId>()
+                spellSelectionGroup18 = new ChanceTable<SpellId>(ChanceTableType.Weight)
                 {
-                    ( SpellId.StrengthSelf1,              0.06f ),
-                    ( SpellId.QuicknessSelf1,             0.06f ),
-                    ( SpellId.EnduranceSelf1,             0.06f ),
-                    ( SpellId.CoordinationSelf1,          0.06f ),
-                    ( SpellId.ImpregnabilitySelf1,        0.05f ),
-                    ( SpellId.InvulnerabilitySelf1,       0.05f ),
-                    ( SpellId.MagicResistanceSelf1,       0.05f ),
-                    ( SpellId.ArcaneEnlightenmentSelf1,   0.05f ),
-                    ( SpellId.ManaMasterySelf1,           0.04f ),
-                    ( SpellId.HealingMasterySelf1,        0.04f ),
-                    ( SpellId.JumpingMasterySelf1,        0.04f ),
-                    ( SpellId.SprintSelf1,                0.04f ),
-                    ( SpellId.LightWeaponsMasterySelf1,   0.04f ), // AxeMasterySelf1
-                    ( SpellId.FinesseWeaponsMasterySelf1, 0.04f ), // DaggerMasterySelf1
-                    ( SpellId.MaceMasterySelf1,           0.04f ),
-                    ( SpellId.SpearMasterySelf1,          0.04f ),
-                    ( SpellId.StaffMasterySelf1,          0.04f ),
-                    ( SpellId.HeavyWeaponsMasterySelf1,   0.04f ), // SwordMasterySelf1
-                    ( SpellId.UnarmedCombatMasterySelf1,  0.04f ),
-                    ( SpellId.MissileWeaponsMasterySelf1, 0.04f ), // BowMasterySelf1
-                    ( SpellId.CrossbowMasterySelf1,       0.04f ),
-                    ( SpellId.ThrownWeaponMasterySelf1,   0.04f ),
+                    ( SpellId.StrengthSelf1,              1.0f ),
+                    ( SpellId.QuicknessSelf1,             1.0f ),
+                    ( SpellId.EnduranceSelf1,             1.0f ),
+                    ( SpellId.CoordinationSelf1,          1.0f ),
+
+                    ( SpellId.ImpregnabilitySelf1,        0.5f ),
+                    ( SpellId.InvulnerabilitySelf1,       0.5f ),
+                    ( SpellId.MagicResistanceSelf1,       0.5f ),
+
+                    ( SpellId.ArcaneEnlightenmentSelf1,   0.5f ),
+                    ( SpellId.ManaMasterySelf1,           0.5f ),
+                    ( SpellId.HealingMasterySelf1,        0.5f ),
+
+                    ( SpellId.JumpingMasterySelf1,        0.5f ),
+                    ( SpellId.SprintSelf1,                0.5f ),
                 };
 
                 // nether caster - should never be used with Infiltration data but here for completioness.

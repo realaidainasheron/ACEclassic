@@ -384,7 +384,7 @@ namespace ACE.Server.Factories
 
                         for (var i = 0; i < numItems; i++)
                         {
-                            lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+                            lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
 
                             if (lootWorldObject != null)
                                 loot.Add(lootWorldObject);
@@ -398,7 +398,7 @@ namespace ACE.Server.Factories
                             // If we roll this bracket we are guaranteed at least ItemMinAmount of items, with an extra roll for each additional item under itemMaxAmount.
                             for (var i = 0; i < profile.ItemMinAmount; i++)
                             {
-                                lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+                                lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
 
                                 if (lootWorldObject != null)
                                     loot.Add(lootWorldObject);
@@ -409,7 +409,7 @@ namespace ACE.Server.Factories
                                 itemChance = ThreadSafeRandom.NextInterval(profile.LootQualityMod);
                                 if (itemChance < profile.ItemChance / 100.0)
                                 {
-                                    lootWorldObject = CreateRandomLootObjects_New(profile, TreasureItemCategory.Item);
+                                    lootWorldObject = CreateRandomLootObjects_New(profile, Common.ConfigManager.Config.Server.WorldRuleset == Ruleset.CustomDM ? TreasureItemCategory.MagicItem : TreasureItemCategory.Item);
 
                                     if (lootWorldObject != null)
                                         loot.Add(lootWorldObject);
@@ -1413,6 +1413,19 @@ namespace ACE.Server.Factories
 
                 // other mundane items (mana stones, food/drink, healing kits, lockpicks, and spell components/peas) don't get mutated
             }
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                if (wo.WieldSkillType.HasValue)
+                    wo.WieldSkillType = (int)wo.ConvertToMoASkill((Skill)wo.WieldSkillType);
+                if (wo.WieldSkillType2.HasValue)
+                    wo.WieldSkillType2 = (int)wo.ConvertToMoASkill((Skill)wo.WieldSkillType2);
+                if (wo.WieldSkillType3.HasValue)
+                    wo.WieldSkillType3 = (int)wo.ConvertToMoASkill((Skill)wo.WieldSkillType3);
+                if (wo.WieldSkillType4.HasValue)
+                    wo.WieldSkillType4 = (int)wo.ConvertToMoASkill((Skill)wo.WieldSkillType4);
+            }
+
             return wo;
         }
 

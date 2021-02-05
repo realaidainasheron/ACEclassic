@@ -503,6 +503,15 @@ namespace ACE.Server.WorldObjects
             SpellId.BloodDrinkerSelf7,
             SpellId.BloodDrinkerSelf8,
 
+            SpellId.BloodDrinkerOther1,
+            SpellId.BloodDrinkerOther2,
+            SpellId.BloodDrinkerOther3,
+            SpellId.BloodDrinkerOther4,
+            SpellId.BloodDrinkerOther5,
+            SpellId.BloodDrinkerOther6,
+            SpellId.BloodDrinkerOther7,
+            SpellId.BloodDrinkerOther8,
+
             SpellId.SpiritDrinkerSelf1,
             SpellId.SpiritDrinkerSelf2,
             SpellId.SpiritDrinkerSelf3,
@@ -511,6 +520,15 @@ namespace ACE.Server.WorldObjects
             SpellId.SpiritDrinkerSelf6,
             SpellId.SpiritDrinkerSelf7,
             SpellId.SpiritDrinkerSelf8,
+
+            SpellId.SpiritDrinkerOther1,
+            SpellId.SpiritDrinkerOther2,
+            SpellId.SpiritDrinkerOther3,
+            SpellId.SpiritDrinkerOther4,
+            SpellId.SpiritDrinkerOther5,
+            SpellId.SpiritDrinkerOther6,
+            SpellId.SpiritDrinkerOther7,
+            SpellId.SpiritDrinkerOther8,
 
             SpellId.Impenetrability1,
             SpellId.Impenetrability2,
@@ -606,16 +624,27 @@ namespace ACE.Server.WorldObjects
 
             container = this;
 
-            // Temp test code
-            WorldObject owner = null;
-            if (container is Player || container is Corpse)
-                owner = container;
-            else if (container.OwnerId.HasValue)
-                owner = PlayerManager.GetOnlinePlayer(container.OwnerId.Value);
-
-            if (owner != null)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
-                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                // The following code makes sure the item fits into CustomDM's ruleset as not all database entries have been updated.
+
+                // Convert weapon skills to merged ones
+                if (worldObject.WieldSkillType.HasValue)
+                    worldObject.WieldSkillType = (int)worldObject.ConvertToMoASkill((Skill)worldObject.WieldSkillType);
+                if (worldObject.WieldSkillType2.HasValue)
+                    worldObject.WieldSkillType2 = (int)worldObject.ConvertToMoASkill((Skill)worldObject.WieldSkillType2);
+                if (worldObject.WieldSkillType3.HasValue)
+                    worldObject.WieldSkillType3 = (int)worldObject.ConvertToMoASkill((Skill)worldObject.WieldSkillType3);
+                if (worldObject.WieldSkillType4.HasValue)
+                    worldObject.WieldSkillType4 = (int)worldObject.ConvertToMoASkill((Skill)worldObject.WieldSkillType4);
+
+                // Remove invalid spells from items accessible by players, keep the spells on monster's items.
+                WorldObject owner = null;
+                if (container is Player || container is Corpse)
+                    owner = container;
+                else if (container.OwnerId.HasValue)
+                    owner = PlayerManager.GetOnlinePlayer(container.OwnerId.Value);
+                if (owner != null)
                 {
                     var list = worldObject.Biota.GetKnownSpellsIds(BiotaDatabaseLock);
                     foreach (var entry in list)

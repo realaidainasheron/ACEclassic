@@ -132,14 +132,14 @@ namespace ACE.Server.Factories.Tables
 
                 T2_Chances = new ChanceTable<TreasureArmorType>(ChanceTableType.Weight)
                 {
-                    ( TreasureArmorType.Leather,        1.00f ),
-                    ( TreasureArmorType.StuddedLeather, 1.00f ),
+                    ( TreasureArmorType.Leather,        1.0f ),
+                    ( TreasureArmorType.StuddedLeather, 2.0f ),
+                    ( TreasureArmorType.Chainmail,      1.0f ),
                 };
 
                 T3_Chances = new ChanceTable<TreasureArmorType>(ChanceTableType.Weight)
                 {
                     ( TreasureArmorType.Chainmail,      4.0f ),
-
                     ( TreasureArmorType.Leather,        1.0f ),
                     ( TreasureArmorType.StuddedLeather, 1.0f ),
                 };
