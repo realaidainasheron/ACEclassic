@@ -105,8 +105,8 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordlong,            0.5f ),
                     ( WeenieClassName.swordbroad,           0.5f ),
 
-                    ( WeenieClassName.swordrapier,          0.25f ),
-                    ( WeenieClassName.ace40618_spadone,     0.25f ),
+                    ( WeenieClassName.swordrapier,          0.5f ),
+                    ( WeenieClassName.ace40618_spadone,     0.5f ),
                 };
 
                 T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -135,13 +135,13 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.swordbroadfire,     0.25f ),
                     ( WeenieClassName.swordbroadfrost,    0.25f ),
 
-                    ( WeenieClassName.swordrapier,        2.0f ),
+                    ( WeenieClassName.swordrapier,        4.0f ),
 
-                    ( WeenieClassName.ace40618_spadone,          2.0f ), // Renamed to Greatsword to keep with the Aluvian theme
-                    ( WeenieClassName.ace40619_acidspadone,      0.125f ),
-                    ( WeenieClassName.ace40620_lightningspadone, 0.125f ),
-                    ( WeenieClassName.ace40621_flamingspadone,   0.125f ),
-                    ( WeenieClassName.ace40622_frostspadone,     0.125f ),
+                    ( WeenieClassName.ace40618_spadone,          4.0f ), // Renamed to Greatsword to keep with the Aluvian theme
+                    ( WeenieClassName.ace40619_acidspadone,      0.25f ),
+                    ( WeenieClassName.ace40620_lightningspadone, 0.25f ),
+                    ( WeenieClassName.ace40621_flamingspadone,   0.25f ),
+                    ( WeenieClassName.ace40622_frostspadone,     0.25f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()

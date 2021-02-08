@@ -78,7 +78,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.axehand,           3.0f ),
                     ( WeenieClassName.axebattle,         0.5f ),
                     ( WeenieClassName.warhammer,         0.5f ),
-                    ( WeenieClassName.ace41052_greataxe, 0.25f ),
+                    ( WeenieClassName.ace41052_greataxe, 0.5f ),
                 };
 
                 AxeWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -101,11 +101,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerfire,     0.25f ),
                     ( WeenieClassName.warhammerfrost,    0.25f ),
 
-                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
-                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
-                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
-                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
-                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                    ( WeenieClassName.ace41052_greataxe,          4.00f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.25f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.25f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.25f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.25f ),
                 };
 
                 AxeWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -136,11 +136,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerfire,     0.25f ),
                     ( WeenieClassName.warhammerfrost,    0.25f ),
 
-                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
-                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
-                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
-                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
-                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                    ( WeenieClassName.ace41052_greataxe,          4.0f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.25f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.25f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.25f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.25f ),
                 };
 
 
@@ -149,7 +149,7 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.shouono,           3.0f ),
                     ( WeenieClassName.ono,               0.5f ),
                     ( WeenieClassName.warhammer,         0.5f ),
-                    ( WeenieClassName.ace41052_greataxe, 0.25f ),
+                    ( WeenieClassName.ace41052_greataxe, 0.5f ),
                 };
 
                 AxeWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -172,11 +172,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.warhammerfire,     0.25f ),
                     ( WeenieClassName.warhammerfrost,    0.25f ),
 
-                    ( WeenieClassName.ace41052_greataxe,          2.00f ),
-                    ( WeenieClassName.ace41053_acidgreataxe,      0.125f ),
-                    ( WeenieClassName.ace41054_lightninggreataxe, 0.125f ),
-                    ( WeenieClassName.ace41055_flaminggreataxe,   0.125f ),
-                    ( WeenieClassName.ace41056_frostgreataxe,     0.125f ),
+                    ( WeenieClassName.ace41052_greataxe,          4.0f ),
+                    ( WeenieClassName.ace41053_acidgreataxe,      0.25f ),
+                    ( WeenieClassName.ace41054_lightninggreataxe, 0.25f ),
+                    ( WeenieClassName.ace41055_flaminggreataxe,   0.25f ),
+                    ( WeenieClassName.ace41056_frostgreataxe,     0.25f ),
                 };
             }
             else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)

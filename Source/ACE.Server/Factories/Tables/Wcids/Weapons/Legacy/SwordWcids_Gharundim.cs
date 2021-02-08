@@ -106,8 +106,8 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.shamshir,             0.5f ),
                     ( WeenieClassName.takuba,               0.5f ),
 
-                    ( WeenieClassName.swordrapier,          0.25f ),
-                    ( WeenieClassName.ace41067_shashqa,     0.25f ),
+                    ( WeenieClassName.swordrapier,          0.5f ),
+                    ( WeenieClassName.ace41067_shashqa,     0.5f ),
                 };
 
                 T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -136,13 +136,13 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.takubafire,       0.25f ),
                     ( WeenieClassName.takubafrost,      0.25f ),
 
-                    ( WeenieClassName.swordrapier,      2.0f ),
+                    ( WeenieClassName.swordrapier,      4.0f ),
 
-                    ( WeenieClassName.ace41067_shashqa,          2.0f ),
-                    ( WeenieClassName.ace41068_acidshashqa,      0.125f ),
-                    ( WeenieClassName.ace41069_lightningshashqa, 0.125f ),
-                    ( WeenieClassName.ace41070_flamingshashqa,   0.125f ),
-                    ( WeenieClassName.ace41071_frostshashqa,     0.125f ),
+                    ( WeenieClassName.ace41067_shashqa,          4.0f ),
+                    ( WeenieClassName.ace41068_acidshashqa,      0.25f ),
+                    ( WeenieClassName.ace41069_lightningshashqa, 0.25f ),
+                    ( WeenieClassName.ace41070_flamingshashqa,   0.25f ),
+                    ( WeenieClassName.ace41071_frostshashqa,     0.25f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()
