@@ -1,0 +1,120 @@
+{
+  "key": 2421620736,
+  "value": {
+    "links": [
+      {
+        "target": 2030399490,
+        "source": 2030399489,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2030399488,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.6994,
+              "y": 185.482,
+              "z": 28.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2421620993
+        }
+      },
+      {
+        "id": 2030399489,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.0182,
+              "y": 175.894,
+              "z": 28.005
+            },
+            "angles": {
+              "w": 0.970021,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.24302
+            }
+          },
+          "objcell_id": 2421620995
+        }
+      },
+      {
+        "id": 2030399490,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.7036,
+              "y": 175.021,
+              "z": 28.005
+            },
+            "angles": {
+              "w": 0.970021,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.24302
+            }
+          },
+          "objcell_id": 2421620995
+        }
+      },
+      {
+        "id": 2030399491,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.552,
+              "y": 188.199,
+              "z": 28.005
+            },
+            "angles": {
+              "w": 0.429429,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.903101
+            }
+          },
+          "objcell_id": 2421620736
+        }
+      },
+      {
+        "id": 2030399492,
+        "wcid": 14930,
+        "desc": "Wedding Planner(plannerwedding)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.77,
+              "y": 177.354,
+              "z": 28.005
+            },
+            "angles": {
+              "w": -0.699297,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.714831
+            }
+          },
+          "objcell_id": 2421620995
+        }
+      }
+    ]
+  },
+  "desc": "2421620736(9057)"
+}

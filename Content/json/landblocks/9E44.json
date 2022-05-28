@@ -1,0 +1,687 @@
+{
+  "key": 2655256576,
+  "value": {
+    "links": [
+      {
+        "target": 2045001759,
+        "source": 2045001758,
+        "desc": "Apprentice Fletcher(collectorfletchingghalow)(wcid: 28189) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2045001728,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 141.777,
+              "y": 43.0087,
+              "z": 36.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001729,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.777,
+              "y": 35.2587,
+              "z": 36.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001730,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 124.252,
+              "y": 35.2587,
+              "z": 36.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001731,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.5,
+              "y": 76.01,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655256880
+        }
+      },
+      {
+        "id": 2045001732,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.5,
+              "y": 82.01,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001733,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.49,
+              "y": 87.5,
+              "z": 78.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001734,
+        "wcid": 4702,
+        "desc": "Najsuf al-Afan the Shopkeeper(khayyabanshopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.9925,
+              "y": 6.01204,
+              "z": 46.005
+            },
+            "angles": {
+              "w": 0.99996,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.008998
+            }
+          },
+          "objcell_id": 2655256849
+        }
+      },
+      {
+        "id": 2045001735,
+        "wcid": 4704,
+        "desc": "Weaponsmith Mura bint Mu'ja(khayyabanweaponsmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 127.989,
+              "y": 37.5231,
+              "z": 36.005
+            },
+            "angles": {
+              "w": -0.237364,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.971421
+            }
+          },
+          "objcell_id": 2655256863
+        }
+      },
+      {
+        "id": 2045001736,
+        "wcid": 4694,
+        "desc": "Najmima the Archmage(khayyabanarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.602,
+              "y": 75.0084,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.99992,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.012678
+            }
+          },
+          "objcell_id": 2655256883
+        }
+      },
+      {
+        "id": 2045001737,
+        "wcid": 4701,
+        "desc": "Scribe Tashwi ibn Sayat(khayyabanscribe)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.9925,
+              "y": 11.9572,
+              "z": 46.005
+            },
+            "angles": {
+              "w": 0.669814,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.742529
+            }
+          },
+          "objcell_id": 2655256859
+        }
+      },
+      {
+        "id": 2045001738,
+        "wcid": 4700,
+        "desc": "Jeweler Hawtala bint Arsha(khayyabanjeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.9461,
+              "y": 18.0094,
+              "z": 46.005
+            },
+            "angles": {
+              "w": 0.008775,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999961
+            }
+          },
+          "objcell_id": 2655256851
+        }
+      },
+      {
+        "id": 2045001739,
+        "wcid": 4697,
+        "desc": "Bowyer Safruya bint Bilak(khayyabanbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.7736,
+              "y": 109.263,
+              "z": 69.705
+            },
+            "angles": {
+              "w": -0.103486,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.994631
+            }
+          },
+          "objcell_id": 2655256891
+        }
+      },
+      {
+        "id": 2045001740,
+        "wcid": 4695,
+        "desc": "Armorer Hinfiya bint Ju(khayyabanarmorer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.988,
+              "y": 39.0254,
+              "z": 36.005
+            },
+            "angles": {
+              "w": 0.368926,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.929459
+            }
+          },
+          "objcell_id": 2655256863
+        }
+      },
+      {
+        "id": 2045001741,
+        "wcid": 4667,
+        "desc": "General Supplies(khayyabanshopkeepsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 47.2004,
+              "y": 9.87274,
+              "z": 49.2
+            },
+            "angles": {
+              "w": -0.999931,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.011707
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001742,
+        "wcid": 4663,
+        "desc": "Blade of the Desert(khayyabanarmorersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 132.925,
+              "y": 26.8992,
+              "z": 39.2
+            },
+            "angles": {
+              "w": 0.9997,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.024508
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001743,
+        "wcid": 4662,
+        "desc": "Desert Magic Supplies(khayyabanarchmagesign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.28,
+              "y": 91.3889,
+              "z": 81.7
+            },
+            "angles": {
+              "w": -0.002575,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999997
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001744,
+        "wcid": 4664,
+        "desc": "Safruya's Bows(khayyabanbowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 57.9308,
+              "y": 99.453,
+              "z": 73.1261
+            },
+            "angles": {
+              "w": 0.7039,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.7103
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001745,
+        "wcid": 4668,
+        "desc": "Khayyaban(khayyabansign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 163.212,
+              "y": 114.418,
+              "z": 42.4024
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001746,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.523,
+              "y": 80.5269,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.715169,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.698951
+            }
+          },
+          "objcell_id": 2655256880
+        }
+      },
+      {
+        "id": 2045001747,
+        "wcid": 20226,
+        "desc": "Scrivener of War Magic(scrivenerwarouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 32.6441,
+              "y": 114.688,
+              "z": 70.005
+            },
+            "angles": {
+              "w": -0.045846,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998949
+            }
+          },
+          "objcell_id": 2655256894
+        }
+      },
+      {
+        "id": 2045001748,
+        "wcid": 20210,
+        "desc": "Scrivener of Creature Magic(scrivenercreatureouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.7243,
+              "y": 114.187,
+              "z": 70.005
+            },
+            "angles": {
+              "w": -0.344502,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.938786
+            }
+          },
+          "objcell_id": 2655256897
+        }
+      },
+      {
+        "id": 2045001749,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.99,
+              "y": 111.5,
+              "z": 70.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2655256897
+        }
+      },
+      {
+        "id": 2045001750,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 37.99,
+              "y": 103.5,
+              "z": 70.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001751,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 32.5,
+              "y": 106.49,
+              "z": 70.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001752,
+        "wcid": 20214,
+        "desc": "Scrivener of Item Magic(scriveneritemouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 42.6011,
+              "y": 100.055,
+              "z": 70.005
+            },
+            "angles": {
+              "w": -0.983914,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.17864
+            }
+          },
+          "objcell_id": 2655256899
+        }
+      },
+      {
+        "id": 2045001753,
+        "wcid": 20222,
+        "desc": "Scrivener of Life Magic(scrivenerlifeouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 45.0309,
+              "y": 103.855,
+              "z": 70.005
+            },
+            "angles": {
+              "w": 0.714232,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.699909
+            }
+          },
+          "objcell_id": 2655256900
+        }
+      },
+      {
+        "id": 2045001754,
+        "wcid": 19369,
+        "desc": "Oriel Residential Halls Portal(portalorielresidentialhalls)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.861,
+              "y": 34.8004,
+              "z": 34.7666
+            },
+            "angles": {
+              "w": 0.029498,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999565
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001755,
+        "wcid": 19391,
+        "desc": "Oriel Residential Halls(orielresidentialhallssign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.939,
+              "y": 33.484,
+              "z": 34.7608
+            },
+            "angles": {
+              "w": 0.029498,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999565
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001756,
+        "wcid": 24436,
+        "desc": "Matron Hive North(portalasheroninvasionmid)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.121,
+              "y": 15.0475,
+              "z": 33.7844
+            },
+            "angles": {
+              "w": 0.116012,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.993248
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001757,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.12,
+              "y": 34.9864,
+              "z": 34.9205
+            },
+            "angles": {
+              "w": -0.059033,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998256
+            }
+          },
+          "objcell_id": 2655256576
+        }
+      },
+      {
+        "id": 2045001758,
+        "wcid": 28189,
+        "desc": "Apprentice Fletcher(collectorfletchingghalow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.5344,
+              "y": 109.511,
+              "z": 69.705
+            },
+            "angles": {
+              "w": -0.362784,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.931873
+            }
+          },
+          "objcell_id": 2655256891
+        }
+      },
+      {
+        "id": 2045001759,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.7494,
+              "y": 107.277,
+              "z": 69.705
+            },
+            "angles": {
+              "w": -0.385965,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.922514
+            }
+          },
+          "objcell_id": 2655256891
+        }
+      }
+    ]
+  },
+  "desc": "2655256576(9E44)"
+}

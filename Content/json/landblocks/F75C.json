@@ -1,0 +1,1179 @@
+{
+  "key": 4150001664,
+  "value": {
+    "links": [
+      {
+        "target": 2138423316,
+        "source": 2138423315,
+        "desc": "Cow(cowbrown)(wcid: 618) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2138423316,
+        "source": 2138423332,
+        "desc": "Brown Rabbit(rabbitbrown)(wcid: 2567) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2138423316,
+        "source": 2138423333,
+        "desc": "Brown Rabbit(rabbitbrown)(wcid: 2567) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2138423316,
+        "source": 2138423334,
+        "desc": "Brown Rabbit(rabbitbrown)(wcid: 2567) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2138423326,
+        "source": 2138423324,
+        "desc": "Leather Crafter(leathercraftersho)(wcid: 4214) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2138423341,
+        "source": 2138423340,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2138423353,
+        "source": 2138423352,
+        "desc": "Tai Wo(taiwo)(wcid: 15812) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2138423296,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.0,
+              "y": 83.975,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423297,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 57.0,
+              "y": 83.975,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423298,
+        "wcid": 5621,
+        "desc": "Hot Air(fireplaceheat)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.08,
+              "y": 79.58,
+              "z": 21.76
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423299,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 69.47,
+              "y": 93.35,
+              "z": 21.24
+            },
+            "angles": {
+              "w": 0.7694,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.638768
+            }
+          },
+          "objcell_id": 4150001933
+        }
+      },
+      {
+        "id": 2138423300,
+        "wcid": 721,
+        "desc": "Door(doorsholeft)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 57.0,
+              "y": 94.775,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423301,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.0,
+              "y": 94.775,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423302,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.98,
+              "y": 91.3,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001960
+        }
+      },
+      {
+        "id": 2138423303,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.045,
+              "y": 76.745,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150001961
+        }
+      },
+      {
+        "id": 2138423304,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.265,
+              "y": 81.505,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 4150001962
+        }
+      },
+      {
+        "id": 2138423305,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.76,
+              "y": 86.45,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001963
+        }
+      },
+      {
+        "id": 2138423306,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.285,
+              "y": 83.995,
+              "z": 25.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 4150001970
+        }
+      },
+      {
+        "id": 2138423307,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.75,
+              "y": 83.975,
+              "z": 25.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001971
+        }
+      },
+      {
+        "id": 2138423308,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.975,
+              "y": 91.305,
+              "z": 25.6
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001972
+        }
+      },
+      {
+        "id": 2138423309,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.04,
+              "y": 76.745,
+              "z": 25.6
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150001973
+        }
+      },
+      {
+        "id": 2138423310,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.359,
+              "y": 59.5345,
+              "z": 20.025
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423311,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.359,
+              "y": 54.4845,
+              "z": 20.025
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423312,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.884,
+              "y": 68.1845,
+              "z": 20.025
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423313,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 9.5114,
+              "y": 78.9669,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423314,
+        "wcid": 174,
+        "desc": "Well(well)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 30.3512,
+              "y": 63.2132,
+              "z": 20.0
+            },
+            "angles": {
+              "w": -0.727113,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.686518
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423315,
+        "wcid": 618,
+        "desc": "Cow(cowbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 12.3792,
+              "y": 61.5243,
+              "z": 20.0056
+            },
+            "angles": {
+              "w": -0.984627,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.174668
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423316,
+        "wcid": 1154,
+        "desc": "Linkable Monster Generator(linkmonstergen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 18.0589,
+              "y": 62.626,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.943773,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.330593
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423317,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 18.3,
+              "y": 77.3,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423318,
+        "wcid": 4562,
+        "desc": "Bai-Nu Ru the Weaponsmith(toutoublacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.4112,
+              "y": 77.0045,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 0.077902,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.996961
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423319,
+        "wcid": 4564,
+        "desc": "Healer Rili Sou(toutouhealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.8813,
+              "y": 57.3171,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.353297,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.935511
+            }
+          },
+          "objcell_id": 4150001976
+        }
+      },
+      {
+        "id": 2138423320,
+        "wcid": 4534,
+        "desc": "East Tower Healer(toutouhealersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.889,
+              "y": 68.98,
+              "z": 21.9
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423321,
+        "wcid": 4532,
+        "desc": "Tou-Tou Smithy(toutoublacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 51.703,
+              "y": 74.433,
+              "z": 21.75
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423322,
+        "wcid": 4563,
+        "desc": "Rou Beh the Bowyer(toutoubowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 15.2989,
+              "y": 88.1497,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 0.114233,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.993454
+            }
+          },
+          "objcell_id": 4150001992
+        }
+      },
+      {
+        "id": 2138423323,
+        "wcid": 4533,
+        "desc": "East Tower Bows(toutoubowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 8.753,
+              "y": 76.65,
+              "z": 21.85
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423324,
+        "wcid": 4214,
+        "desc": "Leather Crafter(leathercraftersho)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 8.20698,
+              "y": 84.6189,
+              "z": 24.405
+            },
+            "angles": {
+              "w": 0.953407,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.301686
+            }
+          },
+          "objcell_id": 4150001986
+        }
+      },
+      {
+        "id": 2138423325,
+        "wcid": 5148,
+        "desc": "Flames(fireplacefire)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 6.461,
+              "y": 89.726,
+              "z": 20.205
+            },
+            "angles": {
+              "w": -0.719625,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.694363
+            }
+          },
+          "objcell_id": 4150001987
+        }
+      },
+      {
+        "id": 2138423326,
+        "wcid": 1154,
+        "desc": "Linkable Monster Generator(linkmonstergen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 5.60688,
+              "y": 89.1758,
+              "z": 24.405
+            },
+            "angles": {
+              "w": -0.480487,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.877002
+            }
+          },
+          "objcell_id": 4150001986
+        }
+      },
+      {
+        "id": 2138423327,
+        "wcid": 794,
+        "desc": "Apple Generator(applegenerator)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.918,
+              "y": 67.0563,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 0.304175,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.952616
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423328,
+        "wcid": 4179,
+        "desc": "Bonfire(bonfire)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.0421,
+              "y": 79.6377,
+              "z": 21.005
+            },
+            "angles": {
+              "w": 0.933776,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.357857
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423329,
+        "wcid": 1013,
+        "desc": "Portal to Arwic(portalarwic)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.94,
+              "y": 125.074,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.382683,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.92388
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423330,
+        "wcid": 4535,
+        "desc": "Tou-Tou(toutousign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 46.096,
+              "y": 65.699,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423331,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 55.96,
+              "y": 86.768,
+              "z": 17.205
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001926
+        }
+      },
+      {
+        "id": 2138423332,
+        "wcid": 2567,
+        "desc": "Brown Rabbit(rabbitbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.0064,
+              "y": 92.4217,
+              "z": 17.205
+            },
+            "angles": {
+              "w": 0.952652,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.304063
+            }
+          },
+          "objcell_id": 4150001927
+        }
+      },
+      {
+        "id": 2138423333,
+        "wcid": 2567,
+        "desc": "Brown Rabbit(rabbitbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 51.5479,
+              "y": 89.4367,
+              "z": 17.205
+            },
+            "angles": {
+              "w": -0.372111,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.928188
+            }
+          },
+          "objcell_id": 4150001927
+        }
+      },
+      {
+        "id": 2138423334,
+        "wcid": 2567,
+        "desc": "Brown Rabbit(rabbitbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.746,
+              "y": 91.5759,
+              "z": 18.05
+            },
+            "angles": {
+              "w": -0.103684,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99461
+            }
+          },
+          "objcell_id": 4150001927
+        }
+      },
+      {
+        "id": 2138423335,
+        "wcid": 165,
+        "desc": "Pool(pool)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.6453,
+              "y": 81.3325,
+              "z": 20.05
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001955
+        }
+      },
+      {
+        "id": 2138423336,
+        "wcid": 5436,
+        "desc": "Armorer Xao Fen(toutouarmorer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.4479,
+              "y": 76.4653,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.053279,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99858
+            }
+          },
+          "objcell_id": 4150001920
+        }
+      },
+      {
+        "id": 2138423339,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 79.8309,
+              "y": 31.2972,
+              "z": 20.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423340,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.0853,
+              "y": 39.4312,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 0.372435,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.928058
+            }
+          },
+          "objcell_id": 4150001997
+        }
+      },
+      {
+        "id": 2138423341,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.8456,
+              "y": 39.5455,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.619706,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.784834
+            }
+          },
+          "objcell_id": 4150001997
+        }
+      },
+      {
+        "id": 2138423342,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 79.2141,
+              "y": 38.334,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.695741,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.718292
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423352,
+        "wcid": 15812,
+        "desc": "Tai Wo(taiwo)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.2418,
+              "y": 80.2651,
+              "z": 28.405
+            },
+            "angles": {
+              "w": -0.94846,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.316898
+            }
+          },
+          "objcell_id": 4150001949
+        }
+      },
+      {
+        "id": 2138423353,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 32.569,
+              "y": 79.4919,
+              "z": 28.405
+            },
+            "angles": {
+              "w": 0.68191,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.731436
+            }
+          },
+          "objcell_id": 4150001949
+        }
+      },
+      {
+        "id": 2138423354,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.0525,
+              "y": 50.834,
+              "z": 20.0
+            },
+            "angles": {
+              "w": -0.587874,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.808953
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423357,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.9191,
+              "y": 52.1238,
+              "z": 27.0
+            },
+            "angles": {
+              "w": 0.990092,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.140422
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423360,
+        "wcid": 19194,
+        "desc": "Nullified Statue of a Banderling(statuebanderlingnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.7783,
+              "y": 51.5974,
+              "z": 26.8193
+            },
+            "angles": {
+              "w": 0.983642,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.180133
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423361,
+        "wcid": 19718,
+        "desc": "Effigy Foundry Portal(portalmidstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 42.8858,
+              "y": 56.3193,
+              "z": 14.805
+            },
+            "angles": {
+              "w": -0.819631,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.572891
+            }
+          },
+          "objcell_id": 4150002004
+        }
+      },
+      {
+        "id": 2138423362,
+        "wcid": 25940,
+        "desc": "Scrawled Note(noteemptysoul1)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.0705,
+              "y": 9.98725,
+              "z": 20.079
+            },
+            "angles": {
+              "w": -0.426145,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.904655
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423363,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 13.6078,
+              "y": 58.8829,
+              "z": 154.912
+            },
+            "angles": {
+              "w": 0.73157,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.681767
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      },
+      {
+        "id": 2138423364,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 81.0753,
+              "y": 57.8992,
+              "z": 20.005
+            },
+            "angles": {
+              "w": -0.680695,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.732567
+            }
+          },
+          "objcell_id": 4150001664
+        }
+      }
+    ]
+  },
+  "desc": "4150001664(F75C)"
+}

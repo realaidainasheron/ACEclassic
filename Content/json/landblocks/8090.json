@@ -1,0 +1,1332 @@
+{
+  "key": 2156920832,
+  "value": {
+    "links": [
+      {
+        "target": 2013855778,
+        "source": 2013855776,
+        "desc": "Ufet, Prophet of Blades(collectorbannergha)(wcid: 11810) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2013855778,
+        "source": 2013855795,
+        "desc": "Coron Usgin(coronusgin)(wcid: 19464) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2013855778,
+        "source": 2013855821,
+        "desc": "Sign(signnoir1)(wcid: 25722) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2013855778,
+        "source": 2013855826,
+        "desc": "Coman ibn Rashid(royalguardcoman)(wcid: 28476) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2013855744,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 32.5,
+              "y": 162.99,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156921091
+        }
+      },
+      {
+        "id": 2013855745,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.5,
+              "y": 156.99,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855746,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 37.51,
+              "y": 151.5,
+              "z": 124.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855747,
+        "wcid": 145,
+        "desc": "Coffer(coffer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.625,
+              "y": 159.575,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156921115
+        }
+      },
+      {
+        "id": 2013855748,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.5,
+              "y": 158.49,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855749,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.5,
+              "y": 166.01,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855750,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.25,
+              "y": 148.49,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855751,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 65.99,
+              "y": 111.5,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156921119
+        }
+      },
+      {
+        "id": 2013855752,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.99,
+              "y": 103.5,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855753,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.5,
+              "y": 106.49,
+              "z": 124.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855754,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.495,
+              "y": 133.5,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.707106,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855755,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 70.005,
+              "y": 133.5,
+              "z": 124.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707106
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855756,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.49,
+              "y": 125.75,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.707106,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855757,
+        "wcid": 4773,
+        "desc": "Gharundim Stone Collector Gen(collectorstonegharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.7463,
+              "y": 161.432,
+              "z": 127.605
+            },
+            "angles": {
+              "w": -0.093068,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99566
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855758,
+        "wcid": 991,
+        "desc": "Djusufa bint Huqis the Jeweler(zaikhaljeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.68,
+              "y": 112.92,
+              "z": 124.01
+            },
+            "angles": {
+              "w": 0.228351,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.973579
+            }
+          },
+          "objcell_id": 2156921116
+        }
+      },
+      {
+        "id": 2013855759,
+        "wcid": 993,
+        "desc": "Shopkeep Yudi ibn Zayrim(zaikhalshopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 67.1094,
+              "y": 102.857,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.815128,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.579281
+            }
+          },
+          "objcell_id": 2156921122
+        }
+      },
+      {
+        "id": 2013855760,
+        "wcid": 985,
+        "desc": "Barkeeper Ghazi al-Barbasin(zaikhalbarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.4896,
+              "y": 131.347,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.951594,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.307357
+            }
+          },
+          "objcell_id": 2156921130
+        }
+      },
+      {
+        "id": 2013855761,
+        "wcid": 6441,
+        "desc": "Well(wellnotop)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 30.0,
+              "y": 50.0,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855762,
+        "wcid": 987,
+        "desc": "Qufana al-Khurti the Blacksmith(zaikhalblacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.1682,
+              "y": 158.156,
+              "z": 124.291
+            },
+            "angles": {
+              "w": -0.179661,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.983729
+            }
+          },
+          "objcell_id": 2156921102
+        }
+      },
+      {
+        "id": 2013855763,
+        "wcid": 988,
+        "desc": "Maftaltub al-Sur the Bowyer(zaikhalbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.76,
+              "y": 160.92,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.957319,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.289032
+            }
+          },
+          "objcell_id": 2156921104
+        }
+      },
+      {
+        "id": 2013855764,
+        "wcid": 989,
+        "desc": "Zubid ibn Ifi the Grocer(zaikhalgrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 41.16,
+              "y": 164.04,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.280667,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.959805
+            }
+          },
+          "objcell_id": 2156921094
+        }
+      },
+      {
+        "id": 2013855765,
+        "wcid": 994,
+        "desc": "Muda bint Qalakh the Tailor(zaikhaltailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 30.72,
+              "y": 150.24,
+              "z": 124.01
+            },
+            "angles": {
+              "w": 0.892979,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.450099
+            }
+          },
+          "objcell_id": 2156921088
+        }
+      },
+      {
+        "id": 2013855766,
+        "wcid": 1008,
+        "desc": "Loom and Oven(zaikhalgrocersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 48.2031,
+              "y": 157.236,
+              "z": 127.47
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855767,
+        "wcid": 1007,
+        "desc": "Qufana's Forge(zaikhalblacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.126,
+              "y": 158.79,
+              "z": 127.817
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855768,
+        "wcid": 1012,
+        "desc": "The Open Book(zaikhalpubsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 51.3776,
+              "y": 125.789,
+              "z": 127.443
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855769,
+        "wcid": 1011,
+        "desc": "Djusufa's Stones(zaikhaljewelersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.8984,
+              "y": 105.375,
+              "z": 127.416
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855770,
+        "wcid": 6441,
+        "desc": "Well(wellnotop)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.6,
+              "y": 131.52,
+              "z": 124.08
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855771,
+        "wcid": 4778,
+        "desc": "Gharundim Ivory Collector Gen(crafterivorygharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.6249,
+              "y": 139.27,
+              "z": 127.605
+            },
+            "angles": {
+              "w": -0.733156,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.680061
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855772,
+        "wcid": 1108,
+        "desc": "Zaikhal(zaikhalsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.162,
+              "y": 60.7116,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.382683,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.92388
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855773,
+        "wcid": 6894,
+        "desc": "Tailor(zaikhaltailorsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.6383,
+              "y": 148.778,
+              "z": 127.456
+            },
+            "angles": {
+              "w": 0.998644,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.052058
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855774,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.4989,
+              "y": 122.976,
+              "z": 123.7
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156921131
+        }
+      },
+      {
+        "id": 2013855775,
+        "wcid": 165,
+        "desc": "Pool(pool)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.68,
+              "y": 99.24,
+              "z": 124.05
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855776,
+        "wcid": 11810,
+        "desc": "Ufet, Prophet of Blades(collectorbannergha)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.705,
+              "y": 145.487,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.929415,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.369036
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855778,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.3559,
+              "y": 125.411,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.943517,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.331324
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855785,
+        "wcid": 15837,
+        "desc": "Sanctum Residential Halls Portal(portalsanctumresidentialhalls)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.852,
+              "y": 34.507,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855786,
+        "wcid": 16898,
+        "desc": "Sanctum Residential Halls(sanctumresidentialhallssign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.838,
+              "y": 37.271,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855789,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.3266,
+              "y": 110.189,
+              "z": 124.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855792,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.361,
+              "y": 114.479,
+              "z": 131.0
+            },
+            "angles": {
+              "w": 0.704801,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.709405
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855795,
+        "wcid": 19464,
+        "desc": "Coron Usgin(coronusgin)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 55.7027,
+              "y": 113.29,
+              "z": 127.605
+            },
+            "angles": {
+              "w": 0.670732,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.7417
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855796,
+        "wcid": 19208,
+        "desc": "Nullified Statue of a Zharalim(statuezharalimnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.3016,
+              "y": 114.453,
+              "z": 130.82
+            },
+            "angles": {
+              "w": 0.698624,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.715489
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855797,
+        "wcid": 19718,
+        "desc": "Effigy Foundry Portal(portalmidstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.4348,
+              "y": 127.176,
+              "z": 118.805
+            },
+            "angles": {
+              "w": -0.99987,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.01612
+            }
+          },
+          "objcell_id": 2156921144
+        }
+      },
+      {
+        "id": 2013855798,
+        "wcid": 20215,
+        "desc": "Apprentice Scrivener of Item and War Magic(scriveneritemwar1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.2019,
+              "y": 90.5341,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.058603,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998281
+            }
+          },
+          "objcell_id": 2156921164
+        }
+      },
+      {
+        "id": 2013855799,
+        "wcid": 20216,
+        "desc": "Apprentice Scrivener of Item and War Magic(scriveneritemwar2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.2968,
+              "y": 90.7548,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.046392,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998923
+            }
+          },
+          "objcell_id": 2156921164
+        }
+      },
+      {
+        "id": 2013855800,
+        "wcid": 20217,
+        "desc": "Apprentice Scrivener of Life Magic(scrivenerlife1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.8492,
+              "y": 82.7797,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.786179,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.617999
+            }
+          },
+          "objcell_id": 2156921174
+        }
+      },
+      {
+        "id": 2013855801,
+        "wcid": 20218,
+        "desc": "Apprentice Scrivener of Life Magic(scrivenerlife2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.9422,
+              "y": 84.6767,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.733119,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.6801
+            }
+          },
+          "objcell_id": 2156921174
+        }
+      },
+      {
+        "id": 2013855802,
+        "wcid": 20205,
+        "desc": "Apprentice Scrivener of Creature Magic(scrivenercreature1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.0478,
+              "y": 77.23,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.994534,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.104411
+            }
+          },
+          "objcell_id": 2156921166
+        }
+      },
+      {
+        "id": 2013855803,
+        "wcid": 20206,
+        "desc": "Apprentice Scrivener of Creature Magic(scrivenercreature2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.7262,
+              "y": 77.5171,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.99889,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.047115
+            }
+          },
+          "objcell_id": 2156921166
+        }
+      },
+      {
+        "id": 2013855804,
+        "wcid": 20221,
+        "desc": "Journeyman Scrivener of Life Magic(scrivenerlifeinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.8027,
+              "y": 91.9083,
+              "z": 127.205
+            },
+            "angles": {
+              "w": 0.056066,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.998427
+            }
+          },
+          "objcell_id": 2156921165
+        }
+      },
+      {
+        "id": 2013855805,
+        "wcid": 20222,
+        "desc": "Scrivener of Life Magic(scrivenerlifeouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.2571,
+              "y": 91.6304,
+              "z": 127.205
+            },
+            "angles": {
+              "w": 0.056066,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.998427
+            }
+          },
+          "objcell_id": 2156921165
+        }
+      },
+      {
+        "id": 2013855806,
+        "wcid": 20210,
+        "desc": "Scrivener of Creature Magic(scrivenercreatureouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 68.532,
+              "y": 84.8789,
+              "z": 127.205
+            },
+            "angles": {
+              "w": 0.741986,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.670415
+            }
+          },
+          "objcell_id": 2156921177
+        }
+      },
+      {
+        "id": 2013855807,
+        "wcid": 20209,
+        "desc": "Journeyman Scrivener of Creature Magic(scrivenercreatureinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 68.2702,
+              "y": 82.447,
+              "z": 127.205
+            },
+            "angles": {
+              "w": 0.741986,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.670415
+            }
+          },
+          "objcell_id": 2156921177
+        }
+      },
+      {
+        "id": 2013855808,
+        "wcid": 20225,
+        "desc": "Journeyman Scrivener of War Magic(scrivenerwarinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.1617,
+              "y": 76.0631,
+              "z": 127.205
+            },
+            "angles": {
+              "w": 0.999746,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.022555
+            }
+          },
+          "objcell_id": 2156921167
+        }
+      },
+      {
+        "id": 2013855809,
+        "wcid": 20226,
+        "desc": "Scrivener of War Magic(scrivenerwarouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.5858,
+              "y": 76.5263,
+              "z": 127.205
+            },
+            "angles": {
+              "w": -0.997943,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.064105
+            }
+          },
+          "objcell_id": 2156921167
+        }
+      },
+      {
+        "id": 2013855810,
+        "wcid": 20214,
+        "desc": "Scrivener of Item Magic(scriveneritemouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.5864,
+              "y": 87.4514,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.482019,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.876161
+            }
+          },
+          "objcell_id": 2156921172
+        }
+      },
+      {
+        "id": 2013855811,
+        "wcid": 20213,
+        "desc": "Journeyman Scrivener of Item Magic(scriveneriteminner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.5612,
+              "y": 81.2012,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.881294,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.472569
+            }
+          },
+          "objcell_id": 2156921172
+        }
+      },
+      {
+        "id": 2013855817,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.0828,
+              "y": 86.5489,
+              "z": 196.767
+            },
+            "angles": {
+              "w": -0.999941,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.010899
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855821,
+        "wcid": 25722,
+        "desc": "Sign(signnoir1)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.7871,
+              "y": 68.4853,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.931044,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.364908
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855822,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 16.3444,
+              "y": 140.231,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.868898,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.494992
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855823,
+        "wcid": 27547,
+        "desc": "Bind Stone(bindstone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 75.5241,
+              "y": 32.4954,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.497901,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.867234
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855824,
+        "wcid": 6112,
+        "desc": "Zaikhal Meeting Hall Portal(portalallegiancehallzaikhal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.5805,
+              "y": 29.7052,
+              "z": 126.005
+            },
+            "angles": {
+              "w": 0.342589,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.939485
+            }
+          },
+          "objcell_id": 2156921181
+        }
+      },
+      {
+        "id": 2013855825,
+        "wcid": 28462,
+        "desc": "Morgluuk's Head Gen(generatormorgluukheadzaikhal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.4146,
+              "y": 57.2782,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.326631,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.945152
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      },
+      {
+        "id": 2013855826,
+        "wcid": 28476,
+        "desc": "Coman ibn Rashid(royalguardcoman)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.2544,
+              "y": 77.6888,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.375713,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.926736
+            }
+          },
+          "objcell_id": 2156920832
+        }
+      }
+    ]
+  },
+  "desc": "2156920832(8090)"
+}

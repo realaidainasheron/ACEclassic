@@ -1,0 +1,1498 @@
+{
+  "key": 2103705600,
+  "value": {
+    "links": [
+      {
+        "target": 2010529818,
+        "source": 2010529817,
+        "desc": "Akyafi ibn Sumwar(yaraqakyafi)(wcid: 5365) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529818,
+        "source": 2010529826,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529818,
+        "source": 2010529853,
+        "desc": "Small Creepy Statue(yaraqbattledungeonportalnpc)(wcid: 25992) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529818,
+        "source": 2010529859,
+        "desc": "Apprentice Alchemist(collectoralchemyghanewbie)(wcid: 27741) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529818,
+        "source": 2010529869,
+        "desc": "Mara al-Luq(yaraqmara)(wcid: 5179) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529818,
+        "source": 2010529870,
+        "desc": "Ma'yad ibn Ibsar(yaraqmayad)(wcid: 5366) -> linkmonstergen(wcid: 1154)"
+      },
+      {
+        "target": 2010529830,
+        "source": 2010529871,
+        "desc": "Salvaging Forge(craftingforgesalvaging)(wcid: 30461) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2010529830,
+        "source": 2010529872,
+        "desc": "Alchemy Forge(craftingforgealchemy)(wcid: 30465) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2010529830,
+        "source": 2010529873,
+        "desc": "Cooking Forge(craftingforgecooking)(wcid: 30466) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2010529830,
+        "source": 2010529874,
+        "desc": "Fletching Forge(craftingforgefletching)(wcid: 30467) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2010529830,
+        "source": 2010529875,
+        "desc": "Lockpick Forge(craftingforgelockpick)(wcid: 30460) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2010529885,
+        "source": 2010529884,
+        "desc": "Antius Blackmoor(antiusblackmoorcarlodicenza)(wcid: 30906) -> linkmonstergen30minutes(wcid: 3953)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2010529792,
+        "wcid": 145,
+        "desc": "Coffer(coffer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.125,
+              "y": 113.075,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705869
+        }
+      },
+      {
+        "id": 2010529793,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.0,
+              "y": 111.99,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529794,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.0,
+              "y": 119.51,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529795,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 91.75,
+              "y": 101.99,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529796,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.0,
+              "y": 125.51,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2103705873
+        }
+      },
+      {
+        "id": 2010529797,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 80.0,
+              "y": 131.51,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529798,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 82.99,
+              "y": 137.0,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529799,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 92.21,
+              "y": 64.0,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705918
+        }
+      },
+      {
+        "id": 2010529800,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.21,
+              "y": 56.0,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529801,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 80.72,
+              "y": 58.99,
+              "z": 12.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529802,
+        "wcid": 794,
+        "desc": "Apple Generator(applegenerator)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 185.66,
+              "y": 3.85551,
+              "z": 15.7208
+            },
+            "angles": {
+              "w": 0.99225,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.124257
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529803,
+        "wcid": 1040,
+        "desc": "Nuya bint Mulud the Grocer(yaraqgrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.72,
+              "y": 124.52,
+              "z": 12.01
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705876
+        }
+      },
+      {
+        "id": 2010529804,
+        "wcid": 1047,
+        "desc": "Arlad ibn Mulud the Tailor(yaraqtailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.6799,
+              "y": 138.12,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.551937,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.833886
+            }
+          },
+          "objcell_id": 2103705870
+        }
+      },
+      {
+        "id": 2010529805,
+        "wcid": 1041,
+        "desc": "Mulud al-Iyar the Healer(yaraqhealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.92,
+              "y": 138.564,
+              "z": 15.605
+            },
+            "angles": {
+              "w": -0.626604,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.779337
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529806,
+        "wcid": 1038,
+        "desc": "Buray ibn Tamsa the Blacksmith(yaraqblacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.8479,
+              "y": 111.782,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.551937,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.833886
+            }
+          },
+          "objcell_id": 2103705856
+        }
+      },
+      {
+        "id": 2010529807,
+        "wcid": 1039,
+        "desc": "Ladim al-Faji the Bowyer(yaraqbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.1409,
+              "y": 115.885,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.658594,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.752498
+            }
+          },
+          "objcell_id": 2103705856
+        }
+      },
+      {
+        "id": 2010529808,
+        "wcid": 1045,
+        "desc": "Rahira bint Hisan the Shopkeeper(yaraqshopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.1599,
+              "y": 89.98,
+              "z": 12.01
+            },
+            "angles": {
+              "w": -0.278991,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.960294
+            }
+          },
+          "objcell_id": 2103705901
+        }
+      },
+      {
+        "id": 2010529809,
+        "wcid": 1044,
+        "desc": "Wasifa al-Kani the Scribe(yaraqscribe)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 91.48,
+              "y": 84.84,
+              "z": 12.01
+            },
+            "angles": {
+              "w": -0.594823,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.803857
+            }
+          },
+          "objcell_id": 2103705911
+        }
+      },
+      {
+        "id": 2010529810,
+        "wcid": 1042,
+        "desc": "Tariqana bint Hin the Jeweler(yaraqjeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.9199,
+              "y": 78.02,
+              "z": 12.01
+            },
+            "angles": {
+              "w": -0.995396,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.095846
+            }
+          },
+          "objcell_id": 2103705903
+        }
+      },
+      {
+        "id": 2010529811,
+        "wcid": 1034,
+        "desc": "Barkeep Jubal al-Baljad(yaraqbarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 93.2,
+              "y": 55.56,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.735506,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.677518
+            }
+          },
+          "objcell_id": 2103705921
+        }
+      },
+      {
+        "id": 2010529812,
+        "wcid": 1076,
+        "desc": "The Cerulean Cove(yaraqtavernsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 75.5867,
+              "y": 59.3967,
+              "z": 15.5505
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529813,
+        "wcid": 1071,
+        "desc": "The Eagle's Blade(yaraqblacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.3637,
+              "y": 111.273,
+              "z": 15.8309
+            },
+            "angles": {
+              "w": 0.913012,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.407932
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529814,
+        "wcid": 1073,
+        "desc": "Nuya's Necessities(yaraqgrocersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 72.3694,
+              "y": 131.351,
+              "z": 15.3761
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529815,
+        "wcid": 2307,
+        "desc": "Archmage Inyamkaya bint Ruz(yaraqarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.9758,
+              "y": 91.882,
+              "z": 15.205
+            },
+            "angles": {
+              "w": 0.001857,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999998
+            }
+          },
+          "objcell_id": 2103705902
+        }
+      },
+      {
+        "id": 2010529816,
+        "wcid": 4770,
+        "desc": "Collector Gharundim Gen(collectorgharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 79.5236,
+              "y": 64.6462,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.196667,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.98047
+            }
+          },
+          "objcell_id": 2103705915
+        }
+      },
+      {
+        "id": 2010529817,
+        "wcid": 5365,
+        "desc": "Akyafi ibn Sumwar(yaraqakyafi)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.0516,
+              "y": 65.2689,
+              "z": 20.805
+            },
+            "angles": {
+              "w": 0.788997,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.614397
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529818,
+        "wcid": 1154,
+        "desc": "Linkable Monster Generator(linkmonstergen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.9412,
+              "y": 66.5654,
+              "z": 20.805
+            },
+            "angles": {
+              "w": 0.669975,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.742384
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529819,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 91.3656,
+              "y": 58.5145,
+              "z": 12.9546
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705920
+        }
+      },
+      {
+        "id": 2010529820,
+        "wcid": 165,
+        "desc": "Pool(pool)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.72,
+              "y": 54.84,
+              "z": 12.05
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529821,
+        "wcid": 165,
+        "desc": "Pool(pool)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.72,
+              "y": 102.36,
+              "z": 12.05
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529822,
+        "wcid": 9424,
+        "desc": "Drawohan the Gem Seller(yaraqlugiangemseller)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.3869,
+              "y": 51.5654,
+              "z": 12.01
+            },
+            "angles": {
+              "w": -0.734439,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.678675
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529825,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 81.3816,
+              "y": 30.7557,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705930
+        }
+      },
+      {
+        "id": 2010529826,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.4002,
+              "y": 38.4678,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.125633,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.992077
+            }
+          },
+          "objcell_id": 2103705932
+        }
+      },
+      {
+        "id": 2010529828,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 80.08,
+              "y": 35.413,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.39265,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.919688
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529830,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.4073,
+              "y": 94.7986,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.753985,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.656892
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529834,
+        "wcid": 14930,
+        "desc": "Wedding Planner(plannerwedding)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 91.4248,
+              "y": 35.7012,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.729114,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.684392
+            }
+          },
+          "objcell_id": 2103705932
+        }
+      },
+      {
+        "id": 2010529837,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.839,
+              "y": 79.4061,
+              "z": 12.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529840,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.4462,
+              "y": 83.5872,
+              "z": 18.9739
+            },
+            "angles": {
+              "w": 0.71897,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.695041
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529843,
+        "wcid": 19196,
+        "desc": "Nullified Statue of a Drudge(statuedrudgenull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.9142,
+              "y": 83.5841,
+              "z": 18.839
+            },
+            "angles": {
+              "w": 0.699647,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.714488
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529844,
+        "wcid": 19717,
+        "desc": "Mannikin Foundry Portal(portallowstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.9385,
+              "y": 97.8042,
+              "z": 6.805
+            },
+            "angles": {
+              "w": -0.999485,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.032073
+            }
+          },
+          "objcell_id": 2103705936
+        }
+      },
+      {
+        "id": 2010529845,
+        "wcid": 20215,
+        "desc": "Apprentice Scrivener of Item and War Magic(scriveneritemwar1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 148.328,
+              "y": 109.418,
+              "z": 16.005
+            },
+            "angles": {
+              "w": 0.702778,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.71141
+            }
+          },
+          "objcell_id": 2103705956
+        }
+      },
+      {
+        "id": 2010529846,
+        "wcid": 20217,
+        "desc": "Apprentice Scrivener of Life Magic(scrivenerlife1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 155.045,
+              "y": 116.419,
+              "z": 16.005
+            },
+            "angles": {
+              "w": -0.128535,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.991705
+            }
+          },
+          "objcell_id": 2103705966
+        }
+      },
+      {
+        "id": 2010529847,
+        "wcid": 20205,
+        "desc": "Apprentice Scrivener of Creature Magic(scrivenercreature1starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 161.559,
+              "y": 109.528,
+              "z": 16.005
+            },
+            "angles": {
+              "w": -0.797963,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.602706
+            }
+          },
+          "objcell_id": 2103705958
+        }
+      },
+      {
+        "id": 2010529848,
+        "wcid": 20206,
+        "desc": "Apprentice Scrivener of Creature Magic(scrivenercreature2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.116,
+              "y": 108.396,
+              "z": 19.205
+            },
+            "angles": {
+              "w": -0.691081,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.722777
+            }
+          },
+          "objcell_id": 2103705957
+        }
+      },
+      {
+        "id": 2010529849,
+        "wcid": 20218,
+        "desc": "Apprentice Scrivener of Life Magic(scrivenerlife2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.358,
+              "y": 118.182,
+              "z": 19.205
+            },
+            "angles": {
+              "w": -0.487067,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.873365
+            }
+          },
+          "objcell_id": 2103705969
+        }
+      },
+      {
+        "id": 2010529850,
+        "wcid": 20216,
+        "desc": "Apprentice Scrivener of Item and War Magic(scriveneritemwar2starter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 162.948,
+              "y": 110.601,
+              "z": 19.205
+            },
+            "angles": {
+              "w": 0.685224,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.728333
+            }
+          },
+          "objcell_id": 2103705959
+        }
+      },
+      {
+        "id": 2010529852,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 77.6848,
+              "y": 81.0209,
+              "z": 75.8893
+            },
+            "angles": {
+              "w": 0.053052,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998592
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529853,
+        "wcid": 25992,
+        "desc": "Small Creepy Statue(yaraqbattledungeonportalnpc)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.3025,
+              "y": 173.546,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.997083,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.076326
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529856,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 37.7105,
+              "y": 105.788,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.660946,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.750434
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529857,
+        "wcid": 6111,
+        "desc": "Yaraq Meeting Hall Portal(portalallegiancehallyaraq)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.3787,
+              "y": 35.4762,
+              "z": 14.005
+            },
+            "angles": {
+              "w": 0.698606,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.715506
+            }
+          },
+          "objcell_id": 2103705971
+        }
+      },
+      {
+        "id": 2010529858,
+        "wcid": 27547,
+        "desc": "Bind Stone(bindstone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.1621,
+              "y": 33.492,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.747357,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.664422
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529859,
+        "wcid": 27741,
+        "desc": "Apprentice Alchemist(collectoralchemyghanewbie)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 90.5631,
+              "y": 90.5797,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.938614,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.344968
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529867,
+        "wcid": 11954,
+        "desc": "Portal to Greenspire(portalgreenspire-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.2509,
+              "y": 61.7802,
+              "z": 12.5
+            },
+            "angles": {
+              "w": 0.810548,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.585672
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529869,
+        "wcid": 5179,
+        "desc": "Mara al-Luq(yaraqmara)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.6987,
+              "y": 66.45,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.10452,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.994523
+            }
+          },
+          "objcell_id": 2103705918
+        }
+      },
+      {
+        "id": 2010529870,
+        "wcid": 5366,
+        "desc": "Ma'yad ibn Ibsar(yaraqmayad)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 89.9014,
+              "y": 62.067,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.760963,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.648796
+            }
+          },
+          "objcell_id": 2103705918
+        }
+      },
+      {
+        "id": 2010529871,
+        "wcid": 30461,
+        "desc": "Salvaging Forge(craftingforgesalvaging)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.374,
+              "y": 116.128,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529872,
+        "wcid": 30465,
+        "desc": "Alchemy Forge(craftingforgealchemy)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 100.928,
+              "y": 84.661,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529873,
+        "wcid": 30466,
+        "desc": "Cooking Forge(craftingforgecooking)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.618,
+              "y": 148.353,
+              "z": 12.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529874,
+        "wcid": 30467,
+        "desc": "Fletching Forge(craftingforgefletching)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 95.7726,
+              "y": 113.577,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529875,
+        "wcid": 30460,
+        "desc": "Lockpick Forge(craftingforgelockpick)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 95.7718,
+              "y": 132.065,
+              "z": 12.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529878,
+        "wcid": 11953,
+        "desc": "Portal to Bluespire(portalbluespire-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.537,
+              "y": 66.8,
+              "z": 16.072
+            },
+            "angles": {
+              "w": 0.475248,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.879852
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529879,
+        "wcid": 4572,
+        "desc": "Portal to Khayyaban(portalkhayyaban)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 179.948,
+              "y": 17.5226,
+              "z": 8.66
+            },
+            "angles": {
+              "w": -0.020858,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999783
+            }
+          },
+          "objcell_id": 2103705972
+        }
+      },
+      {
+        "id": 2010529880,
+        "wcid": 26640,
+        "desc": "Portal to Xarabydun(portalxarabydun)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 132.062,
+              "y": 17.0314,
+              "z": 6.66
+            },
+            "angles": {
+              "w": 0.006112,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999981
+            }
+          },
+          "objcell_id": 2103705987
+        }
+      },
+      {
+        "id": 2010529881,
+        "wcid": 1026,
+        "desc": "Portal to Samsur(portalsamsur)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 179.703,
+              "y": 174.764,
+              "z": 7.66
+            },
+            "angles": {
+              "w": 0.999979,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.006478
+            }
+          },
+          "objcell_id": 2103705982
+        }
+      },
+      {
+        "id": 2010529882,
+        "wcid": 4571,
+        "desc": "Portal to Al-Arqas(portalalarqas)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.964,
+              "y": 175.46,
+              "z": 6.66
+            },
+            "angles": {
+              "w": 0.999096,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.042502
+            }
+          },
+          "objcell_id": 2103705977
+        }
+      },
+      {
+        "id": 2010529883,
+        "wcid": 1020,
+        "desc": "Portal to Holtburg(portalholtburg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.8746,
+              "y": 174.703,
+              "z": 4.66
+            },
+            "angles": {
+              "w": 0.999895,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.014477
+            }
+          },
+          "objcell_id": 2103705992
+        }
+      },
+      {
+        "id": 2010529884,
+        "wcid": 30906,
+        "desc": "Antius Blackmoor(antiusblackmoorcarlodicenza)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 76.1456,
+              "y": 102.306,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.342535,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.939505
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      },
+      {
+        "id": 2010529885,
+        "wcid": 3953,
+        "desc": "Linkable Monster Gen (30 min.)(linkmonstergen30minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 74.9746,
+              "y": 103.29,
+              "z": 12.005
+            },
+            "angles": {
+              "w": 0.342535,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.939505
+            }
+          },
+          "objcell_id": 2103705600
+        }
+      }
+    ]
+  },
+  "desc": "2103705600(7D64)"
+}

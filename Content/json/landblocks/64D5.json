@@ -1,0 +1,1105 @@
+{
+  "key": 1691680768,
+  "value": {
+    "links": [
+      {
+        "target": 1984778272,
+        "source": 1984778271,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778291,
+        "desc": "Olcris, Nuhmudira's Student(lugianolcris)(wcid: 23997) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778303,
+        "desc": "Cow(cow)(wcid: 14) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778304,
+        "desc": "Cow(cow)(wcid: 14) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778305,
+        "desc": "Cow(cow)(wcid: 14) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778306,
+        "desc": "Cow(cow)(wcid: 14) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778309,
+        "desc": "Suzuhara Baijin(stoneholdsuzuharabaijin)(wcid: 30387) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778272,
+        "source": 1984778310,
+        "desc": "Cyphis Suldow(cyphissuldow)(wcid: 30627) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1984778308,
+        "source": 1984778307,
+        "desc": "Barnar the Tinker's Note(notebarnar)(wcid: 28336) -> linkitemgen10seconds(wcid: 15759)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 1984778240,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.6675,
+              "y": 136.557,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.708956,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.705253
+            }
+          },
+          "objcell_id": 1691681024
+        }
+      },
+      {
+        "id": 1984778241,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.0,
+              "y": 126.675,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778242,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.275,
+              "y": 130.8,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778243,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.5325,
+              "y": 106.518,
+              "z": 81.04
+            },
+            "angles": {
+              "w": -0.107132,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.994245
+            }
+          },
+          "objcell_id": 1691681033
+        }
+      },
+      {
+        "id": 1984778244,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.34,
+              "y": 102.33,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778245,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 77.78,
+              "y": 110.07,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.703395,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.710799
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778246,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.025,
+              "y": 87.225,
+              "z": 78.025
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691681051
+        }
+      },
+      {
+        "id": 1984778247,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.675,
+              "y": 84.0,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778248,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.8,
+              "y": 79.725,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778249,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.185,
+              "y": 80.63,
+              "z": 78.015
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 1691681057
+        }
+      },
+      {
+        "id": 1984778250,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.575,
+              "y": 83.185,
+              "z": 84.01
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 1691681062
+        }
+      },
+      {
+        "id": 1984778251,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.955,
+              "y": 83.245,
+              "z": 84.01
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 1691681062
+        }
+      },
+      {
+        "id": 1984778252,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.55,
+              "y": 88.626,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778253,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.25,
+              "y": 79.074,
+              "z": 78.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778254,
+        "wcid": 5435,
+        "desc": "Archmage Ta Ri (stoneholdarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.2449,
+              "y": 134.414,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.08845,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.996081
+            }
+          },
+          "objcell_id": 1691681024
+        }
+      },
+      {
+        "id": 1984778255,
+        "wcid": 2535,
+        "desc": "Healer of Stonehold(stoneholdhealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.319,
+              "y": 85.9495,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.534355,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.84526
+            }
+          },
+          "objcell_id": 1691681051
+        }
+      },
+      {
+        "id": 1984778256,
+        "wcid": 1351,
+        "desc": "Sign(onewaywarningsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 145.291,
+              "y": 110.925,
+              "z": 77.7862
+            },
+            "angles": {
+              "w": 0.817856,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.575423
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778257,
+        "wcid": 1381,
+        "desc": "Farmer(farmeraluvian)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.8419,
+              "y": 84.7625,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.997635,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.068734
+            }
+          },
+          "objcell_id": 1691681057
+        }
+      },
+      {
+        "id": 1984778258,
+        "wcid": 2533,
+        "desc": "Gerhi, Bowyer of Stonehold (stoneholdbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.4072,
+              "y": 108.694,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.208046,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.978119
+            }
+          },
+          "objcell_id": 1691681031
+        }
+      },
+      {
+        "id": 1984778264,
+        "wcid": 1900,
+        "desc": "Heartland(portalheartland)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 146.924,
+              "y": 111.837,
+              "z": 77.5176
+            },
+            "angles": {
+              "w": 0.817856,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.575423
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778265,
+        "wcid": 2534,
+        "desc": "Vivaina, Shopkeep of Stonehold (stoneholdshopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 55.7029,
+              "y": 81.1751,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.991196,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.132404
+            }
+          },
+          "objcell_id": 1691681057
+        }
+      },
+      {
+        "id": 1984778271,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.505,
+              "y": 34.6436,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.858542,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.512744
+            }
+          },
+          "objcell_id": 1691681068
+        }
+      },
+      {
+        "id": 1984778272,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 55.5953,
+              "y": 34.8911,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.592512,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.805561
+            }
+          },
+          "objcell_id": 1691681068
+        }
+      },
+      {
+        "id": 1984778273,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.6809,
+              "y": 41.6629,
+              "z": 78.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778274,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.6276,
+              "y": 42.7309,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.01078,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999942
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778281,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.3536,
+              "y": 78.9561,
+              "z": 78.0
+            },
+            "angles": {
+              "w": -0.046671,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99891
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778284,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.565,
+              "y": 83.236,
+              "z": 85.0
+            },
+            "angles": {
+              "w": 0.65798,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.753035
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778287,
+        "wcid": 19206,
+        "desc": "Nullified Statue of a Tumerok(statuetumeroknull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.8452,
+              "y": 83.3074,
+              "z": 84.82
+            },
+            "angles": {
+              "w": 0.740886,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.67163
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778288,
+        "wcid": 19716,
+        "desc": "Mammet Foundry Portal(portalhighstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.9684,
+              "y": 96.0482,
+              "z": 72.805
+            },
+            "angles": {
+              "w": 0.999685,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.025101
+            }
+          },
+          "objcell_id": 1691681072
+        }
+      },
+      {
+        "id": 1984778290,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 74.7084,
+              "y": 76.0736,
+              "z": 125.226
+            },
+            "angles": {
+              "w": 0.99994,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.010957
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778291,
+        "wcid": 23997,
+        "desc": "Olcris, Nuhmudira's Student(lugianolcris)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.106,
+              "y": 61.4052,
+              "z": 78.01
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 1691681044
+        }
+      },
+      {
+        "id": 1984778292,
+        "wcid": 27248,
+        "desc": "Corin of Stonehold(stoneholdfarmer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 82.2909,
+              "y": 66.7715,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.99692,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.078428
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778293,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.843,
+              "y": 63.6702,
+              "z": 81.055
+            },
+            "angles": {
+              "w": 0.569995,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.821648
+            }
+          },
+          "objcell_id": 1691681082
+        }
+      },
+      {
+        "id": 1984778294,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.052,
+              "y": 65.6406,
+              "z": 78.01
+            },
+            "angles": {
+              "w": -0.260507,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.965472
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778295,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 104.674,
+              "y": 63.6192,
+              "z": 77.995
+            },
+            "angles": {
+              "w": 0.498486,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.866898
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778296,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.248,
+              "y": 61.7231,
+              "z": 80.995
+            },
+            "angles": {
+              "w": -0.260507,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.965472
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778297,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 108.006,
+              "y": 64.4046,
+              "z": 81.0
+            },
+            "angles": {
+              "w": 0.498486,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.866898
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778298,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.2109,
+              "y": 99.801,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.999784,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.020808
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778299,
+        "wcid": 20220,
+        "desc": "Grand Master Scrivener of Life Magic(scrivenerlifeextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.474,
+              "y": 60.9558,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.72906,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.68445
+            }
+          },
+          "objcell_id": 1691681078
+        }
+      },
+      {
+        "id": 1984778300,
+        "wcid": 20224,
+        "desc": "Grand Master Scrivener of War Magic(scrivenerwarextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.218,
+              "y": 65.5884,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.121199,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.992628
+            }
+          },
+          "objcell_id": 1691681076
+        }
+      },
+      {
+        "id": 1984778301,
+        "wcid": 20212,
+        "desc": "Grand Master Scrivener of Item Magic(scriveneritemextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.795,
+              "y": 60.7034,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.788514,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.615017
+            }
+          },
+          "objcell_id": 1691681077
+        }
+      },
+      {
+        "id": 1984778302,
+        "wcid": 20208,
+        "desc": "Grand Master Scrivener of Creature Magic(scrivenercreatureextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 108.594,
+              "y": 57.1028,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.999923,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.012407
+            }
+          },
+          "objcell_id": 1691681078
+        }
+      },
+      {
+        "id": 1984778303,
+        "wcid": 14,
+        "desc": "Cow(cow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.357,
+              "y": 98.4505,
+              "z": 78.0057
+            },
+            "angles": {
+              "w": -0.438042,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.898955
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778304,
+        "wcid": 14,
+        "desc": "Cow(cow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 96.763,
+              "y": 64.6982,
+              "z": 78.0057
+            },
+            "angles": {
+              "w": -0.811749,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.584006
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778305,
+        "wcid": 14,
+        "desc": "Cow(cow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 112.009,
+              "y": 101.073,
+              "z": 78.0057
+            },
+            "angles": {
+              "w": -0.989876,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.141933
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778306,
+        "wcid": 14,
+        "desc": "Cow(cow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.259,
+              "y": 69.3912,
+              "z": 78.0057
+            },
+            "angles": {
+              "w": -0.529752,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.848153
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778307,
+        "wcid": 28336,
+        "desc": "Barnar the Tinker's Note(notebarnar)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 82.0548,
+              "y": 107.376,
+              "z": 81.079
+            },
+            "angles": {
+              "w": 0.69225,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.721658
+            }
+          },
+          "objcell_id": 1691681033
+        }
+      },
+      {
+        "id": 1984778308,
+        "wcid": 15759,
+        "desc": "Linkable Item Generator(linkitemgen10seconds)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 82.0115,
+              "y": 106.335,
+              "z": 81.005
+            },
+            "angles": {
+              "w": 0.69225,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.721658
+            }
+          },
+          "objcell_id": 1691681033
+        }
+      },
+      {
+        "id": 1984778309,
+        "wcid": 30387,
+        "desc": "Suzuhara Baijin(stoneholdsuzuharabaijin)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 44.8777,
+              "y": 102.159,
+              "z": 78.005
+            },
+            "angles": {
+              "w": -0.487097,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.873348
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      },
+      {
+        "id": 1984778310,
+        "wcid": 30627,
+        "desc": "Cyphis Suldow(cyphissuldow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 92.1077,
+              "y": 75.6184,
+              "z": 78.005
+            },
+            "angles": {
+              "w": 0.717812,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.696237
+            }
+          },
+          "objcell_id": 1691680768
+        }
+      }
+    ]
+  },
+  "desc": "1691680768(64D5)"
+}

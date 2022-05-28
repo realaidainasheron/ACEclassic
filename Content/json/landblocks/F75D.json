@@ -1,0 +1,386 @@
+{
+  "key": 4150067200,
+  "value": {
+    "weenies": [
+      {
+        "id": 2138427392,
+        "wcid": 12487,
+        "desc": "Dryreach Beach Cottages Portal(portaldryreachbeachcottages)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 82.833,
+              "y": 117.023,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.998072,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.062068
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427393,
+        "wcid": 12472,
+        "desc": "Ariake Portal(portalariake)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 91.974,
+              "y": 115.656,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.92406,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.382247
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427394,
+        "wcid": 12561,
+        "desc": "Tou-Tou Penninsula Cottages Portal(portaltoutoupenninsulacottages)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 93.4396,
+              "y": 106.145,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.753631,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.657298
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427395,
+        "wcid": 12774,
+        "desc": "Settlement Portals(statueportalring)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.8083,
+              "y": 108.462,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.998065,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.062179
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427396,
+        "wcid": 13130,
+        "desc": "Snowy Valley Portal(portalsnowyvalley)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 75.9606,
+              "y": 116.27,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.96997,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.243223
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427397,
+        "wcid": 13137,
+        "desc": "Tou-Tou Road Villas Portal(portaltoutoroadvillas)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.8975,
+              "y": 99.7602,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.96997,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.243223
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427398,
+        "wcid": 13112,
+        "desc": "Nan-Zari Portal(portalnanzari)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 79.314,
+              "y": 98.1734,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.998526,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.054286
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427399,
+        "wcid": 14676,
+        "desc": "Westshore Cottages Portal(portalwestshorecottages)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.62,
+              "y": 111.83,
+              "z": 38.005
+            },
+            "angles": {
+              "w": -0.732723,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.680527
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427400,
+        "wcid": 14655,
+        "desc": "Ong-Hau Village Portal(portalonghauvillage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.742,
+              "y": 101.664,
+              "z": 38.3645
+            },
+            "angles": {
+              "w": -0.562424,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.826849
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427401,
+        "wcid": 19140,
+        "desc": "Dame Tolani Villas Portal(portaldametolanivillas)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 92.7037,
+              "y": 92.1945,
+              "z": 39.5906
+            },
+            "angles": {
+              "w": 0.272809,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.962068
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427402,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 113.441,
+              "y": 15.9571,
+              "z": 46.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 4150067465
+        }
+      },
+      {
+        "id": 2138427403,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.541,
+              "y": 8.03212,
+              "z": 46.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 4150067466
+        }
+      },
+      {
+        "id": 2138427404,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 108.0,
+              "y": 6.475,
+              "z": 46.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427405,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 108.0,
+              "y": 17.525,
+              "z": 46.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 4150067200
+        }
+      },
+      {
+        "id": 2138427406,
+        "wcid": 20226,
+        "desc": "Scrivener of War Magic(scrivenerwarouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 99.9067,
+              "y": 6.40467,
+              "z": 46.005
+            },
+            "angles": {
+              "w": -0.974086,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.226179
+            }
+          },
+          "objcell_id": 4150067461
+        }
+      },
+      {
+        "id": 2138427407,
+        "wcid": 20214,
+        "desc": "Scrivener of Item Magic(scriveneritemouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 101.441,
+              "y": 15.0443,
+              "z": 46.005
+            },
+            "angles": {
+              "w": -0.700253,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.713895
+            }
+          },
+          "objcell_id": 4150067461
+        }
+      },
+      {
+        "id": 2138427408,
+        "wcid": 20210,
+        "desc": "Scrivener of Creature Magic(scrivenercreatureouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 114.578,
+              "y": 8.79531,
+              "z": 46.005
+            },
+            "angles": {
+              "w": 0.694165,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.719816
+            }
+          },
+          "objcell_id": 4150067460
+        }
+      },
+      {
+        "id": 2138427409,
+        "wcid": 20222,
+        "desc": "Scrivener of Life Magic(scrivenerlifeouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.669,
+              "y": 8.49843,
+              "z": 50.405
+            },
+            "angles": {
+              "w": -0.98374,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.179596
+            }
+          },
+          "objcell_id": 4150067470
+        }
+      }
+    ]
+  },
+  "desc": "4150067200(F75D)"
+}
