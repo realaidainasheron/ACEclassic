@@ -57,23 +57,16 @@ namespace ACE.Database
         {
             using (var context = new ShardDbContext())
             {
-                var results = context.Biota
+                var result = context.Biota
                     .AsNoTracking()
                     .Where(r => r.Id >= min && r.Id <= max)
-                    .ToList();
+                    .OrderByDescending(r => r.Id)
+                    .FirstOrDefault();
 
-                if (!results.Any())
+                if (result == null)
                     return uint.MaxValue;
 
-                var maxId = min;
-
-                foreach (var result in results)
-                {
-                    if (result.Id > maxId)
-                        maxId = result.Id;
-                }
-
-                return maxId;
+                return result.Id;
             }
         }
 
@@ -88,7 +81,8 @@ namespace ACE.Database
             // https://stackoverflow.com/questions/50402015/how-to-execute-sqlquery-with-entity-framework-core-2-1
 
             // This query is ugly, but very fast.
-            var sql = "SELECT"                                                                          + Environment.NewLine +
+            var sql = "SET @available_ids=0, @rownum=0;"                                                + Environment.NewLine +
+                      "SELECT"                                                                          + Environment.NewLine +
                       " z.gap_starts_at, z.gap_ends_at_not_inclusive, @available_ids:=@available_ids+(z.gap_ends_at_not_inclusive - z.gap_starts_at) as running_total_available_ids" + Environment.NewLine +
                       "FROM ("                                                                          + Environment.NewLine +
                       " SELECT"                                                                         + Environment.NewLine +
@@ -105,6 +99,8 @@ namespace ACE.Database
 
             using (var context = new ShardDbContext())
             {
+                context.Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
+
                 var connection = context.Database.GetDbConnection();
                 connection.Open();
                 var command = connection.CreateCommand();
@@ -115,7 +111,7 @@ namespace ACE.Database
 
                 while (reader.Read())
                 {
-                    var gap_starts_at               = reader.GetFieldValue<double>(0);
+                    var gap_starts_at               = reader.GetFieldValue<long>(0);
                     var gap_ends_at_not_inclusive   = reader.GetFieldValue<decimal>(1);
                     //var running_total_available_ids = reader.GetFieldValue<double>(2);
 
@@ -572,9 +568,24 @@ namespace ACE.Database
 
         public List<Character> GetCharacters(uint accountId, bool includeDeleted)
         {
+            return GetCharacterList(accountId, includeDeleted);
+        }
+
+        public Character GetCharacter(uint characterId)
+        {
+            return GetCharacterList(0, true, characterId).FirstOrDefault();
+        }
+
+        private static List<Character> GetCharacterList(uint accountID, bool includeDeleted, uint characterID = 0)
+        {
             var context = new ShardDbContext();
 
-            var query = context.Character.Where(r => r.AccountId == accountId && (includeDeleted || !r.IsDeleted));
+            IQueryable<Character> query;
+
+            if (accountID > 0)
+                query = context.Character.Where(r => r.AccountId == accountID && (includeDeleted || !r.IsDeleted));
+            else
+                query = context.Character.Where(r => r.Id == characterID && (includeDeleted || !r.IsDeleted));
 
             var results = query.ToList();
 
@@ -598,7 +609,7 @@ namespace ACE.Database
             var context = new ShardDbContext();
 
             var result = context.Character
-                .FirstOrDefault(r => r.Name == name.ToLower() && !r.IsDeleted);
+                .FirstOrDefault(r => r.Name == name && !r.IsDeleted);
 
             return result;
         }
@@ -628,7 +639,7 @@ namespace ACE.Database
                         cachedContext.SaveChanges();
 
                         if (firstException != null)
-                            log.Debug($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} retry succeeded after initial exception of: {firstException.GetFullMessage()}");
+                            log.Debug($"[DATABASE] SaveCharacter-1 0x{character.Id:X8}:{character.Name} retry succeeded after initial exception of: {firstException.GetFullMessage()}");
 
                         return true;
                     }
@@ -641,8 +652,8 @@ namespace ACE.Database
                         }
 
                         // Character name might be in use or some other fault
-                        log.Error($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} failed first attempt with exception: {firstException.GetFullMessage()}");
-                        log.Error($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} failed second attempt with exception: {ex.GetFullMessage()}");
+                        log.Error($"[DATABASE] SaveCharacter-1 0x{character.Id:X8}:{character.Name} failed first attempt with exception: {firstException.GetFullMessage()}");
+                        log.Error($"[DATABASE] SaveCharacter-1 0x{character.Id:X8}:{character.Name} failed second attempt with exception: {ex.GetFullMessage()}");
                         return false;
                     }
                 }
@@ -669,7 +680,7 @@ namespace ACE.Database
                     context.SaveChanges();
 
                     if (firstException != null)
-                        log.Debug($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} retry succeeded after initial exception of: {firstException.GetFullMessage()}");
+                        log.Debug($"[DATABASE] SaveCharacter-2 0x{character.Id:X8}:{character.Name} retry succeeded after initial exception of: {firstException.GetFullMessage()}");
 
                     return true;
                 }
@@ -682,8 +693,8 @@ namespace ACE.Database
                     }
 
                     // Character name might be in use or some other fault
-                    log.Error($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} failed first attempt with exception: {firstException.GetFullMessage()}");
-                    log.Error($"[DATABASE] SaveCharacter 0x{character.Id:X8}:{character.Name} failed second attempt with exception: {ex.GetFullMessage()}");
+                    log.Error($"[DATABASE] SaveCharacter-2 0x{character.Id:X8}:{character.Name} failed first attempt with exception: {firstException.GetFullMessage()}");
+                    log.Error($"[DATABASE] SaveCharacter-2 0x{character.Id:X8}:{character.Name} failed second attempt with exception: {ex.GetFullMessage()}");
                     return false;
                 }
             }

@@ -177,7 +177,7 @@ namespace ACE.Server.WorldObjects
 
                 // handle Dirty Fighting
                 if (GetCreatureSkill(Skill.DirtyFighting).AdvancementClass >= SkillAdvancementClass.Trained)
-                    FightDirty(target);
+                    FightDirty(target, damageEvent.Weapon);
                 
                 target.EmoteManager.OnDamage(this);
 
@@ -363,11 +363,8 @@ namespace ACE.Server.WorldObjects
                     damageSource = FootArmor;
 
                 // no weapon, no hand or foot armor
-                if (damageSource == null)
-                {
-                    var baseDamage = new BaseDamage(5, 0.2f);   // 1-5
-                    return new BaseDamageMod(baseDamage);
-                }
+                if (damageSource?.Damage == null)
+                    return HeritageGroup == HeritageGroup.Olthoi ? new BaseDamageMod(new BaseDamage(130, 0.75f)) : new BaseDamageMod(new BaseDamage(2, 0.75f));
                 else
                     return damageSource.GetDamageMod(this, damageSource);
             }
@@ -483,6 +480,12 @@ namespace ACE.Server.WorldObjects
             if (UnderLifestoneProtection)
             {
                 HandleLifestoneProtection();
+                return 0;
+            }
+
+            if (_amount < 0)
+            {
+                log.Error($"{Name}.TakeDamage({source?.Name} ({source?.Guid}), {damageType}, {_amount}) - negative damage, this shouldn't happen");
                 return 0;
             }
 
@@ -731,19 +734,40 @@ namespace ACE.Server.WorldObjects
         /// <summary>
         /// This method processes the Game Action (F7B1) Change Combat Mode (0x0053)
         /// </summary>
-        public void HandleActionChangeCombatMode(CombatMode newCombatMode)
+        public void HandleActionChangeCombatMode(CombatMode newCombatMode, bool forceHandCombat = false, Action callback = null)
         {
             //log.Info($"{Name}.HandleActionChangeCombatMode({newCombatMode})");
+
+            // Make sure the player doesn't have an invalid weapon setup (e.g. sword + wand)
+            if (!CheckWeaponCollision(null, null, newCombatMode))
+            {
+                Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.ActionCancelled)); // "Action cancelled!"
+
+                // Go back to non-Combat mode
+                float animTime = 0.0f, queueTime = 0.0f;
+                animTime = SetCombatMode(newCombatMode, out queueTime, false, true);
+
+                var actionChain = new ActionChain();
+                actionChain.AddDelaySeconds(animTime);
+                actionChain.AddAction(this, () =>
+                {
+                    SetCombatMode(CombatMode.NonCombat);
+                });
+                actionChain.EnqueueChain();
+
+                NextUseTime = DateTime.UtcNow.AddSeconds(animTime);
+                return;
+            }
 
             LastCombatMode = newCombatMode;
             
             if (DateTime.UtcNow >= NextUseTime.AddSeconds(UseTimeEpsilon))
-                HandleActionChangeCombatMode_Inner(newCombatMode);
+                HandleActionChangeCombatMode_Inner(newCombatMode, forceHandCombat, callback);
             else
             {
                 var actionChain = new ActionChain();
                 actionChain.AddDelaySeconds((NextUseTime - DateTime.UtcNow).TotalSeconds + UseTimeEpsilon);
-                actionChain.AddAction(this, () => HandleActionChangeCombatMode_Inner(newCombatMode));
+                actionChain.AddAction(this, () => HandleActionChangeCombatMode_Inner(newCombatMode, forceHandCombat, callback));
                 actionChain.EnqueueChain();
             }
 
@@ -751,8 +775,10 @@ namespace ACE.Server.WorldObjects
                 HandleActionSetAFKMode(false);
         }
 
-        public void HandleActionChangeCombatMode_Inner(CombatMode newCombatMode)
+        public void HandleActionChangeCombatMode_Inner(CombatMode newCombatMode, bool forceHandCombat = false, Action callback = null)
         {
+            //log.Info($"{Name}.HandleActionChangeCombatMode_Inner({newCombatMode})");
+
             var currentCombatStance = GetCombatStance();
 
             var missileWeapon = GetEquippedMissileWeapon();
@@ -760,6 +786,8 @@ namespace ACE.Server.WorldObjects
 
             if (CombatMode == CombatMode.Magic && MagicState.IsCasting)
                 FailCast();
+
+            HandleActionCancelAttack();
 
             float animTime = 0.0f, queueTime = 0.0f;
 
@@ -784,7 +812,7 @@ namespace ACE.Server.WorldObjects
                 case CombatMode.Melee:
 
                     // todo expand checks
-                    if (missileWeapon != null || caster != null)
+                    if (!forceHandCombat && (missileWeapon != null || caster != null))
                         return;
 
                     break;
@@ -838,13 +866,23 @@ namespace ACE.Server.WorldObjects
                     break;
 
             }
-            animTime = SetCombatMode(newCombatMode, out queueTime);
+
+            // animTime already includes queueTime
+            animTime = SetCombatMode(newCombatMode, out queueTime, forceHandCombat);
             //log.Info($"{Name}.HandleActionChangeCombatMode_Inner({newCombatMode}) - animTime: {animTime}, queueTime: {queueTime}");
 
             NextUseTime = DateTime.UtcNow.AddSeconds(animTime);
 
             if (MagicState.IsCasting && RecordCast.Enabled)
                 RecordCast.OnSetCombatMode(newCombatMode);
+
+            if (callback != null)
+            {
+                var callbackChain = new ActionChain();
+                callbackChain.AddDelaySeconds(animTime);
+                callbackChain.AddAction(this, callback);
+                callbackChain.EnqueueChain();
+            }
         }
 
         public override bool CanDamage(Creature target)
@@ -880,6 +918,9 @@ namespace ACE.Server.WorldObjects
 
         public override float GetNaturalResistance(DamageType damageType)
         {
+            if (damageType == DamageType.Undef)
+                return 1.0f;
+
             // http://acpedia.org/wiki/Announcements_-_11th_Anniversary_Preview#Void_Magic_and_You.21
             // Creatures under Asheron’s protection take half damage from any nether type spell.
             if (damageType == DamageType.Nether)
