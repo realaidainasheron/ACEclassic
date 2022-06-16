@@ -852,6 +852,18 @@ namespace ACE.Server.Entity
                 return false;
             }
 
+            // ACEClassic-PATCH - Stop crashing on DatLoader InvalidCastException
+            try
+            {
+                return AddWorldObjectInternal(wo);
+            }
+            catch (Exception loEx)
+            {
+                log.Warn($"BLOCKED SPAWN CRASH: {loEx.Message} Weenie: {wo.WeenieClassId}-{wo.WeenieClassName} Loc: {wo.Location.ToLOCString()}");
+                return false;
+            }
+            // ACEClassic-ENDPATCH
+
             wo.BeforeEnterWorld();
 
             return AddWorldObjectInternal(wo);

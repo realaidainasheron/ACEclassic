@@ -304,7 +304,7 @@ namespace ACE.Server.WorldObjects
             if (damage != null)
             {
                 if(sourceCreature != null)
-                    sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetPlayer, CombatType.Magic);
+                    sourceCreature.TryCastAssessCreatureAndPersonDebuffs(creatureTarget, CombatType.Magic);
 
                 // handle void magic DoTs:
                 // instead of instant damage, add DoT to target's enchantment registry
