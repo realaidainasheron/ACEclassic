@@ -355,7 +355,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy /E /I /Y $(ProjectDir)bin\x64\Debug\netcoreapp3.1 C:\ACE\Server" />
+    
   </Target>
 
 </Project>
