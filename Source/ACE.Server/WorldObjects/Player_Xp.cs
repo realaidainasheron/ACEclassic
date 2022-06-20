@@ -176,6 +176,7 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         private void UpdateXpAndLevel(long amount, XpType xpType)
         {
+            var maxXp = 191226310247;
             // until we are max level we must make sure that we send
             var xpTable = DatManager.PortalDat.XpTable;
 
@@ -184,7 +185,7 @@ namespace ACE.Server.WorldObjects
 
             bool allowXpAtMaxLevel = PropertyManager.GetBool("allow_xp_at_max_level").Item;
 
-            if (Level != maxLevel || allowXpAtMaxLevel)
+            if (TotalExperience < maxXp && (Level != maxLevel || allowXpAtMaxLevel))
             {
                 var addAmount = amount;
 
@@ -194,6 +195,13 @@ namespace ACE.Server.WorldObjects
 
                 AvailableExperience += addAmount;
                 TotalExperience += addAmount;
+
+                if (AvailableExperience > maxXp)
+                    AvailableExperience = maxXp;
+
+                if (TotalExperience > maxXp)
+                    TotalExperience = maxXp;
+
 
                 var xpTotalUpdate = new GameMessagePrivateUpdatePropertyInt64(this, PropertyInt64.TotalExperience, TotalExperience ?? 0);
                 var xpAvailUpdate = new GameMessagePrivateUpdatePropertyInt64(this, PropertyInt64.AvailableExperience, AvailableExperience ?? 0);
