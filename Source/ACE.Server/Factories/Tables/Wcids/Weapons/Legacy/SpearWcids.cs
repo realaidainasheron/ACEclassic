@@ -76,7 +76,96 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static SpearWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.spear,               1.0f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
+                };
+
+                SpearWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.spear,              4.0f ),
+                    ( WeenieClassName.spearacid,          1.0f ),
+                    ( WeenieClassName.spearelectric,      1.0f ),
+                    ( WeenieClassName.spearflame,         1.0f ),
+                    ( WeenieClassName.spearfrost,         1.0f ),
+
+                    ( WeenieClassName.trident,            4.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
+
+                    ( WeenieClassName.swordstaff,         3.0f ),
+                    ( WeenieClassName.swordstaffacid,     0.75f ),
+                    ( WeenieClassName.swordstaffelectric, 0.75f ),
+                    ( WeenieClassName.swordstafffire,     0.75f ),
+                    ( WeenieClassName.swordstafffrost,    0.75f ),
+                };
+
+                SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.budiaq,              1.00f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
+                };
+
+                SpearWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.budiaq,             4.0f ),
+                    ( WeenieClassName.budiaqacid,         1.0f ),
+                    ( WeenieClassName.budiaqelectric,     1.0f ),
+                    ( WeenieClassName.budiaqfire,         1.0f ),
+                    ( WeenieClassName.budiaqfrost,        1.0f ),
+
+                    ( WeenieClassName.trident,            4.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
+
+                    ( WeenieClassName.swordstaff,         3.0f ),
+                    ( WeenieClassName.swordstaffacid,     0.75f ),
+                    ( WeenieClassName.swordstaffelectric, 0.75f ),
+                    ( WeenieClassName.swordstafffire,     0.75f ),
+                    ( WeenieClassName.swordstafffrost,    0.75f ),
+                };
+
+                SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.yari,                1.0f ),
+
+                    ( WeenieClassName.trident,             0.25f ),
+                    ( WeenieClassName.swordstaff,          0.25f ),
+                };
+
+                SpearWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.yari,               4.0f ),
+                    ( WeenieClassName.yariacid,           1.0f ),
+                    ( WeenieClassName.yarielectric,       1.0f ),
+                    ( WeenieClassName.yarifire,           1.0f ),
+                    ( WeenieClassName.yarifrost,          1.0f ),
+
+                    ( WeenieClassName.trident,            4.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
+
+                    ( WeenieClassName.swordstaff,         3.0f ),
+                    ( WeenieClassName.swordstaffacid,     0.75f ),
+                    ( WeenieClassName.swordstaffelectric, 0.75f ),
+                    ( WeenieClassName.swordstafffire,     0.75f ),
+                    ( WeenieClassName.swordstafffrost,    0.75f ),
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -90,29 +179,29 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 SpearWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.spear,              4.0f ),
-                    ( WeenieClassName.spearacid,          0.25f ),
-                    ( WeenieClassName.spearelectric,      0.25f ),
-                    ( WeenieClassName.spearflame,         0.25f ),
-                    ( WeenieClassName.spearfrost,         0.25f ),
+                    ( WeenieClassName.spear,             16.0f ),
+                    ( WeenieClassName.spearacid,          1.0f ),
+                    ( WeenieClassName.spearelectric,      1.0f ),
+                    ( WeenieClassName.spearflame,         1.0f ),
+                    ( WeenieClassName.spearfrost,         1.0f ),
 
-                    ( WeenieClassName.trident,            4.0f ),
-                    ( WeenieClassName.tridentacid,        0.25f ),
-                    ( WeenieClassName.tridentelectric,    0.25f ),
-                    ( WeenieClassName.tridentfire,        0.25f ),
-                    ( WeenieClassName.tridentfrost,       0.25f ),
+                    ( WeenieClassName.trident,           16.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
 
-                    ( WeenieClassName.swordstaff,         4.0f ),
-                    ( WeenieClassName.swordstaffacid,     0.25f ),
-                    ( WeenieClassName.swordstaffelectric, 0.25f ),
-                    ( WeenieClassName.swordstafffire,     0.25f ),
-                    ( WeenieClassName.swordstafffrost,    0.25f ),
+                    ( WeenieClassName.swordstaff,        16.0f ),
+                    ( WeenieClassName.swordstaffacid,     1.0f ),
+                    ( WeenieClassName.swordstaffelectric, 1.0f ),
+                    ( WeenieClassName.swordstafffire,     1.0f ),
+                    ( WeenieClassName.swordstafffrost,    1.0f ),
 
-                    ( WeenieClassName.ace41046_pike,          4.0f ),
-                    ( WeenieClassName.ace41047_acidpike,      0.25f ),
-                    ( WeenieClassName.ace41048_lightningpike, 0.25f ),
-                    ( WeenieClassName.ace41049_flamingpike,   0.25f ),
-                    ( WeenieClassName.ace41050_frostpike,     0.25f ),
+                    ( WeenieClassName.ace41046_pike,         16.0f ),
+                    ( WeenieClassName.ace41047_acidpike,      1.0f ),
+                    ( WeenieClassName.ace41048_lightningpike, 1.0f ),
+                    ( WeenieClassName.ace41049_flamingpike,   1.0f ),
+                    ( WeenieClassName.ace41050_frostpike,     1.0f ),
                 };
 
                 SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -127,29 +216,29 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 SpearWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.budiaq,             4.0f ),
-                    ( WeenieClassName.budiaqacid,         0.25f ),
-                    ( WeenieClassName.budiaqelectric,     0.25f ),
-                    ( WeenieClassName.budiaqfire,         0.25f ),
-                    ( WeenieClassName.budiaqfrost,        0.25f ),
+                    ( WeenieClassName.budiaq,            16.0f ),
+                    ( WeenieClassName.budiaqacid,         1.0f ),
+                    ( WeenieClassName.budiaqelectric,     1.0f ),
+                    ( WeenieClassName.budiaqfire,         1.0f ),
+                    ( WeenieClassName.budiaqfrost,        1.0f ),
 
-                    ( WeenieClassName.trident,            4.0f ),
-                    ( WeenieClassName.tridentacid,        0.25f ),
-                    ( WeenieClassName.tridentelectric,    0.25f ),
-                    ( WeenieClassName.tridentfire,        0.25f ),
-                    ( WeenieClassName.tridentfrost,       0.25f ),
+                    ( WeenieClassName.trident,           16.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
 
-                    ( WeenieClassName.swordstaff,         4.0f ),
-                    ( WeenieClassName.swordstaffacid,     0.25f ),
-                    ( WeenieClassName.swordstaffelectric, 0.25f ),
-                    ( WeenieClassName.swordstafffire,     0.25f ),
-                    ( WeenieClassName.swordstafffrost,    0.25f ),
+                    ( WeenieClassName.swordstaff,        16.0f ),
+                    ( WeenieClassName.swordstaffacid,     1.0f ),
+                    ( WeenieClassName.swordstaffelectric, 1.0f ),
+                    ( WeenieClassName.swordstafffire,     1.0f ),
+                    ( WeenieClassName.swordstafffrost,    1.0f ),
 
-                    ( WeenieClassName.ace41036_assagai,          4.0f ),
-                    ( WeenieClassName.ace41037_acidassagai,      0.25f ),
-                    ( WeenieClassName.ace41038_lightningassagai, 0.25f ),
-                    ( WeenieClassName.ace41039_flamingassagai,   0.25f ),
-                    ( WeenieClassName.ace41040_frostassagai,     0.25f ),
+                    ( WeenieClassName.ace41036_assagai,         16.0f ),
+                    ( WeenieClassName.ace41037_acidassagai,      1.0f ),
+                    ( WeenieClassName.ace41038_lightningassagai, 1.0f ),
+                    ( WeenieClassName.ace41039_flamingassagai,   1.0f ),
+                    ( WeenieClassName.ace41040_frostassagai,     1.0f ),
                 };
 
                 SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -164,118 +253,29 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 SpearWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.yari,               4.0f ),
-                    ( WeenieClassName.yariacid,           0.25f ),
-                    ( WeenieClassName.yarielectric,       0.25f ),
-                    ( WeenieClassName.yarifire,           0.25f ),
-                    ( WeenieClassName.yarifrost,          0.25f ),
+                    ( WeenieClassName.yari,              16.0f ),
+                    ( WeenieClassName.yariacid,           1.0f ),
+                    ( WeenieClassName.yarielectric,       1.0f ),
+                    ( WeenieClassName.yarifire,           1.0f ),
+                    ( WeenieClassName.yarifrost,          1.0f ),
 
-                    ( WeenieClassName.trident,            4.0f ),
-                    ( WeenieClassName.tridentacid,        0.25f ),
-                    ( WeenieClassName.tridentelectric,    0.25f ),
-                    ( WeenieClassName.tridentfire,        0.25f ),
-                    ( WeenieClassName.tridentfrost,       0.25f ),
+                    ( WeenieClassName.trident,           16.0f ),
+                    ( WeenieClassName.tridentacid,        1.0f ),
+                    ( WeenieClassName.tridentelectric,    1.0f ),
+                    ( WeenieClassName.tridentfire,        1.0f ),
+                    ( WeenieClassName.tridentfrost,       1.0f ),
 
-                    ( WeenieClassName.swordstaff,         4.0f ),
-                    ( WeenieClassName.swordstaffacid,     0.25f ),
-                    ( WeenieClassName.swordstaffelectric, 0.25f ),
-                    ( WeenieClassName.swordstafffire,     0.25f ),
-                    ( WeenieClassName.swordstafffrost,    0.25f ),
+                    ( WeenieClassName.swordstaff,        16.0f ),
+                    ( WeenieClassName.swordstaffacid,     1.0f ),
+                    ( WeenieClassName.swordstaffelectric, 1.0f ),
+                    ( WeenieClassName.swordstafffire,     1.0f ),
+                    ( WeenieClassName.swordstafffrost,    1.0f ),
 
-                    ( WeenieClassName.ace41041_magariyari,          4.0f ),
-                    ( WeenieClassName.ace41042_acidmagariyari,      0.25f ),
-                    ( WeenieClassName.ace41043_lightningmagariyari, 0.25f ),
-                    ( WeenieClassName.ace41044_flamingmagariyari,   0.25f ),
-                    ( WeenieClassName.ace41045_frostmagariyari,     0.25f ),
-                };
-            }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
-            {
-                SpearWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.spear,               1.0f ),
-
-                    ( WeenieClassName.trident,             0.25f ),
-                    ( WeenieClassName.swordstaff,          0.25f ),
-                };
-
-                SpearWcids_Aluvian = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.spear,              0.27f ),
-                    ( WeenieClassName.spearacid,          0.016875f ),
-                    ( WeenieClassName.spearelectric,      0.016875f ),
-                    ( WeenieClassName.spearflame,         0.016875f ),
-                    ( WeenieClassName.spearfrost,         0.016875f ),
-
-                    ( WeenieClassName.trident,            0.27f ),
-                    ( WeenieClassName.tridentacid,        0.016875f ),
-                    ( WeenieClassName.tridentelectric,    0.016875f ),
-                    ( WeenieClassName.tridentfire,        0.016875f ),
-                    ( WeenieClassName.tridentfrost,       0.016875f ),
-
-                    ( WeenieClassName.swordstaff,         0.26f ),
-                    ( WeenieClassName.swordstaffacid,     0.01625f ),
-                    ( WeenieClassName.swordstaffelectric, 0.01625f ),
-                    ( WeenieClassName.swordstafffire,     0.01625f ),
-                    ( WeenieClassName.swordstafffrost,    0.01625f ),
-                };
-
-                SpearWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.budiaq,              1.00f ),
-
-                    ( WeenieClassName.trident,             0.25f ),
-                    ( WeenieClassName.swordstaff,          0.25f ),
-                };
-
-                SpearWcids_Gharundim = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.budiaq,             0.27f ),
-                    ( WeenieClassName.budiaqacid,         0.016875f ),
-                    ( WeenieClassName.budiaqelectric,     0.016875f ),
-                    ( WeenieClassName.budiaqfire,         0.016875f ),
-                    ( WeenieClassName.budiaqfrost,        0.016875f ),
-
-                    ( WeenieClassName.trident,            0.27f ),
-                    ( WeenieClassName.tridentacid,        0.016875f ),
-                    ( WeenieClassName.tridentelectric,    0.016875f ),
-                    ( WeenieClassName.tridentfire,        0.016875f ),
-                    ( WeenieClassName.tridentfrost,       0.016875f ),
-
-                    ( WeenieClassName.swordstaff,         0.26f ),
-                    ( WeenieClassName.swordstaffacid,     0.01625f ),
-                    ( WeenieClassName.swordstaffelectric, 0.01625f ),
-                    ( WeenieClassName.swordstafffire,     0.01625f ),
-                    ( WeenieClassName.swordstafffrost,    0.01625f ),
-                };
-
-                SpearWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.yari,                1.00f ),
-
-                    ( WeenieClassName.trident,             0.25f ),
-                    ( WeenieClassName.swordstaff,          0.25f ),
-                };
-
-                SpearWcids_Sho = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.yari,               0.27f ),
-                    ( WeenieClassName.yariacid,           0.016875f ),
-                    ( WeenieClassName.yarielectric,       0.016875f ),
-                    ( WeenieClassName.yarifire,           0.016875f ),
-                    ( WeenieClassName.yarifrost,          0.016875f ),
-
-                    ( WeenieClassName.trident,            0.27f ),
-                    ( WeenieClassName.tridentacid,        0.016875f ),
-                    ( WeenieClassName.tridentelectric,    0.016875f ),
-                    ( WeenieClassName.tridentfire,        0.016875f ),
-                    ( WeenieClassName.tridentfrost,       0.016875f ),
-
-                    ( WeenieClassName.swordstaff,         0.26f ),
-                    ( WeenieClassName.swordstaffacid,     0.01625f ),
-                    ( WeenieClassName.swordstaffelectric, 0.01625f ),
-                    ( WeenieClassName.swordstafffire,     0.01625f ),
-                    ( WeenieClassName.swordstafffrost,    0.01625f ),
+                    ( WeenieClassName.ace41041_magariyari,         16.0f ),
+                    ( WeenieClassName.ace41042_acidmagariyari,      1.0f ),
+                    ( WeenieClassName.ace41043_lightningmagariyari, 1.0f ),
+                    ( WeenieClassName.ace41044_flamingmagariyari,   1.0f ),
+                    ( WeenieClassName.ace41045_frostmagariyari,     1.0f ),
                 };
             }
         }
