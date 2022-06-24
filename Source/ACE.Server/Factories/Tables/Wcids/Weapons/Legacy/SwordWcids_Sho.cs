@@ -97,65 +97,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static SwordWcids_Sho()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
-            {
-                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.yaoji,                3.00f ),
-                    ( WeenieClassName.scimitar,             0.5f ),
-                    ( WeenieClassName.ken,                  0.5f ),
-                    ( WeenieClassName.tachi,                0.5f ),
-
-                    ( WeenieClassName.swordrapier,          0.5f ),
-                    ( WeenieClassName.ace40760_nodachi,     0.5f ),
-                };
-
-                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.yaoji,             4.0f ),
-                    ( WeenieClassName.yaojiacid,         0.25f ),
-                    ( WeenieClassName.yaojielectric,     0.25f ),
-                    ( WeenieClassName.yaojifire,         0.25f ),
-                    ( WeenieClassName.yaojifrost,        0.25f ),
-
-                    ( WeenieClassName.scimitar,          4.0f ),
-                    ( WeenieClassName.scimitaracid,      0.25f ),
-                    ( WeenieClassName.scimitarelectric,  0.25f ),
-                    ( WeenieClassName.scimitarfire,      0.25f ),
-                    ( WeenieClassName.scimitarfrost,     0.25f ),
-
-                    ( WeenieClassName.ken,         4.0f ),
-                    ( WeenieClassName.kenacid,     0.25f ),
-                    ( WeenieClassName.kenelectric, 0.25f ),
-                    ( WeenieClassName.kenfire,     0.25f ),
-                    ( WeenieClassName.kenfrost,    0.25f ),
-
-                    ( WeenieClassName.tachi,           4.0f ),
-                    ( WeenieClassName.tachiacid,       0.25f ),
-                    ( WeenieClassName.tachielectric,   0.25f ),
-                    ( WeenieClassName.tachifire,       0.25f ),
-                    ( WeenieClassName.tachifrost,      0.25f ),
-
-                    ( WeenieClassName.swordrapier,      4.0f ),
-
-                    ( WeenieClassName.ace40760_nodachi,          4.0f ),
-                    ( WeenieClassName.ace40761_acidnodachi,      0.25f ),
-                    ( WeenieClassName.ace40762_lightningnodachi, 0.25f ),
-                    ( WeenieClassName.ace40763_flamingnodachi,   0.25f ),
-                    ( WeenieClassName.ace40764_frostnodachi,     0.25f ),
-                };
-
-                weaponTiers = new List<ChanceTable<WeenieClassName>>()
-                {
-                    T1_Chances,
-                    T1_T2_Chances,
-                    T1_T2_Chances,
-                    T1_T2_Chances,
-                    T1_T2_Chances,
-                    T1_T2_Chances,
-                };
-            }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -170,30 +112,88 @@ namespace ACE.Server.Factories.Tables.Wcids
                 T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.yaoji,             4.0f ),
-                    ( WeenieClassName.yaojiacid,         0.25f ),
-                    ( WeenieClassName.yaojielectric,     0.25f ),
-                    ( WeenieClassName.yaojifire,         0.25f ),
-                    ( WeenieClassName.yaojifrost,        0.25f ),
+                    ( WeenieClassName.yaojiacid,         1.0f ),
+                    ( WeenieClassName.yaojielectric,     1.0f ),
+                    ( WeenieClassName.yaojifire,         1.0f ),
+                    ( WeenieClassName.yaojifrost,        1.0f ),
 
                     ( WeenieClassName.scimitar,          4.0f ),
-                    ( WeenieClassName.scimitaracid,      0.25f ),
-                    ( WeenieClassName.scimitarelectric,  0.25f ),
-                    ( WeenieClassName.scimitarfire,      0.25f ),
-                    ( WeenieClassName.scimitarfrost,     0.25f ),
+                    ( WeenieClassName.scimitaracid,      1.0f ),
+                    ( WeenieClassName.scimitarelectric,  1.0f ),
+                    ( WeenieClassName.scimitarfire,      1.0f ),
+                    ( WeenieClassName.scimitarfrost,     1.0f ),
 
                     ( WeenieClassName.ken,               4.0f ),
-                    ( WeenieClassName.kenacid,           0.25f ),
-                    ( WeenieClassName.kenelectric,       0.25f ),
-                    ( WeenieClassName.kenfire,           0.25f ),
-                    ( WeenieClassName.kenfrost,          0.25f ),
+                    ( WeenieClassName.kenacid,           1.0f ),
+                    ( WeenieClassName.kenelectric,       1.0f ),
+                    ( WeenieClassName.kenfire,           1.0f ),
+                    ( WeenieClassName.kenfrost,          1.0f ),
 
                     ( WeenieClassName.tachi,             4.0f ),
-                    ( WeenieClassName.tachiacid,         0.25f ),
-                    ( WeenieClassName.tachielectric,     0.25f ),
-                    ( WeenieClassName.tachifire,         0.25f ),
-                    ( WeenieClassName.tachifrost,        0.25f ),
+                    ( WeenieClassName.tachiacid,         1.0f ),
+                    ( WeenieClassName.tachielectric,     1.0f ),
+                    ( WeenieClassName.tachifire,         1.0f ),
+                    ( WeenieClassName.tachifrost,        1.0f ),
 
                     ( WeenieClassName.swordrapier,      2.0f ),
+                };
+
+                weaponTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    T1_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                    T1_T2_Chances,
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.yaoji,                3.00f ),
+                    ( WeenieClassName.scimitar,             0.5f ),
+                    ( WeenieClassName.ken,                  0.5f ),
+                    ( WeenieClassName.tachi,                0.5f ),
+
+                    ( WeenieClassName.swordrapier,          0.5f ),
+                    ( WeenieClassName.ace40760_nodachi,     0.5f ),
+                };
+
+                T1_T2_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.yaoji,            16.0f ),
+                    ( WeenieClassName.yaojiacid,         1.0f ),
+                    ( WeenieClassName.yaojielectric,     1.0f ),
+                    ( WeenieClassName.yaojifire,         1.0f ),
+                    ( WeenieClassName.yaojifrost,        1.0f ),
+
+                    ( WeenieClassName.scimitar,         16.0f ),
+                    ( WeenieClassName.scimitaracid,      1.0f ),
+                    ( WeenieClassName.scimitarelectric,  1.0f ),
+                    ( WeenieClassName.scimitarfire,      1.0f ),
+                    ( WeenieClassName.scimitarfrost,     1.0f ),
+
+                    ( WeenieClassName.ken,        16.0f ),
+                    ( WeenieClassName.kenacid,     1.0f ),
+                    ( WeenieClassName.kenelectric, 1.0f ),
+                    ( WeenieClassName.kenfire,     1.0f ),
+                    ( WeenieClassName.kenfrost,    1.0f ),
+
+                    ( WeenieClassName.tachi,          16.0f ),
+                    ( WeenieClassName.tachiacid,       1.0f ),
+                    ( WeenieClassName.tachielectric,   1.0f ),
+                    ( WeenieClassName.tachifire,       1.0f ),
+                    ( WeenieClassName.tachifrost,      1.0f ),
+
+                    ( WeenieClassName.swordrapier,     16.0f ),
+
+                    ( WeenieClassName.ace40760_nodachi,         16.0f ),
+                    ( WeenieClassName.ace40761_acidnodachi,      1.0f ),
+                    ( WeenieClassName.ace40762_lightningnodachi, 1.0f ),
+                    ( WeenieClassName.ace40763_flamingnodachi,   1.0f ),
+                    ( WeenieClassName.ace40764_frostnodachi,     1.0f ),
                 };
 
                 weaponTiers = new List<ChanceTable<WeenieClassName>>()

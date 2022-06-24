@@ -42,7 +42,7 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static StaffWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
                 StaffWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -51,11 +51,11 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 StaffWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.quarterstaffnew,         4.00f ),
-                    ( WeenieClassName.quarterstaffacidnew,     0.25f ),
-                    ( WeenieClassName.quarterstaffelectricnew, 0.25f ),
-                    ( WeenieClassName.quarterstaffflamenew,    0.25f ),
-                    ( WeenieClassName.quarterstafffrostnew,    0.25f ),
+                    ( WeenieClassName.quarterstaffnew,         4.0f ),
+                    ( WeenieClassName.quarterstaffacidnew,     1.0f ),
+                    ( WeenieClassName.quarterstaffelectricnew, 1.0f ),
+                    ( WeenieClassName.quarterstaffflamenew,    1.0f ),
+                    ( WeenieClassName.quarterstafffrostnew,    1.0f ),
                 };
 
                 StaffWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -65,11 +65,11 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 StaffWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.nabutnew,         4.00f ),
-                    ( WeenieClassName.nabutacidnew,     0.25f ),
-                    ( WeenieClassName.nabutelectricnew, 0.25f ),
-                    ( WeenieClassName.nabutfirenew,     0.25f ),
-                    ( WeenieClassName.nabutfrostnew,    0.25f ),
+                    ( WeenieClassName.nabutnew,         4.0f ),
+                    ( WeenieClassName.nabutacidnew,     1.0f ),
+                    ( WeenieClassName.nabutelectricnew, 1.0f ),
+                    ( WeenieClassName.nabutfirenew,     1.0f ),
+                    ( WeenieClassName.nabutfrostnew,    1.0f ),
                 };
 
                 StaffWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -79,11 +79,55 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 StaffWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.jonew,         4.00f ),
-                    ( WeenieClassName.joacidnew,     0.25f ),
-                    ( WeenieClassName.joelectricnew, 0.25f ),
-                    ( WeenieClassName.jofirenew,     0.25f ),
-                    ( WeenieClassName.jofrostnew,    0.25f ),
+                    ( WeenieClassName.jonew,         4.0f ),
+                    ( WeenieClassName.joacidnew,     1.0f ),
+                    ( WeenieClassName.joelectricnew, 1.0f ),
+                    ( WeenieClassName.jofirenew,     1.0f ),
+                    ( WeenieClassName.jofrostnew,    1.0f ),
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                StaffWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.quarterstaffnew,          1.0f ),
+                };
+
+                StaffWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.quarterstaffnew,        16.0f ),
+                    ( WeenieClassName.quarterstaffacidnew,     1.0f ),
+                    ( WeenieClassName.quarterstaffelectricnew, 1.0f ),
+                    ( WeenieClassName.quarterstaffflamenew,    1.0f ),
+                    ( WeenieClassName.quarterstafffrostnew,    1.0f ),
+                };
+
+                StaffWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.nabutnew,               1.0f ),
+                };
+
+                StaffWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.nabutnew,        16.0f ),
+                    ( WeenieClassName.nabutacidnew,     1.0f ),
+                    ( WeenieClassName.nabutelectricnew, 1.0f ),
+                    ( WeenieClassName.nabutfirenew,     1.0f ),
+                    ( WeenieClassName.nabutfrostnew,    1.0f ),
+                };
+
+                StaffWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.jonew,               1.0f ),
+                };
+
+                StaffWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.jonew,        16.0f ),
+                    ( WeenieClassName.joacidnew,     1.0f ),
+                    ( WeenieClassName.joelectricnew, 1.0f ),
+                    ( WeenieClassName.jofirenew,     1.0f ),
+                    ( WeenieClassName.jofrostnew,    1.0f ),
                 };
             }
         }

@@ -234,9 +234,9 @@ namespace ACE.Server.Entity
 
         public bool IsWeaponTargetType => (Category >= SpellCategory.AttackModRaising && Category <= SpellCategory.WeaponTimeLowering) || (Category >= SpellCategory.ManaConversionModLowering && Category <= SpellCategory.ManaConversionModRaising) || Category == SpellCategory.SpellDamageRaising;
 
-        public bool IsNegativeRedirectable => IsHarmful && (IsImpenBaneType || IsOtherNegativeRedirectable);
+        public bool IsNegativeRedirectable => IsHarmful && (IsImpenBaneType || IsOtherRedirectable);
 
-        public bool IsOtherNegativeRedirectable
+        public bool IsOtherRedirectable
         {
             get
             {
@@ -247,6 +247,12 @@ namespace ACE.Server.Entity
                     case SpellCategory.AttackModLowering:
                     case SpellCategory.WeaponTimeLowering:        // verified
                     case SpellCategory.ManaConversionModLowering: // hermetic void, replaced hide value, unchanged category in dat
+
+                    case SpellCategory.DamageRaising:
+                    case SpellCategory.DefenseModRaising:
+                    case SpellCategory.AttackModRaising:
+                    case SpellCategory.WeaponTimeRaising:
+                    case SpellCategory.ManaConversionModRaising:
                         return true;
                 }
                 return false;

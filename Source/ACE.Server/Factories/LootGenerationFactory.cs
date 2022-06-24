@@ -35,7 +35,21 @@ namespace ACE.Server.Factories
             InitRares();
             InitClothingColors();
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                coinRanges = new List<(int, int)>()
+                {
+                    (  50,  100), // T1
+                    ( 400, 1000), // T2
+                    ( 800, 2000), // T3
+                    (1200, 4000), // T4
+                    (2000, 5000), // T5
+                    (2000, 5000), // T6
+                    (2000, 5000), // T7
+                    (2000, 5000), // T8
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 coinRanges = new List<(int, int)>()
                 {
@@ -53,10 +67,11 @@ namespace ACE.Server.Factories
 
         public static Database.Models.World.TreasureDeath GetTweakedDeathTreasureProfile(uint deathTreasureId, object tweakedFor)
         {
-            if(Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.CustomDM)
+            if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
                 return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
             else
             {
+                // Tweaks to make the loot system more akin to Infiltration Era and CustomDM
                 TreasureDeath deathTreasure;
                 TreasureDeath tweakedDeathTreasure;
 
@@ -76,8 +91,8 @@ namespace ACE.Server.Factories
                     switch (deathTreasure.Tier)
                     {
                         case 1:
-                            itemLootChance = 0.2f;
-                            magicItemLootChance = 0.3f;
+                            itemLootChance = 0.15f;
+                            magicItemLootChance = 0.1f;
                             mundaneItemLootChance = 0.9f;
                             break;
                         case 2:
@@ -117,9 +132,9 @@ namespace ACE.Server.Factories
                             break;
                     }
 
-                    tweakedDeathTreasure.ItemChance = (int)(tweakedDeathTreasure.MagicItemChance * itemLootChance);
+                    tweakedDeathTreasure.ItemChance = (int)(tweakedDeathTreasure.ItemChance * itemLootChance);
                     tweakedDeathTreasure.MagicItemChance = (int)(tweakedDeathTreasure.MagicItemChance * magicItemLootChance);
-                    tweakedDeathTreasure.MundaneItemChance = (int)(tweakedDeathTreasure.MagicItemChance * mundaneItemLootChance);
+                    tweakedDeathTreasure.MundaneItemChance = (int)(tweakedDeathTreasure.MundaneItemChance * mundaneItemLootChance);
 
                     // Let's make the creatures at the top of their tiers drop better loot than their lower leveled kin.
                     switch (deathTreasure.Tier)
