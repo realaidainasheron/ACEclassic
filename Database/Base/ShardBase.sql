@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Linux (x86_64)
 --
--- Host: localhost    Database: aceclassic_shard
+-- Host: localhost    Database: ace_shard
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `aceclassic_shard`
+-- Current Database: `ace_shard`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `aceclassic_shard`*/;
+/*!40000 DROP DATABASE IF EXISTS `ace_shard`*/;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `aceclassic_shard` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `ace_shard` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `aceclassic_shard`;
+USE `ace_shard`;
 
 --
 -- Table structure for table `biota`
