@@ -38,7 +38,7 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static UnarmedWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
             {
                 UnarmedWcids_Aluvian_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -48,10 +48,10 @@ namespace ACE.Server.Factories.Tables.Wcids
                 UnarmedWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.cestus,         4.00f ),
-                    ( WeenieClassName.cestusacid,     0.25f ),
-                    ( WeenieClassName.cestuselectric, 0.25f ),
-                    ( WeenieClassName.cestusfire,     0.25f ),
-                    ( WeenieClassName.cestusfrost,    0.25f ),
+                    ( WeenieClassName.cestusacid,     1.00f ),
+                    ( WeenieClassName.cestuselectric, 1.00f ),
+                    ( WeenieClassName.cestusfire,     1.00f ),
+                    ( WeenieClassName.cestusfrost,    1.00f ),
                 };
 
                 UnarmedWcids_Gharundim_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -62,10 +62,10 @@ namespace ACE.Server.Factories.Tables.Wcids
                 UnarmedWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.katar,         4.00f ),
-                    ( WeenieClassName.kataracid,     0.25f ),
-                    ( WeenieClassName.katarelectric, 0.25f ),
-                    ( WeenieClassName.katarfire,     0.25f ),
-                    ( WeenieClassName.katarfrost,    0.25f ),
+                    ( WeenieClassName.kataracid,     1.00f ),
+                    ( WeenieClassName.katarelectric, 1.00f ),
+                    ( WeenieClassName.katarfire,     1.00f ),
+                    ( WeenieClassName.katarfrost,    1.00f ),
                 };
 
                 UnarmedWcids_Sho_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -76,10 +76,54 @@ namespace ACE.Server.Factories.Tables.Wcids
                 UnarmedWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.nekode,         4.00f ),
-                    ( WeenieClassName.nekodeacid,     0.25f ),
-                    ( WeenieClassName.nekodeelectric, 0.25f ),
-                    ( WeenieClassName.nekodefire,     0.25f ),
-                    ( WeenieClassName.nekodefrost,    0.25f ),
+                    ( WeenieClassName.nekodeacid,     1.00f ),
+                    ( WeenieClassName.nekodeelectric, 1.00f ),
+                    ( WeenieClassName.nekodefire,     1.00f ),
+                    ( WeenieClassName.nekodefrost,    1.00f ),
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                UnarmedWcids_Aluvian_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.cestus,         1.00f ),
+                };
+
+                UnarmedWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.cestus,        16.0f ),
+                    ( WeenieClassName.cestusacid,     1.0f ),
+                    ( WeenieClassName.cestuselectric, 1.0f ),
+                    ( WeenieClassName.cestusfire,     1.0f ),
+                    ( WeenieClassName.cestusfrost,    1.0f ),
+                };
+
+                UnarmedWcids_Gharundim_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.katar,         1.00f ),
+                };
+
+                UnarmedWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.katar,        16.0f ),
+                    ( WeenieClassName.kataracid,     1.0f ),
+                    ( WeenieClassName.katarelectric, 1.0f ),
+                    ( WeenieClassName.katarfire,     1.0f ),
+                    ( WeenieClassName.katarfrost,    1.0f ),
+                };
+
+                UnarmedWcids_Sho_Tier1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.nekode,         1.00f ),
+                };
+
+                UnarmedWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.nekode,        16.0f ),
+                    ( WeenieClassName.nekodeacid,     1.0f ),
+                    ( WeenieClassName.nekodeelectric, 1.0f ),
+                    ( WeenieClassName.nekodefire,     1.0f ),
+                    ( WeenieClassName.nekodefrost,    1.0f ),
                 };
             }
         }
