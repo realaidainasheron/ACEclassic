@@ -412,10 +412,14 @@ namespace ACE.Server.WorldObjects
             // The damage done by melee weapons—such as swords, maces, daggers, spears, and so on—is now affected more by the strength of the combatant. Strong warriors will find that they do more damage per hit than before.
             // This does not affect missile or unarmed combat. Note that this applies to monsters as well, so be careful when facing monsters that wield weapons!
             // Asheron's Call Release Notes - 2000/02 - Shadows of the Past
-            if (IsHumanoid && GetCurrentWeaponSkill() == Skill.UnarmedCombat)
-                return 1.0f;
+            Skill currSkill = Skill.None;
+
+            if (IsHumanoid)
+                currSkill = GetCurrentWeaponSkill();                
 
             var isBow = weapon != null && weapon.IsBow;
+            if (isBow)
+                currSkill = Skill.Bow;
 
             Entity.CreatureAttribute attribute;
             if (ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
@@ -425,7 +429,7 @@ namespace ACE.Server.WorldObjects
             else
                 attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons ? Coordination : Strength;
 
-            return SkillFormula.GetAttributeMod((int)attribute.Current, isBow);
+            return SkillFormula.GetAttributeMod((int)attribute.Current, currSkill);
         }
         public virtual int GetUnarmedSkillDamageBonus()
         {
