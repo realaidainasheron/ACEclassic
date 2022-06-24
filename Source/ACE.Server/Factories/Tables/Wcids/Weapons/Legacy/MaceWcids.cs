@@ -87,7 +87,117 @@ namespace ACE.Server.Factories.Tables.Wcids
 
         static MaceWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.club,             1.0f ),
+                    ( WeenieClassName.clubspiked,       1.0f ),
+
+                    ( WeenieClassName.mace,             0.25f ),
+                    ( WeenieClassName.morningstar,      0.25f ),
+                };
+
+                MaceWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.club,                4.0f ),
+                    ( WeenieClassName.clubacid,            1.0f ),
+                    ( WeenieClassName.clubelectric,        1.0f ),
+                    ( WeenieClassName.clubfire,            1.0f ),
+                    ( WeenieClassName.clubfrost,           1.0f ),
+
+                    ( WeenieClassName.mace,                4.0f ),
+                    ( WeenieClassName.maceacid,            1.0f ),
+                    ( WeenieClassName.maceelectric,        1.0f ),
+                    ( WeenieClassName.macefire,            1.0f ),
+                    ( WeenieClassName.macefrost,           1.0f ),
+
+                    ( WeenieClassName.morningstar,         3.0f ),
+                    ( WeenieClassName.morningstaracid,     0.75f ),
+                    ( WeenieClassName.morningstarelectric, 0.75f ),
+                    ( WeenieClassName.morningstarfire,     0.75f ),
+                    ( WeenieClassName.morningstarfrost,    0.75f ),
+
+                    ( WeenieClassName.clubspiked,          3.0f ),
+                    ( WeenieClassName.clubspikedacid,      0.75f ),
+                    ( WeenieClassName.clubspikedelectric,  0.75f ),
+                    ( WeenieClassName.clubspikedfire,      0.75f ),
+                    ( WeenieClassName.clubspikedfrost,     0.75f ),
+                };
+
+                MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.kasrullah,        1.0f ),
+                    ( WeenieClassName.clubspiked,       1.0f ),
+
+                    ( WeenieClassName.dabus,            0.25f ),
+                    ( WeenieClassName.morningstar,      0.25f ),
+                };
+
+                MaceWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.kasrullah,           4.0f ),
+                    ( WeenieClassName.kasrullahacid,       1.0f ),
+                    ( WeenieClassName.kasrullahelectric,   1.0f ),
+                    ( WeenieClassName.kasrullahfire,       1.0f ),
+                    ( WeenieClassName.kasrullahfrost,      1.0f ),
+
+                    ( WeenieClassName.dabus,               4.0f ),
+                    ( WeenieClassName.dabusacid,           1.0f ),
+                    ( WeenieClassName.dabuselectric,       1.0f ),
+                    ( WeenieClassName.dabusfire,           1.0f ),
+                    ( WeenieClassName.dabusfrost,          1.0f ),
+
+                    ( WeenieClassName.morningstar,         3.0f ),
+                    ( WeenieClassName.morningstaracid,     0.75f ),
+                    ( WeenieClassName.morningstarelectric, 0.75f ),
+                    ( WeenieClassName.morningstarfire,     0.75f ),
+                    ( WeenieClassName.morningstarfrost,    0.75f ),
+
+                    ( WeenieClassName.clubspiked,          3.0f ),
+                    ( WeenieClassName.clubspikedacid,      0.75f ),
+                    ( WeenieClassName.clubspikedelectric,  0.75f ),
+                    ( WeenieClassName.clubspikedfire,      0.75f ),
+                    ( WeenieClassName.clubspikedfrost,     0.75f ),
+                };
+
+                MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.jitte,            1.0f ),
+                    ( WeenieClassName.clubspiked,       1.0f ),
+
+                    ( WeenieClassName.tofun,            0.25f ),
+                    ( WeenieClassName.morningstar,      0.25f ),
+                };
+
+                MaceWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.jitte,               4.0f ),
+                    ( WeenieClassName.jitteacid,           1.0f ),
+                    ( WeenieClassName.jitteelectric,       1.0f ),
+                    ( WeenieClassName.jittefire,           1.0f ),
+                    ( WeenieClassName.jittefrost,          1.0f ),
+
+                    ( WeenieClassName.tofun,               4.0f ),
+                    ( WeenieClassName.tofunacid,           1.0f ),
+                    ( WeenieClassName.tofunelectric,       1.0f ),
+                    ( WeenieClassName.tofunfire,           1.0f ),
+                    ( WeenieClassName.tofunfrost,          1.0f ),
+
+                    ( WeenieClassName.morningstar,         3.0f ),
+                    ( WeenieClassName.morningstaracid,     0.75f ),
+                    ( WeenieClassName.morningstarelectric, 0.75f ),
+                    ( WeenieClassName.morningstarfire,     0.75f ),
+                    ( WeenieClassName.morningstarfrost,    0.75f ),
+
+                    ( WeenieClassName.clubspiked,          3.0f ),
+                    ( WeenieClassName.clubspikedacid,      0.75f ),
+                    ( WeenieClassName.clubspikedelectric,  0.75f ),
+                    ( WeenieClassName.clubspikedfire,      0.75f ),
+                    ( WeenieClassName.clubspikedfrost,     0.75f ),
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -102,35 +212,35 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 MaceWcids_Aluvian = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.club,                4.0f ),
-                    ( WeenieClassName.clubacid,            0.25f ),
-                    ( WeenieClassName.clubelectric,        0.25f ),
-                    ( WeenieClassName.clubfire,            0.25f ),
-                    ( WeenieClassName.clubfrost,           0.25f ),
+                    ( WeenieClassName.club,               16.0f ),
+                    ( WeenieClassName.clubacid,            1.0f ),
+                    ( WeenieClassName.clubelectric,        1.0f ),
+                    ( WeenieClassName.clubfire,            1.0f ),
+                    ( WeenieClassName.clubfrost,           1.0f ),
 
-                    ( WeenieClassName.mace,                4.0f ),
-                    ( WeenieClassName.maceacid,            0.25f ),
-                    ( WeenieClassName.maceelectric,        0.25f ),
-                    ( WeenieClassName.macefire,            0.25f ),
-                    ( WeenieClassName.macefrost,           0.25f ),
+                    ( WeenieClassName.mace,               16.0f ),
+                    ( WeenieClassName.maceacid,            1.0f ),
+                    ( WeenieClassName.maceelectric,        1.0f ),
+                    ( WeenieClassName.macefire,            1.0f ),
+                    ( WeenieClassName.macefrost,           1.0f ),
 
-                    ( WeenieClassName.morningstar,         4.0f ),
-                    ( WeenieClassName.morningstaracid,     0.25f ),
-                    ( WeenieClassName.morningstarelectric, 0.25f ),
-                    ( WeenieClassName.morningstarfire,     0.25f ),
-                    ( WeenieClassName.morningstarfrost,    0.25f ),
+                    ( WeenieClassName.morningstar,        16.0f ),
+                    ( WeenieClassName.morningstaracid,     1.0f ),
+                    ( WeenieClassName.morningstarelectric, 1.0f ),
+                    ( WeenieClassName.morningstarfire,     1.0f ),
+                    ( WeenieClassName.morningstarfrost,    1.0f ),
 
-                    ( WeenieClassName.clubspiked,          4.0f ),
-                    ( WeenieClassName.clubspikedacid,      0.25f ),
-                    ( WeenieClassName.clubspikedelectric,  0.25f ),
-                    ( WeenieClassName.clubspikedfire,      0.25f ),
-                    ( WeenieClassName.clubspikedfrost,     0.25f ),
+                    ( WeenieClassName.clubspiked,         16.0f ),
+                    ( WeenieClassName.clubspikedacid,      1.0f ),
+                    ( WeenieClassName.clubspikedelectric,  1.0f ),
+                    ( WeenieClassName.clubspikedfire,      1.0f ),
+                    ( WeenieClassName.clubspikedfrost,     1.0f ),
 
-                    ( WeenieClassName.ace41057_greatstarmace,          4.0f ),
-                    ( WeenieClassName.ace41058_acidgreatstarmace,      0.25f ),
-                    ( WeenieClassName.ace41059_lightninggreatstarmace, 0.25f ),
-                    ( WeenieClassName.ace41060_flaminggreatstarmace,   0.25f ),
-                    ( WeenieClassName.ace41061_frostgreatstarmace,     0.25f ),
+                    ( WeenieClassName.ace41057_greatstarmace,         16.0f ),
+                    ( WeenieClassName.ace41058_acidgreatstarmace,      1.0f ),
+                    ( WeenieClassName.ace41059_lightninggreatstarmace, 1.0f ),
+                    ( WeenieClassName.ace41060_flaminggreatstarmace,   1.0f ),
+                    ( WeenieClassName.ace41061_frostgreatstarmace,     1.0f ),
                 };
 
                 MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -146,35 +256,35 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 MaceWcids_Gharundim = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.kasrullah,           4.0f ),
-                    ( WeenieClassName.kasrullahacid,       0.25f ),
-                    ( WeenieClassName.kasrullahelectric,   0.25f ),
-                    ( WeenieClassName.kasrullahfire,       0.25f ),
-                    ( WeenieClassName.kasrullahfrost,      0.25f ),
+                    ( WeenieClassName.kasrullah,          16.0f ),
+                    ( WeenieClassName.kasrullahacid,       1.0f ),
+                    ( WeenieClassName.kasrullahelectric,   1.0f ),
+                    ( WeenieClassName.kasrullahfire,       1.0f ),
+                    ( WeenieClassName.kasrullahfrost,      1.0f ),
 
-                    ( WeenieClassName.dabus,               4.0f ),
-                    ( WeenieClassName.dabusacid,           0.25f ),
-                    ( WeenieClassName.dabuselectric,       0.25f ),
-                    ( WeenieClassName.dabusfire,           0.25f ),
-                    ( WeenieClassName.dabusfrost,          0.25f ),
+                    ( WeenieClassName.dabus,              16.0f ),
+                    ( WeenieClassName.dabusacid,           1.0f ),
+                    ( WeenieClassName.dabuselectric,       1.0f ),
+                    ( WeenieClassName.dabusfire,           1.0f ),
+                    ( WeenieClassName.dabusfrost,          1.0f ),
 
-                    ( WeenieClassName.morningstar,         4.0f ),
-                    ( WeenieClassName.morningstaracid,     0.25f ),
-                    ( WeenieClassName.morningstarelectric, 0.25f ),
-                    ( WeenieClassName.morningstarfire,     0.25f ),
-                    ( WeenieClassName.morningstarfrost,    0.25f ),
+                    ( WeenieClassName.morningstar,        16.0f ),
+                    ( WeenieClassName.morningstaracid,     1.0f ),
+                    ( WeenieClassName.morningstarelectric, 1.0f ),
+                    ( WeenieClassName.morningstarfire,     1.0f ),
+                    ( WeenieClassName.morningstarfrost,    1.0f ),
 
-                    ( WeenieClassName.clubspiked,          4.0f ),
-                    ( WeenieClassName.clubspikedacid,      0.25f ),
-                    ( WeenieClassName.clubspikedelectric,  0.25f ),
-                    ( WeenieClassName.clubspikedfire,      0.25f ),
-                    ( WeenieClassName.clubspikedfrost,     0.25f ),
+                    ( WeenieClassName.clubspiked,         16.0f ),
+                    ( WeenieClassName.clubspikedacid,      1.0f ),
+                    ( WeenieClassName.clubspikedelectric,  1.0f ),
+                    ( WeenieClassName.clubspikedfire,      1.0f ),
+                    ( WeenieClassName.clubspikedfrost,     1.0f ),
 
-                    ( WeenieClassName.ace41062_khandahandledmace,          4.0f ),
-                    ( WeenieClassName.ace41063_acidkhandahandledmace,      0.25f ),
-                    ( WeenieClassName.ace41064_lightningkhandahandledmace, 0.25f ),
-                    ( WeenieClassName.ace41065_flamingkhandahandledmace,   0.25f ),
-                    ( WeenieClassName.ace41066_frostkhandahandledmace,     0.25f ),
+                    ( WeenieClassName.ace41062_khandahandledmace,         16.0f ),
+                    ( WeenieClassName.ace41063_acidkhandahandledmace,      1.0f ),
+                    ( WeenieClassName.ace41064_lightningkhandahandledmace, 1.0f ),
+                    ( WeenieClassName.ace41065_flamingkhandahandledmace,   1.0f ),
+                    ( WeenieClassName.ace41066_frostkhandahandledmace,     1.0f ),
                 };
 
                 MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -190,145 +300,35 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 MaceWcids_Sho = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.jitte,               4.0f ),
-                    ( WeenieClassName.jitteacid,           0.25f ),
-                    ( WeenieClassName.jitteelectric,       0.25f ),
-                    ( WeenieClassName.jittefire,           0.25f ),
-                    ( WeenieClassName.jittefrost,          0.25f ),
+                    ( WeenieClassName.jitte,              16.0f ),
+                    ( WeenieClassName.jitteacid,           1.0f ),
+                    ( WeenieClassName.jitteelectric,       1.0f ),
+                    ( WeenieClassName.jittefire,           1.0f ),
+                    ( WeenieClassName.jittefrost,          1.0f ),
 
-                    ( WeenieClassName.tofun,               4.0f ),
-                    ( WeenieClassName.tofunacid,           0.25f ),
-                    ( WeenieClassName.tofunelectric,       0.25f ),
-                    ( WeenieClassName.tofunfire,           0.25f ),
-                    ( WeenieClassName.tofunfrost,          0.25f ),
+                    ( WeenieClassName.tofun,              16.0f ),
+                    ( WeenieClassName.tofunacid,           1.0f ),
+                    ( WeenieClassName.tofunelectric,       1.0f ),
+                    ( WeenieClassName.tofunfire,           1.0f ),
+                    ( WeenieClassName.tofunfrost,          1.0f ),
 
-                    ( WeenieClassName.morningstar,         4.0f ),
-                    ( WeenieClassName.morningstaracid,     0.25f ),
-                    ( WeenieClassName.morningstarelectric, 0.25f ),
-                    ( WeenieClassName.morningstarfire,     0.25f ),
-                    ( WeenieClassName.morningstarfrost,    0.25f ),
+                    ( WeenieClassName.morningstar,        16.0f ),
+                    ( WeenieClassName.morningstaracid,     1.0f ),
+                    ( WeenieClassName.morningstarelectric, 1.0f ),
+                    ( WeenieClassName.morningstarfire,     1.0f ),
+                    ( WeenieClassName.morningstarfrost,    1.0f ),
 
-                    ( WeenieClassName.clubspiked,          4.0f ),
-                    ( WeenieClassName.clubspikedacid,      0.25f ),
-                    ( WeenieClassName.clubspikedelectric,  0.25f ),
-                    ( WeenieClassName.clubspikedfire,      0.25f ),
-                    ( WeenieClassName.clubspikedfrost,     0.25f ),
+                    ( WeenieClassName.clubspiked,         16.0f ),
+                    ( WeenieClassName.clubspikedacid,      1.0f ),
+                    ( WeenieClassName.clubspikedelectric,  1.0f ),
+                    ( WeenieClassName.clubspikedfire,      1.0f ),
+                    ( WeenieClassName.clubspikedfrost,     1.0f ),
 
-                    ( WeenieClassName.ace40635_tetsubo,          4.0f ),
-                    ( WeenieClassName.ace40636_acidtetsubo,      0.25f ),
-                    ( WeenieClassName.ace40637_lightningtetsubo, 0.25f ),
-                    ( WeenieClassName.ace40638_flamingtetsubo,   0.25f ),
-                    ( WeenieClassName.ace40639_frosttetsubo,     0.25f ),
-                };
-            }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
-            {
-                MaceWcids_Aluvian_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.club,             1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
-
-                    ( WeenieClassName.mace,             0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
-                };
-
-                MaceWcids_Aluvian = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.club,                0.20f ),
-                    ( WeenieClassName.clubacid,            0.0125f ),
-                    ( WeenieClassName.clubelectric,        0.0125f ),
-                    ( WeenieClassName.clubfire,            0.0125f ),
-                    ( WeenieClassName.clubfrost,           0.0125f ),
-
-                    ( WeenieClassName.mace,                0.20f ),
-                    ( WeenieClassName.maceacid,            0.0125f ),
-                    ( WeenieClassName.maceelectric,        0.0125f ),
-                    ( WeenieClassName.macefire,            0.0125f ),
-                    ( WeenieClassName.macefrost,           0.0125f ),
-
-                    ( WeenieClassName.morningstar,         0.20f ),
-                    ( WeenieClassName.morningstaracid,     0.0125f ),
-                    ( WeenieClassName.morningstarelectric, 0.0125f ),
-                    ( WeenieClassName.morningstarfire,     0.0125f ),
-                    ( WeenieClassName.morningstarfrost,    0.0125f ),
-
-                    ( WeenieClassName.clubspiked,          0.20f ),
-                    ( WeenieClassName.clubspikedacid,      0.0125f ),
-                    ( WeenieClassName.clubspikedelectric,  0.0125f ),
-                    ( WeenieClassName.clubspikedfire,      0.0125f ),
-                    ( WeenieClassName.clubspikedfrost,     0.0125f ),
-                };
-
-                MaceWcids_Gharundim_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.kasrullah,        1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
-
-                    ( WeenieClassName.dabus,            0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
-                };
-
-                MaceWcids_Gharundim = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.kasrullah,           0.20f ),
-                    ( WeenieClassName.kasrullahacid,       0.0125f ),
-                    ( WeenieClassName.kasrullahelectric,   0.0125f ),
-                    ( WeenieClassName.kasrullahfire,       0.0125f ),
-                    ( WeenieClassName.kasrullahfrost,      0.0125f ),
-
-                    ( WeenieClassName.dabus,               0.20f ),
-                    ( WeenieClassName.dabusacid,           0.0125f ),
-                    ( WeenieClassName.dabuselectric,       0.0125f ),
-                    ( WeenieClassName.dabusfire,           0.0125f ),
-                    ( WeenieClassName.dabusfrost,          0.0125f ),
-
-                    ( WeenieClassName.morningstar,         0.20f ),
-                    ( WeenieClassName.morningstaracid,     0.0125f ),
-                    ( WeenieClassName.morningstarelectric, 0.0125f ),
-                    ( WeenieClassName.morningstarfire,     0.0125f ),
-                    ( WeenieClassName.morningstarfrost,    0.0125f ),
-
-                    ( WeenieClassName.clubspiked,          0.20f ),
-                    ( WeenieClassName.clubspikedacid,      0.0125f ),
-                    ( WeenieClassName.clubspikedelectric,  0.0125f ),
-                    ( WeenieClassName.clubspikedfire,      0.0125f ),
-                    ( WeenieClassName.clubspikedfrost,     0.0125f ),
-                };
-
-                MaceWcids_Sho_T1 = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
-                {
-                    ( WeenieClassName.jitte,            1.0f ),
-                    ( WeenieClassName.clubspiked,       1.0f ),
-
-                    ( WeenieClassName.tofun,            0.25f ),
-                    ( WeenieClassName.morningstar,      0.25f ),
-                };
-
-                MaceWcids_Sho = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.jitte,               0.20f ),
-                    ( WeenieClassName.jitteacid,           0.0125f ),
-                    ( WeenieClassName.jitteelectric,       0.0125f ),
-                    ( WeenieClassName.jittefire,           0.0125f ),
-                    ( WeenieClassName.jittefrost,          0.0125f ),
-
-                    ( WeenieClassName.tofun,               0.20f ),
-                    ( WeenieClassName.tofunacid,           0.0125f ),
-                    ( WeenieClassName.tofunelectric,       0.0125f ),
-                    ( WeenieClassName.tofunfire,           0.0125f ),
-                    ( WeenieClassName.tofunfrost,          0.0125f ),
-
-                    ( WeenieClassName.morningstar,         0.20f ),
-                    ( WeenieClassName.morningstaracid,     0.0125f ),
-                    ( WeenieClassName.morningstarelectric, 0.0125f ),
-                    ( WeenieClassName.morningstarfire,     0.0125f ),
-                    ( WeenieClassName.morningstarfrost,    0.0125f ),
-
-                    ( WeenieClassName.clubspiked,          0.20f ),
-                    ( WeenieClassName.clubspikedacid,      0.0125f ),
-                    ( WeenieClassName.clubspikedelectric,  0.0125f ),
-                    ( WeenieClassName.clubspikedfire,      0.0125f ),
-                    ( WeenieClassName.clubspikedfrost,     0.0125f ),
+                    ( WeenieClassName.ace40635_tetsubo,         16.0f ),
+                    ( WeenieClassName.ace40636_acidtetsubo,      1.0f ),
+                    ( WeenieClassName.ace40637_lightningtetsubo, 1.0f ),
+                    ( WeenieClassName.ace40638_flamingtetsubo,   1.0f ),
+                    ( WeenieClassName.ace40639_frosttetsubo,     1.0f ),
                 };
             }
         }

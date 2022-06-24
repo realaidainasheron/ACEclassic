@@ -67,7 +67,53 @@ namespace ACE.Server.Factories.Tables.Wcids
         };
         static AtlatlWcids()
         {
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.atlatl,      3.0f ),
+                    ( WeenieClassName.atlatlroyal, 1.0f ),
+                };
+
+                T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.atlatl,                     4.0f ),
+                    ( WeenieClassName.atlatlroyal,                4.0f ),
+
+                    ( WeenieClassName.atlatlslashing,             1.0f ),
+                    ( WeenieClassName.atlatlpiercing,             1.0f ),
+                    ( WeenieClassName.atlatlblunt,                1.0f ),
+                    ( WeenieClassName.atlatlacid,                 1.0f ),
+                    ( WeenieClassName.atlatlfire,                 1.0f ),
+                    ( WeenieClassName.atlatlfrost,                1.0f ),
+                    ( WeenieClassName.atlatlelectric,             1.0f ),
+                };
+
+                T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
+                {
+                    ( WeenieClassName.atlatlslashing,             1.0f ),
+                    ( WeenieClassName.atlatlpiercing,             1.0f ),
+                    ( WeenieClassName.atlatlblunt,                1.0f ),
+                    ( WeenieClassName.atlatlacid,                 1.0f ),
+                    ( WeenieClassName.atlatlfire,                 1.0f ),
+                    ( WeenieClassName.atlatlfrost,                1.0f ),
+                    ( WeenieClassName.atlatlelectric,             1.0f ),
+                };
+
+                // we have to refresh this list or it will still contain the previous values.
+                atlatlTiers = new List<ChanceTable<WeenieClassName>>()
+                {
+                    T1_Chances,
+                    T1_T4_Chances,
+                    T1_T4_Chances,
+                    T1_T4_Chances,
+                    T5_Chances,
+                    T6_T8_Chances,
+                    T6_T8_Chances,
+                    T6_T8_Chances,
+                };
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
             {
                 T1_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
@@ -85,46 +131,46 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 T1_T4_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.atlatl,                    4.0f ),
-                    ( WeenieClassName.atlatlroyal,               4.0f ),
+                    ( WeenieClassName.atlatl,                   16.0f ),
+                    ( WeenieClassName.atlatlroyal,              16.0f ),
 
-                    ( WeenieClassName.dart,                      4.0f ),
+                    ( WeenieClassName.dart,                     16.0f ),
                     ( WeenieClassName.dartacid,                  1.0f ),
                     ( WeenieClassName.dartflame,                 1.0f ),
                     ( WeenieClassName.dartfrost,                 1.0f ),
                     ( WeenieClassName.dartelectric,              1.0f ),
 
-                    ( WeenieClassName.axethrowing,               4.0f ),
+                    ( WeenieClassName.axethrowing,              16.0f ),
                     ( WeenieClassName.axethrowingacid,           1.0f ),
                     ( WeenieClassName.axethrowingfire,           1.0f ),
                     ( WeenieClassName.axethrowingfrost,          1.0f ),
                     ( WeenieClassName.axethrowingelectric,       1.0f ),
 
-                    ( WeenieClassName.clubthrowing,              4.0f ),
+                    ( WeenieClassName.clubthrowing,             16.0f ),
                     ( WeenieClassName.clubthrowingacid,          1.0f ),
                     ( WeenieClassName.clubthrowingfire,          1.0f ),
                     ( WeenieClassName.clubthrowingfrost,         1.0f ),
                     ( WeenieClassName.clubthrowingelectric,      1.0f ),
 
-                    ( WeenieClassName.daggerthrowing,            4.0f ),
+                    ( WeenieClassName.daggerthrowing,           16.0f ),
                     ( WeenieClassName.daggerthrowingacid,        1.0f ),
                     ( WeenieClassName.daggerthrowingfire,        1.0f ),
                     ( WeenieClassName.daggerthrowingfrost,       1.0f ),
                     ( WeenieClassName.daggerthrowingelectric,    1.0f ),
 
-                    ( WeenieClassName.javelin,                   4.0f ),
+                    ( WeenieClassName.javelin,                  16.0f ),
                     ( WeenieClassName.javelinacid,               1.0f ),
                     ( WeenieClassName.javelinfire,               1.0f ),
                     ( WeenieClassName.javelinfrost,              1.0f ),
                     ( WeenieClassName.javelinelectric,           1.0f ),
 
-                    ( WeenieClassName.shuriken,                  4.0f ),
+                    ( WeenieClassName.shuriken,                 16.0f ),
                     ( WeenieClassName.shurikenacid,              1.0f ),
                     ( WeenieClassName.shurikenfire,              1.0f ),
                     ( WeenieClassName.shurikenfrost,             1.0f ),
                     ( WeenieClassName.shurikenelectric,          1.0f ),
 
-                    ( WeenieClassName.djarid,                    4.0f ),
+                    ( WeenieClassName.djarid,                   16.0f ),
                     ( WeenieClassName.djaridacid,                1.0f ),
                     ( WeenieClassName.djaridfire,                1.0f ),
                     ( WeenieClassName.djaridfrost,               1.0f ),
@@ -133,8 +179,8 @@ namespace ACE.Server.Factories.Tables.Wcids
 
                 T5_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
-                    ( WeenieClassName.atlatl,                     7.0f ),
-                    ( WeenieClassName.atlatlroyal,                7.0f ),
+                    ( WeenieClassName.atlatl,                    16.0f ),
+                    ( WeenieClassName.atlatlroyal,               16.0f ),
                     ( WeenieClassName.atlatlslashing,             1.0f ),
                     ( WeenieClassName.atlatlpiercing,             1.0f ),
                     ( WeenieClassName.atlatlblunt,                1.0f ),
@@ -143,47 +189,47 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.atlatlfrost,                1.0f ),
                     ( WeenieClassName.atlatlelectric,             1.0f ),
 
-                    ( WeenieClassName.dart,                       7.0f ),
-                    ( WeenieClassName.dartacid,                   1.75f ),
-                    ( WeenieClassName.dartflame,                  1.75f ),
-                    ( WeenieClassName.dartfrost,                  1.75f ),
-                    ( WeenieClassName.dartelectric,               1.75f ),
+                    ( WeenieClassName.dart,                       16.0f ),
+                    ( WeenieClassName.dartacid,                    1.0f ),
+                    ( WeenieClassName.dartflame,                   1.0f ),
+                    ( WeenieClassName.dartfrost,                   1.0f ),
+                    ( WeenieClassName.dartelectric,                1.0f ),
 
-                    ( WeenieClassName.axethrowing,                7.0f ),
-                    ( WeenieClassName.axethrowingacid,            1.75f ),
-                    ( WeenieClassName.axethrowingfire,            1.75f ),
-                    ( WeenieClassName.axethrowingfrost,           1.75f ),
-                    ( WeenieClassName.axethrowingelectric,        1.75f ),
+                    ( WeenieClassName.axethrowing,                16.0f ),
+                    ( WeenieClassName.axethrowingacid,             1.0f ),
+                    ( WeenieClassName.axethrowingfire,             1.0f ),
+                    ( WeenieClassName.axethrowingfrost,            1.0f ),
+                    ( WeenieClassName.axethrowingelectric,         1.0f ),
 
-                    ( WeenieClassName.clubthrowing,               7.0f ),
-                    ( WeenieClassName.clubthrowingacid,           1.75f ),
-                    ( WeenieClassName.clubthrowingfire,           1.75f ),
-                    ( WeenieClassName.clubthrowingfrost,          1.75f ),
-                    ( WeenieClassName.clubthrowingelectric,       1.75f ),
+                    ( WeenieClassName.clubthrowing,               16.0f ),
+                    ( WeenieClassName.clubthrowingacid,            1.0f ),
+                    ( WeenieClassName.clubthrowingfire,            1.0f ),
+                    ( WeenieClassName.clubthrowingfrost,           1.0f ),
+                    ( WeenieClassName.clubthrowingelectric,        1.0f ),
 
-                    ( WeenieClassName.daggerthrowing,             7.0f ),
-                    ( WeenieClassName.daggerthrowingacid,         1.75f ),
-                    ( WeenieClassName.daggerthrowingfire,         1.75f ),
-                    ( WeenieClassName.daggerthrowingfrost,        1.75f ),
-                    ( WeenieClassName.daggerthrowingelectric,     1.75f ),
+                    ( WeenieClassName.daggerthrowing,             16.0f ),
+                    ( WeenieClassName.daggerthrowingacid,          1.0f ),
+                    ( WeenieClassName.daggerthrowingfire,          1.0f ),
+                    ( WeenieClassName.daggerthrowingfrost,         1.0f ),
+                    ( WeenieClassName.daggerthrowingelectric,      1.0f ),
 
-                    ( WeenieClassName.javelin,                    7.0f ),
-                    ( WeenieClassName.javelinacid,                1.75f ),
-                    ( WeenieClassName.javelinfire,                1.75f ),
-                    ( WeenieClassName.javelinfrost,               1.75f ),
-                    ( WeenieClassName.javelinelectric,            1.75f ),
+                    ( WeenieClassName.javelin,                    16.0f ),
+                    ( WeenieClassName.javelinacid,                 1.0f ),
+                    ( WeenieClassName.javelinfire,                 1.0f ),
+                    ( WeenieClassName.javelinfrost,                1.0f ),
+                    ( WeenieClassName.javelinelectric,             1.0f ),
 
-                    ( WeenieClassName.shuriken,                   7.0f ),
-                    ( WeenieClassName.shurikenacid,               1.75f ),
-                    ( WeenieClassName.shurikenfire,               1.75f ),
-                    ( WeenieClassName.shurikenfrost,              1.75f ),
-                    ( WeenieClassName.shurikenelectric,           1.75f ),
+                    ( WeenieClassName.shuriken,                   16.0f ),
+                    ( WeenieClassName.shurikenacid,                1.0f ),
+                    ( WeenieClassName.shurikenfire,                1.0f ),
+                    ( WeenieClassName.shurikenfrost,               1.0f ),
+                    ( WeenieClassName.shurikenelectric,            1.0f ),
 
-                    ( WeenieClassName.djarid,                     7.0f ),
-                    ( WeenieClassName.djaridacid,                 1.75f ),
-                    ( WeenieClassName.djaridfire,                 1.75f ),
-                    ( WeenieClassName.djaridfrost,                1.75f ),
-                    ( WeenieClassName.djaridelectric,             1.75f ),
+                    ( WeenieClassName.djarid,                     16.0f ),
+                    ( WeenieClassName.djaridacid,                  1.0f ),
+                    ( WeenieClassName.djaridfire,                  1.0f ),
+                    ( WeenieClassName.djaridfrost,                 1.0f ),
+                    ( WeenieClassName.djaridelectric,              1.0f ),
                 };
 
                 T6_T8_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
@@ -237,51 +283,6 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.djaridfire,                 1.0f ),
                     ( WeenieClassName.djaridfrost,                1.0f ),
                     ( WeenieClassName.djaridelectric,             1.0f ),
-                };
-
-                // we have to refresh this list or it will still contain the previous values.
-                atlatlTiers = new List<ChanceTable<WeenieClassName>>()
-                {
-                    T1_Chances,
-                    T1_T4_Chances,
-                    T1_T4_Chances,
-                    T1_T4_Chances,
-                    T5_Chances,
-                    T6_T8_Chances,
-                    T6_T8_Chances,
-                    T6_T8_Chances,
-                };
-            }
-            else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
-            {
-                T1_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.atlatl,      0.80f ),
-                    ( WeenieClassName.atlatlroyal, 0.20f ),
-                };
-
-                T5_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.atlatl,                     0.25f ),
-                    ( WeenieClassName.atlatlroyal,                0.26f ),
-                    ( WeenieClassName.atlatlslashing,             0.07f ),
-                    ( WeenieClassName.atlatlpiercing,             0.07f ),
-                    ( WeenieClassName.atlatlblunt,                0.07f ),
-                    ( WeenieClassName.atlatlacid,                 0.07f ),
-                    ( WeenieClassName.atlatlfire,                 0.07f ),
-                    ( WeenieClassName.atlatlfrost,                0.07f ),
-                    ( WeenieClassName.atlatlelectric,             0.07f ),
-                };
-
-                T6_T8_Chances = new ChanceTable<WeenieClassName>()
-                {
-                    ( WeenieClassName.atlatlslashing,             0.15f ),
-                    ( WeenieClassName.atlatlpiercing,             0.15f ),
-                    ( WeenieClassName.atlatlblunt,                0.14f ),
-                    ( WeenieClassName.atlatlacid,                 0.14f ),
-                    ( WeenieClassName.atlatlfire,                 0.14f ),
-                    ( WeenieClassName.atlatlfrost,                0.14f ),
-                    ( WeenieClassName.atlatlelectric,             0.14f ),
                 };
 
                 // we have to refresh this list or it will still contain the previous values.
