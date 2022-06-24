@@ -562,8 +562,7 @@ namespace ACE.Server.Managers
                 ("use_turbine_chat", new Property<bool>(true, "enables or disables global chat channels (General, LFG, Roleplay, Trade, Olthoi, Society, Allegience)")),
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
-                ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
-                ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level"))
+                ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =

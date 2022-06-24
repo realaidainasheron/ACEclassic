@@ -412,8 +412,8 @@ namespace ACE.Server.WorldObjects
             // The damage done by melee weapons—such as swords, maces, daggers, spears, and so on—is now affected more by the strength of the combatant. Strong warriors will find that they do more damage per hit than before.
             // This does not affect missile or unarmed combat. Note that this applies to monsters as well, so be careful when facing monsters that wield weapons!
             // Asheron's Call Release Notes - 2000/02 - Shadows of the Past
-            if (IsHumanoid && GetCurrentWeaponSkill() == Skill.UnarmedCombat)
-                return 1.0f;
+            //if (IsHumanoid && GetCurrentWeaponSkill() == Skill.UnarmedCombat)
+            //    return 1.0f;
 
             var isBow = weapon != null && weapon.IsBow;
 
@@ -425,11 +425,17 @@ namespace ACE.Server.WorldObjects
             else
                 attribute = isBow || weapon?.WeaponSkill == Skill.FinesseWeapons ? Coordination : Strength;
 
-            return SkillFormula.GetAttributeMod((int)attribute.Current, isBow);
+            Skill skill = GetCurrentWeaponSkill();
+            if (isBow)
+                skill = Skill.Bow; // Group up bows and crossbows while excluding thrown weapons.
+            else if (skill == Skill.UnarmedCombat && !IsHumanoid)
+                skill = Skill.None; // Non humanoids(creatures that aren't able to wield weapons) use unarmed combat but still have the regular weapon factor.
+
+            return SkillFormula.GetAttributeMod((int)attribute.Current, skill);
         }
         public virtual int GetUnarmedSkillDamageBonus()
         {
-            if (IsHumanoid && ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && GetCurrentWeaponSkill() == Skill.UnarmedCombat)
+            if (IsHumanoid && ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && GetCurrentWeaponSkill() == Skill.UnarmedCombat) // Non humanoids(creatures that aren't able to wield weapons) do not get a damage bonus based on skill.
             {
                 var skill = GetCreatureSkill(Skill.UnarmedCombat).Current;
 
