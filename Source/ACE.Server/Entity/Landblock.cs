@@ -855,6 +855,7 @@ namespace ACE.Server.Entity
             // ACEClassic-PATCH - Stop crashing on DatLoader InvalidCastException
             try
             {
+                wo.BeforeEnterWorld();
                 return AddWorldObjectInternal(wo);
             }
             catch (Exception loEx)

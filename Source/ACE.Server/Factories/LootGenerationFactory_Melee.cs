@@ -119,6 +119,43 @@ namespace ACE.Server.Factories
 
             if (roll == null)
             {
+                if(wo.W_WeaponType == WeaponType.Undef)
+                {
+                    switch(wo.WeaponSkill)
+                    {
+                        case Skill.Axe:
+                            wo.W_WeaponType = WeaponType.Axe;
+                            break;
+                        case Skill.Bow:
+                            wo.W_WeaponType = WeaponType.Bow;
+                            break;
+                        case Skill.Crossbow:
+                            wo.W_WeaponType = WeaponType.Crossbow;
+                            break;
+                        case Skill.Dagger:
+                            wo.W_WeaponType = WeaponType.Dagger;
+                            break;
+                        case Skill.Mace:
+                            wo.W_WeaponType = WeaponType.Mace;
+                            break;
+                        case Skill.Spear:
+                            wo.W_WeaponType = WeaponType.Spear;
+                            break;
+                        case Skill.Staff:
+                            wo.W_WeaponType = WeaponType.Staff;
+                            break;
+                        case Skill.Sword:
+                            wo.W_WeaponType = WeaponType.Sword;
+                            break;
+                        case Skill.ThrownWeapon:
+                            wo.W_WeaponType = WeaponType.Thrown;
+                            break;
+                        case Skill.UnarmedCombat:
+                            wo.W_WeaponType = WeaponType.Unarmed;
+                            break;
+
+                    }
+                }
                 log.Error($"MutateMeleeWeapon reverting to old method({wo.Name}, {profile.TreasureType}).");
                 // previous method
                 var wieldDifficulty = RollWieldDifficulty(profile.Tier, TreasureWeaponType.MeleeWeapon);
