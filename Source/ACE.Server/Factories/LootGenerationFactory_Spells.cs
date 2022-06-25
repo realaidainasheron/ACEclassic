@@ -296,6 +296,8 @@ namespace ACE.Server.Factories
                         log.Error($"RollCantrips({wo.Name}, {profile.TreasureType}, {roll.ItemType}) - {cantrip} has {cantripLevels.Count} cantrip levels, expected 2.");
                         continue;
                     }
+
+                    finalCantrips.Add(cantripLevels[cantripLevel - 1]);
                 }
                 else
                 {
