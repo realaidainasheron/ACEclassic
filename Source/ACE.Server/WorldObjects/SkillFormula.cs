@@ -13,7 +13,7 @@ namespace ACE.Server.WorldObjects
         // bows and crossbows
         public static readonly float BowMod = 0.008f;
 
-        public static readonly float UnarmedMod = 0.008f;
+        public static readonly float UnarmedMod = 0.004f;
 
         public static readonly float ArmorMod = 200.0f / 3.0f;
 
