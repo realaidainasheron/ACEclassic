@@ -1040,6 +1040,8 @@ namespace ACE.Server.WorldObjects
             Position prevLocation = null;
             Landblock prevLandblock = null;
 
+            var prevContainer = item.Container;
+
             if (item.CurrentLandblock != null) // Movement is an item pickup off the landblock
             {
                 prevLocation = new Position(item.Location);
@@ -1112,6 +1114,9 @@ namespace ACE.Server.WorldObjects
 
             if(itemWasEquipped && (item.WeenieType == WeenieType.Ammunition || item.WeenieType == WeenieType.Missile) && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                 Session.Network.EnqueueSend(new GameMessagePrivateUpdatePropertyInt(this, PropertyInt.EncumbranceVal, EncumbranceVal ?? 0));
+
+            if (prevContainer != null && (!prevContainer.Stuck || prevContainer is Player) && container != prevContainer)
+                item.SaveBiotaToDatabase();
 
             Session.Network.EnqueueSend(
                 new GameMessagePublicUpdateInstanceID(item, PropertyInstanceId.Container, container.Guid),
