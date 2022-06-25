@@ -303,7 +303,22 @@ namespace ACE.Server.WorldObjects
 
             if (damage != null)
             {
-                if(sourceCreature != null)
+                float dmgMod = 1;
+
+                if (player != null && targetPlayer != null)
+                {
+                    if (Spell.School == MagicSchool.WarMagic)
+                    {
+                        dmgMod = (float)PropertyManager.GetDouble("pvp_dmg_mod_war").Item;
+
+                        if (SpellType == ProjectileSpellType.Streak)
+                            dmgMod = (float)PropertyManager.GetDouble("pvp_dmg_mod_war_streak").Item; // scales war streak damages
+                    }
+
+                    damage = damage * dmgMod;
+                }
+
+                if (sourceCreature != null)
                     sourceCreature.TryCastAssessCreatureAndPersonDebuffs(creatureTarget, CombatType.Magic);
 
                 // handle void magic DoTs:

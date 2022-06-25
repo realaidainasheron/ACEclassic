@@ -623,7 +623,25 @@ namespace ACE.Server.Managers
                 ("xp_modifier_reward_tier4", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 95 and level 110, or for unspecified level quests while being between level 56 and 76.")),
                 ("xp_modifier_reward_tier5", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 110 and level 135, or for unspecified level quests while being between level 76 and 96.")),
                 ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests of level 135 and above, or for unspecified level quests while being over level 96.")),
-                ("salvage_amount_multiplier", new Property<double>(1.0, "Scales the amount of salvage a player gets from items."))
+                ("salvage_amount_multiplier", new Property<double>(1.0, "Scales the amount of salvage a player gets from items.")),
+                ("pvp_dmg_mod_war", new Property<double>(1.0, "Scales the amount of damage for war magic.")),
+                ("pvp_dmg_mod_war_streak", new Property<double>(1.0, "Scales the amount of damage for war streaks.")),
+                ("pvp_dmg_mod_axe", new Property<double>(1.0, "Scales the amount of damage for axe")),
+                ("pvp_dmg_mod_sword", new Property<double>(1.0, "Scales the amount of damage for Sword")),
+                ("pvp_dmg_mod_mace", new Property<double>(1.0, "Scales the amount of damage for mace")),
+                ("pvp_dmg_mod_spear", new Property<double>(1.0, "Scales the amount of damage for spear")),
+                ("pvp_dmg_mod_staff", new Property<double>(1.0, "Scales the amount of damage for staff")),
+                ("pvp_dmg_mod_unarmed", new Property<double>(1.0, "Scales the amount of damage for unarmed")),
+                ("pvp_dmg_mod_dagger", new Property<double>(1.0, "Scales the amount of damage for dagger")),
+                ("pvp_dmg_mod_bow", new Property<double>(1.0, "Scales the amount of damage for bow")),
+                ("pvp_dmg_mod_xbow", new Property<double>(1.0, "Scales the amount of damage for xbow")),
+                ("pvp_dmg_mod_thrown", new Property<double>(1.0, "Scales the amount of damage for thrown")),
+                ("pvp_dmg_mod_phantom", new Property<double>(1.0, "Scales the amount of damage for phantom")),
+                ("pvp_dmg_mod_hollow", new Property<double>(1.0, "Scales the amount of damage for hollow")),
+                ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
+                ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
+                ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
+                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =

@@ -263,7 +263,9 @@ namespace ACE.Server.Entity
             // armor rending and cleaving
             var armorRendingMod = 1.0f;
             if (Weapon != null && Weapon.HasImbuedEffect(ImbuedEffectType.ArmorRending))
-                armorRendingMod = WorldObject.GetArmorRendingMod(attackSkill);
+            {
+                armorRendingMod = WorldObject.GetArmorRendingMod(attackSkill);                
+            }
 
             var armorCleavingMod = attacker.GetArmorCleavingMod(Weapon);
 
@@ -321,6 +323,79 @@ namespace ACE.Server.Entity
 
             // calculate final output damage
             Damage = DamageBeforeMitigation * ArmorMod * ShieldMod * ResistanceMod * DamageResistanceRatingMod;
+
+            if(playerAttacker != null && playerDefender != null)
+            { 
+                float config_mod = 1;
+
+                if (Weapon != null)
+                {
+                    try
+                    {
+                        switch (Weapon.WeaponSkill)
+                        {
+                            case Skill.Bow:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_bow").Item;
+                                break;
+                            case Skill.Axe:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_axe").Item;
+                                break;
+                            case Skill.Crossbow:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_xbow").Item;
+                                break;
+                            case Skill.Dagger:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_dagger").Item;
+                                break;
+                            case Skill.Mace:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_mace").Item;
+                                break;
+                            case Skill.Spear:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_spear").Item;
+                                break;
+                            case Skill.Staff:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_staff").Item;
+                                break;
+                            case Skill.Sword:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_sword").Item;
+                                break;
+                            case Skill.ThrownWeapon:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_thrown").Item;
+                                break;
+                            case Skill.UnarmedCombat:
+                                config_mod = (float)PropertyManager.GetDouble("pvp_dmg_mod_unarmed").Item;
+                                break;
+                        }
+
+                        if (Weapon.HasImbuedEffect(ImbuedEffectType.ArmorRending))
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_ar").Item;
+                        }
+                        else if (Weapon.HasImbuedEffect(ImbuedEffectType.CripplingBlow))
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_cb").Item;
+                        }
+                        else if (Weapon.HasImbuedEffect(ImbuedEffectType.CriticalStrike))
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_cs").Item;
+                        }
+                        else if (Weapon.IgnoreMagicArmor && Weapon.IgnoreMagicResist)
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_hollow").Item;
+                        }
+                        else if (Weapon.HasImbuedEffect(ImbuedEffectType.IgnoreAllArmor))
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_phantom").Item;
+                        }
+
+                        Damage = Damage * config_mod;
+                    }
+                    catch(Exception ex)
+                    {
+                        log.Error($"Failed applying server configured pvp mods. Ex: {ex}");
+                    }
+                }
+            }
+
             DamageMitigated = DamageBeforeMitigation - Damage;
 
             return Damage;
