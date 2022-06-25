@@ -382,6 +382,10 @@ namespace ACE.Server.Entity
                         {
                             config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_hollow").Item;
                         }
+                        else if (Weapon.HasImbuedEffect(ImbuedEffectType.IgnoreAllArmor) && Weapon.WeaponSkill == Skill.UnarmedCombat)
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_phantom_unarmed").Item;
+                        }
                         else if (Weapon.HasImbuedEffect(ImbuedEffectType.IgnoreAllArmor))
                         {
                             config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_phantom").Item;
