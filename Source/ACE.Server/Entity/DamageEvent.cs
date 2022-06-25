@@ -378,6 +378,10 @@ namespace ACE.Server.Entity
                         {
                             config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_cs").Item;
                         }
+                        else if (Weapon.IgnoreMagicArmor && Weapon.IgnoreMagicResist && Weapon.WeaponSkill == Skill.UnarmedCombat)
+                        {
+                            config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_hollow_unarmed").Item;
+                        }
                         else if (Weapon.IgnoreMagicArmor && Weapon.IgnoreMagicResist)
                         {
                             config_mod = config_mod * (float)PropertyManager.GetDouble("pvp_dmg_mod_hollow").Item;

@@ -639,6 +639,7 @@ namespace ACE.Server.Managers
                 ("pvp_dmg_mod_phantom", new Property<double>(1.0, "Scales the amount of damage for phantom")),
                 ("pvp_dmg_mod_phantom_unarmed", new Property<double>(1.0, "Scales the amount of damage for phantom katar")),
                 ("pvp_dmg_mod_hollow", new Property<double>(1.0, "Scales the amount of damage for hollow")),
+                ("pvp_dmg_mod_hollow_unarmed", new Property<double>(1.0, "Scales the amount of damage for hollow katar")),
                 ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
                 ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
                 ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
