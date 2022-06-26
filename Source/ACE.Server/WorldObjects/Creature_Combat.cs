@@ -1042,6 +1042,9 @@ namespace ACE.Server.WorldObjects
 
         public void TryCastAssessCreatureAndPersonDebuffs(Creature target, CombatType combatType)
         {
+            if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.CustomDM)
+                return;
+
             Player sourceAsPlayer = this as Player;
             Player targetAsPlayer = target as Player;
 
