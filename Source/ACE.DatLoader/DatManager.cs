@@ -42,13 +42,13 @@ namespace ACE.DatLoader
                     }
                     else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
                     {
-                        if (CellDat.Iteration != 4)
-                            log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of 4.");
+                        if (CellDat.Iteration != 10000)
+                            log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of 10000.");
                     }
                     else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
                     {
-                        if (CellDat.Iteration != 10000)
-                            log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of 10000.");
+                        if (CellDat.Iteration != 20000)
+                            log.Warn($"{datFile} iteration {CellDat.Iteration} does not match expected version of 20000.");
                     }
                 }
                 catch (FileNotFoundException ex)
@@ -71,15 +71,15 @@ namespace ACE.DatLoader
                     if (PortalDat.Iteration != ITERATION_PORTAL)
                         log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected end-of-retail version of {ITERATION_PORTAL}.");
                 }
-                else if(Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
-                {
-                    if (PortalDat.Iteration != 2072)
-                        log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of 2072.");
-                }
-                else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
                 {
                     if (PortalDat.Iteration != 10000)
                         log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of 10000.");
+                }
+                else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    if (PortalDat.Iteration != 20000)
+                        log.Warn($"{datFile} iteration {PortalDat.Iteration} does not match expected version of 20000.");
                 }
             }
             catch (FileNotFoundException ex)

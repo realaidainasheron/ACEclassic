@@ -91,8 +91,8 @@ namespace ACE.Server.Factories
                     switch (deathTreasure.Tier)
                     {
                         case 1:
-                            itemLootChance = 0.15f;
-                            magicItemLootChance = 0.1f;
+                            itemLootChance = 0.3f;
+                            magicItemLootChance = 0.2f;
                             mundaneItemLootChance = 0.9f;
                             break;
                         case 2:
