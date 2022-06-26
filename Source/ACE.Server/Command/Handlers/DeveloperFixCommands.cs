@@ -349,11 +349,11 @@ namespace ACE.Server.Command.Handlers
             using (var ctx = new ShardDbContext())
             {
                 // 4 possible skill credits from quests
-                // - ChasingOswaldDone
+                // - OswaldManualCompleted
                 // - ArantahKill1 (no 'turned in' stamp, only if given figurine?)
                 // - LumAugSkillQuest (stamped either 1 or 2 times)
 
-                oswaldSkillCredit = ctx.CharacterPropertiesQuestRegistry.Where(i => i.QuestName.Equals("ChasingOswaldDone")).Select(i => i.CharacterId).ToHashSet();
+                oswaldSkillCredit = ctx.CharacterPropertiesQuestRegistry.Where(i => i.QuestName.Equals("OswaldManualCompleted")).Select(i => i.CharacterId).ToHashSet();
                 ralireaSkillCredit = ctx.CharacterPropertiesQuestRegistry.Where(i => i.QuestName.Equals("ArantahKill1")).Select(i => i.CharacterId).ToHashSet();
                 lumAugSkillCredits = ctx.CharacterPropertiesQuestRegistry.Where(i => i.QuestName.Equals("LumAugSkillQuest")).ToDictionary(i => i.CharacterId, i => i.NumTimesCompleted);
             }
@@ -364,16 +364,39 @@ namespace ACE.Server.Command.Handlers
                 if (player.Account == null || player.Account.AccessLevel == (uint)AccessLevel.Admin)
                     continue;
 
-                // player starts with 52 skill credits
-                var startCredits = 52;
+                if (!player.Heritage.HasValue)
+                {
+                    Console.WriteLine($"{player.Name} (0x{player.Guid}) does not have a Heritage, skipping!");
+                    continue;
+                }
 
-                // skills that cannot be untrained: arcane lore, jump, loyalty, magic defense, run, salvaging
-                // all of these have '0' cost to train, except for arcane lore, which has 4 (seems to be an outlier?)
-                startCredits += 4;
+                var heritage = (uint)player.Heritage.Value;
+                var heritageGroup = DatManager.PortalDat.CharGen.HeritageGroups[heritage];
+                var adjustedSkillCosts = heritageGroup.Skills.ToDictionary(s => (Skill)s.SkillNum, s => s);
+
+                var startCredits = (int)heritageGroup.SkillCredits;
 
                 var levelCredits = GetAdditionalCredits(player.Level ?? 1);
 
-                var totalCredits = startCredits + levelCredits;
+                var questCredits = 0;
+
+                // 4 possible skill credits from quests
+
+                // - OswaldManualCompleted
+                if (oswaldSkillCredit.Contains(player.Guid.Full))
+                    questCredits++;
+
+                // - ArantahKill1 (no 'turned in' stamp, only if given figurine?)
+                if (ralireaSkillCredit.Contains(player.Guid.Full))
+                    questCredits++;
+
+                // - LumAugSkillQuest (stamped either 1 or 2 times)
+                if (lumAugSkillCredits.TryGetValue(player.Guid.Full, out var lumSkillCredits))
+                    questCredits += lumSkillCredits;
+
+                var totalCredits = startCredits + levelCredits + questCredits;
+
+                //Console.WriteLine($"{player.Name} (0x{player.Guid}) Heritage: {heritage}, Level: {player.Level}, Base Credits: {startCredits}, Additional Level Credits: {levelCredits}, Quest Credits: {questCredits}, Total Skill Credits: {totalCredits}");
 
                 var used = 0;
 
@@ -387,13 +410,18 @@ namespace ACE.Server.Command.Handlers
 
                     if (!DatManager.PortalDat.SkillTable.SkillBaseHash.TryGetValue((uint)skill.Key, out var skillInfo))
                     {
-                        Console.WriteLine($"{player.Name}.HandleVerifySkillCredits({skill.Key}): unknown skill");
+                        Console.WriteLine($"{player.Name}:0x{player.Guid}.HandleVerifySkillCredits({skill.Key}): unknown skill");
                         continue;
                     }
 
-                    //Console.WriteLine($"{(Skill)skill.Type} trained cost: {skillInfo.TrainedCost}, spec cost: {skillInfo.SpecializedCost}");
+                    adjustedSkillCosts.TryGetValue(skill.Key, out var adjustedCost);
 
-                    used += skillInfo.TrainedCost;
+                    var trainedCost = adjustedCost?.NormalCost ?? skillInfo.TrainedCost;
+                    var specializedCost = adjustedCost?.PrimaryCost ?? skillInfo.SpecializedCost;
+
+                    //Console.WriteLine($"{(Skill)skill.Type} trained cost: {skillInfo.TrainedCost}, spec cost: {skillInfo.SpecializedCost}, adjusted trained cost: {trainedCost}, adjusted spec cost: {specializedCost}");
+
+                    used += trainedCost;
 
                     if (sac == SkillAdvancementClass.Specialized)
                     {
@@ -408,30 +436,14 @@ namespace ACE.Server.Command.Handlers
                                 continue;
                         }
 
-                        used += skillInfo.UpgradeCostFromTrainedToSpecialized;
+                        used += specializedCost - trainedCost;
 
-                        specCreditsSpent += skillInfo.SpecializedCost;
-
-                        if (skill.Key == Skill.ArcaneLore) // exclude Arcane Lore TrainedCost
-                            specCreditsSpent -= skillInfo.TrainedCost;
+                        specCreditsSpent += specializedCost;
                     }
                 }
 
-                // 2 possible skill credits from quests
-                // - ChasingOswaldDone
-                if (oswaldSkillCredit.Contains(player.Guid.Full))
-                    totalCredits++;
-
-                // - ArantahKill1 (no 'turned in' stamp, only if given figurine?)
-                if (ralireaSkillCredit.Contains(player.Guid.Full))
-                    totalCredits++;
-
-                // - LumAugSkillQuest (stamped either 1 or 2 times)
-                if (lumAugSkillCredits.TryGetValue(player.Guid.Full, out var lumSkillCredits))
-                    totalCredits += lumSkillCredits;
-
                 var targetCredits = totalCredits - used;
-                var targetMsg = $"{player.Name} should have {targetCredits} available skill credits";
+                var targetMsg = $"{player.Name} (0x{player.Guid}) should have {targetCredits} available skill credits";
 
                 if (targetCredits < 0)
                 {
@@ -452,7 +464,7 @@ namespace ACE.Server.Command.Handlers
                     // if the player has already spent more skill credits than they should have,
                     // unfortunately this situation requires a partial reset..
 
-                    Console.WriteLine($"{player.Name} has spent {specCreditsSpent} skill credits on specalization, {specCreditsSpent - 70} over the limit of 70. To fix this situation, specialized skill reset will need to be applied{fixStr}");
+                    Console.WriteLine($"{player.Name} (0x{player.Guid}) has spent {specCreditsSpent} skill credits on specialization, {specCreditsSpent - 70} over the limit of 70. To fix this situation, specialized skill reset will need to be applied{fixStr}");
                     foundIssues = true;
 
                     if (fix)
@@ -471,6 +483,20 @@ namespace ACE.Server.Command.Handlers
                     if (fix)
                     {
                         player.SetProperty(PropertyInt.AvailableSkillCredits, targetCredits);
+                        player.SaveBiotaToDatabase();
+                    }
+                }
+
+                var totalSkillCredits = player.GetProperty(PropertyInt.TotalSkillCredits) ?? 0;
+
+                if (totalSkillCredits != totalCredits)
+                {
+                    Console.WriteLine($"{player.Name} (0x{player.Guid}) should have {totalCredits} total skill credits, but they have {totalSkillCredits}{fixStr}");
+                    foundIssues = true;
+
+                    if (fix)
+                    {
+                        player.SetProperty(PropertyInt.TotalSkillCredits, totalCredits);
                         player.SaveBiotaToDatabase();
                     }
                 }
@@ -583,6 +609,9 @@ namespace ACE.Server.Command.Handlers
             player.SetProperty(PropertyInt.AvailableSkillCredits, targetCredits);
 
             player.SetProperty(PropertyBool.UntrainedSkills, true);
+
+            player.SetProperty(PropertyBool.FreeSkillResetRenewed, true);
+            player.SetProperty(PropertyBool.SkillTemplesTimerReset, true);
 
             player.SaveBiotaToDatabase();
         }
@@ -1518,6 +1547,93 @@ namespace ACE.Server.Command.Handlers
 
                 if (!foundIssues)
                     Console.WriteLine($"Verified wield levels for {legendaryItems.Count:N0} legendary items");
+            }
+        }
+
+        [CommandHandler("verify-shield-rating", AccessLevel.Admin, CommandHandlerFlag.ConsoleInvoke, "Verifies and optionally fixes any lootgen shields with incorrectly assigned CD/CDR")]
+        public static void HandleRemoveShieldRatings(Session session, params string[] parameters)
+        {
+            var fix = parameters.Length > 0 && parameters[0].Equals("fix");
+            var fixStr = fix ? " -- fixed" : "";
+            var foundIssues = false;
+
+            using (var ctx = new ShardDbContext())
+            {
+                ctx.Database.SetCommandTimeout(TimeSpan.FromMinutes(5));
+
+                // get items with GearCritDamage
+                var critDamage = ctx.BiotaPropertiesInt.Where(i => i.Type == (ushort)PropertyInt.GearCritDamage).ToDictionary(i => i.ObjectId, i => i.Value);
+
+                // get items with GearCritDamageResist
+                var critDamageResist = ctx.BiotaPropertiesInt.Where(i => i.Type == (ushort)PropertyInt.GearCritDamageResist).ToDictionary(i => i.ObjectId, i => i.Value);
+
+                // get lootgen shields
+                var query = from biota in ctx.Biota
+                            join workmanship in ctx.BiotaPropertiesInt on biota.Id equals workmanship.ObjectId
+                            join combatUse in ctx.BiotaPropertiesInt on biota.Id equals combatUse.ObjectId
+                            join name in ctx.BiotaPropertiesString on biota.Id equals name.ObjectId
+                            where workmanship.Type == (ushort)PropertyInt.ItemWorkmanship && combatUse.Type == (ushort)PropertyInt.CombatUse && combatUse.Value == (int)CombatUse.Shield && name.Type == (ushort)PropertyString.Name
+                            select new
+                            {
+                                Biota = biota,
+                                Name = name
+                            };
+
+                var results = query.ToDictionary(i => i.Biota.Id, i => i);
+
+                // generate list of remove fields
+                var critDamageRemove = new Dictionary<uint, int>();
+                var critDamageResistRemove = new Dictionary<uint, int>();
+
+                foreach (var result in results.Keys)
+                {
+                    if (critDamage.TryGetValue(result, out var critDamageResult))
+                        critDamageRemove.Add(result, critDamageResult);
+
+                    if (critDamageResist.TryGetValue(result, out var critDamageResistResult))
+                        critDamageResistRemove.Add(result, critDamageResistResult);
+                }
+
+                var numIssues = critDamageRemove.Count + critDamageResistRemove.Count;
+
+                var sqlLines = new List<string>();
+
+                if (numIssues > 0)
+                {
+                    foundIssues = true;
+
+                    Console.WriteLine($"Found {numIssues:N0} bugged shields:");
+
+                    foreach (var critDamageValue in critDamageRemove)
+                    {
+                        var shield = results[critDamageValue.Key];
+
+                        Console.WriteLine($"{shield.Biota.Id:X8} - {shield.Name.Value} (CD: {critDamageValue.Value}){fixStr}");
+
+                        sqlLines.Add($"delete from biota_properties_int where object_Id=0x{shield.Biota.Id:X8} and `type`={(int)PropertyInt.GearCritDamage};");
+                    }
+
+                    foreach (var critDamageResistValue in critDamageResistRemove)
+                    {
+                        var shield = results[critDamageResistValue.Key];
+
+                        Console.WriteLine($"{shield.Biota.Id:X8} - {shield.Name.Value} (CDR: {critDamageResistValue.Value}){fixStr}");
+
+                        sqlLines.Add($"delete from biota_properties_int where object_Id=0x{shield.Biota.Id:X8} and `type`={(int)PropertyInt.GearCritDamageResist};");
+                    }
+                }
+
+                if (!fix && foundIssues)
+                    Console.WriteLine($"Dry run completed. Type 'verify-shield-rating fix' to fix any issues.");
+
+                if (fix)
+                {
+                    foreach (var sqlLine in sqlLines)
+                        ctx.Database.ExecuteSqlRaw(sqlLine);
+                }
+
+                if (!foundIssues)
+                    Console.WriteLine($"Verified {results.Count:N0} shields");
             }
         }
     }

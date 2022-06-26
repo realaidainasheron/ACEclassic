@@ -242,7 +242,7 @@ namespace ACE.Server.WorldObjects
             foreach (var creature in PhysicsObj.ObjMaint.GetVisibleTargetsValuesOfTypeCreature())
             {
                 // ensure attackable
-                if (!creature.Attackable || creature.Teleporting) continue;
+                if (!creature.Attackable && creature.TargetingTactic == TargetingTactic.None || creature.Teleporting) continue;
 
                 // ensure within 'detection radius' ?
                 var chaseDistSq = creature == AttackTarget ? MaxChaseRangeSq : VisualAwarenessRangeSq;
@@ -261,6 +261,14 @@ namespace ACE.Server.WorldObjects
                     if (!PhysicsObj.ObjMaint.RetaliateTargetsContainsKey(creature.Guid.Full))
                         continue;
                 }
+
+                // cannot switch AttackTargets with Tolerance.Target
+                if (Tolerance.HasFlag(Tolerance.Target) && creature != AttackTarget)
+                    continue;
+
+                // can only target other monsters with Tolerance.Monster -- cannot target players or combat pets
+                if (Tolerance.HasFlag(Tolerance.Monster) && (creature is Player || creature is CombatPet))
+                    continue;
 
                 visibleTargets.Add(creature);
             }
@@ -316,11 +324,17 @@ namespace ACE.Server.WorldObjects
         }
 
         /// <summary>
+        /// If one of these fields is set, monster scanning for targets when it first spawns in
+        /// is terminated immediately
+        /// </summary>
+        private static readonly Tolerance ExcludeSpawnScan = Tolerance.NoAttack | Tolerance.Appraise | Tolerance.Provoke | Tolerance.Retaliate;
+
+        /// <summary>
         /// Called when a monster is first spawning in
         /// </summary>
         public void CheckTargets()
         {
-            if (!Attackable && TargetingTactic == TargetingTactic.None || Tolerance != Tolerance.None)
+            if (!Attackable && TargetingTactic == TargetingTactic.None || (Tolerance & ExcludeSpawnScan) != 0)
                 return;
 
             var actionChain = new ActionChain();
@@ -337,6 +351,9 @@ namespace ACE.Server.WorldObjects
             foreach (var creature in PhysicsObj.ObjMaint.GetVisibleTargetsValuesOfTypeCreature())
             {
                 if (creature is Player player && (!player.Attackable || player.Teleporting || (player.Hidden ?? false)))
+                    continue;
+
+                if (Tolerance.HasFlag(Tolerance.Monster) && (creature is Player || creature is CombatPet))
                     continue;
 
                 //var distSq = Location.SquaredDistanceTo(creature.Location);
@@ -394,20 +411,36 @@ namespace ACE.Server.WorldObjects
         }
 
         /// <summary>
-        /// Monsters can only alert other monsters once?
+        /// A monster can only alert friendly mobs to the presence of each attack target
+        /// once every AlertThreshold
         /// </summary>
-        public bool Alerted;
+        private static readonly TimeSpan AlertThreshold = TimeSpan.FromMinutes(2);
+
+        /// <summary>
+        /// AttackTarget => last alerted time
+        /// </summary>
+        private Dictionary<uint, DateTime> Alerted;
 
         public void AlertFriendly()
         {
-            //if (Alerted) return;
+            // if current attacker has already alerted this monster recently,
+            // don't re-alert friendlies
+            if (Alerted != null && Alerted.TryGetValue(AttackTarget.Guid.Full, out var lastAlertTime) && DateTime.UtcNow - lastAlertTime < AlertThreshold)
+                return;
 
             var visibleObjs = PhysicsObj.ObjMaint.GetVisibleObjects(PhysicsObj.CurCell);
+
+            var targetCreature = AttackTarget as Creature;
+
+            var alerted = false;
 
             foreach (var obj in visibleObjs)
             {
                 var nearbyCreature = obj.WeenieObj.WorldObject as Creature;
-                if (nearbyCreature == null || nearbyCreature.IsAwake || !nearbyCreature.Attackable)
+                if (nearbyCreature == null || nearbyCreature.IsAwake || !nearbyCreature.Attackable && nearbyCreature.TargetingTactic == TargetingTactic.None)
+                    continue;
+
+                if ((nearbyCreature.Tolerance & AlertExclude) != 0)
                     continue;
 
                 if (CreatureType != null && CreatureType == nearbyCreature.CreatureType ||
@@ -426,13 +459,30 @@ namespace ACE.Server.WorldObjects
                     if (nearbyCreature == AttackTarget)
                         continue;
 
-                    if (nearbyCreature.SameFaction(AttackTarget as Creature))
+                    if (nearbyCreature.SameFaction(targetCreature))
                         nearbyCreature.AddRetaliateTarget(AttackTarget);
 
-                    Alerted = true;
+                    if (PotentialFoe(targetCreature))
+                    {
+                        if (nearbyCreature.PotentialFoe(targetCreature))
+                            nearbyCreature.AddRetaliateTarget(AttackTarget);
+                        else
+                            continue;
+                    }
+
+                    alerted = true;
+
                     nearbyCreature.AttackTarget = AttackTarget;
                     nearbyCreature.WakeUp(false);
                 }
+            }
+            // only set alerted if monsters were actually alerted
+            if (alerted)
+            {
+                if (Alerted == null)
+                    Alerted = new Dictionary<uint, DateTime>();
+
+                Alerted[AttackTarget.Guid.Full] = DateTime.UtcNow;
             }
         }
 
@@ -452,11 +502,11 @@ namespace ACE.Server.WorldObjects
                     continue;
 
                 // ensure attackable
-                if (creature.IsDead || !creature.Attackable || creature.Teleporting)
+                if (creature.IsDead || !creature.Attackable && creature.TargetingTactic == TargetingTactic.None || creature.Teleporting)
                     continue;
 
                 // ensure another faction
-                if (SameFaction(creature))
+                if (SameFaction(creature) && !PotentialFoe(creature))
                     continue;
 
                 // ensure within detection range

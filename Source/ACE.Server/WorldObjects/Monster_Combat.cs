@@ -104,7 +104,7 @@ namespace ACE.Server.WorldObjects
                 GetCombatTable();
 
             // if caster, roll for spellcasting chance
-            if (IsCaster && TryRollSpell())
+            if (HasKnownSpells && TryRollSpell())
                 return CombatType.Magic;
 
             if (IsRanged)
@@ -165,6 +165,7 @@ namespace ACE.Server.WorldObjects
         {
             // FIXME
             var it = 0;
+            bool? isVisible = null;
 
             while (CurrentAttack == CombatType.Magic)
             {
@@ -172,17 +173,27 @@ namespace ACE.Server.WorldObjects
                 //CurrentSpell = GetRandomSpell();
                 if (CurrentSpell.IsProjectile)
                 {
+                    if (isVisible == null)
+                        isVisible = IsDirectVisible(AttackTarget);
+
                     // ensure direct los
-                    if (!IsDirectVisible(AttackTarget))
+                    if (!isVisible.Value)
                     {
                         // reroll attack type
                         CurrentAttack = GetNextAttackType();
                         it++;
 
                         // max iterations to melee?
-                        if (it >= 30)
+                        if (it >= 10)
+                        {
+                            //log.Warn($"{Name} ({Guid}) reached max iterations");
                             CurrentAttack = CombatType.Melee;
 
+                            var powerupTime = (float)(PowerupTime ?? 1.0f);
+                            var failDelay = ThreadSafeRandom.Next(0.0f, powerupTime);
+
+                            NextMoveTime = Timers.RunningTime + failDelay;
+                        }
                         continue;
                     }
                 }
@@ -362,14 +373,19 @@ namespace ACE.Server.WorldObjects
         /// <param name="amount">The amount of damage rounded</param>
         public virtual uint TakeDamage(WorldObject source, DamageType damageType, float amount, bool crit = false)
         {
-            var tryDamage = (uint)Math.Round(amount);
-            var damage = (uint)-UpdateVitalDelta(Health, (int)-tryDamage);
+            var tryDamage = (int)Math.Round(amount);
+            var damage = -UpdateVitalDelta(Health, -tryDamage);
 
             // TODO: update monster stamina?
 
             // source should only be null for combined DoT ticks from multiple sources
             if (source != null)
-                DamageHistory.Add(source, damageType, damage);
+            {
+                if (damage >= 0)
+                    DamageHistory.Add(source, damageType, (uint)damage);
+                else
+                    DamageHistory.OnHeal((uint)-damage);
+            }
 
             if (Health.Current <= 0)
             {
@@ -377,7 +393,7 @@ namespace ACE.Server.WorldObjects
 
                 Die();
             }
-            return damage;
+            return (uint)Math.Max(0, damage);
         }
 
         public void EmitSplatter(Creature target, float damage)
