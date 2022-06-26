@@ -172,16 +172,16 @@ namespace ACE.Server.Factories.Tables.Wcids
                 T5_T6_Chances = new ChanceTable<WeenieClassName>(ChanceTableType.Weight)
                 {
                     ( WeenieClassName.knife,          4.0f ),
-                    ( WeenieClassName.knifeacid,      1.0f ),
-                    ( WeenieClassName.knifeelectric,  1.0f ),
-                    ( WeenieClassName.knifefire,      1.0f ),
-                    ( WeenieClassName.knifefrost,     1.0f ),
+                    ( WeenieClassName.knifeacid,      0.25f ),
+                    ( WeenieClassName.knifeelectric,  0.25f ),
+                    ( WeenieClassName.knifefire,      0.25f ),
+                    ( WeenieClassName.knifefrost,     0.25f ),
 
                     ( WeenieClassName.dagger,         4.0f ),
-                    ( WeenieClassName.daggeracid,     1.0f ),
-                    ( WeenieClassName.daggerelectric, 1.0f ),
-                    ( WeenieClassName.daggerfire,     1.0f ),
-                    ( WeenieClassName.daggerfrost,    1.0f ),
+                    ( WeenieClassName.daggeracid,     0.25f ),
+                    ( WeenieClassName.daggerelectric, 0.25f ),
+                    ( WeenieClassName.daggerfire,     0.25f ),
+                    ( WeenieClassName.daggerfrost,    0.25f ),
 
                     ( WeenieClassName.dirk,          16.0f ),
                     ( WeenieClassName.dirkacid,       1.0f ),
