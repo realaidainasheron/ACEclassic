@@ -91,7 +91,7 @@ namespace ACE.Server.WorldObjects
 
             var proj = WorldObjectFactory.CreateNewWorldObject(ammo.WeenieClassId);
 
-            if (ammo.WeenieType == WeenieType.Missile && weapon.MaterialType != null)
+            if (ammo.WeenieType == WeenieType.Missile && ammo.MaterialType != null)
             {
                 // Copy some values here so our thrown weapon "ammo" is a representative copy of our mutated weapon.
                 proj.Damage = ammo.Damage;

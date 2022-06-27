@@ -91,8 +91,8 @@ namespace ACE.Server.Factories
                     switch (deathTreasure.Tier)
                     {
                         case 1:
-                            itemLootChance = 0.15f;
-                            magicItemLootChance = 0.1f;
+                            itemLootChance = 0.3f;
+                            magicItemLootChance = 0.2f;
                             mundaneItemLootChance = 0.9f;
                             break;
                         case 2:
@@ -1336,14 +1336,14 @@ namespace ACE.Server.Factories
         {
             var wo = WorldObjectFactory.CreateNewWorldObject((uint)treasureRoll.Wcid);
 
-            if (treasureRoll.WeaponType == TreasureWeaponType.Thrown)
-                wo.SetStackSize(30);
-
             if (wo == null)
             {
                 log.Error($"CreateAndMutateWcid({treasureDeath.TreasureType}, {(int)treasureRoll.Wcid} - {treasureRoll.Wcid}, {treasureRoll.GetItemType()}, {isMagical}) - failed to create item");
                 return null;
             }
+
+            if (treasureRoll.WeaponType == TreasureWeaponType.Thrown)
+                wo.SetStackSize(30);
 
             treasureRoll.BaseArmorLevel = wo.ArmorLevel ?? 0;
 

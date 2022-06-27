@@ -79,7 +79,9 @@ namespace ACE.Server.Factories.Tables
 
         static WeaponTypeChance()
         {
-            RetailChances = new ChanceTable<TreasureWeaponType>()
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                RetailChances = new ChanceTable<TreasureWeaponType>()
                 {
                     // melee: 63%
                     // missile: 27%
@@ -96,6 +98,7 @@ namespace ACE.Server.Factories.Tables
                     ( TreasureWeaponType.Atlatl,   0.09f ),
                     ( TreasureWeaponType.Caster,   0.10f ),
                 };
+            }
         }
 
         public static TreasureWeaponType Roll(int tier)
