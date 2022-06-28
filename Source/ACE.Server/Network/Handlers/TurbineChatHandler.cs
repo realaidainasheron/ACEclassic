@@ -153,7 +153,7 @@ namespace ACE.Server.Network.Handlers
 
                     session.Network.EnqueueSend(new GameMessageTurbineChat(ChatNetworkBlobType.NETBLOB_RESPONSE_BINARY, contextId, null, null, 0, chatType));
 
-                    if (chatType == ChatType.General)
+                    if (chatType == ChatType.General && channelID == TurbineChatChannel.General)
                     {
                         _ = SendWebhookedChat(gameMessageTurbineChat.SenderName, gameMessageTurbineChat.Message, null, gameMessageTurbineChat.Channel);
                     }

@@ -571,7 +571,7 @@ namespace ACE.Server.Managers
             if (string.IsNullOrWhiteSpace(webhook))
             {
                 // Disable this nag if you don't plan on using a Discord-based audit channel.
-                log.Error("turbine_chat_webhook_audit is not defined!");
+                //log.Error("turbine_chat_webhook_audit is not defined!");
                 return;
             }
             _ = Network.Handlers.TurbineChatHandler.SendWebhookedChat(issuer?.Name ?? "[SYSTEM]", message, webhook, "AUDIT");
