@@ -61,7 +61,7 @@ namespace ACE.Database
                     context.SaveChanges();
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 log.Error($"Exception in CreateKill saving kill data to PKKills DB. Ex: {ex}");
             }

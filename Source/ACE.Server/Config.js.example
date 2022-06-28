@@ -177,6 +177,13 @@
             "Database": "ace_pk_kills",
             "Username": "root",
             "Password": ""
+        },
+        "SessionLog": {
+            "Host": "127.0.0.1",
+            "Port": 3306,
+            "Database": "ace_session_log",
+            "Username": "root",
+            "Password": ""
         }
 
     },

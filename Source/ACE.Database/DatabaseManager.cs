@@ -14,6 +14,8 @@ namespace ACE.Database
 
         public static PKKillsDatabase PKKills { get; } = new PKKillsDatabase();
 
+        public static SessionLogDatabase SessionLog { get; } = new SessionLogDatabase();
+
         private static SerializedShardDatabase serializedShardDb;
 
         public static SerializedShardDatabase Shard { get; private set; }
