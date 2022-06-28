@@ -297,6 +297,11 @@ namespace ACE.Server.Network.Handlers
 
         private static bool CheckForVpn(string ip)
         {
+            if(ip.Equals("127.0.0.1"))
+            {
+                return false;
+            }
+
             bool isVpn = false;
             //Console.WriteLine("In AuthenticationHandler.CheckForVpn");            
 

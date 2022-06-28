@@ -677,7 +677,8 @@ namespace ACE.Server.Managers
                 ("popup_motd", new Property<string>("", "Popup message of the day")),
                 ("server_motd", new Property<string>("", "Server message of the day")),
                 ("turbine_chat_webhook", new Property<string>("", "Webhook to be used for turbine chat. This is for copying ingame general chat channels to a Discord channel.")),
-                ("turbine_chat_webhook_audit", new Property<string>("", "Webhook to be used for ingame audit log."))
+                ("turbine_chat_webhook_audit", new Property<string>("", "Webhook to be used for ingame audit log.")),
+                ("proxycheck_api_key", new Property<string>("", "API key for proxycheck.io service for VPN detection"))
                 );
     }
 }

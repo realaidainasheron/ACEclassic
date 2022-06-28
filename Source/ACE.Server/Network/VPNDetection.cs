@@ -5,6 +5,7 @@ using System.Net;
 using System.IO;
 using System.Threading.Tasks;
 using System.Text.Json;
+using ACE.Server.Managers;
 
 namespace ACE.Server.Network
 {
@@ -31,11 +32,16 @@ namespace ACE.Server.Network
 
     public static class VPNDetection
     {
-        public static string ApiKey { get; set; } = "e20520-75zq27-80h673-53315s";
+        public static string ApiKey { get; set; } = PropertyManager.GetString("proxycheck_api_key").Item;
 
         public static async Task<ISPInfo> CheckVPN(string ip)
         {
-            //Console.WriteLine("In VPNDetection.CheckVPN");            
+            //Console.WriteLine("In VPNDetection.CheckVPN");
+            if(string.IsNullOrEmpty(ip) || ip.Equals("127.0.0.1"))
+            {
+                return null;
+            }
+
             var url = $"https://proxycheck.io/v2/{ip}?vpn=1&asn=1&key={ApiKey}";
             if (!string.IsNullOrWhiteSpace(ApiKey))
                 url += "&key=" + ApiKey;
