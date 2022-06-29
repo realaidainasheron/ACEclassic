@@ -155,7 +155,7 @@ namespace ACE.Server.Network.Handlers
 
                     if (chatType == ChatType.General && channelID == TurbineChatChannel.General)
                     {
-                        _ = SendWebhookedChat(gameMessageTurbineChat.SenderName, gameMessageTurbineChat.Message, null, gameMessageTurbineChat.Channel);
+                        _ = SendWebhookedChat(gameMessageTurbineChat.SenderName, gameMessageTurbineChat.Message, null, channelID);
                     }
                 }
             }
