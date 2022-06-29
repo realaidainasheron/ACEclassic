@@ -187,6 +187,9 @@ namespace ACE.Entity.Enum.Properties
         FreeAttributeResetRenewed        = 9008,
         [ServerOnly]
         SkillTemplesTimerReset           = 9009,
+
+        [Ephemeral][ServerOnly]
+        IsPseudoRandomGenerator          = 9011,
     }
 
     public static class PropertyBoolExtensions

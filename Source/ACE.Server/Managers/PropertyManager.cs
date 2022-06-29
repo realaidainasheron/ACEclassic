@@ -497,6 +497,7 @@ namespace ACE.Server.Managers
                 PropertyManager.ModifyBool("vendor_shop_uses_generator", true);
                 PropertyManager.ModifyBool("allow_xp_at_max_level", true);
                 PropertyManager.ModifyBool("show_dat_warning", true);
+                PropertyManager.ModifyBool("increase_minimum_encounter_spawn_density", true);
 
                 PropertyManager.ModifyLong("max_level", 126);
             }
@@ -506,6 +507,7 @@ namespace ACE.Server.Managers
                 PropertyManager.ModifyBool("vendor_shop_uses_generator", true);
                 PropertyManager.ModifyBool("allow_xp_at_max_level", true);
                 PropertyManager.ModifyBool("show_dat_warning", true);
+                PropertyManager.ModifyBool("increase_minimum_encounter_spawn_density", true);
 
                 PropertyManager.ModifyLong("max_level", 126);
             }
@@ -583,7 +585,8 @@ namespace ACE.Server.Managers
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
-                ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level"))
+                ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
+                ("increase_minimum_encounter_spawn_density", new Property<bool>(false, "enable this to increase the density of random encounters that spawn in low density landblocks"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
