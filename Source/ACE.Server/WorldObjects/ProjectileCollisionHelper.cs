@@ -44,6 +44,8 @@ namespace ACE.Server.WorldObjects
                     if (!damageEvent.Evaded)
                         sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetCreature, CombatType.Missile);
 
+                    targetCreature.OnAttackReceived(sourceCreature, CombatType.Missile, damageEvent.IsCritical);
+
                     if (damageEvent != null && damageEvent.HasDamage)
                     {
                         worldObject.EnqueueBroadcast(new GameMessageSound(worldObject.Guid, Sound.Collision, 1.0f));
@@ -71,6 +73,8 @@ namespace ACE.Server.WorldObjects
 
                     if (!damageEvent.Evaded)
                         sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetCreature, CombatType.Missile);
+
+                    targetCreature.OnAttackReceived(sourceCreature, CombatType.Missile, damageEvent.IsCritical);
 
                     if (targetPlayer != null)
                     {

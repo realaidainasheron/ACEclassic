@@ -171,6 +171,9 @@ namespace ACE.Entity.Enum
         [CharacterOptions2(CharacterOptions2.ListenToPKDeathMessages)]
         ListenToPKDeathMessages                 = 0x34, // HearPKDeath_PlayerOption
 
+        [CharacterOptions2(CharacterOptions2.NotUsed1)]
+        AttemptToTaunt                          = 0x37 // CustomDM
+
     }
 
     public static class CharacterOptionExtensions

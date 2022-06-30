@@ -229,6 +229,18 @@ namespace ACE.Server.Entity
             var attackSkill = attacker.GetCreatureSkill(attacker.GetCurrentWeaponSkill());
             CriticalChance = WorldObject.GetWeaponCriticalChance(attacker, attackSkill, defender);
 
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                if (playerAttacker != null)
+                {
+                    // A full power/accuracy bar gives an extra 6% critical chance
+                    if (Weapon == null || !Weapon.IsAmmoLauncher)
+                        CriticalChance += playerAttacker.PowerLevel * 0.06f; // Power bar
+                    else
+                        CriticalChance += playerAttacker.AccuracyLevel * 0.06f; // Accuracy bar
+                }
+            }
+
             // https://asheron.fandom.com/wiki/Announcements_-_2002/08_-_Atonement
             // It should be noted that any time a character is logging off, PK or not, all physical attacks against them become automatically critical.
             // (Note that spells do not share this behavior.) We hope this will stress the need to log off in a safe place.
@@ -349,6 +361,13 @@ namespace ACE.Server.Entity
             //var attackType = attacker.GetCombatType();
 
             EffectiveDefenseSkill = defender.GetEffectiveDefenseSkill(CombatType);
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                // Evasion penalty for receiving too many attacks per second.
+                if (defender.attacksReceivedPerSecond > 0.0f && Defender.AttackTarget != attacker) // But we still have full evasion chance against our attack target.
+                    EffectiveDefenseSkill = (uint)Math.Round(EffectiveDefenseSkill * (1.0f - Math.Min(1.0f, defender.attacksReceivedPerSecond / 40.0f)));
+            }
 
             var evadeChance = 1.0f - SkillCheck.GetSkillChance(EffectiveAttackSkill, EffectiveDefenseSkill);
             return (float)evadeChance;
