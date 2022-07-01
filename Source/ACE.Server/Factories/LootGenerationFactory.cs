@@ -1346,11 +1346,8 @@ namespace ACE.Server.Factories
 
             if (treasureRoll.WeaponType == TreasureWeaponType.Thrown)
                 wo.SetStackSize(30);
-            else if (treasureRoll.ItemType == TreasureItemType_Orig.ArtObject)
-            {
-                if (wo.ItemType == ItemType.MissileWeapon && (wo.GetProperty(PropertyInt.MaxStackSize) ?? 0) > 1)
-                    wo.SetStackSize(30); // generic thrown weapons(not dinnerware!)
-            }
+            else if (treasureRoll.ItemType == TreasureItemType_Orig.ArtObject && wo.WeenieType == WeenieType.Missile) // thrown weapons(not dinnerware!)
+                wo.SetStackSize(30);
             else if (wo.ItemType == ItemType.SpellComponents)
             {
                 uint componentId = wo.GetProperty(PropertyDataId.SpellComponent) ?? 0;
@@ -1381,7 +1378,8 @@ namespace ACE.Server.Factories
                     }
                     break;
                 case TreasureItemType_Orig.ArtObject:
-                    MutateDinnerware(wo, treasureDeath, isMagical, treasureRoll);
+                    if (wo.WeenieType == WeenieType.Generic && wo.ItemType == ItemType.MissileWeapon)
+                        MutateDinnerware(wo, treasureDeath, isMagical, treasureRoll);
                     break;
 
                 case TreasureItemType_Orig.Weapon:
