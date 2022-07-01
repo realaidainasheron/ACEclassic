@@ -71,6 +71,9 @@ namespace ACE.Server.Factories
                 return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId); // not tweaked.
             else
             {
+                if (deathTreasureId == 338) // Leave Steel Chests alone!
+                    return DatabaseManager.World.GetCachedDeathTreasure(deathTreasureId);
+
                 // Tweaks to make the loot system more akin to Infiltration Era and CustomDM
                 TreasureDeath deathTreasure;
                 TreasureDeath tweakedDeathTreasure;
@@ -184,7 +187,6 @@ namespace ACE.Server.Factories
                     case 454: deathTreasureId = 457; break;
 
                     case 1: deathTreasureId = 3; break;
-                    case 338: deathTreasureId = 456; break;
                     case 456: deathTreasureId = 457; break;
                 }
 
@@ -1344,6 +1346,11 @@ namespace ACE.Server.Factories
 
             if (treasureRoll.WeaponType == TreasureWeaponType.Thrown)
                 wo.SetStackSize(30);
+            else if (treasureRoll.ItemType == TreasureItemType_Orig.ArtObject)
+            {
+                if (wo.ItemType == ItemType.MissileWeapon && (wo.GetProperty(PropertyInt.MaxStackSize) ?? 0) > 1)
+                    wo.SetStackSize(30); // generic thrown weapons(not dinnerware!)
+            }
             else if (wo.ItemType == ItemType.SpellComponents)
             {
                 uint componentId = wo.GetProperty(PropertyDataId.SpellComponent) ?? 0;
