@@ -1000,6 +1000,17 @@ namespace ACE.Server.WorldObjects
             }
             else // This is a self-contained movement
             {
+                var _containerRootOwner = containerRootOwner ?? container;
+
+                if (_containerRootOwner != this && _containerRootOwner != itemRootOwner)
+                {
+                    // this *should* be a self-contained movement..
+                    // duplicated check/message from client
+                    Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, itemGuid));
+                    SendTransientError($"You must first pick up the {item.Name}");
+                    return;
+                }
+
                 DoHandleActionPutItemInContainer(item, itemRootOwner, itemWasEquipped, container, containerRootOwner, placement);
             }
         }
