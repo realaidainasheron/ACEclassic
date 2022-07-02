@@ -9,7 +9,7 @@ VALUES (36,   1,          2) /* ItemType - Armor */
      , (36,   4,       8192) /* ClothingPriority - OuterwearLowerArms */
      , (36,   5,        270) /* EncumbranceVal */
      , (36,   8,         90) /* Mass */
-     , (36,   9,         16) /* ValidLocations - LowerArmWear */
+     , (36,   9,       4096) /* ValidLocations - LowerArmArmor */
      , (36,  16,          1) /* ItemUseable - No */
      , (36,  19,         30) /* Value */
      , (36,  27,          2) /* ArmorType - Leather */
