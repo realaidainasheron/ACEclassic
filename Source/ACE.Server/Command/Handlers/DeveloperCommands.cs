@@ -2400,10 +2400,16 @@ namespace ACE.Server.Command.Handlers
 
             if (target != null && target is Player player)
             {
+                player.LogOut_Inner(true);
+
+                player.CurrentLandblock?.RemoveWorldObject(player.Guid, false);
+                player.SavePlayerToDatabase();
+                PlayerManager.SwitchPlayerFromOnlineToOffline(player);
+
                 if (player.Session != null)
-                    player.Session.LogOffPlayer(true);
-                else
-                    player.LogOut();
+                {
+                    player.Session.Terminate(Network.Enum.SessionTerminationReason.ForcedLogOffRequested, new GameMessageBootAccount(" because the character was forced to log off by an admin"));
+                }
 
                 PlayerManager.BroadcastToAuditChannel(session?.Player, $"Forcing Log Off of {player.Name}...");
             }
