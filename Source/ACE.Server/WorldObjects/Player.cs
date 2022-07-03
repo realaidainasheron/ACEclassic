@@ -481,12 +481,15 @@ namespace ACE.Server.WorldObjects
         {
             if (PKLogoutActive && !forceImmediate)
             {
-                Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
-                Session.Network.EnqueueSend(new GameMessageSystemChat("Logging out in 20s...", ChatMessageType.Magic));
+                //Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
+                Session.Network.EnqueueSend(new GameMessageSystemChat("Beginning delayed player killer logoff...", ChatMessageType.Broadcast));
 
                 if (!PKLogout)
                 {
                     PKLogout = true;
+
+                    IsFrozen = true;
+                    EnqueueBroadcastPhysicsState();
 
                     LogoffTimestamp = Time.GetFutureUnixTime(PropertyManager.GetLong("pk_timer").Item);
                     PlayerManager.AddPlayerToLogoffQueue(this);
@@ -537,67 +540,88 @@ namespace ACE.Server.WorldObjects
             if (CurrentActivePet != null)
                 CurrentActivePet.Destroy();
 
+            // If we're in the dying animation process, we cannot logout until that animation completes..
+            if (IsInDeathProcess)
+                return;
+
+            LogOut_Final();
+        }
+
+        private void LogOut_Final(bool skipAnimations = false)
+        {
             if (CurrentLandblock != null)
             {
-                var logout = new Motion(MotionStance.NonCombat, MotionCommand.LogOut);
-                EnqueueBroadcastMotion(logout);
-
-                EnqueueBroadcastPhysicsState();
-
-                var logoutChain = new ActionChain();
-
-                var motionTable = DatManager.PortalDat.ReadFromDat<MotionTable>((uint)MotionTableId);
-                float logoutAnimationLength = motionTable.GetAnimationLength(MotionCommand.LogOut);
-                logoutChain.AddDelaySeconds(logoutAnimationLength);
-
-                // remove the player from landblock management -- after the animation has run
-                logoutChain.AddAction(this, () =>
+                if (skipAnimations)
                 {
-                    if (CurrentLandblock == null)
+                    FinalizeLogout();
+                }
+                else
+                {
+                    if (IsFrozen ?? false)
+                        IsFrozen = false;
+
+                    EnqueueBroadcastPhysicsState();
+
+                    var logout = new Motion(MotionStance.NonCombat, MotionCommand.LogOut);
+                    EnqueueBroadcastMotion(logout);                    
+
+                    var logoutChain = new ActionChain();
+
+                    var motionTable = DatManager.PortalDat.ReadFromDat<MotionTable>((uint) MotionTableId);
+                    float logoutAnimationLength = motionTable.GetAnimationLength(MotionCommand.LogOut);
+                    logoutChain.AddDelaySeconds(logoutAnimationLength);
+
+                    // remove the player from landblock management -- after the animation has run
+                    logoutChain.AddAction(WorldManager.ActionQueue, () =>
                     {
-                        log.Debug($"0x{Guid}:{Name}.LogOut_Inner.logoutChain: CurrentLandblock is null, unable to remove from a landblock...");
-                        if (Location != null)
-                            log.Debug($"0x{Guid}:{Name}.LogOut_Inner.logoutChain: Location is not null, Location = {Location.ToLOCString()}");
+                        // If we're in the dying animation process, we cannot RemoveWorldObject and logout until that animation completes..
+                        if (IsInDeathProcess)
+                            return;
+
+                        FinalizeLogout();
+                    });
+
+                    // close any open landblock containers (chests / corpses)
+                    if (LastOpenedContainerId != ObjectGuid.Invalid)
+                    {
+                        var container = CurrentLandblock.GetObject(LastOpenedContainerId) as Container;
+
+                        if (container != null)
+                            container.Close(this);
                     }
 
-                    CurrentLandblock?.RemoveWorldObject(Guid, false);
-                    SetPropertiesAtLogOut();
-                    SavePlayerToDatabase();
-                    PlayerManager.SwitchPlayerFromOnlineToOffline(this);
-                });
-
-                // close any open landblock containers (chests / corpses)
-                if (LastOpenedContainerId != ObjectGuid.Invalid)
-                {
-                    var container = CurrentLandblock.GetObject(LastOpenedContainerId) as Container;
-
-                    if (container != null)
-                        container.Close(this);
+                    logoutChain.EnqueueChain();
                 }
-
-                logoutChain.EnqueueChain();
             }
             else
             {
-                log.Debug($"0x{Guid}:{Name}.LogOut_Inner: CurrentLandblock is null");
-                if (Location != null)
-                {
-                    log.Debug($"0x{Guid}:{Name}.LogOut_Inner: Location is not null, Location = {Location.ToLOCString()}");
-                    var validLoadedLandblock = LandblockManager.GetLandblock(Location.LandblockId, false);
-                    if (validLoadedLandblock.GetObject(Guid.Full) != null)
-                    {
-                        log.Debug($"0x{Guid}:{Name}.LogOut_Inner: Player is still on landblock, removing...");
-                        validLoadedLandblock.RemoveWorldObject(Guid, false);
-                    }
-                    else
-                        log.Debug($"0x{Guid}:{Name}.LogOut_Inner: Player is not found on the landblock Location references.");
-                }
-                else
-                    log.Debug($"0x{Guid}:{Name}.LogOut_Inner: Location is null");
-                SetPropertiesAtLogOut();
-                SavePlayerToDatabase();
-                PlayerManager.SwitchPlayerFromOnlineToOffline(this);
+                FinalizeLogout();
             }
+        }
+
+        public bool ForcedLogOffRequested;
+
+        /// <summary>
+        /// Force Log off a player requested to log out by an admin command forcelogoff/forcelogout or the ServerManager.<para />
+        /// THIS FUNCTION FOR SYSTEM USE ONLY; If you want to force a player to logout, use Session.LogOffPlayer().
+        /// </summary>
+        public void ForceLogoff()
+        {
+            if (!ForcedLogOffRequested) return;
+
+            FinalizeLogout();
+
+            ForcedLogOffRequested = false;
+        }
+
+        private void FinalizeLogout()
+        {
+            CurrentLandblock?.RemoveWorldObject(Guid, false);
+            SetPropertiesAtLogOut();
+            SavePlayerToDatabase();
+            PlayerManager.SwitchPlayerFromOnlineToOffline(this);
+
+            log.Debug($"[LOGOUT] Account {Account.AccountName} exited the world with character {Name} (0x{Guid}) at {DateTime.Now}.");
         }
 
         public void HandleMRT()

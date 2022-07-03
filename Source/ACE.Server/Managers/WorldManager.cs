@@ -44,7 +44,7 @@ namespace ACE.Server.Managers
 
         public static WorldStatusState WorldStatus { get; private set; } = WorldStatusState.Closed;
 
-        private static readonly ActionQueue actionQueue = new ActionQueue();
+        public static readonly ActionQueue ActionQueue = new ActionQueue();
         public static readonly DelayManager DelayManager = new DelayManager();
 
         static WorldManager()
@@ -105,7 +105,7 @@ namespace ACE.Server.Managers
             {
                 log.Debug($"GetPossessedBiotasInParallel for {character.Name} took {(DateTime.UtcNow - start).TotalMilliseconds:N0} ms");
 
-                actionQueue.EnqueueAction(new ActionEventDelegate(() => DoPlayerEnterWorld(session, character, offlinePlayer.Biota, biotas)));
+                ActionQueue.EnqueueAction(new ActionEventDelegate(() => DoPlayerEnterWorld(session, character, offlinePlayer.Biota, biotas)));
             });
         }
 
@@ -302,7 +302,7 @@ namespace ACE.Server.Managers
 
         public static void EnqueueAction(IAction action)
         {
-            actionQueue.EnqueueAction(action);
+            ActionQueue.EnqueueAction(action);
         }
 
         private static readonly RateLimiter updateGameWorldRateLimiter = new RateLimiter(60, TimeSpan.FromSeconds(1));
@@ -360,7 +360,7 @@ namespace ACE.Server.Managers
 
                 // This will consist of PlayerEnterWorld actions, as well as other game world actions that require thread safety
                 ServerPerformanceMonitor.RestartEvent(ServerPerformanceMonitor.MonitorType.actionQueue_RunActions);
-                actionQueue.RunActions();
+                ActionQueue.RunActions();
                 ServerPerformanceMonitor.RegisterEventEnd(ServerPerformanceMonitor.MonitorType.actionQueue_RunActions);
 
                 ServerPerformanceMonitor.RestartEvent(ServerPerformanceMonitor.MonitorType.DelayManager_RunActions);
