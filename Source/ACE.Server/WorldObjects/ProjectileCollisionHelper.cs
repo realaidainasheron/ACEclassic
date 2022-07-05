@@ -41,11 +41,6 @@ namespace ACE.Server.WorldObjects
                     // player damage monster or player
                     damageEvent = sourcePlayer.DamageTarget(targetCreature, worldObject);
 
-                    if (!damageEvent.Evaded)
-                        sourceCreature.TryCastAssessCreatureAndPersonDebuffs(targetCreature, CombatType.Missile);
-
-                    targetCreature.OnAttackReceived(sourceCreature, CombatType.Missile, damageEvent.IsCritical);
-
                     if (damageEvent != null && damageEvent.HasDamage)
                     {
                         worldObject.EnqueueBroadcast(new GameMessageSound(worldObject.Guid, Sound.Collision, 1.0f));

@@ -229,16 +229,13 @@ namespace ACE.Server.Entity
             var attackSkill = attacker.GetCreatureSkill(attacker.GetCurrentWeaponSkill());
             CriticalChance = WorldObject.GetWeaponCriticalChance(attacker, attackSkill, defender);
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            if (playerAttacker != null && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM && CombatType != CombatType.Magic)
             {
-                if (playerAttacker != null)
-                {
-                    // A full power/accuracy bar gives an extra 6% critical chance
-                    if (Weapon == null || !Weapon.IsAmmoLauncher)
-                        CriticalChance += playerAttacker.PowerLevel * 0.06f; // Power bar
-                    else
-                        CriticalChance += playerAttacker.AccuracyLevel * 0.06f; // Accuracy bar
-                }
+                // A full power/accuracy bar gives an extra 6% critical chance
+                if (Weapon == null || !Weapon.IsAmmoLauncher)
+                    CriticalChance += playerAttacker.PowerLevel * 0.06f; // Power bar
+                else
+                    CriticalChance += playerAttacker.AccuracyLevel * 0.06f; // Accuracy bar
             }
 
             // https://asheron.fandom.com/wiki/Announcements_-_2002/08_-_Atonement
