@@ -299,38 +299,37 @@ namespace ACE.Server.Factories.Tables
 
                 T3_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.95f ),
-                    ( 1, 0.05f ),
+                    ( 0, 0.98f ),
+                    ( 1, 0.02f ),
                 };
 
                 T4_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.90f ),
-                    ( 1, 0.10f ),
+                    ( 0, 0.95f ),
+                    ( 1, 0.05f ),
                 };
 
                 T5_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.725f ),
-                    ( 1, 0.250f ),
-                    ( 2, 0.025f ),
+                    ( 0, 0.95f ),
+                    ( 1, 0.04f ),
+                    ( 2, 0.01f ),
                 };
 
                 T6_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.62f ),
-                    ( 1, 0.32f ),
-                    ( 2, 0.055f ),
+                    ( 0, 0.930f ),
+                    ( 1, 0.050f ),
+                    ( 2, 0.015f ),
                     ( 3, 0.005f ),
                 };
 
                 T7_T8_NumCantrips = new ChanceTable<int>()
                 {
-                    ( 0, 0.40f ),
-                    ( 1, 0.42f ),
-                    ( 2, 0.155f ),
-                    ( 3, 0.024f ),
-                    ( 4, 0.001f ),
+                    ( 0, 0.930f ),
+                    ( 1, 0.050f ),
+                    ( 2, 0.015f ),
+                    ( 3, 0.005f ),
                 };
 
                 _numCantrips = new List<ChanceTable<int>>()
@@ -375,14 +374,14 @@ namespace ACE.Server.Factories.Tables
 
                 T7_CantripLevel = new ChanceTable<int>()
                 {
-                    ( 1, 0.40f ),
-                    ( 2, 0.60f ),
+                    ( 1, 0.80f ),
+                    ( 2, 0.20f ),
                 };
 
                 T8_CantripLevel = new ChanceTable<int>()
                 {
-                    ( 1, 0.20f ),
-                    ( 2, 0.80f ),
+                    ( 1, 0.80f ),
+                    ( 2, 0.20f ),
                 };
 
                 _cantripLevels = new List<ChanceTable<int>>()

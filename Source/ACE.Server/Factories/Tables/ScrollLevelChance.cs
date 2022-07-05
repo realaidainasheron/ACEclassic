@@ -57,6 +57,9 @@ namespace ACE.Server.Factories.Tables
 
         public static int Roll(TreasureDeath profile)
         {
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && profile.TreasureType == 338) // Steel Chest
+                return 7;
+
             var table = scrollLevelChances[profile.Tier - 1];
 
             return table.Roll(profile.LootQualityMod);
@@ -67,23 +70,23 @@ namespace ACE.Server.Factories.Tables
             {
                 T1_ScrollLevelChances = new ChanceTable<int>()
                 {
-                    ( 1, 0.60f ),
-                    ( 2, 0.30f ),
-                    ( 3, 0.10f ),
+                    ( 1, 0.40f ),
+                    ( 2, 0.58f ),
+                    ( 3, 0.02f ),
                 };
 
                 T2_ScrollLevelChances = new ChanceTable<int>()
                 {
                     ( 3, 0.58f ),
-                    ( 4, 0.28f ),
-                    ( 5, 0.14f ),
+                    ( 4, 0.38f ),
+                    ( 5, 0.04f ),
                 };
 
                 T3_ScrollLevelChances = new ChanceTable<int>()
                 {
-                    ( 4, 0.62f ),
-                    ( 5, 0.26f ),
-                    ( 6, 0.12f ),
+                    ( 4, 0.65f ),
+                    ( 5, 0.30f ),
+                    ( 6, 0.05f ),
                 };
 
                 T4_ScrollLevelChances = new ChanceTable<int>()
@@ -102,20 +105,7 @@ namespace ACE.Server.Factories.Tables
                 T6_ScrollLevelChances = new ChanceTable<int>()
                 {
                     ( 6, 1.00f ),
-                };
-
-                // we have to refresh this list or it will still contain the previous values.
-                scrollLevelChances = new List<ChanceTable<int>>()
-                {
-                    T1_ScrollLevelChances,
-                    T2_ScrollLevelChances,
-                    T3_ScrollLevelChances,
-                    T4_ScrollLevelChances,
-                    T5_ScrollLevelChances,
-                    T6_ScrollLevelChances,
-                    T6_ScrollLevelChances,
-                    T6_ScrollLevelChances,
-                };
+                };                
             }
         }
     }
