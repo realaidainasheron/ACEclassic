@@ -751,7 +751,7 @@ namespace ACE.Server.WorldObjects
             var item = FindObject(itemGuid, SearchLocations.LocationsICanMove, out _, out var itemRootOwner, out var itemWasEquipped);
             var container = FindObject(containerGuid, SearchLocations.MyInventory | SearchLocations.Landblock | SearchLocations.LastUsedContainer, out _, out var containerRootOwner, out _) as Container;
 
-            if (item == null)
+            if (item == null || item.IsDestroyed)
             {
                 Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, "Source item not found!")); // Custom error message
                 Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, itemGuid));
@@ -769,6 +769,13 @@ namespace ACE.Server.WorldObjects
             if (itemRootOwner != this && containerRootOwner == this && !HasEnoughBurdenToAddToInventory(item))
             {
                 Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, "You are too encumbered to carry that!"));
+                Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, itemGuid));
+                return;
+            }
+
+            if (item.Quest != null && itemRootOwner != this && containerRootOwner != this)
+            {
+                Session.Network.EnqueueSend(new GameEventCommunicationTransientString(Session, $"You must first pickup the {item.Name}")); // Custom error message
                 Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, itemGuid));
                 return;
             }
@@ -876,6 +883,14 @@ namespace ACE.Server.WorldObjects
 
                     pickupChain.AddAction(this, () =>
                     {
+                        // Was this item destroyed?
+                        if (item.IsDestroyed)
+                        {
+                            Session.Network.EnqueueSend(new GameEventInventoryServerSaveFailed(Session, itemGuid, WeenieError.ActionCancelled));
+                            EnqueuePickupDone(pickupMotion);
+                            return;
+                        }
+
                         // Was this item picked up by someone else?
                         if (itemRootOwner == null && item.CurrentLandblock == null)
                         {
