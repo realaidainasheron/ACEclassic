@@ -105,7 +105,20 @@ namespace ACE.Server.Factories.Tables
                 T6_ScrollLevelChances = new ChanceTable<int>()
                 {
                     ( 6, 1.00f ),
-                };                
+                };
+
+                // we have to refresh this list or it will still contain the previous values.
+                scrollLevelChances = new List<ChanceTable<int>>()
+                {
+                    T1_ScrollLevelChances,
+                    T2_ScrollLevelChances,
+                    T3_ScrollLevelChances,
+                    T4_ScrollLevelChances,
+                    T5_ScrollLevelChances,
+                    T6_ScrollLevelChances,
+                    T6_ScrollLevelChances,
+                    T6_ScrollLevelChances,
+                };
             }
         }
     }
