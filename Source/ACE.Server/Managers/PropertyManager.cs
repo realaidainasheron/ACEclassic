@@ -585,7 +585,8 @@ namespace ACE.Server.Managers
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
-                ("increase_minimum_encounter_spawn_density", new Property<bool>(false, "enable this to increase the density of random encounters that spawn in low density landblocks"))
+                ("increase_minimum_encounter_spawn_density", new Property<bool>(false, "enable this to increase the density of random encounters that spawn in low density landblocks")),
+                ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =

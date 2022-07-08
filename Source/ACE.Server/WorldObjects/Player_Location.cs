@@ -691,7 +691,12 @@ namespace ACE.Server.WorldObjects
             IgnoreCollisions = false;
             Hidden = false;
             Teleporting = false;
-            
+
+            SnapPos = Location;
+            PrevMovementUpdateMaxSpeed = 0.0f;
+            LastPlayerInitiatedMovementTime = DateTime.UtcNow;
+            HasJumpedSinceLastMovementUpdate = false;
+
             CheckMonsters();
             CheckHouse();
 
