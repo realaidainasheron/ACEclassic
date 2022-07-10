@@ -54,6 +54,7 @@ namespace ACE.Database
                 kill.KillerId = killerId;
                 kill.VictimMonarchId = victimMonarchId;
                 kill.KillerMonarchId = killerMonarchId;
+                kill.KillDateTime = DateTime.Now;
 
                 using (var context = new PKKillsDbContext())
                 {
