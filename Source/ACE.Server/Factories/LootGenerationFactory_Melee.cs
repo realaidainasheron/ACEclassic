@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using ACE.Common;
@@ -30,7 +31,7 @@ namespace ACE.Server.Factories
                 else
                     weaponSkill = (MeleeWeaponSkill)ThreadSafeRandom.Next(1, 4);
 
-            switch (weaponSkill)                
+            switch (weaponSkill)
             {
                 case MeleeWeaponSkill.HeavyWeapons:
 
@@ -211,7 +212,7 @@ namespace ACE.Server.Factories
 
             // item value
             //if (wo.HasMutateFilter(MutateFilter.Value))   // fixme: data
-                MutateValue(wo, profile.Tier, roll);
+            MutateValue(wo, profile.Tier, roll);
 
             // long description
             wo.LongDesc = GetLongDesc(wo);
@@ -326,19 +327,19 @@ namespace ACE.Server.Factories
 
         private enum LootWeaponType
         {
-            Axe         = 0,
-            Dagger      = 1,
+            Axe = 0,
+            Dagger = 1,
             DaggerMulti = 2,
-            Mace        = 3,
-            Spear       = 4,
-            Sword       = 5,
-            SwordMulti  = 6,
-            Staff       = 7,
-            Unarmed     = 8,
-            Jitte       = 9,
-            TwoHanded   = 0,
-            Cleaving    = 0,
-            Spears      = 1,
+            Mace = 3,
+            Spear = 4,
+            Sword = 5,
+            SwordMulti = 6,
+            Staff = 7,
+            Unarmed = 8,
+            Jitte = 9,
+            TwoHanded = 0,
+            Cleaving = 0,
+            Spears = 1,
         }
 
         private static bool MutateHeavyWeapon(WorldObject wo, TreasureDeath profile, int wieldDifficulty)
@@ -1305,5 +1306,162 @@ namespace ACE.Server.Factories
             }
             return false;
         }
+
+        public static void LogAllMaxMeleeWeaponStats()
+        {
+            var eleType = ThreadSafeRandom.Next(0, 4);
+            var weaponSkills = new System.Collections.Generic.List<MeleeWeaponSkill>() { MeleeWeaponSkill.Axe, MeleeWeaponSkill.Dagger, MeleeWeaponSkill.Mace, MeleeWeaponSkill.Spear, MeleeWeaponSkill.Staff, MeleeWeaponSkill.Sword, MeleeWeaponSkill.UnarmedCombat };
+            List<WeaponLogProps> weaponList = new List<WeaponLogProps>();
+            List<int> wieldLevels = new List<int>() { 0, 250, 300, 325, 350, 370, 400 };
+
+            foreach (MeleeWeaponSkill weaponSkill in weaponSkills)
+            {
+                log.Info($"weaponSkill = {weaponSkill.ToString()}");
+
+                switch (weaponSkill)
+                {                    
+                    case MeleeWeaponSkill.Axe:
+
+                        for (int i = 0; i < LootTables.AxesMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.AxesMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.AxesMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+
+                        //weaponType = ThreadSafeRandom.Next(0, LootTables.AxesMatrix.Length - 1);
+                        //wcid = LootTables.AxesMatrix[weaponType][eleType];
+                        break;
+
+                    case MeleeWeaponSkill.Dagger:
+                        for (int i = 0; i < LootTables.DaggersMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.DaggersMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.DaggersMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+
+                    case MeleeWeaponSkill.Mace:
+                        for (int i = 0; i < LootTables.MacesMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.MacesMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.MacesMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+
+                    case MeleeWeaponSkill.Spear:
+                        for (int i = 0; i < LootTables.SpearsMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.SpearsMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.SpearsMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+
+                    case MeleeWeaponSkill.Staff:
+                        for (int i = 0; i < LootTables.StavesMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.StavesMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.StavesMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+
+                    case MeleeWeaponSkill.Sword:
+                        for (int i = 0; i < LootTables.SwordsMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.SwordsMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.SwordsMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+
+                    case MeleeWeaponSkill.UnarmedCombat:
+                        for (int i = 0; i < LootTables.UnarmedMatrix.Length; i++)
+                        {
+                            for (int j = 0; j < LootTables.UnarmedMatrix[i].Length; j++)
+                            {
+                                var weaponProps = new WeaponLogProps();
+                                weaponProps.WeaponSkill = weaponSkill;
+                                weaponProps.WeaponType = i;
+                                weaponProps.EleType = j;
+                                weaponProps.Wcid = LootTables.UnarmedMatrix[i][j];
+                                weaponProps.WorldObject = WorldObjectFactory.CreateNewWorldObject((uint)weaponProps.Wcid);
+                                weaponList.Add(weaponProps);
+                            }
+                        }
+                        break;
+                }
+
+                 
+
+                //if (wo != null && mutate)
+                //{
+                //    if (!MutateMeleeWeapon(wo, profile, isMagical))
+                //    {
+                //        log.Warn($"[LOOT] {wo.WeenieClassId} - {wo.Name} is not a MeleeWeapon");
+                //        return null;
+                //    }
+                //}
+            }
+        }
+    }
+
+    public class WeaponLogProps
+    {
+        public MeleeWeaponSkill WeaponSkill { get; set; }
+
+        public int WeaponType { get; set; }
+
+        public int EleType { get; set; }
+
+        public int Wcid { get; set; }
+
+        public WorldObject WorldObject { get; set; }
+
     }
 }
