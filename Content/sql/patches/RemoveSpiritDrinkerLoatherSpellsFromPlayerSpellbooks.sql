@@ -1,0 +1,1 @@
+DELETE FROM ace_shard.biota_properties_spell_book WHERE spell BETWEEN 3253 AND 3266;
