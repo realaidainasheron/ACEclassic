@@ -670,8 +670,8 @@ namespace ACE.Server.WorldObjects
         public float GetShieldMod(WorldObject attacker, DamageType damageType, WorldObject weapon)
         {
             // ensure combat stance
-            if (CombatMode == CombatMode.NonCombat)
-                return 1.0f;
+            //if (CombatMode == CombatMode.NonCombat)
+                //return 1.0f;
 
             // does the player have a shield equipped?
             var shield = GetEquippedShield();
