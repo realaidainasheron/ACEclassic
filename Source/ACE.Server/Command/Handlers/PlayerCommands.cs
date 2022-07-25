@@ -592,6 +592,47 @@ namespace ACE.Server.Command.Handlers
                 }
             }
         }
+
+        // xptracker
+        [CommandHandler("xptracker", AccessLevel.Player, CommandHandlerFlag.None, 0,
+            "Return XP tracking information",
+            "")]
+        public static void HandleXpTracker(Session session, params string[] parameters)
+        {
+            if(!session.Player.XpTrackerStartTimestamp.HasValue || !session.Player.XpTrackerTotalXp.HasValue)
+            {
+                HandleResetXpTracker(session, parameters);
+                session.Network.EnqueueSend(new GameMessageSystemChat($"XP tracking has been enabled for your character.\n", ChatMessageType.Broadcast));
+                return;
+            }
+
+            var currUnixTimestamp = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            var durationSeconds = currUnixTimestamp - session.Player.XpTrackerStartTimestamp.Value;
+
+            if (session.Player.XpTrackerTotalXp.Value > 0 && durationSeconds > 0)
+            {                               
+                var durationTimespan = TimeSpan.FromSeconds(durationSeconds);
+                var xpPerSecond = session.Player.XpTrackerTotalXp.Value / (double)(durationSeconds);
+                var xpPerHour = xpPerSecond * 60 * 60;
+                var msg = $"You've earned {String.Format("{0:0,0}", session.Player.XpTrackerTotalXp.Value)} XP in {durationTimespan.Hours} hr, {(durationTimespan.Minutes)} min, {durationTimespan.Seconds} sec \nfor {String.Format("{0:0,0}", xpPerHour)} XP/hr";
+                session.Network.EnqueueSend(new GameMessageSystemChat(msg, ChatMessageType.Broadcast));
+            }
+            else
+            {
+                session.Network.EnqueueSend(new GameMessageSystemChat("No XP has been tracked for your character yet", ChatMessageType.Broadcast));
+            }
+        }
+
+        // resetxptracker
+        [CommandHandler("resetxptracker", AccessLevel.Player, CommandHandlerFlag.None, 0,
+            "Reset your xp tracking information",
+            "")]
+        public static void HandleResetXpTracker(Session session, params string[] parameters)
+        {
+            session.Player.XpTrackerStartTimestamp = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+            session.Player.XpTrackerTotalXp = 0;
+            session.Network.EnqueueSend(new GameMessageSystemChat($"Your character's xp tracking data has been reset\n", ChatMessageType.Broadcast));
+        }
     }
 
     public class ActivityRecommendation
