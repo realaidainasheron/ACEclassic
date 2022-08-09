@@ -217,7 +217,7 @@ namespace ACE.Server.Network
             // This message can be received/processed by the server AFTER LogOfPlayer has been called.
             // What that means is, we could end up with Character changes after the Character has been saved from the initial LogOff request.
             // To make sure we commit these additional changes (if any), we check again here
-            if (Player?.CharacterChangesDetected)
+            if (Player != null && Player.CharacterChangesDetected)
                 Player?.SaveCharacterToDatabase();
 
             Player = null;
