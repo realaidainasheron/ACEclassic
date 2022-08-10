@@ -145,7 +145,6 @@ namespace ACE.Server.WorldObjects
 
         public void HandleActionTargetedMeleeAttack_Inner(WorldObject target, int attackSequence)
         {
-            
             var dist = GetCylinderDistance(target);
 
             if (dist <= MeleeDistance || dist <= StickyDistance && IsMeleeVisible(target))
@@ -167,7 +166,6 @@ namespace ACE.Server.WorldObjects
 
                     // charge attack
                     MoveTo(target);
-
                 }
                 else
                 {
