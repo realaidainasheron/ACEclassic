@@ -116,10 +116,8 @@ namespace ACE.Server.WorldObjects
 
             base.Heartbeat(currentUnixTime);
         }
-
         public static float MaxSpeed = 50;
         public static float MaxSpeedSq = MaxSpeed * MaxSpeed;
-
         public static bool DebugPlayerMoveToStatePhysics = false;
 
         /// <summary>
@@ -340,7 +338,7 @@ namespace ACE.Server.WorldObjects
             {
                 // apply latest MoveToState, if applicable
                 //if ((LastMoveToState.RawMotionState.Flags & (RawMotionFlags.ForwardCommand | RawMotionFlags.SideStepCommand | RawMotionFlags.TurnCommand)) != 0)
-                if ((LastMoveToState.RawMotionState.Flags & RawMotionFlags.ForwardCommand) != 0)
+                if ((LastMoveToState.RawMotionState.Flags & RawMotionFlags.ForwardCommand) != 0 && LastMoveToState.RawMotionState.ForwardHoldKey == HoldKey.Invalid)
                 {
                     if (DebugPlayerMoveToStatePhysics)
                         Console.WriteLine("Re-applying movement: " + LastMoveToState.RawMotionState.Flags);
@@ -431,7 +429,7 @@ namespace ACE.Server.WorldObjects
 
                             PhysicsObj.set_request_pos(newPosition.Pos, newPosition.Rotation, curCell, Location.LandblockId.Raw);
                             if (FastTick)
-                                success = PhysicsObj.update_object_server_new(!EnforceMovement) ;
+                                success = PhysicsObj.update_object_server_new(!EnforceMovement);
                             else
                                 success = PhysicsObj.update_object_server();
 

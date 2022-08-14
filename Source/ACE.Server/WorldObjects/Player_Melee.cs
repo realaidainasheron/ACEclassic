@@ -233,6 +233,8 @@ namespace ACE.Server.WorldObjects
         {
             //log.Info($"{Name}.Attack({target.Name}, {attackSequence})");
 
+            HasPerformedActionsSinceLastMovementUpdate = true;
+
             if (AttackSequence != attackSequence)
                 return;
 

@@ -426,7 +426,7 @@ namespace ACE.Server.Physics.Common
 
         public uint get_terrain(int cellX, int cellY)
         {
-            return Terrain[cellX * (LandDefs.BlockSide + 1) + cellY];     // ensure within bounds?
+            return Terrain[cellX * (LandDefs.BlockSide + 1) + cellY];
         }
 
         public void grab_visible_cells()

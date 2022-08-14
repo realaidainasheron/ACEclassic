@@ -457,7 +457,7 @@ namespace ACE.Server.Physics
             {
                 normal = new Vector3(disp.X, disp.Y, 0);
                 return checkPos.Radius - PhysicsGlobals.EPSILON + Height * 0.5f >= Math.Abs(Height * 0.5f - disp.Z)
-                    || Math.Abs(disp.Z - _disp.Z) <= PhysicsGlobals.EPSILON;
+                     || Math.Abs(disp.Z - _disp.Z) <= PhysicsGlobals.EPSILON;
             }
             var normZ = (_disp.Z - disp.Z <= 0.0f) ? 1 : -1;
             normal = new Vector3(0, 0, normZ);
