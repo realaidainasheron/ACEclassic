@@ -570,7 +570,7 @@ namespace ACE.Server.Physics
             return PartArray.GetHeight();
         }
 
-        public double GetMaxConstraintDistance()
+        public float GetMaxConstraintDistance()
         {
             return (Position.ObjCellID & 0xFFFF) < 0x100 ? 50.0f : 20.0f;
         }
@@ -620,9 +620,9 @@ namespace ACE.Server.Physics
             return PartArray.GetSetupID();
         }
 
-        public double GetStartConstraintDistance()
+        public float GetStartConstraintDistance()
         {
-            return (Position.ObjCellID & 0xFFFF) < 0x100 ? 5.0f : 10.0f;
+            return (Position.ObjCellID & 0xFFFF) < 0x100 ? 10.0f : 5.0f;
         }
 
         public float GetStepDownHeight()
@@ -1686,7 +1686,6 @@ namespace ACE.Server.Physics
                     }
                     else if ((State & PhysicsState.Sledding) != 0 && Velocity != Vector3.Zero)
                         newPos.Frame.set_vector_heading(Vector3.Normalize(Velocity));
-
                     if (GetBlockDist(Position, newPos) > 1)
                     {
                         log.Warn($"WARNING: failed transition for {Name} from {Position} to {newPos}");
@@ -1694,6 +1693,8 @@ namespace ACE.Server.Physics
                     }
 
                     transit = transition(Position, newPos, false);
+
+                    var transit = transition(Position, newPos, false);
 
 
                     // temporarily modified while debug path is examined
@@ -4376,11 +4377,9 @@ namespace ACE.Server.Physics
                     if (transit != null)
                     {
                         dist = transit.SpherePath.CurPos.Distance(transit.SpherePath.EndPos);
-
                         if (dist < 0.25f)
                             valid = true;
                     }
-
                     var player = WeenieObj.WorldObject as Player;
                     if (valid || forcePos || player?.GodState != null)
                     {
@@ -4398,7 +4397,7 @@ namespace ACE.Server.Physics
                     else
                     {
                         //if (player != null)
-                        //    player.Session.Network.EnqueueSend(new GameMessageSystemChat($"Force position - distance: {dist.ToString("0.00")}", ChatMessageType.Broadcast));
+                        //player.Session.Network.EnqueueSend(new GameMessageSystemChat($"Force position - distance: {dist.ToString("0.00")}", ChatMessageType.Broadcast));
 
                         WeenieObj.WorldObject.Location = new ACE.Entity.Position(Position.ObjCellID, Position.Frame.Origin, Position.Frame.Orientation);
                         WeenieObj.WorldObject.Sequences.GetNextSequence(SequenceType.ObjectForcePosition);

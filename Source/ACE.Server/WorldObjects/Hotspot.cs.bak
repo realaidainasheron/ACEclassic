@@ -46,7 +46,6 @@ namespace ACE.Server.WorldObjects
             if (!Creatures.ContainsKey(creature.Guid))
             {
                 //Console.WriteLine($"{Name} ({Guid}).OnCollideObject({creature.Name})");
-
                 Creatures.Add(creature.Guid, true); // true means this was added this cycle.
                 Activate(wo as Creature); // Antecipate first activation to the moment of contact, much better feedback this way.
             }
@@ -147,11 +146,8 @@ namespace ACE.Server.WorldObjects
 
         private void Activate()
         {
-            foreach (var entry in Creatures)
+            foreach (var creatureGuid in Creatures.ToList())
             {
-                var creatureGuid = entry.Key;
-                var firstCycle = entry.Value;
-
                 var creature = CurrentLandblock.GetObject(creatureGuid) as Creature;
 
                 // verify current state of collision here
