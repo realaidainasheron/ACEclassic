@@ -479,12 +479,17 @@ namespace ACE.Server.WorldObjects
 
         public bool IsLoggingOut;
 
+        public bool ForceMaterialization = PropertyManager.GetBool("force_materialization").Item;
+
         /// <summary>
         /// Do the player log out work.<para />
         /// If you want to force a player to logout, use Session.LogOffPlayer().
         /// </summary>
         public bool LogOut(bool clientSessionTerminatedAbruptly = false, bool forceImmediate = false)
         {
+            if (ForceMaterialization)
+                OnTeleportComplete();
+
             if (PKLogoutActive && !forceImmediate)
             {
                 Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));

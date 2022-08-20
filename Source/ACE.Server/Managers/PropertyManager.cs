@@ -586,7 +586,8 @@ namespace ACE.Server.Managers
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
-                ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement"))
+                ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
+                ("force_materialization", new Property<bool>(true, "forces players to materialize on login"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
