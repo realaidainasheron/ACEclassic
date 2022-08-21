@@ -487,9 +487,6 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public bool LogOut(bool clientSessionTerminatedAbruptly = false, bool forceImmediate = false)
         {
-            if (ForceMaterialization)
-                OnTeleportComplete();
-
             if (PKLogoutActive && !forceImmediate)
             {
                 Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
@@ -506,6 +503,10 @@ namespace ACE.Server.WorldObjects
             }
 
             LogOut_Inner(clientSessionTerminatedAbruptly);
+
+            if (ForceMaterialization)
+                OnTeleportComplete();
+
 
             return true;
         }
