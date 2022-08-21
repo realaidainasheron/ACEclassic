@@ -479,6 +479,8 @@ namespace ACE.Server.WorldObjects
 
         public bool IsLoggingOut;
 
+        public bool IsLoggedIn = false;
+
         public bool ForceMaterialization = PropertyManager.GetBool("force_materialization").Item;
 
         /// <summary>
@@ -487,26 +489,30 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public bool LogOut(bool clientSessionTerminatedAbruptly = false, bool forceImmediate = false)
         {
-            if (PKLogoutActive && !forceImmediate)
+            if (PKLogoutActive && !forceImmediate && !PKLogout)
             {
                 Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
                 Session.Network.EnqueueSend(new GameMessageSystemChat("Logging out in 20s...", ChatMessageType.Magic));
 
-                if (!PKLogout)
-                {
-                    PKLogout = true;
+                PKLogout = true;
 
-                    LogoffTimestamp = Time.GetFutureUnixTime(PropertyManager.GetLong("pk_timer").Item);
-                    PlayerManager.AddPlayerToLogoffQueue(this);
-                }
+                LogoffTimestamp = Time.GetFutureUnixTime(PropertyManager.GetLong("pk_timer").Item);
+
+                PlayerManager.AddPlayerToLogoffQueue(this);
+
+                return false;
+            }
+
+            if (ForceMaterialization && !IsLoggedIn)
+            {
+                LogoffTimestamp = Time.GetFutureUnixTime(5);
+                PlayerManager.AddPlayerToLogoffQueue(this);
+                OnTeleportComplete();
+
                 return false;
             }
 
             LogOut_Inner(clientSessionTerminatedAbruptly);
-
-            if (ForceMaterialization)
-                OnTeleportComplete();
-
 
             return true;
         }

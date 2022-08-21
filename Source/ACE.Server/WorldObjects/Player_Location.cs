@@ -674,6 +674,9 @@ namespace ACE.Server.WorldObjects
 
         public void OnTeleportComplete()
         {
+            if (!IsLoggedIn)
+                IsLoggedIn = true;
+
             if (CurrentLandblock != null && !CurrentLandblock.CreateWorldObjectsCompleted)
             {
                 // If the critical landblock resources haven't been loaded yet, we keep the player in the pink bubble state

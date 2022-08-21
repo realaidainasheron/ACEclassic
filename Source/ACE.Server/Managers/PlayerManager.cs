@@ -78,7 +78,7 @@ namespace ACE.Server.Managers
                 if (first.LogoffTimestamp <= currentUnixTime)
                 {
                     playersPendingLogoff.RemoveFirst();
-                    first.LogOut_Inner();
+                    first.LogOut(); 
                     first.Session.logOffRequestTime = DateTime.UtcNow;
                 }
                 else
