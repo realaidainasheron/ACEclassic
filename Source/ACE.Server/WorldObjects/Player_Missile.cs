@@ -52,7 +52,7 @@ namespace ACE.Server.WorldObjects
                     return;
             }
 
-            if (IsBusy || Teleporting || suicideInProgress)
+            if (IsBusy || suicideInProgress)
             {
                 SendWeenieError(WeenieError.YoureTooBusy);
                 return;
@@ -86,7 +86,7 @@ namespace ACE.Server.WorldObjects
 
             // get world object of target guid
             var target = CurrentLandblock?.GetObject(targetGuid) as Creature;
-            if (target == null || target.Teleporting)
+            if (target == null)
             {
                 //log.Warn($"{Name}.HandleActionTargetedMissileAttack({targetGuid:X8}, {AttackHeight}, {accuracyLevel}) - couldn't find creature target guid");
                 return;
@@ -95,8 +95,12 @@ namespace ACE.Server.WorldObjects
             if (Attacking || MissileTarget != null && MissileTarget.IsAlive)
                 return;
 
-            if (!CanDamage(target))
-                return;     // werror?
+            if (!CanDamageNoTeleport(target))
+            {
+                SendTransientError($"You cannot attack {target.Name}");
+                OnAttackDone();
+                return;
+            }
 
             //log.Info($"{Name}.HandleActionTargetedMissileAttack({targetGuid:X8}, {attackHeight}, {accuracyLevel})");
 
