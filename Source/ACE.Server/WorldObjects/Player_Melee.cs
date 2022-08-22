@@ -108,8 +108,18 @@ namespace ACE.Server.WorldObjects
                 return;
             }
 
-            if (!CanDamage(creatureTarget) || !creatureTarget.IsAlive)
-                return;     // werror?
+            if (!CanDamageNoTeleport(creatureTarget))
+            {
+                SendTransientError($"You cannot attack {creatureTarget.Name}");
+                OnAttackDone();
+                return;
+            }
+
+            if (!creatureTarget.IsAlive)
+            {
+                OnAttackDone();
+                return;
+            }
 
             //log.Info($"{Name}.HandleActionTargetedMeleeAttack({targetGuid:X8}, {attackHeight}, {powerLevel})");
 
