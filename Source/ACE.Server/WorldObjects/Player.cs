@@ -479,8 +479,6 @@ namespace ACE.Server.WorldObjects
 
         public bool IsLoggingOut;
 
-        public bool IsLoggedIn = false;
-
         public bool ForceMaterialization = PropertyManager.GetBool("force_materialization").Item;
 
         public enum MaterializedLogoutState
@@ -523,12 +521,12 @@ namespace ACE.Server.WorldObjects
                     return true;
                 }
 
-                if (IsLoggedIn && LogoutState is MaterializedLogoutState.InProgress)
+                if (LogoutState is MaterializedLogoutState.InProgress)
                 {
                     return false;
                 }
 
-                if (!IsLoggedIn && LogoutState is MaterializedLogoutState.Pending)
+                if (!FirstEnterWorldDone && LogoutState is MaterializedLogoutState.Pending)
                 {
                     ForceMaterialize();
 
