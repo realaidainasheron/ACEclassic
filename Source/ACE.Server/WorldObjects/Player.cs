@@ -481,14 +481,16 @@ namespace ACE.Server.WorldObjects
 
         public bool ForceMaterialization = PropertyManager.GetBool("force_materialization").Item;
 
-        public enum MaterializedLogoutState
+        public enum LogoutState
         {
             Pending,
             InProgress,
             Ready
         }
 
-        public MaterializedLogoutState LogoutState = MaterializedLogoutState.Pending;
+        public LogoutState MaterializedLogoutState = LogoutState.Pending;
+
+        public LogoutState PkLogoutState = LogoutState.Pending;
 
         /// <summary>
         /// Do the player log out work.<para />
@@ -496,42 +498,14 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public bool LogOut(bool clientSessionTerminatedAbruptly = false, bool forceImmediate = false)
         {
-            if (PKLogoutActive && !forceImmediate && !PKLogout)
+            if (PKLogoutActive && !forceImmediate)
             {
-                Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
-                Session.Network.EnqueueSend(new GameMessageSystemChat("Logging out in 20s...", ChatMessageType.Magic));
-
-                if (!PKLogout)
-                {
-                    PKLogout = true;
-
-                    LogoffTimestamp = Time.GetFutureUnixTime(PropertyManager.GetLong("pk_timer").Item);
-
-                    PlayerManager.AddPlayerToLogoffQueue(this);
-                }
-
-                return false;
+                return HandlePKLogout();
             }
 
             if (ForceMaterialization)
             {
-                if (LogoutState is MaterializedLogoutState.Ready)
-                {
-                    LogOut_Inner(clientSessionTerminatedAbruptly);
-                    return true;
-                }
-
-                if (LogoutState is MaterializedLogoutState.InProgress)
-                {
-                    return false;
-                }
-
-                if (!FirstEnterWorldDone && LogoutState is MaterializedLogoutState.Pending)
-                {
-                    ForceMaterialize();
-
-                    return false;
-                }
+                return HandleMaterializeLogout();
             }
 
             LogOut_Inner(clientSessionTerminatedAbruptly);
@@ -539,9 +513,70 @@ namespace ACE.Server.WorldObjects
             return true;
         }
 
+        private bool HandlePKLogout()
+        {
+            log.Debug($"HandlePkLogout -> State -> ${PkLogoutState}");
+            if (PkLogoutState is LogoutState.Ready)
+            {
+                LogOut_Inner();
+                return true;
+            }
+
+            if (PkLogoutState is LogoutState.InProgress)
+                return false;
+
+            if (!PKLogout && PkLogoutState is LogoutState.Pending)
+            {
+                QueuePlayerToLogoff();
+            }
+
+            return false;
+        }
+
+        private void QueuePlayerToLogoff()
+        {
+            PkLogoutState = LogoutState.InProgress;
+            PKLogout = true;
+
+            if (ForceMaterialization)
+                OnTeleportComplete();
+
+            Session.Network.EnqueueSend(new GameEventWeenieError(Session, WeenieError.YouHaveBeenInPKBattleTooRecently));
+            Session.Network.EnqueueSend(new GameMessageSystemChat("Logging out in 20s...", ChatMessageType.Magic));
+
+            LogoffTimestamp = Time.GetFutureUnixTime(PropertyManager.GetLong("pk_timer").Item);
+
+            PlayerManager.AddPlayerToLogoffQueue(this);
+        }
+
+        private bool HandleMaterializeLogout()
+        {
+            log.Debug($"HandleMaterialize -> State -> ${MaterializedLogoutState}");
+            if (MaterializedLogoutState is LogoutState.Ready)
+            {
+                LogOut_Inner();
+                return true;
+            }
+
+            if (MaterializedLogoutState is LogoutState.InProgress)
+            {
+                return false;
+            }
+
+            if (!FirstEnterWorldDone && MaterializedLogoutState is LogoutState.Pending)
+            {
+                ForceMaterialize();
+
+                return false;
+            }
+
+            LogOut_Inner();
+            return true;
+        }
+
         public void ForceMaterialize()
         {
-            LogoutState = MaterializedLogoutState.InProgress;
+            MaterializedLogoutState = LogoutState.InProgress;
             OnTeleportComplete();
             LogoffTimestamp = Time.GetFutureUnixTime(5);
             PlayerManager.AddPlayerToLogoffQueue(this);

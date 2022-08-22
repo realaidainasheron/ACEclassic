@@ -79,8 +79,11 @@ namespace ACE.Server.Managers
                 {
                     playersPendingLogoff.RemoveFirst();
 
-                    if (first.LogoutState is Player.MaterializedLogoutState.InProgress)
-                        first.LogoutState = Player.MaterializedLogoutState.Ready;
+                    if (first.PkLogoutState is Player.LogoutState.InProgress)
+                        first.PkLogoutState = Player.LogoutState.Ready;
+
+                    if (first.MaterializedLogoutState is Player.LogoutState.InProgress)
+                        first.MaterializedLogoutState = Player.LogoutState.Ready;
 
                     first.LogOut(); 
                     first.Session.logOffRequestTime = DateTime.UtcNow;
