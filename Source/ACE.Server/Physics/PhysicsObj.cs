@@ -4312,10 +4312,10 @@ namespace ACE.Server.Physics
 
             //Console.WriteLine($"{Name}.update_object_server({forcePos}) - deltaTime: {deltaTime}");
 
-            var minDistCheck = Position.DistanceSquared(RequestPos);
+            //var minDistCheck = Position.DistanceSquared(RequestPos);
 
-            if (minDistCheck < PhysicsGlobals.EpsilonSq)
-                return false;
+            //if (minDistCheck < PhysicsGlobals.EpsilonSq)
+            //    return false;
 
             var success = true;
             var isTeleport = WeenieObj.WorldObject?.Teleporting ?? false;
