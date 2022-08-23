@@ -614,13 +614,21 @@ namespace ACE.Server.Command.Handlers
                 var durationTimespan = TimeSpan.FromSeconds(durationSeconds);
                 var xpPerSecond = session.Player.XpTrackerTotalXp.Value / (double)(durationSeconds);
                 var xpPerHour = xpPerSecond * 60 * 60;
-                var msg = $"You've earned {String.Format("{0:0,0}", session.Player.XpTrackerTotalXp.Value)} XP in {durationTimespan.Hours} hr, {(durationTimespan.Minutes)} min, {durationTimespan.Seconds} sec \nfor {String.Format("{0:0,0}", xpPerHour)} XP/hr";
+                var msg = $"You've earned {String.Format("{0:0,0}", session.Player.XpTrackerTotalXp.Value)} XP in {durationTimespan.TotalHours} hr, {(durationTimespan.Minutes)} min, {durationTimespan.Seconds} sec \nfor {String.Format("{0:0,0}", xpPerHour)} XP/hr";
                 session.Network.EnqueueSend(new GameMessageSystemChat(msg, ChatMessageType.Broadcast));
             }
             else
             {
                 session.Network.EnqueueSend(new GameMessageSystemChat("No XP has been tracked for your character yet", ChatMessageType.Broadcast));
             }
+        }
+
+        [CommandHandler("xp", AccessLevel.Player, CommandHandlerFlag.None, 0,
+            "Return XP tracking information",
+            "")]
+        public static void HandleXp(Session session, params string[] parameters)
+        {
+            HandleXpTracker(session, parameters);
         }
 
         // resetxptracker
@@ -632,6 +640,14 @@ namespace ACE.Server.Command.Handlers
             session.Player.XpTrackerStartTimestamp = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
             session.Player.XpTrackerTotalXp = 0;
             session.Network.EnqueueSend(new GameMessageSystemChat($"Your character's xp tracking data has been reset\n", ChatMessageType.Broadcast));
+        }
+
+        [CommandHandler("xpr", AccessLevel.Player, CommandHandlerFlag.None, 0,
+            "Reset your xp tracking information",
+            "")]
+        public static void HandleXpr(Session session, params string[] parameters)
+        {
+            HandleResetXpTracker(session, parameters);
         }
     }
 
