@@ -189,13 +189,14 @@ namespace ACE.Server.WorldObjects
 
         public void DoWindup(WindupParams windupParams, bool checkAngle)
         {
-            //Console.WriteLine($"{Name}.DoWindup()");
+            Console.WriteLine($"{Name}.DoWindup()");
 
             // ensure target still exists
             var targetCategory = GetTargetCategory(windupParams.TargetGuid, windupParams.SpellId, out var target);
 
             if (target == null)
             {
+                Console.WriteLine($"{Name}.DoWindup() - target == null");
                 SendUseDoneEvent(WeenieError.TargetNotAcquired);
                 MagicState.OnCastDone();
                 return;
@@ -203,28 +204,31 @@ namespace ACE.Server.WorldObjects
 
             if (!checkAngle || IsWithinAngle(target))
             {
+                Console.WriteLine($"{Name}.DoWindup() - checkAngle = {checkAngle}");
+
                 if (!CreatePlayerSpell(target, targetCategory, windupParams.SpellId, windupParams.BuiltInSpell))
                     MagicState.OnCastDone();
             }
             else
             {
                 // restart turn if required
+                Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
                 if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
                 {
                     var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
-                    // Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
+                    Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
                     if (windUpRetryLimit > 0)
                     {
                         if (windupParams.TurnTries < windUpRetryLimit)
                         {
                             windupParams.TurnTries += 1;
-                            // Console.WriteLine($"{Name} turn to in DoWindup try #{windupParams.TurnTries}/{windUpRetryLimit}");
+                            Console.WriteLine($"{Name} turn to in DoWindup try #{windupParams.TurnTries}/{windUpRetryLimit}");
                             TurnTo_Magic(target);
                         }
                         else
                         {
                             // give up after trying to correct angle a few times..
-                            // Console.WriteLine($"{Name} turn to in DoWindup giving up..");
+                            Console.WriteLine($"{Name} turn to in DoWindup giving up..");
                             MagicState.OnCastDone();
                             return;
                         }
@@ -236,6 +240,8 @@ namespace ACE.Server.WorldObjects
                     }
                 }
                 else
+                {
+                    windupParams.TurnTries = windupParams.TurnTries == 0 ? 1 : windupParams.TurnTries;
                     MagicState.PendingTurnRelease = true;
                 }
             }
@@ -888,7 +894,7 @@ namespace ACE.Server.WorldObjects
             if (pk_error != null)
                 castingPreCheckStatus = CastingPreCheckStatus.InvalidPKStatus;
 
-            if (target.Teleporting)
+            if (target != null && spell != null && target.Teleporting)
             {
                 if (spell.NumProjectiles == 0)
                     SendTransientError($"You fail to affect {target.Name} because they are in portal space");
