@@ -237,6 +237,7 @@ namespace ACE.Server.WorldObjects
                 }
                 else
                     MagicState.PendingTurnRelease = true;
+                }
             }
         }
 
