@@ -277,7 +277,7 @@ namespace ACE.Server.WorldObjects
 
             // If the target is too far away, don't cast. This checks to see of this monster and the target are on separate landblock groups, and potentially separate threads.
             // This also fixes cross-threading issues
-            if (target != null && (CurrentLandblock == null || target.CurrentLandblock == null))
+            if (target != null && (CurrentLandblock == null || target.CurrentLandblock == null || CurrentLandblock.CurrentLandblockGroup != target.CurrentLandblock.CurrentLandblockGroup))
                 return;
 
             // try to resist spell, if applicable
