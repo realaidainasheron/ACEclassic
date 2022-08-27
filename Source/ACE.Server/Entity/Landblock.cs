@@ -90,7 +90,6 @@ namespace ACE.Server.Entity
         /// </summary>
         public LandblockGroup CurrentLandblockGroup { get; internal set; }
 
-
         public List<Landblock> Adjacents = new List<Landblock>();
 
         private readonly ActionQueue actionQueue = new ActionQueue();
@@ -173,7 +172,7 @@ namespace ACE.Server.Entity
 
             Id = id;
 
-            CellLandblock = DatManager.CellDat.ReadFromDat<CellLandblock>(Id.Raw >> 16 | 0xFFFF);
+            CellLandblock = DatManager.CellDat.ReadFromDat<CellLandblock>(Id.Raw | 0xFFFF);
             LandblockInfo = DatManager.CellDat.ReadFromDat<LandblockInfo>((uint)Id.Landblock << 16 | 0xFFFE);
 
             lastActiveTime = DateTime.UtcNow;
@@ -340,7 +339,10 @@ namespace ACE.Server.Entity
 
                     var sortCell = LScape.get_landcell(pos.ObjCellID) as SortCell;
                     if (sortCell != null && sortCell.has_building())
+                    {
+                        wo.Destroy();
                         return;
+                    }
 
                     if (!wo.Location.IsWalkable())
                         return;
@@ -373,7 +375,8 @@ namespace ACE.Server.Entity
                         }
                     }
 
-                    AddWorldObject(wo);
+                    if (!AddWorldObject(wo))
+                        wo.Destroy();
                 }));
             }
         }
@@ -885,7 +888,7 @@ namespace ACE.Server.Entity
         {
             if (LandblockManager.CurrentlyTickingLandblockGroupsMultiThreaded)
             {
-                if (CurrentLandblockGroup != LandblockManager.CurrentMultiThreadedTickingLandblockGroup.Value)
+                if (CurrentLandblockGroup != null && CurrentLandblockGroup != LandblockManager.CurrentMultiThreadedTickingLandblockGroup.Value)
                 {
                     log.Error($"Landblock 0x{Id} entered AddWorldObjectInternal in a cross-thread operation.");
                     log.Error($"Landblock 0x{Id} CurrentLandblockGroup: {CurrentLandblockGroup}");
@@ -897,13 +900,9 @@ namespace ACE.Server.Entity
                     {
                         if (wo.ProjectileSource != null)
                             log.Error($"wo.ProjectileSource: 0x{wo.ProjectileSource?.Guid}:{wo.ProjectileSource?.Name}, position: {wo.ProjectileSource?.Location}");
-                        if (wo is SpellProjectile spellProjectile)
-                        {
-                            if (spellProjectile.Caster != null)
-                                log.Error($"wo.Caster: 0x{spellProjectile.Caster?.Guid}:{spellProjectile.Caster?.Name}, position: {spellProjectile.Caster?.Location}");
-                            if (spellProjectile.ProjectileTarget != null)
-                                log.Error($"wo.ProjectileTarget: 0x{spellProjectile.ProjectileTarget?.Guid}:{spellProjectile.ProjectileTarget?.Name}, position: {spellProjectile.ProjectileTarget?.Location}");
-                        }
+
+                        if (wo.ProjectileTarget != null)
+                            log.Error($"wo.ProjectileTarget: 0x{wo.ProjectileTarget?.Guid}:{wo.ProjectileTarget?.Name}, position: {wo.ProjectileTarget?.Location}");
                     }
 
                     log.Error(System.Environment.StackTrace);
@@ -994,10 +993,9 @@ namespace ACE.Server.Entity
 
         private void RemoveWorldObjectInternal(ObjectGuid objectId, bool adjacencyMove = false, bool fromPickup = false, bool showError = true)
         {
-
             if (LandblockManager.CurrentlyTickingLandblockGroupsMultiThreaded)
             {
-                if (CurrentLandblockGroup != LandblockManager.CurrentMultiThreadedTickingLandblockGroup.Value)
+                if (CurrentLandblockGroup != null && CurrentLandblockGroup != LandblockManager.CurrentMultiThreadedTickingLandblockGroup.Value)
                 {
                     log.Error($"Landblock 0x{Id} entered RemoveWorldObjectInternal in a cross-thread operation.");
                     log.Error($"Landblock 0x{Id} CurrentLandblockGroup: {CurrentLandblockGroup}");
@@ -1197,7 +1195,7 @@ namespace ACE.Server.Entity
             foreach (var wo in worldObjects.ToList())
             {
                 if (!wo.Value.BiotaOriginatedFromOrHasBeenSavedToDatabase())
-                    wo.Value.Destroy(false);
+                    wo.Value.Destroy(false, true);
                 else
                     RemoveWorldObjectInternal(wo.Key);
             }
@@ -1208,6 +1206,8 @@ namespace ACE.Server.Entity
 
             // remove physics landblock
             LScape.unload_landblock(landblockID);
+
+            PhysicsLandblock.release_shadow_objs();
         }
 
         public void DestroyAllNonPlayerObjects()
@@ -1305,6 +1305,15 @@ namespace ACE.Server.Entity
                 // return cached value
                 if (isDungeon != null)
                     return isDungeon.Value;
+
+                // hack for NW island
+                // did a worldwide analysis for adding watercells into the formula,
+                // but they are inconsistently defined for some of the edges of map unfortunately
+                if (Id.LandblockX < 0x08 && Id.LandblockY > 0xF8)
+                {
+                    isDungeon = false;
+                    return isDungeon.Value;
+                }
 
                 // a dungeon landblock is determined by:
                 // - all heights being 0

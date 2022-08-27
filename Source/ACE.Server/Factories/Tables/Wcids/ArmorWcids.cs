@@ -1,7 +1,7 @@
+using System.Collections.Generic;
+
 using ACE.Common;
 using ACE.Database.Models.World;
-
-using ACE.Entity.Enum;
 using ACE.Server.Factories.Entity;
 using ACE.Server.Factories.Enum;
 
@@ -929,6 +929,36 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.leggingschiran,  1.0f ),
                 };
             }
+
+            BuildCombined(LeatherWcids, TreasureArmorType.Leather);
+            BuildCombined(StuddedLeatherWcids, TreasureArmorType.StuddedLeather);
+            BuildCombined(ChainmailWcids, TreasureArmorType.Chainmail);
+            BuildCombined(PlatemailWcids, TreasureArmorType.Platemail);
+            BuildCombined(ScalemailWcids, TreasureArmorType.Scalemail);
+            BuildCombined(YoroiWcids, TreasureArmorType.Yoroi);
+            BuildCombined(CeldonWcids, TreasureArmorType.Celdon);
+            BuildCombined(AmuliWcids, TreasureArmorType.Amuli);
+            BuildCombined(KoujiaWcids, TreasureArmorType.Koujia);
+            BuildCombined(CovenantWcids, TreasureArmorType.Covenant);
+            BuildCombined(LoricaWcids, TreasureArmorType.Lorica);
+            BuildCombined(NariyidWcids, TreasureArmorType.Nariyid);
+            BuildCombined(ChiranWcids, TreasureArmorType.Chiran);
+            BuildCombined(DiforsaWcids, TreasureArmorType.Diforsa);
+            BuildCombined(TenassaWcids, TreasureArmorType.Tenassa);
+            BuildCombined(AlduressaWcids, TreasureArmorType.Alduressa);
+            BuildCombined(OlthoiWcids, TreasureArmorType.Olthoi);
+            BuildCombined(OlthoiCeldonWcids, TreasureArmorType.OlthoiCeldon);
+            BuildCombined(OlthoiAmuliWcids, TreasureArmorType.OlthoiAmuli);
+            BuildCombined(OlthoiKoujiaWcids, TreasureArmorType.OlthoiKoujia);
+            BuildCombined(OlthoiAlduressaWcids, TreasureArmorType.OlthoiAlduressa);
+            //BuildCombined(CelestialHandWcids, TreasureArmorType.CelestialHand);   // handled in SocietyArmor
+            //BuildCombined(EldrytchWebWcids, TreasureArmorType.EldrytchWeb);
+            //BuildCombined(RadiantBloodWcids, TreasureArmorType.RadiantBlood);
+            BuildCombined(HaebreanWcids, TreasureArmorType.Haebrean);
+            BuildCombined(KnorrAcademyWcids, TreasureArmorType.KnorrAcademy);
+            BuildCombined(SedgemailLeatherWcids, TreasureArmorType.Sedgemail);
+            BuildCombined(OverRobe_T3_T5_Wcids, TreasureArmorType.Overrobe);
+            BuildCombined(OverRobe_T6_T8_Wcids, TreasureArmorType.Overrobe);
         }
 
         public static WeenieClassName Roll(TreasureDeath treasureDeath, ref TreasureArmorType armorType)
@@ -1111,6 +1141,19 @@ namespace ACE.Server.Factories.Tables.Wcids
                 return OverRobe_T3_T5_Wcids.Roll();
             else
                 return OverRobe_T6_T8_Wcids.Roll();
+        }
+
+        private static readonly Dictionary<WeenieClassName, TreasureArmorType> _combined = new Dictionary<WeenieClassName, TreasureArmorType>();
+
+        private static void BuildCombined(ChanceTable<WeenieClassName> wcids, TreasureArmorType armorType)
+        {
+            foreach (var entry in wcids)
+                _combined.TryAdd(entry.result, armorType);
+        }
+
+        public static bool TryGetValue(WeenieClassName wcid, out TreasureArmorType armorType)
+        {
+            return _combined.TryGetValue(wcid, out armorType);
         }
     }
 }

@@ -275,11 +275,24 @@ namespace ACE.Server.Factories.Tables.Wcids
                     T5_T6_Chances
                 };
             }
+
+            foreach (var casterTier in casterTiers)
+            {
+                foreach (var entry in casterTier)
+                    _combined.Add(entry.result);
+            }
         }
 
         public static WeenieClassName Roll(int tier)
         {
             return casterTiers[tier - 1].Roll();
+        }
+
+        private static readonly HashSet<WeenieClassName> _combined = new HashSet<WeenieClassName>();
+
+        public static bool Contains(WeenieClassName wcid)
+        {
+            return _combined.Contains(wcid);
         }
     }
 }

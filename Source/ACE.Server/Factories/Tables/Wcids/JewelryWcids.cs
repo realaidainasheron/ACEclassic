@@ -193,6 +193,12 @@ namespace ACE.Server.Factories.Tables.Wcids
 		            T5_T6_Chances,
 		        };
             }
+
+            foreach (var tierChance in tierChances)
+            {
+                foreach (var entry in tierChance)
+                    _combined.Add(entry.result);
+            }
         }
 
         public static WeenieClassName Roll(int tier)
@@ -201,6 +207,13 @@ namespace ACE.Server.Factories.Tables.Wcids
             tier = Math.Clamp(tier, 1, 6);
 
             return tierChances[tier - 1].Roll();
+        }
+
+        private static readonly HashSet<WeenieClassName> _combined = new HashSet<WeenieClassName>();
+
+        public static bool Contains(WeenieClassName wcid)
+        {
+            return _combined.Contains(wcid);
         }
     }
 }

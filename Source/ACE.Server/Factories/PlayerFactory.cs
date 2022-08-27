@@ -34,7 +34,7 @@ namespace ACE.Server.Factories
 
         public static CreateResult Create(CharacterCreateInfo characterCreateInfo, Weenie weenie, ObjectGuid guid, uint accountId, WeenieType weenieType, out Player player)
         {
-            var heritageGroup = DatManager.PortalDat.CharGen.HeritageGroups[characterCreateInfo.Heritage];
+            var heritageGroup = DatManager.PortalDat.CharGen.HeritageGroups[(uint)characterCreateInfo.Heritage];
 
             if (weenieType == WeenieType.Admin)
                 player = new Admin(weenie, guid, accountId);
@@ -65,264 +65,204 @@ namespace ACE.Server.Factories
                 player.SetProperty(PropertyFloat.DefaultScale, (sex.Scale / 100f)); // Scale is stored as a percentage
 
             // Get the hair first, because we need to know if you're bald, and that's the name of that tune!
-            var hairstyle = sex.HairStyleList[Convert.ToInt32(characterCreateInfo.Apperance.HairStyle)];
+            var hairstyle = sex.HairStyleList[Convert.ToInt32(characterCreateInfo.Appearance.HairStyle)];
 
             // Olthoi and Gear Knights have a "Body Style" instead of a hair style. These styles have multiple model/texture changes, instead of a single head/hairstyle.
             // Storing this value allows us to send the proper appearance ObjDesc
             if (hairstyle.ObjDesc.AnimPartChanges.Count > 1)
-                player.SetProperty(PropertyInt.Hairstyle, (int)characterCreateInfo.Apperance.HairStyle);
+                player.SetProperty(PropertyInt.Hairstyle, (int)characterCreateInfo.Appearance.HairStyle);
 
             // Certain races (Undead, Tumeroks, Others?) have multiple body styles available. This is controlled via the "hair style".
             if (hairstyle.AlternateSetup > 0)
                 player.SetProperty(PropertyDataId.Setup, hairstyle.AlternateSetup);
 
-            player.SetProperty(PropertyDataId.EyesTexture, sex.GetEyeTexture(characterCreateInfo.Apperance.Eyes, hairstyle.Bald));
-            player.SetProperty(PropertyDataId.DefaultEyesTexture, sex.GetDefaultEyeTexture(characterCreateInfo.Apperance.Eyes, hairstyle.Bald));
-            player.SetProperty(PropertyDataId.NoseTexture, sex.GetNoseTexture(characterCreateInfo.Apperance.Nose));
-            player.SetProperty(PropertyDataId.DefaultNoseTexture, sex.GetDefaultNoseTexture(characterCreateInfo.Apperance.Nose));
-            player.SetProperty(PropertyDataId.MouthTexture, sex.GetMouthTexture(characterCreateInfo.Apperance.Mouth));
-            player.SetProperty(PropertyDataId.DefaultMouthTexture, sex.GetDefaultMouthTexture(characterCreateInfo.Apperance.Mouth));
-            player.Character.HairTexture = sex.GetHairTexture(characterCreateInfo.Apperance.HairStyle);
-            player.Character.DefaultHairTexture = sex.GetDefaultHairTexture(characterCreateInfo.Apperance.HairStyle);
+            player.SetProperty(PropertyDataId.EyesTexture, sex.GetEyeTexture(characterCreateInfo.Appearance.Eyes, hairstyle.Bald));
+            player.SetProperty(PropertyDataId.DefaultEyesTexture, sex.GetDefaultEyeTexture(characterCreateInfo.Appearance.Eyes, hairstyle.Bald));
+            player.SetProperty(PropertyDataId.NoseTexture, sex.GetNoseTexture(characterCreateInfo.Appearance.Nose));
+            player.SetProperty(PropertyDataId.DefaultNoseTexture, sex.GetDefaultNoseTexture(characterCreateInfo.Appearance.Nose));
+            player.SetProperty(PropertyDataId.MouthTexture, sex.GetMouthTexture(characterCreateInfo.Appearance.Mouth));
+            player.SetProperty(PropertyDataId.DefaultMouthTexture, sex.GetDefaultMouthTexture(characterCreateInfo.Appearance.Mouth));
+            player.Character.HairTexture = sex.GetHairTexture(characterCreateInfo.Appearance.HairStyle) ?? 0;
+            player.Character.DefaultHairTexture = sex.GetDefaultHairTexture(characterCreateInfo.Appearance.HairStyle) ?? 0;
             // HeadObject can be null if we're dealing with GearKnight or Olthoi
-            var headObject = sex.GetHeadObject(characterCreateInfo.Apperance.HairStyle);
+            var headObject = sex.GetHeadObject(characterCreateInfo.Appearance.HairStyle);
             if (headObject != null)
                 player.SetProperty(PropertyDataId.HeadObject, (uint)headObject);
 
             // Skin is stored as PaletteSet (list of Palettes), so we need to read in the set to get the specific palette
             var skinPalSet = DatManager.PortalDat.ReadFromDat<PaletteSet>(sex.SkinPalSet);
-            player.SetProperty(PropertyDataId.SkinPalette, skinPalSet.GetPaletteID(characterCreateInfo.Apperance.SkinHue));
-            player.SetProperty(PropertyFloat.Shade, characterCreateInfo.Apperance.SkinHue);
+            player.SetProperty(PropertyDataId.SkinPalette, skinPalSet.GetPaletteID(characterCreateInfo.Appearance.SkinHue));
+            player.SetProperty(PropertyFloat.Shade, characterCreateInfo.Appearance.SkinHue);
 
             // Hair is stored as PaletteSet (list of Palettes), so we need to read in the set to get the specific palette
-            var hairPalSet = DatManager.PortalDat.ReadFromDat<PaletteSet>(sex.HairColorList[Convert.ToInt32(characterCreateInfo.Apperance.HairColor)]);
-            player.SetProperty(PropertyDataId.HairPalette, hairPalSet.GetPaletteID(characterCreateInfo.Apperance.HairHue));
+            var hairPalSet = DatManager.PortalDat.ReadFromDat<PaletteSet>(sex.HairColorList[Convert.ToInt32(characterCreateInfo.Appearance.HairColor)]);
+            player.SetProperty(PropertyDataId.HairPalette, hairPalSet.GetPaletteID(characterCreateInfo.Appearance.HairHue));
 
             // Eye Color
-            player.SetProperty(PropertyDataId.EyesPalette, sex.EyeColorList[Convert.ToInt32(characterCreateInfo.Apperance.EyeColor)]);
+            player.SetProperty(PropertyDataId.EyesPalette, sex.EyeColorList[Convert.ToInt32(characterCreateInfo.Appearance.EyeColor)]);
 
-            if (characterCreateInfo.Apperance.HeadgearStyle < 0xFFFFFFFF) // No headgear is max UINT
+            // skip over this for olthoi, use the weenie defaults
+            if (!player.IsOlthoiPlayer)
             {
-                var hat = GetClothingObject(sex.GetHeadgearWeenie(characterCreateInfo.Apperance.HeadgearStyle), characterCreateInfo.Apperance.HeadgearColor, characterCreateInfo.Apperance.HeadgearHue);
-                if (hat != null)
-                    player.TryEquipObject(hat, hat.ValidLocations ?? 0);
+                if (characterCreateInfo.Appearance.HeadgearStyle < uint.MaxValue) // No headgear is max UINT
+                {
+                    var hat = GetClothingObject(sex.GetHeadgearWeenie(characterCreateInfo.Appearance.HeadgearStyle), characterCreateInfo.Appearance.HeadgearColor, characterCreateInfo.Appearance.HeadgearHue);
+                    if (hat != null)
+                        player.TryEquipObject(hat, hat.ValidLocations ?? 0);
+                    else
+                        player.TryAddToInventory(CreateIOU(sex.GetHeadgearWeenie(characterCreateInfo.Appearance.HeadgearStyle)));
+                }
+
+                var shirt = GetClothingObject(sex.GetShirtWeenie(characterCreateInfo.Appearance.ShirtStyle), characterCreateInfo.Appearance.ShirtColor, characterCreateInfo.Appearance.ShirtHue);
+                if (shirt != null)
+                    player.TryEquipObject(shirt, shirt.ValidLocations ?? 0);
                 else
-                    player.TryAddToInventory(CreateIOU(sex.GetHeadgearWeenie(characterCreateInfo.Apperance.HeadgearStyle)));
-            }
+                    player.TryAddToInventory(CreateIOU(sex.GetShirtWeenie(characterCreateInfo.Appearance.ShirtStyle)));
 
-            var shirt = GetClothingObject(sex.GetShirtWeenie(characterCreateInfo.Apperance.ShirtStyle), characterCreateInfo.Apperance.ShirtColor, characterCreateInfo.Apperance.ShirtHue);
-            if (shirt != null)
-                player.TryEquipObject(shirt, shirt.ValidLocations ?? 0);
-            else
-                player.TryAddToInventory(CreateIOU(sex.GetShirtWeenie(characterCreateInfo.Apperance.ShirtStyle)));
+                var pants = GetClothingObject(sex.GetPantsWeenie(characterCreateInfo.Appearance.PantsStyle), characterCreateInfo.Appearance.PantsColor, characterCreateInfo.Appearance.PantsHue);
+                if (pants != null)
+                    player.TryEquipObject(pants, pants.ValidLocations ?? 0);
+                else
+                    player.TryAddToInventory(CreateIOU(sex.GetPantsWeenie(characterCreateInfo.Appearance.PantsStyle)));
 
-            var pants = GetClothingObject(sex.GetPantsWeenie(characterCreateInfo.Apperance.PantsStyle), characterCreateInfo.Apperance.PantsColor, characterCreateInfo.Apperance.PantsHue);
-            if (pants != null)
-                player.TryEquipObject(pants, pants.ValidLocations ?? 0);
-            else
-                player.TryAddToInventory(CreateIOU(sex.GetPantsWeenie(characterCreateInfo.Apperance.PantsStyle)));
+                var shoes = GetClothingObject(sex.GetFootwearWeenie(characterCreateInfo.Appearance.FootwearStyle), characterCreateInfo.Appearance.FootwearColor, characterCreateInfo.Appearance.FootwearHue);
+                if (shoes != null)
+                    player.TryEquipObject(shoes, shoes.ValidLocations ?? 0);
+                else
+                    player.TryAddToInventory(CreateIOU(sex.GetFootwearWeenie(characterCreateInfo.Appearance.FootwearStyle)));
 
-            var shoes = GetClothingObject(sex.GetFootwearWeenie(characterCreateInfo.Apperance.FootwearStyle), characterCreateInfo.Apperance.FootwearColor, characterCreateInfo.Apperance.FootwearHue);
-            if (shoes != null)
-                player.TryEquipObject(shoes, shoes.ValidLocations ?? 0);
-            else
-                player.TryAddToInventory(CreateIOU(sex.GetFootwearWeenie(characterCreateInfo.Apperance.FootwearStyle)));
+                string templateName = heritageGroup.Templates[characterCreateInfo.TemplateOption].Name;
+                player.SetProperty(PropertyString.Template, templateName);
 
-            string templateName = heritageGroup.Templates[characterCreateInfo.TemplateOption].Name;
-            //player.SetProperty(PropertyString.Title, templateName);
-            player.SetProperty(PropertyString.Template, templateName);
-            player.AddTitle(heritageGroup.Templates[characterCreateInfo.TemplateOption].Title, true);
+                player.AddTitle(heritageGroup.Templates[characterCreateInfo.TemplateOption].Title, true);
 
-            // attributes
-            var result = ValidateAttributeCredits(characterCreateInfo, heritageGroup.AttributeCredits);
+                // attributes
+                var result = ValidateAttributeCredits(characterCreateInfo, heritageGroup.AttributeCredits);
 
-            if (result != CreateResult.Success)
-                return result;
+                if (result != CreateResult.Success)
+                    return result;
 
-            player.Strength.StartingValue = characterCreateInfo.StrengthAbility;
-            player.Endurance.StartingValue = characterCreateInfo.EnduranceAbility;
-            player.Coordination.StartingValue = characterCreateInfo.CoordinationAbility;
-            player.Quickness.StartingValue = characterCreateInfo.QuicknessAbility;
-            player.Focus.StartingValue = characterCreateInfo.FocusAbility;
-            player.Self.StartingValue = characterCreateInfo.SelfAbility;
+                player.Strength.StartingValue = characterCreateInfo.StrengthAbility;
+                player.Endurance.StartingValue = characterCreateInfo.EnduranceAbility;
+                player.Coordination.StartingValue = characterCreateInfo.CoordinationAbility;
+                player.Quickness.StartingValue = characterCreateInfo.QuicknessAbility;
+                player.Focus.StartingValue = characterCreateInfo.FocusAbility;
+                player.Self.StartingValue = characterCreateInfo.SelfAbility;
 
-            // data we don't care about
-            //characterCreateInfo.CharacterSlot;
-            //characterCreateInfo.ClassId;
+                // data we don't care about
+                //characterCreateInfo.CharacterSlot;
+                //characterCreateInfo.ClassId;
 
-            // characters start with max vitals
-            player.Health.Current = player.Health.Base;
-            player.Stamina.Current = player.Stamina.Base;
-            player.Mana.Current = player.Mana.Base;
+                // characters start with max vitals
+                player.Health.Current = player.Health.Base;
+                player.Stamina.Current = player.Stamina.Base;
+                player.Mana.Current = player.Mana.Base;
 
-            // set initial skill credit amount. 52 for all but "Olthoi", which have 68
-            player.SetProperty(PropertyInt.AvailableSkillCredits, (int)heritageGroup.SkillCredits);
+                // set initial skill credit amount. 52 for all but "Olthoi", which have 68
+                player.SetProperty(PropertyInt.AvailableSkillCredits, (int)heritageGroup.SkillCredits);
+                player.SetProperty(PropertyInt.TotalSkillCredits, (int)heritageGroup.SkillCredits);
 
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
-            {
-                if (characterCreateInfo.SkillAdvancementClasses.Count != 55)
-                    return CreateResult.ClientServerSkillsMismatch;
-            }
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
-            {
-                if (characterCreateInfo.SkillAdvancementClasses.Count != 49) // Not really 49 but shield skill is id 48 so we get a few empty slots. The client doesn't seem to mind at all.
-                    return CreateResult.ClientServerSkillsMismatch;
-            }
-            else
-            {
-                if (characterCreateInfo.SkillAdvancementClasses.Count != 41)
-                    return CreateResult.ClientServerSkillsMismatch;
-            }
-
-            for (int i = 0; i < characterCreateInfo.SkillAdvancementClasses.Count; i++)
-            {
-                var sac = characterCreateInfo.SkillAdvancementClasses[i];
-
-                if (sac == SkillAdvancementClass.Inactive)
-                    continue;
-
-                if (!DatManager.PortalDat.SkillTable.SkillBaseHash.ContainsKey((uint)i))
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
                 {
-                    log.ErrorFormat("Character {0} tried to create with skill {1} that was not found in Portal dat.", characterCreateInfo.Name, i);
-                    return CreateResult.InvalidSkillRequested;
+                    if (characterCreateInfo.SkillAdvancementClasses.Count != 55)
+                        return CreateResult.ClientServerSkillsMismatch;
+                }
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    if (characterCreateInfo.SkillAdvancementClasses.Count != 49) // Not really 49 but shield skill is id 48 so we get a few empty slots. The client doesn't seem to mind at all.
+                        return CreateResult.ClientServerSkillsMismatch;
+                }
+                else
+                {
+                    if (characterCreateInfo.SkillAdvancementClasses.Count != 41)
+                        return CreateResult.ClientServerSkillsMismatch;
                 }
 
-                var skill = DatManager.PortalDat.SkillTable.SkillBaseHash[(uint)i];
-
-                var trainedCost = skill.TrainedCost;
-                var specializedCost = skill.UpgradeCostFromTrainedToSpecialized;
-
-                foreach (var skillGroup in heritageGroup.Skills)
+                for (int i = 0; i < characterCreateInfo.SkillAdvancementClasses.Count; i++)
                 {
-                    if (skillGroup.SkillNum == i)
+                    var sac = characterCreateInfo.SkillAdvancementClasses[i];
+
+                    if (sac == SkillAdvancementClass.Inactive)
+                        continue;
+
+                    if (!DatManager.PortalDat.SkillTable.SkillBaseHash.ContainsKey((uint)i))
                     {
-                        trainedCost = skillGroup.NormalCost;
-                        specializedCost = skillGroup.PrimaryCost;
-                        break;
+                        log.ErrorFormat("Character {0} tried to create with skill {1} that was not found in Portal dat.", characterCreateInfo.Name, i);
+                        return CreateResult.InvalidSkillRequested;
                     }
-                }
 
-                if (sac == SkillAdvancementClass.Specialized)
-                {
-                    if (!player.TrainSkill((Skill)i, trainedCost))
-                        return CreateResult.FailedToTrainSkill;
-                    if (!player.SpecializeSkill((Skill)i, specializedCost))
-                        return CreateResult.FailedToSpecializeSkill;
-                }
-                else if (sac == SkillAdvancementClass.Trained)
-                {
-                    if (!player.TrainSkill((Skill)i, trainedCost, true))
-                        return CreateResult.FailedToTrainSkill;
-                }
-                else if (sac == SkillAdvancementClass.Untrained)
-                    player.UntrainSkill((Skill)i, 0);
-            }
+                    var skill = DatManager.PortalDat.SkillTable.SkillBaseHash[(uint)i];
 
-            bool isDualWieldTrainedOrSpecialized = false;
-            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
-            {
-                isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
+                    var trainedCost = skill.TrainedCost;
+                    var specializedCost = skill.UpgradeCostFromTrainedToSpecialized;
 
-                // Set Heritage based Melee and Ranged Masteries
-                GetMasteries(player.HeritageGroup, out WeaponType meleeMastery, out WeaponType rangedMastery);
-
-                player.SetProperty(PropertyInt.MeleeMastery, (int)meleeMastery);
-                player.SetProperty(PropertyInt.RangedMastery, (int)rangedMastery);
-
-                // Set innate augs
-                SetInnateAugmentations(player);
-            }
-            else
-            {
-                // Quick check to confirm if the player has all their racial skills.
-                foreach (var skillGroup in heritageGroup.Skills)
-                {
-                    var skill = player.GetCreatureSkill((Skill)skillGroup.SkillNum);
-                    if (skillGroup.PrimaryCost == 0)
+                    foreach (var skillGroup in heritageGroup.Skills)
                     {
-                        if (skill.AdvancementClass != SkillAdvancementClass.Specialized)
+                        if (skillGroup.SkillNum == i)
+                        {
+                            trainedCost = skillGroup.NormalCost;
+                            specializedCost = skillGroup.PrimaryCost;
+                            break;
+                        }
+                    }
+
+                    if (sac == SkillAdvancementClass.Specialized)
+                    {
+                        if (!player.TrainSkill((Skill)i, trainedCost))
+                            return CreateResult.FailedToTrainSkill;
+                        if (!player.SpecializeSkill((Skill)i, specializedCost))
                             return CreateResult.FailedToSpecializeSkill;
                     }
-                    else if (skillGroup.NormalCost == 0 && skill.AdvancementClass != SkillAdvancementClass.Trained && skill.AdvancementClass != SkillAdvancementClass.Specialized)
-                        return CreateResult.FailedToTrainSkill;
-                }
-            }
-
-            // grant starter items based on skills
-            var starterGearConfig = StarterGearFactory.GetStarterGearConfiguration();
-            var grantedWeenies = new List<uint>();
-
-            Container container = null;
-            foreach (var skillGear in starterGearConfig.Skills)
-            {
-                var charSkill = player.Skills[(Skill)skillGear.SkillId];
-                if (charSkill.AdvancementClass == SkillAdvancementClass.Trained || charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
-                {
-                    foreach (var item in skillGear.Gear)
+                    else if (sac == SkillAdvancementClass.Trained)
                     {
-                        if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && item.SpecializedOnly == true)
-                            continue;
-
-                        if (grantedWeenies.Contains(item.WeenieId))
-                        {
-                            var existingItem = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == item.WeenieId);
-                            if (existingItem == null || (existingItem.MaxStackSize ?? 1) <= 1)
-                                continue;
-
-                            existingItem.SetStackSize(existingItem.StackSize + item.StackSize);
-                            continue;
-                        }
-
-                        var loot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
-                        if (loot != null)
-                        {
-                            if (container == null && loot.WeenieType == WeenieType.Container)
-                                container = (Container)loot;
-
-                            if (loot.StackSize.HasValue && loot.MaxStackSize.HasValue)
-                                loot.SetStackSize((item.StackSize <= loot.MaxStackSize) ? item.StackSize : loot.MaxStackSize);
-                        }
-                        else
-                        {
-                            player.TryAddToInventory(CreateIOU(item.WeenieId));
-                        }
-
-                        if (loot != null)
-                        {
-                            bool added = false;
-                            if (container != null && loot.WeenieType == WeenieType.SpellComponent) // try to stash spell components on a secondary pack
-                                if (container.TryAddToInventory(loot))
-                                    added = true;
-
-                            if(!added)
-                                if (player.TryAddToInventory(loot))
-                                    added = true;
-
-                            if (added)
-                                grantedWeenies.Add(item.WeenieId);
-                        }
-
-                        if (isDualWieldTrainedOrSpecialized && loot != null)
-                        {
-                            if (loot.WeenieType == WeenieType.MeleeWeapon)
-                            {
-                                var dualloot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
-                                if (dualloot != null)
-                                {
-                                    player.TryAddToInventory(dualloot);
-                                }
-                                else
-                                {
-                                    player.TryAddToInventory(CreateIOU(item.WeenieId));
-                                }
-                            }
-                        }
+                        if (!player.TrainSkill((Skill)i, trainedCost, true))
+                            return CreateResult.FailedToTrainSkill;
                     }
+                    else if (sac == SkillAdvancementClass.Untrained)
+                        player.UntrainSkill((Skill)i, 0);
+                }
 
-                    var heritageLoot = skillGear.Heritage.FirstOrDefault(sh => sh.HeritageId == characterCreateInfo.Heritage);
-                    if (heritageLoot != null)
+                bool isDualWieldTrainedOrSpecialized = false;
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                {
+                    isDualWieldTrainedOrSpecialized = player.Skills[Skill.DualWield].AdvancementClass > SkillAdvancementClass.Untrained;
+
+                    // Set Heritage based Melee and Ranged Masteries
+                    GetMasteries(player.HeritageGroup, out WeaponType meleeMastery, out WeaponType rangedMastery);
+
+                    player.SetProperty(PropertyInt.MeleeMastery, (int)meleeMastery);
+                    player.SetProperty(PropertyInt.RangedMastery, (int)rangedMastery);
+
+                    // Set innate augs
+                    SetInnateAugmentations(player);
+                }
+                else
+                {
+                    // Quick check to confirm if the player has all their racial skills.
+                    foreach (var skillGroup in heritageGroup.Skills)
                     {
-                        foreach (var item in heritageLoot.Gear)
+                        var skill = player.GetCreatureSkill((Skill)skillGroup.SkillNum);
+                        if (skillGroup.PrimaryCost == 0)
+                        {
+                            if (skill.AdvancementClass != SkillAdvancementClass.Specialized)
+                                return CreateResult.FailedToSpecializeSkill;
+                        }
+                        else if (skillGroup.NormalCost == 0 && skill.AdvancementClass != SkillAdvancementClass.Trained && skill.AdvancementClass != SkillAdvancementClass.Specialized)
+                            return CreateResult.FailedToTrainSkill;
+                    }
+                }
+
+                // grant starter items based on skills
+                var starterGearConfig = StarterGearFactory.GetStarterGearConfiguration();
+                var grantedWeenies = new List<uint>();
+
+                Container container = null;
+                foreach (var skillGear in starterGearConfig.Skills)
+                {
+                    var charSkill = player.Skills[(Skill)skillGear.SkillId];
+                    if (charSkill.AdvancementClass == SkillAdvancementClass.Trained || charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
+                    {
+                        foreach (var item in skillGear.Gear)
                         {
                             if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && item.SpecializedOnly == true)
                                 continue;
@@ -340,6 +280,9 @@ namespace ACE.Server.Factories
                             var loot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
                             if (loot != null)
                             {
+                                if (container == null && loot.WeenieType == WeenieType.Container)
+                                    container = (Container)loot;
+
                                 if (loot.StackSize.HasValue && loot.MaxStackSize.HasValue)
                                     loot.SetStackSize((item.StackSize <= loot.MaxStackSize) ? item.StackSize : loot.MaxStackSize);
                             }
@@ -348,8 +291,20 @@ namespace ACE.Server.Factories
                                 player.TryAddToInventory(CreateIOU(item.WeenieId));
                             }
 
-                            if (loot != null && player.TryAddToInventory(loot))
-                                grantedWeenies.Add(item.WeenieId);
+                            if (loot != null)
+                            {
+                                bool added = false;
+                                if (container != null && loot.WeenieType == WeenieType.SpellComponent) // try to stash spell components on a secondary pack
+                                    if (container.TryAddToInventory(loot))
+                                        added = true;
+
+                                if (!added)
+                                    if (player.TryAddToInventory(loot))
+                                        added = true;
+
+                                if (added)
+                                    grantedWeenies.Add(item.WeenieId);
+                            }
 
                             if (isDualWieldTrainedOrSpecialized && loot != null)
                             {
@@ -367,40 +322,104 @@ namespace ACE.Server.Factories
                                 }
                             }
                         }
-                    }
 
-                    foreach (var spell in skillGear.Spells)
-                    {
-                        // Olthoi Spitter is a special case
-                        if (characterCreateInfo.Heritage == (int)HeritageGroup.OlthoiAcid)
+                        var heritageLoot = skillGear.Heritage.FirstOrDefault(i => i.HeritageId == (ushort)characterCreateInfo.Heritage);
+                        if (heritageLoot != null)
                         {
-                            player.AddKnownSpell(spell.SpellId);
-                            // Continue to next spell as Olthoi spells do not have the SpecializedOnly field
-                            continue;
-                        }
-
-                        bool spellAdded = false;
-                        if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && spell.SpecializedOnly == false)
-                            spellAdded = player.AddKnownSpell(spell.SpellId);
-                        else if (charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
-                            spellAdded = player.AddKnownSpell(spell.SpellId);
-
-                        if (spellAdded && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
-                        {
-                            // Quality of life: set the entries for the player's /fillcomps
-                            Spell spellEntity = new Spell(spell.SpellId);
-                            foreach (var componentId in spellEntity.Formula.Components)
+                            foreach (var item in heritageLoot.Gear)
                             {
-                                uint amount = 10;
-                                if (SpellFormula.SpellComponentsTable.SpellComponents.TryGetValue(componentId, out var spellComponent))
-                                {
-                                    if (spellComponent.Type == (int)SpellComponentsTable.Type.Scarab || spellComponent.Type == (int)SpellComponentsTable.Type.Talisman)
-                                        amount = 3;
+                                if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && item.SpecializedOnly == true)
+                                    continue;
 
-                                    player.Character.AddFillComponent(Spell.GetComponentWCID(componentId), amount, player.CharacterDatabaseLock, out _);
+                                if (grantedWeenies.Contains(item.WeenieId))
+                                {
+                                    var existingItem = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == item.WeenieId);
+                                    if (existingItem == null || (existingItem.MaxStackSize ?? 1) <= 1)
+                                        continue;
+
+                                    existingItem.SetStackSize(existingItem.StackSize + item.StackSize);
+                                    continue;
+                                }
+
+                                var loot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
+                                if (loot != null)
+                                {
+                                    if (loot.StackSize.HasValue && loot.MaxStackSize.HasValue)
+                                        loot.SetStackSize((item.StackSize <= loot.MaxStackSize) ? item.StackSize : loot.MaxStackSize);
+                                }
+                                else
+                                {
+                                    player.TryAddToInventory(CreateIOU(item.WeenieId));
+                                }
+
+                                if (loot != null && player.TryAddToInventory(loot))
+                                    grantedWeenies.Add(item.WeenieId);
+
+                                if (isDualWieldTrainedOrSpecialized && loot != null)
+                                {
+                                    if (loot.WeenieType == WeenieType.MeleeWeapon)
+                                    {
+                                        var dualloot = WorldObjectFactory.CreateNewWorldObject(item.WeenieId);
+                                        if (dualloot != null)
+                                        {
+                                            player.TryAddToInventory(dualloot);
+                                        }
+                                        else
+                                        {
+                                            player.TryAddToInventory(CreateIOU(item.WeenieId));
+                                        }
+                                    }
                                 }
                             }
                         }
+
+                        foreach (var spell in skillGear.Spells)
+                        {
+                            // Olthoi Spitter is a special case
+                            if (characterCreateInfo.Heritage == HeritageGroup.OlthoiAcid)
+                            {
+                                player.AddKnownSpell(spell.SpellId);
+                                // Continue to next spell as Olthoi spells do not have the SpecializedOnly field
+                                continue;
+                            }
+
+                            bool spellAdded = false;
+                            if (charSkill.AdvancementClass == SkillAdvancementClass.Trained && spell.SpecializedOnly == false)
+                                spellAdded = player.AddKnownSpell(spell.SpellId);
+                            else if (charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
+                                spellAdded = player.AddKnownSpell(spell.SpellId);
+
+                            if (spellAdded && Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                            {
+                                // Quality of life: set the entries for the player's /fillcomps
+                                Spell spellEntity = new Spell(spell.SpellId);
+                                foreach (var componentId in spellEntity.Formula.Components)
+                                {
+                                    uint amount = 10;
+                                    if (SpellFormula.SpellComponentsTable.SpellComponents.TryGetValue(componentId, out var spellComponent))
+                                    {
+                                        if (spellComponent.Type == (int)SpellComponentsTable.Type.Scarab || spellComponent.Type == (int)SpellComponentsTable.Type.Talisman)
+                                            amount = 3;
+
+                                        player.Character.AddFillComponent(Spell.GetComponentWCID(componentId), amount, player.CharacterDatabaseLock, out _);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (player.CharacterTitleId > 0)
+                    player.AddTitle((uint)player.CharacterTitleId.Value, true);
+
+                if (player.Biota.PropertiesSpellBook?.Count > 0)
+                {
+                    var i = 0u;
+                    foreach (var spell in player.Biota.PropertiesSpellBook)
+                    {
+                        player.HandleActionAddSpellFavorite((uint)spell.Key, i++, 0);
                     }
                 }
             }

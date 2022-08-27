@@ -168,6 +168,12 @@ namespace ACE.Server.WorldObjects
             NumDeaths++;
             suicideInProgress = false;
 
+            // todo: since we are going to be using 'time since Player last died to an OlthoiPlayer'
+            // as a factor in slag generation, this will eventually be moved to after the slag generation
+
+            if (topDamager != null && topDamager.IsOlthoiPlayer)
+                OlthoiLootTimestamp = (int)Time.GetUnixTime();
+
             if (CombatMode == CombatMode.Magic && MagicState.IsCasting)
                 FailCast(false);
 
@@ -324,7 +330,7 @@ namespace ACE.Server.WorldObjects
 
             if (step < SuicideMessages.Count)
             {
-                EnqueueBroadcast(new GameMessageCreatureMessage(SuicideMessages[step], Name, Guid.Full, ChatMessageType.Speech), LocalBroadcastRange);
+                EnqueueBroadcast(new GameMessageHearSpeech(SuicideMessages[step], GetNameWithSuffix(), Guid.Full, ChatMessageType.Speech), LocalBroadcastRange);
 
                 var suicideChain = new ActionChain();
                 suicideChain.AddDelaySeconds(3.0f);
@@ -483,7 +489,7 @@ namespace ACE.Server.WorldObjects
             var inventory = GetAllPossessions();
 
             // exclude pyreals from randomized death item calculation
-            inventory = inventory.Where(i => !i.Name.Equals("Pyreal")).ToList();
+            inventory = inventory.Where(i => i.WeenieClassId != coinStackWcid).ToList();
 
             // exclude wielded items if < level 35
             if (!canDropWielded)
@@ -503,7 +509,7 @@ namespace ACE.Server.WorldObjects
             if (numCoinsDropped > 0)
             {
                 // add pyreals to dropped items
-                var pyreals = SpendCurrency(Vendor.CoinStackWCID, (uint)numCoinsDropped);
+                var pyreals = SpendCurrency(coinStackWcid, (uint)numCoinsDropped);
                 dropItems.AddRange(pyreals);
                 //Console.WriteLine($"Dropping {numCoinsDropped} pyreals");
             }
@@ -948,6 +954,9 @@ namespace ACE.Server.WorldObjects
 
         public void SetMinimumTimeSincePK()
         {
+            if (IsOlthoiPlayer)
+                return;
+
             if (PlayerKillerStatus == PlayerKillerStatus.NPK && MinimumTimeSincePk == null)
                 return;
 
@@ -1032,6 +1041,22 @@ namespace ACE.Server.WorldObjects
                 destroyedItems.Add(destroyItem);
             }
             return destroyedItems;
+        }
+
+        /// <summary>
+        /// Determines the amount of slag to drop on a Player corpse when killed by an OlthoiPlayer
+        /// </summary>
+        public List<WorldObject> CalculateDeathItems_Olthoi(Corpse corpse)
+        {
+            var slag = LootGenerationFactory.RollSlag(this);
+
+            if (slag == null)
+                return new List<WorldObject>();
+
+            if (!corpse.TryAddToInventory(slag))
+                log.Warn($"Player_Death: couldn't add item to {Name}'s corpse: {slag.Name}");
+
+            return new List<WorldObject>() { slag };
         }
     }
 }

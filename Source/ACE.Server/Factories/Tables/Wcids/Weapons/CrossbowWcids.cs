@@ -173,6 +173,12 @@ namespace ACE.Server.Factories.Tables.Wcids
                     T6_T8_Chances,
                 };
             }
+
+            foreach (var crossbowTier in crossbowTiers)
+            {
+                foreach (var entry in crossbowTier)
+                    _combined.TryAdd(entry.result, TreasureWeaponType.Crossbow);
+            }
         }
         public static WeenieClassName Roll(int tier, out TreasureWeaponType weaponType)
         {
@@ -184,6 +190,13 @@ namespace ACE.Server.Factories.Tables.Wcids
                 weaponType = TreasureWeaponType.Crossbow;
 
             return roll;
+        }
+
+        private static readonly Dictionary<WeenieClassName, TreasureWeaponType> _combined = new Dictionary<WeenieClassName, TreasureWeaponType>();
+
+        public static bool TryGetValue(WeenieClassName wcid, out TreasureWeaponType weaponType)
+        {
+            return _combined.TryGetValue(wcid, out weaponType);
         }
     }
 }
