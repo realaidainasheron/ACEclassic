@@ -136,7 +136,7 @@ namespace ACE.Server.Command.Handlers.Processors
 
             var json_folder = $"{di.FullName}{sep}json{sep}recipes{sep}";
 
-            var prefix = recipeId + " - ";
+            var prefix = recipeId.PadLeft(5, '0') + " - ";
 
             if (recipeId.Equals("all", StringComparison.OrdinalIgnoreCase))
                 prefix = "";
@@ -227,19 +227,21 @@ namespace ACE.Server.Command.Handlers.Processors
                     return;
                 }
             }
-            switch (contentType)
+            try
             {
-                case FileType.LandblockInstance:
-                    ImportSQLLandblock(session, param);
-                    break;
+                switch (contentType)
+                {
+                    case FileType.LandblockInstance:
+                        ImportSQLLandblock(session, param);
+                        break;
 
-                case FileType.Quest:
-                    ImportSQLQuest(session, param);
-                    break;
+                    case FileType.Quest:
+                        ImportSQLQuest(session, param);
+                        break;
 
-                case FileType.Recipe:
-                    ImportSQLRecipe(session, param);
-                    break;
+                    case FileType.Recipe:
+                        ImportSQLRecipe(session, param);
+                        break;
 
                 case FileType.Weenie:
                     if (param.Equals("all", StringComparison.OrdinalIgnoreCase))
@@ -262,6 +264,11 @@ namespace ACE.Server.Command.Handlers.Processors
                         ImportSQLWeenie(session, param);
                     }
                     break;
+                }
+            }
+            catch(Exception e)
+            {
+                CommandHandlerHelper.WriteOutputError(session, $"There was an error importing the SQL:\n\n{e.Message}");
             }
         }
 
@@ -274,7 +281,7 @@ namespace ACE.Server.Command.Handlers.Processors
 
             var sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}";
 
-            var prefix = wcid + " ";
+            var prefix = wcid.PadLeft(5, '0') + " ";
 
             if (wcid.Equals("all", StringComparison.OrdinalIgnoreCase))
                 prefix = "";
@@ -302,7 +309,7 @@ namespace ACE.Server.Command.Handlers.Processors
 
             var sql_folder = $"{di.FullName}{sep}sql{sep}recipes{sep}";
 
-            var prefix = recipeId + " ";
+            var prefix = recipeId.PadLeft(5, '0') + " ";
 
             if (recipeId.Equals("all", StringComparison.OrdinalIgnoreCase))
                 prefix = "";
@@ -1401,7 +1408,8 @@ namespace ACE.Server.Command.Handlers.Processors
 
                 // require confirmation for parent objects
                 var msg = $"Are you sure you want to delete this parent object, and {numChilds} child object{(numChilds != 1 ? "s" : "")}?";
-                session.Player.ConfirmationManager.EnqueueSend(new Confirmation_Custom(session.Player.Guid, () => RemoveInstance(session, true)), msg);
+                if (!session.Player.ConfirmationManager.EnqueueSend(new Confirmation_Custom(session.Player.Guid, () => RemoveInstance(session, true)), msg))
+                    session.Player.SendWeenieError(WeenieError.ConfirmationInProgress);
                 return;
             }
 
@@ -1732,6 +1740,13 @@ namespace ACE.Server.Command.Handlers.Processors
             }
         }
 
+        [CommandHandler("export-json-folders", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Exports content from database to JSON file in a WeenieType/ItemType folder structure", "<wcid>")]
+        public static void HandleExportJsonFolder(Session session, params string[] parameters)
+        {
+            var param = parameters[0];
+            ExportJsonWeenie(session, param, true);
+        }
+
         [CommandHandler("export-json", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Exports content from database to JSON file", "<wcid>")]
         public static void HandleExportJson(Session session, params string[] parameters)
         {
@@ -1768,7 +1783,7 @@ namespace ACE.Server.Command.Handlers.Processors
             }
         }
 
-        public static void ExportJsonWeenie(Session session, string param)
+        public static void ExportJsonWeenie(Session session, string param, bool withFolders = false)
         {
             DirectoryInfo di = VerifyContentFolder(session, false);
 
@@ -1793,8 +1808,39 @@ namespace ACE.Server.Command.Handlers.Processors
                 return;
             }
 
-            var json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}";
-
+            string json_folder = null;
+            if (withFolders)
+            {
+                var weenieType = (WeenieType)weenie.Type;
+                switch (weenieType)
+                {
+                    case WeenieType.Creature: // Export to the "CreatureType" folder
+                        WeeniePropertiesInt cType = (from x in weenie.WeeniePropertiesInt where x.Type == 2 select x).FirstOrDefault();
+                        if (cType == null)
+                            json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}{weenieType}{sep}";
+                        else
+                        {
+                            CreatureType creatureType = (CreatureType)cType.Value;
+                            json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}{weenieType}{sep}{creatureType}{sep}";
+                        }
+                        break;
+                    default: // Otherwise goes to "ItemType" folder
+                        WeeniePropertiesInt iType = (from x in weenie.WeeniePropertiesInt where x.Type == 1 select x).FirstOrDefault();
+                        if (iType == null)
+                            json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}{weenieType}{sep}";
+                        else
+                        {
+                            ItemType itemType = (ItemType)iType.Value;
+                            json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}{weenieType}{sep}{itemType}{sep}";
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                json_folder = $"{di.FullName}{sep}json{sep}weenies{sep}";
+            }
+            
             di = new DirectoryInfo(json_folder);
 
             if (!di.Exists)
@@ -1944,7 +1990,14 @@ namespace ACE.Server.Command.Handlers.Processors
             CommandHandlerHelper.WriteOutputInfo(session, $"Exported {json_folder}{json_filename}");
         }
 
-        [CommandHandler("export-sql", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Exports content from database to SQL file", "<wcid>")]
+        [CommandHandler("export-sql-folders", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Exports weenie content from database to an SQL file in a WeenieType/ItemType folder structure", "<wcid>")]
+        public static void HandleExportSqlFolder(Session session, params string[] parameters)
+        {
+            var param = parameters[0];
+            ExportSQLWeenie(session, param, true);
+        }
+
+        [CommandHandler("export-sql", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Exports content from database to SQL file", "<wcid> [content-type]")]
         public static void HandleExportSql(Session session, params string[] parameters)
         {
             var param = parameters[0];
@@ -1980,7 +2033,7 @@ namespace ACE.Server.Command.Handlers.Processors
             }
         }
 
-        public static void ExportSQLWeenie(Session session, string param)
+        public static void ExportSQLWeenie(Session session, string param, bool withFolders = false)
         {
             DirectoryInfo di = VerifyContentFolder(session, false);
 
@@ -1999,7 +2052,38 @@ namespace ACE.Server.Command.Handlers.Processors
                 return;
             }
 
-            var sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}";
+            string sql_folder = null;
+            if (withFolders)
+            {
+                var weenieType = (WeenieType)weenie.Type;
+                switch (weenieType)
+                {
+                    case WeenieType.Creature: // Export to the "CreatureType" folder
+                        WeeniePropertiesInt cType = (from x in weenie.WeeniePropertiesInt where x.Type == 2 select x).FirstOrDefault();
+                        if (cType == null)
+                            sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}{weenieType}{sep}";
+                        else
+                        {
+                            CreatureType creatureType = (CreatureType)cType.Value;
+                            sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}{weenieType}{sep}{creatureType}{sep}";
+                        }
+                        break;
+                    default: // Otherwise goes to "ItemType" folder
+                        WeeniePropertiesInt iType = (from x in weenie.WeeniePropertiesInt where x.Type == 1 select x).FirstOrDefault();
+                        if (iType == null)
+                            sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}{weenieType}{sep}";
+                        else
+                        {
+                            ItemType itemType = (ItemType)iType.Value;
+                            sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}{weenieType}{sep}{itemType}{sep}";
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                sql_folder = $"{di.FullName}{sep}sql{sep}weenies{sep}";
+            }
 
             di = new DirectoryInfo(sql_folder);
 
@@ -2013,6 +2097,7 @@ namespace ACE.Server.Command.Handlers.Processors
                 WeenieSQLWriter.SpellNames = DatabaseManager.World.GetAllSpellNames();
                 WeenieSQLWriter.TreasureDeath = DatabaseManager.World.GetAllTreasureDeath();
                 WeenieSQLWriter.TreasureWielded = DatabaseManager.World.GetAllTreasureWielded();
+                WeenieSQLWriter.PacketOpCodes = PacketOpCodeNames.Values;
             }
 
             var sql_filename = WeenieSQLWriter.GetDefaultFileName(weenie);
@@ -2662,9 +2747,11 @@ namespace ACE.Server.Command.Handlers.Processors
 
             var replaceChars = new Dictionary<string, string>()
             {
+                { " ", "_" },
                 { "-", "_" },
                 { "!", "" },
                 { "#", "" },
+                { "?", "" },
             };
 
             using (var ctx = new WorldDbContext())
@@ -2747,6 +2834,115 @@ namespace ACE.Server.Command.Handlers.Processors
 
             foreach (var file in files)
                 ImportSQLWeenie(session, Path.GetDirectoryName(file.FullName) + Path.DirectorySeparatorChar, file.Name);
+        }
+
+        [CommandHandler("vloc2loc", AccessLevel.Developer, CommandHandlerFlag.None, 1, "Output a set of LOCs for a given landblock found in the VLOCS dataset", "<LandblockID>\nExample: @vloc2loc 0x0007\n         @vloc2loc 0xCE95")]
+        public static void HandleVLOCtoLOC(Session session, params string[] parameters)
+        {
+            var hex = parameters[0];
+
+            if (hex.StartsWith("0x", StringComparison.CurrentCultureIgnoreCase)
+             || hex.StartsWith("&H", StringComparison.CurrentCultureIgnoreCase))
+            {
+                hex = hex[2..];
+            }
+
+            if (uint.TryParse(hex, NumberStyles.HexNumber, CultureInfo.CurrentCulture, out var lbid))
+            {
+                DirectoryInfo di = VerifyContentFolder(session);
+                if (!di.Exists) return;
+
+                var sep = Path.DirectorySeparatorChar;
+
+                var vloc_folder = $"{di.FullName}{sep}vlocs{sep}";
+
+                di = new DirectoryInfo(vloc_folder);
+
+                var vlocDB = vloc_folder + "vlocDB.txt";
+
+                var vlocs = di.Exists ? new FileInfo(vlocDB).Exists ? File.ReadLines(vlocDB).ToArray() : null : null;
+
+                if (vlocs == null)
+                {
+                    CommandHandlerHelper.WriteOutputInfo(session, $"Unable to read VLOC database file located here: {vlocDB}");
+                    return;
+                }
+
+                // Name,ObjectClass,LandCell,X,Y
+                // Master MacTavish,37,-114359889,97.14075000286103,-63.93749958674113
+
+                if (vlocs.Length == 0 || !vlocs[0].Equals("Name,ObjectClass,LandCell,X,Y"))
+                {
+                    CommandHandlerHelper.WriteOutputInfo(session, $"{vlocDB} does not appear to be a valid VLOC database file.");
+                    return;
+                }
+
+                var vlocFile = vloc_folder + $"{lbid:X4}.txt";
+
+                var vi = new FileInfo(vlocFile);
+                if (vi.Exists)
+                    vi.Delete();
+
+                for (var i = 1; i < vlocs.Length; i++)
+                {
+                    var split = vlocs[i].Split(",");
+
+                    var name = split[0].Trim();
+                    var objectClass = split[1].Trim();
+                    var strLandCell = split[2].Trim();
+                    var strX = split[3].Trim();
+                    var strY = split[4].Trim();
+
+                    if (!int.TryParse(strLandCell, out var landCell))
+                    {
+                        CommandHandlerHelper.WriteOutputInfo(session, $"Unable to parse LandCell ({strLandCell}) value from line {i} in vlocDB: {vlocs[i]}");
+                        continue;
+                    }
+                    var objCellId = (uint)landCell;
+                    if (!float.TryParse(strX, out var x))
+                    {
+                        CommandHandlerHelper.WriteOutputInfo(session, $"Unable to parse X ({strX}) value from line {i} in vlocDB: {vlocs[i]}");
+                        continue;
+                    }    
+                    if (!float.TryParse(strY, out var y))
+                    {
+                        CommandHandlerHelper.WriteOutputInfo(session, $"Unable to parse Y ({strY}) value from line {i} in vlocDB: {vlocs[i]}");
+                        continue;
+                    }    
+
+                    if ((objCellId >> 16) != lbid) continue;
+
+                    try
+                    {
+                        var pos = new Position(new Vector2(x, y));
+                        pos.AdjustMapCoords();
+                        pos.Translate(objCellId);
+                        pos.FindZ();
+
+                        using (StreamWriter sw = File.AppendText(vlocFile))
+                        {
+                            sw.WriteLine($"{name} - @teleloc {pos.ToLOCString()}");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        using (StreamWriter sw = File.AppendText(vlocFile))
+                        {
+                            sw.WriteLine($"Unable to parse {name} - 0x{objCellId:X8} {strX}, {strY}");
+                        }
+                    }
+                }
+
+                vi = new FileInfo(vlocFile);
+                if (vi.Exists)
+                    CommandHandlerHelper.WriteOutputInfo(session, $"Successfully wrote VLOCs for 0x{lbid:X4} to {vlocFile}");
+                else
+                    CommandHandlerHelper.WriteOutputInfo(session, $"No VLOCs able to be written for 0x{lbid:X4}");
+            }
+            else
+            {
+                CommandHandlerHelper.WriteOutputInfo(session, $"Invalid Landblock ID: {parameters[0]}\nLandblock ID should be in the hex format such as this: @vloc2loc 0xAB94");
+            }
         }
     }
 }

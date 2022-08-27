@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 using ACE.Database.Models.World;
 using ACE.Server.Factories.Entity;
 using ACE.Server.Factories.Enum;
@@ -241,6 +243,11 @@ namespace ACE.Server.Factories.Tables.Wcids
                     ( WeenieClassName.slippers,      1.0f ),
                 };
             }
+
+            BuildCombined(ClothingWcids_Aluvian);
+            BuildCombined(ClothingWcids_Gharundim);
+            BuildCombined(ClothingWcids_Sho);
+            BuildCombined(ClothingWcids_Viamontian);
         }
 
         public static WeenieClassName Roll(TreasureDeath treasureDeath)
@@ -281,6 +288,19 @@ namespace ACE.Server.Factories.Tables.Wcids
                 }
             }
             return WeenieClassName.undef;
+        }
+
+        private static readonly HashSet<WeenieClassName> _combined = new HashSet<WeenieClassName>();
+
+        private static void BuildCombined(ChanceTable<WeenieClassName> wcids)
+        {
+            foreach (var entry in wcids)
+                _combined.Add(entry.result);
+        }
+
+        public static bool Contains(WeenieClassName wcid)
+        {
+            return _combined.Contains(wcid);
         }
     }
 }

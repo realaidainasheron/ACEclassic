@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+using ACE.DatLoader.Entity.AnimationHooks;
 using ACE.Entity.Enum;
 using ACE.Server.Entity;
 using ACE.Server.Entity.Actions;
@@ -58,24 +59,30 @@ namespace ACE.Server.WorldObjects
                 if (LastCombatMode == CombatMode.Melee)
                     CombatMode = CombatMode.Melee;
                 else
+                {
+                    OnAttackDone();
                     return;
+                }
             }
 
             if (IsBusy || Teleporting || suicideInProgress)
             {
                 SendWeenieError(WeenieError.YoureTooBusy);
+                OnAttackDone();
                 return;
             }
 
             if (IsJumping)
             {
                 SendWeenieError(WeenieError.YouCantDoThatWhileInTheAir);
+                OnAttackDone();
                 return;
             }
 
             if (PKLogout)
             {
                 SendWeenieError(WeenieError.YouHaveBeenInPKBattleTooRecently);
+                OnAttackDone();
                 return;
             }
 
@@ -98,6 +105,7 @@ namespace ACE.Server.WorldObjects
             if (target == null)
             {
                 //log.Debug($"{Name}.HandleActionTargetedMeleeAttack({targetGuid:X8}, {AttackHeight}, {powerLevel}) - couldn't find target guid");
+                OnAttackDone();
                 return;
             }
 
@@ -105,6 +113,7 @@ namespace ACE.Server.WorldObjects
             if (creatureTarget == null)
             {
                 log.Warn($"{Name}.HandleActionTargetedMeleeAttack({targetGuid:X8}, {AttackHeight}, {powerLevel}) - target guid not creature");
+                OnAttackDone();
                 return;
             }
 
@@ -140,7 +149,11 @@ namespace ACE.Server.WorldObjects
                 actionChain.AddDelaySeconds(delayTime);
                 actionChain.AddAction(this, () =>
                 {
-                    if (!creatureTarget.IsAlive) return;
+                    if (!creatureTarget.IsAlive)
+                    {
+                        OnAttackDone();
+                        return;
+                    }
 
                     HandleActionTargetedMeleeAttack_Inner(target, attackSequence);
                 });
@@ -310,7 +323,7 @@ namespace ACE.Server.WorldObjects
             }
 
             // handle self-procs
-            TryProcEquippedItems(this, true);
+            TryProcEquippedItems(this, this, true, weapon);
 
             var prevTime = 0.0f;
             bool targetProc = false;
@@ -320,8 +333,8 @@ namespace ACE.Server.WorldObjects
                 // are there animation hooks for damage frames?
                 //if (numStrikes > 1 && !TwoHandedCombat)
                 //actionChain.AddDelaySeconds(swingTime);
-                actionChain.AddDelaySeconds(attackFrames[i] * animLength - prevTime);
-                prevTime = attackFrames[i] * animLength;
+                actionChain.AddDelaySeconds(attackFrames[i].time * animLength - prevTime);
+                prevTime = attackFrames[i].time * animLength;
 
                 actionChain.AddAction(this, () =>
                 {
@@ -337,7 +350,7 @@ namespace ACE.Server.WorldObjects
                     // handle target procs
                     if (damageEvent != null && damageEvent.HasDamage && !targetProc)
                     {
-                        TryProcEquippedItems(creature, false);
+                        TryProcEquippedItems(this, creature, false, weapon);
                         targetProc = true;
                     }
 
@@ -397,7 +410,7 @@ namespace ACE.Server.WorldObjects
         /// <summary>
         /// Performs the player melee swing animation
         /// </summary>
-        public float DoSwingMotion(WorldObject target, out List<float> attackFrames)
+        public float DoSwingMotion(WorldObject target, out List<(float time, AttackHook attackHook)> attackFrames)
         {
             // get the proper animation speed for this attack,
             // based on weapon speed and player quickness
@@ -414,6 +427,10 @@ namespace ACE.Server.WorldObjects
 
             // broadcast player swing animation to clients
             var motion = new Motion(this, swingAnimation, animSpeed);
+            if (PropertyManager.GetBool("persist_movement").Item)
+            {
+                motion.Persist(CurrentMotionState);
+            }
             motion.MotionState.TurnSpeed = 2.25f;
             motion.MotionFlags |= MotionFlags.StickToObject;
             motion.TargetGuid = target.Guid;
@@ -458,7 +475,7 @@ namespace ACE.Server.WorldObjects
             }
             else
             {
-                AttackType = PowerLevel > KickThreshold ? AttackType.Kick : AttackType.Punch;
+                AttackType = PowerLevel > KickThreshold && !IsDualWieldAttack ? AttackType.Kick : AttackType.Punch;
             }
 
             if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)

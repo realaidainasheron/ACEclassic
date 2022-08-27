@@ -14,7 +14,7 @@ namespace ACE.Server.Network.GameMessages.Messages
         public ChatType ChatType { get; set; }
 
 
-        public GameMessageTurbineChat(ChatNetworkBlobType chatNetworkBlobType, uint channel, string senderName, string message, uint senderID, ChatType chatType)
+        public GameMessageTurbineChat(ChatNetworkBlobType chatNetworkBlobType, ChatNetworkBlobDispatchType chatNetworkBlobDispatchType, uint channel, string senderName, string message, uint senderID, ChatType chatType)
             : base(GameMessageOpcode.TurbineChat, GameMessageGroup.LoginQueue)
         {
             this.Channel = channel;
@@ -95,7 +95,7 @@ namespace ACE.Server.Network.GameMessages.Messages
                 var firstSizePos = Writer.BaseStream.Position;
                 Writer.Write(0u); // Bytes to follow
                 Writer.Write((uint)chatNetworkBlobType);
-                Writer.Write(1u);
+                Writer.Write((uint)chatNetworkBlobDispatchType);
                 Writer.Write(1u);
                 Writer.Write(0x000B00B5); // Unique ID? Both ID's always match. These numbers change between 0x000B0000 - 0x000B00FF I think.
                 Writer.Write(1u);
@@ -131,7 +131,7 @@ namespace ACE.Server.Network.GameMessages.Messages
                 var firstSizePos = Writer.BaseStream.Position;
                 Writer.Write(0u); // Bytes to follow
                 Writer.Write((uint)chatNetworkBlobType);
-                Writer.Write(1u);
+                Writer.Write((uint)chatNetworkBlobDispatchType);
                 Writer.Write(1u);
                 Writer.Write(0x000B00B5); // Unique ID? Both ID's always match. These numbers change between 0x000B0000 - 0x000B00FF I think.
                 Writer.Write(1u);

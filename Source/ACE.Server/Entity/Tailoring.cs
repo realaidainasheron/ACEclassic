@@ -123,6 +123,10 @@ namespace ACE.Server.Entity
                 return WeenieError.YouDoNotPassCraftingRequirements;
             }
 
+            // verify not society armor
+            if (source.IsSocietyArmor || target.IsSocietyArmor)
+                return WeenieError.YouDoNotPassCraftingRequirements;
+
             return WeenieError.None;
         }
 
@@ -222,9 +226,15 @@ namespace ACE.Server.Entity
             target.Shade3 = source.Shade3;
             target.Shade4 = source.Shade4;
 
+            target.LightsStatus = source.LightsStatus;
+            target.Translucency = source.Translucency;
+
             target.SetupTableId = source.SetupTableId;
             target.PaletteBaseId = source.PaletteBaseId;
             target.ClothingBase = source.ClothingBase;
+
+            target.PhysicsTableId = source.PhysicsTableId;
+            target.SoundTableId = source.SoundTableId;
 
             target.Name = source.Name;
             target.LongDesc = LootGenerationFactory.GetLongDesc(target);
@@ -264,8 +274,6 @@ namespace ACE.Server.Entity
 
             target.HookType = source.HookType;
             target.HookPlacement = source.HookPlacement;
-            target.LightsStatus = source.LightsStatus;
-            target.Translucency = source.Translucency;
 
             // These values are all set just for verification purposes. Likely originally handled by unique WCID and recipe system.
             if (source is MeleeWeapon)
@@ -286,6 +294,9 @@ namespace ACE.Server.Entity
             player.TryConsumeFromInventoryWithNetworking(target, 1);
 
             player.TryCreateInInventoryWithNetworking(result);
+
+            if (PropertyManager.GetBool("player_receive_immediate_save").Item)
+                player.RushNextPlayerSave(5);
 
             player.SendUseDoneEvent();
         }
@@ -401,6 +412,8 @@ namespace ACE.Server.Entity
             player.UpdateProperty(target, PropertyInt.ClothingPriority, (int)clothingPriority);
             player.TryConsumeFromInventoryWithNetworking(source, 1);
 
+            target.SaveBiotaToDatabase();
+
             player.SendUseDoneEvent();
         }
 
@@ -415,6 +428,8 @@ namespace ACE.Server.Entity
             player.UpdateProperty(target, PropertyBool.TopLayerPriority, topLayer);
 
             player.TryConsumeFromInventoryWithNetworking(source, 1);
+
+            target.SaveBiotaToDatabase();
 
             player.SendUseDoneEvent();
         }
@@ -442,6 +457,8 @@ namespace ACE.Server.Entity
             player.Session.Network.EnqueueSend(new GameMessageUpdateObject(target));
 
             player.TryConsumeFromInventoryWithNetworking(source, 1);
+
+            target.SaveBiotaToDatabase();
 
             player.SendUseDoneEvent();
         }
@@ -500,6 +517,8 @@ namespace ACE.Server.Entity
 
             player.TryConsumeFromInventoryWithNetworking(source, 1);
 
+            target.SaveBiotaToDatabase();
+
             player.SendUseDoneEvent();
         }
 
@@ -516,6 +535,9 @@ namespace ACE.Server.Entity
             player.UpdateProperty(target, PropertyFloat.Shade2, source.Shade2);
             player.UpdateProperty(target, PropertyFloat.Shade3, source.Shade3);
             player.UpdateProperty(target, PropertyFloat.Shade4, source.Shade4);
+
+            player.UpdateProperty(target, PropertyBool.LightsStatus, source.LightsStatus);
+            player.UpdateProperty(target, PropertyFloat.Translucency, source.Translucency);
 
             player.UpdateProperty(target, PropertyDataId.Setup, source.SetupTableId);
             player.UpdateProperty(target, PropertyDataId.ClothingBase, source.ClothingBase);
@@ -552,8 +574,6 @@ namespace ACE.Server.Entity
 
             player.UpdateProperty(target, PropertyInt.HookType, source.HookType);
             player.UpdateProperty(target, PropertyInt.HookPlacement, source.HookPlacement);
-            player.UpdateProperty(target, PropertyBool.LightsStatus, source.LightsStatus);
-            player.UpdateProperty(target, PropertyFloat.Translucency, source.Translucency);
         }
 
         public static uint? GetArmorWCID(EquipMask validLocations)

@@ -246,7 +246,7 @@ namespace ACE.Server.WorldObjects
             foreach (var creature in PhysicsObj.ObjMaint.GetVisibleTargetsValuesOfTypeCreature())
             {
                 // ensure attackable
-                if (!creature.Attackable || creature.Teleporting) continue;
+                if (!creature.Attackable && creature.TargetingTactic == TargetingTactic.None || creature.Teleporting) continue;
 
                 // ensure within 'detection radius' ?
                 var chaseDistSq = creature == AttackTarget ? MaxChaseRangeSq : VisualAwarenessRangeSq;
@@ -415,22 +415,36 @@ namespace ACE.Server.WorldObjects
         }
 
         /// <summary>
-        /// Monsters can only alert other monsters once?
+        /// A monster can only alert friendly mobs to the presence of each attack target
+        /// once every AlertThreshold
         /// </summary>
-        public bool Alerted;
+        private static readonly TimeSpan AlertThreshold = TimeSpan.FromMinutes(2);
+
+        /// <summary>
+        /// AttackTarget => last alerted time
+        /// </summary>
+        private Dictionary<uint, DateTime> Alerted;
 
         public void AlertFriendly()
         {
-            //if (Alerted) return;
+            // if current attacker has already alerted this monster recently,
+            // don't re-alert friendlies
+            if (Alerted != null && Alerted.TryGetValue(AttackTarget.Guid.Full, out var lastAlertTime) && DateTime.UtcNow - lastAlertTime < AlertThreshold)
+                return;
 
             var visibleObjs = PhysicsObj.ObjMaint.GetVisibleObjects(PhysicsObj.CurCell);
 
             var targetCreature = AttackTarget as Creature;
 
+            var alerted = false;
+
             foreach (var obj in visibleObjs)
             {
                 var nearbyCreature = obj.WeenieObj.WorldObject as Creature;
-                if (nearbyCreature == null || nearbyCreature.IsAwake || !nearbyCreature.Attackable)
+                if (nearbyCreature == null || nearbyCreature.IsAwake || !nearbyCreature.Attackable && nearbyCreature.TargetingTactic == TargetingTactic.None)
+                    continue;
+
+                if ((nearbyCreature.Tolerance & AlertExclude) != 0)
                     continue;
 
                 if (CreatureType != null && CreatureType == nearbyCreature.CreatureType ||
@@ -460,10 +474,19 @@ namespace ACE.Server.WorldObjects
                             continue;
                     }
 
-                    Alerted = true;
+                    alerted = true;
+
                     nearbyCreature.AttackTarget = AttackTarget;
                     nearbyCreature.WakeUp(false);
                 }
+            }
+            // only set alerted if monsters were actually alerted
+            if (alerted)
+            {
+                if (Alerted == null)
+                    Alerted = new Dictionary<uint, DateTime>();
+
+                Alerted[AttackTarget.Guid.Full] = DateTime.UtcNow;
             }
         }
 
@@ -483,7 +506,7 @@ namespace ACE.Server.WorldObjects
                     continue;
 
                 // ensure attackable
-                if (creature.IsDead || !creature.Attackable || creature.Teleporting)
+                if (creature.IsDead || !creature.Attackable && creature.TargetingTactic == TargetingTactic.None || creature.Teleporting)
                     continue;
 
                 // ensure another faction

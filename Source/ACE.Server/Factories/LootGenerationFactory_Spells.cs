@@ -319,7 +319,26 @@ namespace ACE.Server.Factories
                         hasLegendary = true;
                     }
                 }
+
+                finalCantrips.Add(cantripLevels[cantripLevel - 1]);
+
+                if (cantripLevel == 4)
+                    hasLegendary = true;
             }
+
+            // if a legendary cantrip dropped on this item
+            if (hasLegendary && roll.ArmorType != TreasureArmorType.Society)
+            {
+                // and if the item has a level requirement, ensure the level requirement is at least 180
+                // if the item does not already contain a level requirement, don't add one?
+
+                if (wo.WieldRequirements == WieldRequirement.Level && wo.WieldDifficulty < 180)
+                    wo.WieldDifficulty = 180;
+
+                if (wo.WieldRequirements2 == WieldRequirement.Level && wo.WieldDifficulty2 < 180)
+                    wo.WieldDifficulty2 = 180;
+            }
+
             return finalCantrips;
         }
 

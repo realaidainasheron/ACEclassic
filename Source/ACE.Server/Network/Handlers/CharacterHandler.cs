@@ -71,7 +71,7 @@ namespace ACE.Server.Network.Handlers
             });
 
             // Only allow era appropriate heritages.
-            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && characterCreateInfo.Heritage != (int)HeritageGroup.Aluvian && characterCreateInfo.Heritage != (int)HeritageGroup.Gharundim && characterCreateInfo.Heritage != (int)HeritageGroup.Sho)
+            if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration && characterCreateInfo.Heritage != HeritageGroup.Aluvian && characterCreateInfo.Heritage != HeritageGroup.Gharundim && characterCreateInfo.Heritage != HeritageGroup.Sho)
             {
                 SendCharacterCreateResponse(session, CharacterGenerationVerificationResponse.Pending);
                 session.Network.EnqueueSend(new GameEvent.Events.GameEventPopupString(session, "Only Aluvian, Gharu'ndim and Sho heritages are allowed on this server."));
@@ -80,7 +80,7 @@ namespace ACE.Server.Network.Handlers
 
             // Disable OlthoiPlay characters for now. They're not implemented yet.
             // FIXME: Restore OlthoiPlay characters when properly handled.
-            if (characterCreateInfo.Heritage == (int)HeritageGroup.Olthoi || characterCreateInfo.Heritage == (int)HeritageGroup.OlthoiAcid)
+            if ((characterCreateInfo.Heritage == HeritageGroup.Olthoi || characterCreateInfo.Heritage == HeritageGroup.OlthoiAcid) && !PropertyManager.GetBool("olthoi_play_enabled").Item)
             {
                 SendCharacterCreateResponse(session, CharacterGenerationVerificationResponse.Pending);
                 return;
@@ -96,19 +96,19 @@ namespace ACE.Server.Network.Handlers
                 else
                     weenie = DatabaseManager.World.GetCachedWeenie("human");
 
-                if (characterCreateInfo.Heritage == (int)HeritageGroup.Olthoi && weenie.WeenieType == WeenieType.Admin)
+                if (characterCreateInfo.Heritage == HeritageGroup.Olthoi && weenie.WeenieType == WeenieType.Admin)
                     weenie = DatabaseManager.World.GetCachedWeenie("olthoiadmin");
 
-                if (characterCreateInfo.Heritage == (int)HeritageGroup.OlthoiAcid && weenie.WeenieType == WeenieType.Admin)
+                if (characterCreateInfo.Heritage == HeritageGroup.OlthoiAcid && weenie.WeenieType == WeenieType.Admin)
                     weenie = DatabaseManager.World.GetCachedWeenie("olthoiacidadmin");
             }
             else
                 weenie = DatabaseManager.World.GetCachedWeenie("human");
 
-            if (characterCreateInfo.Heritage == (int)HeritageGroup.Olthoi && weenie.WeenieType == WeenieType.Creature)
+            if (characterCreateInfo.Heritage == HeritageGroup.Olthoi && weenie.WeenieType == WeenieType.Creature)
                 weenie = DatabaseManager.World.GetCachedWeenie("olthoiplayer");
 
-            if (characterCreateInfo.Heritage == (int)HeritageGroup.OlthoiAcid && weenie.WeenieType == WeenieType.Creature)
+            if (characterCreateInfo.Heritage == HeritageGroup.OlthoiAcid && weenie.WeenieType == WeenieType.Creature)
                 weenie = DatabaseManager.World.GetCachedWeenie("olthoiacidplayer");
 
             if (characterCreateInfo.IsSentinel && session.AccessLevel >= AccessLevel.Sentinel)
@@ -126,10 +126,6 @@ namespace ACE.Server.Network.Handlers
                 log.Error("Database does not contain the weenie for human (1). Characters cannot be created until the missing weenie is restored.");
                 return;
             }
-
-            // Removes the generic knife and buckler, hidden Javelin, 30 stack of arrows, and 5 stack of coins that are given to all characters
-            // Starter Gear from the JSON file are added to the character later in the CharacterCreateEx() process
-            weenie.PropertiesCreateList = null;
 
             var guid = GuidManager.NewPlayerGuid();
 
