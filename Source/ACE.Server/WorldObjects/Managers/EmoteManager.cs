@@ -856,6 +856,10 @@ namespace ACE.Server.WorldObjects.Managers
                     if (Debug)
                         Console.Write($".{(MotionCommand)emote.Motion}");
 
+                    // If the landblock is dormant, there are no players in range
+                    if (WorldObject.CurrentLandblock?.IsDormant ?? false)
+                        break;
+
                     // are there players within emote range?
                     if (!WorldObject.PlayersInRange(ClientMaxAnimRange))
                         break;
@@ -947,6 +951,10 @@ namespace ACE.Server.WorldObjects.Managers
 
                     if (creature != null)
                     {
+                        // If the landblock is dormant, there are no players in range
+                        if (WorldObject.CurrentLandblock?.IsDormant ?? false)
+                            break;
+
                         var newPos = new Position(creature.Home);
                         newPos.Pos += new Vector3(emote.OriginX ?? 0, emote.OriginY ?? 0, emote.OriginZ ?? 0);      // uses relative position
 
