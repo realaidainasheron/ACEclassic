@@ -8,6 +8,7 @@ using ACE.Entity.Enum;
 using ACE.Entity.Enum.Properties;
 using ACE.Entity.Models;
 using ACE.Server.Managers;
+using ACE.Server.Network.GameMessages.Messages;
 
 namespace ACE.Server.WorldObjects
 {
@@ -22,6 +23,11 @@ namespace ACE.Server.WorldObjects
         /// The primary use for this is to trigger save on add/modify/remove of properties.
         /// </summary>
         public bool CharacterChangesDetected { get; set; }
+
+        /// <summary>
+        /// Set to true when SaveCharacter() returns a failure
+        /// </summary>
+        public bool CharacterSaveFailed { get; set; }
 
         /// <summary>
         /// The time period between automatic saving of player character changes
@@ -97,7 +103,21 @@ namespace ACE.Server.WorldObjects
             CharacterLastRequestedDatabaseSave = DateTime.UtcNow;
             CharacterChangesDetected = false;
 
-            DatabaseManager.Shard.SaveCharacter(Character, CharacterDatabaseLock, null);
+            DatabaseManager.Shard.SaveCharacter(Character, CharacterDatabaseLock, result =>
+            {
+                if (!result)
+                {
+                    if (this is Player player)
+                    {
+                        //todo: remove this later?
+                        player.Session.Network.EnqueueSend(new GameMessageSystemChat("WARNING: A database save for this character has failed. As a result of this failure, it is possible for future saves to also fail. In order to avoid a potentially significant character rollback, please find a safe place, log out of the game and then reconnect & re-login. This error has also been logged to be further reviewed by ACEmulator team.", ChatMessageType.WorldBroadcast));
+                        //player.Session.Network.EnqueueSend(new GameMessageSystemChat("WARNING: A database save for this character has failed. As a result of this failure, it is possible for future saves to also fail. In order to avoid a potentially significant character rollback, please find a safe place, log out of the game and then reconnect & re-login. This error has also been logged to be further reviewed by ACEmulator team.", ChatMessageType.WorldBroadcast));
+
+                        // This will trigger a boot on next player tick
+                        CharacterSaveFailed = true;
+                    }
+                }
+            });
         }
     }
 }
