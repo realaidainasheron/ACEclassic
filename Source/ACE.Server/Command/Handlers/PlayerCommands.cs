@@ -649,6 +649,16 @@ namespace ACE.Server.Command.Handlers
         {
             HandleResetXpTracker(session, parameters);
         }
+
+
+        [CommandHandler("imbuetracker", AccessLevel.Player, CommandHandlerFlag.None, 0,
+            "Returns your imbue tracking information",
+            "")]
+        public static void HandleImbueTracker(Session session, params string[] parameters)
+        {
+            var msg = $"You've successfully imbued {session.Player.ImbueSuccesses} items out of {session.Player.ImbueAttempts} total imbue attempts for a success rate of {(session.Player.ImbueAttempts > 0 ? string.Format("{0:0,0}", ((session.Player.ImbueSuccesses / session.Player.ImbueAttempts) * 100)) : "0")}%";
+            session.Network.EnqueueSend(new GameMessageSystemChat(msg, ChatMessageType.Broadcast));
+        }
     }
 
     public class ActivityRecommendation
