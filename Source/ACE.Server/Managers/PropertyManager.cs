@@ -589,6 +589,7 @@ namespace ACE.Server.Managers
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
                 ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
+                ("hold_move", new Property<bool>(false, "for pvp spellcasting, if TRUE, holds via any movement, instead of just turning")),
                 ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
                 ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold"))
                 );

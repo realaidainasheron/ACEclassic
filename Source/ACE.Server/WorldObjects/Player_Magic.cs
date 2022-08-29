@@ -212,8 +212,16 @@ namespace ACE.Server.WorldObjects
             else
             {
                 // restart turn if required
-                Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
-                if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
+                var holdMove = PropertyManager.GetBool("hold_move").Item;
+
+                var movement = holdMove ? CurrentMoveToState.HasMovement() : PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand != 0;
+
+                if (holdMove)
+                    Console.WriteLine($"{Name}.DoWindup() - restart turn if required, HasMovement = {CurrentMoveToState.HasMovement()}");
+                else
+                    Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
+
+                if (!movement)
                 {
                     var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
                     Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
@@ -797,8 +805,16 @@ namespace ACE.Server.WorldObjects
                     }
                     else
                     {
-                        Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
-                        if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
+                        var holdMove = PropertyManager.GetBool("hold_move").Item;
+
+                        var movement = holdMove ? CurrentMoveToState.HasMovement() : PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand != 0;
+
+                        if (holdMove)
+                            Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, HasMovement = {CurrentMoveToState.HasMovement()}");
+                        else
+                            Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
+
+                        if (!movement)
                         {
                             var castRetryLimit = PropertyManager.GetLong("cast_turn_retry_number").Item;
                             Console.WriteLine($"castRetryLimit: {castRetryLimit}");

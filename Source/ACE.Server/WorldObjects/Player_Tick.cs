@@ -203,8 +203,13 @@ namespace ACE.Server.WorldObjects
             else
                 OnMoveToState_ClientMethod(moveToState);
 
-            if (MagicState.IsCasting && MagicState.PendingTurnRelease && moveToState.RawMotionState.TurnCommand == 0)
-                OnTurnRelease();
+            if (MagicState.IsCasting && MagicState.PendingTurnRelease)
+            {
+                var movement = PropertyManager.GetBool("hold_move").Item ? moveToState.HasMovement() : moveToState.RawMotionState.TurnCommand != 0;
+
+                if (!movement)
+                    OnTurnRelease();
+            }
         }
 
         public void OnMoveToState_ClientMethod(MoveToState moveToState)
