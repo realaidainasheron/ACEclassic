@@ -873,6 +873,10 @@ namespace ACE.Server.WorldObjects
                     return;
                 }
 
+                // verify cast radius before every automatic TurnTo after windup
+                if (!VerifyCastRadius())
+                    return;
+
                 var stopCompletely = !MagicState.CastMotionDone;
                 //var stopCompletely = true;
 
@@ -1547,8 +1551,30 @@ namespace ACE.Server.WorldObjects
                 DoCastSpell(MagicState, true);
         }
 
+        public bool VerifyCastRadius()
+        {
+            if (!PropertyManager.GetBool("verify_cast_radius").Item)
+                return true;
+
+            if (MagicState.CastGestureStartTime != DateTime.MinValue)
+            {
+                var dist = StartPos.Distance(PhysicsObj.Position);
+
+                if (dist > Windup_MaxMove && PlayerKillerStatus != PlayerKillerStatus.NPK)
+                {
+                    FailCast();
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void CheckTurn()
         {
+            // verify cast radius while manually moving after windup
+            if (!VerifyCastRadius())
+                return;
+
             if (!PropertyManager.GetBool("monitor_manual_turn").Item) return;
 
             if (TurnTarget != null && IsWithinAngle(TurnTarget))
