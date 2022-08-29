@@ -588,7 +588,8 @@ namespace ACE.Server.Managers
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
-                ("force_materialization", new Property<bool>(true, "forces players to materialize on login"))
+                ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
+                ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
@@ -605,7 +606,6 @@ namespace ACE.Server.Managers
                 ("max_level", new Property<long>(275, "Set the max character level.")),
                 ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
                 ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
-                ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
                 ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out"))
                 );
 
