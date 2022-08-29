@@ -584,6 +584,7 @@ namespace ACE.Server.Managers
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
+                ("windup_turn_hard_limit", new Property<bool>(true, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
@@ -602,7 +603,9 @@ namespace ACE.Server.Managers
                 ("rares_max_seconds_between", new Property<long>(5256000, "for rares_real_time: the maximum number of seconds a player can go before a second chance at a rare is allowed on rare eligible creature kills that did not generate a rare")),
                 ("teleport_visibility_fix", new Property<long>(0, "Fixes some possible issues with invisible players and mobs. 0 = default / disabled, 1 = players only, 2 = creatures, 3 = all world objects")),
                 ("max_level", new Property<long>(275, "Set the max character level.")),
+                ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
                 ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
+                ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
                 ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out"))
                 );
 
