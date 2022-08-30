@@ -215,9 +215,9 @@ namespace ACE.Server.WorldObjects
             var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
             //Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
 
-            if (windUpRetryLimit <= 0)
+            if (windUpRetryLimit < 0)
             {
-                // If windup_turn_retry_number property is 0 try forever like before.
+                // If windup_turn_retry_number property is -1 try forever like before.
                 TurnTo_Magic(target);
                 return;
             }
@@ -786,7 +786,7 @@ namespace ACE.Server.WorldObjects
                     {
                         var castRetryLimit = PropertyManager.GetLong("cast_turn_retry_number").Item;
                         //Console.WriteLine($"castRetryLimit: {castRetryLimit}");
-                        if (castRetryLimit > 0)
+                        if (castRetryLimit >= 0)
                         {
                             if (castSpellParams.TurnTries < castRetryLimit)
                             {
@@ -804,7 +804,7 @@ namespace ACE.Server.WorldObjects
                         }
                         else
                         {
-                            // If cast_turn_retry_number is 0 try forever like before.
+                            // If cast_turn_retry_number is -1 try forever like before.
                             TurnTo_Magic(target);
                         }
                     }
@@ -841,12 +841,12 @@ namespace ACE.Server.WorldObjects
 
             if (FastTick)
             {
-                if (PropertyManager.GetDouble("spellcast_max_angle").Item > 5.0f && IsWithinAngle(target))
+                /*if (PropertyManager.GetDouble("spellcast_max_angle").Item > 5.0f && IsWithinAngle(target))
                 {
                     // emulate current gdle TurnTo - doesn't match retail, but some players may prefer this
                     OnMoveComplete_Magic(WeenieError.None);
                     return;
-                }
+                }*/
 
                 // verify cast radius before every automatic TurnTo after windup
                 if (!VerifyCastRadius())
@@ -1462,7 +1462,8 @@ namespace ACE.Server.WorldObjects
 
                     MagicState.AlwaysTurn = true;
 
-                    DoCastSpell(MagicState);
+                    //DoCastSpell(MagicState);
+                    TurnTo_Magic(MagicState.CastSpellParams.Target);    // switch to always turn -- else spellcast_max_angle messes with ability to holdcast
                 });
                 actionChain.EnqueueChain();
             }
