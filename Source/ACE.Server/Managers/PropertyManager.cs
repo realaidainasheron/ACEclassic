@@ -676,7 +676,8 @@ namespace ACE.Server.Managers
                 ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
                 ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
                 ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
-                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS"))
+                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS")),
+                ("cast_radius", new Property<double>(6.0, "the distance in meters a player can travel from their starting cast position. if they exceed this distance, they fizzle the spell."))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =
