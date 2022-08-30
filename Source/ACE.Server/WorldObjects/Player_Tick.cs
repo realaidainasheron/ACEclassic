@@ -322,7 +322,7 @@ namespace ACE.Server.WorldObjects
                     RequestedLocation = null;
                 }
 
-                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero)
+                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero || MagicState.IsCasting && MagicState.PendingTurnRelease))
                     UpdatePlayerPhysics();
 
                 InUpdate = false;
