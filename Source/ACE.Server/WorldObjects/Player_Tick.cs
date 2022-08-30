@@ -202,14 +202,6 @@ namespace ACE.Server.WorldObjects
                 OnMoveToState_ServerMethod(moveToState);
             else
                 OnMoveToState_ClientMethod(moveToState);
-
-            if (MagicState.IsCasting && MagicState.PendingTurnRelease)
-            {
-                var movement = PropertyManager.GetBool("hold_move").Item ? moveToState.HasMovement() : moveToState.RawMotionState.TurnCommand != 0;
-
-                if (!movement)
-                    OnTurnRelease();
-            }
         }
 
         public void OnMoveToState_ClientMethod(MoveToState moveToState)
@@ -322,7 +314,7 @@ namespace ACE.Server.WorldObjects
                     RequestedLocation = null;
                 }
 
-                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero || MagicState.IsCasting && MagicState.PendingTurnRelease))
+                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero || MagicState.IsCasting && MagicState.TurnToCancelled)
                     UpdatePlayerPhysics();
 
                 InUpdate = false;
@@ -397,7 +389,7 @@ namespace ACE.Server.WorldObjects
                 LastMoveToState = null;
             }*/
 
-            if (MagicState.IsCasting && MagicState.PendingTurnRelease)
+            if (MagicState.IsCasting && MagicState.TurnToCancelled)
                 CheckTurn();
         }
 

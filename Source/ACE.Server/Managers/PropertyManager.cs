@@ -584,12 +584,11 @@ namespace ACE.Server.Managers
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
-                ("windup_turn_hard_limit", new Property<bool>(true, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
+                ("windup_turn_hard_limit", new Property<bool>(false, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
                 ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
-                ("hold_move", new Property<bool>(false, "for pvp spellcasting, if TRUE, holds via any movement, instead of just turning")),
                 ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
                 ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold"))
                 );
