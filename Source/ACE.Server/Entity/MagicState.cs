@@ -78,12 +78,12 @@ namespace ACE.Server.Entity
         /// 0 - turn keys (default)
         /// 
         /// If a player interrupts a TurnTo during casting,
-        /// the TurnTo resumes when the player is no longer holding any Turn keys
+        /// the next action resumes when the player is no longer holding any Turn keys
         ///
         /// 1 - move keys
         ///
         /// If a player interrupts a TurnTo during casting,
-        /// the TurnTo resumes when the player is no longer holding any movement keys
+        /// the  next action resumes when the player is no longer holding any movement keys
         ///
         /// 2 - motion ready callback
         /// 
