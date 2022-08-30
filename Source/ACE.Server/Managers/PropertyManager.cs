@@ -590,7 +590,8 @@ namespace ACE.Server.Managers
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
                 ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
                 ("monitor_manual_turn", new Property<bool>(false, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
-                ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold"))
+                ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold")),
+                ("cast_turnto_optional", new Property<bool>(true, "for pvp spellcasting, if the player is facing within spellcast_max_angle when an automatic turnto is required, the automatic turnto will be skipped entirely"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
@@ -607,7 +608,8 @@ namespace ACE.Server.Managers
                 ("max_level", new Property<long>(275, "Set the max character level.")),
                 ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
                 ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
-                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out"))
+                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out")),
+                ("hold_cast_mode", new Property<long>(0, "for pvp casting, determines which mode to use to hold / delay the release of spells\n0 - turn keys (default)\n1 - move keys\n2 - ready state callback\nCurrent"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<double>> DefaultDoubleProperties =
