@@ -189,14 +189,14 @@ namespace ACE.Server.WorldObjects
 
         public void DoWindup(WindupParams windupParams, bool checkAngle)
         {
-            Console.WriteLine($"{Name}.DoWindup()");
+            //Console.WriteLine($"{Name}.DoWindup()");
 
             // ensure target still exists
             var targetCategory = GetTargetCategory(windupParams.TargetGuid, windupParams.SpellId, out var target);
 
             if (target == null)
             {
-                Console.WriteLine($"{Name}.DoWindup() - target == null");
+                //Console.WriteLine($"{Name}.DoWindup() - target == null");
                 SendUseDoneEvent(WeenieError.TargetNotAcquired);
                 MagicState.OnCastDone();
                 return;
@@ -204,58 +204,71 @@ namespace ACE.Server.WorldObjects
 
             if (!checkAngle || IsWithinAngle(target))
             {
-                Console.WriteLine($"{Name}.DoWindup() - checkAngle = {checkAngle}");
+                //Console.WriteLine($"{Name}.DoWindup() - checkAngle = {checkAngle}");
 
                 if (!CreatePlayerSpell(target, targetCategory, windupParams.SpellId, windupParams.BuiltInSpell))
                     MagicState.OnCastDone();
+
+                return;
+            }
+
+            var holdCastMode = (HoldCastMode)PropertyManager.GetLong("hold_cast_mode").Item;
+
+            var retry = true;
+
+            if (holdCastMode != HoldCastMode.ReadyStateCallback)
+            {
+                var movement = holdCastMode == HoldCastMode.MoveKeys ? CurrentMoveToState.HasMovement() : PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand != 0;
+
+                /*if (holdCastMode == HoldCastMode.MoveKeys)
+                    Console.WriteLine($"{Name}.DoWindup() - restart turn if required, HasMovement = {CurrentMoveToState.HasMovement()}");
+                else
+                    Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");*/
+
+                if (movement)
+                {
+                    retry = false;
+                    MagicState.TurnToCancelled = true;
+                }
+            }
+
+            if (retry)
+                DoWindup_Retry(windupParams, targetCategory, target);
+        }
+
+        public void DoWindup_Retry(WindupParams windupParams, TargetCategory targetCategory, WorldObject target)
+        {
+            var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
+            //Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
+
+            if (windUpRetryLimit < 0)
+            {
+                // If windup_turn_retry_number property is -1 try forever like before.
+                TurnTo_Magic(target);
+                return;
+            }
+
+            if (windupParams.TurnTries < windUpRetryLimit)
+            {
+                windupParams.TurnTries += 1;
+                //Console.WriteLine($"{Name} turn to in DoWindup try #{windupParams.TurnTries}/{windUpRetryLimit}");
+                TurnTo_Magic(target);
+                return;
+            }
+
+            // give up after trying to correct angle a few times..
+            //Console.WriteLine($"{Name} turn to in DoWindup giving up..");
+            if (PropertyManager.GetBool("windup_turn_hard_limit").Item)
+            {
+                // hard limit, cancel windup / spellcast
+                SendUseDoneEvent(WeenieError.ActionCancelled);
+                MagicState.OnCastDone();
             }
             else
             {
-                // restart turn if required
-                Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
-                if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
-                {
-                    var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
-                    Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
-                    if (windUpRetryLimit > 0)
-                    {
-                        if (windupParams.TurnTries < windUpRetryLimit)
-                        {
-                            windupParams.TurnTries += 1;
-                            Console.WriteLine($"{Name} turn to in DoWindup try #{windupParams.TurnTries}/{windUpRetryLimit}");
-                            TurnTo_Magic(target);
-                        }
-                        else
-                        {
-                            // give up after trying to correct angle a few times..
-                            Console.WriteLine($"{Name} turn to in DoWindup giving up..");
-                            if (PropertyManager.GetBool("windup_turn_hard_limit").Item)
-                            {
-                                // hard limit, cancel windup / spellcast
-                                SendUseDoneEvent(WeenieError.ActionCancelled);
-                                MagicState.OnCastDone();
-                            }
-                            else
-                            {
-                                // soft limit, begin windup anyway, even though we aren't facing towards target
-                                if (!CreatePlayerSpell(target, targetCategory, windupParams.SpellId, windupParams.BuiltInSpell))
-                                    MagicState.OnCastDone();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // If windup_turn_retry_number property is 0 try forever like before.
-                        TurnTo_Magic(target);
-                    }
-                }
-                else
-                {
-                    if (windupParams.TurnTries == 0)
-                        windupParams.TurnTries = 1;
-
-                    MagicState.PendingTurnRelease = true;
-                }
+                // soft limit, begin windup anyway, even though we aren't facing towards target
+                if (!CreatePlayerSpell(target, targetCategory, windupParams.SpellId, windupParams.BuiltInSpell))
+                    MagicState.OnCastDone();
             }
         }
 
@@ -797,43 +810,28 @@ namespace ACE.Server.WorldObjects
                     }
                     else
                     {
-                        Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
-                        if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
+                        var holdCastMode = (HoldCastMode)PropertyManager.GetLong("hold_cast_mode").Item;
+
+                        var retry = true;
+
+                        if (holdCastMode != HoldCastMode.ReadyStateCallback)
                         {
-                            var castRetryLimit = PropertyManager.GetLong("cast_turn_retry_number").Item;
-                            Console.WriteLine($"castRetryLimit: {castRetryLimit}");
-                            if (castRetryLimit > 0)
-                            {
-                                if (castSpellParams.TurnTries < castRetryLimit)
-                                {
-                                    castSpellParams.TurnTries += 1;
-                                    Console.WriteLine($"{Name} turn to in DoCastSpell try #{castSpellParams.TurnTries}/{castRetryLimit}");
-                                    TurnTo_Magic(target);
-                                }
-                                else
-                                {
-                                    // give up after trying to correct angle a few times..
-                                    Console.WriteLine($"{Name} turn to in DoCastSpell giving up..");
-                                    castingPreCheckStatus = CastingPreCheckStatus.CastFailed;
-                                    DoCastSpell_Inner(spell, isWeaponSpell, manaUsed, target, castingPreCheckStatus);
-                                }
-                            }
+                            var movement = holdCastMode == HoldCastMode.MoveKeys ? CurrentMoveToState.HasMovement() : PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand != 0;
+
+                            if (holdCastMode == HoldCastMode.MoveKeys)
+                                Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, HasMovement = {CurrentMoveToState.HasMovement()}");
                             else
+                                Console.WriteLine($"{Name}.DoCastSpell() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
+
+                            if (movement)
                             {
-                                // If cast_turn_retry_number is 0 try forever like before.
-                                TurnTo_Magic(target);
+                                retry = false;
+                                MagicState.TurnToCancelled = true;
                             }
-
                         }
-                        else
-                        {
-                            if (castSpellParams.TurnTries == 0)
-                                castSpellParams.TurnTries = 1;
-
-                            MagicState.PendingTurnRelease = true;
-                        }
+                        if (retry)
+                            DoCastSpell_Retry(spell, isWeaponSpell, manaUsed, target, castingPreCheckStatus, castSpellParams);
                     }
-
                     return;
                 }
 
@@ -854,6 +852,33 @@ namespace ACE.Server.WorldObjects
             DoCastSpell_Inner(spell, isWeaponSpell, manaUsed, target, castingPreCheckStatus);
         }
 
+        public void DoCastSpell_Retry(Spell spell, bool isWeaponSpell, uint manaUsed, WorldObject target, CastingPreCheckStatus castingPreCheckStatus, CastSpellParams castSpellParams)
+        {
+            var castRetryLimit = PropertyManager.GetLong("cast_turn_retry_number").Item;
+            //Console.WriteLine($"castRetryLimit: {castRetryLimit}");
+            if (castRetryLimit >= 0)
+            {
+                if (castSpellParams.TurnTries < castRetryLimit)
+                {
+                    castSpellParams.TurnTries += 1;
+                    //Console.WriteLine($"{Name} turn to in DoCastSpell try #{castSpellParams.TurnTries}/{castRetryLimit}");
+                    TurnTo_Magic(target);
+                }
+                else
+                {
+                    // give up after trying to correct angle a few times..
+                    //Console.WriteLine($"{Name} turn to in DoCastSpell giving up..");
+                    castingPreCheckStatus = CastingPreCheckStatus.CastFailed;
+                    DoCastSpell_Inner(spell, isWeaponSpell, manaUsed, target, castingPreCheckStatus);
+                }
+            }
+            else
+            {
+                // If cast_turn_retry_number is -1 try forever like before.
+                TurnTo_Magic(target);
+            }
+        }
+
         public WorldObject TurnTarget;
 
         public void TurnTo_Magic(WorldObject target)
@@ -863,15 +888,20 @@ namespace ACE.Server.WorldObjects
 
             MagicState.TurnStarted = true;
             MagicState.IsTurning = true;
+            MagicState.TurnToCancelled = false;
 
             if (FastTick)
             {
-                if (PropertyManager.GetDouble("spellcast_max_angle").Item > 5.0f && IsWithinAngle(target))
+                if (PropertyManager.GetDouble("spellcast_max_angle").Item > 5.0f && IsWithinAngle(target) && PropertyManager.GetBool("cast_turnto_optional").Item)
                 {
                     // emulate current gdle TurnTo - doesn't match retail, but some players may prefer this
                     OnMoveComplete_Magic(WeenieError.None);
                     return;
                 }
+
+                // verify cast radius before every automatic TurnTo after windup
+                if (!VerifyCastRadius())
+                    return;
 
                 var stopCompletely = !MagicState.CastMotionDone;
                 //var stopCompletely = true;
@@ -920,7 +950,8 @@ namespace ACE.Server.WorldObjects
             var dist = StartPos.Distance(endPos);
 
             // only PKs affected by these caps?
-            if (dist > Windup_MaxMove && PlayerKillerStatus != PlayerKillerStatus.NPK)
+            //if (dist > Windup_MaxMove && PlayerKillerStatus != PlayerKillerStatus.NPK)
+            if (dist > PropertyManager.GetDouble("cast_radius").Item && PlayerKillerStatus != PlayerKillerStatus.NPK)
             {
                 //player.Session.Network.EnqueueSend(new GameEventWeenieError(player.Session, WeenieError.YouHaveMovedTooFar));
                 Session.Network.EnqueueSend(new GameMessageSystemChat("Your movement disrupted spell casting!", ChatMessageType.Magic));
@@ -1482,9 +1513,15 @@ namespace ACE.Server.WorldObjects
 
                     MagicState.AlwaysTurn = true;
 
-                    DoCastSpell(MagicState);
+                    //DoCastSpell(MagicState);
+                    TurnTo_Magic(MagicState.CastSpellParams.Target);    // switch to always turn -- else spellcast_max_angle messes with ability to holdcast
                 });
                 actionChain.EnqueueChain();
+            }
+            else if (MagicState.TurnToCancelled && motionID == (uint)MotionCommand.Ready && PropertyManager.GetLong("hold_cast_mode").Item == (int)HoldCastMode.ReadyStateCallback)
+            {
+                MagicState.TurnToCancelled = false;
+                CheckNextStep(true);
             }
         }
 
@@ -1504,8 +1541,31 @@ namespace ACE.Server.WorldObjects
 
             MagicState.IsTurning = false;
 
-            var checkAngle = status != WeenieError.None;
+            if (PropertyManager.GetLong("hold_cast_mode").Item == (int)HoldCastMode.ReadyStateCallback)
+            {
+                if (status == WeenieError.None)
+                {
+                    // automatic TurnTo completed
+                    // never any further angle adjustments / restarts,
+                    // even if server setting is set, and we aren't actually facing target
+                    CheckNextStep(false);
+                }
+                else
+                {
+                    // CheckNextStep(true) now happens on next Ready state
+                    MagicState.TurnToCancelled = true;
+                }
+            }
+            else
+            {
+                var checkAngle = status != WeenieError.None;
 
+                CheckNextStep(checkAngle);
+            }
+        }
+
+        public void CheckNextStep(bool checkAngle)
+        {
             var actionChain = new ActionChain();
             actionChain.AddDelayForOneTick();
             actionChain.AddAction(this, () =>
@@ -1539,7 +1599,7 @@ namespace ACE.Server.WorldObjects
 
         public void OnTurnRelease()
         {
-            MagicState.PendingTurnRelease = false;
+            MagicState.TurnToCancelled = false;
 
             if (!MagicState.CastMotionDone)
                 DoWindup(MagicState.WindupParams, true);
@@ -1547,16 +1607,35 @@ namespace ACE.Server.WorldObjects
                 DoCastSpell(MagicState, true);
         }
 
+        public bool VerifyCastRadius()
+        {
+            if (!PropertyManager.GetBool("verify_cast_radius").Item)
+                return true;
+
+            if (MagicState.CastGestureStartTime != DateTime.MinValue)
+            {
+                var dist = StartPos.Distance(PhysicsObj.Position);
+
+                //if (dist > Windup_MaxMove && PlayerKillerStatus != PlayerKillerStatus.NPK)
+                if (dist > PropertyManager.GetDouble("cast_radius").Item && PlayerKillerStatus != PlayerKillerStatus.NPK)
+                {
+                    FailCast();
+                    return false;
+                }
+            }
+            return true;
+        }
+
         public void CheckTurn()
         {
+            // verify cast radius while manually moving after windup
+            if (!VerifyCastRadius()) return;
+
             if (!PropertyManager.GetBool("monitor_manual_turn").Item) return;
 
             if (TurnTarget != null && IsWithinAngle(TurnTarget))
             {
-                if (MagicState.PendingTurnRelease)
-                    OnTurnRelease();
-                else
-                    PhysicsObj.StopCompletely(false);
+                OnTurnRelease();
             }
         }
 
