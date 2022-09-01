@@ -1526,8 +1526,8 @@ namespace ACE.Server.WorldObjects
 
                     MagicState.AlwaysTurn = true;
 
-                    //DoCastSpell(MagicState);
-                    TurnTo_Magic(MagicState.CastSpellParams.Target);    // switch to always turn -- else spellcast_max_angle messes with ability to holdcast
+                    DoCastSpell(MagicState);
+                    //TurnTo_Magic(MagicState.CastSpellParams.Target);    // switch to always turn -- else spellcast_max_angle messes with ability to holdcast
                 });
                 actionChain.EnqueueChain();
             }
