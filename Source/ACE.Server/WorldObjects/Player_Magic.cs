@@ -754,31 +754,44 @@ namespace ACE.Server.WorldObjects
 
         public bool IsWithinAngle(WorldObject target)
         {
-            // TODO: investigate this more, difference for GetAngle() between ACE and ac physics engine
-            var angle = 0.0f;
-            if (target != this)
+            try
             {
-                if (target.CurrentLandblock == null)
+                if (target == null)
                 {
-                    FindObject(target.Guid.Full, SearchLocations.Everywhere, out _, out var rootOwner, out _);
-
-                    if (rootOwner == null)
-                        log.Error($"{Name}.IsWithinAngle({target.Name} ({target.Guid})) - couldn't find rootOwner");
-
-                    else if (rootOwner != this)
-                        angle = GetAngle(rootOwner);
+                    return false;
                 }
-                else
-                    angle = GetAngle(target);
+
+                // TODO: investigate this more, difference for GetAngle() between ACE and ac physics engine
+                var angle = 0.0f;
+                if (target != this)
+                {
+                    if (target.CurrentLandblock == null)
+                    {
+                        FindObject(target.Guid.Full, SearchLocations.Everywhere, out _, out var rootOwner, out _);
+
+                        if (rootOwner == null)
+                            log.Error($"{Name}.IsWithinAngle({target.Name} ({target.Guid})) - couldn't find rootOwner");
+
+                        else if (rootOwner != this)
+                            angle = GetAngle(rootOwner);
+                    }
+                    else
+                        angle = GetAngle(target);
+                }
+
+                //Console.WriteLine($"Angle: " + angle);
+                var maxAngle = PropertyManager.GetDouble("spellcast_max_angle").Item;
+
+                if (RecordCast.Enabled)
+                    RecordCast.Log($"DoCastSpell(angle={angle} vs. {maxAngle})");
+
+                return angle <= maxAngle;
             }
-
-            //Console.WriteLine($"Angle: " + angle);
-            var maxAngle = PropertyManager.GetDouble("spellcast_max_angle").Item;
-
-            if (RecordCast.Enabled)
-                RecordCast.Log($"DoCastSpell(angle={angle} vs. {maxAngle})");
-
-            return angle <= maxAngle;
+            catch(Exception ex)
+            {
+                log.Error($"Exception in IsWithinAngle. ex: {ex}");
+                return false;
+            }
         }
 
         public void DoCastSpell(Spell spell, bool isWeaponSpell, uint magicSkill, uint manaUsed, WorldObject target, CastingPreCheckStatus castingPreCheckStatus, CastSpellParams castSpellParams, bool checkAngle = true)
