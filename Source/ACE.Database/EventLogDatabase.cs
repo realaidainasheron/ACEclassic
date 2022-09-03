@@ -198,6 +198,8 @@ namespace ACE.Database
         {
             var logEntry = new TinkerLog();
 
+            log.Debug($"LogTinkeringEvent itemBiotaId = {itemBiotaId}");
+
             try
             {
                 logEntry.CharacterId = characterId;
