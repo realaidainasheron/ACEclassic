@@ -36,7 +36,7 @@ CREATE TABLE `tinker_log` (
   `tinkerLogId` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `characterId` INT UNSIGNED NOT NULL,
   `characterName` VARCHAR(50) NOT NULL,
-  `itemBiotaId` INT,
+  `itemBiotaId` INT UNSIGNED,
   `tinkDateTime` DATETIME,
   `successChance` FLOAT,
   `roll` FLOAT,
