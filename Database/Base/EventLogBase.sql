@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.22, for Linux (x86_64)
 --
--- Host: localhost    Database: aceclassic_event_log
+-- Host: localhost    Database: ace_event_log
 -- ------------------------------------------------------
 -- Server version	8.0.22
 
@@ -16,14 +16,14 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `aceclassic_event_log`
+-- Current Database: `ace_event_log`
 --
 
-/*!40000 DROP DATABASE IF EXISTS `aceclassic_event_log`*/;
+/*!40000 DROP DATABASE IF EXISTS `ace_event_log`*/;
 
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `aceclassic_event_log` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `ace_event_log` /*!40100 DEFAULT CHARACTER SET utf8mb4 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 
-USE `aceclassic_event_log`;
+USE `ace_event_log`;
 
 --
 -- Table structure for table `tinker_log`
@@ -61,8 +61,8 @@ CREATE TABLE `account_session_log` (
   `accountId` INT UNSIGNED NOT NULL,
   `accountName` VARCHAR(50) NOT NULL,  
   `sessionIP` VARCHAR(45),
-  `startDateTime` DATETIME,  
-  `endDateTime` DATETIME,
+  `loginDateTime` DATETIME,  
+  `logoutDateTime` DATETIME,
   PRIMARY KEY (`sessionLogId`)  
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
