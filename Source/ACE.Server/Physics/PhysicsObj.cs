@@ -4300,7 +4300,7 @@ namespace ACE.Server.Physics
         /// </summary>
         public bool update_object_server_new(bool forcePos = true)
         {
-            if (Parent != null || CurCell == null || State.HasFlag(PhysicsState.Frozen))
+            if (Parent != null || CurCell == null || State.HasFlag(PhysicsState.Frozen) && !(WeenieObj.WorldObject?.Teleporting ?? false))
             {
                 TransientState &= ~TransientStateFlags.Active;
                 return false;
