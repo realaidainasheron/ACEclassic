@@ -584,12 +584,14 @@ namespace ACE.Server.Managers
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
-                ("windup_turn_hard_limit", new Property<bool>(true, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
+                ("windup_turn_hard_limit", new Property<bool>(false, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
                 ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
-                ("monitor_manual_turn", new Property<bool>(true, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell"))
+                ("monitor_manual_turn", new Property<bool>(false, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
+                ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold")),
+                ("cast_turnto_optional", new Property<bool>(true, "for pvp spellcasting, if the player is facing within spellcast_max_angle when an automatic turnto is required, the automatic turnto will be skipped entirely"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
@@ -604,9 +606,10 @@ namespace ACE.Server.Managers
                 ("rares_max_seconds_between", new Property<long>(5256000, "for rares_real_time: the maximum number of seconds a player can go before a second chance at a rare is allowed on rare eligible creature kills that did not generate a rare")),
                 ("teleport_visibility_fix", new Property<long>(0, "Fixes some possible issues with invisible players and mobs. 0 = default / disabled, 1 = players only, 2 = creatures, 3 = all world objects")),
                 ("max_level", new Property<long>(275, "Set the max character level.")),
-                ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
-                ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
-                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out"))
+                ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
+                ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
+                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out")),
+                ("hold_cast_mode", new Property<long>(0, "for pvp casting, determines which mode to use to hold / delay the release of spells\n0 - turn keys (default)\n1 - move keys\n2 - ready state callback\nCurrent"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<double>> DefaultDoubleProperties =
@@ -674,7 +677,8 @@ namespace ACE.Server.Managers
                 ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
                 ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
                 ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
-                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS"))
+                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS")),
+                ("cast_radius", new Property<double>(6.0, "the distance in meters a player can travel from their starting cast position. if they exceed this distance, they fizzle the spell."))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =

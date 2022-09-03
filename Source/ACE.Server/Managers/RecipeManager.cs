@@ -290,7 +290,7 @@ namespace ACE.Server.Managers
 
                 // imbue: divide success by 3
                 if (recipe.SalvageType == 2)
-                {
+                {                    
                     successChance /= 3.0f;
 
                     if (player.AugmentationBonusImbueChance > 0)
@@ -335,10 +335,17 @@ namespace ACE.Server.Managers
         }
 
         public static void DoTinkering(Player player, WorldObject tool, WorldObject target, Recipe recipe, float chance, bool incItemTinkered)
-        {
-            var success = ThreadSafeRandom.Next(0.0f, 1.0f) < chance;
+        {            
+            var roll = ThreadSafeRandom.Next(0.0f, 1.0f);
+            var success =  roll < chance;
+            var startingTinkCount = (uint)target.NumTimesTinkered;
 
             var sourceName = Regex.Replace(tool.NameWithMaterial, @" \(\d+\)$", "");
+
+            if (recipe.SalvageType == 2)
+            {
+                player.ImbueAttempts++;
+            }
 
             if (success)
             {
@@ -346,10 +353,28 @@ namespace ACE.Server.Managers
 
                 // send local broadcast
                 if (incItemTinkered)
+                {
                     player.EnqueueBroadcast(new GameMessageSystemChat($"{player.Name} successfully applies the {sourceName} (workmanship {(tool.Workmanship ?? 0):#.00}) to the {target.NameWithMaterial}.", ChatMessageType.Craft), WorldObject.LocalBroadcastRange, ChatMessageType.Craft);
+                }
+
+                if (recipe.SalvageType == 2)
+                {
+                    player.ImbueSuccesses++;
+                }
             }
             else if (incItemTinkered)
+            {
                 player.EnqueueBroadcast(new GameMessageSystemChat($"{player.Name} fails to apply the {sourceName} (workmanship {(tool.Workmanship ?? 0):#.00}) to the {target.NameWithMaterial}. The target is destroyed.", ChatMessageType.Craft), WorldObject.LocalBroadcastRange, ChatMessageType.Craft);
+            }
+
+            try
+            {
+                new EventLogDatabase().LogTinkeringEvent(player.Character.Id, player.Name, target.Biota.Id, chance, (float)roll, success, startingTinkCount, (uint)(target.Workmanship ?? 0), sourceName, (uint)(tool.Workmanship ?? 0));
+            }
+            catch (Exception ex)
+            {
+                log.Error($"Exception saving tinker log data to DB. Ex: {ex}");
+            }
 
             CreateDestroyItems(player, recipe, tool, target, success, !incItemTinkered);
 

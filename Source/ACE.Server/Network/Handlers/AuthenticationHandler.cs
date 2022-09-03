@@ -314,7 +314,7 @@ namespace ACE.Server.Network.Handlers
 
             try
             {
-                new SessionLogDatabase().LogAccountSessionStart(session.AccountId, session.Account, session.EndPoint.Address.ToString());
+                new EventLogDatabase().LogAccountSessionStart(session.AccountId, session.Account, session.EndPoint.Address.ToString());
             }
             catch(Exception ex)
             {

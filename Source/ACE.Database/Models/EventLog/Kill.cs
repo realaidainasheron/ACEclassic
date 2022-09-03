@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace ACE.Database.Models.PKKills
+namespace ACE.Database.Models.EventLog
 {
-    public partial class Kill
+    public partial class PKKill
     {
         public uint Id { get; set; }
         public uint KillerId { get; set; }
