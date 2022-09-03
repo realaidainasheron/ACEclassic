@@ -369,6 +369,7 @@ namespace ACE.Server.Managers
 
             try
             {
+                log.Info($"target.Biota.Id = {target.Biota.Id}");
                 new EventLogDatabase().LogTinkeringEvent(player.Character.Id, player.Name, target.Biota.Id, chance, (float)roll, success, startingTinkCount, (uint)(target.Workmanship ?? 0), sourceName, (uint)(tool.Workmanship ?? 0));
             }
             catch (Exception ex)

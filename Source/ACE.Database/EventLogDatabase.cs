@@ -198,7 +198,7 @@ namespace ACE.Database
         {
             var logEntry = new TinkerLog();
 
-            log.Debug($"LogTinkeringEvent itemBiotaId = {itemBiotaId}");
+            log.Info($"LogTinkeringEvent itemBiotaId = {itemBiotaId}");
 
             try
             {
