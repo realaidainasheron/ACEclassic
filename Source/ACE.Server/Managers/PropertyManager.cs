@@ -622,6 +622,11 @@ namespace ACE.Server.Managers
                 ("universal_masteries", new Property<bool>(true, "if TRUE, matches end of retail masteries - players wielding almost any weapon get +5 DR, except if the weapon \"seems tough to master\". " +
                                                                  "if FALSE, players start with mastery of 1 melee and 1 ranged weapon type based on heritage, and can later re-select these 2 masteries")),
                 ("use_constraint_manager", new Property<bool>(false, "enables the constraint manager on the server, which can mitigate some of the desyncs between the client and server movement methods")),
+                ("use_turbine_chat", new Property<bool>(true, "enables or disables global chat channels (General, LFG, Roleplay, Trade, Olthoi, Society, Allegience)")),
+                ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
+                ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
+                ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
+                ("windup_turn_hard_limit", new Property<bool>(false, "determines what to do if the windup turn fails. if true, cancels the windup / spellcast. if false, begins the windup anyway.")),
                 ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
                 ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
                 ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
@@ -631,7 +636,10 @@ namespace ACE.Server.Managers
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
                 ("version_info_enabled", new Property<bool>(false, "toggles the /aceversion player command")),
                 ("vendor_shop_uses_generator", new Property<bool>(false, "enables or disables vendors using generator system in addition to createlist to create artificial scarcity")),
-                ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world"))
+                ("world_closed", new Property<bool>(false, "enable this to startup world as a closed to players world")),
+                ("monitor_manual_turn", new Property<bool>(false, "for pvp spellcasting, if TRUE, automatically releases spells during manual turn when within angle threshold. if FALSE, players must release manual turn to launch spell")),
+                ("verify_cast_radius", new Property<bool>(true, "for pvp spellcasting, if TRUE, repeatedly checks if player is within spellcast radius during the hold")),
+                ("cast_turnto_optional", new Property<bool>(true, "for pvp spellcasting, if the player is facing within spellcast_max_angle when an automatic turnto is required, the automatic turnto will be skipped entirely"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<long>> DefaultLongProperties =
@@ -653,7 +661,11 @@ namespace ACE.Server.Managers
                 ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
                 ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out")),
                 ("summoning_killtask_multicredit_cap", new Property<long>(2, "if allow_summoning_killtask_multicredit is enabled, the maximum # of killtask credits a player can receive from 1 kill")),
-                ("teleport_visibility_fix", new Property<long>(0, "Fixes some possible issues with invisible players and mobs. 0 = default / disabled, 1 = players only, 2 = creatures, 3 = all world objects"))
+                ("teleport_visibility_fix", new Property<long>(0, "Fixes some possible issues with invisible players and mobs. 0 = default / disabled, 1 = players only, 2 = creatures, 3 = all world objects")),
+                ("cast_turn_retry_number", new Property<long>(0, "Fixes turning forever during spellcast release. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
+                ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. -1 = disabled, 0 = no retries / default, 1 = retry one time, 2 = retry two times, ...")),
+                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out")),
+                ("hold_cast_mode", new Property<long>(0, "for pvp casting, determines which mode to use to hold / delay the release of spells\n0 - turn keys (default)\n1 - move keys\n2 - ready state callback\nCurrent"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<double>> DefaultDoubleProperties =
@@ -722,7 +734,8 @@ namespace ACE.Server.Managers
                 ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
                 ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
                 ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
-                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS"))
+                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS")),
+                ("cast_radius", new Property<double>(6.0, "the distance in meters a player can travel from their starting cast position. if they exceed this distance, they fizzle the spell."))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =

@@ -147,7 +147,7 @@
                 "Enabled": false
             }
         ],
-        "WorldRuleset": 2 <!--Infiltration-->
+        "WorldRuleset": 2 //Infiltration
     },
     "MySql": {
         "Authentication": {
@@ -171,21 +171,13 @@
             "Username": "root",
             "Password": ""
         },
-        "PKKills": {
+        "EventLog": {
             "Host": "127.0.0.1",
             "Port": 3306,
-            "Database": "ace_pk_kills",
-            "Username": "root",
-            "Password": ""
-        },
-        "SessionLog": {
-            "Host": "127.0.0.1",
-            "Port": 3306,
-            "Database": "ace_session_log",
+            "Database": "ace_event_log",
             "Username": "root",
             "Password": ""
         }
-
     },
   // This section can trigger events that may happen before the world starts up, or after it shuts down
   // The shard should be in a disconnected state from any running ACE world

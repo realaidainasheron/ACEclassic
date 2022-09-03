@@ -874,9 +874,9 @@ namespace ACE.Server.Entity
             }
             // ACEClassic-ENDPATCH
 
-            wo.BeforeEnterWorld();
+            /*wo.BeforeEnterWorld();
 
-            return AddWorldObjectInternal(wo);
+            return AddWorldObjectInternal(wo);*/
         }
 
         public void AddWorldObjectForPhysics(WorldObject wo)

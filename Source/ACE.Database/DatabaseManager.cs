@@ -12,9 +12,7 @@ namespace ACE.Database
 
         public static WorldDatabaseWithEntityCache World { get; } = new WorldDatabaseWithEntityCache();
 
-        public static PKKillsDatabase PKKills { get; } = new PKKillsDatabase();
-
-        public static SessionLogDatabase SessionLog { get; } = new SessionLogDatabase();
+        public static EventLogDatabase EventLog { get; } = new EventLogDatabase();
 
         private static SerializedShardDatabase serializedShardDb;
 

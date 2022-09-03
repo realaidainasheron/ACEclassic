@@ -338,12 +338,23 @@ namespace ACE.Server.Managers
                 return;
             }
 
-            var success = ThreadSafeRandom.Next(0.0f, 1.0f) < successChance;
+            var roll = ThreadSafeRandom.Next(0.0f, 1.0f);
+            var success =  roll < successChance;
+            var startingTinkCount = (uint)target.NumTimesTinkered;
 
             if (recipe.IsImbuing())
             {
                 player.ImbueAttempts++;
                 if (success) player.ImbueSuccesses++;
+
+                try
+                {
+                    new EventLogDatabase().LogTinkeringEvent(player.Character.Id, player.Name, target.Biota.Id, (float)successChance, (float)roll, success, startingTinkCount, (uint)(target.Workmanship ?? 0), source.Name, (uint)(source.Workmanship ?? 0));
+                }
+                catch (Exception ex)
+                {
+                    log.Error($"Exception saving tinker log data to DB. Ex: {ex}");
+                }
             }
 
             var modified = CreateDestroyItems(player, recipe, source, target, successChance, success);

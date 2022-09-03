@@ -222,8 +222,18 @@ namespace ACE.Server.WorldObjects
             else
                 OnMoveToState_ClientMethod(moveToState);
 
-            if (MagicState.IsCasting && MagicState.PendingTurnRelease && moveToState.RawMotionState.TurnCommand == 0)
-                OnTurnRelease();
+            if (MagicState.IsCasting && MagicState.TurnToCancelled)
+            {
+                var holdCastMode = (HoldCastMode)PropertyManager.GetLong("hold_cast_mode").Item;
+
+                if (holdCastMode != HoldCastMode.ReadyStateCallback)
+                {
+                    var movement = holdCastMode == HoldCastMode.MoveKeys ? moveToState.HasMovement() : moveToState.RawMotionState.TurnCommand != 0;
+
+                    if (!movement)
+                        OnTurnRelease();
+                }
+            }
         }
 
         public void OnMoveToState_ClientMethod(MoveToState moveToState)
@@ -336,7 +346,7 @@ namespace ACE.Server.WorldObjects
                     RequestedLocation = null;
                 }
 
-                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero)
+                if (FastTick && PhysicsObj.IsMovingOrAnimating || PhysicsObj.Velocity != Vector3.Zero || MagicState.IsCasting && MagicState.TurnToCancelled)
                 {
                     UpdatePlayerPhysics();
 
@@ -417,7 +427,7 @@ namespace ACE.Server.WorldObjects
                 LastMoveToState = null;
             }*/
 
-            if (MagicState.IsCasting && MagicState.PendingTurnRelease)
+            if (MagicState.IsCasting && MagicState.TurnToCancelled)
                 CheckTurn();
         }
 

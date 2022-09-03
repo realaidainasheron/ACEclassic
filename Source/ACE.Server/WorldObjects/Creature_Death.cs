@@ -599,7 +599,14 @@ namespace ACE.Server.WorldObjects
                             victimMonarchId = victimAllegiance.MonarchId;
                         }
 
-                        DatabaseManager.PKKills.CreateKill((uint)corpse.VictimId, (uint)killer.Guid.Full, victimMonarchId, killerMonarchId);
+                        try
+                        {
+                            DatabaseManager.EventLog.LogPkKill((uint)corpse.VictimId, (uint)killer.Guid.Full, victimMonarchId, killerMonarchId);
+                        }
+                        catch(Exception ex)
+                        {
+                            log.Error($"Exception logging PK Kill to DB. Ex: {ex}");
+                        }
                     }
                 }
 
