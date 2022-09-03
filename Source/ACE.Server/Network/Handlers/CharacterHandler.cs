@@ -272,11 +272,11 @@ namespace ACE.Server.Network.Handlers
 
             try
             {
-                new SessionLogDatabase().LogCharacterLogin(session.AccountId, session.Account, session.EndPoint.Address.ToString(), character.Id, character.Name);
+                new EventLogDatabase().LogCharacterLogin(session.AccountId, session.Account, session.EndPoint.Address.ToString(), character.Id, character.Name);
             }
             catch(Exception ex)
             {
-
+                log.Error($"Exception logging character login. Ex: {ex}");
             }
         }
 
