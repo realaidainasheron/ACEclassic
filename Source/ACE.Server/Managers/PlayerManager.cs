@@ -78,7 +78,14 @@ namespace ACE.Server.Managers
                 if (first.LogoffTimestamp <= currentUnixTime)
                 {
                     playersPendingLogoff.RemoveFirst();
-                    first.LogOut_Inner();
+
+                    if (first.PkLogoutState is Player.LogoutState.InProgress)
+                        first.PkLogoutState = Player.LogoutState.Ready;
+
+                    if (first.MaterializedLogoutState is Player.LogoutState.InProgress)
+                        first.MaterializedLogoutState = Player.LogoutState.Ready;
+
+                    first.LogOut(); 
                     first.Session.logOffRequestTime = DateTime.UtcNow;
                 }
                 else
@@ -566,10 +573,18 @@ namespace ACE.Server.Managers
             else
                 BroadcastToChannelFromConsole(Channel.Audit, message);
 
-            //if (PropertyManager.GetBool("log_audit", true).Item)
-                //log.Info($"[AUDIT] {(issuer != null ? $"{issuer.Name} says on the Audit channel: " : "")}{message}");
 
-            //LogBroadcastChat(Channel.Audit, issuer, message);
+            var webhook = PropertyManager.GetString("turbine_chat_webhook_audit").Item;
+            if (string.IsNullOrWhiteSpace(webhook))
+            {
+                // Disable this nag if you don't plan on using a Discord-based audit channel.
+                //log.Error("turbine_chat_webhook_audit is not defined!");
+                return;
+            }
+            _ = Network.Handlers.TurbineChatHandler.SendWebhookedChat(issuer?.Name ?? "[SYSTEM]", message, webhook, "AUDIT");
+
+            if (PropertyManager.GetBool("log_audit", true).Item)
+                log.Info($"[AUDIT] {(issuer != null ? $"{issuer.Name} says on the Audit channel: " : "")}{message}");
         }
 
         public static void BroadcastToChannel(Channel channel, Player sender, string message, bool ignoreSquelch = false, bool ignoreActive = false)
@@ -692,7 +707,7 @@ namespace ACE.Server.Managers
                 player.Session.Network.EnqueueSend(new GameEventChannelBroadcast(player.Session, channel, "EMOTE", message));
         }
 
-        public static bool GagPlayer(Player issuer, string playerName)
+        public static bool GagPlayer(Player issuer, string playerName, int numDays = 3)
         {
             var player = FindByName(playerName);
 
@@ -701,11 +716,11 @@ namespace ACE.Server.Managers
 
             player.SetProperty(ACE.Entity.Enum.Properties.PropertyBool.IsGagged, true);
             player.SetProperty(ACE.Entity.Enum.Properties.PropertyFloat.GagTimestamp, Common.Time.GetUnixTime());
-            player.SetProperty(ACE.Entity.Enum.Properties.PropertyFloat.GagDuration, 300);
+            player.SetProperty(ACE.Entity.Enum.Properties.PropertyFloat.GagDuration, numDays * 86400);
 
             player.SaveBiotaToDatabase();
 
-            BroadcastToAuditChannel(issuer, $"{issuer.Name} has gagged {player.Name} for five minutes.");
+            BroadcastToAuditChannel(issuer, $"{issuer.Name} has gagged {player.Name} for {numDays} days.");
 
             return true;
         }

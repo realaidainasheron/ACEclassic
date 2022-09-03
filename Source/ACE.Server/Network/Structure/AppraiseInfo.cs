@@ -332,6 +332,32 @@ namespace ACE.Server.Network.Structure
                 //PropertiesString.Clear();
             }
 
+            //PropertiesInt.Add(PropertyInt.WieldRequirements2, (int)WieldRequirement.IntStat);
+            //PropertiesInt.Add(PropertyInt.WieldSkillType2, (int)PropertyInt.ChessRank);
+            //PropertiesInt.Add(PropertyInt.WieldDifficulty2, 100);
+
+            //PropertiesInt.Add(PropertyInt.WieldRequirements3, (int)WieldRequirement.Level);
+            //PropertiesInt.Add(PropertyInt.WieldSkillType3, 0);
+            //PropertiesInt.Add(PropertyInt.WieldDifficulty3, 100);
+
+            //PropertiesInt.Add(PropertyInt.WieldRequirements4, (int)WieldRequirement.Attrib);
+            //PropertiesInt.Add(PropertyInt.WieldSkillType4, (int)PropertyAttribute.Strength);
+            //PropertiesInt.Add(PropertyInt.WieldDifficulty4, 100);
+
+            //if (PropertiesInt.ContainsKey(PropertyInt.MaterialType))
+            //    PropertiesInt.Remove(PropertyInt.MaterialType);
+            //if (PropertiesInt.ContainsKey(PropertyInt.ItemWorkmanship))
+            //    PropertiesInt.Remove(PropertyInt.ItemWorkmanship);
+            //string newLongDesc = "Wield requires highest attribute 100";
+            //newLongDesc += "\n\nWield requires Strength, Coordination or Self 100";
+            //newLongDesc += "\n\nWield requires Strength/Coordination/Self 100";
+            //if (PropertiesString.TryGetValue(PropertyString.LongDesc, out string oldLongDesc))
+            //{
+            //    PropertiesString.Remove(PropertyString.LongDesc);
+            //    newLongDesc = $"{newLongDesc}\n\n{oldLongDesc}";
+            //}
+            //PropertiesString.Add(PropertyString.LongDesc, newLongDesc);
+
             BuildFlags();
         }
 
@@ -489,6 +515,9 @@ namespace ACE.Server.Network.Structure
             foreach (var enchantment in woEnchantments)
                 SpellBook.Add((uint)enchantment.SpellId | EnchantmentMask);
 
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                return;
+
             // show auras from wielder, if applicable
 
             // this technically wasn't a feature in retail
@@ -559,10 +588,13 @@ namespace ACE.Server.Network.Structure
             ResistHighlight = ResistMaskHelper.GetHighlightMask(creature);
             ResistColor = ResistMaskHelper.GetColorMask(creature);
 
-            if (Success && (creature is Player || !creature.Attackable))
-                ArmorLevels = new ArmorLevel(creature);
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+            {
+                if (Success && (creature is Player || !creature.Attackable))
+                    ArmorLevels = new ArmorLevel(creature);
 
-            AddRatings(creature);
+                AddRatings(creature);
+            }
 
             if (NPCLooksLikeObject)
             {

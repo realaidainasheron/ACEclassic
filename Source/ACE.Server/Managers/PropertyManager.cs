@@ -489,6 +489,26 @@ namespace ACE.Server.Managers
             //string
             foreach (var item in DefaultStringProperties)
                 PropertyManager.ModifyString(item.Key, item.Value.Item);
+
+            // Alternative ruleset's default overrides
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.Infiltration)
+            {
+                PropertyManager.ModifyBool("item_dispel", true);
+                PropertyManager.ModifyBool("vendor_shop_uses_generator", true);
+                PropertyManager.ModifyBool("allow_xp_at_max_level", true);
+                PropertyManager.ModifyBool("show_dat_warning", true);
+
+                PropertyManager.ModifyLong("max_level", 126);
+            }
+            else if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+            {
+                PropertyManager.ModifyBool("item_dispel", true);
+                PropertyManager.ModifyBool("vendor_shop_uses_generator", true);
+                PropertyManager.ModifyBool("allow_xp_at_max_level", true);
+                PropertyManager.ModifyBool("show_dat_warning", true);
+
+                PropertyManager.ModifyLong("max_level", 126);
+            }
         }
 
         // ==================================================================================
@@ -601,6 +621,11 @@ namespace ACE.Server.Managers
                 ("trajectory_alt_solver", new Property<bool>(false, "use the alternate trajectory solver for missiles and spell projectiles")),
                 ("universal_masteries", new Property<bool>(true, "if TRUE, matches end of retail masteries - players wielding almost any weapon get +5 DR, except if the weapon \"seems tough to master\". " +
                                                                  "if FALSE, players start with mastery of 1 melee and 1 ranged weapon type based on heritage, and can later re-select these 2 masteries")),
+                ("use_constraint_manager", new Property<bool>(false, "enables the constraint manager on the server, which can mitigate some of the desyncs between the client and server movement methods")),
+                ("allow_xp_at_max_level", new Property<bool>(false, "enable this to allow players to continue earning xp after reaching max level")),
+                ("block_vpn_connections", new Property<bool>(false, "enable this to block user sessions from IPs identified as VPN proxies")),
+                ("enforce_player_movement", new Property<bool>(false, "enable this to enforce server side verification of player movement")),
+                ("force_materialization", new Property<bool>(true, "forces players to materialize on login")),
                 ("use_generator_rotation_offset", new Property<bool>(true, "enables or disables using the generator's current rotation when offseting relative positions")),
                 ("use_turbine_chat", new Property<bool>(true, "enables or disables global chat channels (General, LFG, Roleplay, Trade, Olthoi, Society, Allegience)")),
                 ("use_wield_requirements", new Property<bool>(true, "disable this to bypass wield requirements. mostly for dev debugging")),
@@ -624,6 +649,9 @@ namespace ACE.Server.Managers
                 ("player_save_interval", new Property<long>(300, "the number of seconds between automatic player saves")),
                 ("rares_max_days_between", new Property<long>(45, "for rares_real_time_v2: the maximum number of days a player can go before a rare is generated on rare eligible creature kills")),
                 ("rares_max_seconds_between", new Property<long>(5256000, "for rares_real_time: the maximum number of seconds a player can go before a second chance at a rare is allowed on rare eligible creature kills that did not generate a rare")),
+                ("max_level", new Property<long>(275, "Set the max character level.")),
+                ("windup_turn_retry_number", new Property<long>(0, "Fixes turning forever during windup. 0 = default / disabled, 1 = retry one time, 2 = retry two times, ...")),
+                ("force_materialization_duration", new Property<long>(5, "the number of seconds a player should materialize for before logging out")),
                 ("summoning_killtask_multicredit_cap", new Property<long>(2, "if allow_summoning_killtask_multicredit is enabled, the maximum # of killtask credits a player can receive from 1 kill")),
                 ("teleport_visibility_fix", new Property<long>(0, "Fixes some possible issues with invisible players and mobs. 0 = default / disabled, 1 = players only, 2 = creatures, 3 = all world objects"))
                 );
@@ -661,7 +689,40 @@ namespace ACE.Server.Managers
                 ("vitae_penalty", new Property<double>(0.05, "the amount of vitae penalty a player gets per death")),
                 ("vitae_penalty_max", new Property<double>(0.40, "the maximum vitae penalty a player can have")),
                 ("void_pvp_modifier", new Property<double>(0.5, "Scales the amount of damage players take from Void Magic. Defaults to 0.5, as per retail. For earlier content where DRR isn't as readily available, this can be adjusted for balance.")),
-                ("xp_modifier", new Property<double>(1.0, "scales the amount of xp received by players"))
+                ("xp_modifier", new Property<double>(1.0, "Globally scales the amount of xp received by players, note that this multiplies the other xp_modifier options.")),
+                ("xp_modifier_kill_tier1", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures below level 28.")),
+                ("xp_modifier_kill_tier2", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures between level 28 and level 65.")),
+                ("xp_modifier_kill_tier3", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures between level 65 and level 95.")),
+                ("xp_modifier_kill_tier4", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures between level 95 and level 110.")),
+                ("xp_modifier_kill_tier5", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures between level 110 and level 135.")),
+                ("xp_modifier_kill_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for killing creatures above level 135.")),
+                ("xp_modifier_reward_tier1", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests of level 28 or below, or for unspecified level quests while being under level 16.")),
+                ("xp_modifier_reward_tier2", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 28 and level 65, or for unspecified level quests while being between level 16 and 36.")),
+                ("xp_modifier_reward_tier3", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 65 and level 95, or for unspecified level quests while being between level 36 and 56.")),
+                ("xp_modifier_reward_tier4", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 95 and level 110, or for unspecified level quests while being between level 56 and 76.")),
+                ("xp_modifier_reward_tier5", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests between level 110 and level 135, or for unspecified level quests while being between level 76 and 96.")),
+                ("xp_modifier_reward_tier6", new Property<double>(1.0, "Scales the amount of xp received by players for completing quests of level 135 and above, or for unspecified level quests while being over level 96.")),
+                ("salvage_amount_multiplier", new Property<double>(1.0, "Scales the amount of salvage a player gets from items.")),
+                ("pvp_dmg_mod_war", new Property<double>(1.0, "Scales the amount of damage for war magic.")),
+                ("pvp_dmg_mod_war_streak", new Property<double>(1.0, "Scales the amount of damage for war streaks.")),
+                ("pvp_dmg_mod_axe", new Property<double>(1.0, "Scales the amount of damage for axe")),
+                ("pvp_dmg_mod_sword", new Property<double>(1.0, "Scales the amount of damage for Sword")),
+                ("pvp_dmg_mod_mace", new Property<double>(1.0, "Scales the amount of damage for mace")),
+                ("pvp_dmg_mod_spear", new Property<double>(1.0, "Scales the amount of damage for spear")),
+                ("pvp_dmg_mod_staff", new Property<double>(1.0, "Scales the amount of damage for staff")),
+                ("pvp_dmg_mod_unarmed", new Property<double>(1.0, "Scales the amount of damage for unarmed")),
+                ("pvp_dmg_mod_dagger", new Property<double>(1.0, "Scales the amount of damage for dagger")),
+                ("pvp_dmg_mod_bow", new Property<double>(1.0, "Scales the amount of damage for bow")),
+                ("pvp_dmg_mod_xbow", new Property<double>(1.0, "Scales the amount of damage for xbow")),
+                ("pvp_dmg_mod_thrown", new Property<double>(1.0, "Scales the amount of damage for thrown")),
+                ("pvp_dmg_mod_phantom", new Property<double>(1.0, "Scales the amount of damage for phantom")),
+                ("pvp_dmg_mod_phantom_unarmed", new Property<double>(1.0, "Scales the amount of damage for phantom katar")),
+                ("pvp_dmg_mod_hollow", new Property<double>(1.0, "Scales the amount of damage for hollow")),
+                ("pvp_dmg_mod_hollow_unarmed", new Property<double>(1.0, "Scales the amount of damage for hollow katar")),
+                ("pvp_dmg_mod_cb", new Property<double>(1.0, "Scales the amount of damage for crippling blow")),
+                ("pvp_dmg_mod_ar", new Property<double>(1.0, "Scales the amount of damage for armor rending")),
+                ("pvp_dmg_mod_cs", new Property<double>(1.0, "Scales the amount of damage for critical strike")),
+                ("pvp_cs_critrate_mod", new Property<double>(1.0, "Scales the crit rate for CS"))
                 );
 
         public static readonly ReadOnlyDictionary<string, Property<string>> DefaultStringProperties =
@@ -672,7 +733,10 @@ namespace ACE.Server.Managers
                 ("popup_welcome", new Property<string>("To begin your training, speak to the Society Greeter. Walk up to the Society Greeter using the 'W' key, then double-click on her to initiate a conversation.", "Welcome message popup in training halls")),
                 ("popup_welcome_olthoi", new Property<string>("Welcome to the Olthoi hive! Be sure to talk to the Olthoi Queen to receive the Olthoi protections granted by the energies of the hive.", "Welcome message displayed on the first login for an Olthoi Player")),
                 ("popup_motd", new Property<string>("", "Popup message of the day")),
-                ("server_motd", new Property<string>("", "Server message of the day"))
+                ("server_motd", new Property<string>("", "Server message of the day")),
+                ("turbine_chat_webhook", new Property<string>("", "Webhook to be used for turbine chat. This is for copying ingame general chat channels to a Discord channel.")),
+                ("turbine_chat_webhook_audit", new Property<string>("", "Webhook to be used for ingame audit log.")),
+                ("proxycheck_api_key", new Property<string>("", "API key for proxycheck.io service for VPN detection"))
                 );
     }
 }

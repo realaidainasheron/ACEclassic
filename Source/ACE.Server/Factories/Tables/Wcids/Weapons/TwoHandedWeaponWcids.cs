@@ -68,7 +68,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( WeenieClassName.ace41040_frostassagai,     0.15f ),
         };
 
-        private static ChanceTable<WeenieClassName> Corsecas = new ChanceTable<WeenieClassName>()
+        private static ChanceTable<WeenieClassName> Corsescas = new ChanceTable<WeenieClassName>()
         {
             // two-handed - spear
             ( WeenieClassName.ace40818_corsesca,          0.40f ),
@@ -136,7 +136,7 @@ namespace ACE.Server.Factories.Tables.Wcids
             ( Quadrelles,         TreasureWeaponType.TwoHandedMace ),
             ( Tetsubos,           TreasureWeaponType.TwoHandedMace ),
             ( Assagais,           TreasureWeaponType.TwoHandedSpear ),
-            ( Corsecas,           TreasureWeaponType.TwoHandedSpear ),
+            ( Corsescas,           TreasureWeaponType.TwoHandedSpear ),
             ( MagariYaris,        TreasureWeaponType.TwoHandedSpear ),
             ( Pikes,              TreasureWeaponType.TwoHandedSpear ),
             ( Nodachis,           TreasureWeaponType.TwoHandedSword ),

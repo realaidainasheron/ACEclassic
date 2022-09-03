@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Linq;
 
 using log4net;
 
@@ -254,6 +255,14 @@ namespace ACE.Server.Managers
 
             if (character.TotalLogins <= 1)
             {
+                if (ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                {
+                    // Automatically use the welcome letter so it's already open for the new player to read.
+                    WorldObject welcomeLetter = player.Inventory.Values.FirstOrDefault(i => i.WeenieClassId == 1077);
+                    if (welcomeLetter != null)
+                        welcomeLetter.ActOnUse(player);
+                }
+
                 if (player.IsOlthoiPlayer)
                     session.Network.EnqueueSend(new GameEventPopupString(session, AppendLines(popup_welcome, popup_motd)));
                 else
@@ -264,7 +273,7 @@ namespace ACE.Server.Managers
                 session.Network.EnqueueSend(new GameEventPopupString(session, AppendLines(popup_header, popup_motd)));
             }
 
-            var info = "Welcome to Asheron's Call\n  powered by ACEmulator\n\nFor more information on commands supported by this server, type @acehelp\n";
+            var info = "Welcome to Asheron's Call\n  Powered by ClassicACE.\n\nFor more information on commands supported by this server, type @acehelp\n";
             session.Network.EnqueueSend(new GameMessageSystemChat(info, ChatMessageType.Broadcast));
 
             var server_motd = PropertyManager.GetString("server_motd").Item;

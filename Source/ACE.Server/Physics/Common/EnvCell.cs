@@ -9,10 +9,14 @@ using ACE.Server.Physics.Animation;
 using ACE.Server.Physics.Collision;
 using ACE.Server.Physics.Extensions;
 
+using log4net;
+
 namespace ACE.Server.Physics.Common
 {
     public class EnvCell: ObjCell, IEquatable<EnvCell>
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public int NumSurfaces;
         //public List<Surface> Surfaces;
         public CellStruct CellStructure;
@@ -248,59 +252,71 @@ namespace ACE.Server.Physics.Common
 
             foreach (var portal in Portals)
             {
-                var portalPoly = CellStructure.Polygons[portal.PolygonId];
-
-                foreach (var part in parts)
+                try
                 {
-                    if (part == null) continue;
-                    var sphere = part.GfxObj.PhysicsSphere;
-                    if (sphere == null)
-                        sphere = part.GfxObj.DrawingSphere;
-                    if (sphere == null)
-                        continue;
+                    var portalPoly = CellStructure.Polygons[portal.PolygonId];
 
-                    var center = Pos.LocalToLocal(part.Pos, sphere.Center);
-                    var rad = sphere.Radius + PhysicsGlobals.EPSILON;
-
-                    var dist = Vector3.Dot(center, portalPoly.Plane.Normal) + portalPoly.Plane.D;
-                    if (portal.PortalSide)
+                    foreach (var part in parts)
                     {
-                        if (dist < -rad)
+                        if (part == null) continue;
+                        var sphere = part.GfxObj.PhysicsSphere;
+                        if (sphere == null)
+                            sphere = part.GfxObj.DrawingSphere;
+                        if (sphere == null)
                             continue;
-                    }
-                    else
-                    {
-                        if (dist > rad)
+
+                        var center = Pos.LocalToLocal(part.Pos, sphere.Center);
+                        var rad = sphere.Radius + PhysicsGlobals.EPSILON;
+
+                        var dist = Vector3.Dot(center, portalPoly.Plane.Normal) + portalPoly.Plane.D;
+                        if (portal.PortalSide)
+                        {
+                            if (dist < -rad)
+                                continue;
+                        }
+                        else
+                        {
+                            if (dist > rad)
+                                continue;
+                        }
+
+                        var bbox = part.GetBoundingBox();
+                        var box = new BBox();
+                        box.LocalToLocal(bbox, part.Pos, Pos);
+                        var sidedness = portalPoly.Plane.intersect_box(box);
+                        if (sidedness == Sidedness.Positive && !portal.PortalSide || sidedness == Sidedness.Negative && portal.PortalSide)
                             continue;
+
+                        if (portal.OtherCellId == ushort.MaxValue)
+                        {
+                            checkOutside = true;
+                            break;
+                        }
+
+                        // LoadCells
+                        var otherCell = GetVisible(portal.OtherCellId);
+                        if (otherCell == null)
+                        {
+                            cellArray.add_cell(portal.OtherCellId, null);
+                            break;
+                        }
+
+                        var cellBox = new BBox();
+                        cellBox.LocalToLocal(bbox, part.Pos, otherCell.Pos);
+                        if (otherCell.CellStructure.box_intersects_cell(cellBox))
+                        {
+                            cellArray.add_cell(otherCell.ID, otherCell);
+                            break;
+                        }
                     }
-
-                    var bbox = part.GetBoundingBox();
-                    var box = new BBox();
-                    box.LocalToLocal(bbox, part.Pos, Pos);
-                    var sidedness = portalPoly.Plane.intersect_box(box);
-                    if (sidedness == Sidedness.Positive && !portal.PortalSide || sidedness == Sidedness.Negative && portal.PortalSide)
-                        continue;
-
-                    if (portal.OtherCellId == ushort.MaxValue)
+                }
+                catch(Exception ex)
+                {
+                    log.Error($"Exception in find_transit_cells while iterating over Portals list.  Current Portal PolygonId = {portal.PolygonId}. Ex: {ex}");
+                    log.Error($"Cellstructure.Polygons has the following items...");
+                    foreach (var polygonId in CellStructure.Polygons.Keys)
                     {
-                        checkOutside = true;
-                        break;
-                    }
-
-                    // LoadCells
-                    var otherCell = GetVisible(portal.OtherCellId);
-                    if (otherCell == null)
-                    {
-                        cellArray.add_cell(portal.OtherCellId, null);
-                        break;
-                    }
-
-                    var cellBox = new BBox();
-                    cellBox.LocalToLocal(bbox, part.Pos, otherCell.Pos);
-                    if (otherCell.CellStructure.box_intersects_cell(cellBox))
-                    {
-                        cellArray.add_cell(otherCell.ID, otherCell);
-                        break;
+                        log.Error($"PolygonID = {polygonId}");
                     }
                 }
             }
