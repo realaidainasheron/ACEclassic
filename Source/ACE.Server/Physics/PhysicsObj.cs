@@ -570,7 +570,7 @@ namespace ACE.Server.Physics
             return PartArray.GetHeight();
         }
 
-        public double GetMaxConstraintDistance()
+        public float GetMaxConstraintDistance()
         {
             return (Position.ObjCellID & 0xFFFF) < 0x100 ? 50.0f : 20.0f;
         }
@@ -620,9 +620,9 @@ namespace ACE.Server.Physics
             return PartArray.GetSetupID();
         }
 
-        public double GetStartConstraintDistance()
+        public float GetStartConstraintDistance()
         {
-            return (Position.ObjCellID & 0xFFFF) < 0x100 ? 5.0f : 10.0f;
+            return (Position.ObjCellID & 0xFFFF) < 0x100 ? 10.0f : 5.0f;
         }
 
         public float GetStepDownHeight()
@@ -1296,7 +1296,7 @@ namespace ACE.Server.Physics
                 return ForceIntoCell(newCell, pos);
 
             //if (setPos.Flags.HasFlag(SetPositionFlags.DontCreateCells))
-            //transition.CellArray.DoNotLoadCells = true;
+                //transition.CellArray.DoNotLoadCells = true;
 
             if (!CheckPositionInternal(newCell, pos, transition, setPos))
                 return handle_all_collisions(transition.CollisionInfo, false, false) ?
@@ -1445,7 +1445,7 @@ namespace ACE.Server.Physics
 
                     }
                     //else
-                    //indoors = true;
+                        //indoors = true;
 
                     /*if (sortCell != null && sortCell.has_building())
                     {
@@ -1481,7 +1481,7 @@ namespace ACE.Server.Physics
             }
 
             //if (result != SetPositionError.OK)
-            //Console.WriteLine($"Couldn't spawn {Name} after {setPos.NumTries} retries @ {setPos.Pos}");
+                //Console.WriteLine($"Couldn't spawn {Name} after {setPos.NumTries} retries @ {setPos.Pos}");
 
             return result;
         }
@@ -2741,14 +2741,14 @@ namespace ACE.Server.Physics
             var expiredObjs = ObjMaint.DestroyObjects();
             //Console.WriteLine("Destroyed objects: " + expiredObjs.Count);
             //foreach (var expiredObj in expiredObjs)
-            //Console.WriteLine(expiredObj.Name);
+                //Console.WriteLine(expiredObj.Name);
 
             // get the list of visible objects from this cell
             var visibleObjects = ObjMaint.GetVisibleObjects(CurCell);
 
             //Console.WriteLine("Visible objects from this cell: " + visibleObjects.Count);
             //foreach (var visibleObject in visibleObjects)
-            //Console.WriteLine(visibleObject.Name);
+                //Console.WriteLine(visibleObject.Name);
 
             // get the difference between current and previous visible
             //var newlyVisible = visibleObjects.Except(ObjMaint.VisibleObjects.Values).ToList();
@@ -2756,7 +2756,7 @@ namespace ACE.Server.Physics
             //Console.WriteLine("Newly visible objects: " + newlyVisible.Count);
             //Console.WriteLine("Newly occluded objects: " + newlyOccluded.Count);
             //foreach (var obj in newlyOccluded)
-            //Console.WriteLine(obj.Name);
+                //Console.WriteLine(obj.Name);
 
             // add newly visible objects, and get the previously unknowns
             var createObjs = ObjMaint.AddVisibleObjects(visibleObjects);
@@ -2884,7 +2884,7 @@ namespace ACE.Server.Physics
                 CurLandblock.remove_server_object(this);
                 CurLandblock = null;
             }
-
+           
         }
 
         public void leave_visibility()
@@ -4409,6 +4409,15 @@ namespace ACE.Server.Physics
                         }
 
                         set_current_pos(RequestPos);
+
+                        // should this be done on teleport as well?
+                        /*if (PropertyManager.GetBool("use_constraint_manager").Item)
+                        {
+                            var startDist = GetStartConstraintDistance();
+                            var maxDist = GetMaxConstraintDistance();
+
+                            ConstrainTo(RequestPos, startDist, maxDist);
+                        }*/
                     }
                     else
                     {

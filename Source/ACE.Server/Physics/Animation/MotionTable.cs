@@ -2,6 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Numerics;
+
 using ACE.DatLoader;
 using ACE.DatLoader.Entity;
 using ACE.DatLoader.Entity.AnimationHooks;

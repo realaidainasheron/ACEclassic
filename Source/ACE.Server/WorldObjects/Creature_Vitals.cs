@@ -143,7 +143,8 @@ namespace ACE.Server.WorldObjects
             if (intTick != 0)
             {
                 //if (this is Player)
-                //Console.WriteLine($"VitalTick({vital.Vital.ToSentence()}): attributeMod={attributeMod}, stanceMod={stanceMod}, enchantmentMod={enchantmentMod}, regenRate={vital.RegenRate}, currentTick={currentTick}, totalTick={totalTick}, accumulated={vital.PartialRegen}");
+                    //Console.WriteLine($"VitalTick({vital.Vital.ToSentence()}): attributeMod={attributeMod}, stanceMod={stanceMod}, enchantmentMod={enchantmentMod}, regenRate={vital.RegenRate}, currentTick={currentTick}, totalTick={totalTick}, accumulated={vital.PartialRegen}");
+
                 UpdateVitalDelta(vital, intTick);
                 if (vital.Vital == PropertyAttribute2nd.MaxHealth)
                 {
@@ -159,10 +160,10 @@ namespace ACE.Server.WorldObjects
                             Die();
                         }
                     }
+
                     return true;
                 }
             }
-
             return false;
         }
 

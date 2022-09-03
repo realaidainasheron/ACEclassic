@@ -1155,11 +1155,10 @@ namespace ACE.Server.WorldObjects
             int spellLevel = ThreadSafeRandom.Next(minSpellLevel, maxSpellLevel);
             var spell = new Spell(spellLevels[spellLevel]);
 
-            // TODO: ensure showMsg == false
             if (spell.NonComponentTargetType == ItemType.None)
-                TryCastSpell(spell, null, this, tryResist: false);
+                TryCastSpell(spell, null, this, null, false, false, false);
             else
-                TryCastSpell(spell, target, this, tryResist: false);
+                TryCastSpell(spell, target, this, null, false, false, false);
 
             string spellTypePrefix;
             switch(spellLevel + 1)

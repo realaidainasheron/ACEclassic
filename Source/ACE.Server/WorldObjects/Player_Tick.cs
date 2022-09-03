@@ -495,7 +495,7 @@ namespace ACE.Server.WorldObjects
                         var dist = PhysicsObj.Position.Distance(p);
                         Console.WriteLine($"Dist: {dist}");*/
 
-            if (newPosition.Landblock == 0x18A && Location.Landblock != 0x18A)
+                        if (newPosition.Landblock == 0x18A && Location.Landblock != 0x18A)
                             log.Info($"{Name} is getting swanky");
 
                         if (!Teleporting)

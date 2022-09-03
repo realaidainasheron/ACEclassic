@@ -1,8 +1,6 @@
-
 using System.Collections.Generic;
 
 using ACE.Entity.Enum;
-
 
 namespace ACE.Server.Physics.Animation
 {

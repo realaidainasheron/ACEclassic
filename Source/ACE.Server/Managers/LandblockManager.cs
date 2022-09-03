@@ -268,7 +268,6 @@ namespace ACE.Server.Managers
         /// </summary>
         public static readonly ThreadLocal<LandblockGroup> CurrentMultiThreadedTickingLandblockGroup = new ThreadLocal<LandblockGroup>();
 
-
         /// <summary>
         /// Processes physics objects in all active landblocks for updating
         /// </summary>

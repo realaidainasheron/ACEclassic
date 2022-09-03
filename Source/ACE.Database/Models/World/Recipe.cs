@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 #nullable disable
@@ -53,10 +53,5 @@ namespace ACE.Database.Models.World
         public virtual ICollection<RecipeRequirementsIID> RecipeRequirementsIID { get; set; }
         public virtual ICollection<RecipeRequirementsInt> RecipeRequirementsInt { get; set; }
         public virtual ICollection<RecipeRequirementsString> RecipeRequirementsString { get; set; }
-
-        public bool IsImbuing()
-        {
-            return SalvageType == 2;
-        }
     }
 }

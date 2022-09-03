@@ -108,6 +108,7 @@ namespace ACE.Server.WorldObjects
             CharacterLastRequestedDatabaseSave = DateTime.UtcNow;
             CharacterChangesDetected = false;
 
+            //DatabaseManager.Shard.SaveCharacter(Character, CharacterDatabaseLock, null);
             DatabaseManager.Shard.SaveCharacter(Character, CharacterDatabaseLock, result =>
             {
                 if (!result)

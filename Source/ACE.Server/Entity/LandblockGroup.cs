@@ -63,8 +63,6 @@ namespace ACE.Server.Entity
         public LandblockGroup(Landblock landblock)
         {
             Add(landblock);
-
-            landblock.CurrentLandblockGroup = this;
         }
 
 

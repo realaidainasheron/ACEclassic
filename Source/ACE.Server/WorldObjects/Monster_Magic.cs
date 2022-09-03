@@ -332,7 +332,6 @@ namespace ACE.Server.WorldObjects
                         {
                             // handle target procs
                             if (targetCreature != null && targetCreature != this)
-
                                 TryProcEquippedItems(this, targetCreature, false, caster);
                         }
                     }

@@ -61,11 +61,11 @@ namespace ACE.Server.Factories
             player.SetProperty(PropertyDataId.CombatTable, sex.CombatTable);
 
             // Check the character scale
-            if (sex.Scale != 100u)
-                player.SetProperty(PropertyFloat.DefaultScale, (sex.Scale / 100f)); // Scale is stored as a percentage
+            if (sex.Scale != 100)
+                player.SetProperty(PropertyFloat.DefaultScale, sex.Scale / 100.0f); // Scale is stored as a percentage
 
             // Get the hair first, because we need to know if you're bald, and that's the name of that tune!
-            var hairstyle = sex.HairStyleList[Convert.ToInt32(characterCreateInfo.Appearance.HairStyle)];
+            var hairstyle = sex.HairStyleList[(int)characterCreateInfo.Appearance.HairStyle];
 
             // Olthoi and Gear Knights have a "Body Style" instead of a hair style. These styles have multiple model/texture changes, instead of a single head/hairstyle.
             // Storing this value allows us to send the proper appearance ObjDesc
@@ -95,11 +95,11 @@ namespace ACE.Server.Factories
             player.SetProperty(PropertyFloat.Shade, characterCreateInfo.Appearance.SkinHue);
 
             // Hair is stored as PaletteSet (list of Palettes), so we need to read in the set to get the specific palette
-            var hairPalSet = DatManager.PortalDat.ReadFromDat<PaletteSet>(sex.HairColorList[Convert.ToInt32(characterCreateInfo.Appearance.HairColor)]);
+            var hairPalSet = DatManager.PortalDat.ReadFromDat<PaletteSet>(sex.HairColorList[(int)characterCreateInfo.Appearance.HairColor]);
             player.SetProperty(PropertyDataId.HairPalette, hairPalSet.GetPaletteID(characterCreateInfo.Appearance.HairHue));
 
             // Eye Color
-            player.SetProperty(PropertyDataId.EyesPalette, sex.EyeColorList[Convert.ToInt32(characterCreateInfo.Appearance.EyeColor)]);
+            player.SetProperty(PropertyDataId.EyesPalette, sex.EyeColorList[(int)characterCreateInfo.Appearance.EyeColor]);
 
             // skip over this for olthoi, use the weenie defaults
             if (!player.IsOlthoiPlayer)
@@ -259,7 +259,10 @@ namespace ACE.Server.Factories
                 Container container = null;
                 foreach (var skillGear in starterGearConfig.Skills)
                 {
-                    var charSkill = player.Skills[(Skill)skillGear.SkillId];
+                    //var charSkill = player.Skills[(Skill)skillGear.SkillId];
+                    if (!player.Skills.TryGetValue((Skill)skillGear.SkillId, out var charSkill))
+                        continue;
+
                     if (charSkill.AdvancementClass == SkillAdvancementClass.Trained || charSkill.AdvancementClass == SkillAdvancementClass.Specialized)
                     {
                         foreach (var item in skillGear.Gear)
@@ -488,17 +491,20 @@ namespace ACE.Server.Factories
 
             player.Instantiation = new Position(instantiation);
 
-            player.Sanctuary = new Position(player.Location);
-
-            if (PropertyManager.GetBool("pk_server").Item)
-                player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.PK);
-            else if (PropertyManager.GetBool("pkl_server").Item)
-                player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.NPK);
-
-            if ((PropertyManager.GetBool("pk_server").Item || PropertyManager.GetBool("pkl_server").Item) && PropertyManager.GetBool("pk_server_safe_training_academy").Item)
+            if (!player.IsOlthoiPlayer)
             {
-                player.SetProperty(PropertyFloat.MinimumTimeSincePk, -PropertyManager.GetDouble("pk_new_character_grace_period").Item);
-                player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.NPK);
+                player.Sanctuary = new Position(player.Location);
+
+                if (PropertyManager.GetBool("pk_server").Item)
+                    player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.PK);
+                else if (PropertyManager.GetBool("pkl_server").Item)
+                    player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.NPK);
+
+                if ((PropertyManager.GetBool("pk_server").Item || PropertyManager.GetBool("pkl_server").Item) && PropertyManager.GetBool("pk_server_safe_training_academy").Item)
+                {
+                    player.SetProperty(PropertyFloat.MinimumTimeSincePk, -PropertyManager.GetDouble("pk_new_character_grace_period").Item);
+                    player.SetProperty(PropertyInt.PlayerKillerStatus, (int)PlayerKillerStatus.NPK);
+                }
             }
 
             if (player is Sentinel || player is Admin)
