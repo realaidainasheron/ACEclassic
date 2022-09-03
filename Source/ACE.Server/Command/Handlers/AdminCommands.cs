@@ -31,6 +31,7 @@ using ACE.Server.WorldObjects;
 using ACE.Server.WorldObjects.Entity;
 
 using Position = ACE.Entity.Position;
+using ACE.Server.Network.Handlers;
 
 namespace ACE.Server.Command.Handlers
 {
@@ -277,20 +278,43 @@ namespace ACE.Server.Command.Handlers
             // @gag - Prevents a character from talking.
             // @ungag -Allows a gagged character to talk again.
 
+            var msg = "";
+
             if (parameters.Length > 0)
             {
                 var playerName = string.Join(" ", parameters);
 
-                var msg = "";
-                if (PlayerManager.GagPlayer(session.Player, playerName))
+                int numDays = 3;
+                if(playerName.Contains(","))
                 {
-                    msg = $"{playerName} has been gagged for five minutes.";
+                    try
+                    {
+                        numDays = Convert.ToInt32(playerName.Split(",")[1]);
+                    }
+                    catch(Exception)
+                    {
+                        msg = "Invalid parameters: correct usage /gag <playerName>, <numDays>";
+                        CommandHandlerHelper.WriteOutputInfo(session, msg, ChatMessageType.WorldBroadcast);
+                        return;
+                    }
+
+                    playerName = playerName.Substring(0, playerName.IndexOf(","));
+                }
+                
+                if (PlayerManager.GagPlayer(session.Player, playerName, numDays))
+                {
+                    msg = $"{playerName} has been gagged for {numDays} days.";
                 }
                 else
                 {
                     msg = $"Unable to gag a character named {playerName}, check the name and re-try the command.";
                 }
 
+                CommandHandlerHelper.WriteOutputInfo(session, msg, ChatMessageType.WorldBroadcast);
+            }
+            else
+            {
+                msg = "Invalid parameters: correct usage /gag <playerName>, <numDays>";
                 CommandHandlerHelper.WriteOutputInfo(session, msg, ChatMessageType.WorldBroadcast);
             }
         }
@@ -2967,10 +2991,16 @@ namespace ACE.Server.Command.Handlers
                     }
                 }
 
+                int correctLength = 240;
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                    correctLength = 210;
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                    correctLength = 230;
+
                 // Check string is correctly formatted before altering stats
                 // correctly formatted return string should have 240 entries
                 // if the construction of the string changes - this will need to be updated to match
-                if (returnState.Split("=").Length != 240)
+                if (returnState.Split("=").Length != correctLength)
                 {
                     ChatPacket.SendServerMessage(session, "Godmode is not available at this time.", ChatMessageType.Broadcast);
                     Console.WriteLine($"Player {session.Player.Name} tried to enter god mode but there was an error with the godString length. (length = {returnState.Split("=").Length}) Godmode not available.");
@@ -3060,9 +3090,15 @@ namespace ACE.Server.Command.Handlers
                 {
                     string[] returnStringArr = returnString.Split("=");
 
+                    int correctLength = 240;
+                    if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                        correctLength = 210;
+                    else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                        correctLength = 230;
+
                     // correctly formatted return string should have 240 entries
                     // if the construction of the string changes - this will need to be updated to match
-                    if (returnStringArr.Length != 240)
+                    if (returnStringArr.Length != correctLength)
                     {
                         Console.WriteLine($"The returnString was not set to the correct length while {currentPlayer.Name} was attempting to return to normal from godmode.");
                         ChatPacket.SendServerMessage(session, "Error returning to mortal state, defaulting to godmode.", ChatMessageType.Broadcast);
@@ -3098,7 +3134,7 @@ namespace ACE.Server.Command.Handlers
                                 currentPlayer.Session.Network.EnqueueSend(new GameMessagePrivateUpdateVital(currentPlayer, playerVital));
                                 i += 5;
                                 break;
-                            case int n when (n <= 238):
+                            case int n when (n <= correctLength - 2):
                                 var playerSkill = currentPlayer.Skills[(Skill)int.Parse(returnStringArr[i])];
                                 playerSkill.Ranks = ushort.Parse(returnStringArr[i + 1]);
 
@@ -3118,7 +3154,7 @@ namespace ACE.Server.Command.Handlers
                                 currentPlayer.Session.Network.EnqueueSend(new GameMessagePrivateUpdateSkill(currentPlayer, playerSkill));
                                 i += 5;
                                 break;
-                            case 239: //end of returnString, this will need to be updated if the length of the string changes
+                            case int n when (n == correctLength - 1): //end of returnString, this will need to be updated if the length of the string changes
                                 GameMessagePrivateUpdatePropertyInt levelMsg = new GameMessagePrivateUpdatePropertyInt(currentPlayer, PropertyInt.Level, (int)currentPlayer.Level);
                                 GameMessagePrivateUpdatePropertyInt skMsg = new GameMessagePrivateUpdatePropertyInt(currentPlayer, PropertyInt.AvailableSkillCredits, (int)currentPlayer.AvailableSkillCredits);
                                 GameMessagePrivateUpdatePropertyInt64 totalExpMsg = new GameMessagePrivateUpdatePropertyInt64(currentPlayer, PropertyInt64.TotalExperience, (long)currentPlayer.TotalExperience);
@@ -4739,6 +4775,26 @@ namespace ACE.Server.Command.Handlers
                 return;
             }
             LootSwap.UpdateTables(folder);
+        }
+
+        [CommandHandler("clearvpnblocklist", AccessLevel.Sentinel, CommandHandlerFlag.None,
+            "Clears the list of IPs that are blocked due to VPN/proxy check")]
+        public static void HandleClearVpnBlockList(Session session, params string[] parameters)
+        {
+            AuthenticationHandler.ClearVpnBlockedIPs();
+        }
+
+        [CommandHandler("removeipfromvpnblocklist", AccessLevel.Sentinel, CommandHandlerFlag.None, 1,
+            "Removes a single IP from the list of IPs that are blocked due to VPN/proxy check")]
+        public static void HandleRemoveIpFromVpnBlockList(Session session, params string[] parameters)
+        {
+            if(parameters.Count() != 1)
+            {
+                CommandHandlerHelper.WriteOutputInfo(session, $"Invalid parameters.  Please include a single IP to clear from the VPN block list.");
+                return;
+            }
+
+            AuthenticationHandler.RemoveIpFromVpnBlockList(parameters[0]);
         }
     }
 }

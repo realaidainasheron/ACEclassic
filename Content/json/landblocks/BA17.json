@@ -1,0 +1,802 @@
+{
+  "key": 3122069504,
+  "value": {
+    "links": [
+      {
+        "target": 2074177562,
+        "source": 2074177561,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2074177562,
+        "source": 2074177582,
+        "desc": "Miko Li, Jojii Adherent(karaadherent)(wcid: 25827) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2074177562,
+        "source": 2074177586,
+        "desc": "Journeyman Alchemist(collectoralchemyshomid)(wcid: 28919) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2074177536,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.05,
+              "y": 173.956,
+              "z": 84.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177537,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.55,
+              "y": 84.0,
+              "z": 134.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177538,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.4753,
+              "y": 84.0,
+              "z": 137.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177539,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.55,
+              "y": 84.0,
+              "z": 137.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177540,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.0,
+              "y": 91.55,
+              "z": 137.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177541,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.0,
+              "y": 76.45,
+              "z": 137.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177542,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 65.4408,
+              "y": 39.9571,
+              "z": 132.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 3122069803
+        }
+      },
+      {
+        "id": 2074177543,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.5408,
+              "y": 32.0321,
+              "z": 132.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069804
+        }
+      },
+      {
+        "id": 2074177544,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.0,
+              "y": 30.475,
+              "z": 132.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177545,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.0,
+              "y": 41.525,
+              "z": 132.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177546,
+        "wcid": 722,
+        "desc": "Door(doorshoright)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.0,
+              "y": 45.05,
+              "z": 132.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177547,
+        "wcid": 721,
+        "desc": "Door(doorsholeft)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.0,
+              "y": 45.05,
+              "z": 132.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177548,
+        "wcid": 4782,
+        "desc": "Sho Leather Crafter Gen(leathercraftershogen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.2193,
+              "y": 39.1572,
+              "z": 136.405
+            },
+            "angles": {
+              "w": -0.455643,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.890163
+            }
+          },
+          "objcell_id": 3122069808
+        }
+      },
+      {
+        "id": 2074177549,
+        "wcid": 2537,
+        "desc": "Archmage Kiko of Kara (karaarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.2696,
+              "y": 78.5496,
+              "z": 134.005
+            },
+            "angles": {
+              "w": 0.931428,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.363925
+            }
+          },
+          "objcell_id": 3122069772
+        }
+      },
+      {
+        "id": 2074177550,
+        "wcid": 2539,
+        "desc": "Koro of Kara, Farmer(karafarmer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 92.1427,
+              "y": 53.3368,
+              "z": 132.005
+            },
+            "angles": {
+              "w": -0.999523,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.030882
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177552,
+        "wcid": 1907,
+        "desc": "Sho Roadside(portalshoroadside)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 67.2193,
+              "y": 6.71643,
+              "z": 133.445
+            },
+            "angles": {
+              "w": 0.070118,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997539
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177553,
+        "wcid": 2538,
+        "desc": "Healer Kana of Kara(karahealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.2846,
+              "y": 40.096,
+              "z": 132.005
+            },
+            "angles": {
+              "w": 0.753015,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.658003
+            }
+          },
+          "objcell_id": 3122069799
+        }
+      },
+      {
+        "id": 2074177555,
+        "wcid": 1351,
+        "desc": "Sign(onewaywarningsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.844,
+              "y": 9.35452,
+              "z": 133.225
+            },
+            "angles": {
+              "w": 0.070118,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997539
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177556,
+        "wcid": 2536,
+        "desc": "Shopkeep Kuro of Kara (karashopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.6688,
+              "y": 38.7667,
+              "z": 132.005
+            },
+            "angles": {
+              "w": 0.719188,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.694816
+            }
+          },
+          "objcell_id": 3122069799
+        }
+      },
+      {
+        "id": 2074177560,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.34,
+              "y": 173.5,
+              "z": 82.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177561,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 37.7636,
+              "y": 177.973,
+              "z": 82.005
+            },
+            "angles": {
+              "w": -0.621028,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.783788
+            }
+          },
+          "objcell_id": 3122069820
+        }
+      },
+      {
+        "id": 2074177562,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.9372,
+              "y": 177.072,
+              "z": 82.005
+            },
+            "angles": {
+              "w": 0.89344,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.449183
+            }
+          },
+          "objcell_id": 3122069820
+        }
+      },
+      {
+        "id": 2074177563,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.7045,
+              "y": 184.06,
+              "z": 82.005
+            },
+            "angles": {
+              "w": -0.698498,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.715612
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177569,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.4293,
+              "y": 70.4997,
+              "z": 132.0
+            },
+            "angles": {
+              "w": -0.999988,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.00491
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177572,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.214,
+              "y": 66.243,
+              "z": 139.0
+            },
+            "angles": {
+              "w": 0.707329,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.706885
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177575,
+        "wcid": 19203,
+        "desc": "Nullified Statue of a Shadow(statueshadownull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.6946,
+              "y": 66.331,
+              "z": 138.82
+            },
+            "angles": {
+              "w": -0.698123,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.715978
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177576,
+        "wcid": 19715,
+        "desc": "Colossus Foundry Portal(portalextremestatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.2036,
+              "y": 52.9584,
+              "z": 126.805
+            },
+            "angles": {
+              "w": -0.026814,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99964
+            }
+          },
+          "objcell_id": 3122069826
+        }
+      },
+      {
+        "id": 2074177577,
+        "wcid": 20224,
+        "desc": "Grand Master Scrivener of War Magic(scrivenerwarextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.8127,
+              "y": 83.246,
+              "z": 134.005
+            },
+            "angles": {
+              "w": -0.684634,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.728887
+            }
+          },
+          "objcell_id": 3122069772
+        }
+      },
+      {
+        "id": 2074177578,
+        "wcid": 20208,
+        "desc": "Grand Master Scrivener of Creature Magic(scrivenercreatureextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.498,
+              "y": 79.7341,
+              "z": 137.005
+            },
+            "angles": {
+              "w": 0.864089,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.503339
+            }
+          },
+          "objcell_id": 3122069775
+        }
+      },
+      {
+        "id": 2074177579,
+        "wcid": 20220,
+        "desc": "Grand Master Scrivener of Life Magic(scrivenerlifeextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.7872,
+              "y": 79.5005,
+              "z": 137.005
+            },
+            "angles": {
+              "w": 0.960844,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.277089
+            }
+          },
+          "objcell_id": 3122069775
+        }
+      },
+      {
+        "id": 2074177580,
+        "wcid": 20212,
+        "desc": "Grand Master Scrivener of Item Magic(scriveneritemextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.4797,
+              "y": 88.6243,
+              "z": 137.005
+            },
+            "angles": {
+              "w": 0.493474,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.869761
+            }
+          },
+          "objcell_id": 3122069775
+        }
+      },
+      {
+        "id": 2074177581,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.3769,
+              "y": 58.2763,
+              "z": 172.768
+            },
+            "angles": {
+              "w": 0.013122,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999914
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177582,
+        "wcid": 25827,
+        "desc": "Miko Li, Jojii Adherent(karaadherent)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.7093,
+              "y": 43.3177,
+              "z": 132.005
+            },
+            "angles": {
+              "w": 0.51492,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.857238
+            }
+          },
+          "objcell_id": 3122069809
+        }
+      },
+      {
+        "id": 2074177583,
+        "wcid": 27246,
+        "desc": "Kuhira of Kara(karaarmorer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 66.5103,
+              "y": 32.144,
+              "z": 132.005
+            },
+            "angles": {
+              "w": 0.817416,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.576048
+            }
+          },
+          "objcell_id": 3122069798
+        }
+      },
+      {
+        "id": 2074177584,
+        "wcid": 27247,
+        "desc": "Tatuso of Kara(karabowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 89.4882,
+              "y": 182.685,
+              "z": 84.005
+            },
+            "angles": {
+              "w": 0.031287,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.99951
+            }
+          },
+          "objcell_id": 3122069766
+        }
+      },
+      {
+        "id": 2074177585,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.9878,
+              "y": 53.2589,
+              "z": 132.005
+            },
+            "angles": {
+              "w": -0.792449,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.609938
+            }
+          },
+          "objcell_id": 3122069504
+        }
+      },
+      {
+        "id": 2074177586,
+        "wcid": 28919,
+        "desc": "Journeyman Alchemist(collectoralchemyshomid)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 90.141,
+              "y": 41.8881,
+              "z": 132.005
+            },
+            "angles": {
+              "w": -0.593897,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.804541
+            }
+          },
+          "objcell_id": 3122069809
+        }
+      }
+    ]
+  },
+  "desc": "3122069504(BA17)"
+}

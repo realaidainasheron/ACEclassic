@@ -1,0 +1,2247 @@
+{
+  "key": 2471165952,
+  "value": {
+    "links": [
+      {
+        "target": 2033496066,
+        "source": 2033496067,
+        "desc": "Aino Lunnan-Shin(xaragemcollector)(wcid: 8370) -> linkmonstergen7minutes(wcid: 4219)"
+      },
+      {
+        "target": 2033496066,
+        "source": 2033496162,
+        "desc": "Small Creepy Statue(xarabydunbattledungeonportalnpc)(wcid: 25991) -> linkmonstergen7minutes(wcid: 4219)"
+      },
+      {
+        "target": 2033496074,
+        "source": 2033496073,
+        "desc": "Bhab, Arcanum Tinkerer(tinkerarcanum)(wcid: 19354) -> linkmonstergen30seconds(wcid: 5086)"
+      },
+      {
+        "target": 2033496074,
+        "source": 2033496075,
+        "desc": "Ciandra, Arcanum Alchemist(arcanumalchemist)(wcid: 19713) -> linkmonstergen30seconds(wcid: 5086)"
+      },
+      {
+        "target": 2033496074,
+        "source": 2033496076,
+        "desc": "Hiro, Arcanum Artificer(artificerarcanum)(wcid: 19460) -> linkmonstergen30seconds(wcid: 5086)"
+      },
+      {
+        "target": 2033496074,
+        "source": 2033496157,
+        "desc": "Alaine the Apprentice(arcanumalchemistapprentice)(wcid: 24224) -> linkmonstergen30seconds(wcid: 5086)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496081,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496082,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496083,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496084,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496085,
+        "desc": "Brown Rat(ratbrown)(wcid: 220) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496086,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496087,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496088,
+        "desc": "Brown Rat(ratbrown)(wcid: 220) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496090,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496091,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496092,
+        "desc": "Ethereal Wisp(wispethereal)(wcid: 1535) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496093,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496094,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496096,
+        "desc": "Swamp Rat(ratswampxara)(wcid: 8222) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496097,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496098,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496099,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496100,
+        "desc": "Brown Rat(ratbrown)(wcid: 220) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496102,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496103,
+        "desc": "Ethereal Wisp(wispethereal)(wcid: 1535) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496104,
+        "desc": "Red Rat(ratred)(wcid: 949) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496105,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496106,
+        "desc": "Russet Rat(ratrusset)(wcid: 4132) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496107,
+        "desc": "Red Rat(ratred)(wcid: 949) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496109,
+        "desc": "Brown Rat(ratbrown)(wcid: 220) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496111,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496112,
+        "desc": "Brown Rat(ratbrown)(wcid: 220) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496115,
+        "desc": "Grey Rat(ratgrey)(wcid: 219) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496142,
+        "desc": "Fazyad ibn Raymar(xaracollector)(wcid: 8229) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496145,
+        "desc": "Cow(cowunattackable)(wcid: 5755) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496147,
+        "desc": "Desert Rabbit(rabbitdesert)(wcid: 5429) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496148,
+        "desc": "Desert Rabbit(rabbitdesert)(wcid: 5429) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496149,
+        "desc": "Desert Bunny(rabbitbabydesert)(wcid: 6081) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2033496140,
+        "source": 2033496150,
+        "desc": "Desert Bunny(rabbitbabydesert)(wcid: 6081) -> linkmonstergen15minutes(wcid: 3955)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2033496065,
+        "wcid": 8228,
+        "desc": "Xarabydun (xarabydunsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 130.024,
+              "y": 9.08462,
+              "z": 15.1647
+            },
+            "angles": {
+              "w": 0.926734,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.375719
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496066,
+        "wcid": 4219,
+        "desc": "Linkable Monster Generator ( 7 Min.)(linkmonstergen7minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 114.599,
+              "y": 44.7822,
+              "z": 14.2731
+            },
+            "angles": {
+              "w": 0.742676,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.669651
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496067,
+        "wcid": 8370,
+        "desc": "Aino Lunnan-Shin(xaragemcollector)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.748,
+              "y": 57.6946,
+              "z": 13.705
+            },
+            "angles": {
+              "w": -0.128215,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.991746
+            }
+          },
+          "objcell_id": 2471166208
+        }
+      },
+      {
+        "id": 2033496069,
+        "wcid": 145,
+        "desc": "Coffer(coffer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.4978,
+              "y": 75.729,
+              "z": 16.0
+            },
+            "angles": {
+              "w": 0.991769,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.128038
+            }
+          },
+          "objcell_id": 2471166223
+        }
+      },
+      {
+        "id": 2033496070,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 34.0345,
+              "y": 81.1371,
+              "z": 16.0
+            },
+            "angles": {
+              "w": 0.791823,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.61075
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496071,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 26.7707,
+              "y": 83.0444,
+              "z": 16.0
+            },
+            "angles": {
+              "w": 0.61075,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.791823
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496072,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 45.6748,
+              "y": 86.0933,
+              "z": 16.0
+            },
+            "angles": {
+              "w": 0.791823,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.61075
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496073,
+        "wcid": 19354,
+        "desc": "Bhab, Arcanum Tinkerer(tinkerarcanum)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.0927,
+              "y": 84.9939,
+              "z": 16.005
+            },
+            "angles": {
+              "w": 0.278284,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.960499
+            }
+          },
+          "objcell_id": 2471166210
+        }
+      },
+      {
+        "id": 2033496074,
+        "wcid": 5086,
+        "desc": "Linkable Monster Gen - 30 sec.(linkmonstergen30seconds)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.7251,
+              "y": 83.5446,
+              "z": 16.005
+            },
+            "angles": {
+              "w": 0.993971,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.109646
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496075,
+        "wcid": 19713,
+        "desc": "Ciandra, Arcanum Alchemist(arcanumalchemist)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.6571,
+              "y": 34.6215,
+              "z": 17.205
+            },
+            "angles": {
+              "w": 0.849226,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.52803
+            }
+          },
+          "objcell_id": 2471166242
+        }
+      },
+      {
+        "id": 2033496076,
+        "wcid": 19460,
+        "desc": "Hiro, Arcanum Artificer(artificerarcanum)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 30.7767,
+              "y": 84.0893,
+              "z": 16.005
+            },
+            "angles": {
+              "w": -0.108733,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.994071
+            }
+          },
+          "objcell_id": 2471166210
+        }
+      },
+      {
+        "id": 2033496078,
+        "wcid": 8220,
+        "desc": "Uninhabited Area Portal(portalxaralower)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.812,
+              "y": 84.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166259
+        }
+      },
+      {
+        "id": 2033496079,
+        "wcid": 8219,
+        "desc": "Surface Portal(portalxaraexit)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 187.988,
+              "y": 28.043,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166260
+        }
+      },
+      {
+        "id": 2033496080,
+        "wcid": 4458,
+        "desc": "Door(doormetalcavelockedfair)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 132.619,
+              "y": 35.0436,
+              "z": -25.6
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166262
+        }
+      },
+      {
+        "id": 2033496081,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 126.327,
+              "y": 11.8453,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.990912,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.134509
+            }
+          },
+          "objcell_id": 2471166264
+        }
+      },
+      {
+        "id": 2033496082,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 125.848,
+              "y": 17.3828,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.62885,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.777526
+            }
+          },
+          "objcell_id": 2471166264
+        }
+      },
+      {
+        "id": 2033496083,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 130.331,
+              "y": 14.3701,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.075232,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997166
+            }
+          },
+          "objcell_id": 2471166264
+        }
+      },
+      {
+        "id": 2033496084,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 130.376,
+              "y": 7.1353,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.10513,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.994458
+            }
+          },
+          "objcell_id": 2471166267
+        }
+      },
+      {
+        "id": 2033496085,
+        "wcid": 220,
+        "desc": "Brown Rat(ratbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 125.327,
+              "y": 2.952,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.795793,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.605568
+            }
+          },
+          "objcell_id": 2471166267
+        }
+      },
+      {
+        "id": 2033496086,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 140.376,
+              "y": 67.1353,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.10513,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.994458
+            }
+          },
+          "objcell_id": 2471166271
+        }
+      },
+      {
+        "id": 2033496087,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 134.838,
+              "y": 66.6555,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.795793,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.605568
+            }
+          },
+          "objcell_id": 2471166271
+        }
+      },
+      {
+        "id": 2033496088,
+        "wcid": 220,
+        "desc": "Brown Rat(ratbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 139.312,
+              "y": -8.554,
+              "z": -25.5912
+            },
+            "angles": {
+              "w": 0.919207,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.393775
+            }
+          },
+          "objcell_id": 2471166286
+        }
+      },
+      {
+        "id": 2033496089,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.988,
+              "y": 84.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166288
+        }
+      },
+      {
+        "id": 2033496090,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 144.848,
+              "y": 86.2835,
+              "z": -31.59
+            },
+            "angles": {
+              "w": -0.543867,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.839172
+            }
+          },
+          "objcell_id": 2471166288
+        }
+      },
+      {
+        "id": 2033496091,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 152.815,
+              "y": 75.5429,
+              "z": -25.545
+            },
+            "angles": {
+              "w": -0.283908,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.958851
+            }
+          },
+          "objcell_id": 2471166293
+        }
+      },
+      {
+        "id": 2033496092,
+        "wcid": 1535,
+        "desc": "Ethereal Wisp(wispethereal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.304,
+              "y": -18.322,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 0.861637,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.507525
+            }
+          },
+          "objcell_id": 2471166313
+        }
+      },
+      {
+        "id": 2033496093,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 155.896,
+              "y": 61.906,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.337645,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.941274
+            }
+          },
+          "objcell_id": 2471166321
+        }
+      },
+      {
+        "id": 2033496094,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 153.4,
+              "y": 45.7468,
+              "z": -25.545
+            },
+            "angles": {
+              "w": -0.381672,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.924298
+            }
+          },
+          "objcell_id": 2471166327
+        }
+      },
+      {
+        "id": 2033496095,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.988,
+              "y": 104.995,
+              "z": -25.6
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166350
+        }
+      },
+      {
+        "id": 2033496096,
+        "wcid": 8222,
+        "desc": "Swamp Rat(ratswampxara)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 165.627,
+              "y": 106.564,
+              "z": -25.588
+            },
+            "angles": {
+              "w": 0.127305,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.991864
+            }
+          },
+          "objcell_id": 2471166350
+        }
+      },
+      {
+        "id": 2033496097,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 169.382,
+              "y": 83.7295,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.132809,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.991142
+            }
+          },
+          "objcell_id": 2471166356
+        }
+      },
+      {
+        "id": 2033496098,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 166.271,
+              "y": 83.5353,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.136562,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.990632
+            }
+          },
+          "objcell_id": 2471166356
+        }
+      },
+      {
+        "id": 2033496099,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.194,
+              "y": 86.4693,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.01199,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999928
+            }
+          },
+          "objcell_id": 2471166356
+        }
+      },
+      {
+        "id": 2033496100,
+        "wcid": 220,
+        "desc": "Brown Rat(ratbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.202,
+              "y": 72.4899,
+              "z": -25.545
+            },
+            "angles": {
+              "w": -0.856214,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.516621
+            }
+          },
+          "objcell_id": 2471166362
+        }
+      },
+      {
+        "id": 2033496101,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.988,
+              "y": 79.361,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166366
+        }
+      },
+      {
+        "id": 2033496102,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 172.751,
+              "y": 45.5758,
+              "z": -25.545
+            },
+            "angles": {
+              "w": 0.576839,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.816858
+            }
+          },
+          "objcell_id": 2471166373
+        }
+      },
+      {
+        "id": 2033496103,
+        "wcid": 1535,
+        "desc": "Ethereal Wisp(wispethereal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.988,
+              "y": 4.995,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166389
+        }
+      },
+      {
+        "id": 2033496104,
+        "wcid": 949,
+        "desc": "Red Rat(ratred)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 173.623,
+              "y": 94.8685,
+              "z": -25.5908
+            },
+            "angles": {
+              "w": 0.626505,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.779417
+            }
+          },
+          "objcell_id": 2471166394
+        }
+      },
+      {
+        "id": 2033496105,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 175.555,
+              "y": 62.3275,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.376638,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.926361
+            }
+          },
+          "objcell_id": 2471166395
+        }
+      },
+      {
+        "id": 2033496106,
+        "wcid": 4132,
+        "desc": "Russet Rat(ratrusset)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 180.388,
+              "y": 37.3373,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.787003,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.616949
+            }
+          },
+          "objcell_id": 2471166400
+        }
+      },
+      {
+        "id": 2033496107,
+        "wcid": 949,
+        "desc": "Red Rat(ratred)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 181.513,
+              "y": 34.9668,
+              "z": -25.545
+            },
+            "angles": {
+              "w": 0.617754,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.786372
+            }
+          },
+          "objcell_id": 2471166401
+        }
+      },
+      {
+        "id": 2033496108,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.955,
+              "y": 31.9526,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166406
+        }
+      },
+      {
+        "id": 2033496109,
+        "wcid": 220,
+        "desc": "Brown Rat(ratbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.912,
+              "y": 21.9463,
+              "z": -25.5912
+            },
+            "angles": {
+              "w": -0.883819,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.467828
+            }
+          },
+          "objcell_id": 2471166409
+        }
+      },
+      {
+        "id": 2033496110,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.978,
+              "y": 27.7528,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166413
+        }
+      },
+      {
+        "id": 2033496111,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 180.128,
+              "y": 12.6072,
+              "z": -25.59
+            },
+            "angles": {
+              "w": 0.777526,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.62885
+            }
+          },
+          "objcell_id": 2471166414
+        }
+      },
+      {
+        "id": 2033496112,
+        "wcid": 220,
+        "desc": "Brown Rat(ratbrown)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 175.945,
+              "y": 17.6563,
+              "z": -25.59
+            },
+            "angles": {
+              "w": -0.134509,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.990912
+            }
+          },
+          "objcell_id": 2471166414
+        }
+      },
+      {
+        "id": 2033496113,
+        "wcid": 1946,
+        "desc": "Chest(chestwarriorlow)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 181.769,
+              "y": 18.5636,
+              "z": -25.595
+            },
+            "angles": {
+              "w": 0.793135,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.609046
+            }
+          },
+          "objcell_id": 2471166414
+        }
+      },
+      {
+        "id": 2033496114,
+        "wcid": 4980,
+        "desc": "Refreshing Fountain(poolrefreshing)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 187.988,
+              "y": 64.995,
+              "z": -25.55
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166417
+        }
+      },
+      {
+        "id": 2033496115,
+        "wcid": 219,
+        "desc": "Grey Rat(ratgrey)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 186.967,
+              "y": 57.5837,
+              "z": -25.545
+            },
+            "angles": {
+              "w": -0.359813,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.933025
+            }
+          },
+          "objcell_id": 2471166420
+        }
+      },
+      {
+        "id": 2033496116,
+        "wcid": 1919,
+        "desc": "Chest(chestglittermed)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 190.471,
+              "y": 37.5771,
+              "z": -31.595
+            },
+            "angles": {
+              "w": -0.932938,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.360038
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496117,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 187.988,
+              "y": 34.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496118,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 187.988,
+              "y": 37.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496119,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 187.988,
+              "y": 31.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496120,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 184.988,
+              "y": 34.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496121,
+        "wcid": 4979,
+        "desc": "Sewer(sewerventground)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 190.988,
+              "y": 34.995,
+              "z": -31.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166426
+        }
+      },
+      {
+        "id": 2033496122,
+        "wcid": 1291,
+        "desc": "Door(doordungeonlockedgood)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 183.148,
+              "y": 34.995,
+              "z": -25.595
+            },
+            "angles": {
+              "w": -0.718072,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.695969
+            }
+          },
+          "objcell_id": 2471166428
+        }
+      },
+      {
+        "id": 2033496123,
+        "wcid": 6441,
+        "desc": "Well(wellnotop)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.814,
+              "y": 37.441,
+              "z": -19.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166435
+        }
+      },
+      {
+        "id": 2033496124,
+        "wcid": 8225,
+        "desc": "Barkeep Anarn(xarabarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.5481,
+              "y": 55.7862,
+              "z": -19.595
+            },
+            "angles": {
+              "w": 0.674036,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.738698
+            }
+          },
+          "objcell_id": 2471166442
+        }
+      },
+      {
+        "id": 2033496125,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.435,
+              "y": 51.945,
+              "z": -19.501
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166442
+        }
+      },
+      {
+        "id": 2033496126,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.4612,
+              "y": 53.0951,
+              "z": -19.5014
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166442
+        }
+      },
+      {
+        "id": 2033496127,
+        "wcid": 8257,
+        "desc": "The Blue Grotto Pub(xarabydunpubsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 95.4984,
+              "y": 47.3102,
+              "z": -17.1
+            },
+            "angles": {
+              "w": 0.92388,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.382683
+            }
+          },
+          "objcell_id": 2471166451
+        }
+      },
+      {
+        "id": 2033496128,
+        "wcid": 4452,
+        "desc": "Door(doorwoodcave)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 97.9822,
+              "y": 49.7749,
+              "z": -19.6
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166454
+        }
+      },
+      {
+        "id": 2033496129,
+        "wcid": 1821,
+        "desc": "Sifida bint Naril the Scribe(tufascribe)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 94.1898,
+              "y": 31.536,
+              "z": -19.595
+            },
+            "angles": {
+              "w": -0.874156,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.485645
+            }
+          },
+          "objcell_id": 2471166455
+        }
+      },
+      {
+        "id": 2033496130,
+        "wcid": 8231,
+        "desc": "Jeweler Jurraf al-Djiqidh(xarajeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.373,
+              "y": 56.4803,
+              "z": -19.595
+            },
+            "angles": {
+              "w": 0.690779,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.723066
+            }
+          },
+          "objcell_id": 2471166456
+        }
+      },
+      {
+        "id": 2033496131,
+        "wcid": 4452,
+        "desc": "Door(doorwoodcave)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.454,
+              "y": 34.9877,
+              "z": -19.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166463
+        }
+      },
+      {
+        "id": 2033496132,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.988,
+              "y": 34.995,
+              "z": -19.6
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166472
+        }
+      },
+      {
+        "id": 2033496133,
+        "wcid": 171,
+        "desc": "Vat(vat)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 163.867,
+              "y": 20.9125,
+              "z": -19.595
+            },
+            "angles": {
+              "w": 0.32117,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.947022
+            }
+          },
+          "objcell_id": 2471166480
+        }
+      },
+      {
+        "id": 2033496134,
+        "wcid": 8226,
+        "desc": "Smith Ashaira bint Maisa(xarablacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.212,
+              "y": 22.8104,
+              "z": -19.595
+            },
+            "angles": {
+              "w": -0.992099,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.125454
+            }
+          },
+          "objcell_id": 2471166480
+        }
+      },
+      {
+        "id": 2033496135,
+        "wcid": 4980,
+        "desc": "Refreshing Fountain(poolrefreshing)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 50.1585,
+              "y": 16.6295,
+              "z": -13.55
+            },
+            "angles": {
+              "w": -0.010162,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999948
+            }
+          },
+          "objcell_id": 2471166485
+        }
+      },
+      {
+        "id": 2033496136,
+        "wcid": 8221,
+        "desc": "Xarabydun Lifestone Portal(portalxarastone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 57.937,
+              "y": -1.069,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166491
+        }
+      },
+      {
+        "id": 2033496137,
+        "wcid": 8255,
+        "desc": "Archmage Sign(xarabydunarchmagesign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.382,
+              "y": 14.391,
+              "z": -10.832
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166511
+        }
+      },
+      {
+        "id": 2033496138,
+        "wcid": 4452,
+        "desc": "Door(doorwoodcave)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 97.988,
+              "y": 10.132,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166513
+        }
+      },
+      {
+        "id": 2033496139,
+        "wcid": 8224,
+        "desc": "Archmage Zarri ibn Khaybi(xaraarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 98.7925,
+              "y": 2.32,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.952831,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.303501
+            }
+          },
+          "objcell_id": 2471166514
+        }
+      },
+      {
+        "id": 2033496140,
+        "wcid": 3955,
+        "desc": "Linkable Monster Gen (15 min.)(linkmonstergen15minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.437,
+              "y": 25.7369,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 0.659983,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.75128
+            }
+          },
+          "objcell_id": 2471166522
+        }
+      },
+      {
+        "id": 2033496141,
+        "wcid": 8228,
+        "desc": "Xarabydun (xarabydunsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 117.988,
+              "y": 24.995,
+              "z": -13.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166543
+        }
+      },
+      {
+        "id": 2033496142,
+        "wcid": 8229,
+        "desc": "Fazyad ibn Raymar(xaracollector)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 132.61,
+              "y": 38.8795,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.618824,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.78553
+            }
+          },
+          "objcell_id": 2471166560
+        }
+      },
+      {
+        "id": 2033496143,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 139.837,
+              "y": 38.3213,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166574
+        }
+      },
+      {
+        "id": 2033496144,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 137.988,
+              "y": 14.995,
+              "z": -13.6
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166578
+        }
+      },
+      {
+        "id": 2033496145,
+        "wcid": 5755,
+        "desc": "Cow(cowunattackable)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 139.508,
+              "y": 0.448,
+              "z": -13.5943
+            },
+            "angles": {
+              "w": 0.428243,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.903664
+            }
+          },
+          "objcell_id": 2471166579
+        }
+      },
+      {
+        "id": 2033496146,
+        "wcid": 8230,
+        "desc": "Farmer Khurah al-Rujarkir(xaragrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 145.175,
+              "y": 1.068,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.79097,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.611855
+            }
+          },
+          "objcell_id": 2471166603
+        }
+      },
+      {
+        "id": 2033496147,
+        "wcid": 5429,
+        "desc": "Desert Rabbit(rabbitdesert)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.022,
+              "y": 47.3828,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.98546,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.169907
+            }
+          },
+          "objcell_id": 2471166632
+        }
+      },
+      {
+        "id": 2033496148,
+        "wcid": 5429,
+        "desc": "Desert Rabbit(rabbitdesert)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 164.827,
+              "y": 46.1284,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.863179,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.504899
+            }
+          },
+          "objcell_id": 2471166632
+        }
+      },
+      {
+        "id": 2033496149,
+        "wcid": 6081,
+        "desc": "Desert Bunny(rabbitbabydesert)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 166.652,
+              "y": 46.7429,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.954067,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.299592
+            }
+          },
+          "objcell_id": 2471166632
+        }
+      },
+      {
+        "id": 2033496150,
+        "wcid": 6081,
+        "desc": "Desert Bunny(rabbitbabydesert)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 166.133,
+              "y": 47.3517,
+              "z": -13.595
+            },
+            "angles": {
+              "w": -0.850288,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.526318
+            }
+          },
+          "objcell_id": 2471166632
+        }
+      },
+      {
+        "id": 2033496151,
+        "wcid": 4452,
+        "desc": "Door(doorwoodcave)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.988,
+              "y": 34.995,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471166634
+        }
+      },
+      {
+        "id": 2033496152,
+        "wcid": 8256,
+        "desc": "Forge and Bowyer Sign(xarabydunblacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 163.99,
+              "y": 33.6179,
+              "z": -10.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2471166636
+        }
+      },
+      {
+        "id": 2033496153,
+        "wcid": 4980,
+        "desc": "Refreshing Fountain(poolrefreshing)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.988,
+              "y": 66.632,
+              "z": -13.55
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2471166638
+        }
+      },
+      {
+        "id": 2033496154,
+        "wcid": 8227,
+        "desc": "Bowyer Hanra ibn Zarib(xarabowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 180.506,
+              "y": 52.6617,
+              "z": -13.595
+            },
+            "angles": {
+              "w": 0.030692,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999529
+            }
+          },
+          "objcell_id": 2471166642
+        }
+      },
+      {
+        "id": 2033496157,
+        "wcid": 24224,
+        "desc": "Alaine the Apprentice(arcanumalchemistapprentice)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.3398,
+              "y": 37.4017,
+              "z": 17.205
+            },
+            "angles": {
+              "w": 0.57626,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.817267
+            }
+          },
+          "objcell_id": 2471166244
+        }
+      },
+      {
+        "id": 2033496159,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.01,
+              "y": 8.5,
+              "z": 14.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2471166725
+        }
+      },
+      {
+        "id": 2033496160,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.01,
+              "y": 16.5,
+              "z": 14.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496161,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.5,
+              "y": 13.51,
+              "z": 14.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496162,
+        "wcid": 25991,
+        "desc": "Small Creepy Statue(xarabydunbattledungeonportalnpc)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.6477,
+              "y": 32.6561,
+              "z": 14.005
+            },
+            "angles": {
+              "w": -0.478908,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.877865
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496163,
+        "wcid": 20222,
+        "desc": "Scrivener of Life Magic(scrivenerlifeouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.9605,
+              "y": 4.69255,
+              "z": 14.005
+            },
+            "angles": {
+              "w": 0.999718,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.023759
+            }
+          },
+          "objcell_id": 2471166722
+        }
+      },
+      {
+        "id": 2033496164,
+        "wcid": 20210,
+        "desc": "Scrivener of Creature Magic(scrivenercreatureouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 51.0114,
+              "y": 16.4347,
+              "z": 14.005
+            },
+            "angles": {
+              "w": 0.737171,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.675706
+            }
+          },
+          "objcell_id": 2471166728
+        }
+      },
+      {
+        "id": 2033496165,
+        "wcid": 20226,
+        "desc": "Scrivener of War Magic(scrivenerwarouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.4832,
+              "y": 8.87049,
+              "z": 22.805
+            },
+            "angles": {
+              "w": 0.735213,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.677836
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      },
+      {
+        "id": 2033496166,
+        "wcid": 20214,
+        "desc": "Scrivener of Item Magic(scriveneritemouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.6007,
+              "y": 9.98235,
+              "z": 17.605
+            },
+            "angles": {
+              "w": -0.294583,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.955626
+            }
+          },
+          "objcell_id": 2471165952
+        }
+      }
+    ]
+  },
+  "desc": "2471165952(934B)"
+}

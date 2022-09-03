@@ -274,9 +274,11 @@ namespace ACE.Server.Entity
             }
         }
 
-        public bool IsNegativeRedirectable => IsHarmful && (IsImpenBaneType || IsOtherNegativeRedirectable);
+        public bool IsWeaponTargetType => (Category >= SpellCategory.AttackModRaising && Category <= SpellCategory.WeaponTimeLowering) || (Category >= SpellCategory.ManaConversionModLowering && Category <= SpellCategory.ManaConversionModRaising) || Category == SpellCategory.SpellDamageRaising;
 
-        public bool IsOtherNegativeRedirectable
+        public bool IsNegativeRedirectable => IsHarmful && (IsImpenBaneType || IsOtherRedirectable);
+
+        public bool IsOtherRedirectable
         {
             get
             {
@@ -287,6 +289,12 @@ namespace ACE.Server.Entity
                     case SpellCategory.AttackModLowering:
                     case SpellCategory.WeaponTimeLowering:        // verified
                     case SpellCategory.ManaConversionModLowering: // hermetic void, replaced hide value, unchanged category in dat
+
+                    case SpellCategory.DamageRaising:
+                    case SpellCategory.DefenseModRaising:
+                    case SpellCategory.AttackModRaising:
+                    case SpellCategory.WeaponTimeRaising:
+                    case SpellCategory.ManaConversionModRaising:
                         return true;
                 }
                 return false;
@@ -317,15 +325,20 @@ namespace ACE.Server.Entity
         {
             get
             {
-                switch (Category)
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                    return false;
+                else
                 {
-                    case SpellCategory.AttackModRaising:
-                    case SpellCategory.DamageRaising:
-                    case SpellCategory.DefenseModRaising:
-                    case SpellCategory.WeaponTimeRaising:        // verified
-                    case SpellCategory.ManaConversionModRaising:
-                    case SpellCategory.SpellDamageRaising:
-                        return true;
+                    switch (Category)
+                    {
+                        case SpellCategory.AttackModRaising:
+                        case SpellCategory.DamageRaising:
+                        case SpellCategory.DefenseModRaising:
+                        case SpellCategory.WeaponTimeRaising:        // verified
+                        case SpellCategory.ManaConversionModRaising:
+                        case SpellCategory.SpellDamageRaising:
+                            return true;
+                    }
                 }
                 return false;
             }

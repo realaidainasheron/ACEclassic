@@ -30,7 +30,10 @@ namespace ACE.Entity.Enum.Properties
         [ServerOnly]
         AllegianceXPReceived  = 9002,
         [ServerOnly]
-        VerifyXp              = 9003
+        VerifyXp              = 9003,
+
+        XpTrackerTotalXp = 9016,
+        XpTrackerStartTimestamp = 9017
     }
 
     public static class PropertyInt64Extensions

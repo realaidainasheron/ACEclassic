@@ -1,0 +1,1106 @@
+{
+  "key": 629211136,
+  "value": {
+    "links": [
+      {
+        "target": 1918373919,
+        "source": 1918373918,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1918373944,
+        "source": 1918373945,
+        "desc": "Town Crier(towncrieraluvianfemale)(wcid: 5772) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1918373944,
+        "source": 1918373955,
+        "desc": "Fort Tethana Sentry(tethgatesentry)(wcid: 24493) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1918373944,
+        "source": 1918373957,
+        "desc": "Small Creepy Statue(forttethbattledungeonportalnpc)(wcid: 25986) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 1918373954,
+        "source": 1918373956,
+        "desc": "Lever(leverbigswitch)(wcid: 2609) -> doorprisonactivated(wcid: 2179)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 1918373888,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.518,
+              "y": 59.4675,
+              "z": 223.04
+            },
+            "angles": {
+              "w": 0.627284,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.778791
+            }
+          },
+          "objcell_id": 629211452
+        }
+      },
+      {
+        "id": 1918373889,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.33,
+              "y": 59.66,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373890,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.07,
+              "y": 66.22,
+              "z": 220.0
+            },
+            "angles": {
+              "w": -0.005235,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999986
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373891,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 161.01,
+              "y": 56.56,
+              "z": 220.025
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 629211459
+        }
+      },
+      {
+        "id": 1918373892,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 161.01,
+              "y": 63.435,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 629211459
+        }
+      },
+      {
+        "id": 1918373893,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 160.485,
+              "y": 60.01,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211460
+        }
+      },
+      {
+        "id": 1918373894,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.83,
+              "y": 61.47,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211460
+        }
+      },
+      {
+        "id": 1918373895,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 153.122,
+              "y": 50.9195,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 629211474
+        }
+      },
+      {
+        "id": 1918373896,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.0,
+              "y": 49.99,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373897,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.0,
+              "y": 71.01,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373898,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.985,
+              "y": 60.01,
+              "z": 223.5
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373899,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.01,
+              "y": 60.0,
+              "z": 220.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211481
+        }
+      },
+      {
+        "id": 1918373900,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.025,
+              "y": 65.35,
+              "z": 223.5
+            },
+            "angles": {
+              "w": -0.999994,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.003491
+            }
+          },
+          "objcell_id": 629211486
+        }
+      },
+      {
+        "id": 1918373901,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 74.275,
+              "y": 52.325,
+              "z": 220.0
+            },
+            "angles": {
+              "w": -0.25038,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.968148
+            }
+          },
+          "objcell_id": 629211495
+        }
+      },
+      {
+        "id": 1918373902,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 72.98,
+              "y": 60.0,
+              "z": 220.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373903,
+        "wcid": 174,
+        "desc": "Well(well)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 171.158,
+              "y": 102.351,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.999969,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.007852
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373904,
+        "wcid": 2317,
+        "desc": "Shopkeeper Yoshi Deshi(forttethanashopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 157.688,
+              "y": 61.4069,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.999288,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.037721
+            }
+          },
+          "objcell_id": 629211460
+        }
+      },
+      {
+        "id": 1918373905,
+        "wcid": 2316,
+        "desc": "Mothdor the Bowyer(forttethanabowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.412,
+              "y": 58.8569,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.894837,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.446393
+            }
+          },
+          "objcell_id": 629211450
+        }
+      },
+      {
+        "id": 1918373906,
+        "wcid": 2315,
+        "desc": "Blacksmith Magarith(forttethanablacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 90.543,
+              "y": 56.6056,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.076774,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997049
+            }
+          },
+          "objcell_id": 629211481
+        }
+      },
+      {
+        "id": 1918373907,
+        "wcid": 2321,
+        "desc": "Smith Magarith(forttethanablacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 76.2365,
+              "y": 68.8808,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.215726,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.976454
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373908,
+        "wcid": 2322,
+        "desc": "The Lone Arrow(forttethanabowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 108.367,
+              "y": 66.9915,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.154242,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.988033
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373909,
+        "wcid": 2325,
+        "desc": "The Purple Tumerok(forttethanashopkeepersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 153.867,
+              "y": 71.7556,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.168952,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.985624
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373910,
+        "wcid": 2326,
+        "desc": "Fort Tethana (forttethanasign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 178.722,
+              "y": 81.2858,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.376818,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.926287
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373911,
+        "wcid": 2326,
+        "desc": "Fort Tethana (forttethanasign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 136.503,
+              "y": 93.0428,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373912,
+        "wcid": 905,
+        "desc": "Black Rat Generator(ratblackgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 61.9143,
+              "y": 110.254,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.526357,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.850264
+            }
+          },
+          "objcell_id": 629211432
+        }
+      },
+      {
+        "id": 1918373913,
+        "wcid": 905,
+        "desc": "Black Rat Generator(ratblackgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.4895,
+              "y": 111.011,
+              "z": 232.005
+            },
+            "angles": {
+              "w": 0.567959,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.823057
+            }
+          },
+          "objcell_id": 629211432
+        }
+      },
+      {
+        "id": 1918373914,
+        "wcid": 905,
+        "desc": "Black Rat Generator(ratblackgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 60.5228,
+              "y": 110.342,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.404584,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.914501
+            }
+          },
+          "objcell_id": 629211432
+        }
+      },
+      {
+        "id": 1918373915,
+        "wcid": 4774,
+        "desc": "Aluvian Tumerok Collector Gen(collectortumerokaluviangen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.231,
+              "y": 60.785,
+              "z": 223.505
+            },
+            "angles": {
+              "w": 0.564012,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.825767
+            }
+          },
+          "objcell_id": 629211477
+        }
+      },
+      {
+        "id": 1918373916,
+        "wcid": 4781,
+        "desc": "Gharundim Leather Crafter Gen(leathercraftergharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 81.4066,
+              "y": 59.4521,
+              "z": 223.505
+            },
+            "angles": {
+              "w": 0.729445,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.68404
+            }
+          },
+          "objcell_id": 629211482
+        }
+      },
+      {
+        "id": 1918373918,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.966,
+              "y": 115.545,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.664729,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.747084
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373919,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.105,
+              "y": 116.734,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.151545,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.98845
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373925,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.2838,
+              "y": 84.372,
+              "z": 220.0
+            },
+            "angles": {
+              "w": -0.737056,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.675832
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373928,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.705,
+              "y": 83.918,
+              "z": 227.5
+            },
+            "angles": {
+              "w": 0.744364,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.667774
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373931,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.938,
+              "y": 85.8767,
+              "z": 223.055
+            },
+            "angles": {
+              "w": 0.905522,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.424299
+            }
+          },
+          "objcell_id": 629211508
+        }
+      },
+      {
+        "id": 1918373932,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.034,
+              "y": 83.7555,
+              "z": 220.01
+            },
+            "angles": {
+              "w": 0.908189,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.41856
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373933,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 112.721,
+              "y": 83.557,
+              "z": 219.995
+            },
+            "angles": {
+              "w": 0.938153,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.34622
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373934,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 112.805,
+              "y": 85.5363,
+              "z": 222.995
+            },
+            "angles": {
+              "w": 0.908189,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.41856
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373935,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 109.316,
+              "y": 83.9164,
+              "z": 223.0
+            },
+            "angles": {
+              "w": 0.938153,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.34622
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373936,
+        "wcid": 19198,
+        "desc": "Nullified Statue of a Grievver(statuegrievvernull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.0636,
+              "y": 83.7832,
+              "z": 226.805
+            },
+            "angles": {
+              "w": 0.749242,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.662297
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373937,
+        "wcid": 19715,
+        "desc": "Colossus Foundry Portal(portalextremestatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 71.0758,
+              "y": 83.2523,
+              "z": 214.805
+            },
+            "angles": {
+              "w": 0.680661,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.732599
+            }
+          },
+          "objcell_id": 629211498
+        }
+      },
+      {
+        "id": 1918373938,
+        "wcid": 20220,
+        "desc": "Grand Master Scrivener of Life Magic(scrivenerlifeextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 112.864,
+              "y": 88.869,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.393686,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.919245
+            }
+          },
+          "objcell_id": 629211504
+        }
+      },
+      {
+        "id": 1918373939,
+        "wcid": 20208,
+        "desc": "Grand Master Scrivener of Creature Magic(scrivenercreatureextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.076,
+              "y": 87.9284,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.656844,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.754026
+            }
+          },
+          "objcell_id": 629211504
+        }
+      },
+      {
+        "id": 1918373941,
+        "wcid": 20224,
+        "desc": "Grand Master Scrivener of War Magic(scrivenerwarextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 115.679,
+              "y": 86.0148,
+              "z": 223.005
+            },
+            "angles": {
+              "w": -0.2322,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.972668
+            }
+          },
+          "objcell_id": 629211509
+        }
+      },
+      {
+        "id": 1918373942,
+        "wcid": 20212,
+        "desc": "Grand Master Scrivener of Item Magic(scriveneritemextreme)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.157,
+              "y": 82.434,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.999731,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.023187
+            }
+          },
+          "objcell_id": 629211502
+        }
+      },
+      {
+        "id": 1918373943,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 89.0517,
+              "y": 76.9265,
+              "z": 298.212
+            },
+            "angles": {
+              "w": -0.968411,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.249358
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373944,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 167.264,
+              "y": 77.3958,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.988509,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.151164
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373945,
+        "wcid": 5772,
+        "desc": "Town Crier(towncrieraluvianfemale)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 166.803,
+              "y": 78.545,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.9717,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.236218
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373954,
+        "wcid": 2179,
+        "desc": "Door(doorprisonactivated)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 173.712,
+              "y": 83.9432,
+              "z": 220.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373955,
+        "wcid": 24493,
+        "desc": "Fort Tethana Sentry(tethgatesentry)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 176.171,
+              "y": 78.9351,
+              "z": 224.005
+            },
+            "angles": {
+              "w": 0.892788,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.450477
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373956,
+        "wcid": 2609,
+        "desc": "Lever(leverbigswitch)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 175.031,
+              "y": 79.4203,
+              "z": 224.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 629211136
+        }
+      },
+      {
+        "id": 1918373957,
+        "wcid": 25986,
+        "desc": "Small Creepy Statue(forttethbattledungeonportalnpc)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 162.241,
+              "y": 95.645,
+              "z": 220.005
+            },
+            "angles": {
+              "w": 0.999072,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.043071
+            }
+          },
+          "objcell_id": 629211136
+        }
+      }
+    ]
+  },
+  "desc": "629211136(2581)"
+}

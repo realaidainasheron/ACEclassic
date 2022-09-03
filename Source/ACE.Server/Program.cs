@@ -151,6 +151,8 @@ namespace ACE.Server
             log.Info("Initializing ConfigManager...");
             ConfigManager.Initialize();
 
+            log.Info($"Server Ruleset: {ConfigManager.Config.Server.WorldRuleset}"); 
+
             if (ConfigManager.Config.Server.WorldName != "ACEmulator")
             {
                 consoleTitle = $"{ConfigManager.Config.Server.WorldName} | {consoleTitle}";

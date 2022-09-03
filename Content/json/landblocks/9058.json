@@ -1,0 +1,875 @@
+{
+  "key": 2421686272,
+  "value": {
+    "links": [
+      {
+        "target": 2030403608,
+        "source": 2030403598,
+        "desc": "Collector(collectorgharundim)(wcid: 3918) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2030403608,
+        "source": 2030403603,
+        "desc": "Jilsaya bint Dah(alarqasjilsaya)(wcid: 5152) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2030403608,
+        "source": 2030403630,
+        "desc": "Jalina al-Hajj(alarqasflaggiver)(wcid: 25951) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2030403608,
+        "source": 2030403631,
+        "desc": "Adara al-Rajin(alarqasraimentgiver)(wcid: 27251) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2030403608,
+        "source": 2030403636,
+        "desc": "Apprentice Cook(collectorcookingghanewbie)(wcid: 27744) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2030403584,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 115.51,
+              "y": 138.25,
+              "z": 6.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403585,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.51,
+              "y": 130.5,
+              "z": 6.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403586,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 97.985,
+              "y": 130.5,
+              "z": 6.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403587,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 52.01,
+              "y": 56.5,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2421686576
+        }
+      },
+      {
+        "id": 2030403588,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 58.01,
+              "y": 64.5,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403589,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 63.5,
+              "y": 61.51,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403590,
+        "wcid": 4640,
+        "desc": "Sidzika's Supplies(alarqasgrocersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 184.416,
+              "y": 121.98,
+              "z": 3.9375
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403591,
+        "wcid": 4681,
+        "desc": "Sidzika the Grocer(alarqasgrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 179.746,
+              "y": 138.0,
+              "z": 0.024
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2421686555
+        }
+      },
+      {
+        "id": 2030403592,
+        "wcid": 4686,
+        "desc": "Tailor Najsun(alarqastailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 173.852,
+              "y": 132.299,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.755999,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.654573
+            }
+          },
+          "objcell_id": 2421686545
+        }
+      },
+      {
+        "id": 2030403593,
+        "wcid": 4684,
+        "desc": "Bashkiya the Scribe(alarqasscribe)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 185.989,
+              "y": 131.855,
+              "z": 0.024
+            },
+            "angles": {
+              "w": -0.823199,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.567753
+            }
+          },
+          "objcell_id": 2421686547
+        }
+      },
+      {
+        "id": 2030403594,
+        "wcid": 4677,
+        "desc": "Archmage Jiz ibn Ijfai(alarqasarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 188.124,
+              "y": 132.778,
+              "z": 3.205
+            },
+            "angles": {
+              "w": -0.461937,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.886913
+            }
+          },
+          "objcell_id": 2421686548
+        }
+      },
+      {
+        "id": 2030403595,
+        "wcid": 4643,
+        "desc": "House of Treasure(alarqasjewelersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 67.0511,
+              "y": 62.6296,
+              "z": 3.48313
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403596,
+        "wcid": 4683,
+        "desc": "Hinnabqiq the Jeweler(alarqasjeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 50.9855,
+              "y": 65.1891,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.805439,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.592679
+            }
+          },
+          "objcell_id": 2421686579
+        }
+      },
+      {
+        "id": 2030403597,
+        "wcid": 4679,
+        "desc": "Smith Dah bint Nas(alarqasblacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.95,
+              "y": 134.187,
+              "z": 6.005
+            },
+            "angles": {
+              "w": 0.485839,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.874048
+            }
+          },
+          "objcell_id": 2421686559
+        }
+      },
+      {
+        "id": 2030403598,
+        "wcid": 3918,
+        "desc": "Collector(collectorgharundim)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 111.103,
+              "y": 139.002,
+              "z": 5.205
+            },
+            "angles": {
+              "w": -0.511058,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.859546
+            }
+          },
+          "objcell_id": 2421686560
+        }
+      },
+      {
+        "id": 2030403599,
+        "wcid": 4639,
+        "desc": "Armaments of Truth(alarqasblacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 106.632,
+              "y": 131.355,
+              "z": 9.55
+            },
+            "angles": {
+              "w": 0.999001,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.044697
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403600,
+        "wcid": 4680,
+        "desc": "Muta al-Mai the Bowyer(alarqasbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.169,
+              "y": 132.734,
+              "z": 6.005
+            },
+            "angles": {
+              "w": -0.190304,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.981725
+            }
+          },
+          "objcell_id": 2421686559
+        }
+      },
+      {
+        "id": 2030403601,
+        "wcid": 4642,
+        "desc": "House of Peace(alarqashealersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 118.373,
+              "y": 67.4096,
+              "z": 2.97525
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403602,
+        "wcid": 4682,
+        "desc": "Healer Sunwi(alarqashealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 123.198,
+              "y": 66.7438,
+              "z": -0.171487
+            },
+            "angles": {
+              "w": -0.998494,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.054855
+            }
+          },
+          "objcell_id": 2421686588
+        }
+      },
+      {
+        "id": 2030403603,
+        "wcid": 5152,
+        "desc": "Jilsaya bint Dah(alarqasjilsaya)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 54.5396,
+              "y": 54.4963,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.879826,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.475296
+            }
+          },
+          "objcell_id": 2421686576
+        }
+      },
+      {
+        "id": 2030403605,
+        "wcid": 4645,
+        "desc": "Al-Arqas(alarqassign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 35.2427,
+              "y": 160.153,
+              "z": 5.34729
+            },
+            "angles": {
+              "w": 0.997699,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.067805
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403606,
+        "wcid": 4645,
+        "desc": "Al-Arqas(alarqassign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 92.568,
+              "y": 86.7431,
+              "z": -0.095
+            },
+            "angles": {
+              "w": 0.125157,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.992137
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403608,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.905,
+              "y": 91.745,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.675204,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.737631
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403614,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.696,
+              "y": 90.4293,
+              "z": 0.0
+            },
+            "angles": {
+              "w": -0.704711,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.709494
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403617,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 115.148,
+              "y": 90.5245,
+              "z": 7.0
+            },
+            "angles": {
+              "w": -0.718897,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.695117
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403620,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 115.99,
+              "y": 15.5,
+              "z": 34.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2421686598
+        }
+      },
+      {
+        "id": 2030403621,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 109.99,
+              "y": 7.5,
+              "z": 34.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403622,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 104.5,
+              "y": 10.49,
+              "z": 34.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403623,
+        "wcid": 19199,
+        "desc": "Nullified Statue of a Gromnie(statuegromnienull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 114.493,
+              "y": 90.5114,
+              "z": 6.815
+            },
+            "angles": {
+              "w": 0.715141,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.69898
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403624,
+        "wcid": 19717,
+        "desc": "Mannikin Foundry Portal(portallowstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 129.483,
+              "y": 90.6703,
+              "z": -5.195
+            },
+            "angles": {
+              "w": -0.717461,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.696598
+            }
+          },
+          "objcell_id": 2421686592
+        }
+      },
+      {
+        "id": 2030403625,
+        "wcid": 20221,
+        "desc": "Journeyman Scrivener of Life Magic(scrivenerlifeinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 117.352,
+              "y": 7.87481,
+              "z": 34.005
+            },
+            "angles": {
+              "w": 0.71342,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.700737
+            }
+          },
+          "objcell_id": 2421686601
+        }
+      },
+      {
+        "id": 2030403626,
+        "wcid": 20209,
+        "desc": "Journeyman Scrivener of Creature Magic(scrivenercreatureinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 104.783,
+              "y": 18.1722,
+              "z": 34.005
+            },
+            "angles": {
+              "w": 0.029217,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999573
+            }
+          },
+          "objcell_id": 2421686595
+        }
+      },
+      {
+        "id": 2030403627,
+        "wcid": 20225,
+        "desc": "Journeyman Scrivener of War Magic(scrivenerwarinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 104.826,
+              "y": 14.5333,
+              "z": 37.605
+            },
+            "angles": {
+              "w": 0.930528,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.366221
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403628,
+        "wcid": 20213,
+        "desc": "Journeyman Scrivener of Item Magic(scriveneriteminner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.811,
+              "y": 19.018,
+              "z": 42.805
+            },
+            "angles": {
+              "w": -0.122487,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.99247
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403630,
+        "wcid": 25951,
+        "desc": "Jalina al-Hajj(alarqasflaggiver)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.31,
+              "y": 112.601,
+              "z": -0.295
+            },
+            "angles": {
+              "w": -0.066417,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997792
+            }
+          },
+          "objcell_id": 2421686590
+        }
+      },
+      {
+        "id": 2030403631,
+        "wcid": 27251,
+        "desc": "Adara al-Rajin(alarqasraimentgiver)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 103.614,
+              "y": 125.657,
+              "z": 9.605
+            },
+            "angles": {
+              "w": 0.925739,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.378164
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403633,
+        "wcid": 6088,
+        "desc": "Al-Arqas Meeting Hall Portal(portalallegiancehallalarqas)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 135.876,
+              "y": 80.0102,
+              "z": 2.005
+            },
+            "angles": {
+              "w": -0.369186,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.929356
+            }
+          },
+          "objcell_id": 2421686610
+        }
+      },
+      {
+        "id": 2030403634,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.466,
+              "y": 56.2945,
+              "z": -0.095
+            },
+            "angles": {
+              "w": 0.076281,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.997086
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403635,
+        "wcid": 27547,
+        "desc": "Bind Stone(bindstone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 142.744,
+              "y": 89.0523,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.362012,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.932173
+            }
+          },
+          "objcell_id": 2421686272
+        }
+      },
+      {
+        "id": 2030403636,
+        "wcid": 27744,
+        "desc": "Apprentice Cook(collectorcookingghanewbie)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.461,
+              "y": 114.783,
+              "z": -0.295
+            },
+            "angles": {
+              "w": -0.111414,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.993774
+            }
+          },
+          "objcell_id": 2421686590
+        }
+      }
+    ]
+  },
+  "desc": "2421686272(9058)"
+}

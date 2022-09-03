@@ -1,0 +1,849 @@
+{
+  "key": 2240282624,
+  "value": {
+    "links": [
+      {
+        "target": 2019065878,
+        "source": 2019065877,
+        "desc": "Janda Sulifiya(maskcollectorgharundim)(wcid: 8403) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2019065878,
+        "source": 2019065884,
+        "desc": "Janda's Apprentice(maskcollectorgharundimapprentice)(wcid: 12204) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2019065883,
+        "source": 2019065882,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2019065903,
+        "source": 2019065904,
+        "desc": "A note(noteoswaldreturn)(wcid: 23880) -> linkitemgen10seconds(wcid: 15759)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2019065856,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.5,
+              "y": 76.01,
+              "z": 86.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2240282883
+        }
+      },
+      {
+        "id": 2019065857,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.5,
+              "y": 82.01,
+              "z": 86.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065858,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 34.49,
+              "y": 87.5,
+              "z": 86.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065859,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 43.51,
+              "y": 138.25,
+              "z": 86.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065860,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.51,
+              "y": 130.5,
+              "z": 86.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065861,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 25.985,
+              "y": 130.5,
+              "z": 86.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065862,
+        "wcid": 4693,
+        "desc": "Su'nah bint Arfiz the Shopkeeper(aljalimashopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 83.4272,
+              "y": 178.899,
+              "z": 85.705
+            },
+            "angles": {
+              "w": 0.471773,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.88172
+            }
+          },
+          "objcell_id": 2240282910
+        }
+      },
+      {
+        "id": 2019065863,
+        "wcid": 4691,
+        "desc": "Rah bint Khurdig the Bowyer(aljalimabowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.619,
+              "y": 181.335,
+              "z": 85.705
+            },
+            "angles": {
+              "w": 0.552849,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.833281
+            }
+          },
+          "objcell_id": 2240282908
+        }
+      },
+      {
+        "id": 2019065864,
+        "wcid": 4689,
+        "desc": "Archmage Marnai ibn Ayyar(aljalimaarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.4156,
+              "y": 74.9919,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.999626,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.027353
+            }
+          },
+          "objcell_id": 2240282886
+        }
+      },
+      {
+        "id": 2019065865,
+        "wcid": 4692,
+        "desc": "Healer Hansur al-Hirwak(aljalimahealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.6551,
+              "y": 89.2179,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.102954,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.994686
+            }
+          },
+          "objcell_id": 2240282880
+        }
+      },
+      {
+        "id": 2019065866,
+        "wcid": 4690,
+        "desc": "Busbawasa the Smith(aljalimablacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.9207,
+              "y": 134.126,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.385131,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.922862
+            }
+          },
+          "objcell_id": 2240282894
+        }
+      },
+      {
+        "id": 2019065867,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.4657,
+              "y": 98.9173,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.296799,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.95494
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065868,
+        "wcid": 4653,
+        "desc": "Wisdom's Way(aljalimaarchmagesign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 28.8605,
+              "y": 83.4119,
+              "z": 89.4014
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065869,
+        "wcid": 4654,
+        "desc": "Al-Jalima Smithy(aljalimablacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 34.7395,
+              "y": 126.059,
+              "z": 89.1742
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065870,
+        "wcid": 4657,
+        "desc": "Al-Jalima Supplies(aljalimashopkeepsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.012,
+              "y": 172.951,
+              "z": 89.1272
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065871,
+        "wcid": 4655,
+        "desc": "Al-Jalima Bows(aljalimabowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 126.115,
+              "y": 187.075,
+              "z": 89.054
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065872,
+        "wcid": 4658,
+        "desc": "Al-Jalima(aljalimasign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 124.818,
+              "y": 101.968,
+              "z": 89.04
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065873,
+        "wcid": 4572,
+        "desc": "Portal to Khayyaban(portalkhayyaban)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.2,
+              "y": 156.363,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.720798,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.693145
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065874,
+        "wcid": 4568,
+        "desc": "Portal to Tou-Tou(portaltoutou)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 13.8669,
+              "y": 57.2934,
+              "z": 86.005
+            },
+            "angles": {
+              "w": 0.094607,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.995515
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065875,
+        "wcid": 6083,
+        "desc": "Al-Jalima Spice Merchant(aljalimaspicemerchant)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.5456,
+              "y": 178.444,
+              "z": 85.705
+            },
+            "angles": {
+              "w": 0.761938,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.64765
+            }
+          },
+          "objcell_id": 2240282911
+        }
+      },
+      {
+        "id": 2019065876,
+        "wcid": 174,
+        "desc": "Well(well)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.2507,
+              "y": 120.015,
+              "z": 86.05
+            },
+            "angles": {
+              "w": 0.274904,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.961472
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065877,
+        "wcid": 8403,
+        "desc": "Janda Sulifiya(maskcollectorgharundim)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.194,
+              "y": 139.596,
+              "z": 85.205
+            },
+            "angles": {
+              "w": 0.571701,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.820462
+            }
+          },
+          "objcell_id": 2240282895
+        }
+      },
+      {
+        "id": 2019065878,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.7293,
+              "y": 138.337,
+              "z": 85.205
+            },
+            "angles": {
+              "w": 0.571701,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.820462
+            }
+          },
+          "objcell_id": 2240282895
+        }
+      },
+      {
+        "id": 2019065881,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 13.5526,
+              "y": 108.074,
+              "z": 86.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2240282914
+        }
+      },
+      {
+        "id": 2019065882,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 4.79136,
+              "y": 99.7571,
+              "z": 86.005
+            },
+            "angles": {
+              "w": 0.995308,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.096759
+            }
+          },
+          "objcell_id": 2240282916
+        }
+      },
+      {
+        "id": 2019065883,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 6.15709,
+              "y": 100.582,
+              "z": 86.005
+            },
+            "angles": {
+              "w": 0.625709,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.780057
+            }
+          },
+          "objcell_id": 2240282916
+        }
+      },
+      {
+        "id": 2019065884,
+        "wcid": 12204,
+        "desc": "Janda's Apprentice(maskcollectorgharundimapprentice)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.8493,
+              "y": 136.848,
+              "z": 85.205
+            },
+            "angles": {
+              "w": -0.918807,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.394707
+            }
+          },
+          "objcell_id": 2240282895
+        }
+      },
+      {
+        "id": 2019065885,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 14.1746,
+              "y": 101.391,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.734511,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.678597
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065891,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.9143,
+              "y": 124.406,
+              "z": 86.0
+            },
+            "angles": {
+              "w": -0.058326,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.998298
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065894,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 78.7821,
+              "y": 128.765,
+              "z": 92.9204
+            },
+            "angles": {
+              "w": -0.760037,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.649879
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065897,
+        "wcid": 19204,
+        "desc": "Nullified Statue of a Skeleton(statueskeletonnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 79.6076,
+              "y": 128.712,
+              "z": 92.81
+            },
+            "angles": {
+              "w": -0.749609,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.661881
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065898,
+        "wcid": 19718,
+        "desc": "Effigy Foundry Portal(portalmidstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 80.9753,
+              "y": 142.454,
+              "z": 80.805
+            },
+            "angles": {
+              "w": 0.995135,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.098525
+            }
+          },
+          "objcell_id": 2240282920
+        }
+      },
+      {
+        "id": 2019065899,
+        "wcid": 20226,
+        "desc": "Scrivener of War Magic(scrivenerwarouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.353,
+              "y": 151.768,
+              "z": 89.205
+            },
+            "angles": {
+              "w": 0.792664,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.609659
+            }
+          },
+          "objcell_id": 2240282941
+        }
+      },
+      {
+        "id": 2019065900,
+        "wcid": 20214,
+        "desc": "Scrivener of Item Magic(scriveneritemouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 53.7933,
+              "y": 160.5,
+              "z": 89.205
+            },
+            "angles": {
+              "w": 0.605802,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.795616
+            }
+          },
+          "objcell_id": 2240282953
+        }
+      },
+      {
+        "id": 2019065901,
+        "wcid": 20210,
+        "desc": "Scrivener of Creature Magic(scrivenercreatureouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.1562,
+              "y": 161.386,
+              "z": 89.205
+            },
+            "angles": {
+              "w": -0.274177,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.961679
+            }
+          },
+          "objcell_id": 2240282943
+        }
+      },
+      {
+        "id": 2019065902,
+        "wcid": 20222,
+        "desc": "Scrivener of Life Magic(scrivenerlifeouter)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 59.9916,
+              "y": 160.057,
+              "z": 86.005
+            },
+            "angles": {
+              "w": -0.019399,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999812
+            }
+          },
+          "objcell_id": 2240282948
+        }
+      },
+      {
+        "id": 2019065903,
+        "wcid": 15759,
+        "desc": "Linkable Item Generator(linkitemgen10seconds)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 14.9554,
+              "y": 79.5891,
+              "z": 86.005
+            },
+            "angles": {
+              "w": 0.87065,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.491904
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065904,
+        "wcid": 23880,
+        "desc": "A note(noteoswaldreturn)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 14.1739,
+              "y": 80.2421,
+              "z": 86.079
+            },
+            "angles": {
+              "w": 0.649192,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.760625
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      },
+      {
+        "id": 2019065905,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 64.6986,
+              "y": 104.385,
+              "z": 86.005
+            },
+            "angles": {
+              "w": 0.943153,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.33236
+            }
+          },
+          "objcell_id": 2240282624
+        }
+      }
+    ]
+  },
+  "desc": "2240282624(8588)"
+}

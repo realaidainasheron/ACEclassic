@@ -211,6 +211,40 @@ namespace ACE.Server.Command.Handlers
             {
                 var updated = false;
 
+                List<Skill> freeTrained = new List<Skill>();
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    switch (player.Heritage)
+                    {
+                        case (int)HeritageGroup.Aluvian:
+                            freeTrained.Add(Skill.Shield);
+                            break;
+                        case (int)HeritageGroup.Gharundim:
+                            freeTrained.Add(Skill.Salvaging);
+                            break;
+                        case (int)HeritageGroup.Sho:
+                            freeTrained.Add(Skill.AssessPerson);
+                            break;
+                    }
+                }
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                {
+                    switch (player.Heritage)
+                    {
+                        case (int)HeritageGroup.Aluvian:
+                            freeTrained.Add(Skill.AssessPerson);
+                            freeTrained.Add(Skill.Dagger);
+                            break;
+                        case (int)HeritageGroup.Gharundim:
+                            freeTrained.Add(Skill.ItemTinkering);
+                            freeTrained.Add(Skill.Staff);
+                            break;
+                        case (int)HeritageGroup.Sho:
+                            freeTrained.Add(Skill.UnarmedCombat);
+                            break;
+                    }
+                }
+
                 foreach (var skill in new Dictionary<Skill, PropertiesSkill>(player.Biota.PropertiesSkill))
                 {
                     // ensure this is a valid player skill
@@ -226,6 +260,17 @@ namespace ACE.Server.Command.Handlers
                             updated = true;
                         }
                         continue;
+                    }
+
+                    if (freeTrained.Contains(skill.Key) && skill.Value.SAC < SkillAdvancementClass.Trained)
+                    {
+                        Console.WriteLine($"{player.Name} has untrained heritage skill {skill.Key}{fixStr}");
+                        foundIssues = true;
+                        if (fix)
+                        {
+                            skill.Value.SAC = SkillAdvancementClass.Trained;
+                            updated = true;
+                        }
                     }
 
                     var rank = skill.Value.LevelFromPP;
@@ -376,6 +421,42 @@ namespace ACE.Server.Command.Handlers
 
                 var startCredits = (int)heritageGroup.SkillCredits;
 
+                List<Skill> freeTrained = new List<Skill>();
+                if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM)
+                {
+                    startCredits = 50;
+                    switch (player.Heritage)
+                    {
+                        case (int)HeritageGroup.Aluvian:
+                            freeTrained.Add(Skill.Shield);
+                            break;
+                        case (int)HeritageGroup.Gharundim:
+                            freeTrained.Add(Skill.Salvaging);
+                            break;
+                        case (int)HeritageGroup.Sho:
+                            freeTrained.Add(Skill.AssessPerson);
+                            break;
+                    }
+                }
+                else if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                {
+                    startCredits = 50;
+                    switch (player.Heritage)
+                    {
+                        case (int)HeritageGroup.Aluvian:
+                            freeTrained.Add(Skill.AssessPerson);
+                            freeTrained.Add(Skill.Dagger);
+                            break;
+                        case (int)HeritageGroup.Gharundim:
+                            freeTrained.Add(Skill.ItemTinkering);
+                            freeTrained.Add(Skill.Staff);
+                            break;
+                        case (int)HeritageGroup.Sho:
+                            freeTrained.Add(Skill.UnarmedCombat);
+                            break;
+                    }
+                }
+
                 var levelCredits = GetAdditionalCredits(player.Level ?? 1);
 
                 var questCredits = 0;
@@ -405,6 +486,7 @@ namespace ACE.Server.Command.Handlers
                 foreach (var skill in new Dictionary<Skill, PropertiesSkill>(player.Biota.PropertiesSkill))
                 {
                     var sac = skill.Value.SAC;
+
                     if (sac < SkillAdvancementClass.Trained)
                         continue;
 
@@ -416,12 +498,14 @@ namespace ACE.Server.Command.Handlers
 
                     adjustedSkillCosts.TryGetValue(skill.Key, out var adjustedCost);
 
+
                     var trainedCost = adjustedCost?.NormalCost ?? skillInfo.TrainedCost;
                     var specializedCost = adjustedCost?.PrimaryCost ?? skillInfo.SpecializedCost;
 
                     //Console.WriteLine($"{(Skill)skill.Type} trained cost: {skillInfo.TrainedCost}, spec cost: {skillInfo.SpecializedCost}, adjusted trained cost: {trainedCost}, adjusted spec cost: {specializedCost}");
 
-                    used += trainedCost;
+                    if (!freeTrained.Contains(skill.Key))
+                        used += skillInfo.TrainedCost;
 
                     if (sac == SkillAdvancementClass.Specialized)
                     {
@@ -438,7 +522,10 @@ namespace ACE.Server.Command.Handlers
 
                         used += specializedCost - trainedCost;
 
-                        specCreditsSpent += specializedCost;
+                        specCreditsSpent += skillInfo.SpecializedCost;
+
+                        if (skill.Key == Skill.ArcaneLore && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration) // exclude Arcane Lore TrainedCost
+                            specCreditsSpent -= skillInfo.TrainedCost;
                     }
                 }
 
@@ -589,7 +676,7 @@ namespace ACE.Server.Command.Handlers
 
                 var sac = skill.Value.SAC;
 
-                if (sac != SkillAdvancementClass.Trained || !Player.IsSkillUntrainable(skill.Key))
+                if (sac != SkillAdvancementClass.Trained || !Player.IsSkillUntrainable(skill.Key, (HeritageGroup)player.Heritage))
                     continue;
 
                 refundXP += skill.Value.PP;

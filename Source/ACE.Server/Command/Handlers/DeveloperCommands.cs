@@ -1114,13 +1114,34 @@ namespace ACE.Server.Command.Handlers
         [CommandHandler("addallspells", AccessLevel.Developer, CommandHandlerFlag.RequiresWorld, 0, "Adds all known spells to your own spellbook.")]
         public static void HandleAddAllSpells(Session session, params string[] parameters)
         {
-            for (uint spellLevel = 1; spellLevel <= 8; spellLevel++)
+            switch (Common.ConfigManager.Config.Server.WorldRuleset)
             {
-                session.Player.LearnSpellsInBulk(MagicSchool.CreatureEnchantment, spellLevel);
-                session.Player.LearnSpellsInBulk(MagicSchool.ItemEnchantment, spellLevel);
-                session.Player.LearnSpellsInBulk(MagicSchool.LifeMagic, spellLevel);
-                session.Player.LearnSpellsInBulk(MagicSchool.VoidMagic, spellLevel);
-                session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
+                case Common.Ruleset.EoR:
+                    for (uint spellLevel = 1; spellLevel <= 8; spellLevel++)
+                    {
+                        session.Player.LearnSpellsInBulk(MagicSchool.CreatureEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.ItemEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.LifeMagic, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.VoidMagic, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
+                    }
+                    break;
+                case Common.Ruleset.Infiltration:
+                    for (uint spellLevel = 1; spellLevel <= 7; spellLevel++)
+                    {
+                        session.Player.LearnSpellsInBulk(MagicSchool.CreatureEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.ItemEnchantment, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.LifeMagic, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
+                    }
+                    break;
+                case Common.Ruleset.CustomDM:
+                    for (uint spellLevel = 1; spellLevel <= 7; spellLevel++)
+                    {
+                        session.Player.LearnSpellsInBulk(MagicSchool.LifeMagic, spellLevel);
+                        session.Player.LearnSpellsInBulk(MagicSchool.WarMagic, spellLevel);
+                    }
+                    break;
             }
         }
 
@@ -2429,6 +2450,16 @@ namespace ACE.Server.Command.Handlers
 
             if (target != null && target is Player player)
             {
+                player.LogOut_Inner(true);
+
+                player.CurrentLandblock?.RemoveWorldObject(player.Guid, false);
+                player.SavePlayerToDatabase();
+                PlayerManager.SwitchPlayerFromOnlineToOffline(player);
+
+                if (player.Session != null)
+                {
+                    player.Session.Terminate(Network.Enum.SessionTerminationReason.ForcedLogOffRequested, new GameMessageBootAccount(" because the character was forced to log off by an admin"));
+                }
                 //if (player.Session != null)
                 //    player.Session.LogOffPlayer(true);
                 //else
@@ -2914,26 +2945,30 @@ namespace ACE.Server.Command.Handlers
         [CommandHandler("fast", AccessLevel.Developer, CommandHandlerFlag.RequiresWorld)]
         public static void HandleFast(Session session, params string[] parameters)
         {
-            var spell = new Spell(SpellId.QuicknessSelf8);
+            var EoR = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+
+            var spell = new Spell(EoR ? SpellId.QuicknessSelf8 : SpellId.QuicknessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
 
-            spell = new Spell(SpellId.SprintSelf8);
+            spell = new Spell(EoR ? SpellId.SprintSelf8 : SpellId.SprintSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
 
-            spell = new Spell(SpellId.StrengthSelf8);
+            spell = new Spell(EoR ? SpellId.StrengthSelf8 : SpellId.StrengthSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
         }
 
         [CommandHandler("slow", AccessLevel.Developer, CommandHandlerFlag.RequiresWorld)]
         public static void HandleSlow(Session session, params string[] parameters)
         {
-            var spell = new Spell(SpellId.SlownessSelf8);
+            var EoR = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR;
+
+            var spell = new Spell(EoR ? SpellId.SlownessSelf8 : SpellId.SlownessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
 
-            spell = new Spell(SpellId.LeadenFeetSelf8);
+            spell = new Spell(EoR ? SpellId.LeadenFeetSelf8 : SpellId.LeadenFeetSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
 
-            spell = new Spell(SpellId.WeaknessSelf8);
+            spell = new Spell(EoR ? SpellId.WeaknessSelf8 : SpellId.WeaknessSelf7);
             session.Player.CreateEnchantment(session.Player, session.Player, null, spell);
         }
 
@@ -3322,9 +3357,29 @@ namespace ACE.Server.Command.Handlers
 
             if (creature != null)
             {
-                var msg = creature.DeathTreasure != null ? $"DeathTreasure - Tier: {creature.DeathTreasure.Tier}" : "doesn't have PropertyDataId.DeathTreasureType";
+                var msg = creature.DeathTreasure != null ? $"DeathTreasure - Tier: {creature.DeathTreasure.Tier} QualityMod: {creature.DeathTreasure.LootQualityMod}" : "doesn't have PropertyDataId.DeathTreasureType";
 
                 CommandHandlerHelper.WriteOutputInfo(session, $"{creature.Name} ({creature.Guid}) {msg}");
+            }
+            else
+            {
+                var chest = CommandHandlerHelper.GetLastAppraisedObject(session) as Chest;
+
+                if (chest != null)
+                {
+                    int counter = 1;
+                    foreach (var generator in chest.GeneratorProfiles)
+                    {
+                        if (generator.RegenLocationType.HasFlag(RegenLocationType.Treasure))
+                        {
+                            var treasure = LootGenerationFactory.GetTweakedDeathTreasureProfile(generator.Biota.WeenieClassId, chest);
+
+                            var msg = treasure != null ? $"Generator {counter} - DeathTreasure - Tier: {treasure.Tier} QualityMod: {treasure.LootQualityMod}" : "doesn't have a valid DeathTreasureType";
+                            counter++;
+                            CommandHandlerHelper.WriteOutputInfo(session, $"{chest.Name} ({chest.Guid}) {msg}");
+                        }
+                    }
+                }
             }
         }
 
@@ -3923,7 +3978,5 @@ namespace ACE.Server.Command.Handlers
                     break;
             }
         }
-
-
     }
 }

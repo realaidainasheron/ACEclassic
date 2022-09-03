@@ -1,0 +1,414 @@
+{
+  "key": 2255224832,
+  "value": {
+    "links": [
+      {
+        "target": 2019999757,
+        "source": 2019999756,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2019999744,
+        "wcid": 1812,
+        "desc": "Archmage Dakila bint Ma'liz(tufaarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.2486,
+              "y": 62.4313,
+              "z": 9.705
+            },
+            "angles": {
+              "w": 0.5778,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.816179
+            }
+          },
+          "objcell_id": 2255225094
+        }
+      },
+      {
+        "id": 2019999745,
+        "wcid": 1818,
+        "desc": "Grocer Tashhir ibn Najrak(tufagrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 157.21,
+              "y": 157.801,
+              "z": 9.705
+            },
+            "angles": {
+              "w": -0.120522,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.992711
+            }
+          },
+          "objcell_id": 2255225091
+        }
+      },
+      {
+        "id": 2019999746,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 151.24,
+              "y": 176.823,
+              "z": 9.705
+            },
+            "angles": {
+              "w": 0.708955,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.705254
+            }
+          },
+          "objcell_id": 2255225089
+        }
+      },
+      {
+        "id": 2019999747,
+        "wcid": 1794,
+        "desc": "Provisions(tufagrocersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 159.347,
+              "y": 145.021,
+              "z": 13.4431
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999748,
+        "wcid": 1823,
+        "desc": "Tailor Fadnuj ibn Samil(tufatailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.869,
+              "y": 176.93,
+              "z": 9.705
+            },
+            "angles": {
+              "w": 0.955373,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.295401
+            }
+          },
+          "objcell_id": 2255225089
+        }
+      },
+      {
+        "id": 2019999749,
+        "wcid": 1798,
+        "desc": "Raiments(tufatailorsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 160.595,
+              "y": 185.639,
+              "z": 13.3895
+            },
+            "angles": {
+              "w": -0.012264,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999925
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999750,
+        "wcid": 1790,
+        "desc": "House of the Seven Stars(tufaarchmagesign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.1635,
+              "y": 71.0875,
+              "z": 13.51
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999751,
+        "wcid": 145,
+        "desc": "Coffer(coffer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.0519,
+              "y": 58.5094,
+              "z": 9.705
+            },
+            "angles": {
+              "w": 0.818727,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.574182
+            }
+          },
+          "objcell_id": 2255225094
+        }
+      },
+      {
+        "id": 2019999752,
+        "wcid": 171,
+        "desc": "Vat(vat)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 40.7258,
+              "y": 58.7628,
+              "z": 9.705
+            },
+            "angles": {
+              "w": -0.577619,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.816307
+            }
+          },
+          "objcell_id": 2255225093
+        }
+      },
+      {
+        "id": 2019999753,
+        "wcid": 1910,
+        "desc": "Tufa(tufasign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 27.4715,
+              "y": 14.4277,
+              "z": 9.71065
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999754,
+        "wcid": 6441,
+        "desc": "Well(wellnotop)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.129,
+              "y": 169.143,
+              "z": 10.0
+            },
+            "angles": {
+              "w": 0.217715,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.976012
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999755,
+        "wcid": 6441,
+        "desc": "Well(wellnotop)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 37.3695,
+              "y": 67.8959,
+              "z": 10.0
+            },
+            "angles": {
+              "w": -0.46295,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.886385
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999756,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 128.319,
+              "y": 182.815,
+              "z": 9.705
+            },
+            "angles": {
+              "w": -0.720744,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.693201
+            }
+          },
+          "objcell_id": 2255225097
+        }
+      },
+      {
+        "id": 2019999757,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 129.355,
+              "y": 183.5,
+              "z": 9.705
+            },
+            "angles": {
+              "w": -0.517406,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.85574
+            }
+          },
+          "objcell_id": 2255225097
+        }
+      },
+      {
+        "id": 2019999758,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 137.824,
+              "y": 183.277,
+              "z": 10.005
+            },
+            "angles": {
+              "w": -0.364722,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.931116
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999764,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 123.272,
+              "y": 161.818,
+              "z": 10.0
+            },
+            "angles": {
+              "w": -0.933502,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.358571
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999767,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 126.055,
+              "y": 158.612,
+              "z": 17.0
+            },
+            "angles": {
+              "w": 0.919056,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.394126
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999770,
+        "wcid": 19204,
+        "desc": "Nullified Statue of a Skeleton(statueskeletonnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 126.165,
+              "y": 158.741,
+              "z": 16.81
+            },
+            "angles": {
+              "w": -0.906878,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.421394
+            }
+          },
+          "objcell_id": 2255224832
+        }
+      },
+      {
+        "id": 2019999771,
+        "wcid": 19716,
+        "desc": "Mammet Foundry Portal(portalhighstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 134.402,
+              "y": 149.122,
+              "z": 4.805
+            },
+            "angles": {
+              "w": -0.332007,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.943277
+            }
+          },
+          "objcell_id": 2255225098
+        }
+      }
+    ]
+  },
+  "desc": "2255224832(866C)"
+}

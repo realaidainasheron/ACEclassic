@@ -1,0 +1,1175 @@
+{
+  "key": 2541420544,
+  "value": {
+    "links": [
+      {
+        "target": 2037887015,
+        "source": 2037887014,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2037887015,
+        "source": 2037887049,
+        "desc": "Apprentice Fletcher(collectorfletchingghanewbie)(wcid: 27747) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2037886976,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 151.405,
+              "y": 187.606,
+              "z": 0.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420803
+        }
+      },
+      {
+        "id": 2037886977,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 159.405,
+              "y": 181.606,
+              "z": 0.0
+            },
+            "angles": {
+              "w": -1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886978,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.415,
+              "y": 176.116,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886979,
+        "wcid": 145,
+        "desc": "Coffer(coffer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 164.575,
+              "y": 153.505,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2541420858
+        }
+      },
+      {
+        "id": 2037886980,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.7,
+              "y": 154.59,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886981,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.7,
+              "y": 147.07,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886982,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.95,
+              "y": 164.59,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886983,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 178.62,
+              "y": 181.29,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886984,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 178.62,
+              "y": 188.805,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886985,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 186.37,
+              "y": 171.29,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886986,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 183.725,
+              "y": 148.346,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2541420876
+        }
+      },
+      {
+        "id": 2037886987,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 175.725,
+              "y": 154.346,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 1.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886988,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 178.715,
+              "y": 159.836,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037886989,
+        "wcid": 2306,
+        "desc": "Da'hir ibn Khayzur the Archmage(samsurarchmage)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 100.191,
+              "y": 153.928,
+              "z": 3.205
+            },
+            "angles": {
+              "w": -0.828113,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.560561
+            }
+          },
+          "objcell_id": 2541420844
+        }
+      },
+      {
+        "id": 2037886990,
+        "wcid": 978,
+        "desc": "Ushad al-Fasam the Grocer(samsurgrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 105.683,
+              "y": 162.273,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.243615,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.969872
+            }
+          },
+          "objcell_id": 2541420833
+        }
+      },
+      {
+        "id": 2037886991,
+        "wcid": 981,
+        "desc": "Sutaiya bint Yil the Scribe(samsurscribe)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 102.121,
+              "y": 153.799,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.908508,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.417867
+            }
+          },
+          "objcell_id": 2541420841
+        }
+      },
+      {
+        "id": 2037886992,
+        "wcid": 983,
+        "desc": "Nasruya al-Khanjan the Tailor(samsurtailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 109.064,
+              "y": 150.607,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420831
+        }
+      },
+      {
+        "id": 2037886993,
+        "wcid": 980,
+        "desc": "Jeweler Fathlan ibn Nuril(samsurjeweler)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 160.08,
+              "y": 188.64,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.243615,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.969872
+            }
+          },
+          "objcell_id": 2541420806
+        }
+      },
+      {
+        "id": 2037886994,
+        "wcid": 979,
+        "desc": "Healer Burah bint Fathlan(samsurhealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 151.2,
+              "y": 175.2,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.716302,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.69779
+            }
+          },
+          "objcell_id": 2541420800
+        }
+      },
+      {
+        "id": 2037886995,
+        "wcid": 973,
+        "desc": "Mishiya al-Abdi the Barkeeper(samsurbarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 180.76,
+              "y": 185.032,
+              "z": 0.473125
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2541420859
+        }
+      },
+      {
+        "id": 2037886996,
+        "wcid": 976,
+        "desc": "Weaponsmith Ayiz ibn Khayt(samsurblacksmith2)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 155.141,
+              "y": 154.772,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.9262,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.377033
+            }
+          },
+          "objcell_id": 2541420845
+        }
+      },
+      {
+        "id": 2037886997,
+        "wcid": 975,
+        "desc": "Armorer Talam ibn Tarish(samsurblacksmith)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.563,
+              "y": 150.776,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.69904,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.715083
+            }
+          },
+          "objcell_id": 2541420845
+        }
+      },
+      {
+        "id": 2037886998,
+        "wcid": 982,
+        "desc": "Shopkeep Julsama bint Sakim(samsurshopkeep)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 176.52,
+              "y": 147.356,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.999781,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.020942
+            }
+          },
+          "objcell_id": 2541420879
+        }
+      },
+      {
+        "id": 2037886999,
+        "wcid": 977,
+        "desc": "Thawasa al-La'ud the Bowyer(samsurbowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 185.16,
+              "y": 160.8,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.598325,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.801254
+            }
+          },
+          "objcell_id": 2541420873
+        }
+      },
+      {
+        "id": 2037887000,
+        "wcid": 998,
+        "desc": "Bellows' Breath(samsurblacksmithsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.254,
+              "y": 155.185,
+              "z": 3.83088
+            },
+            "angles": {
+              "w": -0.298832,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.954306
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887001,
+        "wcid": 1002,
+        "desc": "House of Fathlan(samsurjewelersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 157.534,
+              "y": 179.306,
+              "z": 3.4965
+            },
+            "angles": {
+              "w": -0.9999,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.01418
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887002,
+        "wcid": 999,
+        "desc": "Bow and Goods(samsurbowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.599,
+              "y": 163.378,
+              "z": 3.50998
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887003,
+        "wcid": 1003,
+        "desc": "The Golden Vine(samsurpubsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 180.965,
+              "y": 180.557,
+              "z": 3.79075
+            },
+            "angles": {
+              "w": 0.94452,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.328455
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887004,
+        "wcid": 1109,
+        "desc": "Samsur(samsursign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.8911,
+              "y": 77.8441,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.92388,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.382683
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887005,
+        "wcid": 4787,
+        "desc": "Gharundim Trophy Smith Gen(trophysmithgharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 152.681,
+              "y": 174.32,
+              "z": 3.605
+            },
+            "angles": {
+              "w": -0.606779,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.79487
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887006,
+        "wcid": 4770,
+        "desc": "Collector Gharundim Gen(collectorgharundimgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 169.143,
+              "y": 174.213,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.529507,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.848306
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887007,
+        "wcid": 635,
+        "desc": "Healer(healersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.925,
+              "y": 172.749,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.751475,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.659762
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887008,
+        "wcid": 1109,
+        "desc": "Samsur(samsursign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 163.782,
+              "y": 161.598,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887009,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 173.16,
+              "y": 174.0,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887010,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 189.137,
+              "y": 172.315,
+              "z": -0.3
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2541420860
+        }
+      },
+      {
+        "id": 2037887013,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 75.7468,
+              "y": 115.228,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.374607,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.927184
+            }
+          },
+          "objcell_id": 2541420888
+        }
+      },
+      {
+        "id": 2037887014,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 88.2272,
+              "y": 113.924,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.582716,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.812676
+            }
+          },
+          "objcell_id": 2541420890
+        }
+      },
+      {
+        "id": 2037887015,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 87.8372,
+              "y": 112.67,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.952477,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.304611
+            }
+          },
+          "objcell_id": 2541420890
+        }
+      },
+      {
+        "id": 2037887016,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.7348,
+              "y": 121.758,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.37247,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.928044
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887020,
+        "wcid": 14930,
+        "desc": "Wedding Planner(plannerwedding)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 85.2366,
+              "y": 115.192,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.139821,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.990177
+            }
+          },
+          "objcell_id": 2541420890
+        }
+      },
+      {
+        "id": 2037887023,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 124.311,
+              "y": 177.745,
+              "z": 0.0
+            },
+            "angles": {
+              "w": -0.997999,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.063227
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887026,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 124.986,
+              "y": 173.449,
+              "z": 7.0
+            },
+            "angles": {
+              "w": -0.998117,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.061345
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887032,
+        "wcid": 19199,
+        "desc": "Nullified Statue of a Gromnie(statuegromnienull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 124.878,
+              "y": 173.95,
+              "z": 6.815
+            },
+            "angles": {
+              "w": -0.996218,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.08689
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887033,
+        "wcid": 19717,
+        "desc": "Mannikin Foundry Portal(portallowstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 126.543,
+              "y": 159.739,
+              "z": -5.195
+            },
+            "angles": {
+              "w": -0.037683,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.99929
+            }
+          },
+          "objcell_id": 2541420894
+        }
+      },
+      {
+        "id": 2037887038,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 136.572,
+              "y": 125.937,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.01996,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999801
+            }
+          },
+          "objcell_id": 2541420900
+        }
+      },
+      {
+        "id": 2037887039,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 128.339,
+              "y": 131.613,
+              "z": 0.0
+            },
+            "angles": {
+              "w": 0.01996,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999801
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887040,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 131.107,
+              "y": 137.218,
+              "z": 0.0
+            },
+            "angles": {
+              "w": -0.72108,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.692852
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887041,
+        "wcid": 20209,
+        "desc": "Journeyman Scrivener of Creature Magic(scrivenercreatureinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 138.827,
+              "y": 137.284,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.74742,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.664352
+            }
+          },
+          "objcell_id": 2541420897
+        }
+      },
+      {
+        "id": 2037887042,
+        "wcid": 20221,
+        "desc": "Journeyman Scrivener of Life Magic(scrivenerlifeinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 134.819,
+              "y": 138.803,
+              "z": 3.605
+            },
+            "angles": {
+              "w": -0.999128,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.041759
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887043,
+        "wcid": 20225,
+        "desc": "Journeyman Scrivener of War Magic(scrivenerwarinner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 134.989,
+              "y": 131.629,
+              "z": 8.805
+            },
+            "angles": {
+              "w": -0.957604,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.288087
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887044,
+        "wcid": 20213,
+        "desc": "Journeyman Scrivener of Item Magic(scriveneriteminner)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 129.666,
+              "y": 124.664,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.999771,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.021411
+            }
+          },
+          "objcell_id": 2541420903
+        }
+      },
+      {
+        "id": 2037887046,
+        "wcid": 22231,
+        "desc": "Victory Residential Halls Portal(portalvictoryresidentialhalls)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 55.9217,
+              "y": 81.0982,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.88404,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.467411
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887047,
+        "wcid": 22242,
+        "desc": "Victory Residential Halls(victoryresidentialhallssign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 56.7439,
+              "y": 80.5542,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.88404,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.467411
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887048,
+        "wcid": 509,
+        "desc": "Life Stone(lifestone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 109.511,
+              "y": 128.157,
+              "z": 0.005
+            },
+            "angles": {
+              "w": 0.944498,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.328517
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      },
+      {
+        "id": 2037887049,
+        "wcid": 27747,
+        "desc": "Apprentice Fletcher(collectorfletchingghanewbie)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.649,
+              "y": 155.644,
+              "z": 0.005
+            },
+            "angles": {
+              "w": -0.956205,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.292698
+            }
+          },
+          "objcell_id": 2541420544
+        }
+      }
+    ]
+  },
+  "desc": "2541420544(977B)"
+}

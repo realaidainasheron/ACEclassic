@@ -1,0 +1,71 @@
+{
+  "key": 3316187136,
+  "value": {
+    "weenies": [
+      {
+        "id": 2086309888,
+        "wcid": 6090,
+        "desc": "Arwic Meeting Hall Portal(portalallegiancehallarwic)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.813,
+              "y": 77.701,
+              "z": 54.005
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3316187393
+        }
+      },
+      {
+        "id": 2086309889,
+        "wcid": 4568,
+        "desc": "Portal to Tou-Tou(portaltoutou)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 184.47,
+              "y": 141.353,
+              "z": 45.0745
+            },
+            "angles": {
+              "w": -0.92388,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.382683
+            }
+          },
+          "objcell_id": 3316187136
+        }
+      },
+      {
+        "id": 2086309892,
+        "wcid": 27547,
+        "desc": "Bind Stone(bindstone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.5916,
+              "y": 88.6518,
+              "z": 52.005
+            },
+            "angles": {
+              "w": -0.77686,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.629674
+            }
+          },
+          "objcell_id": 3316187136
+        }
+      }
+    ]
+  },
+  "desc": "3316187136(C5A9)"
+}

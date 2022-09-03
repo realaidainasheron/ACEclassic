@@ -1,0 +1,603 @@
+{
+  "key": 2655191040,
+  "value": {
+    "links": [
+      {
+        "target": 2044997652,
+        "source": 2044997651,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2044997632,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 34.8974,
+              "y": 178.992,
+              "z": 43.205
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2655191296
+        }
+      },
+      {
+        "id": 2044997633,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.8389,
+              "y": 127.113,
+              "z": 56.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655191327
+        }
+      },
+      {
+        "id": 2044997634,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.8389,
+              "y": 133.113,
+              "z": 56.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997635,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 34.8289,
+              "y": 138.603,
+              "z": 56.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997636,
+        "wcid": 4696,
+        "desc": "Barkeep Mausin ibn Hi(khayyabanbarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 29.854,
+              "y": 174.113,
+              "z": 43.205
+            },
+            "angles": {
+              "w": 0.679413,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.733756
+            }
+          },
+          "objcell_id": 2655191314
+        }
+      },
+      {
+        "id": 2044997637,
+        "wcid": 4699,
+        "desc": "Tumina the Healer(khayyabanhealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 42.9138,
+              "y": 128.59,
+              "z": 56.005
+            },
+            "angles": {
+              "w": -0.885213,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.465186
+            }
+          },
+          "objcell_id": 2655191327
+        }
+      },
+      {
+        "id": 2044997638,
+        "wcid": 4703,
+        "desc": "Tailor Zayjah(khayyabantailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 36.0366,
+              "y": 84.7569,
+              "z": 49.705
+            },
+            "angles": {
+              "w": 0.805562,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.592512
+            }
+          },
+          "objcell_id": 2655191322
+        }
+      },
+      {
+        "id": 2044997639,
+        "wcid": 27244,
+        "desc": "Chest(chestglitternewbie)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 38.6048,
+              "y": 80.959,
+              "z": 49.705
+            },
+            "angles": {
+              "w": 0.031166,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.999514
+            }
+          },
+          "objcell_id": 2655191322
+        }
+      },
+      {
+        "id": 2044997640,
+        "wcid": 4698,
+        "desc": "Grocer Sina bint Idnun(khayyabangrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.4793,
+              "y": 125.946,
+              "z": 56.005
+            },
+            "angles": {
+              "w": 0.989278,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.146042
+            }
+          },
+          "objcell_id": 2655191330
+        }
+      },
+      {
+        "id": 2044997641,
+        "wcid": 4669,
+        "desc": "Zayjay's Clothing(khayyabantailorsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 27.7252,
+              "y": 86.3747,
+              "z": 53.1838
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997642,
+        "wcid": 4666,
+        "desc": "Desert's Respite(khayyabanhealersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 33.6211,
+              "y": 142.181,
+              "z": 59.614
+            },
+            "angles": {
+              "w": 0.000334,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997643,
+        "wcid": 4668,
+        "desc": "Khayyaban(khayyabansign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 45.5702,
+              "y": 50.9565,
+              "z": 50.005
+            },
+            "angles": {
+              "w": -0.92388,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.382683
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997644,
+        "wcid": 4670,
+        "desc": "The Skeleton's Mug(khayyabantavernsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 46.9995,
+              "y": 176.507,
+              "z": 49.2197
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997645,
+        "wcid": 153,
+        "desc": "Fountain(fountain)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 39.583,
+              "y": 131.594,
+              "z": 56.005
+            },
+            "angles": {
+              "w": 0.708372,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.705839
+            }
+          },
+          "objcell_id": 2655191327
+        }
+      },
+      {
+        "id": 2044997647,
+        "wcid": 4567,
+        "desc": "Lin Portal(portallin)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 136.755,
+              "y": 152.403,
+              "z": 20.005
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997648,
+        "wcid": 5486,
+        "desc": "Al-Jalima Portal(portalaljalima)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 27.268,
+              "y": 52.294,
+              "z": 50.005
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997649,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 31.713,
+              "y": 175.372,
+              "z": 44.1544
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 2655191314
+        }
+      },
+      {
+        "id": 2044997650,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 17.3649,
+              "y": 89.7948,
+              "z": 50.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2655191339
+        }
+      },
+      {
+        "id": 2044997651,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 10.4119,
+              "y": 81.3995,
+              "z": 50.005
+            },
+            "angles": {
+              "w": -0.956896,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.290432
+            }
+          },
+          "objcell_id": 2655191341
+        }
+      },
+      {
+        "id": 2044997652,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 11.0107,
+              "y": 82.2754,
+              "z": 50.005
+            },
+            "angles": {
+              "w": 0.261624,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.96517
+            }
+          },
+          "objcell_id": 2655191341
+        }
+      },
+      {
+        "id": 2044997653,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 18.2773,
+              "y": 83.4084,
+              "z": 50.005
+            },
+            "angles": {
+              "w": 0.009039,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.999959
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997659,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.1245,
+              "y": 176.191,
+              "z": 46.0
+            },
+            "angles": {
+              "w": 0.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -1.0
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997662,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.0385,
+              "y": 180.629,
+              "z": 53.0
+            },
+            "angles": {
+              "w": -0.702383,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.711799
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997665,
+        "wcid": 19204,
+        "desc": "Nullified Statue of a Skeleton(statueskeletonnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.073,
+              "y": 180.739,
+              "z": 52.9388
+            },
+            "angles": {
+              "w": -0.686574,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.72706
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997666,
+        "wcid": 19718,
+        "desc": "Effigy Foundry Portal(portalmidstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 62.0646,
+              "y": 190.531,
+              "z": 40.805
+            },
+            "angles": {
+              "w": 0.99992,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.012614
+            }
+          },
+          "objcell_id": 2655191345
+        }
+      },
+      {
+        "id": 2044997668,
+        "wcid": 22242,
+        "desc": "Victory Residential Halls(victoryresidentialhallssign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 14.4504,
+              "y": 76.6478,
+              "z": 50.005
+            },
+            "angles": {
+              "w": 0.698928,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.715192
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997669,
+        "wcid": 22231,
+        "desc": "Victory Residential Halls Portal(portalvictoryresidentialhalls)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 15.7033,
+              "y": 76.6079,
+              "z": 50.005
+            },
+            "angles": {
+              "w": 0.698928,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.715192
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      },
+      {
+        "id": 2044997670,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 32.0031,
+              "y": 159.082,
+              "z": 148.977
+            },
+            "angles": {
+              "w": -0.172418,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.985024
+            }
+          },
+          "objcell_id": 2655191040
+        }
+      }
+    ]
+  },
+  "desc": "2655191040(9E43)"
+}

@@ -1,0 +1,708 @@
+{
+  "key": 3845259264,
+  "value": {
+    "links": [
+      {
+        "target": 2119376920,
+        "source": 2119376919,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2119376896,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 175.881,
+              "y": 35.8043,
+              "z": 28.0
+            },
+            "angles": {
+              "w": 0.146947,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.989144
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376897,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 127.64,
+              "y": 35.9658,
+              "z": 32.42
+            },
+            "angles": {
+              "w": 0.69403,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.719946
+            }
+          },
+          "objcell_id": 3845259535
+        }
+      },
+      {
+        "id": 2119376898,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 140.54,
+              "y": 35.6558,
+              "z": 32.42
+            },
+            "angles": {
+              "w": 0.69403,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.719946
+            }
+          },
+          "objcell_id": 3845259536
+        }
+      },
+      {
+        "id": 2119376899,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 135.085,
+              "y": 38.8558,
+              "z": 29.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376900,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 129.135,
+              "y": 38.8558,
+              "z": 29.6
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376901,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 158.158,
+              "y": 16.2356,
+              "z": 30.5
+            },
+            "angles": {
+              "w": -0.642788,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.766044
+            }
+          },
+          "objcell_id": 3845259556
+        }
+      },
+      {
+        "id": 2119376902,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 152.151,
+              "y": 15.1764,
+              "z": 30.5
+            },
+            "angles": {
+              "w": -0.642788,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.766044
+            }
+          },
+          "objcell_id": 3845259559
+        }
+      },
+      {
+        "id": 2119376903,
+        "wcid": 143,
+        "desc": "Chest(chest)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.849,
+              "y": 13.1689,
+              "z": 30.52
+            },
+            "angles": {
+              "w": -0.403545,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.91496
+            }
+          },
+          "objcell_id": 3845259559
+        }
+      },
+      {
+        "id": 2119376904,
+        "wcid": 720,
+        "desc": "Sliding Door(doorshoslide)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.182,
+              "y": 21.2209,
+              "z": 28.0
+            },
+            "angles": {
+              "w": 0.087156,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.996195
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376905,
+        "wcid": 1145,
+        "desc": "Tailor Ka Shen-Ku(mayoitailor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 125.969,
+              "y": 34.8809,
+              "z": 29.605
+            },
+            "angles": {
+              "w": -0.977017,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.213163
+            }
+          },
+          "objcell_id": 3845259532
+        }
+      },
+      {
+        "id": 2119376906,
+        "wcid": 799,
+        "desc": "Grocer Riku Ryu(mayoigrocer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 139.68,
+              "y": 38.28,
+              "z": 29.76
+            },
+            "angles": {
+              "w": 0.851269,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.524729
+            }
+          },
+          "objcell_id": 3845259531
+        }
+      },
+      {
+        "id": 2119376907,
+        "wcid": 798,
+        "desc": "Shui Tentou the Bowyer(mayoibowyer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 186.36,
+              "y": 32.5201,
+              "z": 28.08
+            },
+            "angles": {
+              "w": -0.475624,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.879649
+            }
+          },
+          "objcell_id": 3845259526
+        }
+      },
+      {
+        "id": 2119376908,
+        "wcid": 800,
+        "desc": "Healer Tonsho Ha(mayoihealer)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.72,
+              "y": 9.84005,
+              "z": 26.805
+            },
+            "angles": {
+              "w": -0.67559,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.737278
+            }
+          },
+          "objcell_id": 3845259554
+        }
+      },
+      {
+        "id": 2119376909,
+        "wcid": 804,
+        "desc": "Ten Ox House(mayoipubsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 162.48,
+              "y": 124.44,
+              "z": 28.08
+            },
+            "angles": {
+              "w": 0.953454,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.301538
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376910,
+        "wcid": 806,
+        "desc": "Food and Clothing(mayoigrocersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 135.72,
+              "y": 29.28,
+              "z": 28.08
+            },
+            "angles": {
+              "w": -0.996709,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.081069
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376911,
+        "wcid": 807,
+        "desc": "Tonsho's Remedies(mayoihealersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.84,
+              "y": 21.96,
+              "z": 28.08
+            },
+            "angles": {
+              "w": -0.199368,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.979925
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376912,
+        "wcid": 808,
+        "desc": "Bowyer Tentou(mayoibowyersign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 177.84,
+              "y": 36.24,
+              "z": 28.08
+            },
+            "angles": {
+              "w": -0.986429,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.164188
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376913,
+        "wcid": 796,
+        "desc": "Te Kenten the Barkeep(mayoibarkeeper)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 151.68,
+              "y": 129.24,
+              "z": 29.605
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 3845259546
+        }
+      },
+      {
+        "id": 2119376914,
+        "wcid": 174,
+        "desc": "Well(well)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 19.771,
+              "y": 28.5105,
+              "z": 28.0
+            },
+            "angles": {
+              "w": 0.945802,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.324743
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376915,
+        "wcid": 8377,
+        "desc": "Beer Keg(beerkeg)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.356,
+              "y": 127.738,
+              "z": 30.045
+            },
+            "angles": {
+              "w": -0.520184,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.854054
+            }
+          },
+          "objcell_id": 3845259546
+        }
+      },
+      {
+        "id": 2119376918,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 107.476,
+              "y": 171.512,
+              "z": 28.0
+            },
+            "angles": {
+              "w": 1.0,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.0
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376919,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 110.991,
+              "y": 184.053,
+              "z": 28.005
+            },
+            "angles": {
+              "w": 0.354725,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.934971
+            }
+          },
+          "objcell_id": 3845259566
+        }
+      },
+      {
+        "id": 2119376920,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 109.547,
+              "y": 184.41,
+              "z": 28.005
+            },
+            "angles": {
+              "w": 0.770084,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.637942
+            }
+          },
+          "objcell_id": 3845259566
+        }
+      },
+      {
+        "id": 2119376921,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 114.437,
+              "y": 172.094,
+              "z": 28.005
+            },
+            "angles": {
+              "w": -0.999995,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.003259
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376927,
+        "wcid": 16919,
+        "desc": "Pedestal Weak Spot(doorpedestal)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 190.78,
+              "y": 10.7056,
+              "z": 28.0
+            },
+            "angles": {
+              "w": -0.722365,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.691512
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376930,
+        "wcid": 19457,
+        "desc": "Fireworks Generator(fireworksgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 186.582,
+              "y": 10.296,
+              "z": 35.0
+            },
+            "angles": {
+              "w": -0.999154,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.041126
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376933,
+        "wcid": 19197,
+        "desc": "Nullified Statue of a Golem(statuegolemnull)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 186.585,
+              "y": 10.3145,
+              "z": 34.83
+            },
+            "angles": {
+              "w": -0.999864,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.016488
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376934,
+        "wcid": 19716,
+        "desc": "Mammet Foundry Portal(portalhighstatuedungeonnorestrict)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 172.212,
+              "y": 10.0814,
+              "z": 22.805
+            },
+            "angles": {
+              "w": -0.71862,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.695403
+            }
+          },
+          "objcell_id": 3845259573
+        }
+      },
+      {
+        "id": 2119376935,
+        "wcid": 19369,
+        "desc": "Oriel Residential Halls Portal(portalorielresidentialhalls)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 84.8766,
+              "y": 36.8047,
+              "z": 28.005
+            },
+            "angles": {
+              "w": -0.703133,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.711059
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376936,
+        "wcid": 19391,
+        "desc": "Oriel Residential Halls(orielresidentialhallssign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 86.6418,
+              "y": 36.7936,
+              "z": 28.005
+            },
+            "angles": {
+              "w": -0.703133,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.711059
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376939,
+        "wcid": 23631,
+        "desc": "April 2003 Raining Mad Cows Gen(eventmadcowgen)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 113.981,
+              "y": 123.321,
+              "z": 149.927
+            },
+            "angles": {
+              "w": -0.987461,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.157866
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376940,
+        "wcid": 27547,
+        "desc": "Bind Stone(bindstone)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 123.212,
+              "y": 146.872,
+              "z": 28.005
+            },
+            "angles": {
+              "w": -0.617199,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.786807
+            }
+          },
+          "objcell_id": 3845259264
+        }
+      },
+      {
+        "id": 2119376941,
+        "wcid": 6100,
+        "desc": "Mayoi Meeting Hall Portal(portalallegiancehallmayoi)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 128.773,
+              "y": 134.296,
+              "z": 30.005
+            },
+            "angles": {
+              "w": 0.401053,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.916055
+            }
+          },
+          "objcell_id": 3845259577
+        }
+      }
+    ]
+  },
+  "desc": "3845259264(E532)"
+}

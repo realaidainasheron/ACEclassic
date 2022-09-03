@@ -1,0 +1,339 @@
+{
+  "key": 2140078080,
+  "value": {
+    "links": [
+      {
+        "target": 2012803077,
+        "source": 2012803073,
+        "desc": "Undead(zombieundead)(wcid: 16) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2012803077,
+        "source": 2012803074,
+        "desc": "Undead(zombieundead)(wcid: 16) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2012803077,
+        "source": 2012803075,
+        "desc": "Undead(zombieundead)(wcid: 16) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2012803077,
+        "source": 2012803076,
+        "desc": "Undead(zombieundead)(wcid: 16) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2012803077,
+        "source": 2012803078,
+        "desc": "Devana bint Hamudi(devanabinthamudi)(wcid: 6026) -> linkmonstergen15minutes(wcid: 3955)"
+      },
+      {
+        "target": 2012803081,
+        "source": 2012803080,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)(wcid: 12050) -> linkmonstergen3minutes(wcid: 7923)"
+      },
+      {
+        "target": 2012803086,
+        "source": 2012803085,
+        "desc": "Jordan Ibn'Ikia(furnituremastergha)(wcid: 12239) -> linkmonstergen3minutes(wcid: 7923)"
+      }
+    ],
+    "weenies": [
+      {
+        "id": 2012803072,
+        "wcid": 1148,
+        "desc": "Door(gardoubledoor)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.025,
+              "y": 108.0,
+              "z": 121.205
+            },
+            "angles": {
+              "w": 0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.707107
+            }
+          },
+          "objcell_id": 2140078336
+        }
+      },
+      {
+        "id": 2012803073,
+        "wcid": 16,
+        "desc": "Undead(zombieundead)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.398,
+              "y": 105.384,
+              "z": 120.958
+            },
+            "angles": {
+              "w": -0.258754,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.965943
+            }
+          },
+          "objcell_id": 2140078353
+        }
+      },
+      {
+        "id": 2012803074,
+        "wcid": 16,
+        "desc": "Undead(zombieundead)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 148.641,
+              "y": 101.748,
+              "z": 120.958
+            },
+            "angles": {
+              "w": 0.442681,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.896679
+            }
+          },
+          "objcell_id": 2140078353
+        }
+      },
+      {
+        "id": 2012803075,
+        "wcid": 16,
+        "desc": "Undead(zombieundead)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 148.553,
+              "y": 107.71,
+              "z": 120.958
+            },
+            "angles": {
+              "w": -0.714861,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.699266
+            }
+          },
+          "objcell_id": 2140078353
+        }
+      },
+      {
+        "id": 2012803076,
+        "wcid": 16,
+        "desc": "Undead(zombieundead)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 150.195,
+              "y": 116.501,
+              "z": 121.208
+            },
+            "angles": {
+              "w": -0.606297,
+              "x": 0.0,
+              "y": 0.0,
+              "z": 0.795238
+            }
+          },
+          "objcell_id": 2140078343
+        }
+      },
+      {
+        "id": 2012803077,
+        "wcid": 3955,
+        "desc": "Linkable Monster Gen (15 min.)(linkmonstergen15minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 147.991,
+              "y": 100.049,
+              "z": 120.955
+            },
+            "angles": {
+              "w": 0.108522,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.994094
+            }
+          },
+          "objcell_id": 2140078353
+        }
+      },
+      {
+        "id": 2012803078,
+        "wcid": 6026,
+        "desc": "Devana bint Hamudi(devanabinthamudi)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 168.131,
+              "y": 110.708,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.99993,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.011845
+            }
+          },
+          "objcell_id": 2140078080
+        }
+      },
+      {
+        "id": 2012803079,
+        "wcid": 412,
+        "desc": "Door(door-aluvian-house)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 161.575,
+              "y": 176.302,
+              "z": 124.0
+            },
+            "angles": {
+              "w": -0.707107,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.707107
+            }
+          },
+          "objcell_id": 2140078080
+        }
+      },
+      {
+        "id": 2012803080,
+        "wcid": 12050,
+        "desc": "Agent of the Arcanum(agentwritrefuge-xp)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 157.52,
+              "y": 185.984,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.097585,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.995227
+            }
+          },
+          "objcell_id": 2140078365
+        }
+      },
+      {
+        "id": 2012803081,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 156.928,
+              "y": 183.993,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.992983,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.118259
+            }
+          },
+          "objcell_id": 2140078365
+        }
+      },
+      {
+        "id": 2012803084,
+        "wcid": 12242,
+        "desc": "Jordan's Apprentice Craftsman(furniturevendorgha)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 155.131,
+              "y": 186.193,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.456736,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.889602
+            }
+          },
+          "objcell_id": 2140078365
+        }
+      },
+      {
+        "id": 2012803085,
+        "wcid": 12239,
+        "desc": "Jordan Ibn'Ikia(furnituremastergha)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 154.271,
+              "y": 182.686,
+              "z": 124.005
+            },
+            "angles": {
+              "w": 0.805869,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.592094
+            }
+          },
+          "objcell_id": 2140078365
+        }
+      },
+      {
+        "id": 2012803086,
+        "wcid": 7923,
+        "desc": "Linkable Monster Generator ( 3 Min.)(linkmonstergen3minutes)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 155.711,
+              "y": 182.223,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.888656,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.458575
+            }
+          },
+          "objcell_id": 2140078365
+        }
+      },
+      {
+        "id": 2012803087,
+        "wcid": 12304,
+        "desc": "Agent of the Arcanum (arcanumagentsign)",
+        "pos": {
+          "frame": {
+            "origin": {
+              "x": 162.803,
+              "y": 171.15,
+              "z": 124.005
+            },
+            "angles": {
+              "w": -0.712141,
+              "x": 0.0,
+              "y": 0.0,
+              "z": -0.702036
+            }
+          },
+          "objcell_id": 2140078080
+        }
+      }
+    ]
+  },
+  "desc": "2140078080(7F8F)"
+}
