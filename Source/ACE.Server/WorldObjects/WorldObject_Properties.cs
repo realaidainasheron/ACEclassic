@@ -1601,6 +1601,12 @@ namespace ACE.Server.WorldObjects
             set { if (value == null) RemoveProperty(PropertyString.HeritageGroup); else SetProperty(PropertyString.HeritageGroup, value); }
         }
 
+        public string ItemHeritageGroupRestriction
+        {
+            get => GetProperty(PropertyString.ItemHeritageGroupRestriction);
+            set { if (value == null) RemoveProperty(PropertyString.ItemHeritageGroupRestriction); else SetProperty(PropertyString.ItemHeritageGroupRestriction, value); }
+        }
+
         public string Sex
         {
             get => GetProperty(PropertyString.Sex);
@@ -2067,6 +2073,12 @@ namespace ACE.Server.WorldObjects
         {
             get => GetProperty(PropertyInt.ChessTotalGames);
             set { if (!value.HasValue) RemoveProperty(PropertyInt.ChessTotalGames); else SetProperty(PropertyInt.ChessTotalGames, value.Value); }
+        }
+
+        public int? MerchandiseItemTypes
+        {
+            get => GetProperty(PropertyInt.MerchandiseItemTypes);
+            set { if (!value.HasValue) RemoveProperty(PropertyInt.MerchandiseItemTypes); else SetProperty(PropertyInt.MerchandiseItemTypes, value.Value); }
         }
 
         public double? HeartbeatInterval

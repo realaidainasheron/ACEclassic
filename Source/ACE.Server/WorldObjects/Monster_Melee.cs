@@ -98,6 +98,9 @@ namespace ACE.Server.WorldObjects
 
                     var damageEvent = DamageEvent.CalculateDamage(this, target, weapon, motionCommand, attackFrames[0].attackHook);
 
+                    if (!damageEvent.Evaded)
+                        TryCastAssessCreatureAndPersonDebuffs(target, CombatType.Melee);
+
                     //var damage = CalculateDamage(ref damageType, maneuver, bodyPart, ref critical, ref shieldMod);
 
                     if (damageEvent.HasDamage)
@@ -424,38 +427,51 @@ namespace ACE.Server.WorldObjects
         /// <param name="armors">The list of armor/clothing covering the targeted body part</param>
         public float GetArmorMod(Creature defender, DamageType damageType, List<WorldObject> armors, WorldObject weapon, float armorRendingMod = 1.0f)
         {
-            var ignoreMagicArmor =  (weapon?.IgnoreMagicArmor ?? false)  || IgnoreMagicArmor;
-            var ignoreMagicResist = (weapon?.IgnoreMagicResist ?? false) || IgnoreMagicResist;
+            try
+            {
+                var ignoreMagicArmor = (weapon?.IgnoreMagicArmor ?? false) || IgnoreMagicArmor;
+                var ignoreMagicResist = (weapon?.IgnoreMagicResist ?? false) || IgnoreMagicResist;
 
-            var effectiveAL = 0.0f;
+                var effectiveAL = 0.0f;
 
-            foreach (var armor in armors)
-                effectiveAL += GetArmorMod(armor, damageType, ignoreMagicArmor);
+                foreach (var armor in armors)
+                    effectiveAL += GetArmorMod(armor, damageType, ignoreMagicArmor);
 
-            // life spells
-            // additive: armor/imperil
-            var bodyArmorMod = defender.EnchantmentManager.GetBodyArmorMod();
-            if (ignoreMagicResist)
-                bodyArmorMod = IgnoreMagicResistScaled(bodyArmorMod);
+                // life spells
+                // additive: armor/imperil
+                if(AttackTarget == null)
+                {
+                    return 1.0f;
+                }
 
-            // handle armor rending mod here?
-            //if (bodyArmorMod > 0)
+                var bodyArmorMod = AttackTarget.EnchantmentManager.GetBodyArmorMod();
+                if (ignoreMagicResist)
+                    bodyArmorMod = IgnoreMagicResistScaled(bodyArmorMod);
+
+                // handle armor rending mod here?
+                //if (bodyArmorMod > 0)
                 //bodyArmorMod *= armorRendingMod;
 
-            //Console.WriteLine("==");
-            //Console.WriteLine("Armor Self: " + bodyArmorMod);
-            effectiveAL += bodyArmorMod;
+                //Console.WriteLine("==");
+                //Console.WriteLine("Armor Self: " + bodyArmorMod);
+                effectiveAL += bodyArmorMod;
 
-            // Armor Rending reduces physical armor too?
-            if (effectiveAL > 0)
-                effectiveAL *= armorRendingMod;
+                // Armor Rending reduces physical armor too?
+                if (effectiveAL > 0)
+                    effectiveAL *= armorRendingMod;
 
-            var armorMod = SkillFormula.CalcArmorMod(effectiveAL);
+                var armorMod = SkillFormula.CalcArmorMod(effectiveAL);
 
-            //Console.WriteLine("Total AL: " + effectiveAL);
-            //Console.WriteLine("Armor mod: " + armorMod);
+                //Console.WriteLine("Total AL: " + effectiveAL);
+                //Console.WriteLine("Armor mod: " + armorMod);
 
-            return armorMod;
+                return armorMod;
+            }
+            catch(Exception ex)
+            {
+                log.Error($"Exception in Monster_Melee.GetArmorMod. Ex: {ex}");
+                return 1.0f;
+            }
         }
 
         public float IgnoreMagicArmorScaled(float enchantments)

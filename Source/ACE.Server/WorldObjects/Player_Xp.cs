@@ -19,12 +19,113 @@ namespace ACE.Server.WorldObjects
         /// <param name="amount">The amount of XP being added</param>
         /// <param name="xpType">The source of XP being added</param>
         /// <param name="shareable">True if this XP can be shared with Fellowship</param>
-        public void EarnXP(long amount, XpType xpType, ShareType shareType = ShareType.All)
+        public void EarnXP(long amount, XpType xpType, int? xpSourceLevel, ShareType shareType = ShareType.All)
         {
             //Console.WriteLine($"{Name}.EarnXP({amount}, {sharable}, {fixedAmount})");
 
+            bool usesRewardByLevelSystem = false;
+            int formulaVersion = 0;
+            if (xpType == XpType.Quest && amount < 0 && amount > -6000) // this range is used to specify the reward by level system.
+            {
+                if (amount <= -5000)
+                {
+                    xpSourceLevel = -((int)amount + 5000);
+                    formulaVersion = 5;
+                }
+                else if (amount <= -4000)
+                {
+                    xpSourceLevel = -((int)amount + 4000);
+                    formulaVersion = 4;
+                }
+                else if (amount <= -3000)
+                {
+                    xpSourceLevel = -((int)amount + 3000);
+                    formulaVersion = 3;
+                }
+                else if (amount <= -2000)
+                {
+                    xpSourceLevel = -((int)amount + 2000);
+                    formulaVersion = 2;
+                }
+                else if (amount <= -1000)
+                {
+                    xpSourceLevel = -((int)amount + 1000);
+                    formulaVersion = 1;
+                }
+                else
+                {
+                    xpSourceLevel = -(int)amount;
+                    formulaVersion = 0;
+                }
+                usesRewardByLevelSystem = true;
+
+                int modifiedLevel = Math.Max((int)Level, 5);
+
+                if (Level < 100 && modifiedLevel <= xpSourceLevel / 3)
+                {
+                    xpSourceLevel = modifiedLevel * 3;
+                    Session.Network.EnqueueSend(new GameMessageSystemChat("Your experience reward has been reduced because your level is not high enough!", ChatMessageType.System));
+                }
+
+                amount = Creature.GetCreatureDeathXP(xpSourceLevel.Value, 0, 0, formulaVersion);
+            }
+            else if (amount < 0)
+            {
+                SpendXP(-amount);
+                return;
+            }
+
             // apply xp modifier
             var modifier = PropertyManager.GetDouble("xp_modifier").Item;
+
+            if (xpType == XpType.Kill && xpSourceLevel != null)
+            {
+                if (xpSourceLevel < 28)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier1").Item;
+                else if (xpSourceLevel < 65)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier2").Item;
+                else if (xpSourceLevel < 95)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier3").Item;
+                else if (xpSourceLevel < 110)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier4").Item;
+                else if (xpSourceLevel < 135)
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier5").Item;
+                else
+                    modifier *= PropertyManager.GetDouble("xp_modifier_kill_tier6").Item;
+            }
+            else if (xpType == XpType.Quest && xpSourceLevel != null)
+            {
+                if (usesRewardByLevelSystem)
+                {
+                    if (xpSourceLevel < 28)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
+                    else if (xpSourceLevel < 65)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
+                    else if (xpSourceLevel < 95)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
+                    else if (xpSourceLevel < 110)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
+                    else if (xpSourceLevel < 135)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                    else
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+                }
+                else
+                {
+                    if (xpSourceLevel < 16)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier1").Item;
+                    else if (xpSourceLevel < 36)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier2").Item;
+                    else if (xpSourceLevel < 56)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier3").Item;
+                    else if (xpSourceLevel < 76)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier4").Item;
+                    else if (xpSourceLevel < 96)
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier5").Item;
+                    else
+                        modifier *= PropertyManager.GetDouble("xp_modifier_reward_tier6").Item;
+                }
+            }
 
             // should this be passed upstream to fellowship / allegiance?
             var enchantment = GetXPAndLuminanceModifier(xpType);
@@ -68,6 +169,22 @@ namespace ACE.Server.WorldObjects
             // Make sure UpdateXpAndLevel is done on this players thread
             EnqueueAction(new ActionEventDelegate(() => UpdateXpAndLevel(amount, xpType)));
 
+            //Update XP tracking info
+            try
+            {
+                if (!XpTrackerStartTimestamp.HasValue)
+                {
+                    XpTrackerStartTimestamp = ((DateTimeOffset)DateTime.UtcNow).ToUnixTimeSeconds();
+                    XpTrackerTotalXp = 0;
+                }
+
+                XpTrackerTotalXp += amount;
+            }
+            catch (Exception ex)
+            {
+                log.Error($"Exception in Player.GrantXP while updating XP tracking info. Ex: {ex}");
+            }
+
             // for passing XP up the allegiance chain,
             // this function is only called at the very beginning, to start the process.
             if (shareType.HasFlag(ShareType.Allegiance))
@@ -87,18 +204,27 @@ namespace ACE.Server.WorldObjects
             var xpTable = DatManager.PortalDat.XpTable;
 
             var maxLevel = GetMaxLevel();
-            var maxLevelXp = xpTable.CharacterLevelXPList.Last();
+            var maxLevelXp = xpTable.CharacterLevelXPList[(int)maxLevel];
 
-            if (Level != maxLevel)
+            bool allowXpAtMaxLevel = PropertyManager.GetBool("allow_xp_at_max_level").Item;
+            var totalXpCap = (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR ? long.MaxValue : maxLevelXp); // 0 disables the xp cap
+            var availableXpCap = (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR ? long.MaxValue : uint.MaxValue); // 0 disables the xp cap
+
+            if (Level != maxLevel || allowXpAtMaxLevel)
             {
                 var addAmount = amount;
 
                 var amountLeftToEnd = (long)maxLevelXp - TotalExperience ?? 0;
-                if (amount > amountLeftToEnd)
+                if (!allowXpAtMaxLevel && amount > amountLeftToEnd)
                     addAmount = amountLeftToEnd;
 
-                AvailableExperience += addAmount;
                 TotalExperience += addAmount;
+                if (totalXpCap > 0 && TotalExperience > (long)totalXpCap)
+                    TotalExperience = (long)totalXpCap;
+
+                AvailableExperience += addAmount;
+                if (availableXpCap > 0 && AvailableExperience > (long)availableXpCap)
+                    AvailableExperience = (long)availableXpCap;
 
                 var xpTotalUpdate = new GameMessagePrivateUpdatePropertyInt64(this, PropertyInt64.TotalExperience, TotalExperience ?? 0);
                 var xpAvailUpdate = new GameMessagePrivateUpdatePropertyInt64(this, PropertyInt64.AvailableExperience, AvailableExperience ?? 0);
@@ -185,7 +311,9 @@ namespace ACE.Server.WorldObjects
         /// </summary>
         public static uint GetMaxLevel()
         {
-            return (uint)DatManager.PortalDat.XpTable.CharacterLevelXPList.Count - 1;
+            uint maxPossibleLevel = (uint)DatManager.PortalDat.XpTable.CharacterLevelXPList.Count - 1;
+            uint maxSettingLevel = (uint)PropertyManager.GetLong("max_level").Item;
+            return (Math.Min(maxPossibleLevel, maxSettingLevel));
         }
 
         /// <summary>
@@ -429,13 +557,27 @@ namespace ACE.Server.WorldObjects
         /// <param name="level">The player DeathLevel, their level on last death</param>
         private double VitaeCPPoolThreshold(float vitae, int level)
         {
-            return (Math.Pow(level, 2.5) * 2.5 + 20.0) * Math.Pow(vitae, 5.0) + 0.5;
+            if (Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.EoR)
+                return (Math.Pow(level, 2.5) * 2.5 + 20.0) * Math.Pow(vitae, 5.0) + 0.5;
+            else
+            {
+                // http://acpedia.org/wiki/Announcements_-_2005/07_-_Throne_of_Destiny_(expansion)#FAQ_-_AC:TD_Level_Cap_Update
+                // "The vitae system has not changed substantially since Asheron's Call launched in 1999.
+                // Since that time, the experience awarded by killing creatures has increased considerably.
+                // This means that a 5% vitae loss currently is much easier to work off now than it was in the past.
+                // In addition, the maximum cost to work off a point of vitae was capped at 12,500 experience points."
+
+                // That seems to imply the formula was also different, but for now we keep the same formula but add the xp cap.
+                var xp = (Math.Pow(level, 2.5) * 2.5 + 20.0) * Math.Pow(vitae, 5.0) + 0.5;
+
+                return Math.Min(xp, 12500);
+            }
         }
 
         /// <summary>
         /// Raise the available XP by a percentage of the current level XP or a maximum
         /// </summary>
-        public void GrantLevelProportionalXp(double percent, long min, long max)
+        public void GrantLevelProportionalXp(double percent, long min, long max, bool shareable = false)
         {
             var nextLevelXP = GetXPBetweenLevels(Level.Value, Level.Value + 1);
 
@@ -447,8 +589,10 @@ namespace ACE.Server.WorldObjects
             if (min > 0)
                 scaledXP = Math.Max(scaledXP, min);
 
+            var shareType = shareable ? ShareType.All : ShareType.None;
+
             // apply xp modifiers?
-            EarnXP(scaledXP, XpType.Quest, ShareType.Allegiance);
+            EarnXP(scaledXP, XpType.Quest, Level, shareType);
         }
 
         /// <summary>

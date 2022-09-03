@@ -453,6 +453,24 @@ namespace ACE.Server.WorldObjects
             set { if (value == null) RemoveProperty(PropertyString.Afk); else SetProperty(PropertyString.Afk, value); }
         }
 
+        /// <summary>
+        /// The timestamp the player originally purchased house
+        /// </summary>
+        public long? XpTrackerStartTimestamp
+        {
+            get => GetProperty(PropertyInt64.XpTrackerStartTimestamp);
+            set { if (!value.HasValue) RemoveProperty(PropertyInt64.XpTrackerStartTimestamp); else SetProperty(PropertyInt64.XpTrackerStartTimestamp, value.Value); }
+        }
+
+        /// <summary>
+        /// The timestamp the player originally purchased house
+        /// </summary>
+        public long? XpTrackerTotalXp
+        {
+            get => GetProperty(PropertyInt64.XpTrackerTotalXp);
+            set { if (!value.HasValue) RemoveProperty(PropertyInt64.XpTrackerTotalXp); else SetProperty(PropertyInt64.XpTrackerTotalXp, value.Value); }
+        }
+
         // ========================================
         // ===== Player Properties - Titles========
         // ========================================

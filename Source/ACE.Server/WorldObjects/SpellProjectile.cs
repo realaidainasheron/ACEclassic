@@ -285,7 +285,13 @@ namespace ACE.Server.WorldObjects
             // ensure caster can damage target
             var sourceCreature = ProjectileSource as Creature;
             if (sourceCreature != null && !sourceCreature.CanDamage(creatureTarget))
+            {
+                if (sourceCreature is Player sourcePlayer && creatureTarget.Teleporting)
+                    sourcePlayer.SendTransientError($"You cannot attack {creatureTarget.Name}");
+
+
                 return;
+            }
 
             // if player target, ensure matching PK status
             var targetPlayer = creatureTarget as Player;
@@ -310,6 +316,24 @@ namespace ACE.Server.WorldObjects
 
             if (damage != null)
             {
+                float dmgMod = 1;
+
+                if (player != null && targetPlayer != null)
+                {
+                    if (Spell.School == MagicSchool.WarMagic)
+                    {
+                        dmgMod = (float)PropertyManager.GetDouble("pvp_dmg_mod_war").Item;
+
+                        if (SpellType == ProjectileSpellType.Streak)
+                            dmgMod = (float)PropertyManager.GetDouble("pvp_dmg_mod_war_streak").Item; // scales war streak damages
+                    }
+
+                    damage = damage * dmgMod;
+                }
+
+                if (sourceCreature != null)
+                    sourceCreature.TryCastAssessCreatureAndPersonDebuffs(creatureTarget, CombatType.Magic);
+
                 if (Spell.MetaSpellType == ACE.Entity.Enum.SpellType.EnchantmentProjectile)
                 {
                     // handle EnchantmentProjectile successfully landing on target
@@ -536,6 +560,12 @@ namespace ACE.Server.WorldObjects
                 }
                 baseDamage = ThreadSafeRandom.Next(Spell.MinDamage, Spell.MaxDamage);
 
+                if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+                {
+                    if (sourcePlayer == null)
+                        baseDamage /= 2; // Monsters do half projectile spell damage.
+                }
+
                 weaponResistanceMod = GetWeaponResistanceModifier(weapon, sourceCreature, attackSkill, Spell.DamageType);
 
                 // if attacker/weapon has IgnoreMagicResist directly, do not transfer to spell projectile
@@ -577,8 +607,13 @@ namespace ACE.Server.WorldObjects
 
                     // does target have shield equipped?
                     var shield = target.GetEquippedShield();
-                    if (shield != null && shield.GetAbsorbMagicDamage() != null)
-                        return GetShieldMod(target, shield);
+                    if (shield != null && shield.AbsorbMagicDamage != null)
+                    {
+                        if (Common.ConfigManager.Config.Server.WorldRuleset != Common.Ruleset.Infiltration)
+                            return GetShieldMod(target, shield);
+                        else
+                            return AbsorbMagic(target, shield);
+                    }
 
                     break;
 

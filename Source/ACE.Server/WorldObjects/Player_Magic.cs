@@ -134,7 +134,7 @@ namespace ACE.Server.WorldObjects
 
             var targetCategory = GetTargetCategory(targetGuid, spellId, out var target);
 
-            if (target == null || target.Teleporting)
+            if (target == null)
             {
                 SendUseDoneEvent(WeenieError.TargetNotAcquired);
                 return;
@@ -191,13 +191,14 @@ namespace ACE.Server.WorldObjects
 
         public void DoWindup(WindupParams windupParams, bool checkAngle)
         {
-            //Console.WriteLine($"{Name}.DoWindup()");
+            Console.WriteLine($"{Name}.DoWindup()");
 
             // ensure target still exists
             var targetCategory = GetTargetCategory(windupParams.TargetGuid, windupParams.SpellId, out var target);
 
             if (target == null)
             {
+                Console.WriteLine($"{Name}.DoWindup() - target == null");
                 SendUseDoneEvent(WeenieError.TargetNotAcquired);
                 MagicState.OnCastDone();
                 return;
@@ -205,16 +206,46 @@ namespace ACE.Server.WorldObjects
 
             if (!checkAngle || IsWithinAngle(target))
             {
+                Console.WriteLine($"{Name}.DoWindup() - checkAngle = {checkAngle}");
+
                 if (!CreatePlayerSpell(target, targetCategory, windupParams.SpellId, windupParams.CasterItem))
                     MagicState.OnCastDone();
             }
             else
             {
                 // restart turn if required
+                Console.WriteLine($"{Name}.DoWindup() - restart turn if required, TurnCommand = {PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand}");
                 if (PhysicsObj.MovementManager.MotionInterpreter.InterpretedState.TurnCommand == 0)
-                    TurnTo_Magic(target);
+                {
+                    var windUpRetryLimit = PropertyManager.GetLong("windup_turn_retry_number").Item;
+                    Console.WriteLine($"windUpRetryLimit: {windUpRetryLimit}");
+                    if (windUpRetryLimit > 0)
+                    {
+                        if (windupParams.TurnTries < windUpRetryLimit)
+                        {
+                            windupParams.TurnTries += 1;
+                            Console.WriteLine($"{Name} turn to in DoWindup try #{windupParams.TurnTries}/{windUpRetryLimit}");
+                            TurnTo_Magic(target);
+                        }
+                        else
+                        {
+                            // give up after trying to correct angle a few times..
+                            Console.WriteLine($"{Name} turn to in DoWindup giving up..");
+                            MagicState.OnCastDone();
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        // If windup_turn_retry_number property is 0 try forever like before.
+                        TurnTo_Magic(target);
+                    }
+                }
                 else
+                {
+                    windupParams.TurnTries = windupParams.TurnTries == 0 ? 1 : windupParams.TurnTries;
                     MagicState.PendingTurnRelease = true;
+                }
             }
         }
 
@@ -472,7 +503,7 @@ namespace ACE.Server.WorldObjects
             if (target == this && spell.IsNegativeRedirectable)
                 return true;
 
-            if (targetCreature != null && targetCreature != this && spell.NonComponentTargetType == ItemType.Creature && !CanDamage(targetCreature))
+            if (targetCreature != null && targetCreature != this && spell.NonComponentTargetType == ItemType.Creature && !CanDamageNoTeleport(targetCreature))
                 return true;
 
             return false;
@@ -875,6 +906,14 @@ namespace ACE.Server.WorldObjects
             var pk_error = CheckPKStatusVsTarget(target, spell);
             if (pk_error != null)
                 castingPreCheckStatus = CastingPreCheckStatus.InvalidPKStatus;
+
+            if (target != null && spell != null && target.Teleporting)
+            {
+                if (spell.NumProjectiles == 0)
+                    SendTransientError($"You fail to affect {target.Name} because they are in portal space");
+
+                castingPreCheckStatus = CastingPreCheckStatus.InvalidPKStatus;
+            }
 
             switch (castingPreCheckStatus)
             {
@@ -1382,7 +1421,7 @@ namespace ACE.Server.WorldObjects
 
                 case ItemType.Weapon:
                     //return target is MeleeWeapon || target is MissileLauncher;
-                    return target is Creature || target is MeleeWeapon || target is MissileLauncher;
+                    return target is Creature || target is MeleeWeapon || target is MissileLauncher || target.IsThrownWeapon;
 
                 case ItemType.Caster:
                     //return target is Caster;
@@ -1390,7 +1429,7 @@ namespace ACE.Server.WorldObjects
 
                 case ItemType.WeaponOrCaster:
                     //return target is MeleeWeapon || target is MissileLauncher || target is Caster;
-                    return target is Creature || target is MeleeWeapon || target is MissileLauncher || target is Caster;
+                    return target is Creature || target is MeleeWeapon || target is MissileLauncher || target.IsThrownWeapon || target is Caster;
 
                 case ItemType.Portal:
 

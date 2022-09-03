@@ -117,7 +117,7 @@ namespace ACE.Server.WorldObjects
                 return;
             }
 
-            if (!CanDamage(creatureTarget))
+            if (!CanDamageNoTeleport(creatureTarget))
             {
                 SendTransientError($"You cannot attack {creatureTarget.Name}");
                 OnAttackDone();
@@ -256,6 +256,8 @@ namespace ACE.Server.WorldObjects
         {
             //log.Info($"{Name}.Attack({target.Name}, {attackSequence})");
 
+            HasPerformedActionsSinceLastMovementUpdate = true;
+
             if (AttackSequence != attackSequence)
                 return;
 
@@ -292,6 +294,19 @@ namespace ACE.Server.WorldObjects
             var weapon = GetEquippedMeleeWeapon();
             var attackType = GetWeaponAttackType(weapon);
             var numStrikes = GetNumStrikes(attackType);
+
+            if (numStrikes > 1 && Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                if (PowerLevel < MultiStrikeThreshold)
+                    numStrikes = 1;
+
+                uint baseSkill = GetCreatureSkill(GetCurrentWeaponSkill()).Base;
+                if(baseSkill < 250)
+                    numStrikes = 1;
+                else if(baseSkill < 325)
+                    numStrikes = 2;
+            }
+
             var swingTime = animLength / numStrikes / 1.5f;
 
             var actionChain = new ActionChain();
@@ -430,6 +445,7 @@ namespace ACE.Server.WorldObjects
         }
 
         public static readonly float KickThreshold = 0.75f;
+        public static readonly float MultiStrikeThreshold = Common.ConfigManager.Config.Server.WorldRuleset == Common.Ruleset.CustomDM ? 0.0f : 0.75f;
 
         public MotionCommand PrevMotionCommand;
 
@@ -460,6 +476,23 @@ namespace ACE.Server.WorldObjects
             else
             {
                 AttackType = PowerLevel > KickThreshold && !IsDualWieldAttack ? AttackType.Kick : AttackType.Punch;
+            }
+
+            if (Common.ConfigManager.Config.Server.WorldRuleset <= Common.Ruleset.Infiltration)
+            {
+                if (AttackType.IsMultiStrike())
+                {
+                    if (PowerLevel < MultiStrikeThreshold)
+                        AttackType = AttackType.ReduceMultiStrike();
+                    else
+                    {
+                        uint baseSkill = GetCreatureSkill(GetCurrentWeaponSkill()).Base;
+                        if (baseSkill < 250)
+                            AttackType = AttackType.ReduceMultiStrike();
+                        else if (baseSkill < 325)
+                            AttackType = AttackType.ReduceMultiStrikeToDouble();
+                    }
+                }
             }
 
             var motions = CombatTable.GetMotion(CurrentMotionState.Stance, AttackHeight.Value, AttackType, PrevMotionCommand);
